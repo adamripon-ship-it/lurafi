@@ -1,11 +1,13 @@
 <div class="page-width customer-order">
   <header class="customer-order__header">
-    <h1>Order {{ order.name }}</h1>
-    <p>Placed on <time datetime="{{ order.created_at | date: '%Y-%m-%d' }}">{{ order.created_at | date: format: 'on_date_at_time' }}</time></p>
+    <h1>{{ 'customers.order.title' | t: name: order.name }}</h1>
+    {%- assign order_placed_at = order.created_at | date: format: 'on_date_at_time' -%}
+    <p>{{ 'customers.order.placed' | t: date: order_placed_at }}</p>
 
     {%- if order.cancelled -%}
+      {%- assign order_cancelled_at = order.cancelled_at | date: format: 'on_date' -%}
       <p class="customer-order__cancelled">
-        Order cancelled on {{ order.cancelled_at | date: format: 'on_date' }} &mdash; {{ order.cancel_reason_label }}
+        {{ 'customers.order.cancelled' | t: date: order_cancelled_at, reason: order.cancel_reason_label }}
       </p>
     {%- endif -%}
   </header>
@@ -14,54 +16,70 @@
     <table class="order-items">
       <thead>
         <tr>
-          <th>Product</th>
-          <th>SKU</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total</th>
+          <th>{{ 'customers.order.product' | t }}</th>
+          <th>{{ 'customers.order.sku' | t }}</th>
+          <th>{{ 'customers.order.price' | t }}</th>
+          <th>{{ 'customers.order.quantity' | t }}</th>
+          <th>{{ 'customers.order.total' | t }}</th>
         </tr>
       </thead>
       <tbody>
         {%- for line_item in order.line_items -%}
           <tr>
-            <td>
+            <td data-label="{{ 'customers.order.product' | t }}">
               <a href="{{ line_item.product.url }}">{{ line_item.title }}</a>
               {%- if line_item.fulfillment -%}
-                <small>Fulfilled {{ line_item.fulfillment.created_at | date: format: 'on_date' }}{% if line_item.fulfillment.tracking_number %} &middot; <a href="{{ line_item.fulfillment.tracking_url }}">{{ line_item.fulfillment.tracking_company }} {{ line_item.fulfillment.tracking_number }}</a>{% endif %}</small>
+                {%- assign fulfilled_at = line_item.fulfillment.created_at | date: format: 'on_date' -%}
+                <small>
+                  {{ 'customers.order.fulfilled' | t: date: fulfilled_at }}
+                  {%- if line_item.fulfillment.tracking_number -%}
+                    &middot;
+                    <a href="{{ line_item.fulfillment.tracking_url }}">
+                      {{ 'customers.order.tracking' | t: company: line_item.fulfillment.tracking_company, number: line_item.fulfillment.tracking_number }}
+                    </a>
+                  {%- endif -%}
+                </small>
               {%- endif -%}
             </td>
-            <td>{{ line_item.sku }}</td>
-            <td>{{ line_item.price | money }}</td>
-            <td>{{ line_item.quantity }}</td>
-            <td>{{ line_item.final_line_price | money }}</td>
+            <td data-label="{{ 'customers.order.sku' | t }}">{{ line_item.sku }}</td>
+            <td data-label="{{ 'customers.order.price' | t }}">{{ line_item.price | money }}</td>
+            <td data-label="{{ 'customers.order.quantity' | t }}">{{ line_item.quantity }}</td>
+            <td data-label="{{ 'customers.order.total' | t }}">{{ line_item.final_line_price | money }}</td>
           </tr>
         {%- endfor -%}
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="4">Subtotal</td>
+          <td colspan="4" data-label="{{ 'customers.order.subtotal' | t }}">{{ 'customers.order.subtotal' | t }}</td>
           <td>{{ order.line_items_subtotal_price | money }}</td>
         </tr>
         {%- for discount_application in order.cart_level_discount_applications -%}
           <tr>
-            <td colspan="4">Discount &mdash; {{ discount_application.title }}</td>
+            <td colspan="4" data-label="{{ 'customers.order.discount' | t: title: discount_application.title }}">
+              {{ 'customers.order.discount' | t: title: discount_application.title }}
+            </td>
             <td>-{{ discount_application.total_allocated_amount | money }}</td>
           </tr>
         {%- endfor -%}
         {%- for shipping_method in order.shipping_methods -%}
           <tr>
-            <td colspan="4">Shipping &mdash; {{ shipping_method.title }}</td>
+            <td colspan="4" data-label="{{ 'customers.order.shipping' | t: title: shipping_method.title }}">
+              {{ 'customers.order.shipping' | t: title: shipping_method.title }}
+            </td>
             <td>{{ shipping_method.price | money }}</td>
           </tr>
         {%- endfor -%}
         {%- for tax_line in order.tax_lines -%}
+          {%- assign tax_rate = tax_line.rate | times: 100 -%}
           <tr>
-            <td colspan="4">Tax &mdash; {{ tax_line.title }} ({{ tax_line.rate | times: 100 }}%)</td>
+            <td colspan="4" data-label="{{ 'customers.order.tax' | t: title: tax_line.title, rate: tax_rate }}">
+              {{ 'customers.order.tax' | t: title: tax_line.title, rate: tax_rate }}
+            </td>
             <td>{{ tax_line.price | money }}</td>
           </tr>
         {%- endfor -%}
         <tr>
-          <td colspan="4"><strong>Total</strong></td>
+          <td colspan="4" data-label="{{ 'customers.order.total_label' | t }}"><strong>{{ 'customers.order.total_label' | t }}</strong></td>
           <td><strong>{{ order.total_price | money }}</strong></td>
         </tr>
       </tfoot>
@@ -71,16 +89,16 @@
   <section class="customer-order__addresses">
     {%- if order.billing_address -%}
       <div class="customer-order__address">
-        <h2>Billing address</h2>
-        <p>Payment status: {{ order.financial_status_label }}</p>
+        <h2>{{ 'customers.order.billing_title' | t }}</h2>
+        <p>{{ 'customers.order.payment_status' | t: status: order.financial_status_label }}</p>
         {{ order.billing_address | format_address }}
       </div>
     {%- endif -%}
 
     {%- if order.shipping_address -%}
       <div class="customer-order__address">
-        <h2>Shipping address</h2>
-        <p>Fulfillment status: {{ order.fulfillment_status_label }}</p>
+        <h2>{{ 'customers.order.shipping_title' | t }}</h2>
+        <p>{{ 'customers.order.fulfillment_status' | t: status: order.fulfillment_status_label }}</p>
         {{ order.shipping_address | format_address }}
       </div>
     {%- endif -%}

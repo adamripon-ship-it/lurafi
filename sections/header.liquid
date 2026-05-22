@@ -33,6 +33,11 @@
       </div>
 
       <div class="site-header__actions">
+        {%- if customer -%}
+          <a href="{{ routes.account_url }}" class="site-header__account-link">{{ 'header.account' | t }}</a>
+        {%- else -%}
+          <a href="{{ routes.account_login_url }}" class="site-header__account-link">{{ 'header.log_in' | t }}</a>
+        {%- endif -%}
         <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-apple-primary--sm site-header__cta site-header__cta--mobile">
           {{ 'header.buy' | t }}
         </a>
@@ -88,6 +93,11 @@
       <button type="button" class="mobile-nav__link mobile-nav__cart-link" aria-label="{{ cart_label | escape }}" data-cart-drawer-open data-menu-close>{{ 'header.cart' | t }}{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</button>
       <p class="mobile-nav__group-label">{{ 'header.support' | t }}</p>
       <a href="{{ routes.root_url }}#app" class="mobile-nav__link" data-menu-close>{{ 'header.setup_and_app' | t }}</a>
+      {%- if customer -%}
+        <a href="{{ routes.account_url }}" class="mobile-nav__link" data-menu-close>{{ 'header.account' | t }}</a>
+      {%- else -%}
+        <a href="{{ routes.account_login_url }}" class="mobile-nav__link" data-menu-close>{{ 'header.log_in' | t }}</a>
+      {%- endif -%}
     </nav>
     <div class="mobile-nav__footer">
       <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-block mobile-nav__buy" data-menu-close>{{ header_cta | escape }}</a>

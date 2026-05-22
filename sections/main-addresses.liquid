@@ -1,108 +1,112 @@
 <script src="{{ 'addresses.js' | asset_url }}" defer="defer"></script>
 
-<div class="page-width customer-addresses">
+<div class="page-width customer-addresses form-stack">
   <header class="customer-addresses__header">
-    <h1>Your addresses</h1>
-    <a href="{{ routes.account_url }}">Return to account details</a>
+    <h1>{{ 'customers.addresses.title' | t }}</h1>
+    <a href="{{ routes.account_url }}">{{ 'customers.addresses.return_account' | t }}</a>
   </header>
 
   <section class="customer-addresses__new">
-    <h2>Add a new address</h2>
+    <h2>{{ 'customers.addresses.new_title' | t }}</h2>
 
     {%- form 'customer_address', customer.new_address -%}
       {%- if form.errors -%}
         <div class="form__errors" role="alert">{{ form.errors | default_errors }}</div>
       {%- endif -%}
 
-      <label for="AddressFirstNameNew">First name</label>
+      <label for="AddressFirstNameNew">{{ 'customers.addresses.first_name' | t }}</label>
       <input id="AddressFirstNameNew" type="text" name="address[first_name]" autocomplete="given-name">
 
-      <label for="AddressLastNameNew">Last name</label>
+      <label for="AddressLastNameNew">{{ 'customers.addresses.last_name' | t }}</label>
       <input id="AddressLastNameNew" type="text" name="address[last_name]" autocomplete="family-name">
 
-      <label for="AddressCompanyNew">Company</label>
+      <label for="AddressCompanyNew">{{ 'customers.addresses.company' | t }}</label>
       <input id="AddressCompanyNew" type="text" name="address[company]" autocomplete="organization">
 
-      <label for="AddressStreet1New">Address</label>
+      <label for="AddressStreet1New">{{ 'customers.addresses.address1' | t }}</label>
       <input id="AddressStreet1New" type="text" name="address[address1]" autocomplete="address-line1">
 
-      <label for="AddressStreet2New">Apartment, suite, etc.</label>
+      <label for="AddressStreet2New">{{ 'customers.addresses.address2' | t }}</label>
       <input id="AddressStreet2New" type="text" name="address[address2]" autocomplete="address-line2">
 
-      <label for="AddressCityNew">City</label>
+      <label for="AddressCityNew">{{ 'customers.addresses.city' | t }}</label>
       <input id="AddressCityNew" type="text" name="address[city]" autocomplete="address-level2">
 
-      <label for="AddressCountryNew">Country</label>
+      <label for="AddressCountryNew">{{ 'customers.addresses.country' | t }}</label>
       <select id="AddressCountryNew" name="address[country]" data-default="{{ form.country }}">{{ all_country_option_tags }}</select>
 
-      <label for="AddressProvinceNew">Province</label>
+      <label for="AddressProvinceNew">{{ 'customers.addresses.province' | t }}</label>
       <select id="AddressProvinceNew" name="address[province]" data-default="{{ form.province }}"></select>
 
-      <label for="AddressZipNew">Postal/ZIP code</label>
+      <label for="AddressZipNew">{{ 'customers.addresses.zip' | t }}</label>
       <input id="AddressZipNew" type="text" name="address[zip]" autocapitalize="characters" autocomplete="postal-code">
 
-      <label for="AddressPhoneNew">Phone</label>
+      <label for="AddressPhoneNew">{{ 'customers.addresses.phone' | t }}</label>
       <input id="AddressPhoneNew" type="tel" name="address[phone]" autocomplete="tel">
 
       <label>
         <input type="hidden" name="address[default]" value="false">
         <input type="checkbox" name="address[default]" value="true">
-        Set as default address
+        {{ 'customers.addresses.default_checkbox' | t }}
       </label>
 
-      <button type="submit">Add address</button>
+      <button type="submit" class="button">{{ 'customers.addresses.add_address' | t }}</button>
     {%- endform -%}
   </section>
 
   <section class="customer-addresses__list">
-    <h2>Saved addresses</h2>
+    <h2>{{ 'customers.addresses.saved_title' | t }}</h2>
 
     {%- paginate customer.addresses by 5 -%}
       {%- if customer.addresses.size > 0 -%}
         {%- for address in customer.addresses -%}
           <article class="customer-address">
             {%- if address == customer.default_address -%}
-              <p><strong>Default</strong></p>
+              <p><strong>{{ 'customers.addresses.default_label' | t }}</strong></p>
             {%- endif -%}
 
             {{ address | format_address }}
 
-            <a href="#EditAddress{{ address.id }}">Edit</a>
-            <a href="{{ address.url }}" data-form-id="{{ address.id }}" data-confirm-message="Are you sure you wish to delete this address?">Delete</a>
+            <a href="#EditAddress{{ address.id }}">{{ 'customers.addresses.edit' | t }}</a>
+            <a
+              href="{{ address.url }}"
+              data-form-id="{{ address.id }}"
+              data-confirm-message="{{ 'customers.addresses.delete_confirm' | t | escape }}"
+            >{{ 'customers.addresses.delete' | t }}</a>
 
             <details id="EditAddress{{ address.id }}">
-              <summary>Edit address</summary>
+              <summary>{{ 'customers.addresses.edit_summary' | t }}</summary>
 
               {%- form 'customer_address', address -%}
                 {%- if form.errors -%}
                   <div class="form__errors" role="alert">{{ form.errors | default_errors }}</div>
                 {%- endif -%}
 
-                <label for="AddressFirstName{{ address.id }}">First name</label>
+                <label for="AddressFirstName{{ address.id }}">{{ 'customers.addresses.first_name' | t }}</label>
                 <input id="AddressFirstName{{ address.id }}" type="text" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name">
 
-                <label for="AddressLastName{{ address.id }}">Last name</label>
+                <label for="AddressLastName{{ address.id }}">{{ 'customers.addresses.last_name' | t }}</label>
                 <input id="AddressLastName{{ address.id }}" type="text" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name">
 
-                <label for="AddressStreet1{{ address.id }}">Address</label>
+                <label for="AddressStreet1{{ address.id }}">{{ 'customers.addresses.address1' | t }}</label>
                 <input id="AddressStreet1{{ address.id }}" type="text" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1">
 
-                <label for="AddressCity{{ address.id }}">City</label>
+                <label for="AddressCity{{ address.id }}">{{ 'customers.addresses.city' | t }}</label>
                 <input id="AddressCity{{ address.id }}" type="text" name="address[city]" value="{{ form.city }}" autocomplete="address-level2">
 
-                <label for="AddressCountry{{ address.id }}">Country</label>
+                <label for="AddressCountry{{ address.id }}">{{ 'customers.addresses.country' | t }}</label>
                 <select id="AddressCountry{{ address.id }}" name="address[country]" data-default="{{ form.country }}">{{ all_country_option_tags }}</select>
 
-                <label for="AddressZip{{ address.id }}">Postal/ZIP code</label>
+                <label for="AddressZip{{ address.id }}">{{ 'customers.addresses.zip' | t }}</label>
                 <input id="AddressZip{{ address.id }}" type="text" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code">
 
                 <label>
                   <input type="hidden" name="address[default]" value="false">
                   <input type="checkbox" name="address[default]" value="true" {% if form.default %}checked{% endif %}>
-                  Set as default address
+                  {{ 'customers.addresses.default_checkbox' | t }}
                 </label>
 
-                <button type="submit">Update address</button>
+                <button type="submit" class="button">{{ 'customers.addresses.update_address' | t }}</button>
               {%- endform -%}
             </details>
           </article>
@@ -112,7 +116,7 @@
           <nav class="pagination" role="navigation">{{ paginate | default_pagination }}</nav>
         {%- endif -%}
       {%- else -%}
-        <p>You have no saved addresses.</p>
+        <p>{{ 'customers.addresses.no_addresses' | t }}</p>
       {%- endif -%}
     {%- endpaginate -%}
   </section>

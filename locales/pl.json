@@ -51,7 +51,9 @@
     "buy_group": "Kup",
     "support": "Wsparcie",
     "setup_and_app": "Instalacja i aplikacja",
-    "cart": "Koszyk"
+    "cart": "Koszyk",
+    "log_in": "Zaloguj się",
+    "account": "Konto"
   },
   "footer": {
     "note": "Kevin symuluje obecność człowieka za pomocą światła, cienia i dźwięku. Skuteczność odstraszania może się różnić. Szczegóły znajdziesz w dokumentacji produktu.",
@@ -389,5 +391,104 @@
     "brown": "Brązowy",
     "navy": "Granatowy",
     "blue": "Niebieski"
+  },
+  "customers": {
+    "login": {
+      "title": "Zaloguj się",
+      "email": "E-mail",
+      "password": "Hasło",
+      "submit": "Zaloguj się",
+      "forgot_password": "Zapomniałeś hasła?",
+      "new_customer": "Nowy klient?",
+      "create_account": "Utwórz konto",
+      "recover_title": "Zresetuj swoje hasło",
+      "recover_lede": "Wyślemy Ci wiadomość e-mail z prośbą o zresetowanie hasła.",
+      "recover_success": "Wysłaliśmy do Ciebie e-mail z linkiem umożliwiającym aktualizację hasła.",
+      "recover_submit": "Wyślij link resetujący"
+    },
+    "register": {
+      "title": "Utwórz konto",
+      "first_name": "Imię",
+      "last_name": "Nazwisko",
+      "email": "E-mail",
+      "password": "Hasło",
+      "submit": "Utwórz konto",
+      "has_account": "Masz już konto?",
+      "log_in": "Zaloguj się"
+    },
+    "account": {
+      "title": "Moje konto",
+      "welcome": "Witamy ponownie, {{ name }}.",
+      "addresses": "Wyświetl adresy ({{ count }})",
+      "log_out": "Wyloguj się",
+      "orders_title": "Historia zamówień",
+      "no_orders": "Nie złożyłeś jeszcze żadnych zamówień.",
+      "col_order": "Zamówienie",
+      "col_date": "Data",
+      "col_payment": "Zapłata",
+      "col_fulfillment": "Spełnienie",
+      "col_total": "Całkowity"
+    },
+    "addresses": {
+      "title": "Twoje adresy",
+      "return_account": "Wróć do szczegółów konta",
+      "new_title": "Dodaj nowy adres",
+      "first_name": "Imię",
+      "last_name": "Nazwisko",
+      "company": "Firma",
+      "address1": "Adres",
+      "address2": "Mieszkanie, apartament itp.",
+      "city": "Miasto",
+      "country": "Kraj",
+      "province": "Województwo",
+      "zip": "Kod pocztowy/kod pocztowy",
+      "phone": "Telefon",
+      "default_checkbox": "Ustaw jako adres domyślny",
+      "add_address": "Dodaj adres",
+      "saved_title": "Zapisane adresy",
+      "default_label": "Domyślny",
+      "edit": "Redagować",
+      "delete": "Usuwać",
+      "edit_summary": "Edytuj adres",
+      "delete_confirm": "Czy na pewno chcesz usunąć ten adres?",
+      "update_address": "Zaktualizuj adres",
+      "no_addresses": "Nie masz zapisanych adresów."
+    },
+    "order": {
+      "title": "Zamów {{ nazwa }}",
+      "placed": "Umieszczone w dniu {{ data }}",
+      "cancelled": "Zamówienie anulowane w dniu {{ date }} — {{ powód }}",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Cena",
+      "quantity": "Ilość",
+      "total": "Całkowity",
+      "subtotal": "Suma częściowa",
+      "discount": "Zniżka — {{ tytuł }}",
+      "shipping": "Wysyłka — {{ tytuł }}",
+      "tax": "Podatek — {{ tytuł }} ({{ stawka }}%)",
+      "total_label": "Całkowity",
+      "fulfilled": "Spełniono {{ data }}",
+      "tracking": "{{ firma }} {{ numer }}",
+      "billing_title": "Adres rozliczeniowy",
+      "payment_status": "Status płatności: {{ status }}",
+      "shipping_title": "Adres wysyłki",
+      "fulfillment_status": "Stan realizacji: {{ status }}"
+    },
+    "reset_password": {
+      "title": "Zresetuj swoje hasło",
+      "lede": "Wprowadź nowe hasło do swojego konta.",
+      "password": "Nowe hasło",
+      "password_confirm": "Potwierdź nowe hasło",
+      "submit": "Zresetuj hasło"
+    },
+    "activate_account": {
+      "title": "Aktywuj konto",
+      "lede": "Utwórz hasło, aby aktywować swoje konto.",
+      "password": "Hasło",
+      "password_confirm": "Potwierdź hasło",
+      "submit": "Aktywuj konto",
+      "decline": "Odrzuć zaproszenie"
+    }
   }
 }

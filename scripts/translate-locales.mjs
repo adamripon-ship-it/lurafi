@@ -233,10 +233,10 @@ function injectLanguageLabels(flat, labels) {
   return flat;
 }
 
-async function translateLocale(localeCode, enFlat, labels, apiKey, provider, includeNl) {
+async function translateLocale(localeCode, enFlat, labels, apiKey, provider, includeNl, keyPrefix) {
   const outPath = path.join(localesDir, `${localeCode}.json`);
   const existingPath = path.join(localesDir, `${localeCode}.json`);
-  if (localeCode === 'nl' && fs.existsSync(existingPath) && !includeNl) {
+  if (localeCode === 'nl' && fs.existsSync(existingPath) && !includeNl && !keyPrefix) {
     const existing = JSON.parse(fs.readFileSync(existingPath, 'utf8'));
     const flat = injectLanguageLabels(flatten(existing), labels);
     fs.writeFileSync(outPath, JSON.stringify(unflatten(flat), null, 2) + '\n');
@@ -244,10 +244,21 @@ async function translateLocale(localeCode, enFlat, labels, apiKey, provider, inc
     return;
   }
 
-  const out = { ...enFlat };
+  const existingFlat = fs.existsSync(existingPath)
+    ? flatten(JSON.parse(fs.readFileSync(existingPath, 'utf8')))
+    : {};
+  const out = keyPrefix ? { ...existingFlat } : { ...enFlat };
   injectLanguageLabels(out, labels);
-  const keys = Object.keys(enFlat).filter((k) => !k.startsWith('language.'));
-  const stringKeys = keys.filter((k) => typeof enFlat[k] === 'string' && enFlat[k].trim());
+  const keyPrefixes = keyPrefix ? keyPrefix.split(',').map((p) => p.trim()).filter(Boolean) : null;
+  const keys = Object.keys(enFlat).filter(
+    (k) => !k.startsWith('language.') && (!keyPrefixes || keyPrefixes.some((p) => k.startsWith(p))),
+  );
+  const stringKeys = keys.filter((k) => {
+    if (typeof enFlat[k] !== 'string' || !enFlat[k].trim()) return false;
+    if (!keyPrefix) return true;
+    const cur = existingFlat[k];
+    return cur === undefined || cur === '' || cur === enFlat[k];
+  });
   const keyTexts = Object.fromEntries(stringKeys.map((k) => [k, enFlat[k]]));
 
   if (provider === 'claude') {
@@ -302,6 +313,7 @@ async function main() {
   const only = args.find((a) => a.startsWith('--locale='))?.split('=')[1]?.split(',');
   const skipExisting = args.includes('--skip-existing');
   const includeNl = args.includes('--include-nl');
+  const keyPrefix = args.find((a) => a.startsWith('--prefix='))?.split('=')[1];
   const providerArg = args.find((a) => a.startsWith('--provider='))?.split('=')[1];
   const provider =
     providerArg ||
@@ -339,7 +351,7 @@ async function main() {
       console.log(`⊘ skip ${loc.code} (exists)`);
       continue;
     }
-    await translateLocale(loc.code, enFlat, labels, apiKey, provider, includeNl);
+    await translateLocale(loc.code, enFlat, labels, apiKey, provider, includeNl, keyPrefix);
     writeSchema(loc.code);
   }
   console.log('\nDone. Run: npm run locales:sync');

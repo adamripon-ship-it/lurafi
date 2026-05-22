@@ -42,7 +42,7 @@
     "why_kevin": "Por qué Kevin",
     "product": "Producto",
     "how_it_works": "Cómo funciona",
-    "app": "App",
+    "app": "Aplicación",
     "pricing": "Precios",
     "buy": "Comprar",
     "buy_now": "Comprar ahora",
@@ -51,7 +51,9 @@
     "buy_group": "Comprar",
     "support": "Soporte",
     "setup_and_app": "Instalación y app",
-    "cart": "Carrito"
+    "cart": "Carrito",
+    "log_in": "Acceso",
+    "account": "Cuenta"
   },
   "footer": {
     "note": "Kevin simula presencia humana con luz, sombra y sonido. Los resultados de disuasión pueden variar. Consulta la documentación del producto para más detalles.",
@@ -389,5 +391,104 @@
     "brown": "Marrón",
     "navy": "Azul marino",
     "blue": "Azul"
+  },
+  "customers": {
+    "login": {
+      "title": "Acceso",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Acceso",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "new_customer": "¿Nuevo cliente?",
+      "create_account": "Crea una cuenta",
+      "recover_title": "Restablece tu contraseña",
+      "recover_lede": "Le enviaremos un correo electrónico para restablecer su contraseña.",
+      "recover_success": "Le hemos enviado un correo electrónico con un enlace para actualizar su contraseña.",
+      "recover_submit": "Enviar enlace de reinicio"
+    },
+    "register": {
+      "title": "Crear una cuenta",
+      "first_name": "Nombre de pila",
+      "last_name": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Crear una cuenta",
+      "has_account": "¿Ya tienes una cuenta?",
+      "log_in": "Acceso"
+    },
+    "account": {
+      "title": "mi cuenta",
+      "welcome": "Bienvenido de nuevo, {{ nombre }}.",
+      "addresses": "Ver direcciones ({{ count }})",
+      "log_out": "Finalizar la sesión",
+      "orders_title": "Historial de pedidos",
+      "no_orders": "Aún no has realizado ningún pedido.",
+      "col_order": "Orden",
+      "col_date": "Fecha",
+      "col_payment": "Pago",
+      "col_fulfillment": "Cumplimiento",
+      "col_total": "Total"
+    },
+    "addresses": {
+      "title": "Tus direcciones",
+      "return_account": "Volver a los detalles de la cuenta",
+      "new_title": "Agregar una nueva dirección",
+      "first_name": "Nombre de pila",
+      "last_name": "Apellido",
+      "company": "Compañía",
+      "address1": "DIRECCIÓN",
+      "address2": "Apartamento, suite, etc.",
+      "city": "Ciudad",
+      "country": "País",
+      "province": "Provincia",
+      "zip": "Código postal",
+      "phone": "Teléfono",
+      "default_checkbox": "Establecer como dirección predeterminada",
+      "add_address": "Agregar dirección",
+      "saved_title": "Direcciones guardadas",
+      "default_label": "Por defecto",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "edit_summary": "Editar dirección",
+      "delete_confirm": "¿Está seguro de que desea eliminar esta dirección?",
+      "update_address": "Actualizar dirección",
+      "no_addresses": "No tienes direcciones guardadas."
+    },
+    "order": {
+      "title": "Orden {{ nombre }}",
+      "placed": "Colocado el {{ fecha }}",
+      "cancelled": "Pedido cancelado el {{ fecha }} — {{ motivo }}",
+      "product": "Producto",
+      "sku": "SKU",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "total": "Total",
+      "subtotal": "Total parcial",
+      "discount": "Descuento: {{ título }}",
+      "shipping": "Envío: {{ título }}",
+      "tax": "Impuesto: {{ title }} ({{ rate }}%)",
+      "total_label": "Total",
+      "fulfilled": "Cumplido {{ fecha }}",
+      "tracking": "{{ empresa }} {{ número }}",
+      "billing_title": "Dirección de Envio",
+      "payment_status": "Estado de pago: {{ estado }}",
+      "shipping_title": "Dirección de envío",
+      "fulfillment_status": "Estado de cumplimiento: {{ estado }}"
+    },
+    "reset_password": {
+      "title": "Restablece tu contraseña",
+      "lede": "Ingrese una nueva contraseña para su cuenta.",
+      "password": "Nueva contraseña",
+      "password_confirm": "Confirmar nueva contraseña",
+      "submit": "Restablecer contraseña"
+    },
+    "activate_account": {
+      "title": "Activar cuenta",
+      "lede": "Crea tu contraseña para activar tu cuenta.",
+      "password": "Contraseña",
+      "password_confirm": "Confirmar Contraseña",
+      "submit": "Activar cuenta",
+      "decline": "Rechazar invitación"
+    }
   }
 }

@@ -49,9 +49,11 @@
     "menu": "Menü",
     "explore": "Entdecken",
     "buy_group": "Kaufen",
-    "support": "Support",
+    "support": "Unterstützung",
     "setup_and_app": "Einrichtung und App",
-    "cart": "Warenkorb"
+    "cart": "Warenkorb",
+    "log_in": "Einloggen",
+    "account": "Konto"
   },
   "footer": {
     "note": "Kevin simuliert menschliche Anwesenheit mit Licht, Schatten und Ton. Der tatsächliche Abschreckungseffekt kann variieren. Details finden Sie in der Produktdokumentation.",
@@ -389,5 +391,104 @@
     "brown": "Braun",
     "navy": "Marineblau",
     "blue": "Blau"
+  },
+  "customers": {
+    "login": {
+      "title": "Einloggen",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Einloggen",
+      "forgot_password": "Passwort vergessen?",
+      "new_customer": "Neuer Kunde?",
+      "create_account": "Ein Konto erstellen",
+      "recover_title": "Setzen Sie Ihr Passwort zurück",
+      "recover_lede": "Wir senden Ihnen eine E-Mail, um Ihr Passwort zurückzusetzen.",
+      "recover_success": "Wir haben Ihnen eine E-Mail mit einem Link zur Aktualisierung Ihres Passworts gesendet.",
+      "recover_submit": "Link zum Zurücksetzen senden"
+    },
+    "register": {
+      "title": "Benutzerkonto erstellen",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Benutzerkonto erstellen",
+      "has_account": "Sie haben bereits ein Konto?",
+      "log_in": "Einloggen"
+    },
+    "account": {
+      "title": "Mein Konto",
+      "welcome": "Willkommen zurück, {{ name }}.",
+      "addresses": "Adressen anzeigen ({{ count }})",
+      "log_out": "Abmelden",
+      "orders_title": "Bestellhistorie",
+      "no_orders": "Sie haben noch keine Bestellungen aufgegeben.",
+      "col_order": "Befehl",
+      "col_date": "Datum",
+      "col_payment": "Zahlung",
+      "col_fulfillment": "Erfüllung",
+      "col_total": "Gesamt"
+    },
+    "addresses": {
+      "title": "Ihre Adressen",
+      "return_account": "Zurück zu den Kontodetails",
+      "new_title": "Fügen Sie eine neue Adresse hinzu",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "company": "Unternehmen",
+      "address1": "Adresse",
+      "address2": "Apartment, Suite usw.",
+      "city": "Stadt",
+      "country": "Land",
+      "province": "Provinz",
+      "zip": "Postleitzahl",
+      "phone": "Telefon",
+      "default_checkbox": "Als Standardadresse festlegen",
+      "add_address": "Adresse hinzufügen",
+      "saved_title": "Gespeicherte Adressen",
+      "default_label": "Standard",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "edit_summary": "Adresse bearbeiten",
+      "delete_confirm": "Sind Sie sicher, dass Sie diese Adresse löschen möchten?",
+      "update_address": "Adresse aktualisieren",
+      "no_addresses": "Sie haben keine gespeicherten Adressen."
+    },
+    "order": {
+      "title": "Bestellen Sie {{ name }}",
+      "placed": "Gepostet am {{ date }}",
+      "cancelled": "Bestellung storniert am {{ date }} – {{ reason }}",
+      "product": "Produkt",
+      "sku": "Artikelnummer",
+      "price": "Preis",
+      "quantity": "Menge",
+      "total": "Gesamt",
+      "subtotal": "Zwischensumme",
+      "discount": "Rabatt – {{ title }}",
+      "shipping": "Versand – {{ title }}",
+      "tax": "Steuer – {{ title }} ({{ rate }}%)",
+      "total_label": "Gesamt",
+      "fulfilled": "Erfüllt am {{ date }}",
+      "tracking": "{{ Unternehmen }} {{ Nummer }}",
+      "billing_title": "Rechnungsadresse",
+      "payment_status": "Zahlungsstatus: {{ status }}",
+      "shipping_title": "Lieferadresse",
+      "fulfillment_status": "Erfüllungsstatus: {{ status }}"
+    },
+    "reset_password": {
+      "title": "Setzen Sie Ihr Passwort zurück",
+      "lede": "Geben Sie ein neues Passwort für Ihr Konto ein.",
+      "password": "Neues Passwort",
+      "password_confirm": "Bestätigen Sie das neue Passwort",
+      "submit": "Passwort zurücksetzen"
+    },
+    "activate_account": {
+      "title": "Konto aktivieren",
+      "lede": "Erstellen Sie Ihr Passwort, um Ihr Konto zu aktivieren.",
+      "password": "Passwort",
+      "password_confirm": "Passwort bestätigen",
+      "submit": "Konto aktivieren",
+      "decline": "Einladung ablehnen"
+    }
   }
 }

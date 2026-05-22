@@ -49,9 +49,11 @@
     "menu": "Menu",
     "explore": "Udforsk",
     "buy_group": "Køb",
-    "support": "Support",
+    "support": "Støtte",
     "setup_and_app": "Opsætning og app",
-    "cart": "Kurv"
+    "cart": "Kurv",
+    "log_in": "Log ind",
+    "account": "Konto"
   },
   "footer": {
     "note": "Kevin simulerer menneskelig tilstedeværelse med lys, skygge og lyd. Faktisk afskrækkelse kan variere. Se produktdokumentation for detaljer.",
@@ -389,5 +391,104 @@
     "brown": "Brun",
     "navy": "Marineblå",
     "blue": "Blå"
+  },
+  "customers": {
+    "login": {
+      "title": "Log ind",
+      "email": "E-mail",
+      "password": "Adgangskode",
+      "submit": "Log ind",
+      "forgot_password": "Har du glemt din adgangskode?",
+      "new_customer": "Ny kunde?",
+      "create_account": "Opret en konto",
+      "recover_title": "Nulstil din adgangskode",
+      "recover_lede": "Vi sender dig en e-mail for at nulstille din adgangskode.",
+      "recover_success": "Vi har sendt dig en e-mail med et link til at opdatere din adgangskode.",
+      "recover_submit": "Send nulstillingslink"
+    },
+    "register": {
+      "title": "Opret konto",
+      "first_name": "Fornavn",
+      "last_name": "Efternavn",
+      "email": "E-mail",
+      "password": "Adgangskode",
+      "submit": "Opret konto",
+      "has_account": "Har du allerede en konto?",
+      "log_in": "Log ind"
+    },
+    "account": {
+      "title": "Min konto",
+      "welcome": "Velkommen tilbage, {{ navn }}.",
+      "addresses": "Se adresser ({{ count }})",
+      "log_out": "Log ud",
+      "orders_title": "Ordrehistorik",
+      "no_orders": "Du har ikke afgivet nogen ordre endnu.",
+      "col_order": "Bestille",
+      "col_date": "Dato",
+      "col_payment": "Betaling",
+      "col_fulfillment": "Opfyldelse",
+      "col_total": "Total"
+    },
+    "addresses": {
+      "title": "Dine adresser",
+      "return_account": "Vend tilbage til kontooplysninger",
+      "new_title": "Tilføj en ny adresse",
+      "first_name": "Fornavn",
+      "last_name": "Efternavn",
+      "company": "Selskab",
+      "address1": "Adresse",
+      "address2": "Lejlighed, suite mv.",
+      "city": "By",
+      "country": "Land",
+      "province": "Provins",
+      "zip": "Postnummer",
+      "phone": "Telefon",
+      "default_checkbox": "Indstil som standardadresse",
+      "add_address": "Tilføj adresse",
+      "saved_title": "Gemte adresser",
+      "default_label": "Misligholdelse",
+      "edit": "Redigere",
+      "delete": "Slet",
+      "edit_summary": "Rediger adresse",
+      "delete_confirm": "Er du sikker på, at du vil slette denne adresse?",
+      "update_address": "Opdater adresse",
+      "no_addresses": "Du har ingen gemte adresser."
+    },
+    "order": {
+      "title": "Bestil {{ navn }}",
+      "placed": "Placeret den {{ dato }}",
+      "cancelled": "Ordren blev annulleret den {{ date }} — {{ årsag }}",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Pris",
+      "quantity": "Mængde",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "discount": "Rabat – {{ title }}",
+      "shipping": "Forsendelse — {{ title }}",
+      "tax": "Skat — {{ title }} ({{ rate }}%)",
+      "total_label": "Total",
+      "fulfilled": "Opfyldt {{ dato }}",
+      "tracking": "{{ virksomhed }} {{ nummer }}",
+      "billing_title": "Faktureringsadresse",
+      "payment_status": "Betalingsstatus: {{ status }}",
+      "shipping_title": "Leveringsadresse",
+      "fulfillment_status": "Opfyldelsesstatus: {{ status }}"
+    },
+    "reset_password": {
+      "title": "Nulstil din adgangskode",
+      "lede": "Indtast en ny adgangskode til din konto.",
+      "password": "Ny adgangskode",
+      "password_confirm": "Bekræft ny adgangskode",
+      "submit": "Nulstil adgangskode"
+    },
+    "activate_account": {
+      "title": "Aktiver konto",
+      "lede": "Opret din adgangskode for at aktivere din konto.",
+      "password": "Adgangskode",
+      "password_confirm": "Bekræft adgangskode",
+      "submit": "Aktiver konto",
+      "decline": "Afslå invitation"
+    }
   }
 }

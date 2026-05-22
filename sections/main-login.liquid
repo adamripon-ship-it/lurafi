@@ -1,6 +1,6 @@
 <div class="page-width form-stack">
   <section id="CustomerLogin">
-    <h1>Log in</h1>
+    <h1>{{ 'customers.login.title' | t }}</h1>
 
     {%- form 'customer_login', novalidate: 'novalidate' -%}
       {%- if form.errors -%}
@@ -9,7 +9,7 @@
         </div>
       {%- endif -%}
 
-      <label for="CustomerEmail">Email</label>
+      <label for="CustomerEmail">{{ 'customers.login.email' | t }}</label>
       <input
         id="CustomerEmail"
         type="email"
@@ -20,7 +20,7 @@
         required
       >
 
-      <label for="CustomerPassword">Password</label>
+      <label for="CustomerPassword">{{ 'customers.login.password' | t }}</label>
       <input
         id="CustomerPassword"
         type="password"
@@ -29,31 +29,32 @@
         required
       >
 
-      <button type="submit" class="button">Log in</button>
+      <button type="submit" class="button">{{ 'customers.login.submit' | t }}</button>
 
       <p>
-        <a href="#RecoverPassword">Forgot your password?</a>
+        <a href="#RecoverPassword">{{ 'customers.login.forgot_password' | t }}</a>
       </p>
       <p>
-        New customer? <a href="{{ routes.account_register_url }}">Create an account</a>
+        {{ 'customers.login.new_customer' | t }}
+        <a href="{{ routes.account_register_url }}">{{ 'customers.login.create_account' | t }}</a>
       </p>
     {%- endform -%}
   </section>
 
   <section id="RecoverPassword" class="customer-login__recover">
-    <h2>Reset your password</h2>
-    <p>We will send you an email to reset your password.</p>
+    <h2>{{ 'customers.login.recover_title' | t }}</h2>
+    <p>{{ 'customers.login.recover_lede' | t }}</p>
 
     {%- form 'recover_customer_password' -%}
       {%- if form.posted_successfully? -%}
-        <p>We&rsquo;ve sent you an email with a link to update your password.</p>
+        <p>{{ 'customers.login.recover_success' | t }}</p>
       {%- endif -%}
 
       {%- if form.errors -%}
         <div class="form__errors" role="alert">{{ form.errors | default_errors }}</div>
       {%- endif -%}
 
-      <label for="RecoverEmail">Email</label>
+      <label for="RecoverEmail">{{ 'customers.login.email' | t }}</label>
       <input
         id="RecoverEmail"
         type="email"
@@ -62,7 +63,7 @@
         required
       >
 
-      <button type="submit">Send reset link</button>
+      <button type="submit" class="button">{{ 'customers.login.recover_submit' | t }}</button>
     {%- endform -%}
   </section>
 </div>

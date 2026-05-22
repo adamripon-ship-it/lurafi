@@ -20,13 +20,15 @@ const expectations = {
     hero: /Why Kevin|Make Home|Buy Kevin/i,
     configure: /Configure|Choose your Kevin|Continue to checkout/i,
     cart: /bag|Checkout|Continue shopping/i,
-    notEnglishLeak: null,
+    login: /Log in|Create an account|Forgot your password/i,
+    leak: null,
   },
   nl: {
     hero: /Waarom Kevin|Laat je huis|Koop Kevin/i,
     configure: /Configureren|Kies je Kevin|Doorgaan naar afrekenen/i,
     cart: /winkelwagen|Afrekenen|Verder winkelen/i,
-    leak: /Why Kevin|Your bag|Continue shopping/i,
+    login: /Inloggen|Account aanmaken|Wachtwoord vergeten/i,
+    leak: /Why Kevin|Your bag|Continue shopping|Log in|Create an account/i,
   },
   fr: {
     hero: /Kevin|maison|acheter|Pourquoi/i,
@@ -184,6 +186,19 @@ async function testLocale(browser, code) {
       path: join(process.cwd(), 'scripts', 'qa-screenshots', 'i18n', `${code}-cart-drawer.png`),
     });
   }
+
+  const loginUrl = `${BASE}${prefix}/account/login${cacheBust}`;
+  const loginRes = await page.goto(loginUrl, { waitUntil: 'networkidle', timeout: 60000 });
+  if (!loginRes || loginRes.status() >= 400) fail(`${label} login HTTP`, String(loginRes?.status()));
+  else pass(`${label} login page loads (${loginRes.status()})`);
+
+  const loginText = await getVisibleText(page);
+  if (exp.login?.test(loginText) && !/Translation missing/i.test(loginText)) pass(`${code} login copy`);
+  else fail(`${code} login missing expected copy`, loginText.slice(0, 120));
+  if (exp.leak?.test(loginText)) fail(`${code} login English leakage`, loginText.slice(0, 80));
+  await page.screenshot({
+    path: join(process.cwd(), 'scripts', 'qa-screenshots', 'i18n', `${code}-login.png`),
+  });
 
   const critical = consoleErrors.filter(
     (e) =>

@@ -40,6 +40,11 @@
         <ul>
           <li><a href="{{ configure_url }}">{{ 'footer.configure' | t }}</a></li>
           <li><a href="{{ routes.cart_url }}">{{ 'footer.cart' | t }}</a></li>
+          {%- if customer -%}
+            <li><a href="{{ routes.account_url }}">{{ 'header.account' | t }}</a></li>
+          {%- else -%}
+            <li><a href="{{ routes.account_login_url }}">{{ 'header.log_in' | t }}</a></li>
+          {%- endif -%}
         </ul>
       </div>
     </div>

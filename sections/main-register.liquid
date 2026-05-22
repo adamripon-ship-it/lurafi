@@ -1,5 +1,5 @@
 <div class="page-width form-stack">
-  <h1>Create account</h1>
+  <h1>{{ 'customers.register.title' | t }}</h1>
 
   {%- form 'create_customer', novalidate: 'novalidate' -%}
     {%- if form.errors -%}
@@ -8,7 +8,7 @@
       </div>
     {%- endif -%}
 
-    <label for="FirstName">First name</label>
+    <label for="FirstName">{{ 'customers.register.first_name' | t }}</label>
     <input
       id="FirstName"
       type="text"
@@ -17,7 +17,7 @@
       value="{% if form.first_name %}{{ form.first_name }}{% endif %}"
     >
 
-    <label for="LastName">Last name</label>
+    <label for="LastName">{{ 'customers.register.last_name' | t }}</label>
     <input
       id="LastName"
       type="text"
@@ -26,7 +26,7 @@
       value="{% if form.last_name %}{{ form.last_name }}{% endif %}"
     >
 
-    <label for="Email">Email</label>
+    <label for="Email">{{ 'customers.register.email' | t }}</label>
     <input
       id="Email"
       type="email"
@@ -38,7 +38,7 @@
       required
     >
 
-    <label for="CreatePassword">Password</label>
+    <label for="CreatePassword">{{ 'customers.register.password' | t }}</label>
     <input
       id="CreatePassword"
       type="password"
@@ -47,10 +47,11 @@
       required
     >
 
-    <button type="submit" class="button">Create account</button>
+    <button type="submit" class="button">{{ 'customers.register.submit' | t }}</button>
 
     <p>
-      Already have an account? <a href="{{ routes.account_login_url }}">Log in</a>
+      {{ 'customers.register.has_account' | t }}
+      <a href="{{ routes.account_login_url }}">{{ 'customers.register.log_in' | t }}</a>
     </p>
   {%- endform -%}
 </div>

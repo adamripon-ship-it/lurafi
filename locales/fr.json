@@ -42,7 +42,7 @@
     "why_kevin": "Pourquoi Kevin",
     "product": "Produit",
     "how_it_works": "Comment ça marche",
-    "app": "App",
+    "app": "Application",
     "pricing": "Tarifs",
     "buy": "Acheter",
     "buy_now": "Acheter",
@@ -51,7 +51,9 @@
     "buy_group": "Acheter",
     "support": "Assistance",
     "setup_and_app": "Installation et app",
-    "cart": "Panier"
+    "cart": "Panier",
+    "log_in": "Se connecter",
+    "account": "Compte"
   },
   "footer": {
     "note": "Kevin simule une présence humaine grâce à la lumière, l'ombre et le son. L'effet dissuasif réel peut varier. Consultez la documentation produit pour plus de détails.",
@@ -389,5 +391,104 @@
     "brown": "Marron",
     "navy": "Bleu marine",
     "blue": "Bleu"
+  },
+  "customers": {
+    "login": {
+      "title": "Se connecter",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "forgot_password": "Vous avez oublié votre mot de passe ?",
+      "new_customer": "Nouveau client ?",
+      "create_account": "Créer un compte",
+      "recover_title": "Réinitialisez votre mot de passe",
+      "recover_lede": "Nous vous enverrons un email pour réinitialiser votre mot de passe.",
+      "recover_success": "Nous vous avons envoyé un e-mail avec un lien pour mettre à jour votre mot de passe.",
+      "recover_submit": "Envoyer le lien de réinitialisation"
+    },
+    "register": {
+      "title": "Créer un compte",
+      "first_name": "Prénom",
+      "last_name": "Nom de famille",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Créer un compte",
+      "has_account": "Vous avez déjà un compte ?",
+      "log_in": "Se connecter"
+    },
+    "account": {
+      "title": "Mon compte",
+      "welcome": "Bon retour, {{ name }}.",
+      "addresses": "Afficher les adresses ({{ count }})",
+      "log_out": "Se déconnecter",
+      "orders_title": "Historique des commandes",
+      "no_orders": "Vous n'avez pas encore passé de commande.",
+      "col_order": "Commande",
+      "col_date": "Date",
+      "col_payment": "Paiement",
+      "col_fulfillment": "Accomplissement",
+      "col_total": "Total"
+    },
+    "addresses": {
+      "title": "Vos adresses",
+      "return_account": "Retour aux détails du compte",
+      "new_title": "Ajouter une nouvelle adresse",
+      "first_name": "Prénom",
+      "last_name": "Nom de famille",
+      "company": "Entreprise",
+      "address1": "Adresse",
+      "address2": "Appartement, suite, etc.",
+      "city": "Ville",
+      "country": "Pays",
+      "province": "Province",
+      "zip": "Code postal/ZIP",
+      "phone": "Téléphone",
+      "default_checkbox": "Définir comme adresse par défaut",
+      "add_address": "Ajouter une adresse",
+      "saved_title": "Adresses enregistrées",
+      "default_label": "Défaut",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "edit_summary": "Modifier l'adresse",
+      "delete_confirm": "Êtes-vous sûr de vouloir supprimer cette adresse ?",
+      "update_address": "Mettre à jour l'adresse",
+      "no_addresses": "Vous n'avez aucune adresse enregistrée."
+    },
+    "order": {
+      "title": "Commande {{ nom }}",
+      "placed": "Placé le {{ date }}",
+      "cancelled": "Commande annulée le {{ date }} — {{ Reason }}",
+      "product": "Produit",
+      "sku": "UGS",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total": "Total",
+      "subtotal": "Total",
+      "discount": "Remise — {{ titre }}",
+      "shipping": "Expédition — {{ titre }}",
+      "tax": "Taxe – {{ title }} ({{ rate }} %)",
+      "total_label": "Total",
+      "fulfilled": "Réalisé le {{ date }}",
+      "tracking": "{{ entreprise }} {{ numéro }}",
+      "billing_title": "Adresse de facturation",
+      "payment_status": "Statut du paiement : {{ status }}",
+      "shipping_title": "Adresse de livraison",
+      "fulfillment_status": "Statut de traitement : {{ status }}"
+    },
+    "reset_password": {
+      "title": "Réinitialisez votre mot de passe",
+      "lede": "Entrez un nouveau mot de passe pour votre compte.",
+      "password": "Nouveau mot de passe",
+      "password_confirm": "Confirmer le nouveau mot de passe",
+      "submit": "Réinitialiser le mot de passe"
+    },
+    "activate_account": {
+      "title": "Activer le compte",
+      "lede": "Créez votre mot de passe pour activer votre compte.",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmez le mot de passe",
+      "submit": "Activer le compte",
+      "decline": "Refuser l'invitation"
+    }
   }
 }

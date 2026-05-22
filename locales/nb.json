@@ -51,7 +51,9 @@
     "buy_group": "Kjøp",
     "support": "Kundestøtte",
     "setup_and_app": "Oppsett og app",
-    "cart": "Handlekurv"
+    "cart": "Handlekurv",
+    "log_in": "Logg inn",
+    "account": "Konto"
   },
   "footer": {
     "note": "Kevin simulerer menneskelig tilstedeværelse med lys, skygge og lyd. Faktiske avskrekkingseffekter kan variere. Se produktdokumentasjonen for detaljer.",
@@ -389,5 +391,104 @@
     "brown": "Brun",
     "navy": "Marineblå",
     "blue": "Blå"
+  },
+  "customers": {
+    "login": {
+      "title": "Logg inn",
+      "email": "E-post",
+      "password": "Passord",
+      "submit": "Logg inn",
+      "forgot_password": "Glemt passordet ditt?",
+      "new_customer": "Ny kunde?",
+      "create_account": "Opprett en konto",
+      "recover_title": "Tilbakestill passordet ditt",
+      "recover_lede": "Vi sender deg en e-post for å tilbakestille passordet ditt.",
+      "recover_success": "Vi har sendt deg en e-post med en lenke for å oppdatere passordet ditt.",
+      "recover_submit": "Send tilbakestillingslink"
+    },
+    "register": {
+      "title": "Opprett konto",
+      "first_name": "Fornavn",
+      "last_name": "Etternavn",
+      "email": "E-post",
+      "password": "Passord",
+      "submit": "Opprett konto",
+      "has_account": "Har du allerede en konto?",
+      "log_in": "Logg inn"
+    },
+    "account": {
+      "title": "Min konto",
+      "welcome": "Velkommen tilbake, {{ name }}.",
+      "addresses": "Se adresser ({{ count }})",
+      "log_out": "Logg ut",
+      "orders_title": "Bestillingshistorikk",
+      "no_orders": "Du har ikke lagt inn noen bestillinger ennå.",
+      "col_order": "Bestille",
+      "col_date": "Dato",
+      "col_payment": "Betaling",
+      "col_fulfillment": "Oppfyllelse",
+      "col_total": "Total"
+    },
+    "addresses": {
+      "title": "Dine adresser",
+      "return_account": "Gå tilbake til kontodetaljer",
+      "new_title": "Legg til en ny adresse",
+      "first_name": "Fornavn",
+      "last_name": "Etternavn",
+      "company": "Bedrift",
+      "address1": "Adresse",
+      "address2": "Leilighet, suite osv.",
+      "city": "By",
+      "country": "Land",
+      "province": "Provins",
+      "zip": "Postnummer",
+      "phone": "Telefon",
+      "default_checkbox": "Angi som standardadresse",
+      "add_address": "Legg til adresse",
+      "saved_title": "Lagrede adresser",
+      "default_label": "Misligholde",
+      "edit": "Redigere",
+      "delete": "Slett",
+      "edit_summary": "Rediger adresse",
+      "delete_confirm": "Er du sikker på at du vil slette denne adressen?",
+      "update_address": "Oppdater adressen",
+      "no_addresses": "Du har ingen lagrede adresser."
+    },
+    "order": {
+      "title": "Bestill {{ navn }}",
+      "placed": "Plassert {{ date }}",
+      "cancelled": "Bestillingen kansellert {{ date }} — {{ grunn }}",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Pris",
+      "quantity": "Mengde",
+      "total": "Total",
+      "subtotal": "Delsum",
+      "discount": "Rabatt – {{ title }}",
+      "shipping": "Frakt – {{ title }}",
+      "tax": "Skatt – {{ title }} ({{ rate }}%)",
+      "total_label": "Total",
+      "fulfilled": "Oppfylt {{ dato }}",
+      "tracking": "{{ selskap }} {{ nummer }}",
+      "billing_title": "Faktureringsadresse",
+      "payment_status": "Betalingsstatus: {{ status }}",
+      "shipping_title": "Leveringsadresse",
+      "fulfillment_status": "Oppfyllelsesstatus: {{ status }}"
+    },
+    "reset_password": {
+      "title": "Tilbakestill passordet ditt",
+      "lede": "Skriv inn et nytt passord for kontoen din.",
+      "password": "Nytt passord",
+      "password_confirm": "Bekreft nytt passord",
+      "submit": "Tilbakestill passord"
+    },
+    "activate_account": {
+      "title": "Aktiver konto",
+      "lede": "Opprett passordet ditt for å aktivere kontoen din.",
+      "password": "Passord",
+      "password_confirm": "Bekreft passord",
+      "submit": "Aktiver konto",
+      "decline": "Avslå invitasjonen"
+    }
   }
 }

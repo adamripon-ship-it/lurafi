@@ -49,9 +49,11 @@
     "menu": "Meny",
     "explore": "Utforska",
     "buy_group": "Köp",
-    "support": "Support",
+    "support": "Stöd",
     "setup_and_app": "Installation och app",
-    "cart": "Varukorg"
+    "cart": "Varukorg",
+    "log_in": "Logga in",
+    "account": "Konto"
   },
   "footer": {
     "note": "Kevin simulerar mänsklig närvaro med ljus, skugga och ljud. Faktisk avskräckning kan variera. Se produktdokumentationen för detaljer.",
@@ -389,5 +391,104 @@
     "brown": "Brun",
     "navy": "Marinblå",
     "blue": "Blå"
+  },
+  "customers": {
+    "login": {
+      "title": "Logga in",
+      "email": "E-post",
+      "password": "Lösenord",
+      "submit": "Logga in",
+      "forgot_password": "Glömt ditt lösenord?",
+      "new_customer": "Ny kund?",
+      "create_account": "Skapa ett konto",
+      "recover_title": "Återställ ditt lösenord",
+      "recover_lede": "Vi kommer att skicka ett e-postmeddelande för att återställa ditt lösenord.",
+      "recover_success": "Vi har skickat ett e-postmeddelande till dig med en länk för att uppdatera ditt lösenord.",
+      "recover_submit": "Skicka återställningslänk"
+    },
+    "register": {
+      "title": "Skapa konto",
+      "first_name": "Förnamn",
+      "last_name": "Efternamn",
+      "email": "E-post",
+      "password": "Lösenord",
+      "submit": "Skapa konto",
+      "has_account": "Har du redan ett konto?",
+      "log_in": "Logga in"
+    },
+    "account": {
+      "title": "Mitt konto",
+      "welcome": "Välkommen tillbaka, {{ namn }}.",
+      "addresses": "Visa adresser ({{ count }})",
+      "log_out": "Logga ut",
+      "orders_title": "Beställningshistorik",
+      "no_orders": "Du har inte lagt några beställningar än.",
+      "col_order": "Beställa",
+      "col_date": "Datum",
+      "col_payment": "Betalning",
+      "col_fulfillment": "Uppfyllelse",
+      "col_total": "Total"
+    },
+    "addresses": {
+      "title": "Dina adresser",
+      "return_account": "Återgå till kontouppgifter",
+      "new_title": "Lägg till en ny adress",
+      "first_name": "Förnamn",
+      "last_name": "Efternamn",
+      "company": "Företag",
+      "address1": "Adress",
+      "address2": "Lägenhet, svit osv.",
+      "city": "Stad",
+      "country": "Land",
+      "province": "Provins",
+      "zip": "Postnummer",
+      "phone": "Telefon",
+      "default_checkbox": "Ställ in som standardadress",
+      "add_address": "Lägg till adress",
+      "saved_title": "Sparade adresser",
+      "default_label": "Standard",
+      "edit": "Redigera",
+      "delete": "Radera",
+      "edit_summary": "Redigera adress",
+      "delete_confirm": "Är du säker på att du vill ta bort den här adressen?",
+      "update_address": "Uppdatera adress",
+      "no_addresses": "Du har inga sparade adresser."
+    },
+    "order": {
+      "title": "Beställ {{ namn }}",
+      "placed": "Placerad {{ date }}",
+      "cancelled": "Beställning avbröts den {{ date }} — {{ orsak }}",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Pris",
+      "quantity": "Kvantitet",
+      "total": "Total",
+      "subtotal": "Delsumma",
+      "discount": "Rabatt – {{ title }}",
+      "shipping": "Frakt – {{ title }}",
+      "tax": "Skatt — {{ title }} ({{ rate }}%)",
+      "total_label": "Total",
+      "fulfilled": "Uppfyllt {{ date }}",
+      "tracking": "{{ företag }} {{ nummer }}",
+      "billing_title": "Faktureringsadress",
+      "payment_status": "Betalningsstatus: {{ status }}",
+      "shipping_title": "Leveransadress",
+      "fulfillment_status": "Uppfyllelsestatus: {{ status }}"
+    },
+    "reset_password": {
+      "title": "Återställ ditt lösenord",
+      "lede": "Ange ett nytt lösenord för ditt konto.",
+      "password": "Nytt lösenord",
+      "password_confirm": "Bekräfta nytt lösenord",
+      "submit": "Återställ lösenord"
+    },
+    "activate_account": {
+      "title": "Aktivera konto",
+      "lede": "Skapa ditt lösenord för att aktivera ditt konto.",
+      "password": "Lösenord",
+      "password_confirm": "Bekräfta lösenord",
+      "submit": "Aktivera konto",
+      "decline": "Avvisa inbjudan"
+    }
   }
 }

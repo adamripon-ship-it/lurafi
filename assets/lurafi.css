@@ -495,6 +495,21 @@ select:focus-visible,
   gap: var(--header-util-gap);
   flex-shrink: 0;
 }
+.site-header__account-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.92;
+}
+.site-header__account-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+@media (max-width: 1023px) {
+  .site-header__account-link { display: none; }
+}
 
 /* Very small phones: Buy CTA lives in drawer only */
 @media (max-width: 479px) {
@@ -2502,4 +2517,179 @@ html.no-js .section-apple .reveal-item {
 
 .page-404 {
   padding: clamp(80px, 14vw, 140px) 0;
+}
+
+/* ---- Customer account ---- */
+.account,
+.customer-order,
+.customer-addresses,
+.customer-login__recover {
+  padding-top: calc(var(--header-offset) + 40px);
+  padding-bottom: var(--pad-page-bottom);
+}
+.form-stack {
+  max-width: 420px;
+  margin-inline: auto;
+}
+.form-stack label,
+.customer-addresses label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--apple-text);
+}
+.form-stack input,
+.form-stack select,
+.form-stack textarea,
+.customer-addresses input,
+.customer-addresses select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--apple-border);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font: inherit;
+  background: var(--apple-bg);
+  color: var(--apple-text);
+}
+.form-stack input:focus,
+.form-stack select:focus,
+.customer-addresses input:focus,
+.customer-addresses select:focus {
+  outline: 2px solid var(--apple-blue);
+  outline-offset: 1px;
+}
+.form-stack .button,
+.customer-addresses .button {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+}
+.form-stack .button--secondary {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid var(--apple-border);
+  color: var(--apple-text);
+}
+.form__errors {
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: rgba(255, 59, 48, 0.08);
+  color: #c41e14;
+  font-size: 14px;
+}
+.form__errors ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.account__header,
+.customer-addresses__header,
+.customer-order__header {
+  margin-bottom: 32px;
+}
+.account__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-top: 12px;
+  font-size: 15px;
+}
+.account__nav a {
+  color: var(--apple-blue);
+  text-decoration: none;
+}
+.account__nav a:hover { text-decoration: underline; }
+.customer-addresses__header a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--apple-blue);
+}
+.customer-addresses__new,
+.customer-addresses__list {
+  margin-top: 40px;
+}
+.customer-address {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--apple-border);
+}
+.customer-address:last-child { border-bottom: none; }
+.customer-order__addresses {
+  display: grid;
+  gap: 24px;
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .customer-order__addresses { grid-template-columns: 1fr 1fr; }
+}
+.orders,
+.order-items {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.orders th,
+.orders td,
+.order-items th,
+.order-items td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--apple-border);
+}
+.orders thead th,
+.order-items thead th {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--apple-text-muted);
+}
+.orders tbody tr:hover,
+.order-items tbody tr:hover {
+  background: var(--apple-bg-gray);
+}
+.pagination {
+  margin-top: 24px;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .orders thead,
+  .order-items thead {
+    display: none;
+  }
+  .orders tbody tr,
+  .order-items tbody tr,
+  .order-items tfoot tr {
+    display: block;
+    margin-bottom: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--apple-border);
+  }
+  .orders td,
+  .order-items td {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border: none;
+  }
+  .orders td::before,
+  .order-items td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--apple-text-muted);
+    flex-shrink: 0;
+  }
+  .order-items tfoot td[colspan] {
+    display: none;
+  }
+  .order-items tfoot td:last-child {
+    display: flex;
+    width: 100%;
+  }
+  .order-items tfoot td:last-child::before {
+    content: attr(data-label);
+  }
 }

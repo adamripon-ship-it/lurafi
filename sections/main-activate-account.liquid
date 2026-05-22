@@ -1,6 +1,6 @@
-<div class="page-width customer-activate-account">
-  <h1>Activate account</h1>
-  <p>Create your password to activate your account.</p>
+<div class="page-width form-stack customer-activate-account">
+  <h1>{{ 'customers.activate_account.title' | t }}</h1>
+  <p>{{ 'customers.activate_account.lede' | t }}</p>
 
   {%- form 'activate_customer_password' -%}
     {%- if form.errors -%}
@@ -9,7 +9,7 @@
       </div>
     {%- endif -%}
 
-    <label for="ActivatePassword">Password</label>
+    <label for="ActivatePassword">{{ 'customers.activate_account.password' | t }}</label>
     <input
       id="ActivatePassword"
       type="password"
@@ -18,7 +18,7 @@
       required
     >
 
-    <label for="ActivatePasswordConfirmation">Confirm password</label>
+    <label for="ActivatePasswordConfirmation">{{ 'customers.activate_account.password_confirm' | t }}</label>
     <input
       id="ActivatePasswordConfirmation"
       type="password"
@@ -27,8 +27,8 @@
       required
     >
 
-    <button type="submit" name="commit">Activate account</button>
-    <button type="submit" name="decline">Decline invitation</button>
+    <button type="submit" name="commit" class="button">{{ 'customers.activate_account.submit' | t }}</button>
+    <button type="submit" name="decline" class="button button--secondary">{{ 'customers.activate_account.decline' | t }}</button>
   {%- endform -%}
 </div>
 

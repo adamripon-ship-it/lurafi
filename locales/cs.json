@@ -51,7 +51,9 @@
     "buy_group": "Koupit",
     "support": "Podpora",
     "setup_and_app": "Nastavení a aplikace",
-    "cart": "Košík"
+    "cart": "Košík",
+    "log_in": "Přihlaste se",
+    "account": "Účet"
   },
   "footer": {
     "note": "Kevin simuluje lidskou přítomnost pomocí světla, stínu a zvuku. Skutečný odstrašující účinek se může lišit. Podrobnosti najdete v dokumentaci produktu.",
@@ -389,5 +391,104 @@
     "brown": "Hnědá",
     "navy": "Námořnická modř",
     "blue": "Modrá"
+  },
+  "customers": {
+    "login": {
+      "title": "Přihlaste se",
+      "email": "E-mail",
+      "password": "Heslo",
+      "submit": "Přihlaste se",
+      "forgot_password": "Zapomněli jste heslo?",
+      "new_customer": "Nový zákazník?",
+      "create_account": "Vytvořte si účet",
+      "recover_title": "Obnovte heslo",
+      "recover_lede": "Zašleme vám e-mail pro obnovení hesla.",
+      "recover_success": "Poslali jsme vám e-mail s odkazem na aktualizaci hesla.",
+      "recover_submit": "Odeslat odkaz na reset"
+    },
+    "register": {
+      "title": "Vytvořit účet",
+      "first_name": "Křestní jméno",
+      "last_name": "Příjmení",
+      "email": "E-mail",
+      "password": "Heslo",
+      "submit": "Vytvořit účet",
+      "has_account": "Už máte účet?",
+      "log_in": "Přihlaste se"
+    },
+    "account": {
+      "title": "Můj účet",
+      "welcome": "Vítejte zpět, {{ jméno }}.",
+      "addresses": "Zobrazit adresy ({{ count }})",
+      "log_out": "Odhlaste se",
+      "orders_title": "Historie objednávek",
+      "no_orders": "Zatím jste nezadali žádné objednávky.",
+      "col_order": "Objednávka",
+      "col_date": "Datum",
+      "col_payment": "Platba",
+      "col_fulfillment": "Splnění",
+      "col_total": "Celkový"
+    },
+    "addresses": {
+      "title": "Vaše adresy",
+      "return_account": "Vraťte se k podrobnostem účtu",
+      "new_title": "Přidejte novou adresu",
+      "first_name": "Křestní jméno",
+      "last_name": "Příjmení",
+      "company": "Společnost",
+      "address1": "Adresa",
+      "address2": "Byt, apartmá atd.",
+      "city": "Město",
+      "country": "Země",
+      "province": "Provincie",
+      "zip": "Poštovní/PSČ",
+      "phone": "Telefon",
+      "default_checkbox": "Nastavit jako výchozí adresu",
+      "add_address": "Přidat adresu",
+      "saved_title": "Uložené adresy",
+      "default_label": "Výchozí",
+      "edit": "Upravit",
+      "delete": "Vymazat",
+      "edit_summary": "Upravit adresu",
+      "delete_confirm": "Opravdu chcete smazat tuto adresu?",
+      "update_address": "Aktualizujte adresu",
+      "no_addresses": "Nemáte žádné uložené adresy."
+    },
+    "order": {
+      "title": "Objednávka {{ jméno }}",
+      "placed": "Umístěno {{ datum }}",
+      "cancelled": "Objednávka zrušena dne {{ datum }} — {{ důvod }}",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Cena",
+      "quantity": "Množství",
+      "total": "Celkový",
+      "subtotal": "Mezisoučet",
+      "discount": "Sleva — {{ title }}",
+      "shipping": "Doprava – {{ title }}",
+      "tax": "Daň – {{ title }} ({{ sazba }} %)",
+      "total_label": "Celkový",
+      "fulfilled": "Splněno {{ datum }}",
+      "tracking": "{{ společnost }} {{ číslo }}",
+      "billing_title": "Fakturační adresa",
+      "payment_status": "Stav platby: {{ status }}",
+      "shipping_title": "Dodací adresa",
+      "fulfillment_status": "Stav plnění: {{ status }}"
+    },
+    "reset_password": {
+      "title": "Obnovte heslo",
+      "lede": "Zadejte nové heslo ke svému účtu.",
+      "password": "Nové heslo",
+      "password_confirm": "Potvrďte nové heslo",
+      "submit": "Obnovit heslo"
+    },
+    "activate_account": {
+      "title": "Aktivovat účet",
+      "lede": "Pro aktivaci účtu si vytvořte heslo.",
+      "password": "Heslo",
+      "password_confirm": "Potvrďte heslo",
+      "submit": "Aktivovat účet",
+      "decline": "Odmítnout pozvání"
+    }
   }
 }

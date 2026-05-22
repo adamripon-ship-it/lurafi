@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getLanguageLabels } from './i18n/registry.mjs';
+import { customersEn, customersNl } from './customers-locale.mjs';
 
 const root = path.join(import.meta.dirname, '..');
 const languageLabels = getLanguageLabels();
@@ -45,7 +46,9 @@ const en = {
     buy_group: 'Buy',
     support: 'Support',
     setup_and_app: 'Setup and app',
-    cart: 'Cart'
+    cart: 'Cart',
+    log_in: 'Log in',
+    account: 'Account'
   },
   footer: {
     note: 'Kevin simulates human presence using light, shadow, and sound. Actual deterrence results may vary. See product documentation for details.',
@@ -414,6 +417,7 @@ en.cart.drawer_delivery = 'Free delivery selected at checkout · 30-day returns'
 en.cart.secure_shopify = 'Secure Shopify checkout';
 en.products.product.shipping_note = 'Ships free · 60-second setup · 3-year warranty';
 en.errors.back_home = 'Back to home';
+en.customers = customersEn;
 
 en.stats.badge_1 = 'European Security Award 2024';
 en.stats.badge_3 = 'No monitoring subscription';
@@ -454,8 +458,11 @@ nl.header = {
   buy_group: 'Kopen',
   support: 'Support',
   setup_and_app: 'Setup en app',
-  cart: 'Winkelwagen'
+  cart: 'Winkelwagen',
+  log_in: 'Inloggen',
+  account: 'Account'
 };
+nl.customers = customersNl;
 nl.footer = {
   note: 'Kevin simuleert menselijke aanwezigheid met licht, schaduw en geluid. Resultaten kunnen variëren. Zie productdocumentatie voor details.',
   product: 'Product',

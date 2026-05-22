@@ -8,7 +8,7 @@
   aria-hidden="true"
 >
   <div class="cart-drawer__backdrop" data-cart-drawer-close tabindex="-1"></div>
-  <aside class="cart-drawer__panel" role="dialog" aria-labelledby="CartDrawerTitle" aria-modal="true">
+  <aside class="cart-drawer__panel" role="dialog" aria-labelledby="CartDrawerTitle" aria-modal="true" tabindex="-1" data-cart-drawer-panel>
     <header class="cart-drawer__header">
       <h2 id="CartDrawerTitle" class="cart-drawer__title">{{ 'cart.drawer_title' | t: default: 'Your bag' }}</h2>
       <button type="button" class="cart-drawer__close" data-cart-drawer-close aria-label="{{ 'cart.close' | t: default: 'Close cart' }}">

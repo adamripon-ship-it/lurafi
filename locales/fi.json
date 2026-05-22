@@ -51,7 +51,9 @@
     "buy_group": "Osta",
     "support": "Tuki",
     "setup_and_app": "Asennus ja sovellus",
-    "cart": "Ostoskori"
+    "cart": "Ostoskori",
+    "log_in": "Kirjaudu sisään",
+    "account": "Tili"
   },
   "footer": {
     "note": "Kevin simuloi ihmisen läsnäoloa valolla, varjolla ja äänellä. Todelliset pelotteen vaikutukset voivat vaihdella. Lisätietoja tuotedokumentaatiosta.",
@@ -389,5 +391,104 @@
     "brown": "Ruskea",
     "navy": "Laivastonsininen",
     "blue": "Sininen"
+  },
+  "customers": {
+    "login": {
+      "title": "Kirjaudu sisään",
+      "email": "Sähköposti",
+      "password": "Salasana",
+      "submit": "Kirjaudu sisään",
+      "forgot_password": "Unohditko salasanasi?",
+      "new_customer": "Uusi asiakas?",
+      "create_account": "Luo tili",
+      "recover_title": "Palauta salasanasi",
+      "recover_lede": "Lähetämme sinulle sähköpostin salasanan vaihtamiseksi.",
+      "recover_success": "Olemme lähettäneet sinulle sähköpostin, jossa on linkki salasanasi päivittämistä varten.",
+      "recover_submit": "Lähetä nollauslinkki"
+    },
+    "register": {
+      "title": "Luo tili",
+      "first_name": "Etunimi",
+      "last_name": "Sukunimi",
+      "email": "Sähköposti",
+      "password": "Salasana",
+      "submit": "Luo tili",
+      "has_account": "Onko sinulla jo tili?",
+      "log_in": "Kirjaudu sisään"
+    },
+    "account": {
+      "title": "Minun tilini",
+      "welcome": "Tervetuloa takaisin, {{ nimi }}.",
+      "addresses": "Näytä osoitteet ({{ count }})",
+      "log_out": "Kirjaudu ulos",
+      "orders_title": "Tilaushistoria",
+      "no_orders": "Et ole vielä tehnyt tilauksia.",
+      "col_order": "Tilata",
+      "col_date": "Päivämäärä",
+      "col_payment": "Maksu",
+      "col_fulfillment": "Täyttäminen",
+      "col_total": "Kokonais"
+    },
+    "addresses": {
+      "title": "Sinun osoitteesi",
+      "return_account": "Palaa tilitietoihin",
+      "new_title": "Lisää uusi osoite",
+      "first_name": "Etunimi",
+      "last_name": "Sukunimi",
+      "company": "Yritys",
+      "address1": "Osoite",
+      "address2": "Huoneisto, sviitti jne.",
+      "city": "Kaupunki",
+      "country": "Maa",
+      "province": "maakunta",
+      "zip": "Postinumero",
+      "phone": "Puhelin",
+      "default_checkbox": "Aseta oletusosoitteeksi",
+      "add_address": "Lisää osoite",
+      "saved_title": "Tallennetut osoitteet",
+      "default_label": "Oletus",
+      "edit": "Muokata",
+      "delete": "Poistaa",
+      "edit_summary": "Muokkaa osoitetta",
+      "delete_confirm": "Haluatko varmasti poistaa tämän osoitteen?",
+      "update_address": "Päivitä osoite",
+      "no_addresses": "Sinulla ei ole tallennettuja osoitteita."
+    },
+    "order": {
+      "title": "Tilaa {{ nimi }}",
+      "placed": "Sijoitettu {{ päivämäärä }}",
+      "cancelled": "Tilaus peruutettu {{ päivämäärä }} — {{ syy }}",
+      "product": "Tuote",
+      "sku": "SKU",
+      "price": "Hinta",
+      "quantity": "Määrä",
+      "total": "Kokonais",
+      "subtotal": "Välisumma",
+      "discount": "Alennus – {{ otsikko }}",
+      "shipping": "Toimitus – {{ title }}",
+      "tax": "Vero – {{ title }} ({{ rate }}%)",
+      "total_label": "Kokonais",
+      "fulfilled": "täytetty {{ päivämäärä }}",
+      "tracking": "{{ yritys }} {{ numero }}",
+      "billing_title": "Laskutusosoite",
+      "payment_status": "Maksun tila: {{ status }}",
+      "shipping_title": "Toimitusosoite",
+      "fulfillment_status": "Toteutustila: {{ status }}"
+    },
+    "reset_password": {
+      "title": "Palauta salasanasi",
+      "lede": "Anna tilillesi uusi salasana.",
+      "password": "Uusi salasana",
+      "password_confirm": "Vahvista uusi salasana",
+      "submit": "Palauta salasana"
+    },
+    "activate_account": {
+      "title": "Aktivoi tili",
+      "lede": "Luo salasana aktivoidaksesi tilisi.",
+      "password": "Salasana",
+      "password_confirm": "Vahvista salasana",
+      "submit": "Aktivoi tili",
+      "decline": "Hylkää kutsu"
+    }
   }
 }
