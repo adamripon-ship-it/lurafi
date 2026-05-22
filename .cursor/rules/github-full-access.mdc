@@ -1,0 +1,44 @@
+---
+description: GitHub and git operations for lurafi — use full account access via gh CLI
+alwaysApply: true
+---
+
+# GitHub access (Cursor agent)
+
+This project uses account **adamripon-ship-it** with owner-level rights on `adamripon-ship-it/lurafi`.
+
+## How Cursor gets GitHub access
+
+Cursor does **not** have a separate GitHub login. The agent uses:
+
+1. **`gh`** — authenticated via `gh auth login` / keyring (preferred)
+2. **`git`** — credentials from `gh auth setup-git`
+3. Optional **`GITHUB_TOKEN`** in local `.env` (gitignored) for fine-grained PAT fallback
+
+## Agent permissions (do freely)
+
+- Create/edit/delete branches, tags, commits, PRs, issues, releases
+- Edit repo settings, topics, description, visibility (when user asks)
+- Manage collaborators and branch protection via `gh api` (when user asks)
+- Run and edit GitHub Actions workflows (requires `workflow` scope)
+- Push to `origin`; open PRs with `gh pr create`
+
+## Commands
+
+```bash
+gh auth status
+gh repo view adamripon-ship-it/lurafi --web
+gh pr create --fill
+gh api repos/adamripon-ship-it/lurafi/...   # Admin APIs as needed
+git push origin <branch>
+```
+
+## Never
+
+- Paste tokens or PATs into chat, commits, or rules
+- Force-push `main` unless the user explicitly requests it
+- Change org billing or delete the account without explicit confirmation
+
+## Store / theme
+
+Shopify deploy is separate — see `docs/SHOPIFY.md`. GitHub is source control + CI only.

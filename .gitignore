@@ -1,8 +1,10 @@
 # Dependencies
 node_modules/
 
-# Cursor / local
-.cursor/
+# Cursor / local (keep rules in repo for agent guidance)
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
 .claude/
 
 # QA artifacts
