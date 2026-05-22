@@ -8,7 +8,9 @@
     "theme:check": "shopify theme check",
     "theme:push:live": "shopify theme push -s fu03cn-1v.myshopify.com --theme 196456219011 --allow-live",
     "locales:build": "node scripts/build-locales.mjs",
+    "locales:sync": "node scripts/sync-locale-keys.mjs",
     "locales:translate": "node scripts/translate-locales.mjs",
+    "predeploy": "npm run locales:build && npm run locales:sync && npm run theme:check",
     "geo:generate": "node scripts/generate-sitemap-ai.mjs && node scripts/generate-llms-assets.mjs",
     "shopify:locales": "./scripts/activate-locales.sh",
     "qa:i18n": "node scripts/i18n-browser-qa.mjs"

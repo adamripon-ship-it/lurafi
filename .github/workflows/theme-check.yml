@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: theme-check-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   theme-check:
     runs-on: ubuntu-latest
@@ -14,7 +21,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: .nvmrc
           cache: npm
 
       - name: Install dependencies
@@ -22,6 +29,9 @@ jobs:
 
       - name: Verify locale build
         run: npm run locales:build
+
+      - name: Sync missing locale keys
+        run: npm run locales:sync
 
       - name: Shopify Theme Check
         run: npm run theme:check

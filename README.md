@@ -38,6 +38,13 @@ Or use GitHub Actions → **Deploy theme (manual)** after adding repository secr
 
 - `main` — production-aligned theme (matches live after deploy)
 - Use PRs; CI runs Theme Check on every pull request
+- See [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md)
+
+## Before deploy
+
+```bash
+npm run predeploy
+```
 
 ## License
 

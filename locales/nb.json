@@ -116,7 +116,10 @@
     "empty_configure_note": "Konfigurer Kevin for å fortsette til kassen med gratis levering.",
     "empty_configure_cta": "Konfigurer din Kevin",
     "free_delivery_checkout": "Gratis levering velges i kassen",
-    "secure_shopify": "Sikker Shopify utsjekking"
+    "secure_shopify": "Sikker Shopify utsjekking",
+    "delivery_value": "Free delivery (Europe)",
+    "checkout_trust": "Secure Shopify checkout",
+    "drawer_delivery": "Free delivery selected at checkout · 30-day returns"
   },
   "configure": {
     "back": "Tilbake",

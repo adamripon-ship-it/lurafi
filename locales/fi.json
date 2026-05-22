@@ -116,7 +116,10 @@
     "empty_configure_note": "Määritä Kevin jatkaaksesi kassalla ilmaisella toimituksella.",
     "empty_configure_cta": "Määritä Kevin",
     "free_delivery_checkout": "Maksuton toimitus valitaan kassalla",
-    "secure_shopify": "Suojattu Shopify kassa"
+    "secure_shopify": "Suojattu Shopify kassa",
+    "delivery_value": "Free delivery (Europe)",
+    "checkout_trust": "Secure Shopify checkout",
+    "drawer_delivery": "Free delivery selected at checkout · 30-day returns"
   },
   "configure": {
     "back": "Takaisin",

@@ -2,9 +2,6 @@
   hreflang alternates for published storefront languages.
   Pairs with canonical in layout/theme.liquid.
 {%- endcomment -%}
-{%- comment -%}
-  hreflang pairs for EN/NL. Path suffix is locale-stripped; Shopify maps page handles per language in Admin.
-{%- endcomment -%}
 {%- liquid
   assign path_suffix = request.path
   assign locale_root = request.locale.root_url
@@ -18,10 +15,11 @@
     assign path_suffix = '/' | append: path_suffix
   endunless
 
-  assign default_lang = 'en'
+  assign x_default_href = request.origin | append: path_suffix
   for language in localization.available_languages
     if language.primary
-      assign default_lang = language.iso_code
+      assign x_default_href = request.origin | append: language.root_url | append: path_suffix
+      break
     endif
   endfor
 -%}
@@ -33,7 +31,6 @@
     {%- endif -%}
     <link rel="alternate" hreflang="{{ language.iso_code }}" href="{{ lang_href }}">
   {%- endfor -%}
-  {%- assign x_default_href = request.origin | append: path_suffix -%}
   {%- if request.search != blank -%}
     {%- assign x_default_href = x_default_href | append: request.search -%}
   {%- endif -%}

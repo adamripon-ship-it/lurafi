@@ -116,7 +116,10 @@
     "empty_configure_note": "Nakonfigurujte Kevin, abyste mohli pokračovat k pokladně s doručením zdarma.",
     "empty_configure_cta": "Nakonfigurujte si Kevin",
     "free_delivery_checkout": "Doručení zdarma vybrané při pokladně",
-    "secure_shopify": "Bezpečná Shopify pokladna"
+    "secure_shopify": "Bezpečná Shopify pokladna",
+    "delivery_value": "Free delivery (Europe)",
+    "checkout_trust": "Secure Shopify checkout",
+    "drawer_delivery": "Free delivery selected at checkout · 30-day returns"
   },
   "configure": {
     "back": "Zadní",

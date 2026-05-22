@@ -116,7 +116,10 @@
     "empty_configure_note": "Configure Kevin para continuar con el pago con envío gratuito.",
     "empty_configure_cta": "Configura tu Kevin",
     "free_delivery_checkout": "Entrega gratuita seleccionada al finalizar la compra",
-    "secure_shopify": "Pago seguro Shopify"
+    "secure_shopify": "Pago seguro Shopify",
+    "delivery_value": "Free delivery (Europe)",
+    "checkout_trust": "Secure Shopify checkout",
+    "drawer_delivery": "Free delivery selected at checkout · 30-day returns"
   },
   "configure": {
     "back": "Atrás",

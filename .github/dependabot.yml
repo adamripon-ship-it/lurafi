@@ -8,3 +8,7 @@ updates:
       shopify:
         patterns:
           - "@shopify/*"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

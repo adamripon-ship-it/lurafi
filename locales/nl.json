@@ -111,7 +111,9 @@
     "remove": "Verwijderen",
     "subtotal": "Subtotaal:",
     "delivery_method": "Bezorgmethode",
+    "delivery_value": "Gratis bezorging (Europa)",
     "delivery_note": "Wordt als gratis verzendtarief getoond bij afrekenen. Belastingen worden bij afrekenen berekend.",
+    "checkout_trust": "Veilig afrekenen via Shopify",
     "update": "Winkelwagen bijwerken",
     "empty_configure_note": "Configureer Kevin om door te gaan naar afrekenen met gratis bezorging.",
     "empty_configure_cta": "Configureer je Kevin",
@@ -387,7 +389,8 @@
   },
   "errors": {
     "not_found_title": "Pagina niet gevonden",
-    "not_found_body": "De pagina die je zoekt bestaat niet."
+    "not_found_body": "De pagina die je zoekt bestaat niet.",
+    "back_home": "Back to home"
   },
   "spec_row": {
     "dimensions_label": "Afmeting",
