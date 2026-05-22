@@ -19,6 +19,10 @@ Shopify OS 2.0 theme for **lurafi.ai** (Kevin). Store: `fu03cn-1v.myshopify.com`
 
 Use `gh` and `git` with account **adamripon-ship-it**. Open PRs to `main`; do not force-push `main`.
 
+## Vercel
+
+Use the Vercel MCP plugin and `npx vercel` with team **adamripon-6504s-projects** — see `.cursor/rules/vercel-full-access.mdc`. Do not deploy this Shopify theme to Vercel unless asked.
+
 ## Do not
 
 - Commit secrets or paste tokens in chat.

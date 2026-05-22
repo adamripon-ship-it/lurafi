@@ -1,0 +1,50 @@
+---
+description: Vercel deploy and platform ops — full team access via MCP and CLI
+alwaysApply: true
+---
+
+# Vercel access (Cursor agent)
+
+Account **adamripon-6504** on team **adamripon-6504's projects** (`adamripon-6504s-projects`, id `team_Xq24x8kEPHB8f71YZLIZsmic`).
+
+## How Cursor gets Vercel access
+
+Cursor does **not** have a separate Vercel login. The agent uses:
+
+1. **Vercel MCP** (`plugin-vercel-vercel`) — OAuth via the Vercel Cursor plugin (deployments, projects, logs, env, docs)
+2. **`npx vercel`** — same account as `vercel whoami` / `vercel login` on this machine
+3. Optional **`VERCEL_TOKEN`** in local `.env` (gitignored) — [Full Account](https://vercel.com/account/tokens) token for REST API / SDK when MCP or CLI is insufficient
+
+Re-authenticate MCP: **Cursor Settings → MCP → Vercel → Connect / Reconnect**.
+
+## Agent permissions (do freely)
+
+- List/create/link projects; deploy preview and production (`deploy_to_vercel`, `npx vercel deploy`, `npx vercel --prod`)
+- Read build/runtime logs; inspect and promote/rollback deployments
+- Manage env vars (`vercel env pull|add|rm`, dashboard-equivalent via API when needed)
+- Domains, redirects, project settings, and team-scoped project config
+- Marketplace integrations and linked resources (Supabase, storage, etc.) on this team
+- Use `/vercel status`, `/vercel env`, `/vercel deploy` plugin commands when relevant
+
+Default scope for CLI/MCP: `--scope adamripon-6504s-projects` when a scope is required.
+
+## Commands
+
+```bash
+npx vercel@latest whoami
+npx vercel@latest teams ls
+npx vercel@latest project ls --scope adamripon-6504s-projects
+npx vercel@latest link --yes --scope adamripon-6504s-projects   # when working in a Vercel app repo
+npx vercel@latest deploy
+npx vercel@latest env pull .env.local --yes
+```
+
+## Never
+
+- Paste tokens or PATs into chat, commits, or rules
+- Delete the Vercel account or change team billing without explicit confirmation
+- Deploy this **lurafi** Shopify theme to Vercel unless the user explicitly asks (store deploy is Shopify — see `docs/SHOPIFY.md`)
+
+## lurafi repo
+
+This workspace is a **Shopify theme**, not a linked Vercel project (no `.vercel/project.json`). Use Vercel tools for other apps on the same account/team, not for theme push to Shopify.

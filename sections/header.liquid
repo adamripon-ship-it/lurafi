@@ -13,9 +13,13 @@
 
 <header class="site-header" role="banner" data-theme="dark">
   <div class="site-header__inner">
-    <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="{{ shop.name | escape }} home">{{ shop.name | default: 'Kevin' | escape }}</a>
+    <div class="site-header__brand" data-header-zone="brand">
+      <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="{{ shop.name | escape }} home">{{ shop.name | default: 'Kevin' | escape }}</a>
+    </div>
 
-    <nav class="site-nav" aria-label="{{ 'accessibility.main_navigation' | t }}">
+    <div class="site-header__divider" aria-hidden="true" data-header-zone="divider"></div>
+
+    <nav class="site-nav" aria-label="{{ 'accessibility.main_navigation' | t }}" data-header-zone="nav">
       <a href="{{ routes.root_url }}#problem" class="site-nav__link">{{ 'header.why_kevin' | t }}</a>
       <a href="{{ routes.root_url }}#product" class="site-nav__link">{{ 'header.product' | t }}</a>
       <a href="{{ routes.root_url }}#how-it-works" class="site-nav__link">{{ 'header.how_it_works' | t }}</a>
@@ -23,29 +27,31 @@
       <a href="{{ routes.root_url }}#pricing" class="site-nav__link">{{ 'header.pricing' | t }}</a>
     </nav>
 
-    <div class="site-header__lang">
-      {% render 'language-selector', form_id: 'HeaderLanguageForm', selector_id: 'HeaderLanguageSelector' %}
-    </div>
+    <div class="site-header__utilities" data-header-zone="utilities">
+      <div class="site-header__lang">
+        {% render 'language-selector', form_id: 'HeaderLanguageForm', selector_id: 'HeaderLanguageSelector' %}
+      </div>
 
-    <div class="site-header__actions">
-      <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-apple-primary--sm site-header__cta site-header__cta--mobile">
-        {{ 'header.buy' | t }}
-      </a>
-      <button type="button" class="site-header__icon site-header__cart" aria-label="{{ cart_label | escape }}" data-cart-drawer-open>
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-          <path d="M3.5 5h11l-1.1 8.4a1.5 1.5 0 0 1-1.5 1.3H6.1a1.5 1.5 0 0 1-1.5-1.3L3.5 5z"/>
-          <path d="M6.5 5V3.75a2.5 2.5 0 0 1 5 0V5"/>
-        </svg>
-        <span class="site-header__cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
-      </button>
-      <button type="button" class="site-header__menu-btn" aria-label="{{ 'accessibility.open_menu' | t }}" aria-expanded="false" aria-controls="MobileNavPanel" data-menu-open>
-        <span class="site-header__menu-icon" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </span>
-      </button>
-      <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-apple-primary--sm site-header__cta site-header__cta--desktop">
-        {{ header_cta | escape }}
-      </a>
+      <div class="site-header__actions">
+        <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-apple-primary--sm site-header__cta site-header__cta--mobile">
+          {{ 'header.buy' | t }}
+        </a>
+        <button type="button" class="site-header__icon site-header__cart" aria-label="{{ cart_label | escape }}" data-cart-drawer-open>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M3.5 5h11l-1.1 8.4a1.5 1.5 0 0 1-1.5 1.3H6.1a1.5 1.5 0 0 1-1.5-1.3L3.5 5z"/>
+            <path d="M6.5 5V3.75a2.5 2.5 0 0 1 5 0V5"/>
+          </svg>
+          <span class="site-header__cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+        </button>
+        <button type="button" class="site-header__menu-btn" aria-label="{{ 'accessibility.open_menu' | t }}" aria-expanded="false" aria-controls="MobileNavPanel" data-menu-open>
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+        <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-apple-primary--sm site-header__cta site-header__cta--desktop">
+          {{ header_cta | escape }}
+        </a>
+      </div>
     </div>
   </div>
 </header>
@@ -57,16 +63,19 @@
     id="MobileNavPanel"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="MobileNavTitle"
+    aria-labelledby="MobileNavBrand"
     tabindex="-1"
   >
     <div class="mobile-nav__header">
-      <p id="MobileNavTitle" class="mobile-nav__title">{{ 'header.menu' | t }}</p>
+      <a href="{{ routes.root_url }}" id="MobileNavBrand" class="mobile-nav__brand" data-menu-close>{{ shop.name | default: 'Kevin' | escape }}</a>
       <button type="button" class="mobile-nav__close" data-menu-close aria-label="{{ 'accessibility.close_menu' | t }}">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
+    </div>
+    <div class="mobile-nav__lang">
+      {% render 'language-selector', form_id: 'MobileNavLanguageForm', selector_id: 'MobileNavLanguageSelector' %}
     </div>
     <nav class="mobile-nav__links" aria-label="{{ 'accessibility.mobile_navigation' | t }}">
       <p class="mobile-nav__group-label">{{ 'header.explore' | t }}</p>
