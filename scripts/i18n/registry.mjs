@@ -59,3 +59,28 @@ export function buildHomeUrl(domain, localeCode) {
   const prefix = localeUrlPrefix(localeCode);
   return `https://${domain}${prefix || '/'}`;
 }
+
+/** Canonical HTTPS URL for a theme asset (llms.txt, sitemap-ai.xml, …). */
+export function buildThemeAssetUrl(filename, domain) {
+  const cfg = loadLanguagesConfig();
+  const host = domain || cfg.domain;
+  const base = cfg.discovery?.assetCdnPath || '/cdn/shop/t/1/assets';
+  const name = String(filename).replace(/^\//, '');
+  return `https://${host}${base}/${name}`;
+}
+
+export function getLlmAssetLocales() {
+  return getLocales().filter((l) => l.publish !== false && l.llmAssets);
+}
+
+export function llmsShortFilename(localeCode) {
+  const loc = getLocale(localeCode);
+  if (!loc || loc.primary) return loadLanguagesConfig().discovery?.llmsShort || 'llms.txt';
+  return `llms.${loc.code}.txt`;
+}
+
+export function llmsFullFilename(localeCode) {
+  const loc = getLocale(localeCode);
+  if (!loc || loc.primary) return loadLanguagesConfig().discovery?.llmsFull || 'llms-full.txt';
+  return `llms-full.${loc.code}.txt`;
+}

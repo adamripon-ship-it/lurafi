@@ -78,7 +78,17 @@ const en = {
         'When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.'
     },
     org_description:
-      'When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound so your home stays visibly lived-in and burglars move on.'
+      'When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound so your home stays visibly lived-in and burglars move on.',
+    sitemap: {
+      title: 'Sitemap — Lurafi & Kevin',
+      description:
+        'Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers.'
+    },
+    llms: {
+      title: 'LLM site summary — Kevin presence simulation',
+      description:
+        'Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files.'
+    }
   },
   products: {
     product: {
@@ -172,9 +182,14 @@ const en = {
     search_sitemaps: 'Search engine sitemaps',
     shopify_sitemap: 'Shopify XML sitemap',
     ai_geo_sitemap: 'AI / AEO / GEO XML sitemap',
-    robots: 'Robots.txt discovery file'
+    robots: 'Robots.txt discovery file',
+    human_sitemap: 'Human-readable sitemap',
+    ai_files_hint: 'Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.',
+    llms_points_to_full: 'links to full summary'
   },
   llms_page: {
+    ai_discovery: 'AI / LLM machine-readable files',
+    short_points_to_full: 'Each short llms.txt file links to its matching llms-full.txt for complete brand and product context.',
     oneliner:
       'When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.',
     what_we_sell: 'What we sell',
@@ -588,9 +603,25 @@ nl.sitemap = {
   search_sitemaps: 'Zoekmachine-sitemaps',
   shopify_sitemap: 'Shopify XML-sitemap',
   ai_geo_sitemap: 'AI / AEO / GEO XML-sitemap',
-  robots: 'Robots.txt'
+  robots: 'Robots.txt',
+  human_sitemap: 'Sitemap voor mensen',
+  ai_files_hint: 'Begin bij het korte LLM-bestand; daarin staat een link naar de volledige samenvatting. Beide staan in sitemap-ai.xml en sitemap.xml.',
+  llms_points_to_full: 'verwijst naar volledige samenvatting'
+};
+nl.seo.sitemap = {
+  title: 'Sitemap — Lurafi & Kevin',
+  description:
+    'Sitemap met alle talen, Shopify sitemap.xml, AI-sitemap, llms.txt korte samenvattingen en llms-full.txt volledige gidsen voor zoekmachines en LLM-crawlers.'
+};
+nl.seo.llms = {
+  title: 'LLM-samenvatting — Kevin aanwezigheidssimulatie',
+  description:
+    'Platte-tekstoverzicht voor AI-assistenten: productfeiten, URL’s en links naar llms.txt en llms-full.txt.'
 };
 nl.llms_page = {
+  ai_discovery: 'AI- en LLM-bestanden (machine-leesbaar)',
+  short_points_to_full:
+    'Elk kort llms.txt-bestand linkt naar het bijbehorende llms-full.txt voor volledige merk- en productcontext.',
   oneliner:
     'Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid—zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan.',
   what_we_sell: 'Wat we verkopen',

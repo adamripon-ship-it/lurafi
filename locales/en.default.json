@@ -81,7 +81,15 @@
     "home": {
       "description": "When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on."
     },
-    "org_description": "When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound so your home stays visibly lived-in and burglars move on."
+    "org_description": "When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound so your home stays visibly lived-in and burglars move on.",
+    "sitemap": {
+      "title": "Sitemap — Lurafi & Kevin",
+      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+    },
+    "llms": {
+      "title": "LLM site summary — Kevin presence simulation",
+      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+    }
   },
   "products": {
     "product": {
@@ -329,9 +337,14 @@
     "search_sitemaps": "Search engine sitemaps",
     "shopify_sitemap": "Shopify XML sitemap",
     "ai_geo_sitemap": "AI / AEO / GEO XML sitemap",
-    "robots": "Robots.txt discovery file"
+    "robots": "Robots.txt discovery file",
+    "human_sitemap": "Human-readable sitemap",
+    "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
+    "llms_points_to_full": "links to full summary"
   },
   "llms_page": {
+    "ai_discovery": "AI / LLM machine-readable files",
+    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context.",
     "oneliner": "When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.",
     "what_we_sell": "What we sell",
     "buy_bullet": "**Kevin (Buy)**: One-time purchase. Device with 70+ hours of believable AI presence, Kevin App control, free delivery in Europe, 3-year Swiss warranty.",

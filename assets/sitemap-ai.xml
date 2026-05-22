@@ -664,7 +664,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/nl/pages/ai-overzicht</loc>
@@ -682,7 +682,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/fr/pages/apercu-ia</loc>
@@ -700,7 +700,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/de/pages/ki-uebersicht</loc>
@@ -718,7 +718,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/es/pages/resumen-ia</loc>
@@ -736,7 +736,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/it/pages/panoramica-ia</loc>
@@ -754,7 +754,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/nb/pages/ai-oversikt</loc>
@@ -772,7 +772,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/da/pages/ai-oversigt</loc>
@@ -790,7 +790,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/sv/pages/ai-oversikt</loc>
@@ -808,7 +808,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/fi/pages/ai-yhteenveto</loc>
@@ -826,7 +826,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/cs/pages/ai-prehled</loc>
@@ -844,7 +844,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/pl/pages/podsumowanie-ai</loc>
@@ -862,7 +862,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/podsumowanie-ai"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/llms"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/pages/sitemap</loc>
@@ -880,7 +880,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/nl/pages/site-overzicht</loc>
@@ -898,7 +898,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/fr/pages/plan-du-site</loc>
@@ -916,7 +916,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/de/pages/seitenuebersicht</loc>
@@ -934,7 +934,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/es/pages/mapa-del-sitio</loc>
@@ -952,7 +952,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/it/pages/mappa-del-sito</loc>
@@ -970,7 +970,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/nb/pages/nettstedkart</loc>
@@ -988,7 +988,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/da/pages/sideoversigt</loc>
@@ -1006,7 +1006,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/sv/pages/webbplatskarta</loc>
@@ -1024,7 +1024,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/fi/pages/sivukartta</loc>
@@ -1042,7 +1042,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/cs/pages/prehled-stranek</loc>
@@ -1060,7 +1060,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lurafi.ai/pl/pages/mapa-strony</loc>
@@ -1078,6 +1078,162 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.ai/pl/pages/mapa-strony"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.ai/pages/sitemap"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.cs.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.da.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.de.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.es.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.fi.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.fr.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.it.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.nb.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.nl.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.pl.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.sv.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms-full.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.cs.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.da.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.de.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.es.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.fi.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.fr.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.it.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.nb.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.nl.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.pl.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.sv.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/llms.txt</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml</loc>
+
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://lurafi.ai/sitemap.xml</loc>
+
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
 </urlset>

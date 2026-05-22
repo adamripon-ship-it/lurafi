@@ -30,9 +30,20 @@
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
+    {%- liquid
+      assign seo_document_title = page_title
+      if request.page_type == 'page'
+        case page.handle
+          when 'sitemap'
+            assign seo_document_title = 'seo.sitemap.title' | t | default: page.title
+          when 'llms', 'ai-overzicht', 'apercu-ia', 'ki-uebersicht', 'resumen-ia', 'panoramica-ia', 'ai-oversikt', 'ai-oversigt', 'ai-yhteenveto', 'ai-prehled', 'podsumowanie-ai'
+            assign seo_document_title = 'seo.llms.title' | t | default: page.title
+        endcase
+      endif
+    -%}
     <title>
-      {{ page_title }}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {{ seo_document_title }}
+      {%- unless seo_document_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
     <!-- lurafi-head-v13 locale push -->

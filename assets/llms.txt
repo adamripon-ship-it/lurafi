@@ -1,5 +1,16 @@
 # Lurafi / Kevin
 
+> Swiss AI presence simulation for your home. When you are away, Kevin uses light, shadow, and sound so your home looks and sounds lived-in—and burglars move on.
+
+## AI / LLM discovery
+- Short summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms.txt
+- Full summary (read for complete context): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.txt
+- AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.ai/sitemap.xml
+- Human sitemap page: https://lurafi.ai/pages/sitemap
+- LLM overview page: https://lurafi.ai/pages/llms
+
+
 Lurafi sells Kevin, a Swiss AI presence simulation device for home security.
 
 Kevin helps make a home look and sound lived-in when people are away. It uses light, shadow, and sound to deter burglars before a break-in happens.
@@ -28,8 +39,18 @@ Important URLs:
 - ES configure: https://lurafi.ai/es/pages/configurar-kevin?plan=buy
 - IT home: https://lurafi.ai/it
 - IT configure: https://lurafi.ai/it/pages/configura-kevin?plan=buy
-- Full LLM summary: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.txt
-- AI sitemap: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
+- NO home: https://lurafi.ai/nb
+- NO configure: https://lurafi.ai/nb/pages/konfigurer-kevin?plan=buy
+- DA home: https://lurafi.ai/da
+- DA configure: https://lurafi.ai/da/pages/konfigurer-kevin?plan=buy
+- SV home: https://lurafi.ai/sv
+- SV configure: https://lurafi.ai/sv/pages/konfigurera-kevin?plan=buy
+- FI home: https://lurafi.ai/fi
+- FI configure: https://lurafi.ai/fi/pages/konfiguroi-kevin?plan=buy
+- CS home: https://lurafi.ai/cs
+- CS configure: https://lurafi.ai/cs/pages/konfigurovat-kevin?plan=buy
+- PL home: https://lurafi.ai/pl
+- PL configure: https://lurafi.ai/pl/pages/konfiguruj-kevin?plan=buy
 
 Contact:
 - Email: hello@lurafi.ai

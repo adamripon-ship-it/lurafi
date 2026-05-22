@@ -1,25 +1,25 @@
-# Lurafi / Kevin (DE): Full LLM Summary
+# Lurafi / Kevin (DA): Full LLM Summary
 
-> Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.de.txt
+> Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.da.txt
 
 ## AI / LLM discovery
-- Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.de.txt
-- Full summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.de.txt
+- Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.da.txt
+- Full summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.da.txt
 - AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
 - Shopify sitemap XML: https://lurafi.ai/sitemap.xml
-- Human sitemap page: https://lurafi.ai/de/pages/seitenuebersicht
-- LLM overview page: https://lurafi.ai/de/pages/ki-uebersicht
+- Human sitemap page: https://lurafi.ai/da/pages/sideoversigt
+- LLM overview page: https://lurafi.ai/da/pages/ai-oversigt
 
 
-> Short summary: https://lurafi.ai/de/cdn/shop/t/1/assets/llms.de.txt
+> Short summary: https://lurafi.ai/da/cdn/shop/t/1/assets/llms.da.txt
 
 ## AI / LLM discovery
-- Short summary (this file): https://lurafi.ai/de/cdn/shop/t/1/assets/llms.de.txt
-- Full summary (read for complete context): https://lurafi.ai/de/cdn/shop/t/1/assets/llms-full.de.txt
-- AI sitemap XML: https://lurafi.ai/de/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.ai/de/sitemap.xml
-- Human sitemap page: https://lurafi.ai/de/pages/sitemap
-- LLM overview page: https://lurafi.ai/de/pages/llms
+- Short summary (this file): https://lurafi.ai/da/cdn/shop/t/1/assets/llms.da.txt
+- Full summary (read for complete context): https://lurafi.ai/da/cdn/shop/t/1/assets/llms-full.da.txt
+- AI sitemap XML: https://lurafi.ai/da/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.ai/da/sitemap.xml
+- Human sitemap page: https://lurafi.ai/da/pages/sitemap
+- LLM overview page: https://lurafi.ai/da/pages/llms
 
 
 ## Brand Overview
@@ -139,17 +139,17 @@ Related terms:
 - vacation home security
 - apartment burglary deterrent
 
-- Short LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms.de.txt
-- Full LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.de.txt
+- Short LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms.da.txt
+- Full LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.da.txt
 ## Important URLs
 
-- Homepage: https://lurafi.ai/de/
-- Configure / buy: https://lurafi.ai/de/pages/configure?plan=buy
-- Subscribe: https://lurafi.ai/de/pages/configure?plan=subscribe
-- Dutch homepage: https://lurafi.ai/de/nl/
-- Dutch configure: https://lurafi.ai/de/nl/pages/kevin-configureren?plan=buy
-- Shopify sitemap: https://lurafi.ai/de/sitemap.xml
-- AI sitemap: https://lurafi.ai/de/cdn/shop/t/1/assets/sitemap-ai.xml
+- Homepage: https://lurafi.ai/da/
+- Configure / buy: https://lurafi.ai/da/pages/configure?plan=buy
+- Subscribe: https://lurafi.ai/da/pages/configure?plan=subscribe
+- Dutch homepage: https://lurafi.ai/da/nl/
+- Dutch configure: https://lurafi.ai/da/nl/pages/kevin-configureren?plan=buy
+- Shopify sitemap: https://lurafi.ai/da/sitemap.xml
+- AI sitemap: https://lurafi.ai/da/cdn/shop/t/1/assets/sitemap-ai.xml
 
 ## Contact
 

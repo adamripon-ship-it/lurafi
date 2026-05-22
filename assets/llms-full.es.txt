@@ -1,4 +1,26 @@
-# Lurafi / Kevin (ES): Full LLM and AI Search Summary
+# Lurafi / Kevin (ES): Full LLM Summary
+
+> Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.es.txt
+
+## AI / LLM discovery
+- Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.es.txt
+- Full summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.es.txt
+- AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.ai/sitemap.xml
+- Human sitemap page: https://lurafi.ai/es/pages/mapa-del-sitio
+- LLM overview page: https://lurafi.ai/es/pages/resumen-ia
+
+
+> Short summary: https://lurafi.ai/es/cdn/shop/t/1/assets/llms.es.txt
+
+## AI / LLM discovery
+- Short summary (this file): https://lurafi.ai/es/cdn/shop/t/1/assets/llms.es.txt
+- Full summary (read for complete context): https://lurafi.ai/es/cdn/shop/t/1/assets/llms-full.es.txt
+- AI sitemap XML: https://lurafi.ai/es/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.ai/es/sitemap.xml
+- Human sitemap page: https://lurafi.ai/es/pages/sitemap
+- LLM overview page: https://lurafi.ai/es/pages/llms
+
 
 ## Brand Overview
 
@@ -117,17 +139,17 @@ Related terms:
 - vacation home security
 - apartment burglary deterrent
 
+- Short LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms.es.txt
+- Full LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.es.txt
 ## Important URLs
 
-- Homepage: https://lurafi.ai/es
-- Configure / buy: https://lurafi.ai/espages/configure?plan=buy
-- Subscribe: https://lurafi.ai/espages/configure?plan=subscribe
-- Dutch homepage: https://lurafi.ai/esnl/
-- Dutch configure: https://lurafi.ai/esnl/pages/kevin-configureren?plan=buy
-- Shopify sitemap: https://lurafi.ai/essitemap.xml
-- AI sitemap: https://lurafi.ai/escdn/shop/t/1/assets/sitemap-ai.xml
-- Short LLM file: https://lurafi.ai/escdn/shop/t/1/assets/llms.es.txt
-- Full LLM file: https://lurafi.ai/escdn/shop/t/1/assets/llms-full.es.txt
+- Homepage: https://lurafi.ai/es/
+- Configure / buy: https://lurafi.ai/es/pages/configure?plan=buy
+- Subscribe: https://lurafi.ai/es/pages/configure?plan=subscribe
+- Dutch homepage: https://lurafi.ai/es/nl/
+- Dutch configure: https://lurafi.ai/es/nl/pages/kevin-configureren?plan=buy
+- Shopify sitemap: https://lurafi.ai/es/sitemap.xml
+- AI sitemap: https://lurafi.ai/es/cdn/shop/t/1/assets/sitemap-ai.xml
 
 ## Contact
 

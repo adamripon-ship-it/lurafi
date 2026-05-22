@@ -8,14 +8,7 @@
 
   assign configure_buy_url = configure_buy_url | strip
   assign configure_sub_url = configure_sub_url | strip
-  assign llms_short_url = 'llms.txt' | asset_url
-  assign llms_full_url = 'llms-full.txt' | asset_url
   assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
-  assign locale_root = request.locale.iso_code | split: '-' | first | downcase
-  if locale_root != 'en'
-    assign llms_short_local = 'llms.' | append: locale_root | append: '.txt' | asset_url
-    assign llms_full_local = 'llms-full.' | append: locale_root | append: '.txt' | asset_url
-  endif
 -%}
 
 <section class="section-apple bg-white sitemap-page">
@@ -34,32 +27,16 @@
           <li><a href="{{ configure_buy_url }}">{{ 'sitemap.configure_buy' | t }}</a></li>
           <li><a href="{{ configure_sub_url }}">{{ 'sitemap.configure_sub' | t }}</a></li>
           <li><a href="{{ routes.cart_url }}">{{ 'sitemap.cart' | t }}</a></li>
-        </ul>
-      </div>
-
-      <div class="sitemap-page__card">
-        <h2>{{ 'sitemap.ai_files' | t }}</h2>
-        <ul>
-          <li><a href="{{ llms_short_url }}">{{ 'sitemap.short_llm' | t }} (EN)</a></li>
-          <li><a href="{{ llms_full_url }}">{{ 'sitemap.full_llm' | t }} (EN)</a></li>
-          {%- if llms_short_local != blank -%}
-            <li><a href="{{ llms_short_local }}">{{ 'sitemap.short_llm' | t }}</a></li>
-            <li><a href="{{ llms_full_local }}">{{ 'sitemap.full_llm' | t }}</a></li>
-          {%- endif -%}
-          {%- assign llm_asset_locales = 'nl,fr,de,es,it' | split: ',' -%}
-          {%- for llm_code in llm_asset_locales -%}
-            {%- unless llm_code == locale_root -%}
-              {%- assign short_name = 'llms.' | append: llm_code | append: '.txt' -%}
-              {%- assign full_name = 'llms-full.' | append: llm_code | append: '.txt' -%}
-              <li><a href="{{ short_name | asset_url }}">{{ 'sitemap.short_llm' | t }} ({{ llm_code | upcase }})</a></li>
-              <li><a href="{{ full_name | asset_url }}">{{ 'sitemap.full_llm' | t }} ({{ llm_code | upcase }})</a></li>
-            {%- endunless -%}
-          {%- endfor -%}
-          <li><a href="{{ ai_sitemap_url }}">{{ 'sitemap.ai_sitemap' | t }}</a></li>
           {%- if pages.llms -%}
             <li><a href="{{ pages.llms.url }}">{{ 'sitemap.llm_page' | t }}</a></li>
           {%- endif -%}
         </ul>
+      </div>
+
+      <div class="sitemap-page__card sitemap-page__card--ai">
+        <h2>{{ 'sitemap.ai_files' | t }}</h2>
+        <p class="sitemap-page__hint text-muted">{{ 'sitemap.ai_files_hint' | t }}</p>
+        {% render 'llm-discovery-links', list_class: 'sitemap-page__list' %}
       </div>
 
       <div class="sitemap-page__card">
@@ -104,7 +81,14 @@
     margin-bottom: 16px;
   }
 
-  .sitemap-page__card ul {
+  .sitemap-page__hint {
+    font-size: 14px;
+    margin: -8px 0 16px;
+    line-height: 1.45;
+  }
+
+  .sitemap-page__card ul,
+  .sitemap-page__list {
     display: grid;
     gap: 10px;
     list-style: none;
@@ -112,12 +96,14 @@
     padding: 0;
   }
 
-  .sitemap-page__card a {
+  .sitemap-page__card a,
+  .sitemap-page__list a {
     color: var(--apple-blue);
     text-decoration: none;
   }
 
-  .sitemap-page__card a:hover {
+  .sitemap-page__card a:hover,
+  .sitemap-page__list a:hover {
     text-decoration: underline;
   }
 </style>

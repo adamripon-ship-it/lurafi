@@ -2,6 +2,12 @@
   "primary": "en",
   "domain": "lurafi.ai",
   "glossary": ["Kevin", "Kevin+", "Lurafi", "Shopify", "CHF", "Mitipi"],
+  "discovery": {
+    "assetCdnPath": "/cdn/shop/t/1/assets",
+    "llmsShort": "llms.txt",
+    "llmsFull": "llms-full.txt",
+    "aiSitemap": "sitemap-ai.xml"
+  },
   "locales": [
     {
       "code": "en",
@@ -133,7 +139,7 @@
       "ogLocale": "nb_NO",
       "urlPrefix": "/nb",
       "publish": true,
-      "llmAssets": false,
+      "llmAssets": true,
       "pages": {
         "configure": { "handle": "konfigurer-kevin", "title": "Konfigurer", "body": "<p>Konfigurer din Kevin.</p>" },
         "sitemap": { "handle": "nettstedkart", "title": "Nettstedkart", "body": "<p>Oversikt over nettstedet</p>" },
@@ -148,7 +154,7 @@
       "ogLocale": "da_DK",
       "urlPrefix": "/da",
       "publish": true,
-      "llmAssets": false,
+      "llmAssets": true,
       "pages": {
         "configure": { "handle": "konfigurer-kevin", "title": "Konfigurer", "body": "<p>Konfigurer din Kevin.</p>" },
         "sitemap": { "handle": "sideoversigt", "title": "Sideoversigt", "body": "<p>Oversigt over sitet</p>" },
@@ -163,7 +169,7 @@
       "ogLocale": "sv_SE",
       "urlPrefix": "/sv",
       "publish": true,
-      "llmAssets": false,
+      "llmAssets": true,
       "pages": {
         "configure": { "handle": "konfigurera-kevin", "title": "Konfigurera", "body": "<p>Konfigurera din Kevin.</p>" },
         "sitemap": { "handle": "webbplatskarta", "title": "Webbplatskarta", "body": "<p>Översikt av webbplatsen</p>" },
@@ -178,7 +184,7 @@
       "ogLocale": "fi_FI",
       "urlPrefix": "/fi",
       "publish": true,
-      "llmAssets": false,
+      "llmAssets": true,
       "pages": {
         "configure": { "handle": "konfiguroi-kevin", "title": "Konfiguroi", "body": "<p>Konfiguroi Kevinisi.</p>" },
         "sitemap": { "handle": "sivukartta", "title": "Sivukartta", "body": "<p>Sivuston yleiskatsaus</p>" },
@@ -193,7 +199,7 @@
       "ogLocale": "cs_CZ",
       "urlPrefix": "/cs",
       "publish": true,
-      "llmAssets": false,
+      "llmAssets": true,
       "pages": {
         "configure": { "handle": "konfigurovat-kevin", "title": "Konfigurace", "body": "<p>Nakonfigurujte svůj Kevin.</p>" },
         "sitemap": { "handle": "prehled-stranek", "title": "Přehled stránek", "body": "<p>Přehled webu</p>" },
@@ -208,7 +214,7 @@
       "ogLocale": "pl_PL",
       "urlPrefix": "/pl",
       "publish": true,
-      "llmAssets": false,
+      "llmAssets": true,
       "pages": {
         "configure": { "handle": "konfiguruj-kevin", "title": "Konfiguracja", "body": "<p>Skonfiguruj swojego Kevin.</p>" },
         "sitemap": { "handle": "mapa-strony", "title": "Mapa strony", "body": "<p>Przegląd witryny</p>" },

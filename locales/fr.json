@@ -81,7 +81,15 @@
     "home": {
       "description": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son—votre maison reste visiblement habitée et les cambrioleurs passent leur chemin."
     },
-    "org_description": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son, afin que votre maison reste visiblement habitée et les cambrioleurs passent leur chemin."
+    "org_description": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son, afin que votre maison reste visiblement habitée et les cambrioleurs passent leur chemin.",
+    "sitemap": {
+      "title": "Sitemap — Lurafi & Kevin",
+      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+    },
+    "llms": {
+      "title": "LLM site summary — Kevin presence simulation",
+      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+    }
   },
   "products": {
     "product": {
@@ -329,7 +337,10 @@
     "search_sitemaps": "Plans du site pour moteurs de recherche",
     "shopify_sitemap": "Plan du site XML Shopify",
     "ai_geo_sitemap": "Plan du site XML IA / AEO / GEO",
-    "robots": "Fichier de découverte Robots.txt"
+    "robots": "Fichier de découverte Robots.txt",
+    "human_sitemap": "Human-readable sitemap",
+    "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
+    "llms_points_to_full": "links to full summary"
   },
   "llms_page": {
     "oneliner": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son—votre maison reste visiblement habitée et les cambrioleurs passent leur chemin.",
@@ -351,7 +362,9 @@
     "tagline": "Tagline : Une présence qui prévient.",
     "character": "Cible : Propriétaires en Suisse/Europe qui recherchent la tranquillité d'esprit en leur absence.",
     "guide": "Guide : Simulation de présence IA conçue en Suisse.",
-    "lede": "Simulation de présence IA suisse pour votre maison. Quand vous partez, Kevin utilise la lumière, l'ombre et le son pour que votre maison paraisse et sonne habitée—et les cambrioleurs passent leur chemin."
+    "lede": "Simulation de présence IA suisse pour votre maison. Quand vous partez, Kevin utilise la lumière, l'ombre et le son pour que votre maison paraisse et sonne habitée—et les cambrioleurs passent leur chemin.",
+    "ai_discovery": "AI / LLM machine-readable files",
+    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context."
   },
   "faq": {
     "q1": "Qu'est-ce que Kevin ?",

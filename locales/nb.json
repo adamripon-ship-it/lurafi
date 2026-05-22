@@ -81,7 +81,15 @@
     "home": {
       "description": "Når du er borte, bruker Kevin sveitsisk AI til å simulere ekte menneskelig tilstedeværelse med lys, skygge og lyd – slik at hjemmet ditt forblir synlig bebodd og innbruddstyver går videre."
     },
-    "org_description": "Når du er borte, bruker Kevin sveitsisk AI til å simulere ekte menneskelig tilstedeværelse med lys, skygge og lyd, slik at hjemmet ditt forblir synlig bebodd og innbruddstyver går videre."
+    "org_description": "Når du er borte, bruker Kevin sveitsisk AI til å simulere ekte menneskelig tilstedeværelse med lys, skygge og lyd, slik at hjemmet ditt forblir synlig bebodd og innbruddstyver går videre.",
+    "sitemap": {
+      "title": "Sitemap — Lurafi & Kevin",
+      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+    },
+    "llms": {
+      "title": "LLM site summary — Kevin presence simulation",
+      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+    }
   },
   "products": {
     "product": {
@@ -329,7 +337,10 @@
     "search_sitemaps": "Søkemotor-nettstedskart",
     "shopify_sitemap": "Shopify XML-nettstedskart",
     "ai_geo_sitemap": "AI / AEO / GEO XML-nettstedskart",
-    "robots": "Robots.txt-oppdagelsesfil"
+    "robots": "Robots.txt-oppdagelsesfil",
+    "human_sitemap": "Human-readable sitemap",
+    "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
+    "llms_points_to_full": "links to full summary"
   },
   "llms_page": {
     "oneliner": "Når du er borte, bruker Kevin sveitsisk AI til å simulere ekte menneskelig tilstedeværelse med lys, skygge og lyd – slik at hjemmet ditt forblir synlig bebodd og innbruddstyver går videre.",
@@ -351,7 +362,9 @@
     "tagline": "Tagline: Tilstedeværelse som forebygger.",
     "character": "Målgruppe: Huseiere i Sveits/Europa som vil ha trygghet når de er borte.",
     "guide": "Guide: Sveitsisk utviklet AI-tilstedeværelsessimulering.",
-    "lede": "Sveitsisk AI-tilstedeværelsessimulering for hjemmet ditt. Når du er borte, bruker Kevin lys, skygge og lyd slik at hjemmet ser og høres bebodd ut – og innbruddstyver går videre."
+    "lede": "Sveitsisk AI-tilstedeværelsessimulering for hjemmet ditt. Når du er borte, bruker Kevin lys, skygge og lyd slik at hjemmet ser og høres bebodd ut – og innbruddstyver går videre.",
+    "ai_discovery": "AI / LLM machine-readable files",
+    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context."
   },
   "faq": {
     "q1": "Hva er Kevin?",

@@ -1,12 +1,21 @@
 # Lurafi / Kevin (DE)
 
-Lurafi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.
+> Kevin lässt Ihr Zuhause bewohnt wirken und klingen, wenn Sie weg sind — Licht, Schatten und Sound als Abschreckung.
 
-Kevin lässt Ihr Zuhause bewohnt wirken und klingen, wenn Sie weg sind — Licht, Schatten und Sound als Abschreckung.
+## AI / LLM discovery
+- Short summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms.de.txt
+- Full summary (read for complete context): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.de.txt
+- AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.ai/sitemap.xml
+- Human sitemap page: https://lurafi.ai/de/pages/seitenuebersicht
+- LLM overview page: https://lurafi.ai/de/pages/ki-uebersicht
+
+
+Lurafi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.
 
 Key facts:
 - Product: Kevin
-- Category: AI home security, presence simulation
+- Category: AI home security, presence simulation, burglary deterrent
 - Privacy: No cameras, no microphones, no cloud monitoring
 - Setup: Plug in, place near a window, configure in the app
 - Warranty: 3-year Swiss warranty
@@ -16,8 +25,6 @@ Important URLs:
 - Homepage: https://lurafi.ai/de
 - Configure / buy: https://lurafi.ai/de/pages/kevin-konfigurieren?plan=buy
 - Subscribe: https://lurafi.ai/de/pages/kevin-konfigurieren?plan=subscribe
-- Full LLM summary: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.de.txt
-- AI sitemap: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
 
 Contact:
 - Email: hello@lurafi.ai

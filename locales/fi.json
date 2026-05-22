@@ -81,7 +81,15 @@
     "home": {
       "description": "Kun olet poissa, Kevin simuloi sveitsiläisellä tekoälyllä todellista ihmisen läsnäoloa valolla, varjolla ja äänellä – kotisi näyttää asutulta ja murtovarkaat jatkavat matkaa."
     },
-    "org_description": "Kun olet poissa, Kevin simuloi sveitsiläisellä tekoälyllä todellista ihmisen läsnäoloa valolla, varjolla ja äänellä, jotta kotisi näyttää asutulta ja murtovarkaat jatkavat matkaa."
+    "org_description": "Kun olet poissa, Kevin simuloi sveitsiläisellä tekoälyllä todellista ihmisen läsnäoloa valolla, varjolla ja äänellä, jotta kotisi näyttää asutulta ja murtovarkaat jatkavat matkaa.",
+    "sitemap": {
+      "title": "Sitemap — Lurafi & Kevin",
+      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+    },
+    "llms": {
+      "title": "LLM site summary — Kevin presence simulation",
+      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+    }
   },
   "products": {
     "product": {
@@ -329,7 +337,10 @@
     "search_sitemaps": "Hakukoneiden sivukartat",
     "shopify_sitemap": "Shopify XML -sivukartta",
     "ai_geo_sitemap": "AI / AEO / GEO XML -sivukartta",
-    "robots": "Robots.txt-tiedosto"
+    "robots": "Robots.txt-tiedosto",
+    "human_sitemap": "Human-readable sitemap",
+    "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
+    "llms_points_to_full": "links to full summary"
   },
   "llms_page": {
     "oneliner": "Kun olet poissa, Kevin simuloi sveitsiläisellä tekoälyllä todellista ihmisen läsnäoloa valolla, varjolla ja äänellä – kotisi näyttää asutulta ja murtovarkaat jatkavat matkaa.",
@@ -351,7 +362,9 @@
     "tagline": "Iskulause: Läsnäolo, joka estää.",
     "character": "Kohderyhmä: Kotinomistajat Sveitsissä ja Euroopassa, jotka haluavat mielenrauhaa poissa ollessaan.",
     "guide": "Opas: Sveitsiläinen tekoälyn läsnäolosimulaatio.",
-    "lede": "Sveitsiläinen tekoälyn läsnäolosimulaatio kotiisi. Kun olet poissa, Kevin käyttää valoa, varjoa ja ääntä, jotta kotisi näyttää ja kuulostaa asutulta – ja murtovarkaat jatkavat matkaa."
+    "lede": "Sveitsiläinen tekoälyn läsnäolosimulaatio kotiisi. Kun olet poissa, Kevin käyttää valoa, varjoa ja ääntä, jotta kotisi näyttää ja kuulostaa asutulta – ja murtovarkaat jatkavat matkaa.",
+    "ai_discovery": "AI / LLM machine-readable files",
+    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context."
   },
   "faq": {
     "q1": "Mikä on Kevin?",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generate assets/sitemap-ai.xml from config/languages.json
+ * Generate assets/sitemap-ai.xml — AI/AEO/GEO sitemap with pages + LLM text assets.
  * Usage: node scripts/generate-sitemap-ai.mjs
  */
 import fs from 'fs';
@@ -9,7 +9,11 @@ import { fileURLToPath } from 'url';
 import {
   buildConfigureUrl,
   buildHomeUrl,
+  buildThemeAssetUrl,
   getLocales,
+  getLlmAssetLocales,
+  llmsFullFilename,
+  llmsShortFilename,
   loadLanguagesConfig,
 } from './i18n/registry.mjs';
 
@@ -30,30 +34,68 @@ function hreflangLinks(getUrl) {
       const href = getUrl(loc);
       return `    <xhtml:link rel="alternate" hreflang="${code}" href="${href}"/>`;
     })
-    .concat(`    <xhtml:link rel="alternate" hreflang="x-default" href="${getUrl(getLocales().find((l) => l.primary))}"/>`)
+    .concat(
+      `    <xhtml:link rel="alternate" hreflang="x-default" href="${getUrl(getLocales().find((l) => l.primary))}"/>`,
+    )
     .join('\n');
 }
 
-const routes = [
-  { name: 'home', getUrl: (loc) => buildHomeUrl(domain, loc.code) },
-  { name: 'configure-buy', getUrl: (loc) => buildConfigureUrl(domain, loc.code, 'buy') },
-  { name: 'configure-sub', getUrl: (loc) => buildConfigureUrl(domain, loc.code, 'subscribe') },
-  { name: 'llms', getUrl: (loc) => pageUrl(loc, 'llms') },
-  { name: 'sitemap', getUrl: (loc) => pageUrl(loc, 'sitemap') },
-];
+function urlBlock(locUrl, hreflangFn, changefreq, priority) {
+  return `  <url>
+    <loc>${locUrl}</loc>
+${hreflangFn ? hreflangLinks(hreflangFn) : ''}
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+}
 
 const urlBlocks = [];
-for (const route of routes) {
+
+const htmlRoutes = [
+  { name: 'home', getUrl: (loc) => buildHomeUrl(domain, loc.code), changefreq: 'weekly', priority: '1.0' },
+  {
+    name: 'configure-buy',
+    getUrl: (loc) => buildConfigureUrl(domain, loc.code, 'buy'),
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    name: 'configure-sub',
+    getUrl: (loc) => buildConfigureUrl(domain, loc.code, 'subscribe'),
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  { name: 'llms', getUrl: (loc) => pageUrl(loc, 'llms'), changefreq: 'monthly', priority: '0.7' },
+  { name: 'sitemap', getUrl: (loc) => pageUrl(loc, 'sitemap'), changefreq: 'monthly', priority: '0.7' },
+];
+
+for (const route of htmlRoutes) {
   for (const loc of getLocales()) {
-    const locUrl = route.getUrl(loc);
-    urlBlocks.push(`  <url>
-    <loc>${locUrl}</loc>
-${hreflangLinks(route.getUrl)}
-    <changefreq>${route.name === 'home' || route.name.startsWith('configure') ? 'weekly' : 'monthly'}</changefreq>
-    <priority>${route.name === 'home' ? '1.0' : route.name.startsWith('configure') ? '0.9' : '0.6'}</priority>
-  </url>`);
+    urlBlocks.push(urlBlock(route.getUrl(loc), route.getUrl, route.changefreq, route.priority));
   }
 }
+
+/** Machine-readable LLM + discovery assets (listed for crawlers that read sitemap-ai.xml). */
+const assetFiles = new Set([
+  cfg.discovery?.aiSitemap || 'sitemap-ai.xml',
+  cfg.discovery?.llmsShort || 'llms.txt',
+  cfg.discovery?.llmsFull || 'llms-full.txt',
+]);
+
+for (const loc of getLlmAssetLocales()) {
+  if (loc.primary) continue;
+  assetFiles.add(llmsShortFilename(loc.code));
+  assetFiles.add(llmsFullFilename(loc.code));
+}
+
+for (const file of [...assetFiles].sort()) {
+  const locUrl = buildThemeAssetUrl(file, domain);
+  const priority = file.endsWith('.txt') ? '0.85' : '0.75';
+  urlBlocks.push(urlBlock(locUrl, null, 'weekly', priority));
+}
+
+/** Shopify native sitemap (reference entry for crawlers merging indexes). */
+urlBlocks.push(urlBlock(`https://${domain}/sitemap.xml`, null, 'daily', '0.95'));
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -63,4 +105,4 @@ ${urlBlocks.join('\n')}
 
 const outPath = path.join(root, 'assets/sitemap-ai.xml');
 fs.writeFileSync(outPath, xml);
-console.log(`Wrote ${outPath} (${urlBlocks.length} URLs)`);
+console.log(`Wrote ${outPath} (${urlBlocks.length} URLs, ${assetFiles.size} LLM/discovery assets)`);

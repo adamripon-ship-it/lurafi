@@ -100,3 +100,30 @@
 }
 </script>
 {%- endif -%}
+{%- if request.page_type == 'page' -%}
+  {%- assign llm_page_handles = 'llms,ai-overzicht,apercu-ia,ki-uebersicht,resumen-ia,panoramica-ia,ai-oversikt,ai-oversigt,ai-yhteenveto,ai-prehled,podsumowanie-ai' | split: ',' -%}
+  {%- if page.handle == 'sitemap' or llm_page_handles contains page.handle -%}
+    {%- if page.handle == 'sitemap' -%}
+      {%- assign web_page_description = 'seo.sitemap.description' | t -%}
+    {%- else -%}
+      {%- assign web_page_description = 'seo.llms.description' | t -%}
+    {%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ page.title | default: shop.name | json }},
+  "description": {{ web_page_description | default: lurafi_description | json }},
+  "url": {{ canonical_url | json }},
+  "inLanguage": {{ request.locale.iso_code | json }},
+  "isPartOf": { "@id": {{ site_id | json }} },
+  "significantLink": [
+    {{ 'llms.txt' | asset_url | prepend: 'https:' | json }},
+    {{ 'llms-full.txt' | asset_url | prepend: 'https:' | json }},
+    {{ 'sitemap-ai.xml' | asset_url | prepend: 'https:' | json }},
+    {{ shop.url | append: '/sitemap.xml' | json }}
+  ]
+}
+</script>
+  {%- endif -%}
+{%- endif -%}

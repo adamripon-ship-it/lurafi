@@ -1,0 +1,44 @@
+{%- comment -%}
+  Lists LLM short/full assets and AI sitemap for human sitemap pages.
+  Params: show_heading (boolean), list_class (string)
+{%- endcomment -%}
+{%- liquid
+  assign llms_short_url = 'llms.txt' | asset_url
+  assign llms_full_url = 'llms-full.txt' | asset_url
+  assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
+  assign locale_root = request.locale.iso_code | split: '-' | first | downcase
+  assign list_class = list_class | default: ''
+-%}
+{%- if show_heading -%}
+  <h3 class="llm-discovery__heading">{{ 'sitemap.ai_files' | t }}</h3>
+{%- endif -%}
+<ul class="{{ list_class }}">
+  <li>
+    <a href="{{ llms_short_url }}">{{ 'sitemap.short_llm' | t }} (EN)</a>
+    <span class="text-muted"> — {{ 'sitemap.llms_points_to_full' | t }}</span>
+  </li>
+  <li><a href="{{ llms_full_url }}">{{ 'sitemap.full_llm' | t }} (EN)</a></li>
+  {%- if locale_root != 'en' -%}
+    {%- assign short_local = 'llms.' | append: locale_root | append: '.txt' -%}
+    {%- assign full_local = 'llms-full.' | append: locale_root | append: '.txt' -%}
+    <li><a href="{{ short_local | asset_url }}">{{ 'sitemap.short_llm' | t }} ({{ locale_root | upcase }})</a></li>
+    <li><a href="{{ full_local | asset_url }}">{{ 'sitemap.full_llm' | t }} ({{ locale_root | upcase }})</a></li>
+  {%- endif -%}
+  {%- assign llm_codes = 'nl,fr,de,es,it,nb,da,sv,fi,cs,pl' | split: ',' -%}
+  {%- for llm_code in llm_codes -%}
+    {%- unless llm_code == locale_root -%}
+      {%- assign short_name = 'llms.' | append: llm_code | append: '.txt' -%}
+      {%- assign full_name = 'llms-full.' | append: llm_code | append: '.txt' -%}
+      <li><a href="{{ short_name | asset_url }}">{{ 'sitemap.short_llm' | t }} ({{ llm_code | upcase }})</a></li>
+      <li><a href="{{ full_name | asset_url }}">{{ 'sitemap.full_llm' | t }} ({{ llm_code | upcase }})</a></li>
+    {%- endunless -%}
+  {%- endfor -%}
+  <li><a href="{{ ai_sitemap_url }}">{{ 'sitemap.ai_sitemap' | t }}</a></li>
+  <li><a href="{{ shop.url }}/sitemap.xml">{{ 'sitemap.shopify_sitemap' | t }}</a></li>
+  {%- if pages.llms -%}
+    <li><a href="{{ pages.llms.url }}">{{ 'sitemap.llm_page' | t }}</a></li>
+  {%- endif -%}
+  {%- if pages.sitemap -%}
+    <li><a href="{{ pages.sitemap.url }}">{{ 'sitemap.human_sitemap' | t }}</a></li>
+  {%- endif -%}
+</ul>

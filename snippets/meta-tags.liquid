@@ -3,8 +3,29 @@
   assign lurafi_meta_description = page_description
   assign lurafi_canonical_url = seo_canonical_url | default: canonical_url
   assign llms_page_url = pages.llms.url
+  assign lurafi_meta_title = page_title
+
   if lurafi_meta_description == blank and request.page_type == 'index'
     assign lurafi_meta_description = 'seo.home.description' | t
+  endif
+
+  if request.page_type == 'page'
+    case page.handle
+      when 'sitemap'
+        if lurafi_meta_description == blank
+          assign lurafi_meta_description = 'seo.sitemap.description' | t
+        endif
+        if page.title == blank or page.title == shop.name
+          assign lurafi_meta_title = 'seo.sitemap.title' | t
+        endif
+      when 'llms', 'ai-overzicht', 'apercu-ia', 'ki-uebersicht', 'resumen-ia', 'panoramica-ia', 'ai-oversikt', 'ai-oversigt', 'ai-yhteenveto', 'ai-prehled', 'podsumowanie-ai'
+        if lurafi_meta_description == blank
+          assign lurafi_meta_description = 'seo.llms.description' | t
+        endif
+        if page.title == blank or page.title == shop.name
+          assign lurafi_meta_title = 'seo.llms.title' | t
+        endif
+    endcase
   endif
 
   assign locale_root = request.locale.iso_code | split: '-' | first | downcase
@@ -66,7 +87,7 @@
   {%- endunless -%}
 {%- endfor -%}
 <meta property="og:url" content="{{ lurafi_canonical_url }}">
-<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:title" content="{{ lurafi_meta_title | escape }}">
 <meta property="og:type" content="{% if request.page_type == 'product' %}product{% elsif request.page_type == 'article' %}article{% else %}website{% endif %}">
 <meta property="og:description" content="{{ lurafi_meta_description | default: shop.description | default: shop.name | escape }}">
 
@@ -83,9 +104,11 @@
 {%- if llms_page_url != blank -%}
 <link rel="alternate" type="text/plain" href="{{ llms_page_url }}" title="LLM site summary">
 {%- endif -%}
-<link rel="alternate" type="text/plain" href="{{ 'llms.txt' | asset_url }}" title="Short LLM summary" hreflang="en">
-<link rel="alternate" type="text/plain" href="{{ 'llms-full.txt' | asset_url }}" title="Full LLM summary" hreflang="en">
-{%- assign llm_locales = 'nl,fr,de,es,it' | split: ',' -%}
+<link rel="alternate" type="text/plain" href="{{ 'llms.txt' | asset_url }}" title="Short LLM summary (llms.txt)" hreflang="en">
+<link rel="alternate" type="text/plain" href="{{ 'llms-full.txt' | asset_url }}" title="Full LLM summary (llms-full.txt)" hreflang="en">
+<meta name="ai:short-summary" content="{{ 'llms.txt' | asset_url | prepend: 'https:' }}">
+<meta name="ai:full-summary" content="{{ 'llms-full.txt' | asset_url | prepend: 'https:' }}">
+{%- assign llm_locales = 'nl,fr,de,es,it,nb,da,sv,fi,cs,pl' | split: ',' -%}
 {%- for llm_code in llm_locales -%}
   {%- assign short_asset = 'llms.' | append: llm_code | append: '.txt' -%}
   {%- assign full_asset = 'llms-full.' | append: llm_code | append: '.txt' -%}
@@ -95,5 +118,5 @@
 <link rel="sitemap" type="application/xml" href="{{ 'sitemap-ai.xml' | asset_url }}" title="AI sitemap">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:title" content="{{ lurafi_meta_title | escape }}">
 <meta name="twitter:description" content="{{ lurafi_meta_description | default: shop.description | default: shop.name | escape }}">

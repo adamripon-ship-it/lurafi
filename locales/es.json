@@ -81,7 +81,15 @@
     "home": {
       "description": "Cuando no estás, Kevin usa IA suiza para simular presencia humana real con luz, sombra y sonido—para que tu casa siga pareciendo habitada y los ladrones pasen de largo."
     },
-    "org_description": "Cuando no estás, Kevin usa IA suiza para simular presencia humana real con luz, sombra y sonido para que tu casa siga pareciendo habitada y los ladrones pasen de largo."
+    "org_description": "Cuando no estás, Kevin usa IA suiza para simular presencia humana real con luz, sombra y sonido para que tu casa siga pareciendo habitada y los ladrones pasen de largo.",
+    "sitemap": {
+      "title": "Sitemap — Lurafi & Kevin",
+      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+    },
+    "llms": {
+      "title": "LLM site summary — Kevin presence simulation",
+      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+    }
   },
   "products": {
     "product": {
@@ -329,7 +337,10 @@
     "search_sitemaps": "Mapas del sitio para buscadores",
     "shopify_sitemap": "Mapa del sitio XML de Shopify",
     "ai_geo_sitemap": "Mapa del sitio XML AI / AEO / GEO",
-    "robots": "Archivo de descubrimiento robots.txt"
+    "robots": "Archivo de descubrimiento robots.txt",
+    "human_sitemap": "Human-readable sitemap",
+    "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
+    "llms_points_to_full": "links to full summary"
   },
   "llms_page": {
     "oneliner": "Cuando no estás, Kevin usa IA suiza para simular presencia humana real con luz, sombra y sonido—para que tu casa siga pareciendo habitada y los ladrones pasen de largo.",
@@ -351,7 +362,9 @@
     "tagline": "Eslogan: Presencia que previene.",
     "character": "Perfil: Propietarios en Suiza/Europa que buscan tranquilidad cuando están fuera.",
     "guide": "Guía: Simulación de presencia con IA de ingeniería suiza.",
-    "lede": "Simulación de presencia con IA suiza para tu hogar. Cuando no estás, Kevin usa luz, sombra y sonido para que tu casa parezca y suene habitada—y los ladrones pasen de largo."
+    "lede": "Simulación de presencia con IA suiza para tu hogar. Cuando no estás, Kevin usa luz, sombra y sonido para que tu casa parezca y suene habitada—y los ladrones pasen de largo.",
+    "ai_discovery": "AI / LLM machine-readable files",
+    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context."
   },
   "faq": {
     "q1": "¿Qué es Kevin?",

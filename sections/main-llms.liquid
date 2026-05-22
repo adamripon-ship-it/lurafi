@@ -1,4 +1,4 @@
-{% comment %} Plain-text page for AI crawlers (create Page with handle "llms" and template "llms") {% endcomment %}
+{% comment %} Plain-text page for AI crawlers (Page handle "llms", template page.llms) {% endcomment %}
 {%- liquid
   capture configure_buy_url
     render 'configure-url', plan: 'buy'
@@ -11,46 +11,58 @@
   assign llms_short_url = 'llms.txt' | asset_url
   assign llms_full_url = 'llms-full.txt' | asset_url
   assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
+  assign locale_root = request.locale.iso_code | split: '-' | first | downcase
+  if locale_root != 'en'
+    assign llms_short_local = 'llms.' | append: locale_root | append: '.txt' | asset_url
+    assign llms_full_local = 'llms-full.' | append: locale_root | append: '.txt' | asset_url
+  endif
 -%}
 # {{ shop.name }}
 
-> Swiss AI presence simulation for your home. When you are away, Kevin uses light, shadow, and sound so your home looks and sounds lived-in—and burglars move on.
+> {{ 'llms_page.oneliner' | t }}
 
-## One-liner
-When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.
+## {{ 'llms_page.ai_discovery' | t }}
 
-## What we sell
-- **Kevin (Buy)**: One-time purchase. Device with 70+ hours of believable AI presence, Kevin App control, free delivery in Europe, 3-year Swiss warranty.
-- **Kevin+ (Subscribe)**: Monthly plan with device included, premium AI library, hardware replacement, cancel anytime.
+- **{{ 'sitemap.short_llm' | t }} (EN):** https:{{ llms_short_url }}
+- **{{ 'sitemap.full_llm' | t }} (EN):** https:{{ llms_full_url }}
+{%- if llms_short_local != blank -%}
+- **{{ 'sitemap.short_llm' | t }} ({{ locale_root | upcase }}):** https:{{ llms_short_local }}
+- **{{ 'sitemap.full_llm' | t }} ({{ locale_root | upcase }}):** https:{{ llms_full_local }}
+{%- endif -%}
+- **{{ 'sitemap.ai_sitemap' | t }}:** https:{{ ai_sitemap_url }}
+- **{{ 'sitemap.shopify_sitemap' | t }}:** {{ shop.url }}/sitemap.xml
+- **{{ 'sitemap.human_sitemap' | t }}:** {{ shop.url }}/pages/sitemap
 
-## How it works
-1. Plug in near a window.
-2. Set a schedule or let Kevin activate when you leave.
-3. Your home never looks empty—light, shadow, and sound adapt over time.
+{{ 'llms_page.short_points_to_full' | t }}
 
-## Key differentiators
-- Prevention, not reaction (vs alarms that trigger after entry)
-- No cameras, no microphones
-- Swiss-engineered AI; ~9W power
-- Qualitative daytime burglary risk positioning (no unsourced police statistics)
+## {{ 'llms_page.what_we_sell' | t }}
+- {{ 'llms_page.buy_bullet' | t }}
+- {{ 'llms_page.sub_bullet' | t }}
 
-## Primary URLs
+## {{ 'llms_page.how_heading' | t }}
+1. {{ 'llms_page.how_1' | t }}
+2. {{ 'llms_page.how_2' | t }}
+3. {{ 'llms_page.how_3' | t }}
+
+## {{ 'llms_page.diff_heading' | t }}
+- {{ 'llms_page.diff_1' | t }}
+- {{ 'llms_page.diff_2' | t }}
+- {{ 'llms_page.diff_3' | t }}
+- {{ 'llms_page.diff_4' | t }}
+
+## {{ 'llms_page.urls_heading' | t }}
 - Homepage: {{ shop.url }}
 - Configure / Buy: {{ shop.url }}{{ configure_buy_url }}
 - Subscribe: {{ shop.url }}{{ configure_sub_url }}
 - Cart: {{ shop.url }}/cart
-- Short LLM summary: https:{{ llms_short_url }}
-- Full LLM summary: https:{{ llms_full_url }}
-- AI sitemap: https:{{ ai_sitemap_url }}
-- Human sitemap: {{ shop.url }}/pages/sitemap
 
-## Contact
+## {{ 'llms_page.contact_heading' | t }}
 - Email: hello@lurafi.ai
 
-## Brand
-- Tagline: Presence that prevents.
-- Character: Homeowners in Switzerland/Europe who want peace of mind when away.
-- Guide: Swiss-engineered AI presence simulation.
+## {{ 'llms_page.brand_heading' | t }}
+- {{ 'llms_page.tagline' | t }}
+- {{ 'llms_page.character' | t }}
+- {{ 'llms_page.guide' | t }}
 
 {% schema %}
 { "name": "LLMs text", "settings": [] }

@@ -81,7 +81,15 @@
     "home": {
       "description": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem – váš domov zůstane viditelně obydlený a zloději půjdou dál."
     },
-    "org_description": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem, aby váš domov zůstal viditelně obydlený a zloději šli dál."
+    "org_description": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem, aby váš domov zůstal viditelně obydlený a zloději šli dál.",
+    "sitemap": {
+      "title": "Sitemap — Lurafi & Kevin",
+      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+    },
+    "llms": {
+      "title": "LLM site summary — Kevin presence simulation",
+      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+    }
   },
   "products": {
     "product": {
@@ -329,7 +337,10 @@
     "search_sitemaps": "Mapy webu pro vyhledávače",
     "shopify_sitemap": "Shopify XML mapa webu",
     "ai_geo_sitemap": "AI / AEO / GEO XML mapa webu",
-    "robots": "Soubor Robots.txt"
+    "robots": "Soubor Robots.txt",
+    "human_sitemap": "Human-readable sitemap",
+    "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
+    "llms_points_to_full": "links to full summary"
   },
   "llms_page": {
     "oneliner": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem – váš domov zůstane viditelně obydlený a zloději půjdou dál.",
@@ -351,7 +362,9 @@
     "tagline": "Slogan: Přítomnost, která brání.",
     "character": "Cílová skupina: Majitelé domů ve Švýcarsku a Evropě, kteří chtějí klid, když jsou pryč.",
     "guide": "Průvodce: Švýcarská simulace AI přítomnosti.",
-    "lede": "Švýcarská simulace AI přítomnosti pro váš domov. Když jste pryč, Kevin používá světlo, stín a zvuk, aby váš domov vypadal a zněl obydleně – a zloději šli dál."
+    "lede": "Švýcarská simulace AI přítomnosti pro váš domov. Když jste pryč, Kevin používá světlo, stín a zvuk, aby váš domov vypadal a zněl obydleně – a zloději šli dál.",
+    "ai_discovery": "AI / LLM machine-readable files",
+    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context."
   },
   "faq": {
     "q1": "Co je Kevin?",

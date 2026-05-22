@@ -1,0 +1,30 @@
+# Lurafi / Kevin (SV)
+
+> Kevin helps make a home look and sound lived-in when you are away using light, shadow, and sound.
+
+## AI / LLM discovery
+- Short summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms.sv.txt
+- Full summary (read for complete context): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.sv.txt
+- AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.ai/sitemap.xml
+- Human sitemap page: https://lurafi.ai/sv/pages/webbplatskarta
+- LLM overview page: https://lurafi.ai/sv/pages/ai-oversikt
+
+
+Lurafi sells Kevin — Swiss AI presence simulation (Svenska storefront).
+
+Key facts:
+- Product: Kevin
+- Category: AI home security, presence simulation, burglary deterrent
+- Privacy: No cameras, no microphones, no cloud monitoring
+- Setup: Plug in, place near a window, configure in the app
+- Warranty: 3-year Swiss warranty
+- Delivery: Free delivery across Europe
+
+Important URLs:
+- Homepage: https://lurafi.ai/sv
+- Configure / buy: https://lurafi.ai/sv/pages/konfigurera-kevin?plan=buy
+- Subscribe: https://lurafi.ai/sv/pages/konfigurera-kevin?plan=subscribe
+
+Contact:
+- Email: hello@lurafi.ai

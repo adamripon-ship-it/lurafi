@@ -53,7 +53,7 @@
     "setup_and_app": "Installatie en app",
     "cart": "Winkelwagen",
     "log_in": "Inloggen",
-    "account": "Rekening"
+    "account": "Account"
   },
   "footer": {
     "note": "Kevin simuleert menselijke aanwezigheid met licht, schaduw en geluid. Resultaten kunnen variëren. Zie productdocumentatie voor details.",
@@ -81,7 +81,15 @@
     "home": {
       "description": "Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid—zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan."
     },
-    "org_description": "Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan."
+    "org_description": "Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan.",
+    "sitemap": {
+      "title": "Sitemap — Lurafi & Kevin",
+      "description": "Sitemap met alle talen, Shopify sitemap.xml, AI-sitemap, llms.txt korte samenvattingen en llms-full.txt volledige gidsen voor zoekmachines en LLM-crawlers."
+    },
+    "llms": {
+      "title": "LLM-samenvatting — Kevin aanwezigheidssimulatie",
+      "description": "Platte-tekstoverzicht voor AI-assistenten: productfeiten, URL’s en links naar llms.txt en llms-full.txt."
+    }
   },
   "products": {
     "product": {
@@ -355,9 +363,14 @@
     "search_sitemaps": "Zoekmachine-sitemaps",
     "shopify_sitemap": "Shopify XML-sitemap",
     "ai_geo_sitemap": "AI / AEO / GEO XML-sitemap",
-    "robots": "Robots.txt"
+    "robots": "Robots.txt",
+    "human_sitemap": "Sitemap voor mensen",
+    "ai_files_hint": "Begin bij het korte LLM-bestand; daarin staat een link naar de volledige samenvatting. Beide staan in sitemap-ai.xml en sitemap.xml.",
+    "llms_points_to_full": "verwijst naar volledige samenvatting"
   },
   "llms_page": {
+    "ai_discovery": "AI- en LLM-bestanden (machine-leesbaar)",
+    "short_points_to_full": "Elk kort llms.txt-bestand linkt naar het bijbehorende llms-full.txt voor volledige merk- en productcontext.",
     "oneliner": "Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid—zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan.",
     "what_we_sell": "Wat we verkopen",
     "buy_bullet": "**Kevin (Kopen)**: Eenmalige aankoop. Apparaat met 70+ uur geloofwaardige AI-aanwezigheid, Kevin-app, gratis bezorging in Europa, 3 jaar Zwitserse garantie.",
@@ -495,7 +508,7 @@
       "tax": "Belasting — {{ title }} ({{ rate }}%)",
       "total_label": "Totaal",
       "fulfilled": "Verzonden {{ date }}",
-      "tracking": "{{ bedrijf }} {{ nummer }}",
+      "tracking": "{{ company }} {{ number }}",
       "billing_title": "Factuuradres",
       "payment_status": "Betaalstatus: {{ status }}",
       "shipping_title": "Verzendadres",
