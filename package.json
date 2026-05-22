@@ -1,0 +1,23 @@
+{
+  "name": "lurafi-theme",
+  "version": "2.1.0",
+  "private": true,
+  "description": "Shopify Online Store 2.0 theme for lurafi.ai (Kevin presence simulator)",
+  "type": "module",
+  "scripts": {
+    "theme:check": "shopify theme check",
+    "theme:push:live": "shopify theme push -s fu03cn-1v.myshopify.com --theme 196456219011 --allow-live",
+    "locales:build": "node scripts/build-locales.mjs",
+    "locales:translate": "node scripts/translate-locales.mjs",
+    "geo:generate": "node scripts/generate-sitemap-ai.mjs && node scripts/generate-llms-assets.mjs",
+    "shopify:locales": "./scripts/activate-locales.sh",
+    "qa:i18n": "node scripts/i18n-browser-qa.mjs"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.84.0",
+    "playwright": "^1.52.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

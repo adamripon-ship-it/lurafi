@@ -116,6 +116,7 @@
     "empty_configure_note": "Configure Kevin to continue to checkout with free delivery.",
     "empty_configure_cta": "Configure your Kevin",
     "free_delivery_checkout": "Free delivery selected at checkout",
+    "drawer_delivery": "Free delivery selected at checkout · 30-day returns",
     "secure_shopify": "Secure Shopify checkout"
   },
   "configure": {

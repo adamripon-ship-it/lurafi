@@ -15,6 +15,10 @@ scripts/audit-report.json
 .env.*
 *.pem
 .shopify/
+.shopify-cli.yml
+
+# Local theme dev
+.shopify/bundle/
 
 # OS
 .DS_Store

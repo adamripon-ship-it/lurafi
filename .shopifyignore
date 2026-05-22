@@ -1,0 +1,12 @@
+# Dev tooling — never upload to the theme on Shopify
+.github/
+docs/
+scripts/
+node_modules/
+package.json
+package-lock.json
+.env
+.env.*
+README.md
+SECURITY.md
+.editorconfig

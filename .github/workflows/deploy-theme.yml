@@ -1,0 +1,38 @@
+name: Deploy theme (manual)
+
+# Push to live only when you explicitly run this workflow.
+# Requires GitHub repository secrets (Settings → Secrets → Actions):
+#   SHOPIFY_CLI_THEME_TOKEN — Theme Access password from Shopify Admin
+#   SHOPIFY_FLAG_STORE      — fu03cn-1v.myshopify.com
+
+on:
+  workflow_dispatch:
+    inputs:
+      theme_id:
+        description: Live theme ID
+        required: true
+        default: "196456219011"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install Shopify CLI
+        run: npm ci
+
+      - name: Push theme to Shopify
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+        run: |
+          shopify theme push \
+            --theme "${{ github.event.inputs.theme_id }}" \
+            --allow-live \
+            --json

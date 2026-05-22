@@ -1,0 +1,15 @@
+extends: theme-check:recommended
+
+# Machine-translated locale files may drift until re-built; enforce via locales:build in CI.
+MatchingTranslations:
+  enabled: false
+
+# Schema locale files are editor-only labels.
+ignore:
+  - locales/*.schema.json
+
+TranslationKeyExists:
+  severity: warning
+
+UnusedAssign:
+  severity: warning

@@ -1,31 +1,44 @@
-# Lurafi Shopify theme
+# Lurafi — Shopify theme
 
-Kevin presence-simulator storefront for [lurafi.ai](https://lurafi.ai) — Shopify Online Store 2.0 theme with 12-locale i18n (Markets + theme locales).
+[![Theme Check](https://github.com/adamripon-ship-it/lurafi/actions/workflows/theme-check.yml/badge.svg)](https://github.com/adamripon-ship-it/lurafi/actions/workflows/theme-check.yml)
+
+Shopify Online Store 2.0 theme for **[lurafi.ai](https://lurafi.ai/)** — the Kevin Swiss presence-simulator storefront.
 
 ## Stack
 
-- Shopify theme (Liquid, JSON templates)
-- Native multi-language via Shopify Markets (`/nl/`, `/fr/`, `/de/`, …)
-- Theme strings: `locales/*.json`
-- Registry: `config/languages.json`
+- **Shopify** Markets + native translations (12 locales, subfolder URLs)
+- **Liquid** sections/snippets, JSON templates
+- **Theme locales** — `locales/*.json` (see `config/languages.json`)
+- **Node scripts** — locale build, GEO assets, QA (not deployed to the theme)
 
-## Docs
-
-See [docs/I18N.md](docs/I18N.md) for locale build, Admin setup, and QA.
-
-## Local scripts
+## Quick start
 
 ```bash
-node scripts/build-locales.mjs
-node scripts/translate-locales.mjs    # optional: DEEPL_API_KEY
-./scripts/activate-locales.sh
-node scripts/i18n-browser-qa.mjs
+npm ci
+npm run theme:check
+npm run locales:build
 ```
 
-## Deploy theme
+## Documentation
+
+| Doc | Purpose |
+|-----|---------|
+| [docs/SHOPIFY.md](docs/SHOPIFY.md) | Store IDs, deploy flow, repo layout |
+| [docs/I18N.md](docs/I18N.md) | Locales, Markets, translation pipeline |
+
+## Deploy to production
 
 ```bash
-shopify theme push -s fu03cn-1v.myshopify.com --theme 196456219011 --allow-live
+npm run theme:push:live
 ```
 
-Do not commit Shopify CLI tokens or `.env` files.
+Or use GitHub Actions → **Deploy theme (manual)** after adding repository secrets (see [docs/SHOPIFY.md](docs/SHOPIFY.md)).
+
+## Branching
+
+- `main` — production-aligned theme (matches live after deploy)
+- Use PRs; CI runs Theme Check on every pull request
+
+## License
+
+Proprietary — Lurafi / Kevin. All rights reserved.
