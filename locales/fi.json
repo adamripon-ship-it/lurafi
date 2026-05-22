@@ -172,7 +172,10 @@
     "error_checkout": "Verkkokauppa on melkein valmis. Tilaa sähköpostitse hello@lurafi.ai tai yritä pian uudelleen.",
     "processing": "Käsitellään…",
     "device_alt": "Kevin-laite",
-    "device_in": "Kevin värissä {{ color }}"
+    "device_in": "Kevin värissä {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Poissa-tila",
@@ -503,5 +506,8 @@
       "submit": "Aktivoi tili",
       "decline": "Hylkää kutsu"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

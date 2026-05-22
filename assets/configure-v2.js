@@ -29,7 +29,10 @@
 
   var els = {
     image: root.querySelector('[data-configure-image]'),
-    colorName: root.querySelector('[data-configure-color-name]'),
+    colorName: root.querySelectorAll('[data-configure-color-name]'),
+    colorNameInline: root.querySelector('[data-configure-color-name-inline]'),
+    chipDot: root.querySelector('[data-configure-chip-dot]'),
+    stickyColor: root.querySelector('[data-configure-sticky-color]'),
     swatches: root.querySelector('[data-configure-swatches]'),
     planCards: root.querySelectorAll('[data-plan]'),
     qtyWrap: root.querySelector('[data-configure-qty]'),
@@ -184,7 +187,7 @@
     var plan = getPlanData();
     var features = plan && plan.features ? plan.features : [];
     els.features.innerHTML = features.map(function (f) {
-      return '<li class="configure-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>' + f + '</li>';
+      return '<li class="configure-feature"><span class="configure-feature__icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="configure-feature__text">' + f + '</span></li>';
     }).join('');
   }
 
@@ -269,7 +272,13 @@
         els.image.style.opacity = '1';
       }, 150);
     }
-    if (els.colorName) els.colorName.textContent = displayColor(variant.color);
+    var label = displayColor(variant.color);
+    if (els.colorName && els.colorName.length) {
+      els.colorName.forEach(function (node) { node.textContent = label; });
+    }
+    if (els.colorNameInline) els.colorNameInline.textContent = label;
+    if (els.stickyColor) els.stickyColor.textContent = label;
+    if (els.chipDot) els.chipDot.style.background = getHex(variant.color);
   }
 
   function renderQty() {
@@ -346,6 +355,8 @@
           els.error.hidden = false;
           els.error.textContent = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.errorProducts) || 'Please assign products in Theme settings → Products.';
         }
+        els.ctas.forEach(function (button) { button.disabled = false; });
+        resetCtaLabels();
         return;
       }
       if (!isValidVariantId(variant.id)) {
@@ -353,6 +364,8 @@
           els.error.hidden = false;
           els.error.textContent = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.errorCheckout) || 'Online checkout is almost ready. Email hello@lurafi.ai to order, or try again soon.';
         }
+        els.ctas.forEach(function (button) { button.disabled = false; });
+        resetCtaLabels();
         return;
       }
       if (els.error) els.error.hidden = true;
@@ -375,7 +388,18 @@
     });
   });
 
+  function resetCtaLabels() {
+    var t = window.themeTranslations && window.themeTranslations.configure;
+    var mainLabel = (t && t.checkoutCta) || 'Continue to checkout';
+    var stickyLabel = (t && t.stickyCheckout) || 'Checkout';
+    els.ctaLabels.forEach(function (label, index) {
+      label.textContent = index === 0 ? mainLabel : stickyLabel;
+    });
+  }
+
   initPlanFromUrl();
   initVariant();
   render();
+  root.classList.add('configure-page--ready');
+  resetCtaLabels();
 })();

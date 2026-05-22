@@ -38,6 +38,9 @@
     "cs": "CS",
     "pl": "PL"
   },
+  "country": {
+    "label": "Country / region"
+  },
   "header": {
     "why_kevin": "Waarom Kevin",
     "product": "Product",
@@ -137,6 +140,7 @@
     "cart": "Winkelwagen",
     "step_configure": "Configureren",
     "step_checkout": "Afrekenen",
+    "header_eyebrow": "Veilig afrekenen",
     "title": "Kies je Kevin.",
     "lede": "Kies je kleur en plan—je bent één stap verwijderd van een huis dat nooit leeg lijkt.",
     "color_label": "Kleur voorkant",
@@ -144,8 +148,10 @@
     "plan_label": "Kies je plan",
     "plan_buy": "Kopen",
     "plan_buy_sub": "Eenmalige aankoop",
+    "plan_badge_popular": "Meest gekozen",
     "plan_sub": "Kevin+",
     "plan_sub_sub": "Maandabonnement",
+    "plan_sub_badge": "Flexibel",
     "billing": "Facturatie",
     "quantity": "Aantal",
     "qty_hint": "Aanbevolen: 2 apparaten voor woningen met meerdere verdiepingen",

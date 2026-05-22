@@ -172,7 +172,10 @@
     "error_checkout": "Online pokladna je téměř připravena. Objednejte e-mailem na hello@lurafi.ai nebo to zkuste brzy znovu.",
     "processing": "Zpracovává se…",
     "device_alt": "Zařízení Kevin",
-    "device_in": "Kevin v barvě {{ color }}"
+    "device_in": "Kevin v barvě {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Režim nepřítomnosti",
@@ -503,5 +506,8 @@
       "submit": "Aktivovat účet",
       "decline": "Odmítnout pozvání"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

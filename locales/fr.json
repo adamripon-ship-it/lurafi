@@ -172,7 +172,10 @@
     "error_checkout": "Le paiement en ligne arrive bientôt. Écrivez à hello@lurafi.ai pour commander, ou réessayez prochainement.",
     "processing": "Traitement…",
     "device_alt": "Appareil Kevin",
-    "device_in": "Kevin en {{ color }}"
+    "device_in": "Kevin en {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Mode absence",
@@ -503,5 +506,8 @@
       "submit": "Activer le compte",
       "decline": "Refuser l'invitation"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

@@ -172,7 +172,10 @@
     "error_checkout": "Online-Checkout ist fast bereit. Schreiben Sie an hello@lurafi.ai zum Bestellen oder versuchen Sie es bald erneut.",
     "processing": "Wird verarbeitet…",
     "device_alt": "Kevin-Gerät",
-    "device_in": "Kevin in {{ color }}"
+    "device_in": "Kevin in {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Abwesenheitsmodus",
@@ -503,5 +506,8 @@
       "submit": "Konto aktivieren",
       "decline": "Einladung ablehnen"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

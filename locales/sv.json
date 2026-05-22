@@ -172,7 +172,10 @@
     "error_checkout": "Online checkout är nästan klar. Mejla hello@lurafi.ai för att beställa, eller försök igen snart.",
     "processing": "Bearbetar…",
     "device_alt": "Kevin-enhet",
-    "device_in": "Kevin i {{ color }}"
+    "device_in": "Kevin i {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Bortaläge",
@@ -503,5 +506,8 @@
       "submit": "Aktivera konto",
       "decline": "Avvisa inbjudan"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

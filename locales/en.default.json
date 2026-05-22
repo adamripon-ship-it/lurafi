@@ -38,6 +38,9 @@
     "cs": "CS",
     "pl": "PL"
   },
+  "country": {
+    "label": "Country / region"
+  },
   "header": {
     "why_kevin": "Why Kevin",
     "product": "Product",
@@ -137,6 +140,7 @@
     "cart": "Cart",
     "step_configure": "Configure",
     "step_checkout": "Checkout",
+    "header_eyebrow": "Secure checkout",
     "title": "Choose your Kevin.",
     "lede": "Pick your color and plan—you are one step from a home that never looks empty.",
     "color_label": "Front Cover Color",
@@ -144,8 +148,10 @@
     "plan_label": "Choose Your Plan",
     "plan_buy": "Buy",
     "plan_buy_sub": "One-time purchase",
+    "plan_badge_popular": "Most popular",
     "plan_sub": "Kevin+",
     "plan_sub_sub": "Monthly subscription",
+    "plan_sub_badge": "Flexible",
     "billing": "Billing",
     "quantity": "Quantity",
     "qty_hint": "Recommended: 2 devices for homes with multiple floors",

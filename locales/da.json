@@ -172,7 +172,10 @@
     "error_checkout": "Online checkout er næsten klar. Send en e-mail til hello@lurafi.ai for at bestille, eller prøv igen snart.",
     "processing": "Behandler…",
     "device_alt": "Kevin-enhed",
-    "device_in": "Kevin i {{ color }}"
+    "device_in": "Kevin i {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Fraværstilstand",
@@ -503,5 +506,8 @@
       "submit": "Aktiver konto",
       "decline": "Afslå invitation"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

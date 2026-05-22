@@ -33,6 +33,9 @@ const en = {
     en: 'EN',
     nl: 'NL'
   },
+  country: {
+    label: 'Country / region'
+  },
   header: {
     why_kevin: 'Why Kevin',
     product: 'Product',
@@ -114,6 +117,7 @@ const en = {
     cart: 'Cart',
     step_configure: 'Configure',
     step_checkout: 'Checkout',
+    header_eyebrow: 'Secure checkout',
     title: 'Choose your Kevin.',
     lede: 'Pick your color and plan—you are one step from a home that never looks empty.',
     color_label: 'Front Cover Color',
@@ -121,8 +125,10 @@ const en = {
     plan_label: 'Choose Your Plan',
     plan_buy: 'Buy',
     plan_buy_sub: 'One-time purchase',
+    plan_badge_popular: 'Most popular',
     plan_sub: 'Kevin+',
     plan_sub_sub: 'Monthly subscription',
+    plan_sub_badge: 'Flexible',
     billing: 'Billing',
     quantity: 'Quantity',
     qty_hint: 'Recommended: 2 devices for homes with multiple floors',
@@ -532,6 +538,7 @@ nl.configure = {
   cart: 'Winkelwagen',
   step_configure: 'Configureren',
   step_checkout: 'Afrekenen',
+  header_eyebrow: 'Veilig afrekenen',
   title: 'Kies je Kevin.',
   lede: 'Kies je kleur en plan—je bent één stap verwijderd van een huis dat nooit leeg lijkt.',
   color_label: 'Kleur voorkant',
@@ -539,8 +546,10 @@ nl.configure = {
   plan_label: 'Kies je plan',
   plan_buy: 'Kopen',
   plan_buy_sub: 'Eenmalige aankoop',
+  plan_badge_popular: 'Meest gekozen',
   plan_sub: 'Kevin+',
   plan_sub_sub: 'Maandabonnement',
+  plan_sub_badge: 'Flexibel',
   billing: 'Facturatie',
   quantity: 'Aantal',
   qty_hint: 'Aanbevolen: 2 apparaten voor woningen met meerdere verdiepingen',

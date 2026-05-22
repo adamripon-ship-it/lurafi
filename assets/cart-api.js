@@ -139,10 +139,27 @@
     trapCartFocus(e);
   });
 
+  function closeMobileNavIfOpen() {
+    var nav = document.getElementById('MobileNav');
+    if (!nav || nav.getAttribute('data-open') !== 'true') return false;
+    var closeBtn = nav.querySelector('[data-menu-close]');
+    if (closeBtn) closeBtn.click();
+    else {
+      nav.setAttribute('data-open', 'false');
+      nav.setAttribute('aria-hidden', 'true');
+      nav.hidden = true;
+      document.body.classList.remove('mobile-nav-open');
+      var menuBtn = document.querySelector('[data-menu-open]');
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+    }
+    return true;
+  }
+
   document.addEventListener('click', function (e) {
     var openBtn = e.target.closest('[data-cart-drawer-open]');
     if (!openBtn || !window.LurafiCart) return;
     e.preventDefault();
+    closeMobileNavIfOpen();
     window.LurafiCart.get().then(function (cart) {
       window.LurafiCart.openDrawer(cart);
     });

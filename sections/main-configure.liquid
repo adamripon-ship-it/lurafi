@@ -40,7 +40,7 @@
       </a>
       <span class="configure-nav__title">{{ 'configure.nav_title' | t }}</span>
       <div class="configure-nav__tools">
-        {% render 'language-selector', form_id: 'ConfigureLanguageForm', selector_id: 'ConfigureLanguageSelector' %}
+        {% render 'language-selector', form_id: 'ConfigureLanguageForm', selector_id: 'ConfigureLanguageSelector', country_selector_id: 'ConfigureCountrySelector' %}
       </div>
       <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart configure-nav__cart" aria-label="{{ 'configure.cart' | t }}">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
@@ -52,14 +52,23 @@
     </div>
   </nav>
 
-  <div class="configure-progress apple-container" aria-hidden="true">
-    <span class="configure-progress__step is-active">{{ 'configure.step_configure' | t }}</span>
-    <span class="configure-progress__sep"></span>
-    <span class="configure-progress__step">{{ 'configure.step_checkout' | t }}</span>
+  <div class="configure-stepper-wrap apple-container" aria-label="{{ 'accessibility.configure_steps' | t | default: 'Checkout steps' }}">
+    <ol class="configure-stepper" role="list">
+      <li class="configure-stepper__item is-active" aria-current="step">
+        <span class="configure-stepper__num" aria-hidden="true">1</span>
+        <span class="configure-stepper__label">{{ 'configure.step_configure' | t }}</span>
+      </li>
+      <li class="configure-stepper__connector" aria-hidden="true"></li>
+      <li class="configure-stepper__item">
+        <span class="configure-stepper__num" aria-hidden="true">2</span>
+        <span class="configure-stepper__label">{{ 'configure.step_checkout' | t }}</span>
+      </li>
+    </ol>
   </div>
 
   <div class="apple-container configure-page__inner">
     <header class="configure-header">
+      <p class="configure-header__eyebrow">{{ 'configure.header_eyebrow' | t | default: 'Secure checkout' }}</p>
       <h1 class="configure-header__title">{{ 'configure.title' | t }}</h1>
       <p class="configure-header__lede">{{ 'configure.lede' | t }}</p>
     </header>
@@ -67,6 +76,7 @@
     <div class="configure-grid">
       <div class="configure-gallery">
         <div class="configure-gallery__well">
+          <div class="configure-gallery__glow" aria-hidden="true"></div>
           <img
             src="{{ default_image }}"
             alt="{{ 'configure.device_alt' | t }}"
@@ -76,20 +86,26 @@
             height="420"
             loading="eager"
           >
+          <p class="configure-gallery__chip">
+            <span class="configure-gallery__chip-dot" data-configure-chip-dot aria-hidden="true"></span>
+            <span data-configure-color-name>Grey</span>
+          </p>
         </div>
       </div>
 
       <div class="configure-controls">
-        <div class="configure-block">
-          <h2 class="configure-label">{{ 'configure.color_label' | t }}</h2>
+        <section class="configure-section" aria-labelledby="ConfigureColorHeading">
+          <h2 id="ConfigureColorHeading" class="configure-label">{{ 'configure.color_label' | t }}</h2>
           <div class="configure-swatches" data-configure-swatches role="group" aria-label="{{ 'accessibility.color_swatches' | t }}"></div>
-          <p class="configure-color-text">{{ 'configure.color_prefix' | t }} <strong data-configure-color-name>Grey</strong></p>
-        </div>
+          <p class="configure-color-text">{{ 'configure.color_prefix' | t }} <strong data-configure-color-name-inline>Grey</strong></p>
+        </section>
 
-        <div class="configure-block">
-          <h2 class="configure-label">{{ 'configure.plan_label' | t }}</h2>
+        <section class="configure-section" aria-labelledby="ConfigurePlanHeading">
+          <h2 id="ConfigurePlanHeading" class="configure-label">{{ 'configure.plan_label' | t }}</h2>
           <div class="configure-plans">
             <button type="button" class="configure-plan-card is-selected" data-plan="buy" aria-pressed="true">
+              <span class="configure-plan-card__radio" aria-hidden="true"></span>
+              <span class="configure-plan-card__badge configure-plan-card__badge--popular">{{ 'configure.plan_badge_popular' | t }}</span>
               <p class="configure-plan-card__title">{{ 'configure.plan_buy' | t }}</p>
               <p class="configure-plan-card__sub">{{ 'configure.plan_buy_sub' | t }}</p>
               <p class="configure-plan-card__price">
@@ -107,6 +123,8 @@
               aria-pressed="false"
               {% if sub_product == blank %}disabled title="Assign Kevin+ in theme settings"{% endif %}
             >
+              <span class="configure-plan-card__radio" aria-hidden="true"></span>
+              <span class="configure-plan-card__badge">{{ 'configure.plan_sub_badge' | t }}</span>
               <p class="configure-plan-card__title">{{ 'configure.plan_sub' | t }}</p>
               <p class="configure-plan-card__sub">{{ 'configure.plan_sub_sub' | t }}</p>
               <p class="configure-plan-card__price">
@@ -120,7 +138,7 @@
           </div>
           {%- if sub_product != blank and sub_product.selling_plan_groups.size > 0 -%}
             <div class="configure-selling-plan" data-selling-plan-select-wrap hidden>
-              <label class="configure-label" for="SellingPlanSelect">{{ 'configure.billing' | t }}</label>
+              <label class="configure-label configure-label--inline" for="SellingPlanSelect">{{ 'configure.billing' | t }}</label>
               <select id="SellingPlanSelect" class="configure-select" data-selling-plan-select hidden>
                 {%- for group in sub_product.selling_plan_groups -%}
                   {%- for plan in group.selling_plans -%}
@@ -130,30 +148,30 @@
               </select>
             </div>
           {%- endif -%}
-        </div>
+        </section>
 
-        <div class="configure-block" data-configure-qty>
-          <h2 class="configure-label">{{ 'configure.quantity' | t }}</h2>
-          <div class="configure-qty">
+        <section class="configure-section configure-section--compact" data-configure-qty aria-labelledby="ConfigureQtyHeading">
+          <h2 id="ConfigureQtyHeading" class="configure-label">{{ 'configure.quantity' | t }}</h2>
+          <div class="configure-qty" role="group" aria-label="{{ 'configure.quantity' | t }}">
             <button type="button" class="configure-qty__btn" data-configure-qty-minus aria-label="{{ 'accessibility.decrease_qty' | t }}">
               <svg width="12" height="2" viewBox="0 0 12 2" fill="none" aria-hidden="true"><path d="M1 1h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </button>
-            <span class="configure-qty__value" data-configure-qty-value>1</span>
+            <span class="configure-qty__value" data-configure-qty-value aria-live="polite">1</span>
             <button type="button" class="configure-qty__btn" data-configure-qty-plus aria-label="{{ 'accessibility.increase_qty' | t }}">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </button>
           </div>
           <p class="configure-qty__hint">{{ 'configure.qty_hint' | t }}</p>
-        </div>
+        </section>
 
-        <div class="configure-block">
-          <h2 class="configure-label">{{ 'configure.included' | t }}</h2>
+        <section class="configure-section configure-section--features" aria-labelledby="ConfigureIncludedHeading">
+          <h2 id="ConfigureIncludedHeading" class="configure-label">{{ 'configure.included' | t }}</h2>
           <ul class="configure-features" data-configure-features></ul>
-        </div>
+        </section>
 
-        <div class="configure-summary" id="ConfigureSummary">
+        <aside class="configure-summary configure-checkout-panel" id="ConfigureSummary" aria-label="{{ 'accessibility.checkout_summary' | t }}">
           <div class="configure-order-card" aria-label="{{ 'accessibility.order_summary' | t }}">
-            <div>
+            <div class="configure-order-card__head">
               <p class="configure-order-card__label">{{ 'configure.order_summary' | t }}</p>
               <p class="configure-order-card__title">{{ 'configure.product_title' | t }}</p>
             </div>
@@ -168,48 +186,71 @@
               </div>
               <div>
                 <dt>{{ 'configure.summary_delivery' | t }}</dt>
-                <dd>{{ 'configure.delivery_free' | t }}</dd>
+                <dd class="configure-order-card__highlight">{{ 'configure.delivery_free' | t }}</dd>
               </div>
             </dl>
           </div>
-          <div class="configure-summary__row">
-            <div>
-              <p class="configure-summary__label">{{ 'configure.total' | t }}</p>
-              <p class="configure-summary__total">
-                <span data-configure-total>—</span>
-                <span class="configure-summary__suffix" data-configure-total-suffix></span>
-              </p>
+
+          <div class="configure-summary__total-block">
+            <div class="configure-summary__row">
+              <div>
+                <p class="configure-summary__label">{{ 'configure.total' | t }}</p>
+                <p class="configure-summary__total">
+                  <span data-configure-total>—</span>
+                  <span class="configure-summary__suffix" data-configure-total-suffix></span>
+                </p>
+              </div>
+              <p class="configure-summary__per" data-configure-per-device hidden></p>
             </div>
-            <p class="configure-summary__per" data-configure-per-device hidden></p>
+            <button type="button" class="btn-apple-primary btn-block configure-cta" data-configure-checkout>
+              <span data-configure-cta-label>{{ 'configure.checkout_cta' | t }}</span>
+              <svg class="configure-cta__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <p class="configure-summary__trust" role="alert" data-configure-error hidden></p>
           </div>
-          <button type="button" class="btn-apple-primary btn-block configure-cta" data-configure-checkout>
-            <span data-configure-cta-label>{{ 'configure.checkout_cta' | t }}</span>
-          </button>
-          <p class="configure-summary__trust" role="alert" data-configure-error hidden></p>
+
           <div class="checkout-assurance configure-summary__assurance" aria-label="{{ 'accessibility.checkout_benefits' | t }}">
-            <p>{{ 'configure.free_delivery' | t }}</p>
-            <p>{{ 'configure.returns' | t }}</p>
-            <p>{{ 'configure.warranty' | t }}</p>
+            <p>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z" stroke="currentColor" stroke-width="1.5"/><path d="M9 22V12h6v10" stroke="currentColor" stroke-width="1.5"/></svg>
+              {{ 'configure.free_delivery' | t }}
+            </p>
+            <p>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              {{ 'configure.returns' | t }}
+            </p>
+            <p>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 4v6c0 4.5-3.2 7.8-7 8-3.8-.2-7-3.5-7-8V7l7-4z" stroke="currentColor" stroke-width="1.5"/></svg>
+              {{ 'configure.warranty' | t }}
+            </p>
           </div>
           <p class="configure-summary__secure">
             <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1" stroke="currentColor"/><path d="M3 6V4a3 3 0 0 1 6 0v2" stroke="currentColor"/></svg>
             {{ 'configure.secure' | t }}
           </p>
-        </div>
+        </aside>
       </div>
     </div>
   </div>
+
   <aside class="configure-sticky-checkout" aria-label="{{ 'accessibility.checkout_summary' | t }}" data-configure-sticky-checkout>
     <div class="configure-sticky-checkout__inner">
-      <div class="configure-sticky-checkout__price">
-        <span class="configure-sticky-checkout__label">{{ 'configure.total' | t }}</span>
-        <strong>
-          <span data-configure-sticky-total>—</span>
-          <span data-configure-sticky-total-suffix></span>
-        </strong>
+      <div class="configure-sticky-checkout__meta">
+        <span class="configure-sticky-checkout__color" data-configure-sticky-color>Grey</span>
+        <div class="configure-sticky-checkout__price">
+          <span class="configure-sticky-checkout__label">{{ 'configure.total' | t }}</span>
+          <strong>
+            <span data-configure-sticky-total>—</span>
+            <span data-configure-sticky-total-suffix></span>
+          </strong>
+        </div>
       </div>
       <button type="button" class="btn-apple-primary configure-sticky-checkout__btn" data-configure-checkout>
         <span data-configure-cta-label>{{ 'configure.sticky_checkout' | t }}</span>
+        <svg class="configure-cta__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
     </div>
   </aside>
@@ -294,66 +335,6 @@
 </script>
 
 {% render 'cart-checkout-variant-guard' %}
-
-<style>
-  .configure-gallery__well {
-    background: #ffffff;
-    border: 1px solid rgba(210, 210, 215, 0.45);
-    border-radius: 36px;
-    max-width: 520px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: none;
-  }
-
-  .configure-gallery__well::after {
-    content: none;
-  }
-
-  .configure-gallery__img {
-    position: relative;
-    z-index: 1;
-    width: min(94%, 500px);
-    height: auto;
-    max-height: 82%;
-    transform: translateY(-1%);
-    filter: none;
-    transition: opacity 0.3s ease, transform 0.3s var(--ease-out);
-  }
-
-  @media (min-width: 768px) and (max-width: 899px) {
-    .configure-gallery__well {
-      max-width: min(460px, 72vw);
-    }
-  }
-
-  @media (max-width: 767px) {
-    .configure-page {
-      padding-bottom: calc(var(--pad-page-bottom) + 96px);
-    }
-  }
-
-  .configure-swatch {
-    background:
-      radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0) 34%),
-      var(--swatch-color, #8e8e93);
-    background-clip: content-box;
-    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.06);
-  }
-
-  .configure-swatch[data-color-key="white"] {
-    border-color: #c8c8cc;
-    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.12);
-  }
-
-  .configure-swatch.is-selected {
-    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.06), 0 0 0 2px #fff, 0 0 0 4px var(--apple-blue);
-  }
-
-  .configure-swatch[data-color-key="white"].is-selected {
-    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.12), 0 0 0 2px #fff, 0 0 0 4px var(--apple-blue);
-  }
-</style>
 
 {% schema %}
 {

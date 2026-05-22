@@ -172,7 +172,10 @@
     "error_checkout": "Nettkassen er nesten klar. Send e-post til hello@lurafi.ai for å bestille, eller prøv igjen snart.",
     "processing": "Behandler…",
     "device_alt": "Kevin-enhet",
-    "device_in": "Kevin i {{ color }}"
+    "device_in": "Kevin i {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Bortemodus",
@@ -503,5 +506,8 @@
       "submit": "Aktiver konto",
       "decline": "Avslå invitasjonen"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

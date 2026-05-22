@@ -172,7 +172,10 @@
     "error_checkout": "Płatność online będzie wkrótce gotowa. Napisz na hello@lurafi.ai, aby zamówić, lub spróbuj ponownie wkrótce.",
     "processing": "Przetwarzanie…",
     "device_alt": "Urządzenie Kevin",
-    "device_in": "Kevin w kolorze {{ color }}"
+    "device_in": "Kevin w kolorze {{ color }}",
+    "header_eyebrow": "Secure checkout",
+    "plan_badge_popular": "Most popular",
+    "plan_sub_badge": "Flexible"
   },
   "hero": {
     "away_eyebrow": "Tryb nieobecności",
@@ -503,5 +506,8 @@
       "submit": "Aktywuj konto",
       "decline": "Odrzuć zaproszenie"
     }
+  },
+  "country": {
+    "label": "Country / region"
   }
 }

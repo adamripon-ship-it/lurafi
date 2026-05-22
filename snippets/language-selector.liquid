@@ -1,14 +1,23 @@
 {%- comment -%}
-  Language switcher via POST /localization (Shopify Markets).
-  Lists all published languages from localization.available_languages.
+  Language + country (Markets) switcher via POST /localization.
   @param form_id {String}
   @param selector_id {String}
+  @param country_selector_id {String}
 {%- endcomment -%}
 {%- liquid
   assign form_id = form_id | default: 'LocalizationForm'
   assign selector_id = selector_id | default: 'LanguageSelector'
+  assign country_selector_id = country_selector_id | default: 'CountrySelector'
+  assign show_country = false
+  if localization.available_countries.size > 1
+    assign show_country = true
+  endif
+  assign show_language = false
+  if localization.available_languages.size > 1
+    assign show_language = true
+  endif
 
-  assign return_to = request.path
+  assign return_to = request.path | default: '/'
   if return_to == blank
     assign return_to = '/'
   endif
@@ -18,7 +27,7 @@
     assign return_to = return_to | append: '?' | append: request.query_string
   endif
 -%}
-{%- if localization.available_languages.size > 1 -%}
+{%- if show_country or show_language -%}
   <div class="language-selector" data-language-selector>
     <form
       method="post"
@@ -37,35 +46,60 @@
         value="{{ return_to | escape }}"
         data-language-return-to
       >
-      {%- if localization.country -%}
-        <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+
+      {%- if show_country -%}
+        <label class="language-selector__label visually-hidden" for="{{ country_selector_id }}">
+          {{ 'country.label' | t: default: 'Country' }}
+        </label>
+        <select
+          id="{{ country_selector_id }}"
+          name="country_code"
+          class="language-selector__select language-selector__select--country"
+          aria-label="{{ 'country.label' | t: default: 'Country' }}"
+          data-country-select
+          autocomplete="country"
+        >
+          {%- for country in localization.available_countries -%}
+            <option
+              value="{{ country.iso_code }}"
+              {% if country.iso_code == localization.country.iso_code %}
+                selected
+              {% endif %}
+            >
+              {{ country.name }} ({{ country.currency.iso_code }})
+            </option>
+          {%- endfor -%}
+        </select>
       {%- endif -%}
 
-      <label class="language-selector__label visually-hidden" for="{{ selector_id }}">
-        {{ 'language.label' | t }}
-      </label>
-      <select
-        id="{{ selector_id }}"
-        name="locale_code"
-        class="language-selector__select"
-        aria-label="{{ 'language.label' | t }}"
-        data-language-select
-        autocomplete="language"
-      >
-        {%- for language in localization.available_languages -%}
-          {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
-          {%- assign lang_key = 'language.' | append: lang_root -%}
-          <option
-            value="{{ language.iso_code }}"
-            lang="{{ language.iso_code }}"
-            {% if language.iso_code == localization.language.iso_code %}
-              selected
-            {% endif %}
-          >
-            {{ lang_key | t: default: language.endonym_name }}
-          </option>
-        {%- endfor -%}
-      </select>
+      {%- if show_language -%}
+        <label class="language-selector__label visually-hidden" for="{{ selector_id }}">
+          {{ 'language.label' | t }}
+        </label>
+        <select
+          id="{{ selector_id }}"
+          name="locale_code"
+          class="language-selector__select language-selector__select--language"
+          aria-label="{{ 'language.label' | t }}"
+          data-language-select
+          autocomplete="language"
+        >
+          {%- for language in localization.available_languages -%}
+            {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
+            {%- assign lang_key = 'language.' | append: lang_root -%}
+            <option
+              value="{{ language.iso_code }}"
+              lang="{{ language.iso_code }}"
+              {% if language.iso_code == localization.language.iso_code %}
+                selected
+              {% endif %}
+            >
+              {{ lang_key | t: default: language.endonym_name }}
+            </option>
+          {%- endfor -%}
+        </select>
+      {%- endif -%}
+
       <noscript>
         <button type="submit" class="language-selector__noscript-btn">{{ 'language.label' | t }}</button>
       </noscript>
@@ -75,18 +109,27 @@
     (function () {
       var form = document.getElementById({{ form_id | json }});
       if (!form) return;
-      var select = form.querySelector('[data-language-select]');
-      form.addEventListener('submit', function () {
+      var langSelect = form.querySelector('[data-language-select]');
+      var countrySelect = form.querySelector('[data-country-select]');
+      function syncReturnTo() {
         var input = form.querySelector('[data-language-return-to]');
         if (input) {
           input.value = (window.location.pathname || '/') + (window.location.search || '');
         }
-      });
-      if (select) {
-        select.addEventListener('change', function () {
-          form.requestSubmit ? form.requestSubmit() : form.submit();
-        });
       }
+      form.addEventListener('submit', syncReturnTo);
+      function submitLocalization(source) {
+        syncReturnTo();
+        if (form.requestSubmit) form.requestSubmit();
+        else form.submit();
+      }
+      if (langSelect) {
+        langSelect.addEventListener('change', function () { submitLocalization('language'); });
+      }
+      if (countrySelect) {
+        countrySelect.addEventListener('change', function () { submitLocalization('country'); });
+      }
+      syncReturnTo();
     })();
   </script>
 {%- endif -%}

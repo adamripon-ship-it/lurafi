@@ -29,7 +29,7 @@
 
     <div class="site-header__utilities" data-header-zone="utilities">
       <div class="site-header__lang">
-        {% render 'language-selector', form_id: 'HeaderLanguageForm', selector_id: 'HeaderLanguageSelector' %}
+        {% render 'language-selector', form_id: 'HeaderLanguageForm', selector_id: 'HeaderLanguageSelector', country_selector_id: 'HeaderCountrySelector' %}
       </div>
 
       <div class="site-header__actions">
@@ -81,7 +81,7 @@
     </div>
     <div class="mobile-nav__lang">
       <p class="mobile-nav__group-label">{{ 'language.label' | t }}</p>
-      {% render 'language-selector', form_id: 'MobileNavLanguageForm', selector_id: 'MobileNavLanguageSelector' %}
+      {% render 'language-selector', form_id: 'MobileNavLanguageForm', selector_id: 'MobileNavLanguageSelector', country_selector_id: 'MobileNavCountrySelector' %}
     </div>
     <nav class="mobile-nav__links" aria-label="{{ 'accessibility.mobile_navigation' | t }}">
       <p class="mobile-nav__group-label">{{ 'header.explore' | t }}</p>
