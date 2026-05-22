@@ -25,6 +25,26 @@
     window.addEventListener('resize', onScroll, { passive: true });
   }
 
+  function closeMenuIfDesktop() {
+    if (!nav || window.matchMedia('(min-width: 1024px)').matches) {
+      if (nav && nav.getAttribute('data-open') === 'true') {
+        nav.setAttribute('data-open', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        nav.hidden = true;
+        document.body.classList.remove('mobile-nav-open');
+        if (openBtn) {
+          openBtn.setAttribute('aria-expanded', 'false');
+          openBtn.setAttribute('aria-label', 'Open menu');
+        }
+      }
+    }
+  }
+
+  if (nav && openBtn) {
+    window.addEventListener('resize', closeMenuIfDesktop, { passive: true });
+    closeMenuIfDesktop();
+  }
+
   if (!nav || !openBtn || !panel) return;
 
   function getFocusable(container) {
