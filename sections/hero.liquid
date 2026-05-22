@@ -1,0 +1,110 @@
+{%- liquid
+  assign hero_image = section.settings.image
+  assign hero_image_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+  capture configure_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_url = configure_url | strip
+  assign cta_primary_url = section.settings.cta_primary_url | strip
+  if cta_primary_url == blank or cta_primary_url contains '/pages/configure' and pages.configure == blank
+    assign cta_primary_url = configure_url
+  endif
+-%}
+
+<section class="hero-apple" aria-labelledby="HeroHeading">
+  <div class="hero-apple__glow" aria-hidden="true"></div>
+
+  <div class="hero-apple__content">
+    <div class="hero-apple__text">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="overline-blue-dark">{{ 'home.hero.eyebrow' | t: default: section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      <h1 class="headline-hero hero-apple__headline" id="HeroHeading">
+        {{ 'home.hero.headline' | t: default: section.settings.headline | escape }}
+      </h1>
+
+      {%- if section.settings.lede != blank -%}
+        <p class="body-elevated hero-apple__sub">{{ 'home.hero.lede' | t: default: section.settings.lede }}</p>
+      {%- endif -%}
+
+      <div class="hero-apple__ctas">
+        {%- if section.settings.cta_primary_label != blank -%}
+          <a href="{{ cta_primary_url }}" class="btn-apple-blue">
+            {{ 'home.hero.cta_primary_label' | t: default: section.settings.cta_primary_label }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.cta_secondary_label != blank -%}
+          <a href="{{ section.settings.cta_secondary_url | default: '#how-it-works' }}" class="link-apple-blue">
+            {{ 'home.hero.cta_secondary_label' | t: default: section.settings.cta_secondary_label }}
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true">
+              <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="hero-apple__product">
+      {%- if hero_image -%}
+        <img
+          src="{{ hero_image | image_url: width: 1200 }}"
+          alt="{{ hero_image.alt | default: 'products.product.image_alt' | t | escape }}"
+          width="{{ hero_image.width }}"
+          height="{{ hero_image.height }}"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- else -%}
+        <img
+          src="{{ hero_image_url }}"
+          alt="{{ 'products.product.image_alt' | t | escape }}"
+          loading="eager"
+          fetchpriority="high"
+          width="800"
+          height="1000"
+        >
+      {%- endif -%}
+      <div class="hero-context-cards" aria-label="Kevin benefits">
+        <div class="hero-context-card hero-context-card--primary">
+          <span class="hero-context-card__eyebrow">{{ 'hero.away_eyebrow' | t }}</span>
+          <strong>{{ 'hero.away_title' | t }}</strong>
+          <span>{{ 'hero.away_body' | t }}</span>
+        </div>
+        <div class="hero-context-card hero-context-card--privacy">
+          <span class="hero-context-card__eyebrow">{{ 'hero.privacy_eyebrow' | t }}</span>
+          <strong>{{ 'hero.privacy_title' | t }}</strong>
+          <span>{{ 'hero.privacy_body' | t }}</span>
+        </div>
+        <div class="hero-context-card hero-context-card--delivery">
+          <span class="hero-context-card__eyebrow">{{ 'hero.checkout_eyebrow' | t }}</span>
+          <strong>{{ 'hero.checkout_title' | t }}</strong>
+          <span>{{ 'hero.checkout_body' | t }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-apple__scroll" aria-hidden="true">
+      <div class="hero-apple__scroll-icon">
+        <span class="hero-apple__scroll-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Swiss AI presence simulation" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Someone's Always Home." },
+    { "type": "textarea", "id": "lede", "label": "Subheadline", "default": "When you're away, Kevin's Swiss AI makes your home look and sound lived-in—so burglars choose another target." },
+    { "type": "text", "id": "cta_primary_label", "label": "Primary button", "default": "Buy Kevin" },
+    { "type": "url", "id": "cta_primary_url", "label": "Primary link" },
+    { "type": "text", "id": "cta_secondary_label", "label": "Secondary link", "default": "How it works" },
+    { "type": "text", "id": "cta_secondary_url", "label": "Secondary link (anchor OK)", "default": "#how-it-works" },
+    { "type": "image_picker", "id": "image", "label": "Product image" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

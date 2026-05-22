@@ -1,0 +1,16 @@
+{
+  "sections": [
+    { "section": "hero", "element": "eyebrow", "sb7": "Guide", "status": "applied" },
+    { "section": "hero", "element": "lede", "sb7": "Character+Success", "status": "applied" },
+    { "section": "lp-problem", "element": "headline+subhead+tiles", "sb7": "Problem+Failure", "status": "applied" },
+    { "section": "lp-solution", "element": "overline+subhead+pillars", "sb7": "Guide+Success", "status": "applied" },
+    { "section": "lp-steps", "element": "steps+stats labels", "sb7": "Plan", "status": "applied" },
+    { "section": "lp-app", "element": "intro+tiles", "sb7": "Plan+Guide", "status": "applied" },
+    { "section": "lp-personas", "element": "tile 2 alarm complement", "sb7": "Character", "status": "applied" },
+    { "section": "lp-stats", "element": "headline+stat label", "sb7": "Guide", "status": "applied" },
+    { "section": "lp-proof", "element": "testimonials", "sb7": "Guide", "status": "applied" },
+    { "section": "lp-pricing", "element": "intro+bullets", "sb7": "CTA+Plan", "status": "applied" },
+    { "section": "lp-cta", "element": "headline+subhead", "sb7": "CTA+Success", "status": "applied" },
+    { "section": "main-configure", "element": "lede+features", "sb7": "CTA", "status": "applied" }
+  ]
+}

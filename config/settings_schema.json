@@ -1,0 +1,62 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Kevin",
+    "theme_version": "2.1.0",
+    "theme_author": "Kevin",
+    "theme_documentation_url": "https://lurafi.com",
+    "theme_support_url": "https://lurafi.com/support"
+  },
+  {
+    "name": "Products",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_buy",
+        "label": "Kevin (one-time purchase)"
+      },
+      {
+        "type": "product",
+        "id": "product_subscribe",
+        "label": "Kevin+ (subscription)"
+      },
+      {
+        "type": "page",
+        "id": "configure_page",
+        "label": "Configure page (optional)",
+        "info": "Optional. Buy buttons use the Kevin product URL with ?view=configure when product_buy is set. Or create a Page with handle \"configure\" and template \"configure\"."
+      },
+      {
+        "type": "paragraph",
+        "content": "Required: Assign Kevin (buy) product below with Color variants. Optional: Kevin+ with monthly selling plan. Without products, configure preview works but checkout will not. Create a Page with handle \"llms\" and template \"llms\" for AI crawler summary at /pages/llms."
+      },
+      {
+        "type": "paragraph",
+        "content": "Multi-language: config/languages.json is the registry. Run node scripts/build-locales.mjs, node scripts/translate-locales.mjs (DEEPL_API_KEY), then ./scripts/activate-locales.sh for Shopify locales, market URLs, and Admin translations. Theme strings live in locales/*.json."
+      }
+    ]
+  },
+  {
+    "name": "Checkout (Admin)",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Settings → Checkout → Customize: logo, accent #0071e3, background #fbfbfd. Enable Shop Pay, Apple Pay, Google Pay. Add shipping zones (EU free shipping). Link return, privacy, and warranty policies."
+      },
+      {
+        "type": "paragraph",
+        "content": "Markets: set Switzerland/EU as needed for CHF pricing. Abandoned checkout: enable Shopify Email or Klaviyo in admin."
+      }
+    ]
+  },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  }
+]

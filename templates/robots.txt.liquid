@@ -1,0 +1,22 @@
+User-agent: *
+Disallow: /checkout
+Disallow: /cart
+Disallow: /account
+Disallow: /admin
+Disallow: /*?view=configure
+Disallow: /*&view=configure
+Allow: /pages/configure
+Allow: /pages/llms
+Allow: /pages/sitemap
+Allow: /cdn/shop/t/*/assets/llms.txt
+Allow: /cdn/shop/t/*/assets/llms-full.txt
+Allow: /cdn/shop/t/*/assets/sitemap-ai.xml
+
+Sitemap: https://lurafi.ai/sitemap.xml
+Sitemap: https:{{ 'sitemap-ai.xml' | asset_url }}
+
+# AI / LLM discovery
+# Short LLM summary: https:{{ 'llms.txt' | asset_url }}
+# Full LLM summary: https:{{ 'llms-full.txt' | asset_url }}
+# LLM page: https://lurafi.ai/pages/llms
+# Human sitemap: https://lurafi.ai/pages/sitemap

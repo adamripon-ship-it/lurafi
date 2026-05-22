@@ -1,0 +1,67 @@
+<section id="how-it-works" class="section-apple bg-black">
+  <div class="apple-container">
+    <p class="overline-blue-dark">{{ 'home.solution.overline' | t: default: section.settings.overline }}</p>
+    <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{{ 'home.solution.heading' | t: default: section.settings.heading }}</h2>
+    <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{{ 'home.solution.subheading' | t: default: section.settings.subheading }}</p>
+
+    <div class="section-image">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-living-room-night-9F7io8GPfpmikRnGHgHLvy.webp" alt="Kevin presence simulation at night" loading="lazy" width="980" height="550">
+    </div>
+
+    <div class="tile-grid-3">
+      <div class="text-center">
+        <div class="pillar-icon">☀</div>
+        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ 'home.solution.pillar_1_title' | t: default: section.settings.pillar_1_title }}</h3>
+        <p class="body-standard text-muted-dark">{{ 'home.solution.pillar_1_body' | t: default: section.settings.pillar_1_body }}</p>
+      </div>
+      <div class="text-center">
+        <div class="pillar-icon">◐</div>
+        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ 'home.solution.pillar_2_title' | t: default: section.settings.pillar_2_title }}</h3>
+        <p class="body-standard text-muted-dark">{{ 'home.solution.pillar_2_body' | t: default: section.settings.pillar_2_body }}</p>
+      </div>
+      <div class="text-center">
+        <div class="pillar-icon">♪</div>
+        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ 'home.solution.pillar_3_title' | t: default: section.settings.pillar_3_title }}</h3>
+        <p class="body-standard text-muted-dark">{{ 'home.solution.pillar_3_body' | t: default: section.settings.pillar_3_body }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Solution pillars",
+  "settings": [
+    { "type": "text", "id": "overline", "label": "Overline", "default": "Your Guide" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Prevention, not reaction." },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "We built Kevin for the knot you feel when you lock the door and leave. Swiss-engineered AI delivers believable presence—light, shadow, and sound—so intruders move on."
+    },
+    { "type": "text", "id": "pillar_1_title", "label": "Pillar 1 title", "default": "Light" },
+    {
+      "type": "textarea",
+      "id": "pillar_1_body",
+      "label": "Pillar 1 body",
+      "default": "Neighbours see natural movement between rooms. Swiss AI varies the scene so no two evenings look the same."
+    },
+    { "type": "text", "id": "pillar_2_title", "label": "Pillar 2 title", "default": "Shadow" },
+    {
+      "type": "textarea",
+      "id": "pillar_2_body",
+      "label": "Pillar 2 body",
+      "default": "Silhouettes pass the window—real enough to give pause from the street. AI-generated, never repetitive."
+    },
+    { "type": "text", "id": "pillar_3_title", "label": "Pillar 3 title", "default": "Sound" },
+    {
+      "type": "textarea",
+      "id": "pillar_3_body",
+      "label": "Pillar 3 body",
+      "default": "Life inside: voices, kitchen rhythm, TV murmur. Patterns adapt over time so your home sounds like you."
+    }
+  ],
+  "presets": [{ "name": "Solution pillars" }]
+}
+{% endschema %}

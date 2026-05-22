@@ -1,0 +1,18 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "tagline": "Swiss AI Home Security. Prevention, not reaction.",
+        "menu_shop_title": "Shop",
+        "menu_help_title": "Help",
+        "connect_title": "Connect",
+        "support_email": "hello@lurafi.com",
+        "legal_note": "All rights reserved."
+      }
+    }
+  },
+  "order": ["footer"]
+}

@@ -1,0 +1,62 @@
+<section id="product" class="section-apple bg-gray">
+  <div class="apple-container">
+    <p class="overline-blue">{{ 'home.steps.overline' | t: default: section.settings.overline }}</p>
+    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ 'home.steps.heading' | t: default: section.settings.heading }}</h2>
+    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 64px">{{ 'home.steps.subheading' | t: default: section.settings.subheading }}</p>
+
+    <div class="tile-grid-3" style="margin-bottom:56px">
+      <div class="tile tile--white text-center">
+        <p class="step-num" data-countup>1</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.steps.step_1_title' | t: default: section.settings.step_1_title }}</h3>
+        <p class="body-standard text-muted">{{ 'home.steps.step_1_body' | t: default: section.settings.step_1_body }}</p>
+      </div>
+      <div class="tile tile--white text-center">
+        <p class="step-num" data-countup>2</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.steps.step_2_title' | t: default: section.settings.step_2_title }}</h3>
+        <p class="body-standard text-muted">{{ 'home.steps.step_2_body' | t: default: section.settings.step_2_body }}</p>
+      </div>
+      <div class="tile tile--white text-center">
+        <p class="step-num" data-countup>3</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.steps.step_3_title' | t: default: section.settings.step_3_title }}</h3>
+        <p class="body-standard text-muted">{{ 'home.steps.step_3_body' | t: default: section.settings.step_3_body }}</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;margin-bottom:40px">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp" alt="Kevin device" width="400" height="320" style="max-width:400px;width:100%" loading="lazy">
+    </div>
+
+    <div class="stats-row" data-countup-duration="1100">
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_1_value' | t: default: section.settings.stat_1_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_1_label' | t: default: section.settings.stat_1_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_2_value' | t: default: section.settings.stat_2_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_2_label' | t: default: section.settings.stat_2_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_3_value' | t: default: section.settings.stat_3_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_3_label' | t: default: section.settings.stat_3_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_4_value' | t: default: section.settings.stat_4_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_4_label' | t: default: section.settings.stat_4_label }}</p></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    { "type": "text", "id": "overline", "label": "Overline", "default": "The Plan" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Three steps. Zero complexity." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "No installation. No wiring. Plug in, set your routine, and let Swiss AI handle the rest—in under 60 seconds." },
+    { "type": "text", "id": "step_1_title", "label": "Step 1 title", "default": "Plug In" },
+    { "type": "textarea", "id": "step_1_body", "label": "Step 1 body", "default": "Place Kevin near a window. Connect to power. That is the only setup you will ever need." },
+    { "type": "text", "id": "step_2_title", "label": "Step 2 title", "default": "Set & Go" },
+    { "type": "textarea", "id": "step_2_body", "label": "Step 2 body", "default": "Use the app, schedules, or automatic activation when you leave. Protection follows your day—not the other way around." },
+    { "type": "text", "id": "step_3_title", "label": "Step 3 title", "default": "Live Protected" },
+    { "type": "textarea", "id": "step_3_body", "label": "Step 3 body", "default": "From this moment, your home never looks empty. Someone is always home." },
+    { "type": "text", "id": "stat_1_value", "label": "Stat 1 value", "default": "60s" },
+    { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "Setup time" },
+    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "0" },
+    { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "Wires needed" },
+    { "type": "text", "id": "stat_3_value", "label": "Stat 3 value", "default": "100%" },
+    { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "Privacy" },
+    { "type": "text", "id": "stat_4_value", "label": "Stat 4 value", "default": "24/7" },
+    { "type": "text", "id": "stat_4_label", "label": "Stat 4 label", "default": "Protection" }
+  ],
+  "presets": [{ "name": "How it works" }]
+}
+{% endschema %}

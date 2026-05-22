@@ -1,0 +1,71 @@
+<div class="page-width search">
+  <header class="search__header">
+    <h1>Search</h1>
+
+    <form action="{{ routes.search_url }}" method="get" role="search">
+      <label for="SearchInput" class="visually-hidden">Search</label>
+      <input
+        id="SearchInput"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="Search…"
+        required
+      >
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  {%- if search.performed -%}
+    {%- if search.results_count > 0 -%}
+      <p class="search__count">{{ search.results_count }} result{% if search.results_count != 1 %}s{% endif %} for &ldquo;{{ search.terms | escape }}&rdquo;</p>
+
+      {%- paginate search.results by section.settings.results_per_page -%}
+        <ul class="search-results" role="list">
+          {%- for item in search.results -%}
+            <li class="search-result">
+              <a href="{{ item.url }}">
+                {%- if item.object_type == 'product' and item.featured_image -%}
+                  <img
+                    src="{{ item.featured_image | image_url: width: 200 }}"
+                    alt="{{ item.featured_image.alt | escape }}"
+                    width="{{ item.featured_image.width }}"
+                    height="{{ item.featured_image.height }}"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                <h3>{{ item.title }}</h3>
+                {%- if item.object_type == 'product' -%}
+                  <p>{{ item.price | money }}</p>
+                {%- endif -%}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="pagination" role="navigation">{{ paginate | default_pagination }}</nav>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- else -%}
+      <p>No results for &ldquo;{{ search.terms | escape }}&rdquo;.</p>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": [
+    {
+      "type": "range",
+      "id": "results_per_page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 20,
+      "label": "Results per page"
+    }
+  ]
+}
+{% endschema %}

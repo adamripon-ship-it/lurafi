@@ -1,0 +1,130 @@
+{%- liquid
+  capture configure_buy_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  capture configure_sub_url
+    render 'configure-url', plan: 'subscribe'
+  endcapture
+
+  assign configure_buy_url = configure_buy_url | strip
+  assign configure_sub_url = configure_sub_url | strip
+  assign llms_short_url = 'llms.txt' | asset_url
+  assign llms_full_url = 'llms-full.txt' | asset_url
+  assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
+  assign locale_root = request.locale.iso_code | split: '-' | first | downcase
+  if locale_root != 'en'
+    assign llms_short_local = 'llms.' | append: locale_root | append: '.txt' | asset_url
+    assign llms_full_local = 'llms-full.' | append: locale_root | append: '.txt' | asset_url
+  endif
+-%}
+
+<section class="section-apple bg-white sitemap-page">
+  <div class="apple-container">
+    <p class="overline-blue text-center">{{ 'sitemap.overline' | t }}</p>
+    <h1 class="headline-section text-center">{{ 'sitemap.heading' | t }}</h1>
+    <p class="body-elevated text-muted text-center sitemap-page__lede">
+      {{ 'sitemap.lede' | t }}
+    </p>
+
+    <div class="sitemap-page__grid">
+      <div class="sitemap-page__card">
+        <h2>{{ 'sitemap.primary' | t }}</h2>
+        <ul>
+          <li><a href="{{ routes.root_url }}">{{ 'sitemap.homepage' | t }}</a></li>
+          <li><a href="{{ configure_buy_url }}">{{ 'sitemap.configure_buy' | t }}</a></li>
+          <li><a href="{{ configure_sub_url }}">{{ 'sitemap.configure_sub' | t }}</a></li>
+          <li><a href="{{ routes.cart_url }}">{{ 'sitemap.cart' | t }}</a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-page__card">
+        <h2>{{ 'sitemap.ai_files' | t }}</h2>
+        <ul>
+          <li><a href="{{ llms_short_url }}">{{ 'sitemap.short_llm' | t }} (EN)</a></li>
+          <li><a href="{{ llms_full_url }}">{{ 'sitemap.full_llm' | t }} (EN)</a></li>
+          {%- if llms_short_local != blank -%}
+            <li><a href="{{ llms_short_local }}">{{ 'sitemap.short_llm' | t }}</a></li>
+            <li><a href="{{ llms_full_local }}">{{ 'sitemap.full_llm' | t }}</a></li>
+          {%- endif -%}
+          {%- assign llm_asset_locales = 'nl,fr,de,es,it' | split: ',' -%}
+          {%- for llm_code in llm_asset_locales -%}
+            {%- unless llm_code == locale_root -%}
+              {%- assign short_name = 'llms.' | append: llm_code | append: '.txt' -%}
+              {%- assign full_name = 'llms-full.' | append: llm_code | append: '.txt' -%}
+              <li><a href="{{ short_name | asset_url }}">{{ 'sitemap.short_llm' | t }} ({{ llm_code | upcase }})</a></li>
+              <li><a href="{{ full_name | asset_url }}">{{ 'sitemap.full_llm' | t }} ({{ llm_code | upcase }})</a></li>
+            {%- endunless -%}
+          {%- endfor -%}
+          <li><a href="{{ ai_sitemap_url }}">{{ 'sitemap.ai_sitemap' | t }}</a></li>
+          {%- if pages.llms -%}
+            <li><a href="{{ pages.llms.url }}">{{ 'sitemap.llm_page' | t }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="sitemap-page__card">
+        <h2>{{ 'sitemap.search_sitemaps' | t }}</h2>
+        <ul>
+          <li><a href="{{ shop.url }}/sitemap.xml">{{ 'sitemap.shopify_sitemap' | t }}</a></li>
+          <li><a href="{{ ai_sitemap_url }}">{{ 'sitemap.ai_geo_sitemap' | t }}</a></li>
+          <li><a href="{{ shop.url }}/robots.txt">{{ 'sitemap.robots' | t }}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sitemap-page__lede {
+    max-width: 680px;
+    margin: 16px auto 48px;
+  }
+
+  .sitemap-page__grid {
+    display: grid;
+    gap: 20px;
+  }
+
+  @media (min-width: 800px) {
+    .sitemap-page__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .sitemap-page__card {
+    background: #f5f5f7;
+    border: 1px solid var(--apple-border);
+    border-radius: 24px;
+    padding: 24px;
+  }
+
+  .sitemap-page__card h2 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .sitemap-page__card ul {
+    display: grid;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sitemap-page__card a {
+    color: var(--apple-blue);
+    text-decoration: none;
+  }
+
+  .sitemap-page__card a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Sitemap",
+  "settings": []
+}
+{% endschema %}

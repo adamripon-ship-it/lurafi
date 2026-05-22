@@ -1,0 +1,23 @@
+# Lurafi / Kevin (IT)
+
+Lurafi vende Kevin, un simulatore di presenza svizzero per la sicurezza domestica.
+
+Kevin fa sembrare la tua casa abitata con luce, ombra e suono quando sei via.
+
+Key facts:
+- Product: Kevin
+- Category: AI home security, presence simulation
+- Privacy: No cameras, no microphones, no cloud monitoring
+- Setup: Plug in, place near a window, configure in the app
+- Warranty: 3-year Swiss warranty
+- Delivery: Free delivery across Europe
+
+Important URLs:
+- Homepage: https://lurafi.ai/it
+- Configure / buy: https://lurafi.ai/it/pages/configura-kevin?plan=buy
+- Subscribe: https://lurafi.ai/it/pages/configura-kevin?plan=subscribe
+- Full LLM summary: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.it.txt
+- AI sitemap: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
+
+Contact:
+- Email: hello@lurafi.ai

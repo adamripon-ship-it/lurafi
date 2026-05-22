@@ -1,0 +1,14 @@
+{%- comment -%}
+  /pages/configure may 404 when the Page is missing or unpublished. Send to ?view=configure.
+{%- endcomment -%}
+{%- if request.path contains '/pages/configure' and template.suffix != 'configure' -%}
+  {%- liquid
+    assign redirect_plan = request.params.plan | default: 'buy'
+    capture configure_dest
+      render 'configure-url', plan: redirect_plan
+    endcapture
+    assign configure_dest = configure_dest | strip
+  -%}
+  <meta http-equiv="refresh" content="0;url={{ configure_dest }}">
+  <script>location.replace({{ configure_dest | json }});</script>
+{%- endif -%}

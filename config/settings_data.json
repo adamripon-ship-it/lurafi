@@ -1,0 +1,10 @@
+{
+  "current": {
+    "product_buy": "kevin",
+    "product_subscribe": "kevin-plus",
+    "configure_page": "configure"
+  },
+  "presets": {
+    "Default": {}
+  }
+}

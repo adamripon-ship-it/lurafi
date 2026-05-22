@@ -1,0 +1,102 @@
+{%- liquid
+  assign lurafi_hero_image = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+  assign lurafi_description = 'seo.org_description' | t
+  assign org_id = shop.url | append: '/#organization'
+  assign site_id = shop.url | append: '/#website'
+  assign buy_product = settings.product_buy
+  capture configure_buy_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_buy_url = configure_buy_url | strip
+  assign offer_price = 649
+  if buy_product != blank
+    assign offer_price = buy_product.price | divided_by: 100
+  endif
+  assign offer_availability = 'https://schema.org/PreOrder'
+  if buy_product != blank and buy_product.available
+    assign offer_availability = 'https://schema.org/InStock'
+  endif
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": {{ org_id | json }},
+  "name": {{ shop.name | json }},
+  "url": {{ shop.url | json }},
+  "logo": {{ lurafi_hero_image | json }},
+  "description": {{ lurafi_description | json }},
+  "email": "hello@lurafi.ai"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ site_id | json }},
+  "url": {{ shop.url | json }},
+  "name": {{ shop.name | json }},
+  "description": {{ lurafi_description | json }},
+  "publisher": { "@id": {{ org_id | json }} },
+  "inLanguage": {{ request.locale.iso_code | json }}
+}
+</script>
+{%- if request.page_type == 'index' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Kevin",
+  "description": {{ lurafi_description | json }},
+  "brand": { "@type": "Brand", "name": "Kevin" },
+  "image": {{ lurafi_hero_image | json }},
+  "offers": {
+    "@type": "Offer",
+    "url": {{ shop.url | append: configure_buy_url | json }},
+    "priceCurrency": "CHF",
+    "price": {{ offer_price }},
+    "availability": {{ offer_availability | json }}
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": {{ 'faq.q1' | t | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ 'faq.a1' | t | json }}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ 'faq.q2' | t | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ 'faq.a2' | t | json }}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ 'faq.q3' | t | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ 'faq.a3' | t | json }}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ 'faq.q4' | t | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ 'faq.a4' | t | json }}
+      }
+    }
+  ]
+}
+</script>
+{%- endif -%}

@@ -1,0 +1,63 @@
+<div class="page-width form-stack">
+  <h1>Create account</h1>
+
+  {%- form 'create_customer', novalidate: 'novalidate' -%}
+    {%- if form.errors -%}
+      <div class="form__errors" role="alert">
+        {{ form.errors | default_errors }}
+      </div>
+    {%- endif -%}
+
+    <label for="FirstName">First name</label>
+    <input
+      id="FirstName"
+      type="text"
+      name="customer[first_name]"
+      autocomplete="given-name"
+      value="{% if form.first_name %}{{ form.first_name }}{% endif %}"
+    >
+
+    <label for="LastName">Last name</label>
+    <input
+      id="LastName"
+      type="text"
+      name="customer[last_name]"
+      autocomplete="family-name"
+      value="{% if form.last_name %}{{ form.last_name }}{% endif %}"
+    >
+
+    <label for="Email">Email</label>
+    <input
+      id="Email"
+      type="email"
+      name="customer[email]"
+      autocomplete="email"
+      autocorrect="off"
+      autocapitalize="off"
+      value="{% if form.email %}{{ form.email }}{% endif %}"
+      required
+    >
+
+    <label for="CreatePassword">Password</label>
+    <input
+      id="CreatePassword"
+      type="password"
+      name="customer[password]"
+      autocomplete="new-password"
+      required
+    >
+
+    <button type="submit" class="button">Create account</button>
+
+    <p>
+      Already have an account? <a href="{{ routes.account_login_url }}">Log in</a>
+    </p>
+  {%- endform -%}
+</div>
+
+{% schema %}
+{
+  "name": "Register",
+  "settings": []
+}
+{% endschema %}

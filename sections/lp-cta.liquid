@@ -1,0 +1,28 @@
+{%- capture configure_url -%}
+  {%- render 'configure-url', plan: 'buy' -%}
+{%- endcapture -%}
+{%- assign configure_url = configure_url | strip -%}
+
+<section class="section-apple bg-black">
+  <div class="apple-container text-center">
+    <h2 class="headline-section text-white" style="margin-bottom:16px">{{ 'home.cta.heading' | t: default: section.settings.heading }}</h2>
+    <p class="body-elevated text-muted-dark" style="max-width:500px;margin:0 auto 32px">{{ 'home.cta.subheading' | t: default: section.settings.subheading }}</p>
+    <div class="cta-row">
+      <a href="{{ configure_url }}" class="cta-white-btn">{{ 'home.cta.primary_cta' | t: default: section.settings.primary_cta }}</a>
+      <a href="{{ routes.root_url }}#how-it-works" class="cta-outline-btn">{{ 'home.cta.secondary_cta' | t: default: section.settings.secondary_cta }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Final CTA",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Someone's always home." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Travel, work late, or lock up for the night—without rehearsing worst cases. Free delivery. 60-second setup. Swiss precision." },
+    { "type": "text", "id": "primary_cta", "label": "Primary CTA", "default": "Buy Kevin" },
+    { "type": "text", "id": "secondary_cta", "label": "Secondary CTA", "default": "Learn more" }
+  ],
+  "presets": [{ "name": "Final CTA" }]
+}
+{% endschema %}

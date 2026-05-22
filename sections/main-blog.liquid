@@ -1,0 +1,81 @@
+<div class="page-width blog-page">
+  <header class="collection-page__header">
+    <p class="eyebrow">Journal</p>
+    <h1>{{ blog.title }}</h1>
+  </header>
+
+  {%- paginate blog.articles by section.settings.posts_per_page -%}
+    {%- if blog.articles_count > 0 -%}
+      <ul class="blog-grid" role="list">
+        {%- for article in blog.articles -%}
+          <li class="blog-card">
+            <a href="{{ article.url }}">
+              {%- if article.image -%}
+                <div class="blog-card__image">
+                  <img
+                    src="{{ article.image | image_url: width: 600 }}"
+                    alt="{{ article.image.alt | escape }}"
+                    width="{{ article.image.width }}"
+                    height="{{ article.image.height }}"
+                    loading="lazy"
+                  >
+                </div>
+              {%- endif -%}
+              <div class="blog-card__body">
+                <h2 class="blog-card__title">{{ article.title }}</h2>
+                <p class="blog-card__meta">
+                  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                    {{ article.published_at | date: format: 'on_date' }}
+                  </time>
+                  {%- if section.settings.show_author -%}
+                    &middot; {{ article.author }}
+                  {%- endif -%}
+                </p>
+                {%- if section.settings.show_excerpt and article.excerpt_or_content != blank -%}
+                  <p class="blog-card__excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</p>
+                {%- endif -%}
+              </div>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- if paginate.pages > 1 -%}
+        <nav class="pagination" role="navigation" aria-label="Pagination">
+          {{ paginate | default_pagination }}
+        </nav>
+      {%- endif -%}
+    {%- else -%}
+      <p>No posts yet.</p>
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type": "range",
+      "id": "posts_per_page",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "default": 10,
+      "label": "Posts per page"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "Show author"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "default": true,
+      "label": "Show excerpt"
+    }
+  ]
+}
+{% endschema %}

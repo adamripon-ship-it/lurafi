@@ -1,0 +1,9 @@
+{%- comment -%}
+  Output product URL. Pass product_setting: settings.product_buy or settings.product_subscribe
+  Fallback: /collections/all
+{%- endcomment -%}
+{%- if product_setting != blank and product_setting.url != blank -%}
+  {{- product_setting.url -}}
+{%- else -%}
+  {{- routes.all_products_collection_url -}}
+{%- endif -%}

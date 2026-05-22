@@ -1,0 +1,119 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  capture configure_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_url = configure_url | strip
+-%}
+
+<section class="product-page" data-product-page>
+  <div class="apple-container product-page__grid">
+    <div class="product-page__gallery">
+      {%- if product.media.size > 0 -%}
+        <div class="product-page__main-media" id="ProductMainMedia">
+          {%- for media in product.media -%}
+            <div class="product-page__media-item{% unless forloop.first %} hidden{% endunless %}" data-media-id="{{ media.id }}">
+              {%- if media.media_type == 'image' -%}
+                <img
+                  src="{{ media | image_url: width: 1200 }}"
+                  alt="{{ media.alt | escape }}"
+                  width="{{ media.width }}"
+                  height="{{ media.height }}"
+                  {% if forloop.first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                >
+              {%- else -%}
+                {{ media | media_tag: class: 'product-page__video' }}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+        {%- if product.media.size > 1 -%}
+          <ul class="product-page__thumbs" role="list">
+            {%- for media in product.media -%}
+              {%- if media.media_type == 'image' -%}
+                <li>
+                  <button type="button" class="product-page__thumb{% if forloop.first %} is-active{% endif %}" data-thumb-id="{{ media.id }}" aria-label="View image {{ forloop.index }}">
+                    <img src="{{ media | image_url: width: 120 }}" alt="" width="80" height="80" loading="lazy">
+                  </button>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      {%- else -%}
+        <div class="product-page__placeholder" aria-hidden="true"></div>
+      {%- endif -%}
+    </div>
+
+    <div class="product-page__info">
+      <p class="overline-blue" style="text-align:left">Swiss AI Home Security</p>
+      <h1 class="headline-section product-page__title">{{ product.title }}</h1>
+
+      <p class="product-page__price" id="ProductPrice">
+        {{ current_variant.price | money }}
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <s class="product-page__compare">{{ current_variant.compare_at_price | money }}</s>
+        {%- endif -%}
+      </p>
+
+      <a href="{{ configure_url }}" class="btn-apple-blue btn-block product-page__configure">{{ 'products.product.configure_buy' | t }}</a>
+
+      {%- form 'product', product, id: 'ProductForm', class: 'product-page__form', data-product-form: '' -%}
+        <input type="hidden" name="return_to" value="{{ routes.cart_url }}" id="ProductReturnTo">
+
+        {%- unless product.has_only_default_variant -%}
+          <div class="product-page__variants-select">
+            <label for="ProductSelect">Options</label>
+            <select id="ProductSelect" name="id" data-variant-select>
+              {%- for variant in product.variants -%}
+                <option
+                  value="{{ variant.id }}"
+                  {% if variant == current_variant %}selected{% endif %}
+                  {% unless variant.available %}disabled{% endunless %}
+                  data-price="{{ variant.price }}"
+                  data-compare="{{ variant.compare_at_price }}"
+                  data-available="{{ variant.available }}"
+                  {% if variant.featured_media %}data-media-id="{{ variant.featured_media.id }}"{% endif %}
+                >
+                  {{ variant.title }} — {{ variant.price | money }}{% unless variant.available %} (Sold out){% endunless %}
+                </option>
+              {%- endfor -%}
+            </select>
+          </div>
+        {%- else -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+        {%- endunless -%}
+
+        <div class="product-page__qty">
+          <label for="Quantity">Quantity</label>
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-page__qty-input">
+        </div>
+
+        <button type="submit" name="add" class="btn-apple-primary btn-block product-page__submit" data-add-to-cart {% unless current_variant.available %}disabled{% endunless %}>
+          {%- if current_variant.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
+        </button>
+
+        <button type="button" class="btn-apple-secondary btn-block product-page__buy-now" data-buy-now {% unless current_variant.available %}disabled{% endunless %}>{{ 'products.product.buy_now' | t }}</button>
+
+        <div class="product-page__dynamic-checkout">
+          {{ form | payment_button }}
+        </div>
+
+        <div class="checkout-assurance product-page__assurance" aria-label="{{ 'accessibility.checkout_benefits' | t }}">
+          <p>{{ 'cart.free_delivery_checkout' | t }}</p>
+          <p>{{ 'cart.returns' | t }}</p>
+          <p>{{ 'cart.secure_shopify' | t }}</p>
+        </div>
+        <p class="product-page__shipping body-reduced text-muted">{{ 'products.product.shipping_note' | t }}</p>
+      {%- endform -%}
+
+      <div class="product-page__description rte">{{ product.description }}</div>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" data-product-json>{{ product | json }}</script>
+
+{% schema %}
+{ "name": "Product", "settings": [] }
+{% endschema %}

@@ -1,0 +1,24 @@
+{
+  "framework": "StoryBrand SB7 / StoryBrand.ai",
+  "character": "Homeowner in Switzerland or Europe who leaves home for work, travel, or a second property—and wants it to look lived-in, not empty.",
+  "problem": {
+    "external": "Break-ins, visibly empty homes, especially during daytime hours.",
+    "internal": "Anxiety when away, guilt leaving family, hyper-vigilance at the door.",
+    "philosophical": "You should not need a break-in to deserve peace of mind at home."
+  },
+  "guide": {
+    "empathy": "We know the knot in your stomach when you lock the door and walk away.",
+    "authority": "Swiss-engineered AI presence simulation. 9W. No cameras. No microphones."
+  },
+  "plan": ["Plug in near a window.", "Set a schedule or let Kevin activate when you leave.", "Live protected—your home never looks empty."],
+  "callToAction": {
+    "direct": "Buy Kevin / Configure your Kevin",
+    "transitional": "How it works"
+  },
+  "failure": "A break-in costs more than valuables—you lose the feeling that home is your safe place.",
+  "success": "Someone is always home. Travel, work late, and sleep without rehearsing worst cases.",
+  "oneLiner": "When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.",
+  "tagline": "Presence that prevents.",
+  "metaDescription": "Kevin is Swiss AI presence simulation for your home—light, shadow, and sound that make it look lived-in when you are away. Prevention, not reaction.",
+  "productClaimsNotes": "Geo/scheduling and on-device simulation copy approved for editorial use; no police or 97% claims; daytime burglary angle used qualitatively without unsourced statistics."
+}

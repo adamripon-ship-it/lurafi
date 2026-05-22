@@ -1,0 +1,41 @@
+{%- comment -%}
+  hreflang alternates for published storefront languages.
+  Pairs with canonical in layout/theme.liquid.
+{%- endcomment -%}
+{%- comment -%}
+  hreflang pairs for EN/NL. Path suffix is locale-stripped; Shopify maps page handles per language in Admin.
+{%- endcomment -%}
+{%- liquid
+  assign path_suffix = request.path
+  assign locale_root = request.locale.root_url
+  if locale_root != '/' and path_suffix contains locale_root
+    assign path_suffix = path_suffix | remove_first: locale_root
+  endif
+  if path_suffix == blank
+    assign path_suffix = '/'
+  endif
+  unless path_suffix contains '/'
+    assign path_suffix = '/' | append: path_suffix
+  endunless
+
+  assign default_lang = 'en'
+  for language in localization.available_languages
+    if language.primary
+      assign default_lang = language.iso_code
+    endif
+  endfor
+-%}
+{%- if localization.available_languages.size > 1 -%}
+  {%- for language in localization.available_languages -%}
+    {%- assign lang_href = request.origin | append: language.root_url | append: path_suffix -%}
+    {%- if request.search != blank -%}
+      {%- assign lang_href = lang_href | append: request.search -%}
+    {%- endif -%}
+    <link rel="alternate" hreflang="{{ language.iso_code }}" href="{{ lang_href }}">
+  {%- endfor -%}
+  {%- assign x_default_href = request.origin | append: path_suffix -%}
+  {%- if request.search != blank -%}
+    {%- assign x_default_href = x_default_href | append: request.search -%}
+  {%- endif -%}
+  <link rel="alternate" hreflang="x-default" href="{{ x_default_href }}">
+{%- endif -%}

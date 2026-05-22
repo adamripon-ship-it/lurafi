@@ -1,0 +1,364 @@
+{%- liquid
+  assign buy_product = settings.product_buy
+  if buy_product == blank
+    assign buy_product = all_products.kevin
+  else
+    if buy_product.variants == blank
+      assign buy_product = all_products[settings.product_buy]
+    endif
+  endif
+  if buy_product == blank
+    assign buy_product = all_products.kevin
+  endif
+
+  assign sub_product = settings.product_subscribe
+  if sub_product == blank
+    assign sub_product = all_products['kevin-plus']
+  else
+    if sub_product.variants == blank
+      assign sub_product = all_products[settings.product_subscribe]
+    endif
+  endif
+  if sub_product == blank
+    assign sub_product = all_products['kevin-plus']
+  endif
+
+  assign default_image = 'kevin-front-cover-grey-v2.png' | asset_url
+
+  assign buy_features = 'configure.buy_features' | t | split: '|'
+  assign sub_features = 'configure.sub_features' | t | split: '|'
+-%}
+
+<section class="configure-page" data-configure>
+  <nav class="configure-nav" aria-label="{{ 'accessibility.configure_navigation' | t }}">
+    <div class="configure-nav__inner apple-container">
+      <a href="{{ routes.root_url }}" class="configure-nav__back">
+        <svg width="8" height="13" viewBox="0 0 8 13" fill="none" aria-hidden="true">
+          <path d="M7 1L1.5 6.5L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {{ 'configure.back' | t }}
+      </a>
+      <span class="configure-nav__title">{{ 'configure.nav_title' | t }}</span>
+      <div class="configure-nav__tools">
+        {% render 'language-selector', form_id: 'ConfigureLanguageForm', selector_id: 'ConfigureLanguageSelector' %}
+      </div>
+      <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart configure-nav__cart" aria-label="{{ 'configure.cart' | t }}">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <path d="M3.5 5h11l-1.1 8.4a1.5 1.5 0 0 1-1.5 1.3H6.1a1.5 1.5 0 0 1-1.5-1.3L3.5 5z"/>
+          <path d="M6.5 5V3.75a2.5 2.5 0 0 1 5 0V5"/>
+        </svg>
+        <span class="site-header__cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="configure-progress apple-container" aria-hidden="true">
+    <span class="configure-progress__step is-active">{{ 'configure.step_configure' | t }}</span>
+    <span class="configure-progress__sep"></span>
+    <span class="configure-progress__step">{{ 'configure.step_checkout' | t }}</span>
+  </div>
+
+  <div class="apple-container configure-page__inner">
+    <header class="configure-header">
+      <h1 class="configure-header__title">{{ 'configure.title' | t }}</h1>
+      <p class="configure-header__lede">{{ 'configure.lede' | t }}</p>
+    </header>
+
+    <div class="configure-grid">
+      <div class="configure-gallery">
+        <div class="configure-gallery__well">
+          <img
+            src="{{ default_image }}"
+            alt="{{ 'configure.device_alt' | t }}"
+            class="configure-gallery__img"
+            data-configure-image
+            width="420"
+            height="420"
+            loading="eager"
+          >
+        </div>
+      </div>
+
+      <div class="configure-controls">
+        <div class="configure-block">
+          <h2 class="configure-label">{{ 'configure.color_label' | t }}</h2>
+          <div class="configure-swatches" data-configure-swatches role="group" aria-label="{{ 'accessibility.color_swatches' | t }}"></div>
+          <p class="configure-color-text">{{ 'configure.color_prefix' | t }} <strong data-configure-color-name>Grey</strong></p>
+        </div>
+
+        <div class="configure-block">
+          <h2 class="configure-label">{{ 'configure.plan_label' | t }}</h2>
+          <div class="configure-plans">
+            <button type="button" class="configure-plan-card is-selected" data-plan="buy" aria-pressed="true">
+              <p class="configure-plan-card__title">{{ 'configure.plan_buy' | t }}</p>
+              <p class="configure-plan-card__sub">{{ 'configure.plan_buy_sub' | t }}</p>
+              <p class="configure-plan-card__price">
+                {%- if buy_product != blank -%}
+                  {{ buy_product.price | money }}
+                {%- else -%}
+                  649 <span>CHF</span>
+                {%- endif -%}
+              </p>
+            </button>
+            <button
+              type="button"
+              class="configure-plan-card"
+              data-plan="subscribe"
+              aria-pressed="false"
+              {% if sub_product == blank %}disabled title="Assign Kevin+ in theme settings"{% endif %}
+            >
+              <p class="configure-plan-card__title">{{ 'configure.plan_sub' | t }}</p>
+              <p class="configure-plan-card__sub">{{ 'configure.plan_sub_sub' | t }}</p>
+              <p class="configure-plan-card__price">
+                {%- if sub_product != blank -%}
+                  {{ sub_product.price | money }}<span>/mo</span>
+                {%- else -%}
+                  12.90 <span>CHF/mo</span>
+                {%- endif -%}
+              </p>
+            </button>
+          </div>
+          {%- if sub_product != blank and sub_product.selling_plan_groups.size > 0 -%}
+            <div class="configure-selling-plan" data-selling-plan-select-wrap hidden>
+              <label class="configure-label" for="SellingPlanSelect">{{ 'configure.billing' | t }}</label>
+              <select id="SellingPlanSelect" class="configure-select" data-selling-plan-select hidden>
+                {%- for group in sub_product.selling_plan_groups -%}
+                  {%- for plan in group.selling_plans -%}
+                    <option value="{{ plan.id }}">{{ plan.name }}</option>
+                  {%- endfor -%}
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endif -%}
+        </div>
+
+        <div class="configure-block" data-configure-qty>
+          <h2 class="configure-label">{{ 'configure.quantity' | t }}</h2>
+          <div class="configure-qty">
+            <button type="button" class="configure-qty__btn" data-configure-qty-minus aria-label="{{ 'accessibility.decrease_qty' | t }}">
+              <svg width="12" height="2" viewBox="0 0 12 2" fill="none" aria-hidden="true"><path d="M1 1h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <span class="configure-qty__value" data-configure-qty-value>1</span>
+            <button type="button" class="configure-qty__btn" data-configure-qty-plus aria-label="{{ 'accessibility.increase_qty' | t }}">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <p class="configure-qty__hint">{{ 'configure.qty_hint' | t }}</p>
+        </div>
+
+        <div class="configure-block">
+          <h2 class="configure-label">{{ 'configure.included' | t }}</h2>
+          <ul class="configure-features" data-configure-features></ul>
+        </div>
+
+        <div class="configure-summary" id="ConfigureSummary">
+          <div class="configure-order-card" aria-label="{{ 'accessibility.order_summary' | t }}">
+            <div>
+              <p class="configure-order-card__label">{{ 'configure.order_summary' | t }}</p>
+              <p class="configure-order-card__title">{{ 'configure.product_title' | t }}</p>
+            </div>
+            <dl class="configure-order-card__list">
+              <div>
+                <dt>{{ 'configure.summary_front' | t }}</dt>
+                <dd data-configure-summary-color>Grey</dd>
+              </div>
+              <div>
+                <dt>{{ 'configure.summary_plan' | t }}</dt>
+                <dd data-configure-summary-plan>Buy</dd>
+              </div>
+              <div>
+                <dt>{{ 'configure.summary_delivery' | t }}</dt>
+                <dd>{{ 'configure.delivery_free' | t }}</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="configure-summary__row">
+            <div>
+              <p class="configure-summary__label">{{ 'configure.total' | t }}</p>
+              <p class="configure-summary__total">
+                <span data-configure-total>—</span>
+                <span class="configure-summary__suffix" data-configure-total-suffix></span>
+              </p>
+            </div>
+            <p class="configure-summary__per" data-configure-per-device hidden></p>
+          </div>
+          <button type="button" class="btn-apple-primary btn-block configure-cta" data-configure-checkout>
+            <span data-configure-cta-label>{{ 'configure.checkout_cta' | t }}</span>
+          </button>
+          <p class="configure-summary__trust" role="alert" data-configure-error hidden></p>
+          <div class="checkout-assurance configure-summary__assurance" aria-label="{{ 'accessibility.checkout_benefits' | t }}">
+            <p>{{ 'configure.free_delivery' | t }}</p>
+            <p>{{ 'configure.returns' | t }}</p>
+            <p>{{ 'configure.warranty' | t }}</p>
+          </div>
+          <p class="configure-summary__secure">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1" stroke="currentColor"/><path d="M3 6V4a3 3 0 0 1 6 0v2" stroke="currentColor"/></svg>
+            {{ 'configure.secure' | t }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="configure-sticky-checkout" aria-label="{{ 'accessibility.checkout_summary' | t }}" data-configure-sticky-checkout>
+    <div class="configure-sticky-checkout__inner">
+      <div class="configure-sticky-checkout__price">
+        <span class="configure-sticky-checkout__label">{{ 'configure.total' | t }}</span>
+        <strong>
+          <span data-configure-sticky-total>—</span>
+          <span data-configure-sticky-total-suffix></span>
+        </strong>
+      </div>
+      <button type="button" class="btn-apple-primary configure-sticky-checkout__btn" data-configure-checkout>
+        <span data-configure-cta-label>{{ 'configure.sticky_checkout' | t }}</span>
+      </button>
+    </div>
+  </aside>
+</section>
+
+<script id="ConfigureData" type="application/json">
+{
+  "defaultImage": {{ default_image | json }},
+  "moneyFormat": {{ shop.money_format | json }},
+  "colorHex": {
+    "grey": "#817976",
+    "white": "#ded7d5",
+    "burgundy": "#780018",
+    "espresso": "#3d2119",
+    "navy": "#1557a7",
+    "red": "#780018",
+    "brown": "#3d2119",
+    "blue": "#1557a7"
+  },
+  "colorImages": {
+    "grey": {{ 'kevin-front-cover-grey-v2.png' | asset_url | json }},
+    "white": {{ 'kevin-front-cover-white-v2.png' | asset_url | json }},
+    "burgundy": {{ 'kevin-front-cover-red-v2.png' | asset_url | json }},
+    "red": {{ 'kevin-front-cover-red-v2.png' | asset_url | json }},
+    "espresso": {{ 'kevin-front-cover-brown-v2.png' | asset_url | json }},
+    "brown": {{ 'kevin-front-cover-brown-v2.png' | asset_url | json }},
+    "navy": {{ 'kevin-front-cover-blue-v2.png' | asset_url | json }},
+    "blue": {{ 'kevin-front-cover-blue-v2.png' | asset_url | json }}
+  },
+  "buy": {
+    "features": {{ buy_features | json }},
+    "variants": [
+      {%- if buy_product != blank -%}
+        {%- for variant in buy_product.variants -%}
+          {
+            "id": {{ variant.id }},
+            "color": {{ variant.option1 | default: variant.title | json }},
+            "price": {{ variant.price }},
+            "available": {{ variant.available | json }},
+            "image": null
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      {%- else -%}
+        {"id":"preview-grey","color":"Grey","price":64900,"available":true,"image":null},
+        {"id":"preview-white","color":"White","price":64900,"available":true,"image":null},
+        {"id":"preview-burgundy","color":"Burgundy","price":64900,"available":true,"image":null},
+        {"id":"preview-espresso","color":"Espresso","price":64900,"available":true,"image":null},
+        {"id":"preview-navy","color":"Navy","price":64900,"available":true,"image":null}
+      {%- endif -%}
+    ]
+  },
+  "subscribe": {
+    "features": {{ sub_features | json }},
+    "variants": [
+      {%- if sub_product != blank -%}
+        {%- for variant in sub_product.variants -%}
+          {
+            "id": {{ variant.id }},
+            "color": {{ variant.option1 | default: variant.title | json }},
+            "price": {{ variant.price }},
+            "available": {{ variant.available | json }},
+            "image": null
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      {%- endif -%}
+    ],
+    "sellingPlans": [
+      {%- if sub_product != blank -%}
+        {%- for group in sub_product.selling_plan_groups -%}
+          {%- for plan in group.selling_plans -%}
+            {
+              "id": {{ plan.id }},
+              "name": {{ plan.name | json }},
+              "price": {{ sub_product.selected_or_first_available_variant.price | default: sub_product.price }}
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- endif -%}
+    ]
+  }
+}
+</script>
+
+{% render 'cart-checkout-variant-guard' %}
+
+<style>
+  .configure-gallery__well {
+    background: #ffffff;
+    border: 1px solid rgba(210, 210, 215, 0.45);
+    border-radius: 36px;
+    max-width: 520px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: none;
+  }
+
+  .configure-gallery__well::after {
+    content: none;
+  }
+
+  .configure-gallery__img {
+    position: relative;
+    z-index: 1;
+    width: min(94%, 500px);
+    height: auto;
+    max-height: 82%;
+    transform: translateY(-1%);
+    filter: none;
+    transition: opacity 0.3s ease, transform 0.3s var(--ease-out);
+  }
+
+  @media (min-width: 768px) and (max-width: 899px) {
+    .configure-gallery__well {
+      max-width: min(460px, 72vw);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .configure-page {
+      padding-bottom: calc(var(--pad-page-bottom) + 96px);
+    }
+  }
+
+  .configure-swatch {
+    background:
+      radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0) 34%),
+      var(--swatch-color, #8e8e93);
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.06);
+  }
+
+  .configure-swatch[data-color-key="white"] {
+    border-color: #c8c8cc;
+    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.12);
+  }
+
+  .configure-swatch.is-selected {
+    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.06), 0 0 0 2px #fff, 0 0 0 4px var(--apple-blue);
+  }
+
+  .configure-swatch[data-color-key="white"].is-selected {
+    box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 5px rgba(0, 0, 0, 0.12), 0 0 0 2px #fff, 0 0 0 4px var(--apple-blue);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Configure",
+  "settings": [],
+  "presets": [{ "name": "Configure" }]
+}
+{% endschema %}

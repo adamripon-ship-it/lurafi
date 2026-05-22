@@ -1,0 +1,23 @@
+<div class="page-width">
+  <h1>{{ shop.name }}</h1>
+  <p>{{ section.settings.welcome_text }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Homepage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "welcome_text",
+      "label": "Welcome message",
+      "default": "Welcome to our store"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage"
+    }
+  ]
+}
+{% endschema %}

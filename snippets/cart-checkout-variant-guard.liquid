@@ -1,0 +1,19 @@
+{%- comment -%}
+  Wraps LurafiCart.addAndCheckout after deferred cart-api.js runs — fixes stale storefront HTML/CDN
+  still serving an old cart-api without client-side variant validation.
+{%- endcomment -%}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.LurafiCart || typeof window.LurafiCart.addAndCheckout !== 'function') return;
+    var base = window.LurafiCart.addAndCheckout.bind(window.LurafiCart);
+    var msg = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.errorProducts) ||
+      'Checkout needs a published product. In Shopify Admin create the Kevin device, enable Online Store, then assign it under Theme settings → Products (Kevin buy / Kevin+).';
+    window.LurafiCart.addAndCheckout = function (item) {
+      var n = Number(item && item.id);
+      if (!item || !Number.isFinite(n) || n <= 0) {
+        return Promise.reject(new Error(msg));
+      }
+      return base(item);
+    };
+  });
+</script>

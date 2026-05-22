@@ -1,0 +1,62 @@
+{%- liquid
+  assign root = routes.root_url
+  capture configure_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_url = configure_url | strip
+  assign footer_year = 'now' | date: '%Y'
+  assign copyright_text = 'footer.copyright' | t: year: footer_year, shop_name: shop.name
+-%}
+<footer class="site-footer-apple">
+  <div class="apple-container">
+    <p class="site-footer-apple__note">{{ 'footer.note' | t }}</p>
+    <div class="site-footer-apple__grid">
+      <div>
+        <h4>{{ 'footer.product' | t }}</h4>
+        <ul>
+          <li><a href="{{ root }}#product">{{ 'footer.features' | t }}</a></li>
+          <li><a href="{{ root }}#how-it-works">{{ 'footer.how_it_works' | t }}</a></li>
+          <li><a href="{{ root }}#app">{{ 'footer.the_app' | t }}</a></li>
+          <li><a href="{{ root }}#pricing">{{ 'footer.pricing' | t }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ 'footer.company' | t }}</h4>
+        <ul>
+          <li><a href="mailto:hello@lurafi.ai?subject=About%20Kevin">{{ 'footer.about' | t }}</a></li>
+          <li><a href="mailto:press@lurafi.ai?subject=Press%20inquiry">{{ 'footer.press' | t }}</a></li>
+          <li><a href="mailto:hello@lurafi.ai?subject=Careers">{{ 'footer.careers' | t }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ 'footer.support' | t }}</h4>
+        <ul>
+          <li><a href="{{ root }}#how-it-works">{{ 'footer.setup_guide' | t }}</a></li>
+          <li><a href="mailto:hello@lurafi.ai?subject=Support">{{ 'footer.contact' | t }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ 'footer.where_to_buy' | t }}</h4>
+        <ul>
+          <li><a href="{{ configure_url }}">{{ 'footer.configure' | t }}</a></li>
+          <li><a href="{{ routes.cart_url }}">{{ 'footer.cart' | t }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-apple__bottom">
+      <p>{{ copyright_text }}</p>
+      <div class="site-footer-apple__legal">
+        {%- if shop.privacy_policy -%}
+          <a href="{{ shop.privacy_policy.url }}">{{ 'footer.privacy' | t }}</a>
+        {%- endif -%}
+        {%- if shop.terms_of_service -%}
+          <a href="{{ shop.terms_of_service.url }}">{{ 'footer.terms' | t }}</a>
+        {%- endif -%}
+        {%- if pages.llms -%}
+          <a href="{{ pages.llms.url }}">{{ 'footer.llm_summary' | t }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>
+{% schema %}{ "name": "Footer", "settings": [] }{% endschema %}

@@ -1,0 +1,30 @@
+<div
+  class="cart-drawer"
+  id="CartDrawer"
+  data-cart-drawer
+  data-empty-text="{{ 'cart.empty' | t: default: 'Your cart is empty.' | escape }}"
+  data-subtotal-prefix="{{ 'cart.subtotal' | t: default: 'Subtotal:' | escape }}"
+  hidden
+  aria-hidden="true"
+>
+  <div class="cart-drawer__backdrop" data-cart-drawer-close tabindex="-1"></div>
+  <aside class="cart-drawer__panel" role="dialog" aria-labelledby="CartDrawerTitle" aria-modal="true">
+    <header class="cart-drawer__header">
+      <h2 id="CartDrawerTitle" class="cart-drawer__title">{{ 'cart.drawer_title' | t: default: 'Your bag' }}</h2>
+      <button type="button" class="cart-drawer__close" data-cart-drawer-close aria-label="{{ 'cart.close' | t: default: 'Close cart' }}">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+    <div class="cart-drawer__body" data-cart-drawer-body>
+      <p class="cart-drawer__empty text-muted">{{ 'cart.empty' | t: default: 'Your cart is empty.' }}</p>
+    </div>
+    <footer class="cart-drawer__footer" data-cart-drawer-footer hidden>
+      <p class="cart-drawer__subtotal" data-cart-drawer-subtotal></p>
+      <p class="cart-drawer__delivery body-reduced text-muted">{{ 'cart.drawer_delivery' | t: default: 'Free delivery selected at checkout · 30-day returns' }}</p>
+      <a href="/checkout" class="btn-apple-primary btn-block">{{ 'cart.checkout' | t: default: 'Check out' }}</a>
+      <button type="button" class="link-apple-blue cart-drawer__continue" data-cart-drawer-close>{{ 'cart.continue_shopping' | t: default: 'Continue shopping' }}</button>
+    </footer>
+  </aside>
+</div>

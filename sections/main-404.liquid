@@ -1,0 +1,38 @@
+{%- liquid
+  assign redirect_plan = request.params.plan | default: 'buy'
+  capture configure_dest
+    render 'configure-url', plan: redirect_plan
+  endcapture
+  assign configure_dest = configure_dest | strip
+-%}
+
+{%- if request.path contains '/pages/configure' -%}
+  <script>location.replace({{ configure_dest | json }});</script>
+  <meta http-equiv="refresh" content="0;url={{ configure_dest }}">
+  <p class="visually-hidden"><a href="{{ configure_dest }}">Continue to configure Kevin</a></p>
+{%- else -%}
+  <section class="section-apple bg-gray page-404">
+    <div class="apple-container text-center">
+      <p class="overline-blue-dark">{{ section.settings.eyebrow | default: '404' }}</p>
+      <h1 class="headline-section">{{ 'errors.not_found_title' | t: default: section.settings.heading }}</h1>
+      <p class="body-elevated text-muted" style="max-width: 32rem; margin: 0 auto var(--space-lg);">{{ 'errors.not_found_body' | t: default: section.settings.subtext }}</p>
+      <div class="cta-row" style="justify-content: center;">
+        <a href="{{ routes.root_url }}" class="btn-apple-primary">{{ 'errors.back_home' | t: default: section.settings.link_text }}</a>
+        {%- capture configure_url -%}{%- render 'configure-url', plan: 'buy' -%}{%- endcapture -%}
+        <a href="{{ configure_url | strip }}" class="btn-apple-secondary">{{ 'footer.configure' | t }}</a>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "404 page",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "404" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Page not found" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "The page you were looking for doesn't exist. Head home or configure your Kevin." },
+    { "type": "text", "id": "link_text", "label": "Link text", "default": "Back to home" }
+  ]
+}
+{% endschema %}

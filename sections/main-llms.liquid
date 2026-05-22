@@ -1,0 +1,57 @@
+{% comment %} Plain-text page for AI crawlers (create Page with handle "llms" and template "llms") {% endcomment %}
+{%- liquid
+  capture configure_buy_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  capture configure_sub_url
+    render 'configure-url', plan: 'subscribe'
+  endcapture
+  assign configure_buy_url = configure_buy_url | strip
+  assign configure_sub_url = configure_sub_url | strip
+  assign llms_short_url = 'llms.txt' | asset_url
+  assign llms_full_url = 'llms-full.txt' | asset_url
+  assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
+-%}
+# {{ shop.name }}
+
+> Swiss AI presence simulation for your home. When you are away, Kevin uses light, shadow, and sound so your home looks and sounds lived-in—and burglars move on.
+
+## One-liner
+When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.
+
+## What we sell
+- **Kevin (Buy)**: One-time purchase. Device with 70+ hours of believable AI presence, Kevin App control, free delivery in Europe, 3-year Swiss warranty.
+- **Kevin+ (Subscribe)**: Monthly plan with device included, premium AI library, hardware replacement, cancel anytime.
+
+## How it works
+1. Plug in near a window.
+2. Set a schedule or let Kevin activate when you leave.
+3. Your home never looks empty—light, shadow, and sound adapt over time.
+
+## Key differentiators
+- Prevention, not reaction (vs alarms that trigger after entry)
+- No cameras, no microphones
+- Swiss-engineered AI; ~9W power
+- Qualitative daytime burglary risk positioning (no unsourced police statistics)
+
+## Primary URLs
+- Homepage: {{ shop.url }}
+- Configure / Buy: {{ shop.url }}{{ configure_buy_url }}
+- Subscribe: {{ shop.url }}{{ configure_sub_url }}
+- Cart: {{ shop.url }}/cart
+- Short LLM summary: https:{{ llms_short_url }}
+- Full LLM summary: https:{{ llms_full_url }}
+- AI sitemap: https:{{ ai_sitemap_url }}
+- Human sitemap: {{ shop.url }}/pages/sitemap
+
+## Contact
+- Email: hello@lurafi.ai
+
+## Brand
+- Tagline: Presence that prevents.
+- Character: Homeowners in Switzerland/Europe who want peace of mind when away.
+- Guide: Swiss-engineered AI presence simulation.
+
+{% schema %}
+{ "name": "LLMs text", "settings": [] }
+{% endschema %}

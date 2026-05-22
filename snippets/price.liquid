@@ -1,0 +1,14 @@
+{%- comment -%}
+  @param product {Product}
+{%- endcomment -%}
+
+<p class="product-card__price">
+  {%- if product.price_varies -%}
+    <span>From {{ product.price_min | money }}</span>
+  {%- else -%}
+    <span>{{ product.price | money }}</span>
+  {%- endif -%}
+  {%- if product.compare_at_price > product.price -%}
+    <s class="product-card__compare">{{ product.compare_at_price | money }}</s>
+  {%- endif -%}
+</p>

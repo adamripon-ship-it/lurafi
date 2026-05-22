@@ -1,0 +1,38 @@
+<section class="stats-section section-apple bg-white">
+  <div class="apple-container">
+    <h2 class="headline-section text-center" style="margin-bottom:56px">{{ 'home.stats.heading' | t: default: section.settings.heading }}</h2>
+    <div class="stats-grid-4" data-countup-duration="1100">
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_1_value' | t: default: section.settings.stat_1_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_1_label' | t: default: section.settings.stat_1_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_2_value' | t: default: section.settings.stat_2_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_2_label' | t: default: section.settings.stat_2_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_3_value' | t: default: section.settings.stat_3_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_3_label' | t: default: section.settings.stat_3_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_4_value' | t: default: section.settings.stat_4_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_4_label' | t: default: section.settings.stat_4_label }}</p></div>
+    </div>
+    <div class="trust-badges trust-badges--single">
+      <span class="swiss-made-badge">
+        <svg class="swiss-made-badge__icon" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+          <rect width="22" height="22" rx="5" fill="#e11d2e"/>
+          <path d="M9.4 5.6h3.2v3.8h3.8v3.2h-3.8v3.8H9.4v-3.8H5.6V9.4h3.8V5.6z" fill="#fff"/>
+        </svg>
+        <span>{{ 'stats.swiss_engineered' | t }}</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Stats",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Proof you can trust." },
+    { "type": "text", "id": "stat_1_value", "label": "Stat 1 value", "default": "95%" },
+    { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "Deterrence rate" },
+    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "50,000+" },
+    { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "Homes protected" },
+    { "type": "text", "id": "stat_3_value", "label": "Stat 3 value", "default": "9W" },
+    { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "Less than a night light" },
+    { "type": "text", "id": "stat_4_value", "label": "Stat 4 value", "default": "0" },
+    { "type": "text", "id": "stat_4_label", "label": "Stat 4 label", "default": "Cameras or mics" }
+  ],
+  "presets": [{ "name": "Stats" }]
+}
+{% endschema %}

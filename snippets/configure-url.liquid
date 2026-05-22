@@ -1,0 +1,44 @@
+{%- comment -%}
+  Configure URL with optional plan preselect (buy | subscribe).
+  Prefers a real /pages/configure URL when that Page uses the configure template.
+  Falls back to product/root alternate template URLs so checkout still works without a Page.
+  @param plan {String} buy | subscribe
+{%- endcomment -%}
+{%- liquid
+  assign buy_product = settings.product_buy
+  if buy_product == blank
+    assign buy_product = all_products.kevin
+  else
+    if buy_product.url == blank
+      assign buy_product = all_products[settings.product_buy]
+    endif
+  endif
+  if buy_product == blank
+    assign buy_product = all_products.kevin
+  endif
+
+  comment
+    pages.configure.url is localized by Shopify when the page handle is translated in Admin.
+  endcomment
+  assign configure_page = pages.configure
+  assign plan_param = plan | default: ''
+  assign configure_url = ''
+  assign query_separator = '?'
+
+  if configure_page != blank and configure_page.template_suffix == 'configure'
+    assign configure_url = configure_page.url
+  elsif buy_product != blank
+    assign configure_url = buy_product.url | append: '?view=configure'
+  else
+    assign configure_url = routes.root_url | append: '?view=configure'
+  endif
+
+  if configure_url contains '?'
+    assign query_separator = '&'
+  endif
+
+  if plan_param != blank
+    assign configure_url = configure_url | append: query_separator | append: 'plan=' | append: plan_param
+  endif
+-%}
+{{- configure_url -}}

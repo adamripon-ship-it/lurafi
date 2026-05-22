@@ -1,0 +1,224 @@
+{
+  "primary": "en",
+  "domain": "lurafi.ai",
+  "glossary": ["Kevin", "Kevin+", "Lurafi", "Shopify", "CHF", "Mitipi"],
+  "locales": [
+    {
+      "code": "en",
+      "shopifyLocale": "en",
+      "label": "EN",
+      "nativeName": "English",
+      "ogLocale": "en_US",
+      "urlPrefix": "",
+      "primary": true,
+      "publish": true,
+      "llmAssets": true
+    },
+    {
+      "code": "nl",
+      "shopifyLocale": "nl",
+      "label": "NL",
+      "nativeName": "Nederlands",
+      "ogLocale": "nl_NL",
+      "urlPrefix": "/nl",
+      "publish": true,
+      "llmAssets": true,
+      "pages": {
+        "configure": { "handle": "kevin-configureren", "title": "Configureren", "body": "<p>Configureer je Kevin.</p>" },
+        "sitemap": { "handle": "site-overzicht", "title": "Site-overzicht", "body": "<p>Overzicht van de site</p>" },
+        "llms": { "handle": "ai-overzicht", "title": "AI-overzicht", "body": "<p>AI-leesbare sitesamenvatting</p>" }
+      },
+      "products": {
+        "kevin": {
+          "body_html": "<p>Kevin is een Zwitserse AI-aanwezigheidssimulator die licht, schaduw en geluid gebruikt zodat je huis bewoond lijkt als je weg bent.</p>",
+          "meta_title": "Kevin — Aanwezigheidssimulator",
+          "meta_description": "Zwitserse AI-aanwezigheidssimulatie met licht, schaduw en geluid. Laat je huis bewoond lijken als je weg bent."
+        },
+        "kevin-plus": {
+          "body_html": "<p>Kevin+ bevat het Kevin-apparaat met een maandabonnement voor premium AI-aanwezigheidssimulaties en doorlopende updates.</p>",
+          "meta_title": "Kevin+ — Maandabonnement",
+          "meta_description": "Kevin-apparaat inbegrepen met maandabonnement, premium simulaties en hardwarevervanging."
+        }
+      }
+    },
+    {
+      "code": "fr",
+      "shopifyLocale": "fr",
+      "label": "FR",
+      "nativeName": "Français",
+      "ogLocale": "fr_FR",
+      "urlPrefix": "/fr",
+      "publish": true,
+      "llmAssets": true,
+      "pages": {
+        "configure": { "handle": "configurer-kevin", "title": "Configurer", "body": "<p>Configurez votre Kevin.</p>" },
+        "sitemap": { "handle": "plan-du-site", "title": "Plan du site", "body": "<p>Vue d'ensemble du site</p>" },
+        "llms": { "handle": "apercu-ia", "title": "Aperçu IA", "body": "<p>Résumé du site lisible par l'IA</p>" }
+      },
+      "products": {
+        "kevin": {
+          "body_html": "<p>Kevin est un simulateur de présence suisse qui utilise la lumière, l'ombre et le son pour que votre maison semble occupée lorsque vous êtes absent.</p>",
+          "meta_title": "Kevin — Simulateur de présence",
+          "meta_description": "Simulation de présence IA suisse par la lumière, l'ombre et le son. Faites paraître votre maison habitée lorsque vous partez."
+        },
+        "kevin-plus": {
+          "body_html": "<p>Kevin+ comprend l'appareil Kevin avec un abonnement mensuel pour des simulations de présence IA premium et des mises à jour continues.</p>",
+          "meta_title": "Kevin+ — Abonnement mensuel",
+          "meta_description": "Appareil Kevin inclus, abonnement mensuel, bibliothèque premium et remplacement matériel."
+        }
+      }
+    },
+    {
+      "code": "de",
+      "shopifyLocale": "de",
+      "label": "DE",
+      "nativeName": "Deutsch",
+      "ogLocale": "de_DE",
+      "urlPrefix": "/de",
+      "publish": true,
+      "llmAssets": true,
+      "pages": {
+        "configure": { "handle": "kevin-konfigurieren", "title": "Konfigurieren", "body": "<p>Konfigurieren Sie Ihren Kevin.</p>" },
+        "sitemap": { "handle": "seitenuebersicht", "title": "Seitenübersicht", "body": "<p>Site-Übersicht</p>" },
+        "llms": { "handle": "ki-uebersicht", "title": "KI-Übersicht", "body": "<p>KI-lesbare Site-Zusammenfassung</p>" }
+      },
+      "products": {
+        "kevin": {
+          "body_html": "<p>Kevin ist ein Schweizer Präsenzsimulator, der Licht, Schatten und Sound nutzt, damit Ihr Zuhause bewohnt wirkt, wenn Sie weg sind.</p>",
+          "meta_title": "Kevin — Präsenzsimulator",
+          "meta_description": "Schweizer KI-Präsenzsimulation mit Licht, Schatten und Sound. Lassen Sie Ihr Zuhause bewohnt wirken."
+        },
+        "kevin-plus": {
+          "body_html": "<p>Kevin+ enthält das Kevin-Gerät mit monatlichem Abo für Premium-KI-Präsenzsimulationen und laufende Updates.</p>",
+          "meta_title": "Kevin+ — Monatsabo",
+          "meta_description": "Kevin-Gerät inklusive, Monatsabo, Premium-Bibliothek und Hardware-Ersatz."
+        }
+      }
+    },
+    {
+      "code": "es",
+      "shopifyLocale": "es",
+      "label": "ES",
+      "nativeName": "Español",
+      "ogLocale": "es_ES",
+      "urlPrefix": "/es",
+      "publish": true,
+      "llmAssets": true,
+      "pages": {
+        "configure": { "handle": "configurar-kevin", "title": "Configurar", "body": "<p>Configura tu Kevin.</p>" },
+        "sitemap": { "handle": "mapa-del-sitio", "title": "Mapa del sitio", "body": "<p>Resumen del sitio</p>" },
+        "llms": { "handle": "resumen-ia", "title": "Resumen IA", "body": "<p>Resumen del sitio legible por IA</p>" }
+      }
+    },
+    {
+      "code": "it",
+      "shopifyLocale": "it",
+      "label": "IT",
+      "nativeName": "Italiano",
+      "ogLocale": "it_IT",
+      "urlPrefix": "/it",
+      "publish": true,
+      "llmAssets": true,
+      "pages": {
+        "configure": { "handle": "configura-kevin", "title": "Configura", "body": "<p>Configura il tuo Kevin.</p>" },
+        "sitemap": { "handle": "mappa-del-sito", "title": "Mappa del sito", "body": "<p>Panoramica del sito</p>" },
+        "llms": { "handle": "panoramica-ia", "title": "Panoramica IA", "body": "<p>Riepilogo del sito leggibile dall'IA</p>" }
+      }
+    },
+    {
+      "code": "nb",
+      "shopifyLocale": "nb",
+      "label": "NO",
+      "nativeName": "Norsk",
+      "ogLocale": "nb_NO",
+      "urlPrefix": "/nb",
+      "publish": true,
+      "llmAssets": false,
+      "pages": {
+        "configure": { "handle": "konfigurer-kevin", "title": "Konfigurer", "body": "<p>Konfigurer din Kevin.</p>" },
+        "sitemap": { "handle": "nettstedkart", "title": "Nettstedkart", "body": "<p>Oversikt over nettstedet</p>" },
+        "llms": { "handle": "ai-oversikt", "title": "AI-oversikt", "body": "<p>AI-lesbar nettstedssammendrag</p>" }
+      }
+    },
+    {
+      "code": "da",
+      "shopifyLocale": "da",
+      "label": "DA",
+      "nativeName": "Dansk",
+      "ogLocale": "da_DK",
+      "urlPrefix": "/da",
+      "publish": true,
+      "llmAssets": false,
+      "pages": {
+        "configure": { "handle": "konfigurer-kevin", "title": "Konfigurer", "body": "<p>Konfigurer din Kevin.</p>" },
+        "sitemap": { "handle": "sideoversigt", "title": "Sideoversigt", "body": "<p>Oversigt over sitet</p>" },
+        "llms": { "handle": "ai-oversigt", "title": "AI-oversigt", "body": "<p>AI-læsbart site-resumé</p>" }
+      }
+    },
+    {
+      "code": "sv",
+      "shopifyLocale": "sv",
+      "label": "SV",
+      "nativeName": "Svenska",
+      "ogLocale": "sv_SE",
+      "urlPrefix": "/sv",
+      "publish": true,
+      "llmAssets": false,
+      "pages": {
+        "configure": { "handle": "konfigurera-kevin", "title": "Konfigurera", "body": "<p>Konfigurera din Kevin.</p>" },
+        "sitemap": { "handle": "webbplatskarta", "title": "Webbplatskarta", "body": "<p>Översikt av webbplatsen</p>" },
+        "llms": { "handle": "ai-oversikt", "title": "AI-översikt", "body": "<p>AI-läsbar webbplatssammanfattning</p>" }
+      }
+    },
+    {
+      "code": "fi",
+      "shopifyLocale": "fi",
+      "label": "FI",
+      "nativeName": "Suomi",
+      "ogLocale": "fi_FI",
+      "urlPrefix": "/fi",
+      "publish": true,
+      "llmAssets": false,
+      "pages": {
+        "configure": { "handle": "konfiguroi-kevin", "title": "Konfiguroi", "body": "<p>Konfiguroi Kevinisi.</p>" },
+        "sitemap": { "handle": "sivukartta", "title": "Sivukartta", "body": "<p>Sivuston yleiskatsaus</p>" },
+        "llms": { "handle": "ai-yhteenveto", "title": "AI-yhteenveto", "body": "<p>AI-luettava sivuston yhteenveto</p>" }
+      }
+    },
+    {
+      "code": "cs",
+      "shopifyLocale": "cs",
+      "label": "CS",
+      "nativeName": "Čeština",
+      "ogLocale": "cs_CZ",
+      "urlPrefix": "/cs",
+      "publish": true,
+      "llmAssets": false,
+      "pages": {
+        "configure": { "handle": "konfigurovat-kevin", "title": "Konfigurace", "body": "<p>Nakonfigurujte svůj Kevin.</p>" },
+        "sitemap": { "handle": "prehled-stranek", "title": "Přehled stránek", "body": "<p>Přehled webu</p>" },
+        "llms": { "handle": "ai-prehled", "title": "AI přehled", "body": "<p>AI čitelné shrnutí webu</p>" }
+      }
+    },
+    {
+      "code": "pl",
+      "shopifyLocale": "pl",
+      "label": "PL",
+      "nativeName": "Polski",
+      "ogLocale": "pl_PL",
+      "urlPrefix": "/pl",
+      "publish": true,
+      "llmAssets": false,
+      "pages": {
+        "configure": { "handle": "konfiguruj-kevin", "title": "Konfiguracja", "body": "<p>Skonfiguruj swojego Kevin.</p>" },
+        "sitemap": { "handle": "mapa-strony", "title": "Mapa strony", "body": "<p>Przegląd witryny</p>" },
+        "llms": { "handle": "podsumowanie-ai", "title": "Podsumowanie AI", "body": "<p>Podsumowanie witryny dla AI</p>" }
+      }
+    }
+  ],
+  "pages": {
+    "configure": { "handle": "configure", "title": "Configure", "body": "<p>Configure your Kevin.</p>" },
+    "sitemap": { "handle": "sitemap", "title": "Sitemap", "body": "<p>Site overview</p>" },
+    "llms": { "handle": "llms", "title": "LLM summary", "body": "<p>AI-readable site summary</p>" }
+  }
+}

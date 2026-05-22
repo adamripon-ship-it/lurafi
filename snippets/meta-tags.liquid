@@ -1,0 +1,99 @@
+{%- liquid
+  assign lurafi_default_image = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+  assign lurafi_meta_description = page_description
+  assign lurafi_canonical_url = seo_canonical_url | default: canonical_url
+  assign llms_page_url = pages.llms.url
+  if lurafi_meta_description == blank and request.page_type == 'index'
+    assign lurafi_meta_description = 'seo.home.description' | t
+  endif
+
+  assign locale_root = request.locale.iso_code | split: '-' | first | downcase
+  assign og_locale = 'en_US'
+  case locale_root
+    when 'nl'
+      assign og_locale = 'nl_NL'
+    when 'fr'
+      assign og_locale = 'fr_FR'
+    when 'de'
+      assign og_locale = 'de_DE'
+    when 'es'
+      assign og_locale = 'es_ES'
+    when 'it'
+      assign og_locale = 'it_IT'
+    when 'nb'
+      assign og_locale = 'nb_NO'
+    when 'da'
+      assign og_locale = 'da_DK'
+    when 'sv'
+      assign og_locale = 'sv_SE'
+    when 'fi'
+      assign og_locale = 'fi_FI'
+    when 'cs'
+      assign og_locale = 'cs_CZ'
+    when 'pl'
+      assign og_locale = 'pl_PL'
+  endcase
+
+  assign lurafi_og_image = page_image
+  if lurafi_og_image == blank and settings.favicon != blank
+    assign lurafi_og_image = settings.favicon
+  endif
+-%}
+{%- if lurafi_meta_description != blank -%}
+  <meta name="description" content="{{ lurafi_meta_description | escape }}">
+{%- endif -%}
+
+<meta property="og:site_name" content="{{ shop.name }}">
+<meta property="og:locale" content="{{ og_locale }}">
+{%- for language in localization.available_languages -%}
+  {%- unless language.iso_code == request.locale.iso_code -%}
+    {%- assign alt_root = language.iso_code | split: '-' | first | downcase -%}
+    {%- assign alt_og = 'en_US' -%}
+    {%- case alt_root -%}
+      {%- when 'nl' -%}{%- assign alt_og = 'nl_NL' -%}
+      {%- when 'fr' -%}{%- assign alt_og = 'fr_FR' -%}
+      {%- when 'de' -%}{%- assign alt_og = 'de_DE' -%}
+      {%- when 'es' -%}{%- assign alt_og = 'es_ES' -%}
+      {%- when 'it' -%}{%- assign alt_og = 'it_IT' -%}
+      {%- when 'nb' -%}{%- assign alt_og = 'nb_NO' -%}
+      {%- when 'da' -%}{%- assign alt_og = 'da_DK' -%}
+      {%- when 'sv' -%}{%- assign alt_og = 'sv_SE' -%}
+      {%- when 'fi' -%}{%- assign alt_og = 'fi_FI' -%}
+      {%- when 'cs' -%}{%- assign alt_og = 'cs_CZ' -%}
+      {%- when 'pl' -%}{%- assign alt_og = 'pl_PL' -%}
+    {%- endcase -%}
+    <meta property="og:locale:alternate" content="{{ alt_og }}">
+  {%- endunless -%}
+{%- endfor -%}
+<meta property="og:url" content="{{ lurafi_canonical_url }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:type" content="{% if request.page_type == 'product' %}product{% elsif request.page_type == 'article' %}article{% else %}website{% endif %}">
+<meta property="og:description" content="{{ lurafi_meta_description | default: shop.description | default: shop.name | escape }}">
+
+{%- if lurafi_og_image -%}
+  <meta property="og:image" content="https:{{ lurafi_og_image | image_url: width: 1200 }}">
+  <meta property="og:image:secure_url" content="https:{{ lurafi_og_image | image_url: width: 1200 }}">
+  <meta name="twitter:image" content="https:{{ lurafi_og_image | image_url: width: 1200 }}">
+{%- elsif request.page_type == 'index' -%}
+  <meta property="og:image" content="{{ lurafi_default_image }}">
+  <meta property="og:image:secure_url" content="{{ lurafi_default_image }}">
+  <meta name="twitter:image" content="{{ lurafi_default_image }}">
+{%- endif -%}
+
+{%- if llms_page_url != blank -%}
+<link rel="alternate" type="text/plain" href="{{ llms_page_url }}" title="LLM site summary">
+{%- endif -%}
+<link rel="alternate" type="text/plain" href="{{ 'llms.txt' | asset_url }}" title="Short LLM summary" hreflang="en">
+<link rel="alternate" type="text/plain" href="{{ 'llms-full.txt' | asset_url }}" title="Full LLM summary" hreflang="en">
+{%- assign llm_locales = 'nl,fr,de,es,it' | split: ',' -%}
+{%- for llm_code in llm_locales -%}
+  {%- assign short_asset = 'llms.' | append: llm_code | append: '.txt' -%}
+  {%- assign full_asset = 'llms-full.' | append: llm_code | append: '.txt' -%}
+  <link rel="alternate" type="text/plain" href="{{ short_asset | asset_url }}" title="Short LLM summary ({{ llm_code | upcase }})" hreflang="{{ llm_code }}">
+  <link rel="alternate" type="text/plain" href="{{ full_asset | asset_url }}" title="Full LLM summary ({{ llm_code | upcase }})" hreflang="{{ llm_code }}">
+{%- endfor -%}
+<link rel="sitemap" type="application/xml" href="{{ 'sitemap-ai.xml' | asset_url }}" title="AI sitemap">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ lurafi_meta_description | default: shop.description | default: shop.name | escape }}">

@@ -1,0 +1,12 @@
+{%- if request.page_type == 'index' -%}
+  {%- unless request.query_string contains 'view=configure' -%}
+  {%- capture configure_buy_url -%}
+    {%- render 'configure-url', plan: 'buy' -%}
+  {%- endcapture -%}
+  <aside class="sticky-cta" aria-label="{{ 'home.hero.cta_primary_label' | t }}" data-sticky-cta hidden>
+    <a href="{{ configure_buy_url | strip }}" class="sticky-cta__btn btn-apple-primary">
+      {{ 'home.hero.cta_primary_label' | t }}
+    </a>
+  </aside>
+  {%- endunless -%}
+{%- endif -%}

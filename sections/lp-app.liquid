@@ -1,0 +1,39 @@
+<section id="app" class="section-apple bg-black">
+  <div class="apple-container">
+    <p class="overline-blue-dark">{{ 'home.app.overline' | t: default: section.settings.overline }}</p>
+    <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{{ 'home.app.heading' | t: default: section.settings.heading }}</h2>
+    <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{{ 'home.app.subheading' | t: default: section.settings.subheading }}</p>
+
+    <div class="app-phones">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-app-iphone-mockup-8uNpRd5swi832cYXserPzn.webp" alt="Kevin app dashboard" width="320" height="640" loading="lazy">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-app-schedule-mockup-kyUXBFJHfo5Kk8TJi6rwbt.webp" alt="Kevin app schedule" width="320" height="640" loading="lazy">
+    </div>
+
+    <div class="tile-grid-2">
+      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ 'home.app.tile_1_title' | t: default: section.settings.tile_1_title }}</h3><p class="body-standard text-muted-dark">{{ 'home.app.tile_1_body' | t: default: section.settings.tile_1_body }}</p></div>
+      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ 'home.app.tile_2_title' | t: default: section.settings.tile_2_title }}</h3><p class="body-standard text-muted-dark">{{ 'home.app.tile_2_body' | t: default: section.settings.tile_2_body }}</p></div>
+      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ 'home.app.tile_3_title' | t: default: section.settings.tile_3_title }}</h3><p class="body-standard text-muted-dark">{{ 'home.app.tile_3_body' | t: default: section.settings.tile_3_body }}</p></div>
+      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ 'home.app.tile_4_title' | t: default: section.settings.tile_4_title }}</h3><p class="body-standard text-muted-dark">{{ 'home.app.tile_4_body' | t: default: section.settings.tile_4_body }}</p></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "App features",
+  "settings": [
+    { "type": "text", "id": "overline", "label": "Overline", "default": "Kevin App" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your guide, in your pocket." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Turn protection on, set schedules, and manage every Kevin—from one calm, simple app built for peace of mind." },
+    { "type": "text", "id": "tile_1_title", "label": "Tile 1 title", "default": "Smart Scheduling" },
+    { "type": "textarea", "id": "tile_1_body", "label": "Tile 1 body", "default": "Plan when Kevin runs—or let it learn your rhythm and adapt automatically." },
+    { "type": "text", "id": "tile_2_title", "label": "Tile 2 title", "default": "Leaves When You Leave" },
+    { "type": "textarea", "id": "tile_2_body", "label": "Tile 2 body", "default": "Geo-aware activation starts protection when you walk out the door. No daily toggles." },
+    { "type": "text", "id": "tile_3_title", "label": "Tile 3 title", "default": "Every Home, One App" },
+    { "type": "textarea", "id": "tile_3_body", "label": "Tile 3 body", "default": "Manage multiple Kevin devices across rooms, floors, or properties from a single view." },
+    { "type": "text", "id": "tile_4_title", "label": "Tile 4 title", "default": "Vacation Mode" },
+    { "type": "textarea", "id": "tile_4_body", "label": "Tile 4 body", "default": "Daily variation so your home never looks predictably empty—whether you are away for a weekend or a month." }
+  ],
+  "presets": [{ "name": "App features" }]
+}
+{% endschema %}

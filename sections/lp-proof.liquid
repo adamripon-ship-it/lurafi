@@ -1,0 +1,33 @@
+<section class="section-apple bg-gray">
+  <div class="apple-container">
+    <h2 class="headline-section text-center" style="margin-bottom:56px">{{ 'home.proof.heading' | t: default: section.settings.heading }}</h2>
+    <div class="tile-grid-3">
+      <div class="tile tile--white"><div class="stars">★★★★★</div><p class="body-standard" style="margin-bottom:20px">{{ 'home.proof.quote_1' | t: default: section.settings.quote_1 }}</p><p style="font-size:14px;font-weight:600">{{ 'home.proof.author_1_name' | t: default: section.settings.author_1_name }}</p><p class="body-reduced text-muted">{{ 'home.proof.author_1_location' | t: default: section.settings.author_1_location }}</p></div>
+      <div class="tile tile--white"><div class="stars">★★★★★</div><p class="body-standard" style="margin-bottom:20px">{{ 'home.proof.quote_2' | t: default: section.settings.quote_2 }}</p><p style="font-size:14px;font-weight:600">{{ 'home.proof.author_2_name' | t: default: section.settings.author_2_name }}</p><p class="body-reduced text-muted">{{ 'home.proof.author_2_location' | t: default: section.settings.author_2_location }}</p></div>
+      <div class="tile tile--white"><div class="stars">★★★★★</div><p class="body-standard" style="margin-bottom:20px">{{ 'home.proof.quote_3' | t: default: section.settings.quote_3 }}</p><p style="font-size:14px;font-weight:600">{{ 'home.proof.author_3_name' | t: default: section.settings.author_3_name }}</p><p class="body-reduced text-muted">{{ 'home.proof.author_3_location' | t: default: section.settings.author_3_location }}</p></div>
+    </div>
+    <div class="proof-summary-card">
+      <p class="proof-summary-card__eyebrow">Why it converts hesitation into confidence</p>
+      <p>Kevin is simple to place, private by design, and most convincing from the exact perspective that matters: outside the home.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Real enough from the outside." },
+    { "type": "textarea", "id": "quote_1", "label": "Quote 1", "default": "\"From the pavement it looks and sounds like someone is home. That is exactly what I wanted.\"" },
+    { "type": "text", "id": "author_1_name", "label": "Author 1 name", "default": "Sarah M." },
+    { "type": "text", "id": "author_1_location", "label": "Author 1 location", "default": "Zurich, Switzerland" },
+    { "type": "textarea", "id": "quote_2", "label": "Quote 2", "default": "\"A colleague was sure I was in and rang the bell. Kevin fooled everyone—including me.\"" },
+    { "type": "text", "id": "author_2_name", "label": "Author 2 name", "default": "Marc D." },
+    { "type": "text", "id": "author_2_location", "label": "Author 2 location", "default": "Lyon, France" },
+    { "type": "textarea", "id": "quote_3", "label": "Quote 3", "default": "\"From the stairwell you would swear someone is inside. Shadows and sound—incredibly lifelike.\"" },
+    { "type": "text", "id": "author_3_name", "label": "Author 3 name", "default": "Thomas K." },
+    { "type": "text", "id": "author_3_location", "label": "Author 3 location", "default": "Munich, Germany" }
+  ],
+  "presets": [{ "name": "Testimonials" }]
+}
+{% endschema %}

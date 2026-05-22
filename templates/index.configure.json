@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "configure": {
+      "type": "main-configure",
+      "settings": {}
+    }
+  },
+  "order": ["configure"]
+}

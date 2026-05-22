@@ -1,0 +1,97 @@
+<article class="page-width article-page">
+  <header class="article-page__header">
+    <p class="eyebrow">Journal</p>
+    <h1>{{ article.title }}</h1>
+    <p class="blog-card__meta">
+      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+        {{ article.published_at | date: format: 'on_date' }}
+      </time>
+      {%- if section.settings.show_author -%}
+        &middot; {{ article.author }}
+      {%- endif -%}
+    </p>
+
+    {%- if article.image -%}
+      <img
+        class="article-page__hero-image"
+        src="{{ article.image | image_url: width: 1400 }}"
+        alt="{{ article.image.alt | escape }}"
+        width="{{ article.image.width }}"
+        height="{{ article.image.height }}"
+        loading="eager"
+      >
+    {%- endif -%}
+  </header>
+
+  <div class="article-page__content rte">
+    {{ article.content }}
+  </div>
+
+  {%- if blog.comments_enabled? -%}
+    <section class="article-page__comments">
+      <h2>{{ article.comments_count }} comment{% if article.comments_count != 1 %}s{% endif %}</h2>
+
+      {%- if article.comments_count > 0 -%}
+        {%- paginate article.comments by 10 -%}
+          <ul class="comments" role="list">
+            {%- for comment in article.comments -%}
+              <li class="comment">
+                <p class="comment__meta">
+                  <strong>{{ comment.author }}</strong>
+                  &middot;
+                  <time datetime="{{ comment.created_at | date: '%Y-%m-%d' }}">
+                    {{ comment.created_at | date: format: 'on_date' }}
+                  </time>
+                </p>
+                <div class="comment__body rte">{{ comment.content }}</div>
+              </li>
+            {%- endfor -%}
+          </ul>
+
+          {%- if paginate.pages > 1 -%}
+            <nav class="pagination" role="navigation">{{ paginate | default_pagination }}</nav>
+          {%- endif -%}
+        {%- endpaginate -%}
+      {%- endif -%}
+
+      {%- form 'new_comment', article, class: 'form-stack' -%}
+        <h3>Leave a comment</h3>
+
+        {%- if form.errors -%}
+          <div class="form__errors" role="alert">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        {%- if form.posted_successfully? -%}
+          <p>Your comment was posted successfully.</p>
+        {%- endif -%}
+
+        <label for="CommentAuthor">Name</label>
+        <input id="CommentAuthor" type="text" name="comment[author]" required>
+
+        <label for="CommentEmail">Email</label>
+        <input id="CommentEmail" type="email" name="comment[email]" required>
+
+        <label for="CommentBody">Comment</label>
+        <textarea id="CommentBody" name="comment[body]" rows="6" required></textarea>
+
+        <button type="submit" class="button">Post comment</button>
+      {%- endform -%}
+    </section>
+  {%- endif -%}
+</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "Show author"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,73 @@
+{%- liquid
+  assign buy_product = settings.product_buy
+  assign sub_product = settings.product_subscribe
+  capture configure_buy_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  capture configure_sub_url
+    render 'configure-url', plan: 'subscribe'
+  endcapture
+  assign configure_buy_url = configure_buy_url | strip
+  assign configure_sub_url = configure_sub_url | strip
+  assign buy_features = 'home.pricing.buy_features' | t | split: '|'
+  assign sub_features = 'home.pricing.sub_features' | t | split: '|'
+-%}
+
+<section id="pricing" class="section-apple bg-white">
+  <div class="apple-container">
+    <p class="overline-blue">{{ 'home.pricing.overline' | t: default: section.settings.overline }}</p>
+    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ 'home.pricing.heading' | t: default: section.settings.heading }}</h2>
+    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 56px">{{ 'home.pricing.subheading' | t: default: section.settings.subheading }}</p>
+
+    <div class="tile-grid-2" style="max-width:760px;margin-inline:auto" data-countup-duration="1000">
+      <div class="tile tile--gray plan-card">
+        <p class="plan-label plan-label--blue">{{ 'home.pricing.buy_label' | t: default: section.settings.buy_label }}</p>
+        <h3 style="font-size:28px;font-weight:600">{{ buy_product.title | default: 'Kevin' }}</h3>
+        <p class="text-muted" style="margin-bottom:8px">{{ 'home.pricing.buy_tagline' | t: default: section.settings.buy_tagline }}</p>
+        <p class="plan-price">
+          {% render 'price-display', product: buy_product, fallback: '649 CHF' %}
+        </p>
+        <ul class="plan-features">
+          {%- for feature in buy_features -%}
+            <li>✓ {{ feature | strip }}</li>
+          {%- endfor -%}
+        </ul>
+        <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-block">{{ 'home.pricing.buy_cta' | t: default: section.settings.buy_cta }}</a>
+      </div>
+      <div class="tile plan-dark plan-card">
+        <p class="plan-label plan-label--light">{{ 'home.pricing.sub_label' | t: default: section.settings.sub_label }}</p>
+        <h3 class="text-white" style="font-size:28px;font-weight:600">{{ sub_product.title | default: 'Kevin+' }}</h3>
+        <p class="text-muted" style="margin-bottom:8px">{{ 'home.pricing.sub_tagline' | t: default: section.settings.sub_tagline }}</p>
+        <p class="plan-price text-white">
+          {% render 'price-display', product: sub_product, fallback: '12.90 CHF/mo' %}
+        </p>
+        <ul class="plan-features">
+          {%- for feature in sub_features -%}
+            <li>✓ {{ feature | strip }}</li>
+          {%- endfor -%}
+        </ul>
+        <a href="{{ configure_sub_url }}" class="btn-apple-blue btn-block">{{ 'home.pricing.sub_cta' | t: default: section.settings.sub_cta }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pricing",
+  "settings": [
+    { "type": "text", "id": "overline", "label": "Overline", "default": "Pricing" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Choose how you want to get protected." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Own outright or subscribe monthly. Either way, your home stays visibly lived-in from day one." },
+    { "type": "text", "id": "buy_label", "label": "Buy plan label", "default": "One-time purchase" },
+    { "type": "text", "id": "buy_tagline", "label": "Buy tagline", "default": "Own it forever." },
+    { "type": "text", "id": "buy_cta", "label": "Buy CTA", "default": "Buy Now" },
+    { "type": "text", "id": "sub_label", "label": "Subscribe plan label", "default": "Monthly subscription" },
+    { "type": "text", "id": "sub_tagline", "label": "Subscribe tagline", "default": "Device included. Cancel anytime." },
+    { "type": "text", "id": "sub_cta", "label": "Subscribe CTA", "default": "Subscribe Now" },
+    { "type": "textarea", "id": "buy_features", "label": "Buy features (pipe-separated)", "default": "Full device ownership|70+ hours of AI presence simulations|Kevin App included|Free delivery|3-year warranty" },
+    { "type": "textarea", "id": "sub_features", "label": "Subscribe features (pipe-separated)", "default": "Device included free|Premium AI simulation library|Stays ahead with regular updates|Priority support|Hardware replacement guarantee" }
+  ],
+  "presets": [{ "name": "Pricing" }]
+}
+{% endschema %}

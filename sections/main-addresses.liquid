@@ -1,0 +1,126 @@
+<script src="{{ 'addresses.js' | asset_url }}" defer="defer"></script>
+
+<div class="page-width customer-addresses">
+  <header class="customer-addresses__header">
+    <h1>Your addresses</h1>
+    <a href="{{ routes.account_url }}">Return to account details</a>
+  </header>
+
+  <section class="customer-addresses__new">
+    <h2>Add a new address</h2>
+
+    {%- form 'customer_address', customer.new_address -%}
+      {%- if form.errors -%}
+        <div class="form__errors" role="alert">{{ form.errors | default_errors }}</div>
+      {%- endif -%}
+
+      <label for="AddressFirstNameNew">First name</label>
+      <input id="AddressFirstNameNew" type="text" name="address[first_name]" autocomplete="given-name">
+
+      <label for="AddressLastNameNew">Last name</label>
+      <input id="AddressLastNameNew" type="text" name="address[last_name]" autocomplete="family-name">
+
+      <label for="AddressCompanyNew">Company</label>
+      <input id="AddressCompanyNew" type="text" name="address[company]" autocomplete="organization">
+
+      <label for="AddressStreet1New">Address</label>
+      <input id="AddressStreet1New" type="text" name="address[address1]" autocomplete="address-line1">
+
+      <label for="AddressStreet2New">Apartment, suite, etc.</label>
+      <input id="AddressStreet2New" type="text" name="address[address2]" autocomplete="address-line2">
+
+      <label for="AddressCityNew">City</label>
+      <input id="AddressCityNew" type="text" name="address[city]" autocomplete="address-level2">
+
+      <label for="AddressCountryNew">Country</label>
+      <select id="AddressCountryNew" name="address[country]" data-default="{{ form.country }}">{{ all_country_option_tags }}</select>
+
+      <label for="AddressProvinceNew">Province</label>
+      <select id="AddressProvinceNew" name="address[province]" data-default="{{ form.province }}"></select>
+
+      <label for="AddressZipNew">Postal/ZIP code</label>
+      <input id="AddressZipNew" type="text" name="address[zip]" autocapitalize="characters" autocomplete="postal-code">
+
+      <label for="AddressPhoneNew">Phone</label>
+      <input id="AddressPhoneNew" type="tel" name="address[phone]" autocomplete="tel">
+
+      <label>
+        <input type="hidden" name="address[default]" value="false">
+        <input type="checkbox" name="address[default]" value="true">
+        Set as default address
+      </label>
+
+      <button type="submit">Add address</button>
+    {%- endform -%}
+  </section>
+
+  <section class="customer-addresses__list">
+    <h2>Saved addresses</h2>
+
+    {%- paginate customer.addresses by 5 -%}
+      {%- if customer.addresses.size > 0 -%}
+        {%- for address in customer.addresses -%}
+          <article class="customer-address">
+            {%- if address == customer.default_address -%}
+              <p><strong>Default</strong></p>
+            {%- endif -%}
+
+            {{ address | format_address }}
+
+            <a href="#EditAddress{{ address.id }}">Edit</a>
+            <a href="{{ address.url }}" data-form-id="{{ address.id }}" data-confirm-message="Are you sure you wish to delete this address?">Delete</a>
+
+            <details id="EditAddress{{ address.id }}">
+              <summary>Edit address</summary>
+
+              {%- form 'customer_address', address -%}
+                {%- if form.errors -%}
+                  <div class="form__errors" role="alert">{{ form.errors | default_errors }}</div>
+                {%- endif -%}
+
+                <label for="AddressFirstName{{ address.id }}">First name</label>
+                <input id="AddressFirstName{{ address.id }}" type="text" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name">
+
+                <label for="AddressLastName{{ address.id }}">Last name</label>
+                <input id="AddressLastName{{ address.id }}" type="text" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name">
+
+                <label for="AddressStreet1{{ address.id }}">Address</label>
+                <input id="AddressStreet1{{ address.id }}" type="text" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1">
+
+                <label for="AddressCity{{ address.id }}">City</label>
+                <input id="AddressCity{{ address.id }}" type="text" name="address[city]" value="{{ form.city }}" autocomplete="address-level2">
+
+                <label for="AddressCountry{{ address.id }}">Country</label>
+                <select id="AddressCountry{{ address.id }}" name="address[country]" data-default="{{ form.country }}">{{ all_country_option_tags }}</select>
+
+                <label for="AddressZip{{ address.id }}">Postal/ZIP code</label>
+                <input id="AddressZip{{ address.id }}" type="text" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code">
+
+                <label>
+                  <input type="hidden" name="address[default]" value="false">
+                  <input type="checkbox" name="address[default]" value="true" {% if form.default %}checked{% endif %}>
+                  Set as default address
+                </label>
+
+                <button type="submit">Update address</button>
+              {%- endform -%}
+            </details>
+          </article>
+        {%- endfor -%}
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="pagination" role="navigation">{{ paginate | default_pagination }}</nav>
+        {%- endif -%}
+      {%- else -%}
+        <p>You have no saved addresses.</p>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Addresses",
+  "settings": []
+}
+{% endschema %}

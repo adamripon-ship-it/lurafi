@@ -1,0 +1,64 @@
+<section id="problem" class="section-apple bg-white">
+  <div class="apple-container">
+    <p class="overline-blue">{{ 'home.problem.overline' | t: default: section.settings.overline }}</p>
+    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ 'home.problem.heading' | t: default: section.settings.heading }}</h2>
+    <p class="body-elevated text-muted text-center" style="max-width:600px;margin:0 auto 64px">{{ 'home.problem.subheading' | t: default: section.settings.subheading }}</p>
+    <div class="tile-grid-3">
+      <div class="tile tile--gray text-center">
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.problem.tile_1_title' | t: default: section.settings.tile_1_title }}</h3>
+        <p class="body-standard text-muted">{{ 'home.problem.tile_1_body' | t: default: section.settings.tile_1_body }}</p>
+      </div>
+      <div class="tile tile--gray text-center">
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.problem.tile_2_title' | t: default: section.settings.tile_2_title }}</h3>
+        <p class="body-standard text-muted">{{ 'home.problem.tile_2_body' | t: default: section.settings.tile_2_body }}</p>
+      </div>
+      <div class="tile tile--gray text-center">
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.problem.tile_3_title' | t: default: section.settings.tile_3_title }}</h3>
+        <p class="body-standard text-muted">{{ 'home.problem.tile_3_body' | t: default: section.settings.tile_3_body }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Problem",
+  "settings": [
+    { "type": "text", "id": "overline", "label": "Overline", "default": "The Problem" },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your home should not look empty."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Alarms react. Cameras record. Neither stops someone who believes no one is home—especially during the day. You deserve prevention, not aftermath."
+    },
+    { "type": "text", "id": "tile_1_title", "label": "Tile 1 title", "default": "Too Late" },
+    {
+      "type": "textarea",
+      "id": "tile_1_body",
+      "label": "Tile 1 body",
+      "default": "Alarms sound after entry. By then, valuables—and the feeling that home is safe—are already gone."
+    },
+    { "type": "text", "id": "tile_2_title", "label": "Tile 2 title", "default": "Just Watching" },
+    {
+      "type": "textarea",
+      "id": "tile_2_body",
+      "label": "Tile 2 body",
+      "default": "Cameras capture evidence but rarely deter. Burglars count on minutes before anyone responds—and no one watching live."
+    },
+    { "type": "text", "id": "tile_3_title", "label": "Tile 3 title", "default": "False Comfort" },
+    {
+      "type": "textarea",
+      "id": "tile_3_body",
+      "label": "Tile 3 body",
+      "default": "Sensors and smart locks help until they do not. An empty-looking home still invites the wrong kind of attention."
+    }
+  ],
+  "presets": [{ "name": "Problem" }]
+}
+{% endschema %}

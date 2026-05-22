@@ -1,0 +1,92 @@
+{%- comment -%}
+  Language switcher via POST /localization (Shopify Markets).
+  Lists all published languages from localization.available_languages.
+  @param form_id {String}
+  @param selector_id {String}
+{%- endcomment -%}
+{%- liquid
+  assign form_id = form_id | default: 'LocalizationForm'
+  assign selector_id = selector_id | default: 'LanguageSelector'
+
+  assign return_to = request.path
+  if return_to == blank
+    assign return_to = '/'
+  endif
+  if request.search != blank
+    assign return_to = return_to | append: request.search
+  elsif request.query_string != blank
+    assign return_to = return_to | append: '?' | append: request.query_string
+  endif
+-%}
+{%- if localization.available_languages.size > 1 -%}
+  <div class="language-selector" data-language-selector>
+    <form
+      method="post"
+      action="/localization"
+      id="{{ form_id }}"
+      class="language-selector__form"
+      accept-charset="UTF-8"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="form_type" value="localization">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="hidden" name="_method" value="put">
+      <input
+        type="hidden"
+        name="return_to"
+        value="{{ return_to | escape }}"
+        data-language-return-to
+      >
+      {%- if localization.country -%}
+        <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+      {%- endif -%}
+
+      <label class="language-selector__label visually-hidden" for="{{ selector_id }}">
+        {{ 'language.label' | t }}
+      </label>
+      <select
+        id="{{ selector_id }}"
+        name="locale_code"
+        class="language-selector__select"
+        aria-label="{{ 'language.label' | t }}"
+        data-language-select
+        autocomplete="language"
+      >
+        {%- for language in localization.available_languages -%}
+          {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
+          {%- assign lang_key = 'language.' | append: lang_root -%}
+          <option
+            value="{{ language.iso_code }}"
+            lang="{{ language.iso_code }}"
+            {% if language.iso_code == localization.language.iso_code %}
+              selected
+            {% endif %}
+          >
+            {{ lang_key | t: default: language.endonym_name }}
+          </option>
+        {%- endfor -%}
+      </select>
+      <noscript>
+        <button type="submit" class="language-selector__noscript-btn">{{ 'language.label' | t }}</button>
+      </noscript>
+    </form>
+  </div>
+  <script>
+    (function () {
+      var form = document.getElementById({{ form_id | json }});
+      if (!form) return;
+      var select = form.querySelector('[data-language-select]');
+      form.addEventListener('submit', function () {
+        var input = form.querySelector('[data-language-return-to]');
+        if (input) {
+          input.value = (window.location.pathname || '/') + (window.location.search || '');
+        }
+      });
+      if (select) {
+        select.addEventListener('change', function () {
+          form.requestSubmit ? form.requestSubmit() : form.submit();
+        });
+      }
+    })();
+  </script>
+{%- endif -%}

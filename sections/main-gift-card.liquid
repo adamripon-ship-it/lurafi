@@ -1,0 +1,48 @@
+<div class="page-width gift-card">
+  <header class="gift-card__header">
+    <h1>{{ shop.name }} gift card</h1>
+    <p class="gift-card__value">
+      {%- if gift_card.expired -%}
+        <span class="gift-card__expired">Expired</span>
+      {%- else -%}
+        {{ gift_card.balance | money }} <small>of {{ gift_card.initial_value | money }}</small>
+      {%- endif -%}
+    </p>
+  </header>
+
+  <section class="gift-card__code">
+    <p>Your gift card code is:</p>
+    <code class="gift-card__code-value">{{ gift_card.code | format_code }}</code>
+
+    {%- if gift_card.qr_identifier -%}
+      <div
+        class="gift-card__qr"
+        id="QRCode"
+        data-identifier="{{ gift_card.qr_identifier }}"
+      ></div>
+    {%- endif -%}
+  </section>
+
+  {%- unless gift_card.expired -%}
+    <section class="gift-card__actions">
+      <a href="{{ shop.url }}" class="button">Visit store</a>
+      <button type="button" onclick="window.print();">Print this gift card</button>
+      {%- if gift_card.pass_url -%}
+        <a href="{{ gift_card.pass_url }}" class="button">Add to Apple Wallet</a>
+      {%- endif -%}
+    </section>
+  {%- endunless -%}
+
+  {%- if gift_card.expires_on and gift_card.enabled and gift_card.expired == false -%}
+    <p class="gift-card__expiry">
+      Expires on {{ gift_card.expires_on | date: format: 'on_date' }}
+    </p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Gift card",
+  "settings": []
+}
+{% endschema %}

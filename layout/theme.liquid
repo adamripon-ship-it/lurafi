@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    {%- liquid
+      assign show_configure = false
+      if template.suffix == 'configure'
+        assign show_configure = true
+      endif
+      if request.query_string contains 'view=configure'
+        assign show_configure = true
+      endif
+
+      assign seo_canonical_url = canonical_url
+      if request.query_string contains 'view=configure'
+        capture configure_canonical_url
+          render 'configure-url'
+        endcapture
+        assign seo_canonical_url = configure_canonical_url | strip | split: '?' | first
+      endif
+    -%}
+    <link rel="canonical" href="{{ seo_canonical_url }}">
+    {% render 'seo-hreflang' %}
+    {%- if request.query_string contains 'view=configure' -%}
+      <meta name="robots" content="noindex,follow">
+    {%- endif -%}
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    <!-- lurafi-head-v13 locale push -->
+    {% render 'meta-tags', seo_canonical_url: seo_canonical_url %}
+    {% render 'structured-data' %}
+    {% render 'configure-redirect' %}
+    {{ content_for_header }}
+    {{ 'lurafi.css' | asset_url | stylesheet_tag }}
+    <script>
+      window.themeMoneyFormat = {{ shop.money_format | json }};
+      window.themeTranslations = {
+        cart: {
+          empty: {{ 'cart.empty' | t | json }},
+          subtotal: {{ 'cart.subtotal' | t | json }}
+        },
+        configure: {
+          summaryPlanBuy: {{ 'configure.summary_plan_buy' | t | json }},
+          summaryPlanSub: {{ 'configure.summary_plan_sub' | t | json }},
+          perDevice: {{ 'configure.per_device' | t | json }},
+          errorProducts: {{ 'configure.error_products' | t | json }},
+          errorCheckout: {{ 'configure.error_checkout' | t | json }},
+          processing: {{ 'configure.processing' | t | json }},
+          checkoutCta: {{ 'configure.checkout_cta' | t | json }},
+          stickyCheckout: {{ 'configure.sticky_checkout' | t | json }},
+          deviceIn: {{ 'configure.device_in' | t | json }}
+        },
+        colors: {
+          grey: {{ 'colors.grey' | t | json }},
+          white: {{ 'colors.white' | t | json }},
+          burgundy: {{ 'colors.burgundy' | t | json }},
+          red: {{ 'colors.red' | t | json }},
+          espresso: {{ 'colors.espresso' | t | json }},
+          brown: {{ 'colors.brown' | t | json }},
+          navy: {{ 'colors.navy' | t | json }},
+          blue: {{ 'colors.blue' | t | json }}
+        }
+      };
+      window.themeLocale = {{ request.locale.iso_code | json }};
+    </script>
+    <script src="{{ 'cart-api.js' | asset_url }}" defer></script>
+    <script src="{{ 'header.js' | asset_url }}" defer></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+    <script src="{{ 'countup.js' | asset_url }}" defer></script>
+    {%- if request.page_type == 'product' and show_configure == false -%}
+      <script src="{{ 'product-form.js' | asset_url }}" defer></script>
+    {%- endif -%}
+    {%- if show_configure -%}
+      <script src="{{ 'configure-v2.js' | asset_url }}" defer></script>
+    {%- endif -%}
+  </head>
+
+  <body class="template-{{ request.page_type | handle }}{% if show_configure %} template-configure{% if template.name == 'index' %} template-index-configure{% endif %}{% endif %}">
+    <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t }}</a>
+
+    {% unless show_configure %}
+      {% sections 'header-group' %}
+    {% endunless %}
+
+    <main id="MainContent" role="main" tabindex="-1">
+      {%- if show_configure -%}
+        {%- if template.name == 'index' or template.name == 'product' -%}
+          {% section 'main-configure' %}
+        {%- else -%}
+          {{ content_for_layout }}
+        {%- endif -%}
+      {%- else -%}
+        {{ content_for_layout }}
+      {%- endif -%}
+    </main>
+
+    {% unless show_configure %}
+      {% sections 'footer-group' %}
+    {% endunless %}
+    {% render 'cart-drawer' %}
+    {% render 'cro-sticky-cta' %}
+  </body>
+</html>

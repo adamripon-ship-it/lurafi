@@ -1,0 +1,52 @@
+<section class="section-apple bg-white lp-specs" aria-labelledby="SpecsHeading-{{ section.id }}">
+  <div class="apple-container">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="overline-blue">{{ 'home.specs.eyebrow' | t: default: section.settings.eyebrow }}</p>
+    {%- endif -%}
+    <h2 id="SpecsHeading-{{ section.id }}" class="headline-section text-center">{{ 'home.specs.heading' | t: default: section.settings.heading }}</h2>
+
+    <div class="lp-specs__card">
+      <table class="lp-specs__table">
+        <caption class="visually-hidden">{{ 'home.specs.heading' | t: default: section.settings.heading }}</caption>
+        <tbody>
+          <tr>
+            <th scope="row">{{ 'spec_row.dimensions_label' | t }}</th>
+            <td>{{ 'spec_row.dimensions_value' | t }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ 'spec_row.power_label' | t }}</th>
+            <td>{{ 'spec_row.power_value' | t }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ 'spec_row.connectivity_label' | t }}</th>
+            <td>{{ 'spec_row.connectivity_value' | t }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ 'spec_row.privacy_label' | t }}</th>
+            <td>{{ 'spec_row.privacy_value' | t }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ 'spec_row.storage_label' | t }}</th>
+            <td>{{ 'spec_row.storage_value' | t }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ 'spec_row.placement_label' | t }}</th>
+            <td>{{ 'spec_row.placement_value' | t }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Specifications",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Technical details" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Specifications" }
+  ],
+  "presets": [{ "name": "Specifications" }]
+}
+{% endschema %}

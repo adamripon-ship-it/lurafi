@@ -1,0 +1,87 @@
+{%- liquid
+  capture configure_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_url = configure_url | strip
+  assign edit_separator = '?'
+  if configure_url contains '?'
+    assign edit_separator = '&'
+  endif
+-%}
+
+<section class="cart-page">
+  <div class="apple-container">
+    <h1 class="headline-section cart-page__title">{{ 'sections.cart.title' | t }}</h1>
+
+    {%- if cart.item_count > 0 -%}
+      <p class="cart-page__edit">
+        <a href="{{ configure_url }}{{ edit_separator }}edit=1" class="link-apple-blue">{{ 'cart.edit_configuration' | t }}</a>
+      </p>
+
+      {% form 'cart', cart, id: 'CartForm', class: 'cart-form' %}
+        <div class="cart-page__items">
+          {%- for item in cart.items -%}
+            <div class="cart-line" data-cart-line>
+              <div class="cart-line__image">
+                {%- if item.image -%}
+                  <a href="{{ item.url }}">
+                    <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.image.alt | escape }}" width="100" height="100" loading="lazy">
+                  </a>
+                {%- endif -%}
+              </div>
+              <div class="cart-line__details">
+                <a href="{{ item.url }}" class="cart-line__title">{{ item.product.title }}</a>
+                {%- unless item.product.has_only_default_variant -%}
+                  <p class="cart-line__variant">{{ item.variant.title }}</p>
+                {%- endunless -%}
+                {%- if item.selling_plan_allocation -%}
+                  <p class="cart-line__plan">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                {%- endif -%}
+                <div class="cart-line__actions">
+                  <label class="visually-hidden" for="Quantity-{{ item.index }}">{{ 'cart.quantity' | t }}</label>
+                  <input id="Quantity-{{ item.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" class="product-page__qty-input" aria-label="{{ 'cart.quantity_for' | t: product: item.product.title }}">
+                  <a href="{{ routes.cart_change_url }}?line={{ item.key }}&amp;quantity=0" class="cart-line__remove">{{ 'cart.remove' | t }}</a>
+                </div>
+              </div>
+              <p class="cart-line__total">{{ item.final_line_price | money }}</p>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="cart-page__footer">
+          <p class="cart-page__total">{{ 'cart.subtotal' | t }} {{ cart.total_price | money }}</p>
+          <div class="cart-page__delivery-card">
+            <p class="cart-page__delivery-title">{{ 'cart.delivery_method' | t }}</p>
+            <p class="cart-page__delivery-value">{{ 'cart.delivery_value' | t }}</p>
+            <p class="body-reduced text-muted">{{ 'cart.delivery_note' | t }}</p>
+          </div>
+
+          <div class="cart-page__checkout-buttons">
+            <button type="submit" name="checkout" class="btn-apple-primary btn-block cart-page__checkout-btn">{{ 'cart.checkout' | t }}</button>
+            <div class="cart-page__dynamic-checkout">
+              {{ form | payment_button }}
+            </div>
+          </div>
+
+          <div class="cart-page__actions">
+            <button type="submit" name="update" class="btn-apple-secondary">{{ 'cart.update' | t }}</button>
+            <a href="{{ routes.root_url }}" class="link-apple-blue">{{ 'cart.continue_shopping' | t }}</a>
+          </div>
+
+          <div class="cart-page__trust">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1" stroke="currentColor"/><path d="M3 6V4a3 3 0 0 1 6 0v2" stroke="currentColor"/></svg>
+            <span>{{ 'cart.checkout_trust' | t }}</span>
+          </div>
+        </div>
+      {% endform %}
+    {%- else -%}
+      <p class="body-elevated text-muted cart-page__empty-msg">{{ 'cart.empty' | t }}</p>
+      <p class="body-reduced text-muted cart-page__empty-note">{{ 'cart.empty_configure_note' | t }}</p>
+      <a href="{{ configure_url }}" class="btn-apple-primary">{{ 'cart.empty_configure_cta' | t }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Cart", "settings": [] }
+{% endschema %}
