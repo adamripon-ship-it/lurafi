@@ -10,6 +10,7 @@
     "locales:build": "node scripts/build-locales.mjs",
     "locales:sync": "node scripts/sync-locale-keys.mjs",
     "locales:translate": "node scripts/translate-locales.mjs",
+    "locales:translate:claude": "node scripts/translate-locales.mjs --provider=claude --include-nl",
     "predeploy": "npm run locales:build && npm run locales:sync && npm run theme:check",
     "geo:generate": "node scripts/generate-sitemap-ai.mjs && node scripts/generate-llms-assets.mjs",
     "shopify:locales": "./scripts/activate-locales.sh",

@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /**
- * Generate locales/*.json from en.default.json via DeepL or LibreTranslate.
+ * Generate locales/*.json from en.default.json via Claude, DeepL, or Google fallback.
  *
  * Usage:
  *   node scripts/build-locales.mjs
- *   DEEPL_API_KEY=xxx node scripts/translate-locales.mjs
+ *   ANTHROPIC_API_KEY=xxx node scripts/translate-locales.mjs --provider=claude
+ *   DEEPL_API_KEY=xxx node scripts/translate-locales.mjs --provider=deepl
  *   node scripts/translate-locales.mjs --locale fr,de
  *   node scripts/translate-locales.mjs --skip-existing
+ *   node scripts/translate-locales.mjs --provider=claude --include-nl
  *
  * Preserves: Kevin, Kevin+, Lurafi, Shopify, CHF, Mitipi, {{ }}, | pipe lists
  */
@@ -14,10 +16,32 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getLocales, loadLanguagesConfig } from './i18n/registry.mjs';
+import { translateClaudeBatch } from './claude-translate.mjs';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const localesDir = path.join(root, 'locales');
 const glossary = loadLanguagesConfig().glossary || [];
+
+function loadDotEnv() {
+  const envPath = path.join(root, '.env');
+  if (!fs.existsSync(envPath)) return;
+  for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eq = trimmed.indexOf('=');
+    if (eq === -1) continue;
+    const key = trimmed.slice(0, eq).trim();
+    let val = trimmed.slice(eq + 1).trim();
+    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+      val = val.slice(1, -1);
+    }
+    if (!process.env[key]) process.env[key] = val;
+  }
+}
+
+loadDotEnv();
+
+const CLAUDE_BATCH = 28;
 
 const DEEPL_TARGET = {
   nl: 'NL',
@@ -158,7 +182,26 @@ async function translateDeepLBatch(texts, targetLang, apiKey) {
   return data.translations.map((tr, i) => restoreGlossary(tr.text, protectedList[i].placeholders));
 }
 
-async function translateBatch(strings, localeCode, apiKey) {
+async function translateClaudeLocale(keyTexts, localeCode, apiKey) {
+  const loc = getLocales().find((l) => l.code === localeCode);
+  if (!loc) throw new Error(`Unknown locale: ${localeCode}`);
+  const keys = Object.keys(keyTexts);
+  const out = {};
+  for (let i = 0; i < keys.length; i += CLAUDE_BATCH) {
+    const batchKeys = keys.slice(i, i + CLAUDE_BATCH);
+    const batch = Object.fromEntries(batchKeys.map((k) => [k, keyTexts[k]]));
+    const translated = await translateClaudeBatch(batch, loc, apiKey);
+    Object.assign(out, translated);
+    console.log(`  ${localeCode}: ${Math.min(i + CLAUDE_BATCH, keys.length)}/${keys.length} (Claude)`);
+    await new Promise((r) => setTimeout(r, 400));
+  }
+  return out;
+}
+
+async function translateBatch(strings, localeCode, apiKey, provider) {
+  if (provider === 'claude') {
+    throw new Error('translateBatch should not be called for claude provider');
+  }
   const deepl = DEEPL_TARGET[localeCode];
   const google = LIBRE_TARGET[localeCode];
   if (apiKey && deepl) {
@@ -190,10 +233,10 @@ function injectLanguageLabels(flat, labels) {
   return flat;
 }
 
-async function translateLocale(localeCode, enFlat, labels, apiKey) {
+async function translateLocale(localeCode, enFlat, labels, apiKey, provider, includeNl) {
   const outPath = path.join(localesDir, `${localeCode}.json`);
   const existingPath = path.join(localesDir, `${localeCode}.json`);
-  if (localeCode === 'nl' && fs.existsSync(existingPath)) {
+  if (localeCode === 'nl' && fs.existsSync(existingPath) && !includeNl) {
     const existing = JSON.parse(fs.readFileSync(existingPath, 'utf8'));
     const flat = injectLanguageLabels(flatten(existing), labels);
     fs.writeFileSync(outPath, JSON.stringify(unflatten(flat), null, 2) + '\n');
@@ -205,23 +248,37 @@ async function translateLocale(localeCode, enFlat, labels, apiKey) {
   injectLanguageLabels(out, labels);
   const keys = Object.keys(enFlat).filter((k) => !k.startsWith('language.'));
   const stringKeys = keys.filter((k) => typeof enFlat[k] === 'string' && enFlat[k].trim());
-  const BATCH = 40;
-  for (let i = 0; i < stringKeys.length; i += BATCH) {
-    const batchKeys = stringKeys.slice(i, i + BATCH);
-    const batchVals = batchKeys.map((k) => enFlat[k]);
+  const keyTexts = Object.fromEntries(stringKeys.map((k) => [k, enFlat[k]]));
+
+  if (provider === 'claude') {
     try {
-      const translated = await translateBatch(batchVals, localeCode, apiKey);
-      batchKeys.forEach((k, j) => {
-        out[k] = translated[j] || enFlat[k];
-      });
+      const translated = await translateClaudeLocale(keyTexts, localeCode, apiKey);
+      Object.assign(out, translated);
     } catch (e) {
-      console.warn(`  batch ${i}: ${e.message}`);
-      batchKeys.forEach((k) => {
-        out[k] = enFlat[k];
-      });
+      console.error(`  ${localeCode} Claude failed: ${e.message}`);
+      process.exitCode = 1;
+      return;
     }
-    console.log(`  ${localeCode}: ${Math.min(i + BATCH, stringKeys.length)}/${stringKeys.length}`);
+  } else {
+    const BATCH = 40;
+    for (let i = 0; i < stringKeys.length; i += BATCH) {
+      const batchKeys = stringKeys.slice(i, i + BATCH);
+      const batchVals = batchKeys.map((k) => enFlat[k]);
+      try {
+        const translated = await translateBatch(batchVals, localeCode, apiKey, provider);
+        batchKeys.forEach((k, j) => {
+          out[k] = translated[j] || enFlat[k];
+        });
+      } catch (e) {
+        console.warn(`  batch ${i}: ${e.message}`);
+        batchKeys.forEach((k) => {
+          out[k] = enFlat[k];
+        });
+      }
+      console.log(`  ${localeCode}: ${Math.min(i + BATCH, stringKeys.length)}/${stringKeys.length}`);
+    }
   }
+
   fs.writeFileSync(outPath, JSON.stringify(unflatten(out), null, 2) + '\n');
   console.log(`✓ Wrote ${outPath} (${keys.length} keys)`);
 }
@@ -244,6 +301,11 @@ async function main() {
   const args = process.argv.slice(2);
   const only = args.find((a) => a.startsWith('--locale='))?.split('=')[1]?.split(',');
   const skipExisting = args.includes('--skip-existing');
+  const includeNl = args.includes('--include-nl');
+  const providerArg = args.find((a) => a.startsWith('--provider='))?.split('=')[1];
+  const provider =
+    providerArg ||
+    (process.env.ANTHROPIC_API_KEY ? 'claude' : process.env.DEEPL_API_KEY || process.env.DEEPL_AUTH_KEY ? 'deepl' : 'google');
 
   const enPath = path.join(localesDir, 'en.default.json');
   if (!fs.existsSync(enPath)) {
@@ -256,10 +318,20 @@ async function main() {
   injectLanguageLabels(enFlat, labels);
   fs.writeFileSync(enPath, JSON.stringify(unflatten(enFlat), null, 2) + '\n');
 
-  const apiKey = process.env.DEEPL_API_KEY || process.env.DEEPL_AUTH_KEY;
+  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  const deeplKey = process.env.DEEPL_API_KEY || process.env.DEEPL_AUTH_KEY;
+  const apiKey = provider === 'claude' ? anthropicKey : deeplKey;
+
+  if (provider === 'claude' && !anthropicKey) {
+    console.error('Set ANTHROPIC_API_KEY in .env for Claude translations.');
+    process.exit(1);
+  }
+
   const targets = getLocales().filter((l) => !l.primary && (!only || only.includes(l.code)));
 
-  console.log(`Translating ${targets.length} locales${apiKey ? ' (DeepL)' : ' (LibreTranslate)'}…\n`);
+  const providerLabel =
+    provider === 'claude' ? 'Claude' : apiKey ? 'DeepL' : 'Google translate (fallback)';
+  console.log(`Translating ${targets.length} locales (${providerLabel})…\n`);
 
   for (const loc of targets) {
     const outPath = path.join(localesDir, `${loc.code}.json`);
@@ -267,10 +339,10 @@ async function main() {
       console.log(`⊘ skip ${loc.code} (exists)`);
       continue;
     }
-    await translateLocale(loc.code, enFlat, labels, apiKey);
+    await translateLocale(loc.code, enFlat, labels, apiKey, provider, includeNl);
     writeSchema(loc.code);
   }
-  console.log('\nDone.');
+  console.log('\nDone. Run: npm run locales:sync');
 }
 
 main().catch((err) => {
