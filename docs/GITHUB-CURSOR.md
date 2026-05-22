@@ -61,16 +61,13 @@ You already have on `adamripon-ship-it/lurafi`:
 { "admin": true, "maintain": true, "push": true, "pull": true, "triage": true }
 ```
 
-Optional hardening (you choose):
+**Branch protection on `main` (enabled):**
 
-```bash
-# Require PR + CI before merge (recommended for production theme)
-gh api repos/adamripon-ship-it/lurafi/branches/main/protection \
-  -X PUT -f required_status_checks[strict]=true \
-  -f required_status_checks[contexts][]=theme-check \
-  -f enforce_admins=true \
-  -f required_pull_request_reviews[required_approving_review_count]=0
-```
+- Required status check: `theme-check` (strict)
+- PR required before merge (0 approvals)
+- Force push and branch delete disabled
+
+To change: GitHub → repo **Settings → Branches → main**.
 
 ## 5. What “super admin” cannot mean
 
