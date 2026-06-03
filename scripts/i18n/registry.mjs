@@ -25,8 +25,12 @@ export function getPrimaryLocale() {
   return loadLanguagesConfig().locales.find((l) => l.primary) || loadLanguagesConfig().locales[0];
 }
 
+export function getPublishedLocales() {
+  return loadLanguagesConfig().locales.filter((l) => l.publish !== false);
+}
+
 export function getAlternateLocales() {
-  return loadLanguagesConfig().locales.filter((l) => !l.primary);
+  return getPublishedLocales().filter((l) => !l.primary);
 }
 
 export function getLocale(code) {

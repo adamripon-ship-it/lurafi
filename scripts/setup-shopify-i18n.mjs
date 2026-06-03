@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Native Shopify multi-language setup for Lurafi (12 locales).
+ * Native Shopify multi-language setup for Lurafi (config/languages.json).
  *
  * - Enables + publishes locales from config/languages.json
  * - Ensures market web presence with alternateLocales
@@ -19,6 +19,7 @@
 import {
   getAlternateLocales,
   getPrimaryLocale,
+  getPublishedLocales,
   loadLanguagesConfig,
 } from './i18n/registry.mjs';
 import { adminAuthMode, adminGql } from './lib/shopify-admin-gql.mjs';
@@ -37,6 +38,9 @@ async function gql(query, variables, mutate = false) {
 async function ensureLocales() {
   const { shopLocales } = await gql('query { shopLocales { locale primary published name } }');
   const existing = Object.fromEntries(shopLocales.map((l) => [l.locale, l]));
+  const publishedCodes = new Set(
+    getPublishedLocales().map((l) => l.shopifyLocale || l.code),
+  );
   const targets = getAlternateLocales();
 
   for (const loc of targets) {
@@ -69,6 +73,18 @@ async function ensureLocales() {
     }
   }
 
+  for (const row of shopLocales) {
+    if (row.primary) continue
+    if (publishedCodes.has(row.locale)) continue
+    if (!row.published) continue
+    console.log(`→ Unpublishing removed locale ${row.locale}…`)
+    await gql(
+      `mutation { shopLocaleUpdate(locale: "${row.locale}", shopLocale: { published: false }) { shopLocale { locale published } userErrors { message } } }`,
+      undefined,
+      true,
+    )
+  }
+
   const { shopLocales: updated } = await gql('query { shopLocales { locale published primary } }');
   console.log(
     '✓ Locales:',
@@ -88,10 +104,13 @@ async function ensureWebPresence() {
   const market = markets.nodes[0];
   const wp = market?.webPresences?.nodes?.[0];
   const roots = wp?.rootUrls || [];
+  const publishedRoots = new Set([getPrimaryLocale().shopifyLocale || 'en', ...alternates]);
+  const rootLocales = roots.map((r) => r.locale.split('-')[0]);
   const hasAll = alternates.every((code) =>
     roots.some((r) => r.locale === code || r.locale.startsWith(`${code}-`)),
   );
-  if (hasAll && roots.length >= alternates.length) {
+  const hasOnlyPublished = rootLocales.every((code) => publishedRoots.has(code));
+  if (hasAll && hasOnlyPublished) {
     console.log('✓ Web presence URLs on', shop.primaryDomain.host);
     for (const r of roots) console.log(`    ${r.locale}: ${r.url}`);
     return;

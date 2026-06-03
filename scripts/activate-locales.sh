@@ -8,7 +8,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 source "${ROOT}/scripts/lib/shopify-env.sh"
 shopify_load_dotenv
 
-STORE="${SHOPIFY_STORE:-fu03cn-1v.myshopify.com}"
+STORE="${SHOPIFY_STORE:-6mzhe1-yf.myshopify.com}"
 PUBLISH="${PUBLISH:-true}"
 TOKEN="$(shopify_theme_password)"
 
