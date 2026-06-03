@@ -14,6 +14,9 @@ Shopify OS 2.0 theme for **lurafi.ai** (Kevin). Store: `fu03cn-1v.myshopify.com`
 
 - Theme push: `npm run theme:push:live` or push `locales/*` after JSON changes.
 - Admin locales/pages: `./scripts/activate-locales.sh` (not in theme zip).
+- **New Shopify account + lurafi.com + GitHub deploy:** [SETUP-NEW-SHOPIFY-ACCOUNT.md](./SETUP-NEW-SHOPIFY-ACCOUNT.md) (canonical plan).
+- **Access checklist (GitHub / Shopify / Cloudflare):** [ACCESS-SETUP.md](./ACCESS-SETUP.md) · `./scripts/verify-access.sh`.
+- Migration quick reference: [MIGRATION.md](./MIGRATION.md) · Cloudflare: [CLOUDFLARE-DNS.md](./CLOUDFLARE-DNS.md) · `./scripts/migrate-to-store.sh`.
 
 ## GitHub
 
