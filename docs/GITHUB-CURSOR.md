@@ -84,10 +84,12 @@ Project rule: `.cursor/rules/github-full-access.mdc` — tells the agent to use 
 
 ## 7. CI deploy secrets (Shopify, not GitHub admin)
 
-For **Deploy theme** workflow only — GitHub → repo **Settings → Secrets → Actions**:
+For **Deploy theme** workflow — GitHub → repo **Settings → Secrets → Actions** → environment **`production`**:
 
-- `SHOPIFY_CLI_THEME_TOKEN`
-- `SHOPIFY_FLAG_STORE` = `fu03cn-1v.myshopify.com`
+- `SHOPIFY_CLI_THEME_TOKEN` — Theme Access app token on the **target** store
+- `SHOPIFY_FLAG_STORE` — e.g. `your-new-store.myshopify.com`
+
+Full new-account setup: [SETUP-NEW-SHOPIFY-ACCOUNT.md](./SETUP-NEW-SHOPIFY-ACCOUNT.md).
 
 ## Security
 
