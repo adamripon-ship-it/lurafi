@@ -81,6 +81,11 @@
         "overline": "Kevin App",
         "heading": "Presence on your schedule.",
         "subheading": "Turn Kevin on, plan weekly routines, and manage multiple devices from one simple app built for peace of mind.",
+        "enable_animations": true,
+        "phone_image_1_alt": "Kevin app protected status screen",
+        "phone_1_caption": "Protected — arm and disarm from anywhere",
+        "phone_image_2_alt": "Kevin app weekly schedule grid",
+        "phone_2_caption": "Schedule — set protection by day and hour",
         "tile_1_title": "Weekly schedules",
         "tile_1_body": "Plan mornings, evenings, nights, weekends, and holidays so your home follows a believable rhythm while you are away.",
         "tile_2_title": "Geo-aware activation",
@@ -88,9 +93,7 @@
         "tile_3_title": "Your own sounds",
         "tile_3_body": "Upload recordings and tag them by room or activity so the simulation can sound more like your household.",
         "tile_4_title": "Multiple places",
-        "tile_4_body": "Use more than one Kevin for apartments, extra floors, offices, or second homes that should not feel abandoned.",
-        "phone_1_alt": "Kevin app dashboard",
-        "phone_2_alt": "Kevin app schedule"
+        "tile_4_body": "Use more than one Kevin for apartments, extra floors, offices, or second homes that should not feel abandoned."
       }
     },
     "personas": {

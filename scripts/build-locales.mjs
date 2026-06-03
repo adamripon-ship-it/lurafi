@@ -264,8 +264,21 @@ en.colors = {
 en.configure.device_in = 'Kevin in {{ color }}';
 
 for (const [id, sec] of Object.entries(index.sections)) {
-  if (sec.settings) en.home[id] = { ...sec.settings };
+  if (sec.settings) {
+    const settings = {};
+    for (const [key, val] of Object.entries(sec.settings)) {
+      if (typeof val === 'string') settings[key] = val;
+    }
+    en.home[id] = settings;
+  }
 }
+
+if (en.home.app) {
+  en.home.app.carousel_label = 'App screenshots';
+}
+
+en.accessibility.previous = 'Previous';
+en.accessibility.next = 'Next';
 
 const nlHome = {
   hero: {
@@ -446,6 +459,9 @@ en.stats.badge_3 = 'No monitoring subscription';
 en.stats.badge_4 = 'On-device simulation';
 
 const nl = JSON.parse(JSON.stringify(en));
+if (nl.home.app) {
+  nl.home.app.carousel_label = 'App-screenshots';
+}
 nl.accessibility = {
   skip_to_text: 'Ga naar inhoud',
   home: '{{ shop.name }} startpagina',
@@ -463,7 +479,9 @@ nl.accessibility = {
   mobile_navigation: 'Mobiele navigatie',
   configure_navigation: 'Configureren',
   hero_benefits: 'Kevin-voordelen',
-  llm_assets_nl: 'Nederlandse LLM-samenvatting'
+  llm_assets_nl: 'Nederlandse LLM-samenvatting',
+  previous: 'Vorige',
+  next: 'Volgende'
 };
 en.language = { label: 'Language', ...languageLabels };
 nl.language = { label: 'Taal', ...languageLabels };
@@ -594,7 +612,13 @@ nl.hero = {
 };
 nl.home = {};
 for (const [id, sec] of Object.entries(index.sections)) {
-  nl.home[id] = { ...sec.settings, ...(nlHome[id] || {}) };
+  const settings = {};
+  if (sec.settings) {
+    for (const [key, val] of Object.entries(sec.settings)) {
+      if (typeof val === 'string') settings[key] = val;
+    }
+  }
+  nl.home[id] = { ...settings, ...(nlHome[id] || {}) };
 }
 nl.stats = { swiss_engineered: 'Zwitsers ontworpen' };
 nl.sitemap = {

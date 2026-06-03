@@ -16,7 +16,9 @@
     "mobile_navigation": "Mobiele navigatie",
     "configure_navigation": "Configureren",
     "hero_benefits": "Kevin-voordelen",
-    "llm_assets_nl": "Nederlandse LLM-samenvatting"
+    "llm_assets_nl": "Nederlandse LLM-samenvatting",
+    "previous": "Vorige",
+    "next": "Volgende"
   },
   "general": {
     "search": {
@@ -253,6 +255,10 @@
       "overline": "Kevin-app",
       "heading": "Aanwezigheid op jouw schema.",
       "subheading": "Zet Kevin aan, plan weekroutines en beheer meerdere apparaten vanuit één eenvoudige app voor gemoedsrust.",
+      "phone_image_1_alt": "Kevin app protected status screen",
+      "phone_1_caption": "Protected — arm and disarm from anywhere",
+      "phone_image_2_alt": "Kevin app weekly schedule grid",
+      "phone_2_caption": "Schedule — set protection by day and hour",
       "tile_1_title": "Weekschema’s",
       "tile_1_body": "Plan ochtend, avond, nacht, weekenden en vakanties zodat je huis een geloofwaardig ritme volgt terwijl je weg bent.",
       "tile_2_title": "Geo-activering",
@@ -260,9 +266,7 @@
       "tile_3_title": "Je eigen geluiden",
       "tile_3_body": "Upload opnames en label ze per kamer of activiteit zodat de simulatie meer op jouw huishouden klinkt.",
       "tile_4_title": "Meerdere locaties",
-      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken.",
-      "phone_1_alt": "Kevin app dashboard",
-      "phone_2_alt": "Kevin app schedule"
+      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken."
     },
     "personas": {
       "overline": "Gemaakt voor jou",

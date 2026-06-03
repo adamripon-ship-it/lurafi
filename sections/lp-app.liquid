@@ -5,57 +5,159 @@
   assign phone_2_fallback = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-app-schedule-mockup-kyUXBFJHfo5Kk8TJi6rwbt.webp'
   assign phone_1_alt = section.settings.phone_image_1_alt
   if phone_1_alt == blank
-    assign phone_1_alt = 'home.app.phone_1_alt' | t
+    assign phone_1_alt = 'home.app.phone_image_1_alt' | t
   endif
   assign phone_2_alt = section.settings.phone_image_2_alt
   if phone_2_alt == blank
-    assign phone_2_alt = 'home.app.phone_2_alt' | t
+    assign phone_2_alt = 'home.app.phone_image_2_alt' | t
   endif
+  assign phone_1_caption = section.settings.phone_1_caption | default: 'home.app.phone_1_caption' | t
+  assign phone_2_caption = section.settings.phone_2_caption | default: 'home.app.phone_2_caption' | t
+  assign carousel_label = 'home.app.carousel_label' | t
+  assign animate = section.settings.enable_animations
 -%}
 
-<section id="app" class="section-apple bg-black">
+<section
+  id="app"
+  class="section-apple lp-app bg-black"
+  data-lp-app
+  {% if animate %}data-lp-app-animate{% endif %}
+>
   <div class="apple-container">
-    <p class="overline-blue-dark">{{ section.settings.overline | default: 'home.app.overline' | t }}</p>
-    <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{{ section.settings.heading | default: 'home.app.heading' | t }}</h2>
-    <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{{ section.settings.subheading | default: 'home.app.subheading' | t }}</p>
+    <header class="lp-app__header">
+      <p class="overline-blue-dark">{{ section.settings.overline | default: 'home.app.overline' | t }}</p>
+      <h2 class="headline-section text-white text-center lp-app__heading">
+        {{ section.settings.heading | default: 'home.app.heading' | t }}
+      </h2>
+      <p class="body-elevated text-muted-dark text-center lp-app__subheading">
+        {{ section.settings.subheading | default: 'home.app.subheading' | t }}
+      </p>
+    </header>
 
-    <div class="app-phones">
-      {%- if phone_1 -%}
-        <img
-          src="{{ phone_1 | image_url: width: 640 }}"
-          alt="{{ phone_1.alt | default: phone_1_alt | escape }}"
-          width="{{ phone_1.width | default: 320 }}"
-          height="{{ phone_1.height | default: 640 }}"
-          loading="lazy"
+    <div class="lp-app__showcase app-showcase">
+      <div
+        class="app-showcase__track"
+        data-lp-app-track
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="{{ carousel_label | escape }}"
+      >
+        <figure class="app-showcase__phone app-showcase__phone--left" data-lp-app-slide>
+          <div class="app-showcase__frame">
+            {%- if phone_1 -%}
+              <img
+                class="app-showcase__image"
+                src="{{ phone_1 | image_url: width: 720 }}"
+                srcset="
+                  {{ phone_1 | image_url: width: 360 }} 360w,
+                  {{ phone_1 | image_url: width: 480 }} 480w,
+                  {{ phone_1 | image_url: width: 640 }} 640w,
+                  {{ phone_1 | image_url: width: 720 }} 720w
+                "
+                sizes="(min-width: 768px) 28vw, 78vw"
+                alt="{{ phone_1.alt | default: phone_1_alt | escape }}"
+                width="{{ phone_1.width | default: 320 }}"
+                height="{{ phone_1.height | default: 640 }}"
+                loading="lazy"
+              >
+            {%- else -%}
+              <img
+                class="app-showcase__image"
+                src="{{ phone_1_fallback }}"
+                alt="{{ phone_1_alt | escape }}"
+                width="320"
+                height="640"
+                loading="lazy"
+              >
+            {%- endif -%}
+          </div>
+          {%- if phone_1_caption != blank -%}
+            <figcaption class="app-showcase__caption">{{ phone_1_caption }}</figcaption>
+          {%- endif -%}
+        </figure>
+
+        <figure class="app-showcase__phone app-showcase__phone--right" data-lp-app-slide>
+          <div class="app-showcase__frame">
+            {%- if phone_2 -%}
+              <img
+                class="app-showcase__image"
+                src="{{ phone_2 | image_url: width: 720 }}"
+                srcset="
+                  {{ phone_2 | image_url: width: 360 }} 360w,
+                  {{ phone_2 | image_url: width: 480 }} 480w,
+                  {{ phone_2 | image_url: width: 640 }} 640w,
+                  {{ phone_2 | image_url: width: 720 }} 720w
+                "
+                sizes="(min-width: 768px) 28vw, 78vw"
+                alt="{{ phone_2.alt | default: phone_2_alt | escape }}"
+                width="{{ phone_2.width | default: 320 }}"
+                height="{{ phone_2.height | default: 640 }}"
+                loading="lazy"
+              >
+            {%- else -%}
+              <img
+                class="app-showcase__image"
+                src="{{ phone_2_fallback }}"
+                alt="{{ phone_2_alt | escape }}"
+                width="320"
+                height="640"
+                loading="lazy"
+              >
+            {%- endif -%}
+          </div>
+          {%- if phone_2_caption != blank -%}
+            <figcaption class="app-showcase__caption">{{ phone_2_caption }}</figcaption>
+          {%- endif -%}
+        </figure>
+      </div>
+
+      <div class="app-showcase__controls" data-lp-app-controls hidden>
+        <button
+          type="button"
+          class="app-showcase__nav app-showcase__nav--prev"
+          data-lp-app-prev
+          aria-label="{{ 'accessibility.previous' | t | default: 'Previous' }}"
         >
-      {%- else -%}
-        <img src="{{ phone_1_fallback }}" alt="{{ phone_1_alt | escape }}" width="320" height="640" loading="lazy">
-      {%- endif -%}
-      {%- if phone_2 -%}
-        <img
-          src="{{ phone_2 | image_url: width: 640 }}"
-          alt="{{ phone_2.alt | default: phone_2_alt | escape }}"
-          width="{{ phone_2.width | default: 320 }}"
-          height="{{ phone_2.height | default: 640 }}"
-          loading="lazy"
+          <span aria-hidden="true">‹</span>
+        </button>
+        <div class="app-showcase__dots" data-lp-app-dots role="tablist" aria-label="{{ carousel_label | escape }}"></div>
+        <button
+          type="button"
+          class="app-showcase__nav app-showcase__nav--next"
+          data-lp-app-next
+          aria-label="{{ 'accessibility.next' | t | default: 'Next' }}"
         >
-      {%- else -%}
-        <img src="{{ phone_2_fallback }}" alt="{{ phone_2_alt | escape }}" width="320" height="640" loading="lazy">
-      {%- endif -%}
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
     </div>
 
-    <div class="tile-grid-2">
-      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ section.settings.tile_1_title | default: 'home.app.tile_1_title' | t }}</h3><p class="body-standard text-muted-dark">{{ section.settings.tile_1_body | default: 'home.app.tile_1_body' | t }}</p></div>
-      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ section.settings.tile_2_title | default: 'home.app.tile_2_title' | t }}</h3><p class="body-standard text-muted-dark">{{ section.settings.tile_2_body | default: 'home.app.tile_2_body' | t }}</p></div>
-      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ section.settings.tile_3_title | default: 'home.app.tile_3_title' | t }}</h3><p class="body-standard text-muted-dark">{{ section.settings.tile_3_body | default: 'home.app.tile_3_body' | t }}</p></div>
-      <div class="tile tile--dark"><h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ section.settings.tile_4_title | default: 'home.app.tile_4_title' | t }}</h3><p class="body-standard text-muted-dark">{{ section.settings.tile_4_body | default: 'home.app.tile_4_body' | t }}</p></div>
+    <div class="lp-app__bento tile-grid-2">
+      <div class="tile tile--dark">
+        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_1_title | default: 'home.app.tile_1_title' | t }}</h3>
+        <p class="body-standard text-muted-dark">{{ section.settings.tile_1_body | default: 'home.app.tile_1_body' | t }}</p>
+      </div>
+      <div class="tile tile--dark">
+        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_2_title | default: 'home.app.tile_2_title' | t }}</h3>
+        <p class="body-standard text-muted-dark">{{ section.settings.tile_2_body | default: 'home.app.tile_2_body' | t }}</p>
+      </div>
+      <div class="tile tile--dark">
+        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_3_title | default: 'home.app.tile_3_title' | t }}</h3>
+        <p class="body-standard text-muted-dark">{{ section.settings.tile_3_body | default: 'home.app.tile_3_body' | t }}</p>
+      </div>
+      <div class="tile tile--dark">
+        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_4_title | default: 'home.app.tile_4_title' | t }}</h3>
+        <p class="body-standard text-muted-dark">{{ section.settings.tile_4_body | default: 'home.app.tile_4_body' | t }}</p>
+      </div>
     </div>
   </div>
 </section>
 
+<script src="{{ 'lp-app.js' | asset_url }}" defer></script>
+
 {% schema %}
 {
-  "name": "App features",
+  "name": "App showcase",
   "settings": [
     { "type": "text", "id": "overline", "label": "Overline", "default": "Kevin App" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Presence on your schedule." },
@@ -67,21 +169,47 @@
     },
     {
       "type": "header",
-      "content": "App screenshots"
+      "content": "Motion"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animations",
+      "label": "Enable scroll and float animations",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Phone mockups"
     },
     { "type": "image_picker", "id": "phone_image_1", "label": "Phone mockup (left)" },
     {
       "type": "text",
       "id": "phone_image_1_alt",
       "label": "Left phone alt text",
-      "default": "Kevin app dashboard"
+      "default": "Kevin app protected status screen"
+    },
+    {
+      "type": "text",
+      "id": "phone_1_caption",
+      "label": "Left phone caption",
+      "default": "Protected — arm and disarm from anywhere"
     },
     { "type": "image_picker", "id": "phone_image_2", "label": "Phone mockup (right)" },
     {
       "type": "text",
       "id": "phone_image_2_alt",
       "label": "Right phone alt text",
-      "default": "Kevin app schedule"
+      "default": "Kevin app weekly schedule grid"
+    },
+    {
+      "type": "text",
+      "id": "phone_2_caption",
+      "label": "Right phone caption",
+      "default": "Schedule — set protection by day and hour"
+    },
+    {
+      "type": "header",
+      "content": "Feature tiles"
     },
     { "type": "text", "id": "tile_1_title", "label": "Tile 1 title", "default": "Weekly schedules" },
     {
@@ -112,6 +240,6 @@
       "default": "Use more than one Kevin for apartments, extra floors, offices, or second homes that should not feel abandoned."
     }
   ],
-  "presets": [{ "name": "App features" }]
+  "presets": [{ "name": "App showcase" }]
 }
 {% endschema %}
