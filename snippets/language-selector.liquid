@@ -4,6 +4,7 @@
   @param selector_id {String}
   @param country_selector_id {String}
 {%- endcomment -%}
+{%- render 'lurafi-published-locales' -%}
 {%- liquid
   assign form_id = form_id | default: 'LocalizationForm'
   assign selector_id = selector_id | default: 'LanguageSelector'
@@ -12,8 +13,15 @@
   if localization.available_countries.size > 1
     assign show_country = true
   endif
+  assign published_language_count = 0
+  for language in localization.available_languages
+    assign lang_root = language.iso_code | split: '-' | first | downcase
+    if lurafi_published_locale_codes contains lang_root
+      assign published_language_count = published_language_count | plus: 1
+    endif
+  endfor
   assign show_language = false
-  if localization.available_languages.size > 1
+  if published_language_count > 1
     assign show_language = true
   endif
 
@@ -86,6 +94,9 @@
         >
           {%- for language in localization.available_languages -%}
             {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
+            {%- unless lurafi_published_locale_codes contains lang_root -%}
+              {%- continue -%}
+            {%- endunless -%}
             {%- assign lang_key = 'language.' | append: lang_root -%}
             <option
               value="{{ language.iso_code }}"

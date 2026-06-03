@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { getLanguageLabels } from './i18n/registry.mjs';
+import { getLanguageLabels, getPublishedLocales } from './i18n/registry.mjs';
 import { customersEn, customersNl } from './customers-locale.mjs';
 
 const root = path.join(import.meta.dirname, '..');
@@ -746,4 +746,16 @@ const nlOut = unflatten(nlFlat);
 
 fs.writeFileSync(path.join(root, 'locales/en.default.json'), JSON.stringify(enOut, null, 2) + '\n');
 fs.writeFileSync(path.join(root, 'locales/nl.json'), JSON.stringify(nlOut, null, 2) + '\n');
+
+const publishedCodes = getPublishedLocales()
+  .map((l) => l.shopifyLocale || l.code)
+  .join(',');
+const allowlistSnippet = `{%- comment -%} Auto-generated from config/languages.json — run npm run locales:build {%- endcomment -%}
+{%- assign lurafi_published_locale_codes = "${publishedCodes}" | split: "," -%}
+`;
+fs.writeFileSync(
+  path.join(root, 'snippets/lurafi-published-locales.liquid'),
+  allowlistSnippet,
+);
 console.log('Wrote locales:', Object.keys(enFlat).length, 'keys');
+console.log('Published storefront locales:', publishedCodes);

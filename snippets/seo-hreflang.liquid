@@ -2,6 +2,7 @@
   hreflang alternates for published storefront languages.
   Pairs with canonical in layout/theme.liquid.
 {%- endcomment -%}
+{%- render 'lurafi-published-locales' -%}
 {%- liquid
   assign path_suffix = request.path
   assign locale_root = request.locale.root_url
@@ -16,15 +17,24 @@
   endunless
 
   assign x_default_href = request.origin | append: path_suffix
+  assign published_hreflang_count = 0
   for language in localization.available_languages
+    assign lang_root = language.iso_code | split: '-' | first | downcase
+    unless lurafi_published_locale_codes contains lang_root
+      continue
+    endunless
+    assign published_hreflang_count = published_hreflang_count | plus: 1
     if language.primary
       assign x_default_href = request.origin | append: language.root_url | append: path_suffix
-      break
     endif
   endfor
 -%}
-{%- if localization.available_languages.size > 1 -%}
+{%- if published_hreflang_count > 1 -%}
   {%- for language in localization.available_languages -%}
+    {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
+    {%- unless lurafi_published_locale_codes contains lang_root -%}
+      {%- continue -%}
+    {%- endunless -%}
     {%- assign lang_href = request.origin | append: language.root_url | append: path_suffix -%}
     {%- if request.search != blank -%}
       {%- assign lang_href = lang_href | append: request.search -%}
