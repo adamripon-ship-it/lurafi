@@ -16,7 +16,10 @@ Shopify OS 2.0 theme for **lurafi.ai** (Kevin). Store: `fu03cn-1v.myshopify.com`
 - Theme push: `npm run theme:push:live` or push `locales/*` after JSON changes.
 - Admin locales/pages: `./scripts/activate-locales.sh` (not in theme zip).
 - Products: `node scripts/migrate-products-from-lurafi.mjs` (needs `write_products` on lurafi app) or import `scripts/data/products-import.csv` in Admin → Products → Import.
-- Shopify MCP: call `learn_shopify_api` (api: `admin` or `use-shopify-cli`) before other `user-shopify-dev-mcp` tools; pass returned `conversationId` on every call.
+- **New Shopify account + lurafi.com + GitHub deploy:** [SETUP-NEW-SHOPIFY-ACCOUNT.md](./SETUP-NEW-SHOPIFY-ACCOUNT.md) (canonical plan).
+- **Access checklist (GitHub / Shopify / Cloudflare):** [ACCESS-SETUP.md](./ACCESS-SETUP.md) · `./scripts/verify-access.sh`.
+- Migration quick reference: [MIGRATION.md](./MIGRATION.md) · Cloudflare: [CLOUDFLARE-DNS.md](./CLOUDFLARE-DNS.md) · `./scripts/migrate-to-store.sh`.
+- **Shopify MCP (Option A):** docs/schema only — [Marketplace](https://cursor.com/marketplace/shopify) or `.cursor/mcp.json`; see `docs/SHOPIFY-MCP.md`. Call `learn_shopify_api` first; pass `conversationId` on every `shopify-dev-mcp` tool. `OPT_OUT_INSTRUMENTATION=true` is set in repo config.
 
 ## GitHub
 
