@@ -7,7 +7,7 @@
       comment
         LURAFI_PUBLISHED_LOCALES_START — updated by npm run locales:build
       endcomment
-      assign lurafi_published_locale_codes = 'en,nl,fr,de' | split: ','
+      assign lurafi_published_locale_csv = ',en,nl,fr,de,'
       comment
         LURAFI_PUBLISHED_LOCALES_END
       endcomment
@@ -54,7 +54,7 @@
       {%- unless seo_document_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    <!-- lurafi-head-v13 locale push -->
+    <!-- lurafi-head-v14 four-locale filter -->
     {% render 'meta-tags', seo_canonical_url: seo_canonical_url %}
     {% render 'structured-data' %}
     {% render 'configure-redirect' %}

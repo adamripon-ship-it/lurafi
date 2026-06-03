@@ -1,4 +1,5 @@
 {%- liquid
+  assign lurafi_published_locale_csv = ',en,nl,fr,de,'
   assign lurafi_default_image = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
   assign lurafi_meta_description = page_description
   assign lurafi_canonical_url = seo_canonical_url | default: canonical_url
@@ -68,9 +69,8 @@
 <meta property="og:locale" content="{{ og_locale }}">
 {%- for language in localization.available_languages -%}
   {%- assign alt_lang_root = language.iso_code | split: '-' | first | downcase -%}
-  {%- unless lurafi_published_locale_codes contains alt_lang_root -%}
-    {%- continue -%}
-  {%- endunless -%}
+  {%- assign alt_lang_token = ',' | append: alt_lang_root | append: ',' -%}
+  {%- if lurafi_published_locale_csv contains alt_lang_token -%}
   {%- unless language.iso_code == request.locale.iso_code -%}
     {%- assign alt_root = language.iso_code | split: '-' | first | downcase -%}
     {%- assign alt_og = 'en_US' -%}
@@ -89,6 +89,7 @@
     {%- endcase -%}
     <meta property="og:locale:alternate" content="{{ alt_og }}">
   {%- endunless -%}
+  {%- endif -%}
 {%- endfor -%}
 <meta property="og:url" content="{{ lurafi_canonical_url }}">
 <meta property="og:title" content="{{ lurafi_meta_title | escape }}">

@@ -750,13 +750,25 @@ fs.writeFileSync(path.join(root, 'locales/nl.json'), JSON.stringify(nlOut, null,
 const publishedCodes = getPublishedLocales()
   .map((l) => l.shopifyLocale || l.code)
   .join(',');
-const themeLayoutPath = path.join(root, 'layout/theme.liquid');
-let themeLayout = fs.readFileSync(themeLayoutPath, 'utf8');
-const localeAssign = `assign lurafi_published_locale_codes = '${publishedCodes}' | split: ','`;
-themeLayout = themeLayout.replace(
-  /assign lurafi_published_locale_codes = '[^']*' \| split: ','/,
-  localeAssign,
-);
-fs.writeFileSync(themeLayoutPath, themeLayout);
+const localeCsv = `,${publishedCodes},`;
+const localeAssign = `assign lurafi_published_locale_csv = '${localeCsv}'`;
+for (const rel of [
+  'layout/theme.liquid',
+  'snippets/language-selector.liquid',
+  'snippets/meta-tags.liquid',
+  'snippets/seo-hreflang.liquid',
+]) {
+  const filePath = path.join(root, rel);
+  let text = fs.readFileSync(filePath, 'utf8');
+  text = text.replace(
+    /assign lurafi_published_locale_csv = '[^']*'/,
+    localeAssign,
+  );
+  text = text.replace(
+    /assign lurafi_published_locale_codes = '[^']*' \| split: ','/,
+    localeAssign,
+  );
+  fs.writeFileSync(filePath, text);
+}
 console.log('Wrote locales:', Object.keys(enFlat).length, 'keys');
 console.log('Published storefront locales:', publishedCodes);

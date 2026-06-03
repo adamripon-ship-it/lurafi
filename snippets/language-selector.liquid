@@ -5,6 +5,10 @@
   @param country_selector_id {String}
 {%- endcomment -%}
 {%- liquid
+  comment
+    LURAFI_PUBLISHED_LOCALES — updated by npm run locales:build
+  endcomment
+  assign lurafi_published_locale_csv = ',en,nl,fr,de,'
   assign form_id = form_id | default: 'LocalizationForm'
   assign selector_id = selector_id | default: 'LanguageSelector'
   assign country_selector_id = country_selector_id | default: 'CountrySelector'
@@ -15,7 +19,8 @@
   assign published_language_count = 0
   for language in localization.available_languages
     assign lang_root = language.iso_code | split: '-' | first | downcase
-    if lurafi_published_locale_codes contains lang_root
+    assign lang_token = ',' | append: lang_root | append: ','
+    if lurafi_published_locale_csv contains lang_token
       assign published_language_count = published_language_count | plus: 1
     endif
   endfor
@@ -35,6 +40,7 @@
   endif
 -%}
 {%- if show_country or show_language -%}
+  <!-- lurafi-lang-filter-v3 -->
   <div class="language-selector" data-language-selector>
     <form
       method="post"
@@ -93,19 +99,19 @@
         >
           {%- for language in localization.available_languages -%}
             {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
-            {%- unless lurafi_published_locale_codes contains lang_root -%}
-              {%- continue -%}
-            {%- endunless -%}
-            {%- assign lang_key = 'language.' | append: lang_root -%}
-            <option
-              value="{{ language.iso_code }}"
-              lang="{{ language.iso_code }}"
-              {% if language.iso_code == localization.language.iso_code %}
-                selected
-              {% endif %}
-            >
-              {{ lang_key | t: default: language.endonym_name }}
-            </option>
+            {%- assign lang_token = ',' | append: lang_root | append: ',' -%}
+            {%- if lurafi_published_locale_csv contains lang_token -%}
+              {%- assign lang_key = 'language.' | append: lang_root -%}
+              <option
+                value="{{ language.iso_code }}"
+                lang="{{ language.iso_code }}"
+                {% if language.iso_code == localization.language.iso_code %}
+                  selected
+                {% endif %}
+              >
+                {{ lang_key | t: default: language.endonym_name }}
+              </option>
+            {%- endif -%}
           {%- endfor -%}
         </select>
       {%- endif -%}

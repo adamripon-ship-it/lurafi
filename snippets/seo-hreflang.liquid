@@ -3,6 +3,7 @@
   Pairs with canonical in layout/theme.liquid.
 {%- endcomment -%}
 {%- liquid
+  assign lurafi_published_locale_csv = ',en,nl,fr,de,'
   assign path_suffix = request.path
   assign locale_root = request.locale.root_url
   if locale_root != '/' and path_suffix contains locale_root
@@ -19,7 +20,8 @@
   assign published_hreflang_count = 0
   for language in localization.available_languages
     assign lang_root = language.iso_code | split: '-' | first | downcase
-    unless lurafi_published_locale_codes contains lang_root
+    assign lang_token = ',' | append: lang_root | append: ','
+    unless lurafi_published_locale_csv contains lang_token
       continue
     endunless
     assign published_hreflang_count = published_hreflang_count | plus: 1
@@ -31,14 +33,14 @@
 {%- if published_hreflang_count > 1 -%}
   {%- for language in localization.available_languages -%}
     {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
-    {%- unless lurafi_published_locale_codes contains lang_root -%}
-      {%- continue -%}
-    {%- endunless -%}
+    {%- assign lang_token = ',' | append: lang_root | append: ',' -%}
+    {%- if lurafi_published_locale_csv contains lang_token -%}
     {%- assign lang_href = request.origin | append: language.root_url | append: path_suffix -%}
     {%- if request.search != blank -%}
       {%- assign lang_href = lang_href | append: request.search -%}
     {%- endif -%}
     <link rel="alternate" hreflang="{{ language.iso_code }}" href="{{ lang_href }}">
+    {%- endif -%}
   {%- endfor -%}
   {%- if request.search != blank -%}
     {%- assign x_default_href = x_default_href | append: request.search -%}
