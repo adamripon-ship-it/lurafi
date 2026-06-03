@@ -16,7 +16,10 @@
     "mobile_navigation": "Mobiilivalikko",
     "configure_navigation": "Määritä",
     "hero_benefits": "Kevin-edut",
-    "llm_assets_nl": "Hollanninkielinen LLM-yhteenveto"
+    "llm_assets_nl": "Hollanninkielinen LLM-yhteenveto",
+    "previous": "Previous",
+    "next": "Next",
+    "configure_steps": "Checkout steps"
   },
   "general": {
     "search": {
@@ -186,7 +189,8 @@
     "privacy_body": "Simulaatio toistuu paikallisesti laitteella.",
     "checkout_eyebrow": "Kassa",
     "checkout_title": "Ilmainen toimitus",
-    "checkout_body": "Turvallinen Shopify-kassa."
+    "checkout_body": "Turvallinen Shopify-kassa.",
+    "callouts_aria_label": "Kevin benefits"
   },
   "home": {
     "specs": {
@@ -200,7 +204,18 @@
       "cta_primary_label": "Osta Kevin",
       "cta_primary_url": "",
       "cta_secondary_label": "Miten se toimii",
-      "cta_secondary_url": "#how-it-works"
+      "cta_secondary_url": "#how-it-works",
+      "image_alt": "Kevin presence simulation device",
+      "callouts_aria_label": "Kevin benefits",
+      "away_eyebrow": "Away mode",
+      "away_title": "Living room active",
+      "away_body": "Light, shadow, and sound vary automatically.",
+      "privacy_eyebrow": "Privacy",
+      "privacy_title": "No cameras. No mics.",
+      "privacy_body": "Simulation plays locally on the device.",
+      "checkout_eyebrow": "Checkout",
+      "checkout_title": "Free delivery",
+      "checkout_body": "Secure Shopify checkout."
     },
     "problem": {
       "overline": "Ongelma",
@@ -222,7 +237,8 @@
       "pillar_2_title": "Liikkuvat varjot",
       "pillar_2_body": "Projisoidut siluetit ja vaihtuva valo viestivät, että tilassa liikutaan – ilman kameroita tai mikrofoneja.",
       "pillar_3_title": "Arjen äänet",
-      "pillar_3_body": "Keittiön äänet, TV-tunnelma, askeleet, puhe ja omat tallenteesi tekevät simulaatiosta henkilökohtaisemman ja vähemmän toistuvan."
+      "pillar_3_body": "Keittiön äänet, TV-tunnelma, askeleet, puhe ja omat tallenteesi tekevät simulaatiosta henkilökohtaisemman ja vähemmän toistuvan.",
+      "image_alt": "Kevin presence simulation at night"
     },
     "steps": {
       "overline": "Suunnitelma",
@@ -241,7 +257,8 @@
       "stat_3_value": "100%",
       "stat_3_label": "Yksityisyys",
       "stat_4_value": "24/7",
-      "stat_4_label": "Suoja"
+      "stat_4_label": "Suoja",
+      "image_alt": "Kevin device"
     },
     "app": {
       "overline": "Kevin App",
@@ -254,7 +271,12 @@
       "tile_3_title": "Omat äänesi",
       "tile_3_body": "Lataa tallenteita ja merkitse ne huoneen tai toiminnan mukaan, jotta simulaatio kuulostaa enemmän kodiltasi.",
       "tile_4_title": "Useita kohteita",
-      "tile_4_body": "Käytä useampaa Kevinia asunnoissa, ylimmissä kerroksissa, toimistoissa tai mökeillä, joiden ei pitäisi tuntua hylätyiltä."
+      "tile_4_body": "Käytä useampaa Kevinia asunnoissa, ylimmissä kerroksissa, toimistoissa tai mökeillä, joiden ei pitäisi tuntua hylätyiltä.",
+      "phone_image_1_alt": "Kevin app protected status screen",
+      "phone_1_caption": "Protected — arm and disarm from anywhere",
+      "phone_image_2_alt": "Kevin app weekly schedule grid",
+      "phone_2_caption": "Schedule — set protection by day and hour",
+      "carousel_label": "App screenshots"
     },
     "personas": {
       "overline": "Sinulle",

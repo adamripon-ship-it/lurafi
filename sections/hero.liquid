@@ -48,6 +48,11 @@
   if checkout_body == blank
     assign checkout_body = 'hero.checkout_body' | t
   endif
+
+  assign hero_image_alt = section.settings.image_alt
+  if hero_image_alt == blank
+    assign hero_image_alt = 'home.hero.image_alt' | t
+  endif
 -%}
 
 <section class="hero-apple" aria-labelledby="HeroHeading">
@@ -55,32 +60,24 @@
 
   <div class="hero-apple__content">
     <div class="hero-apple__text">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="overline-blue-dark">{{ section.settings.eyebrow }}</p>
-      {%- endif -%}
+      <p class="overline-blue-dark">{%- if section.settings.eyebrow != blank -%}{{ section.settings.eyebrow }}{%- else -%}{{ 'home.hero.eyebrow' | t }}{%- endif -%}</p>
 
       <h1 class="headline-hero hero-apple__headline" id="HeroHeading">
-        {{ section.settings.headline | default: 'home.hero.headline' | t | escape }}
+        {%- if section.settings.headline != blank -%}{{ section.settings.headline | escape }}{%- else -%}{{ 'home.hero.headline' | t | escape }}{%- endif -%}
       </h1>
 
-      {%- if section.settings.lede != blank -%}
-        <p class="body-elevated hero-apple__sub">{{ section.settings.lede | default: 'home.hero.lede' | t }}</p>
-      {%- endif -%}
+      <p class="body-elevated hero-apple__sub">{%- if section.settings.lede != blank -%}{{ section.settings.lede }}{%- else -%}{{ 'home.hero.lede' | t }}{%- endif -%}</p>
 
       <div class="hero-apple__ctas">
-        {%- if section.settings.cta_primary_label != blank -%}
-          <a href="{{ cta_primary_url }}" class="btn-apple-blue">
-            {{ section.settings.cta_primary_label | default: 'home.hero.cta_primary_label' | t }}
-          </a>
-        {%- endif -%}
-        {%- if section.settings.cta_secondary_label != blank -%}
-          <a href="{{ section.settings.cta_secondary_url | default: '#how-it-works' }}" class="link-apple-blue">
-            {{ section.settings.cta_secondary_label | default: 'home.hero.cta_secondary_label' | t }}
-            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true">
-              <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        {%- endif -%}
+        <a href="{{ cta_primary_url }}" class="btn-apple-blue">
+          {%- if section.settings.cta_primary_label != blank -%}{{ section.settings.cta_primary_label }}{%- else -%}{{ 'home.hero.cta_primary_label' | t }}{%- endif -%}
+        </a>
+        <a href="{{ section.settings.cta_secondary_url | default: '#how-it-works' }}" class="link-apple-blue">
+          {%- if section.settings.cta_secondary_label != blank -%}{{ section.settings.cta_secondary_label }}{%- else -%}{{ 'home.hero.cta_secondary_label' | t }}{%- endif -%}
+          <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true">
+            <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </div>
 
@@ -88,7 +85,7 @@
       {%- if hero_image -%}
         <img
           src="{{ hero_image | image_url: width: 1200 }}"
-          alt="{{ hero_image.alt | default: section.settings.image_alt | default: 'products.product.image_alt' | t | escape }}"
+          alt="{{ hero_image.alt | default: hero_image_alt | escape }}"
           width="{{ hero_image.width }}"
           height="{{ hero_image.height }}"
           loading="eager"
@@ -97,14 +94,14 @@
       {%- else -%}
         <img
           src="{{ hero_image_url }}"
-          alt="{{ section.settings.image_alt | default: 'products.product.image_alt' | t | escape }}"
+          alt="{%- if section.settings.image_alt != blank -%}{{ section.settings.image_alt | escape }}{%- else -%}{{ 'home.hero.image_alt' | t | escape }}{%- endif -%}"
           loading="eager"
           fetchpriority="high"
           width="800"
           height="1000"
         >
       {%- endif -%}
-      <div class="hero-context-cards" aria-label="{{ section.settings.callouts_aria_label | default: 'hero.callouts_aria_label' | t | escape }}">
+      <div class="hero-context-cards" aria-label="{%- if section.settings.callouts_aria_label != blank -%}{{ section.settings.callouts_aria_label | escape }}{%- else -%}{{ 'hero.callouts_aria_label' | t | escape }}{%- endif -%}">
         <div class="hero-context-card hero-context-card--primary">
           <span class="hero-context-card__eyebrow">{{ away_eyebrow | escape }}</span>
           <strong>{{ away_title | escape }}</strong>

@@ -15,6 +15,7 @@
     "main_navigation": "Main navigation",
     "mobile_navigation": "Mobile navigation",
     "configure_navigation": "Configure",
+    "configure_steps": "Checkout steps",
     "hero_benefits": "Kevin benefits",
     "llm_assets_nl": "Dutch LLM summary",
     "previous": "Previous",
@@ -188,10 +189,6 @@
     "checkout_body": "Secure Shopify checkout."
   },
   "home": {
-    "specs": {
-      "eyebrow": "At a glance",
-      "heading": "Designed to be simple, private, and portable."
-    },
     "hero": {
       "eyebrow": "Swiss presence simulation",
       "headline": "Make Home Look Alive.",
@@ -326,6 +323,10 @@
       "sub_cta": "Subscribe Now",
       "buy_features": "Full device ownership|70+ hours of built-in simulations|Weekly schedules and geo-aware activation|Upload your own household sounds|Flexible placement with 3 m power cable|Free delivery|3-year warranty",
       "sub_features": "Device included free|Premium simulation library|Regular software updates|Priority support|Hardware replacement support|Flexible for multiple rooms or properties|Free delivery"
+    },
+    "specs": {
+      "eyebrow": "At a glance",
+      "heading": "Designed to be simple, private, and portable."
     },
     "cta": {
       "heading": "Leave without advertising it.",

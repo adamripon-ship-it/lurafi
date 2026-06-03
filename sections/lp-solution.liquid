@@ -9,9 +9,9 @@
 
 <section id="how-it-works" class="section-apple bg-black">
   <div class="apple-container">
-    <p class="overline-blue-dark">{{ section.settings.overline | default: 'home.solution.overline' | t }}</p>
-    <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{{ section.settings.heading | default: 'home.solution.heading' | t }}</h2>
-    <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{{ section.settings.subheading | default: 'home.solution.subheading' | t }}</p>
+    <p class="overline-blue-dark">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.solution.overline' | t }}{%- endif -%}</p>
+    <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.solution.heading' | t }}{%- endif -%}</h2>
+    <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.solution.subheading' | t }}{%- endif -%}</p>
 
     <div class="section-image">
       {%- if section_image -%}
@@ -30,18 +30,18 @@
     <div class="tile-grid-3">
       <div class="text-center">
         <div class="pillar-icon">☀</div>
-        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ section.settings.pillar_1_title | default: 'home.solution.pillar_1_title' | t }}</h3>
-        <p class="body-standard text-muted-dark">{{ section.settings.pillar_1_body | default: 'home.solution.pillar_1_body' | t }}</p>
+        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.pillar_1_title != blank -%}{{ section.settings.pillar_1_title }}{%- else -%}{{ 'home.solution.pillar_1_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted-dark">{%- if section.settings.pillar_1_body != blank -%}{{ section.settings.pillar_1_body }}{%- else -%}{{ 'home.solution.pillar_1_body' | t }}{%- endif -%}</p>
       </div>
       <div class="text-center">
         <div class="pillar-icon">◐</div>
-        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ section.settings.pillar_2_title | default: 'home.solution.pillar_2_title' | t }}</h3>
-        <p class="body-standard text-muted-dark">{{ section.settings.pillar_2_body | default: 'home.solution.pillar_2_body' | t }}</p>
+        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.pillar_2_title != blank -%}{{ section.settings.pillar_2_title }}{%- else -%}{{ 'home.solution.pillar_2_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted-dark">{%- if section.settings.pillar_2_body != blank -%}{{ section.settings.pillar_2_body }}{%- else -%}{{ 'home.solution.pillar_2_body' | t }}{%- endif -%}</p>
       </div>
       <div class="text-center">
         <div class="pillar-icon">♪</div>
-        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{{ section.settings.pillar_3_title | default: 'home.solution.pillar_3_title' | t }}</h3>
-        <p class="body-standard text-muted-dark">{{ section.settings.pillar_3_body | default: 'home.solution.pillar_3_body' | t }}</p>
+        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.pillar_3_title != blank -%}{{ section.settings.pillar_3_title }}{%- else -%}{{ 'home.solution.pillar_3_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted-dark">{%- if section.settings.pillar_3_body != blank -%}{{ section.settings.pillar_3_body }}{%- else -%}{{ 'home.solution.pillar_3_body' | t }}{%- endif -%}</p>
       </div>
     </div>
   </div>

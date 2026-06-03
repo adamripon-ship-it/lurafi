@@ -16,7 +16,10 @@
     "mobile_navigation": "Navigazione mobile",
     "configure_navigation": "Configura",
     "hero_benefits": "Vantaggi Kevin",
-    "llm_assets_nl": "Riepilogo LLM in olandese"
+    "llm_assets_nl": "Riepilogo LLM in olandese",
+    "previous": "Previous",
+    "next": "Next",
+    "configure_steps": "Checkout steps"
   },
   "general": {
     "search": {
@@ -186,7 +189,8 @@
     "privacy_body": "La simulazione viene riprodotta sul dispositivo.",
     "checkout_eyebrow": "Checkout",
     "checkout_title": "Consegna gratuita",
-    "checkout_body": "Checkout sicuro con Shopify."
+    "checkout_body": "Checkout sicuro con Shopify.",
+    "callouts_aria_label": "Kevin benefits"
   },
   "home": {
     "specs": {
@@ -200,7 +204,18 @@
       "cta_primary_label": "Acquista Kevin",
       "cta_primary_url": "",
       "cta_secondary_label": "Come funziona",
-      "cta_secondary_url": "#how-it-works"
+      "cta_secondary_url": "#how-it-works",
+      "image_alt": "Kevin presence simulation device",
+      "callouts_aria_label": "Kevin benefits",
+      "away_eyebrow": "Away mode",
+      "away_title": "Living room active",
+      "away_body": "Light, shadow, and sound vary automatically.",
+      "privacy_eyebrow": "Privacy",
+      "privacy_title": "No cameras. No mics.",
+      "privacy_body": "Simulation plays locally on the device.",
+      "checkout_eyebrow": "Checkout",
+      "checkout_title": "Free delivery",
+      "checkout_body": "Secure Shopify checkout."
     },
     "problem": {
       "overline": "Il problema",
@@ -222,7 +237,8 @@
       "pillar_2_title": "Ombre in movimento",
       "pillar_2_body": "Silhouette proiettate e luce che si sposta suggeriscono persone che si muovono nello spazio, senza telecamere o microfoni.",
       "pillar_3_title": "Suono quotidiano",
-      "pillar_3_body": "Rumori di cucina, atmosfera TV, passi, voci e le tue registrazioni rendono la simulazione più personale e meno ripetitiva."
+      "pillar_3_body": "Rumori di cucina, atmosfera TV, passi, voci e le tue registrazioni rendono la simulazione più personale e meno ripetitiva.",
+      "image_alt": "Kevin presence simulation at night"
     },
     "steps": {
       "overline": "Il piano",
@@ -241,7 +257,8 @@
       "stat_3_value": "100%",
       "stat_3_label": "Privacy",
       "stat_4_value": "24/7",
-      "stat_4_label": "Protezione"
+      "stat_4_label": "Protezione",
+      "image_alt": "Kevin device"
     },
     "app": {
       "overline": "Kevin App",
@@ -254,7 +271,12 @@
       "tile_3_title": "I tuoi suoni",
       "tile_3_body": "Carica registrazioni e etichettale per stanza o attività, così la simulazione suona più come la tua casa.",
       "tile_4_title": "Più ambienti",
-      "tile_4_body": "Usa più di un Kevin per appartamenti, piani extra, uffici o seconde case che non devono sembrare abbandonate."
+      "tile_4_body": "Usa più di un Kevin per appartamenti, piani extra, uffici o seconde case che non devono sembrare abbandonate.",
+      "phone_image_1_alt": "Kevin app protected status screen",
+      "phone_1_caption": "Protected — arm and disarm from anywhere",
+      "phone_image_2_alt": "Kevin app weekly schedule grid",
+      "phone_2_caption": "Schedule — set protection by day and hour",
+      "carousel_label": "App screenshots"
     },
     "personas": {
       "overline": "Fatto per te",

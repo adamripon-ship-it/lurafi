@@ -24,6 +24,7 @@ const en = {
     main_navigation: 'Main navigation',
     mobile_navigation: 'Mobile navigation',
     configure_navigation: 'Configure',
+    configure_steps: 'Checkout steps',
     hero_benefits: 'Kevin benefits',
     llm_assets_nl: 'Dutch LLM summary'
   },
@@ -263,14 +264,21 @@ en.colors = {
 };
 en.configure.device_in = 'Kevin in {{ color }}';
 
-for (const [id, sec] of Object.entries(index.sections)) {
-  if (sec.settings) {
-    const settings = {};
-    for (const [key, val] of Object.entries(sec.settings)) {
-      if (typeof val === 'string') settings[key] = val;
-    }
-    en.home[id] = settings;
+function nonBlankSectionSettings(sec) {
+  const settings = {};
+  if (!sec?.settings) return settings;
+  for (const [key, val] of Object.entries(sec.settings)) {
+    if (typeof val === 'string' && val.trim() !== '') settings[key] = val;
   }
+  return settings;
+}
+
+/** Canonical EN homepage copy — theme index.json stays empty; locales are source of truth. */
+const enHome = JSON.parse(fs.readFileSync(path.join(root, 'config/home-en.json'), 'utf8'));
+
+en.home = {};
+for (const [id, sec] of Object.entries(index.sections)) {
+  en.home[id] = { ...(enHome[id] || {}), ...nonBlankSectionSettings(sec) };
 }
 
 if (en.home.app) {
@@ -612,13 +620,7 @@ nl.hero = {
 };
 nl.home = {};
 for (const [id, sec] of Object.entries(index.sections)) {
-  const settings = {};
-  if (sec.settings) {
-    for (const [key, val] of Object.entries(sec.settings)) {
-      if (typeof val === 'string') settings[key] = val;
-    }
-  }
-  nl.home[id] = { ...settings, ...(nlHome[id] || {}) };
+  nl.home[id] = { ...nonBlankSectionSettings(sec), ...(nlHome[id] || {}) };
 }
 nl.stats = { swiss_engineered: 'Zwitsers ontworpen' };
 nl.sitemap = {

@@ -11,8 +11,14 @@
   if phone_2_alt == blank
     assign phone_2_alt = 'home.app.phone_image_2_alt' | t
   endif
-  assign phone_1_caption = section.settings.phone_1_caption | default: 'home.app.phone_1_caption' | t
-  assign phone_2_caption = section.settings.phone_2_caption | default: 'home.app.phone_2_caption' | t
+  assign phone_1_caption = section.settings.phone_1_caption
+  if phone_1_caption == blank
+    assign phone_1_caption = 'home.app.phone_1_caption' | t
+  endif
+  assign phone_2_caption = section.settings.phone_2_caption
+  if phone_2_caption == blank
+    assign phone_2_caption = 'home.app.phone_2_caption' | t
+  endif
   assign carousel_label = 'home.app.carousel_label' | t
   assign animate = section.settings.enable_animations
 -%}
@@ -25,12 +31,12 @@
 >
   <div class="apple-container">
     <header class="lp-app__header">
-      <p class="overline-blue-dark">{{ section.settings.overline | default: 'home.app.overline' | t }}</p>
+      <p class="overline-blue-dark">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.app.overline' | t }}{%- endif -%}</p>
       <h2 class="headline-section text-white text-center lp-app__heading">
-        {{ section.settings.heading | default: 'home.app.heading' | t }}
+        {%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.app.heading' | t }}{%- endif -%}
       </h2>
       <p class="body-elevated text-muted-dark text-center lp-app__subheading">
-        {{ section.settings.subheading | default: 'home.app.subheading' | t }}
+        {%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.app.subheading' | t }}{%- endif -%}
       </p>
     </header>
 
@@ -134,20 +140,20 @@
 
     <div class="lp-app__bento tile-grid-2">
       <div class="tile tile--dark">
-        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_1_title | default: 'home.app.tile_1_title' | t }}</h3>
-        <p class="body-standard text-muted-dark">{{ section.settings.tile_1_body | default: 'home.app.tile_1_body' | t }}</p>
+        <h3 class="text-white lp-app__tile-title">{%- if section.settings.tile_1_title != blank -%}{{ section.settings.tile_1_title }}{%- else -%}{{ 'home.app.tile_1_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted-dark">{%- if section.settings.tile_1_body != blank -%}{{ section.settings.tile_1_body }}{%- else -%}{{ 'home.app.tile_1_body' | t }}{%- endif -%}</p>
       </div>
       <div class="tile tile--dark">
-        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_2_title | default: 'home.app.tile_2_title' | t }}</h3>
-        <p class="body-standard text-muted-dark">{{ section.settings.tile_2_body | default: 'home.app.tile_2_body' | t }}</p>
+        <h3 class="text-white lp-app__tile-title">{%- if section.settings.tile_2_title != blank -%}{{ section.settings.tile_2_title }}{%- else -%}{{ 'home.app.tile_2_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted-dark">{%- if section.settings.tile_2_body != blank -%}{{ section.settings.tile_2_body }}{%- else -%}{{ 'home.app.tile_2_body' | t }}{%- endif -%}</p>
       </div>
       <div class="tile tile--dark">
-        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_3_title | default: 'home.app.tile_3_title' | t }}</h3>
-        <p class="body-standard text-muted-dark">{{ section.settings.tile_3_body | default: 'home.app.tile_3_body' | t }}</p>
+        <h3 class="text-white lp-app__tile-title">{%- if section.settings.tile_3_title != blank -%}{{ section.settings.tile_3_title }}{%- else -%}{{ 'home.app.tile_3_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted-dark">{%- if section.settings.tile_3_body != blank -%}{{ section.settings.tile_3_body }}{%- else -%}{{ 'home.app.tile_3_body' | t }}{%- endif -%}</p>
       </div>
       <div class="tile tile--dark">
-        <h3 class="text-white lp-app__tile-title">{{ section.settings.tile_4_title | default: 'home.app.tile_4_title' | t }}</h3>
-        <p class="body-standard text-muted-dark">{{ section.settings.tile_4_body | default: 'home.app.tile_4_body' | t }}</p>
+        <h3 class="text-white lp-app__tile-title">{%- if section.settings.tile_4_title != blank -%}{{ section.settings.tile_4_title }}{%- else -%}{{ 'home.app.tile_4_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted-dark">{%- if section.settings.tile_4_body != blank -%}{{ section.settings.tile_4_body }}{%- else -%}{{ 'home.app.tile_4_body' | t }}{%- endif -%}</p>
       </div>
     </div>
   </div>

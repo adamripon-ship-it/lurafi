@@ -9,25 +9,25 @@
 
 <section id="product" class="section-apple bg-gray">
   <div class="apple-container">
-    <p class="overline-blue">{{ section.settings.overline | default: 'home.steps.overline' | t }}</p>
-    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ section.settings.heading | default: 'home.steps.heading' | t }}</h2>
-    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 64px">{{ section.settings.subheading | default: 'home.steps.subheading' | t }}</p>
+    <p class="overline-blue">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.steps.overline' | t }}{%- endif -%}</p>
+    <h2 class="headline-section text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.steps.heading' | t }}{%- endif -%}</h2>
+    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 64px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.steps.subheading' | t }}{%- endif -%}</p>
 
     <div class="tile-grid-3" style="margin-bottom:56px">
       <div class="tile tile--white text-center">
         <p class="step-num" data-countup>1</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.step_1_title | default: 'home.steps.step_1_title' | t }}</h3>
-        <p class="body-standard text-muted">{{ section.settings.step_1_body | default: 'home.steps.step_1_body' | t }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.step_1_title != blank -%}{{ section.settings.step_1_title }}{%- else -%}{{ 'home.steps.step_1_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted">{%- if section.settings.step_1_body != blank -%}{{ section.settings.step_1_body }}{%- else -%}{{ 'home.steps.step_1_body' | t }}{%- endif -%}</p>
       </div>
       <div class="tile tile--white text-center">
         <p class="step-num" data-countup>2</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.step_2_title | default: 'home.steps.step_2_title' | t }}</h3>
-        <p class="body-standard text-muted">{{ section.settings.step_2_body | default: 'home.steps.step_2_body' | t }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.step_2_title != blank -%}{{ section.settings.step_2_title }}{%- else -%}{{ 'home.steps.step_2_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted">{%- if section.settings.step_2_body != blank -%}{{ section.settings.step_2_body }}{%- else -%}{{ 'home.steps.step_2_body' | t }}{%- endif -%}</p>
       </div>
       <div class="tile tile--white text-center">
         <p class="step-num" data-countup>3</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.step_3_title | default: 'home.steps.step_3_title' | t }}</h3>
-        <p class="body-standard text-muted">{{ section.settings.step_3_body | default: 'home.steps.step_3_body' | t }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.step_3_title != blank -%}{{ section.settings.step_3_title }}{%- else -%}{{ 'home.steps.step_3_title' | t }}{%- endif -%}</h3>
+        <p class="body-standard text-muted">{%- if section.settings.step_3_body != blank -%}{{ section.settings.step_3_body }}{%- else -%}{{ 'home.steps.step_3_body' | t }}{%- endif -%}</p>
       </div>
     </div>
 
@@ -47,10 +47,10 @@
     </div>
 
     <div class="stats-row" data-countup-duration="1100">
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_1_value | default: 'home.steps.stat_1_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_1_label | default: 'home.steps.stat_1_label' | t }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_2_value | default: 'home.steps.stat_2_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_2_label | default: 'home.steps.stat_2_label' | t }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_3_value | default: 'home.steps.stat_3_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_3_label | default: 'home.steps.stat_3_label' | t }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_4_value | default: 'home.steps.stat_4_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_4_label | default: 'home.steps.stat_4_label' | t }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_1_value != blank -%}{{ section.settings.stat_1_value }}{%- else -%}{{ 'home.steps.stat_1_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_1_label != blank -%}{{ section.settings.stat_1_label }}{%- else -%}{{ 'home.steps.stat_1_label' | t }}{%- endif -%}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_2_value != blank -%}{{ section.settings.stat_2_value }}{%- else -%}{{ 'home.steps.stat_2_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_2_label != blank -%}{{ section.settings.stat_2_label }}{%- else -%}{{ 'home.steps.stat_2_label' | t }}{%- endif -%}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_3_value != blank -%}{{ section.settings.stat_3_value }}{%- else -%}{{ 'home.steps.stat_3_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_3_label != blank -%}{{ section.settings.stat_3_label }}{%- else -%}{{ 'home.steps.stat_3_label' | t }}{%- endif -%}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_4_value != blank -%}{{ section.settings.stat_4_value }}{%- else -%}{{ 'home.steps.stat_4_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_4_label != blank -%}{{ section.settings.stat_4_label }}{%- else -%}{{ 'home.steps.stat_4_label' | t }}{%- endif -%}</p></div>
     </div>
   </div>
 </section>

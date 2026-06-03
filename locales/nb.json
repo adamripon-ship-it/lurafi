@@ -16,7 +16,10 @@
     "mobile_navigation": "Mobilnavigasjon",
     "configure_navigation": "Konfigurer",
     "hero_benefits": "Kevin-fordeler",
-    "llm_assets_nl": "Nederlandsk LLM-sammendrag"
+    "llm_assets_nl": "Nederlandsk LLM-sammendrag",
+    "previous": "Previous",
+    "next": "Next",
+    "configure_steps": "Checkout steps"
   },
   "general": {
     "search": {
@@ -186,7 +189,8 @@
     "privacy_body": "Simuleringen spilles av lokalt på enheten.",
     "checkout_eyebrow": "Kasse",
     "checkout_title": "Gratis levering",
-    "checkout_body": "Sikker Shopify-utsjekking."
+    "checkout_body": "Sikker Shopify-utsjekking.",
+    "callouts_aria_label": "Kevin benefits"
   },
   "home": {
     "specs": {
@@ -200,7 +204,18 @@
       "cta_primary_label": "Kjøp Kevin",
       "cta_primary_url": "",
       "cta_secondary_label": "Slik fungerer det",
-      "cta_secondary_url": "#how-it-works"
+      "cta_secondary_url": "#how-it-works",
+      "image_alt": "Kevin presence simulation device",
+      "callouts_aria_label": "Kevin benefits",
+      "away_eyebrow": "Away mode",
+      "away_title": "Living room active",
+      "away_body": "Light, shadow, and sound vary automatically.",
+      "privacy_eyebrow": "Privacy",
+      "privacy_title": "No cameras. No mics.",
+      "privacy_body": "Simulation plays locally on the device.",
+      "checkout_eyebrow": "Checkout",
+      "checkout_title": "Free delivery",
+      "checkout_body": "Secure Shopify checkout."
     },
     "problem": {
       "overline": "Problemet",
@@ -222,7 +237,8 @@
       "pillar_2_title": "Bevegelige skygger",
       "pillar_2_body": "Projiserte silhuetter og skiftende lys antyder folk i rommet – uten kameraer eller mikrofoner.",
       "pillar_3_title": "Hverdagslyd",
-      "pillar_3_body": "Kjøkkenlyd, TV-stemning, fottrinn, stemmer og egne opptak gjør simuleringen personlig og mindre repeterende."
+      "pillar_3_body": "Kjøkkenlyd, TV-stemning, fottrinn, stemmer og egne opptak gjør simuleringen personlig og mindre repeterende.",
+      "image_alt": "Kevin presence simulation at night"
     },
     "steps": {
       "overline": "Planen",
@@ -241,7 +257,8 @@
       "stat_3_value": "100%",
       "stat_3_label": "Personvern",
       "stat_4_value": "24/7",
-      "stat_4_label": "Beskyttelse"
+      "stat_4_label": "Beskyttelse",
+      "image_alt": "Kevin device"
     },
     "app": {
       "overline": "Kevin-appen",
@@ -254,7 +271,12 @@
       "tile_3_title": "Dine egne lyder",
       "tile_3_body": "Last opp opptak og merk dem etter rom eller aktivitet, så simuleringen høres mer ut som hjemmet ditt.",
       "tile_4_title": "Flere steder",
-      "tile_4_body": "Bruk mer enn én Kevin for leilighet, ekstra etasje, kontor eller fritidsbolig som ikke skal føles forlatt."
+      "tile_4_body": "Bruk mer enn én Kevin for leilighet, ekstra etasje, kontor eller fritidsbolig som ikke skal føles forlatt.",
+      "phone_image_1_alt": "Kevin app protected status screen",
+      "phone_1_caption": "Protected — arm and disarm from anywhere",
+      "phone_image_2_alt": "Kevin app weekly schedule grid",
+      "phone_2_caption": "Schedule — set protection by day and hour",
+      "carousel_label": "App screenshots"
     },
     "personas": {
       "overline": "Laget for deg",

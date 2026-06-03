@@ -1,13 +1,13 @@
 <section class="section-apple bg-white lp-specs" aria-labelledby="SpecsHeading-{{ section.id }}">
   <div class="apple-container">
     {%- if section.settings.eyebrow != blank -%}
-      <p class="overline-blue">{{ section.settings.eyebrow | default: 'home.specs.eyebrow' | t }}</p>
+      <p class="overline-blue">{%- if section.settings.eyebrow != blank -%}{{ section.settings.eyebrow }}{%- else -%}{{ 'home.specs.eyebrow' | t }}{%- endif -%}</p>
     {%- endif -%}
-    <h2 id="SpecsHeading-{{ section.id }}" class="headline-section text-center">{{ section.settings.heading | default: 'home.specs.heading' | t }}</h2>
+    <h2 id="SpecsHeading-{{ section.id }}" class="headline-section text-center">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.specs.heading' | t }}{%- endif -%}</h2>
 
     <div class="lp-specs__card">
       <table class="lp-specs__table">
-        <caption class="visually-hidden">{{ section.settings.heading | default: 'home.specs.heading' | t }}</caption>
+        <caption class="visually-hidden">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.specs.heading' | t }}{%- endif -%}</caption>
         <tbody>
           <tr>
             <th scope="row">{{ 'spec_row.dimensions_label' | t }}</th>

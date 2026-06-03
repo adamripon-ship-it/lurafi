@@ -5,11 +5,11 @@
 
 <section class="section-apple bg-black">
   <div class="apple-container text-center">
-    <h2 class="headline-section text-white" style="margin-bottom:16px">{{ section.settings.heading | default: 'home.cta.heading' | t }}</h2>
-    <p class="body-elevated text-muted-dark" style="max-width:500px;margin:0 auto 32px">{{ section.settings.subheading | default: 'home.cta.subheading' | t }}</p>
+    <h2 class="headline-section text-white" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.cta.heading' | t }}{%- endif -%}</h2>
+    <p class="body-elevated text-muted-dark" style="max-width:500px;margin:0 auto 32px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.cta.subheading' | t }}{%- endif -%}</p>
     <div class="cta-row">
-      <a href="{{ configure_url }}" class="cta-white-btn">{{ section.settings.primary_cta | default: 'home.cta.primary_cta' | t }}</a>
-      <a href="{{ routes.root_url }}#how-it-works" class="cta-outline-btn">{{ section.settings.secondary_cta | default: 'home.cta.secondary_cta' | t }}</a>
+      <a href="{{ configure_url }}" class="cta-white-btn">{%- if section.settings.primary_cta != blank -%}{{ section.settings.primary_cta }}{%- else -%}{{ 'home.cta.primary_cta' | t }}{%- endif -%}</a>
+      <a href="{{ routes.root_url }}#how-it-works" class="cta-outline-btn">{%- if section.settings.secondary_cta != blank -%}{{ section.settings.secondary_cta }}{%- else -%}{{ 'home.cta.secondary_cta' | t }}{%- endif -%}</a>
     </div>
   </div>
 </section>

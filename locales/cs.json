@@ -16,7 +16,10 @@
     "mobile_navigation": "Mobilní navigace",
     "configure_navigation": "Konfigurovat",
     "hero_benefits": "Výhody Kevin",
-    "llm_assets_nl": "Nizozemské LLM shrnutí"
+    "llm_assets_nl": "Nizozemské LLM shrnutí",
+    "previous": "Previous",
+    "next": "Next",
+    "configure_steps": "Checkout steps"
   },
   "general": {
     "search": {
@@ -186,7 +189,8 @@
     "privacy_body": "Simulace běží lokálně na zařízení.",
     "checkout_eyebrow": "Pokladna",
     "checkout_title": "Doprava zdarma",
-    "checkout_body": "Bezpečná pokladna Shopify."
+    "checkout_body": "Bezpečná pokladna Shopify.",
+    "callouts_aria_label": "Kevin benefits"
   },
   "home": {
     "specs": {
@@ -200,7 +204,18 @@
       "cta_primary_label": "Koupit Kevin",
       "cta_primary_url": "",
       "cta_secondary_label": "Jak to funguje",
-      "cta_secondary_url": "#how-it-works"
+      "cta_secondary_url": "#how-it-works",
+      "image_alt": "Kevin presence simulation device",
+      "callouts_aria_label": "Kevin benefits",
+      "away_eyebrow": "Away mode",
+      "away_title": "Living room active",
+      "away_body": "Light, shadow, and sound vary automatically.",
+      "privacy_eyebrow": "Privacy",
+      "privacy_title": "No cameras. No mics.",
+      "privacy_body": "Simulation plays locally on the device.",
+      "checkout_eyebrow": "Checkout",
+      "checkout_title": "Free delivery",
+      "checkout_body": "Secure Shopify checkout."
     },
     "problem": {
       "overline": "Problém",
@@ -222,7 +237,8 @@
       "pillar_2_title": "Pohyblivé stíny",
       "pillar_2_body": "Promítané siluety a proměnlivé světlo naznačují pohyb lidí v prostoru – bez kamer a mikrofonů.",
       "pillar_3_title": "Každodenní zvuk",
-      "pillar_3_body": "Kuchyňský hluk, televizní atmosféra, kroky, hlasy a vaše vlastní nahrávky dělají simulaci osobnější a méně opakující se."
+      "pillar_3_body": "Kuchyňský hluk, televizní atmosféra, kroky, hlasy a vaše vlastní nahrávky dělají simulaci osobnější a méně opakující se.",
+      "image_alt": "Kevin presence simulation at night"
     },
     "steps": {
       "overline": "Plán",
@@ -241,7 +257,8 @@
       "stat_3_value": "100%",
       "stat_3_label": "Soukromí",
       "stat_4_value": "24/7",
-      "stat_4_label": "Ochrana"
+      "stat_4_label": "Ochrana",
+      "image_alt": "Kevin device"
     },
     "app": {
       "overline": "Kevin App",
@@ -254,7 +271,12 @@
       "tile_3_title": "Vaše vlastní zvuky",
       "tile_3_body": "Nahrajte nahrávky a označte je podle místnosti nebo aktivity, aby simulace víc připomínala vaši domácnost.",
       "tile_4_title": "Více míst",
-      "tile_4_body": "Použijte více Kevinů pro byty, další patra, kanceláře nebo chalupy, které by neměly působit opuštěně."
+      "tile_4_body": "Použijte více Kevinů pro byty, další patra, kanceláře nebo chalupy, které by neměly působit opuštěně.",
+      "phone_image_1_alt": "Kevin app protected status screen",
+      "phone_1_caption": "Protected — arm and disarm from anywhere",
+      "phone_image_2_alt": "Kevin app weekly schedule grid",
+      "phone_2_caption": "Schedule — set protection by day and hour",
+      "carousel_label": "App screenshots"
     },
     "personas": {
       "overline": "Pro vás",

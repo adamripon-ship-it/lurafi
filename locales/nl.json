@@ -189,24 +189,12 @@
   },
   "home": {
     "hero": {
+      "cta_secondary_url": "#how-it-works",
       "eyebrow": "Zwitserse aanwezigheidssimulatie",
       "headline": "Laat je huis levend lijken.",
       "lede": "Kevin gebruikt Zwitsers ontworpen licht, schaduw en alledaags geluid zodat je huis bewoond aanvoelt voordat iemand de deur test.",
       "cta_primary_label": "Koop Kevin",
-      "cta_primary_url": "",
-      "cta_secondary_label": "Hoe het werkt",
-      "cta_secondary_url": "#how-it-works",
-      "image_alt": "Kevin presence simulation device",
-      "callouts_aria_label": "Kevin benefits",
-      "away_eyebrow": "Away mode",
-      "away_title": "Living room active",
-      "away_body": "Light, shadow, and sound vary automatically.",
-      "privacy_eyebrow": "Privacy",
-      "privacy_title": "No cameras. No mics.",
-      "privacy_body": "Simulation plays locally on the device.",
-      "checkout_eyebrow": "Checkout",
-      "checkout_title": "Free delivery",
-      "checkout_body": "Secure Shopify checkout."
+      "cta_secondary_label": "Hoe het werkt"
     },
     "problem": {
       "overline": "Het probleem",
@@ -228,8 +216,7 @@
       "pillar_2_title": "Bewegende schaduwen",
       "pillar_2_body": "Geprojecteerde silhouetten en verschuivend licht suggereren mensen in de ruimte, zonder camera’s of microfoons.",
       "pillar_3_title": "Alledaags geluid",
-      "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief.",
-      "image_alt": "Kevin presence simulation at night"
+      "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief."
     },
     "steps": {
       "overline": "Het plan",
@@ -241,24 +228,15 @@
       "step_2_body": "Gebruik de app voor weekschema’s, vakantiemodus of geo-activering wanneer je het gebied verlaat.",
       "step_3_title": "Blijf geloofwaardig",
       "step_3_body": "Kevin speelt gevarieerde licht- en geluidsscenario’s vanaf lokale opslag, zodat je routines niet uit de cloud worden gestreamd of met derden worden gedeeld.",
-      "stat_1_value": "60s",
       "stat_1_label": "Installatietijd",
-      "stat_2_value": "1",
       "stat_2_label": "Kabels nodig",
-      "stat_3_value": "100%",
       "stat_3_label": "Privacy",
-      "stat_4_value": "24/7",
-      "stat_4_label": "Bescherming",
-      "image_alt": "Kevin device"
+      "stat_4_label": "Bescherming"
     },
     "app": {
       "overline": "Kevin-app",
       "heading": "Aanwezigheid op jouw schema.",
       "subheading": "Zet Kevin aan, plan weekroutines en beheer meerdere apparaten vanuit één eenvoudige app voor gemoedsrust.",
-      "phone_image_1_alt": "Kevin app protected status screen",
-      "phone_1_caption": "Protected — arm and disarm from anywhere",
-      "phone_image_2_alt": "Kevin app weekly schedule grid",
-      "phone_2_caption": "Schedule — set protection by day and hour",
       "tile_1_title": "Weekschema’s",
       "tile_1_body": "Plan ochtend, avond, nacht, weekenden en vakanties zodat je huis een geloofwaardig ritme volgt terwijl je weg bent.",
       "tile_2_title": "Geo-activering",
@@ -284,29 +262,18 @@
     },
     "stats": {
       "heading": "Gebouwd voor geloofwaardige afschrikking.",
-      "stat_1_value": "97%",
       "stat_1_label": "Risicovermindering volgens Mitipi",
-      "stat_2_value": "70h+",
       "stat_2_label": "Ingebouwde simulaties",
-      "stat_3_value": "9W",
       "stat_3_label": "Typisch energieverbruik",
-      "stat_4_value": "0",
-      "stat_4_label": "Camera's of microfoons",
-      "badge_1": "European Security Award 2024",
-      "badge_2": "Swiss Engineered",
-      "badge_3": "No monitoring subscription",
-      "badge_4": "On-device simulation"
+      "stat_4_label": "Camera's of microfoons"
     },
     "proof": {
       "heading": "Realistisch waar het telt: van buitenaf.",
       "quote_1": "\"Vanaf de stoep laten licht en beweging de kamer bewoond lijken. Precies wat ik wilde.\"",
-      "author_1_name": "Sarah M.",
       "author_1_location": "Zürich, Zwitserland",
       "quote_2": "\"Een vriend dacht dat er iemand binnen was en belde aan. Kevin deed zijn werk voordat iemand de deur bereikte.\"",
-      "author_2_name": "Marc D.",
       "author_2_location": "Lyon, Frankrijk",
       "quote_3": "\"De schaduweffecten vallen op. Vanuit het trappenhuis voelt het appartement niet leeg.\"",
-      "author_3_name": "Thomas K.",
       "author_3_location": "München, Duitsland"
     },
     "pricing": {

@@ -1,0 +1,11 @@
+{%- comment -%}
+  Render a section setting or fall back to a locale key (never pipe raw setting text through | t).
+  @param value {string} Theme setting value
+  @param locale_key {string} Locale translation key
+  @param escape {boolean} Escape HTML in output
+{%- endcomment -%}
+{%- if value != blank -%}
+  {%- if escape -%}{{ value | escape }}{%- else -%}{{ value }}{%- endif -%}
+{%- else -%}
+  {%- if escape -%}{{ locale_key | t | escape }}{%- else -%}{{ locale_key | t }}{%- endif -%}
+{%- endif -%}
