@@ -1,15 +1,18 @@
 name: Deploy theme (manual)
 
 # Push to live only when you explicitly run this workflow.
-# Secrets: SHOPIFY_CLI_THEME_TOKEN, SHOPIFY_FLAG_STORE
+# Secrets (environment: production):
+#   SHOPIFY_FLAG_STORE, SHOPIFY_CLI_THEME_TOKEN
+#   Optional: SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (auto-refresh 24h token each run)
+# Sync: ./scripts/sync-github-deploy-secrets.sh
 
 on:
   workflow_dispatch:
     inputs:
       theme_id:
-        description: Live theme ID
+        description: Live theme ID (mitipi-2 lurafi-deploy)
         required: true
-        default: "196456219011"
+        default: "184679596410"
 
 permissions:
   contents: read
@@ -29,9 +32,31 @@ jobs:
       - name: Install Shopify CLI
         run: npm ci
 
+      - name: Resolve Shopify access token
+        env:
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        run: |
+          set -euo pipefail
+          STORE="${SHOPIFY_FLAG_STORE}"
+          if [[ -n "${SHOPIFY_CLIENT_ID:-}" && -n "${SHOPIFY_CLIENT_SECRET:-}" ]]; then
+            RESP="$(curl -sS -X POST "https://${STORE}/admin/oauth/access_token" \
+              -H "Content-Type: application/x-www-form-urlencoded" \
+              -d "grant_type=client_credentials" \
+              -d "client_id=${SHOPIFY_CLIENT_ID}" \
+              -d "client_secret=${SHOPIFY_CLIENT_SECRET}")"
+            TOKEN="$(node -e "const j=JSON.parse(process.argv[1]); if(!j.access_token){console.error(j);process.exit(1)}; console.log(j.access_token)" "${RESP}")"
+          else
+            TOKEN="${SHOPIFY_CLI_THEME_TOKEN}"
+          fi
+          echo "::add-mask::${TOKEN}"
+          echo "SHOPIFY_CLI_THEME_TOKEN=${TOKEN}" >> "${GITHUB_ENV}"
+
       - name: Push theme to Shopify
         env:
-          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ env.SHOPIFY_CLI_THEME_TOKEN }}
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
         run: |
           shopify theme push \

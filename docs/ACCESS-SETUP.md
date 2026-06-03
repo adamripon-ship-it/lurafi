@@ -256,7 +256,11 @@ Copy-paste when ready (no passwords or tokens in chat):
 ```
 NEW_SHOPIFY_STORE=mitipi-2.myshopify.com
 NEW_STORE_READY=[ ] lurafi app installed  [ ] SHOPIFY_ADMIN_TOKEN in .env  [ ] auth-with-token.sh OK
-GITHUB_SECRETS=[ ] SHOPIFY_CLI_THEME_TOKEN  [ ] SHOPIFY_FLAG_STORE=mitipi-2.myshopify.com
+GITHUB_SECRETS (environment **production**, not repo-level): run `./scripts/sync-github-deploy-secrets.sh` from a machine with `.env` set.
+
+- [ ] `SHOPIFY_FLAG_STORE` = `mitipi-2.myshopify.com`
+- [ ] `SHOPIFY_CLI_THEME_TOKEN` (refreshed app token)
+- [ ] `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` (optional; deploy workflow refreshes token each run)
 CLOUDFLARE=[ ] dashboard access  [ ] API token in .env  [ ] MCP connected
 CUTOVER_DOMAIN=lurafi.com
 ORDERS_ON_OLD_STORE=yes/no
