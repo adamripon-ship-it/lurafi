@@ -27,7 +27,7 @@ TOKEN="$(shopify_theme_password)"
 
 if [[ -z "$STORE" ]]; then
   echo "Error: set SHOPIFY_STORE to the destination store hostname."
-  echo "  Example: SHOPIFY_STORE=mitipi-2.myshopify.com $0"
+  echo "  Example: SHOPIFY_STORE=6mzhe1-yf.myshopify.com $0"
   exit 1
 fi
 

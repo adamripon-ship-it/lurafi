@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       theme_id:
-        description: Live theme ID (mitipi-2 lurafi-deploy)
+        description: Live theme ID (6mzhe1-yf lurafi-deploy)
         required: true
         default: "184679596410"
 
@@ -41,14 +41,27 @@ jobs:
         run: |
           set -euo pipefail
           STORE="${SHOPIFY_FLAG_STORE}"
+          TOKEN=""
           if [[ -n "${SHOPIFY_CLIENT_ID:-}" && -n "${SHOPIFY_CLIENT_SECRET:-}" ]]; then
             RESP="$(curl -sS -X POST "https://${STORE}/admin/oauth/access_token" \
               -H "Content-Type: application/x-www-form-urlencoded" \
               -d "grant_type=client_credentials" \
               -d "client_id=${SHOPIFY_CLIENT_ID}" \
               -d "client_secret=${SHOPIFY_CLIENT_SECRET}")"
-            TOKEN="$(node -e "const j=JSON.parse(process.argv[1]); if(!j.access_token){console.error(j);process.exit(1)}; console.log(j.access_token)" "${RESP}")"
-          else
+            TOKEN="$(node -e "
+              const raw = process.argv[1];
+              try {
+                const j = JSON.parse(raw);
+                if (j.access_token) { console.log(j.access_token); process.exit(0); }
+              } catch (_) {}
+              process.exit(1);
+            " "${RESP}" 2>/dev/null || true)"
+          fi
+          if [[ -z "${TOKEN}" ]]; then
+            if [[ -z "${SHOPIFY_CLI_THEME_TOKEN:-}" ]]; then
+              echo "No access token: client_credentials failed and SHOPIFY_CLI_THEME_TOKEN is empty." >&2
+              exit 1
+            fi
             TOKEN="${SHOPIFY_CLI_THEME_TOKEN}"
           fi
           echo "::add-mask::${TOKEN}"
@@ -59,6 +72,8 @@ jobs:
           SHOPIFY_CLI_THEME_TOKEN: ${{ env.SHOPIFY_CLI_THEME_TOKEN }}
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
         run: |
-          shopify theme push \
+          npx shopify theme push \
+            --store "${SHOPIFY_FLAG_STORE}" \
+            --password "${SHOPIFY_CLI_THEME_TOKEN}" \
             --theme "${{ github.event.inputs.theme_id }}" \
             --allow-live

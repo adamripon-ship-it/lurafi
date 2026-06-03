@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /** Compare key signals between old (lurafi.ai) and new (mitipi-2) storefronts */
 const OLD = process.env.OLD_URL || 'https://lurafi.ai';
-const NEW = process.env.NEW_URL || 'https://mitipi-2.myshopify.com';
+const NEW = process.env.NEW_URL || 'https://lurafi.com';
 
 const checks = [
   { name: 'Home hero', path: '/', includes: ['Make Home Look Alive', 'hero-apple'] },

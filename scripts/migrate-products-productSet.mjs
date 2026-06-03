@@ -5,7 +5,7 @@
 import { adminGql, adminAuthMode } from './lib/shopify-admin-gql.mjs';
 
 const SOURCE = process.env.LURAFI_SOURCE_STORE || 'https://lurafi.ai';
-const STORE = (process.env.SHOPIFY_STORE || 'mitipi-2.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
+const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
 
 async function fetchProduct(handle) {
   const res = await fetch(`${SOURCE}/products/${handle}.json`);

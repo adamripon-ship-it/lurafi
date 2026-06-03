@@ -22,7 +22,7 @@ export function getAdminToken() {
 async function refreshAdminTokenFromClientCredentials() {
   const id = process.env.SHOPIFY_CLIENT_ID;
   const secret = process.env.SHOPIFY_CLIENT_SECRET;
-  const store = (process.env.SHOPIFY_STORE || 'mitipi-2.myshopify.com')
+  const store = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com')
     .replace(/^https?:\/\//, '')
     .replace(/\/$/, '');
   if (!id || !secret) return null;

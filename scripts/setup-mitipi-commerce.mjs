@@ -4,7 +4,7 @@
  */
 import { adminGql } from './lib/shopify-admin-gql.mjs';
 
-const STORE = (process.env.SHOPIFY_STORE || 'mitipi-2.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
+const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
 
 async function getKevinPlus() {
   const { products } = await adminGql({

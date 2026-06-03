@@ -6,7 +6,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 source "${ROOT}/scripts/lib/shopify-env.sh"
 shopify_load_dotenv
 
-STORE="${SHOPIFY_STORE:-mitipi-2.myshopify.com}"
+STORE="${SHOPIFY_STORE:-6mzhe1-yf.myshopify.com}"
 STORE="${STORE#https://}"
 STORE="${STORE%/}"
 ID="${SHOPIFY_CLIENT_ID:-}"
@@ -23,7 +23,15 @@ RESP="$(curl -sS -X POST "https://${STORE}/admin/oauth/access_token" \
   -d "client_id=${ID}" \
   -d "client_secret=${SECRET}")"
 
-TOKEN="$(node -e "const j=JSON.parse(process.argv[1]); if(!j.access_token){console.error(j); process.exit(1)}; console.log(j.access_token)" "${RESP}")"
+if [[ "${RESP}" == \<!* ]]; then
+  echo "✗ OAuth returned HTML instead of JSON — store may be deactivated or the lurafi app is not installed on ${STORE}." >&2
+  echo "  1. Log in: https://admin.shopify.com/store/6mzhe1-yf (owner account)" >&2
+  echo "  2. Reactivate the store if Shopify shows a billing / paused notice." >&2
+  echo "  3. Run: npm run shopify:approve-scopes  then re-run this script." >&2
+  exit 1
+fi
+
+TOKEN="$(node -e "const j=JSON.parse(process.argv[1]); if(!j.access_token){console.error(JSON.stringify(j)); process.exit(1)}; console.log(j.access_token)" "${RESP}")"
 
 ENV_FILE="${ROOT}/.env"
 if grep -q '^SHOPIFY_ADMIN_TOKEN=' "${ENV_FILE}" 2>/dev/null; then

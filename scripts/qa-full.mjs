@@ -9,7 +9,7 @@ import { join } from 'node:path';
 
 const ROOT = join(import.meta.dirname, '..');
 const LURAFI = (process.env.LURAFI_URL || 'https://lurafi.com').replace(/\/$/, '');
-const STORE = (process.env.SHOPIFY_STORE || 'mitipi-2.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
+const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
 const OLD = process.env.OLD_URL || 'https://lurafi.ai';
 
 const suites = [];

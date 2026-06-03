@@ -74,8 +74,9 @@ gh auth setup-git
 | **Old** `fu03cn-1v.myshopify.com` | Staff (read) | Export products, reference settings |
 | **New** `____.myshopify.com` | Owner or staff with Themes + Products | Theme push, catalog, domain |
 
-**Target store (migration):** `mitipi-2.myshopify.com` (primary on new account)  
-**Also connected:** `6mzhe1-yf.myshopify.com` (confirm separate vs alias in Admin)
+**Canonical store (verified 2026-06-03):** `6mzhe1-yf.myshopify.com` — shop **Mitipi GmbH**, primary domain **lurafi.com**.  
+**Admin URL:** `https://admin.shopify.com/store/6mzhe1-yf` (not `mitipi-2`).  
+**Legacy hostname in theme/markets:** `mitipi-2.myshopify.com` appears in `hreflang` links but is **not** a separate OAuth/API store (OAuth and client-credentials token only work on `6mzhe1-yf`).
 
 ### Authenticate Shopify CLI (interactive — browser)
 
@@ -111,11 +112,15 @@ Approve in the browser when prompted.
 
 ### Target store (migration)
 
-| Store | Role |
-|-------|------|
-| `mitipi-2.myshopify.com` | **Primary** — use this for lurafi migration |
-| `6mzhe1-yf.myshopify.com` | Connected — separate dev store; CLI needs its own auth if used |
+| Hostname | Role |
+|----------|------|
+| `6mzhe1-yf.myshopify.com` | **Canonical** — set `SHOPIFY_STORE` and `SHOPIFY_FLAG_STORE` here; lurafi.com primary domain |
+| `mitipi-2.myshopify.com` | Market/hreflang alias only — do **not** use for Admin, OAuth, or deploy |
 | `fu03cn-1v.myshopify.com` | Old lurafi production — do not deploy here |
+
+### Admin UI platform error
+
+If `admin.shopify.com/store/6mzhe1-yf` shows a **Shopify platform error** (with a correlation id), that is a **Shopify-side** outage or account issue — not the wrong store slug. API/scripts may still work via `SHOPIFY_ADMIN_TOKEN`. Contact [Shopify Support](https://help.shopify.com/en/questions) with the correlation id and store `6mzhe1-yf.myshopify.com`. Try `https://6mzhe1-yf.myshopify.com/admin` or another browser/incognito while logged in as the store owner.
 
 ### Troubleshooting: “Unauthorized Access” or “don't have access to this dev store”
 
@@ -123,7 +128,7 @@ This means the **Shopify account in your browser / CLI is not staff on that stor
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| Browser: **Unauthorized Access** during `store auth` | Wrong Shopify login, or not invited to store | Log into `https://mitipi-2.myshopify.com/admin` with the **store owner** account first |
+| Browser: **Unauthorized Access** during `store auth` | Wrong Shopify login, or not invited to store | Log into `https://admin.shopify.com/store/6mzhe1-yf` with the **store owner** account first |
 | CLI: **don't have access to this dev store** | CLI partner session is `adam.ripon@surfstr.com` but store is under another login (e.g. Mitipi) | Use the owner account, or add your email as **staff** with Themes permission |
 | Auth loop / wrong store | Stale CLI session | `shopify auth logout` → `shopify auth login` → pick correct account → re-run auth script |
 
@@ -137,11 +142,11 @@ shopify auth logout
 shopify auth login
 
 # 3. Confirm you can open Admin in browser:
-#    https://mitipi-2.myshopify.com/admin
+#    https://admin.shopify.com/store/6mzhe1-yf
 
 # 4. Re-auth store (full scopes)
 cd /Users/adam/lurafi
-./scripts/auth-new-store.sh mitipi-2.myshopify.com
+./scripts/auth-new-store.sh 6mzhe1-yf.myshopify.com
 ```
 
 **If the store owner is someone else:** ask them to invite **adam.ripon@surfstr.com** (or your CLI email) under **Settings → Users and permissions** with **Themes** + **Products** access.
@@ -154,11 +159,11 @@ Mitipi no longer uses legacy “Develop apps” in Admin. Use the **lurafi** app
 cd /Users/adam/lurafi
 
 # 1) Add to .env (gitignored) — paste real token once, never in chat:
-#    SHOPIFY_STORE=mitipi-2.myshopify.com
+#    SHOPIFY_STORE=6mzhe1-yf.myshopify.com
 #    SHOPIFY_ADMIN_TOKEN=paste-your-token-here-once
 
 # 2) Verify token (no browser OAuth)
-./scripts/auth-with-token.sh mitipi-2.myshopify.com
+./scripts/auth-with-token.sh 6mzhe1-yf.myshopify.com
 
 # 3) Full migration (skips shopify store auth when SHOPIFY_ADMIN_TOKEN is set)
 ./scripts/migrate-to-store.sh

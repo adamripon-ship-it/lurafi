@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import { adminGql } from './lib/shopify-admin-gql.mjs';
 
 const ROOT = join(import.meta.dirname, '..');
-const STORE = (process.env.SHOPIFY_STORE || 'mitipi-2.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
+const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
 const OLD = 'https://lurafi.ai';
 const NEW = process.env.NEW_URL || `https://${STORE}`;
 

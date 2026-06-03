@@ -14,7 +14,7 @@
  * Usage:
  *   node scripts/setup-shopify-i18n.mjs
  *   node scripts/setup-shopify-i18n.mjs --publish=false
- *   SHOPIFY_STORE=mitipi-2.myshopify.com node scripts/setup-shopify-i18n.mjs
+ *   SHOPIFY_STORE=6mzhe1-yf.myshopify.com node scripts/setup-shopify-i18n.mjs
  */
 import {
   getAlternateLocales,

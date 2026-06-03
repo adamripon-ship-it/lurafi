@@ -8,7 +8,7 @@ shopify_load_dotenv
 shopify_ensure_admin_token || true
 shopify_load_dotenv
 
-STORE="${SHOPIFY_STORE:-mitipi-2.myshopify.com}"
+STORE="${SHOPIFY_STORE:-6mzhe1-yf.myshopify.com}"
 STORE="${STORE#https://}"
 STORE="${STORE%/}"
 THEME_NAME="${SHOPIFY_THEME_NAME:-lurafi-deploy}"

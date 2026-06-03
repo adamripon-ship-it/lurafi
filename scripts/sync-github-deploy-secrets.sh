@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Sync mitipi-2 deploy credentials to GitHub Actions environment "production".
+# Sync 6mzhe1-yf (lurafi.com) deploy credentials to GitHub Actions environment "production".
 # Usage: ./scripts/sync-github-deploy-secrets.sh
 #
 # Sets (from .env when present):
@@ -15,7 +15,7 @@ shopify_load_dotenv
 
 REPO="${GITHUB_REPOSITORY:-adamripon-ship-it/lurafi}"
 ENV_NAME="${GITHUB_ENV_NAME:-production}"
-STORE="${SHOPIFY_STORE:-mitipi-2.myshopify.com}"
+STORE="${SHOPIFY_STORE:-6mzhe1-yf.myshopify.com}"
 STORE="${STORE#https://}"
 STORE="${STORE%/}"
 
@@ -29,7 +29,7 @@ if ! gh auth status >/dev/null 2>&1; then
 fi
 
 if [[ -n "${SHOPIFY_CLIENT_ID:-}" && -n "${SHOPIFY_CLIENT_SECRET:-}" ]]; then
-  "${ROOT}/scripts/shopify-refresh-admin-token.sh" >/dev/null
+  "${ROOT}/scripts/shopify-refresh-admin-token.sh" >/dev/null 2>&1 || true
   shopify_load_dotenv
 fi
 
@@ -39,9 +39,18 @@ if shopify_token_is_placeholder "${TOKEN}"; then
   exit 1
 fi
 
-echo "Testing theme API on ${STORE}…"
-shopify theme list -s "${STORE}" --password "${TOKEN}" >/dev/null
-echo "✓ Token works for theme list"
+echo "Testing Admin API on ${STORE}…"
+HTTP="$(curl -sS -o /tmp/gql-test.json -w "%{http_code}" -X POST \
+  "https://${STORE}/admin/api/2025-01/graphql.json" \
+  -H "X-Shopify-Access-Token: ${TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"{ shop { myshopifyDomain } }"}')"
+if [[ "${HTTP}" != "200" ]] || ! grep -q '"myshopifyDomain"' /tmp/gql-test.json 2>/dev/null; then
+  echo "✗ Token test failed (HTTP ${HTTP}). Check lurafi app on ${STORE}." >&2
+  head -c 300 /tmp/gql-test.json >&2
+  exit 1
+fi
+echo "✓ Token works for Admin GraphQL"
 
 echo "Updating GitHub environment secrets (${REPO} → ${ENV_NAME})…"
 gh secret set SHOPIFY_FLAG_STORE --repo "${REPO}" --env "${ENV_NAME}" --body "${STORE}"

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Open Shopify OAuth so mitipi-2 approves lurafi app scopes (e.g. fullaccess / write_products).
+# Open Shopify OAuth so 6mzhe1-yf (lurafi.com) approves lurafi app scopes.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 # shellcheck source=scripts/lib/shopify-env.sh
 source "${ROOT}/scripts/lib/shopify-env.sh"
 shopify_load_dotenv
 
-STORE="${SHOPIFY_STORE:-mitipi-2.myshopify.com}"
+STORE="${SHOPIFY_STORE:-6mzhe1-yf.myshopify.com}"
 STORE="${STORE#https://}"
 STORE="${STORE%/}"
 CLIENT_ID="${SHOPIFY_CLIENT_ID:-}"
@@ -27,7 +27,7 @@ ENCODED_REDIRECT="$(node -e "console.log(encodeURIComponent(process.argv[1]))" "
 
 URL="https://${STORE}/admin/oauth/authorize?client_id=${CLIENT_ID}&scope=${ENCODED_SCOPE}&redirect_uri=${ENCODED_REDIRECT}&state=lurafi-scope-$(date +%s)"
 
-echo "Open this URL while logged into mitipi-2 as the store owner:"
+echo "Open this URL while logged into ${STORE} as the store owner (mma@surfstr.com):"
 echo ""
 echo "${URL}"
 echo ""
