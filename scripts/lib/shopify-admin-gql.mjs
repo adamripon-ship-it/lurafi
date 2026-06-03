@@ -70,12 +70,21 @@ function gqlWithCli(store, query, variables, mutate = false) {
  * @param {Record<string, unknown>} [opts.variables]
  * @param {boolean} [opts.mutate]
  */
+function assertNoUserErrors(data) {
+  const errKey = Object.keys(data).find((k) => data[k]?.userErrors?.length);
+  if (errKey && data[errKey].userErrors.length) {
+    const msgs = data[errKey].userErrors.map((e) => e.message).join('; ');
+    throw new Error(`${errKey}: ${msgs}`);
+  }
+  return data;
+}
+
 export async function adminGql({ store, query, variables, mutate = false }) {
   const token = getAdminToken();
   if (!tokenLooksInvalid(token)) {
-    return gqlWithToken(store, token, query, variables);
+    return assertNoUserErrors(await gqlWithToken(store, token, query, variables));
   }
-  return gqlWithCli(store, query, variables, mutate);
+  return assertNoUserErrors(gqlWithCli(store, query, variables, mutate));
 }
 
 export function adminAuthMode() {

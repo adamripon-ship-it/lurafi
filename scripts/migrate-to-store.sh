@@ -81,8 +81,8 @@ else
   theme_cli theme push -s "$STORE" --unpublished --theme "$THEME_NAME"
   echo ""
   echo "  → Publish when ready: Online Store → Themes, or:"
-  echo "     theme_cli theme list -s $STORE"
-  echo "     theme_cli theme publish -s $STORE --theme THEME_ID"
+  echo "     shopify theme list -s $STORE --password \"\$SHOPIFY_ADMIN_TOKEN\""
+  echo "     shopify theme publish -s $STORE --theme THEME_ID --password \"\$SHOPIFY_ADMIN_TOKEN\""
 fi
 
 echo ""

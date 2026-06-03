@@ -148,12 +148,27 @@ cd /Users/adam/lurafi
 
 **Bypass browser OAuth (recommended for CI and when OAuth fails):**
 
+Mitipi no longer uses legacy “Develop apps” in Admin. Use the **lurafi** app in [Dev Dashboard](https://dev.shopify.com) → **Settings** → **App automation token** (or an Admin API access token from a custom app if you have one).
+
 ```bash
-# On mitipi-2 Admin: Develop apps → install app with write_themes → copy token once
-SHOPIFY_ADMIN_TOKEN=shpat_... ./scripts/auth-with-token.sh mitipi-2.myshopify.com
+cd /Users/adam/lurafi
+
+# 1) Add to .env (gitignored) — paste real token once, never in chat:
+#    SHOPIFY_STORE=mitipi-2.myshopify.com
+#    SHOPIFY_ADMIN_TOKEN=paste-your-token-here-once
+
+# 2) Verify token (no browser OAuth)
+./scripts/auth-with-token.sh mitipi-2.myshopify.com
+
+# 3) Full migration (skips shopify store auth when SHOPIFY_ADMIN_TOKEN is set)
+./scripts/migrate-to-store.sh
 ```
 
-Then add token to `.env` and GitHub `production` secrets (see section 1).
+`migrate-to-store.sh` and `activate-locales.sh` read `.env` automatically. They pass `--password` to `shopify theme push` and use the token for Admin GraphQL in `setup-shopify-i18n.mjs`.
+
+Optional env aliases: `SHOPIFY_THEME_PASSWORD` (same as admin token for theme CLI), `SHOPIFY_THEME_NAME=lurafi-deploy` (unpublished theme name).
+
+Then add the same token to GitHub `production` secrets (see section 1).
 
 ### Optional: refresh old store session
 
@@ -178,8 +193,10 @@ cp .env.example .env
 ```
 
 ```env
-SHOPIFY_STORE=your-new-store.myshopify.com
+SHOPIFY_STORE=mitipi-2.myshopify.com
 OLD_SHOPIFY_STORE=fu03cn-1v.myshopify.com
+SHOPIFY_ADMIN_TOKEN=paste-your-token-here-once
+SHOPIFY_THEME_NAME=lurafi-deploy
 ```
 
 ---
@@ -234,12 +251,12 @@ dig lurafi.com NS +short    # should show *.ns.cloudflare.com
 
 ## 4. Information to send the agent
 
-Copy-paste when ready (no passwords in chat):
+Copy-paste when ready (no passwords or tokens in chat):
 
 ```
-NEW_SHOPIFY_STORE=________________.myshopify.com
-NEW_STORE_READY=[ ] created  [ ] staff access granted  [ ] CLI authed
-GITHUB_SECRETS=[ ] SHOPIFY_CLI_THEME_TOKEN  [ ] SHOPIFY_FLAG_STORE
+NEW_SHOPIFY_STORE=mitipi-2.myshopify.com
+NEW_STORE_READY=[ ] lurafi app installed  [ ] SHOPIFY_ADMIN_TOKEN in .env  [ ] auth-with-token.sh OK
+GITHUB_SECRETS=[ ] SHOPIFY_CLI_THEME_TOKEN  [ ] SHOPIFY_FLAG_STORE=mitipi-2.myshopify.com
 CLOUDFLARE=[ ] dashboard access  [ ] API token in .env  [ ] MCP connected
 CUTOVER_DOMAIN=lurafi.com
 ORDERS_ON_OLD_STORE=yes/no
