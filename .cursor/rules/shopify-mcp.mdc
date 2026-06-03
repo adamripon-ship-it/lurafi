@@ -1,12 +1,59 @@
 ---
-description: Shopify Dev MCP + mitipi-2 API access for lurafi migration
-globs: scripts/**/*
+description: Shopify AI Toolkit MCP (docs/schema) + mitipi-2 Admin API for lurafi
+globs: scripts/**/*,**/*.{liquid,json}
 alwaysApply: false
 ---
 
-# Shopify (mitipi-2)
+# Shopify MCP & API
 
-- Store: `mitipi-2.myshopify.com`. Secrets in gitignored `.env` only.
-- Token: `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` → `./scripts/shopify-refresh-admin-token.sh` or auto-refresh in `scripts/lib/shopify-admin-gql.mjs`.
-- MCP `user-shopify-dev-mcp`: call `learn_shopify_api` first; pass `conversationId` to `search_docs_chunks` / `validate_graphql_codeblocks`.
-- Product create needs app scope `write_products` on lurafi Dev Dashboard version.
+## Option A — Shopify AI Toolkit (docs + schema validation, no live store write)
+
+Official Shopify MCP for development: searches live docs, validates GraphQL and Liquid against current schemas. **Does not write to a store.**
+
+### Easiest: Cursor Marketplace (one click)
+
+Install from [cursor.com/marketplace/shopify](https://cursor.com/marketplace/shopify). Auto-updates; no repo config required.
+
+### Or: manual MCP config
+
+This repo includes `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "shopify-dev-mcp": {
+      "command": "npx",
+      "args": ["-y", "@shopify/dev-mcp@latest"],
+      "env": {
+        "OPT_OUT_INSTRUMENTATION": "true"
+      }
+    }
+  }
+}
+```
+
+After editing, reload MCP in **Cursor Settings → MCP**.
+
+**Prerequisites:** Node 18+. No API key for documentation and schema access.
+
+**Verify:** Ask Cursor *"What's the correct GraphQL mutation to create a product variant?"* — a working setup calls the Shopify docs tool and returns a current mutation.
+
+**Telemetry:** Validation payloads can include the actual GraphQL or Liquid being validated (not only pass/fail). Keep `OPT_OUT_INSTRUMENTATION=true` when working with proprietary or client code.
+
+### Agent usage (Option A)
+
+Server id in Cursor may appear as `shopify-dev-mcp` or `user-shopify-dev-mcp` (Marketplace).
+
+1. Call `learn_shopify_api` first (`api`: `admin`, `liquid`, or `use-shopify-cli` as appropriate).
+2. Pass the returned `conversationId` on every follow-up tool call (`search_docs_chunks`, `validate_graphql_codeblocks`, `validate_theme`, etc.).
+
+---
+
+## Option B — mitipi-2 Admin API (theme, products, locales)
+
+Live store operations use gitignored `.env` and repo scripts — not the docs-only MCP.
+
+- Store: `mitipi-2.myshopify.com` (primary domain `lurafi.com`).
+- Token: `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` → `./scripts/shopify-refresh-admin-token.sh`, or auto-refresh in `scripts/lib/shopify-admin-gql.mjs`.
+- Product mutations need lurafi app scope `write_products` (see `docs/FIX-LURAFI-APP-AND-PRODUCTS.md`).
+- Theme push: `npm run shopify:publish:mitipi` / Shopify CLI with `SHOPIFY_FLAG_STORE=mitipi-2.myshopify.com`.
