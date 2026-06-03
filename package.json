@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "theme:check": "shopify theme check",
-    "theme:push:live": "shopify theme push -s fu03cn-1v.myshopify.com --theme 196456219011 --allow-live",
+    "theme:push:live": "shopify theme push -s 6mzhe1-yf.myshopify.com --theme 184679596410 --allow-live",
     "locales:build": "node scripts/build-locales.mjs",
     "locales:sync": "node scripts/sync-locale-keys.mjs",
     "locales:translate": "node scripts/translate-locales.mjs",
@@ -24,8 +24,8 @@
     "qa:full": "LURAFI_URL=https://lurafi.com node scripts/qa-full.mjs",
     "qa:mitipi": "node scripts/qa-mitipi-report.mjs",
     "qa:mitipi:backend": "node scripts/qa-mitipi-backend.mjs",
-    "qa:mitipi:browser": "LURAFI_URL=https://mitipi-2.myshopify.com node scripts/browser-qa.mjs",
-    "qa:mitipi:audit": "LURAFI_URL=https://mitipi-2.myshopify.com node scripts/full-site-audit.mjs",
+    "qa:mitipi:browser": "LURAFI_URL=https://lurafi.com node scripts/browser-qa.mjs",
+    "qa:mitipi:audit": "LURAFI_URL=https://lurafi.com node scripts/full-site-audit.mjs",
     "qa:i18n": "node scripts/i18n-browser-qa.mjs"
   },
   "devDependencies": {

@@ -122,6 +122,32 @@ Approve in the browser when prompted.
 
 If `admin.shopify.com/store/6mzhe1-yf` shows a **Shopify platform error** (with a correlation id), that is a **Shopify-side** outage or account issue — not the wrong store slug. API/scripts may still work via `SHOPIFY_ADMIN_TOKEN`. Contact [Shopify Support](https://help.shopify.com/en/questions) with the correlation id and store `6mzhe1-yf.myshopify.com`. Try `https://6mzhe1-yf.myshopify.com/admin` or another browser/incognito while logged in as the store owner.
 
+### Troubleshooting: lurafi.com `/` or `/products/kevin` return 404
+
+Verified pattern (2026-06-03):
+
+| URL | Typical status | Meaning |
+|-----|----------------|---------|
+| `/` | 404 (generic Shopify HTML) | Live theme missing default `templates/index.json` or incomplete deploy |
+| `/?view=index` | 200 | Theme index works when template is forced |
+| `/pages/configure` | 200 | Page template present on live theme |
+| `/products/kevin` | 404 | Live theme missing `templates/product.json` or product not on Online Store |
+| `/products/kevin?view=configure` | 200 | Alternate product template works |
+| `/products.json` | 200 | Products exist in catalog |
+
+**Fix:** Run a **full** theme deploy to live theme `184679596410` on `6mzhe1-yf.myshopify.com` after a valid Admin token:
+
+```bash
+npm run shopify:approve-scopes
+./scripts/shopify-refresh-admin-token.sh
+./scripts/sync-github-deploy-secrets.sh
+# GitHub → Actions → Deploy theme (manual) → theme_id 184679596410
+# or locally:
+npm run theme:push:live
+```
+
+Also check **Settings → Online Store → Preferences → Homepage** is not set to a deleted page.
+
 ### Troubleshooting: “Unauthorized Access” or “don't have access to this dev store”
 
 This means the **Shopify account in your browser / CLI is not staff on that store**.
@@ -198,7 +224,7 @@ cp .env.example .env
 ```
 
 ```env
-SHOPIFY_STORE=mitipi-2.myshopify.com
+SHOPIFY_STORE=6mzhe1-yf.myshopify.com
 OLD_SHOPIFY_STORE=fu03cn-1v.myshopify.com
 SHOPIFY_ADMIN_TOKEN=paste-your-token-here-once
 SHOPIFY_THEME_NAME=lurafi-deploy
@@ -259,11 +285,11 @@ dig lurafi.com NS +short    # should show *.ns.cloudflare.com
 Copy-paste when ready (no passwords or tokens in chat):
 
 ```
-NEW_SHOPIFY_STORE=mitipi-2.myshopify.com
+NEW_SHOPIFY_STORE=6mzhe1-yf.myshopify.com
 NEW_STORE_READY=[ ] lurafi app installed  [ ] SHOPIFY_ADMIN_TOKEN in .env  [ ] auth-with-token.sh OK
 GITHUB_SECRETS (environment **production**, not repo-level): run `./scripts/sync-github-deploy-secrets.sh` from a machine with `.env` set.
 
-- [ ] `SHOPIFY_FLAG_STORE` = `mitipi-2.myshopify.com`
+- [ ] `SHOPIFY_FLAG_STORE` = `6mzhe1-yf.myshopify.com`
 - [ ] `SHOPIFY_CLI_THEME_TOKEN` (refreshed app token)
 - [ ] `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` (optional; deploy workflow refreshes token each run)
 CLOUDFLARE=[ ] dashboard access  [ ] API token in .env  [ ] MCP connected

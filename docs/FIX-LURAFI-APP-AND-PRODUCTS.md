@@ -2,7 +2,7 @@
 
 ## Problem
 
-- **fullaccess** is released but mitipi-2 still runs the old install (no `write_products` on the token).
+- **fullaccess** is released but **6mzhe1-yf** (lurafi.com) still runs the old install (no `write_products` on the token).
 - **App URL** `https://example.com` breaks Install → “Example Domain” page.
 
 ## A. Approve scopes on the store (do first)
@@ -22,7 +22,7 @@ npm run shopify:products:migrate
 
 **Option 2 — Dev Dashboard**
 
-1. [dev.shopify.com](https://dev.shopify.com) → **lurafi** → **Home** → **Install app** → **mitipi-2** → **Install**.
+1. [dev.shopify.com](https://dev.shopify.com) → **lurafi** → **Home** → **Install app** → **6mzhe1-yf** (Mitipi GmbH / lurafi.com) → **Install**.
 
 **Option 3 — CSV (no API)**
 
@@ -34,7 +34,7 @@ Admin → **Products** → **Import** → `scripts/data/products-import.csv`
 2. **App URL:** `https://shopify.dev/apps/default-app-home`
 3. Turn off **Embed app in Shopify admin** if shown.
 4. Keep scopes (include **write_products**).
-5. **Release** → **Home** → **Install app** on mitipi-2 if asked.
+5. **Release** → **Home** → **Install app** on **6mzhe1-yf** if asked.
 
 ## C. Verify
 

@@ -37,4 +37,4 @@ Keep that enabled for client or proprietary theme work.
 
 ## Store changes (separate from MCP)
 
-Theme push, products, and locales on **mitipi-2** use `.env` + `scripts/` — see `AGENTS.md` and `docs/FIX-LURAFI-APP-AND-PRODUCTS.md`.
+Theme push, products, and locales on **6mzhe1-yf** (`lurafi.com`) use `.env` + `scripts/` — see `AGENTS.md` and `docs/FIX-LURAFI-APP-AND-PRODUCTS.md`.

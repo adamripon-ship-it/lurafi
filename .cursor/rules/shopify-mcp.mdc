@@ -1,5 +1,5 @@
 ---
-description: Shopify AI Toolkit MCP (docs/schema) + mitipi-2 Admin API for lurafi
+description: Shopify AI Toolkit MCP (docs/schema) + 6mzhe1-yf Admin API for lurafi
 globs: scripts/**/*,**/*.{liquid,json}
 alwaysApply: false
 ---
@@ -49,11 +49,11 @@ Server id in Cursor may appear as `shopify-dev-mcp` or `user-shopify-dev-mcp` (M
 
 ---
 
-## Option B — mitipi-2 Admin API (theme, products, locales)
+## Option B — 6mzhe1-yf Admin API (theme, products, locales)
 
 Live store operations use gitignored `.env` and repo scripts — not the docs-only MCP.
 
-- Store: `mitipi-2.myshopify.com` (primary domain `lurafi.com`).
+- Store: `6mzhe1-yf.myshopify.com` (primary domain `lurafi.com`; `mitipi-2.myshopify.com` is a connected alias only).
 - Token: `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` → `./scripts/shopify-refresh-admin-token.sh`, or auto-refresh in `scripts/lib/shopify-admin-gql.mjs`.
 - Product mutations need lurafi app scope `write_products` (see `docs/FIX-LURAFI-APP-AND-PRODUCTS.md`).
-- Theme push: `npm run shopify:publish:mitipi` / Shopify CLI with `SHOPIFY_FLAG_STORE=mitipi-2.myshopify.com`.
+- Theme push: `npm run shopify:publish:mitipi` / Shopify CLI with `SHOPIFY_FLAG_STORE=6mzhe1-yf.myshopify.com`.
