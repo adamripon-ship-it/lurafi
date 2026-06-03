@@ -125,7 +125,7 @@ Important URLs:
 - Subscribe: ${sub}
 
 Contact:
-- Email: hello@lurafi.ai
+- Email: hello@lurafi.com
 `;
 }
 
@@ -212,7 +212,7 @@ Important URLs:
 ${links}
 
 Contact:
-- Email: hello@lurafi.ai
+- Email: hello@lurafi.com
 `;
   fs.writeFileSync(path.join(root, 'assets/llms.txt'), txt);
 }
@@ -220,6 +220,10 @@ Contact:
 function updateEnFull() {
   const shortUrl = buildThemeAssetUrl('llms.txt', domain);
   let full = fs.readFileSync(enFullPath, 'utf8');
+  // Self-heal legacy domain/email drift baked into the EN template.
+  full = full
+    .replace(/https:\/\/lurafi\.ai\b/g, `https://${domain}`)
+    .replace(/hello@lurafi\.ai\b/g, 'hello@lurafi.com');
   if (!full.includes('> Short summary:')) {
     full = full.replace(
       '# Lurafi / Kevin: Full LLM and AI Search Summary',

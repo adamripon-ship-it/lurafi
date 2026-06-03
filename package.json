@@ -26,9 +26,12 @@
     "qa:mitipi:backend": "node scripts/qa-mitipi-backend.mjs",
     "qa:mitipi:browser": "LURAFI_URL=https://lurafi.com node scripts/browser-qa.mjs",
     "qa:mitipi:audit": "LURAFI_URL=https://lurafi.com node scripts/full-site-audit.mjs",
-    "qa:i18n": "node scripts/i18n-browser-qa.mjs"
+    "qa:i18n": "node scripts/i18n-browser-qa.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:live": "LURAFI_URL=https://lurafi.com playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@shopify/cli": "^3.84.0",
     "playwright": "^1.52.0"
   },

@@ -85,6 +85,8 @@
             width="420"
             height="420"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
           >
           <p class="configure-gallery__chip">
             <span class="configure-gallery__chip-dot" data-configure-chip-dot aria-hidden="true"></span>
@@ -112,7 +114,7 @@
                 {%- if buy_product != blank -%}
                   {{ buy_product.price | money }}
                 {%- else -%}
-                  649 <span>CHF</span>
+                  649 <span>EUR</span>
                 {%- endif -%}
               </p>
             </button>
@@ -131,7 +133,7 @@
                 {%- if sub_product != blank -%}
                   {{ sub_product.price | money }}<span>/mo</span>
                 {%- else -%}
-                  12.90 <span>CHF/mo</span>
+                  12.90 <span>EUR/mo</span>
                 {%- endif -%}
               </p>
             </button>

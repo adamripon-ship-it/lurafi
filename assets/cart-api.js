@@ -21,6 +21,45 @@
     return (cents / 100).toFixed(2);
   }
 
+  // GA4 / GTM-compatible e-commerce event abstraction.
+  // Pushes to window.dataLayer and dispatches a DOM CustomEvent so any
+  // analytics provider (GTM, Shopify Custom Pixel, Segment) can subscribe.
+  function trackEcommerce(eventName, cart, extra) {
+    try {
+      var currency =
+        (window.Shopify && Shopify.currency && Shopify.currency.active) ||
+        (cart && cart.currency) ||
+        'EUR';
+      var items = ((cart && cart.items) || []).map(function (item, index) {
+        return {
+          item_id: String(item.product_id || item.id || ''),
+          item_name: item.product_title || item.title || '',
+          item_variant: item.variant_title || '',
+          price: (item.final_price != null ? item.final_price : item.price || 0) / 100,
+          quantity: item.quantity || 1,
+          index: index
+        };
+      });
+      var payload = Object.assign(
+        {
+          event: eventName,
+          ecommerce: {
+            currency: currency,
+            value: cart && cart.total_price != null ? cart.total_price / 100 : undefined,
+            items: items
+          }
+        },
+        extra || {}
+      );
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ ecommerce: null });
+      window.dataLayer.push(payload);
+      document.dispatchEvent(new CustomEvent('lurafi:' + eventName, { detail: payload }));
+    } catch (e) {
+      /* analytics must never block commerce */
+    }
+  }
+
   async function request(url, options) {
     var res = await fetch(url, options);
     if (!res.ok) {
@@ -167,6 +206,7 @@
 
   window.LurafiCart = {
     formatMoney: formatMoney,
+    track: trackEcommerce,
     openDrawer: openDrawer,
     closeDrawer: closeDrawer,
 
@@ -185,6 +225,7 @@
         return window.LurafiCart.get();
       }).then(function (cart) {
         updateCartCount(cart.item_count);
+        trackEcommerce('add_to_cart', cart);
         if (options.openDrawer) {
           openDrawer(cart);
         }
@@ -218,8 +259,10 @@
       return self.clear().then(function () {
         return self.add([item]);
       }).then(function (cart) {
+        trackEcommerce('begin_checkout', cart);
         window.location.href = '/checkout';
       }).catch(function () {
+        trackEcommerce('begin_checkout', { items: [], total_price: 0 });
         redirectWithCartPermalink();
       });
     },

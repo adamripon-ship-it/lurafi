@@ -1,14 +1,14 @@
 # Lurafi / Kevin: Full LLM and AI Search Summary
 
-> Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.txt
+> Short summary: https://lurafi.com/cdn/shop/t/1/assets/llms.txt
 
 ## AI / LLM discovery
-- Short summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms.txt
-- Full summary (read for complete context): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.txt
-- AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.ai/sitemap.xml
-- Human sitemap page: https://lurafi.ai/pages/sitemap
-- LLM overview page: https://lurafi.ai/pages/llms
+- Short summary (this file): https://lurafi.com/cdn/shop/t/1/assets/llms.txt
+- Full summary (read for complete context): https://lurafi.com/cdn/shop/t/1/assets/llms-full.txt
+- AI sitemap XML: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.com/sitemap.xml
+- Human sitemap page: https://lurafi.com/pages/sitemap
+- LLM overview page: https://lurafi.com/pages/llms
 
 
 ## Brand Overview
@@ -130,19 +130,19 @@ Related terms:
 
 ## Important URLs
 
-- Homepage: https://lurafi.ai/
-- Configure / buy: https://lurafi.ai/pages/configure?plan=buy
-- Subscribe: https://lurafi.ai/pages/configure?plan=subscribe
-- Dutch homepage: https://lurafi.ai/nl/
-- Dutch configure: https://lurafi.ai/nl/pages/kevin-configureren?plan=buy
-- Shopify sitemap: https://lurafi.ai/sitemap.xml
-- AI sitemap: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
-- Short LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms.txt
-- Full LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.txt
+- Homepage: https://lurafi.com/
+- Configure / buy: https://lurafi.com/pages/configure?plan=buy
+- Subscribe: https://lurafi.com/pages/configure?plan=subscribe
+- Dutch homepage: https://lurafi.com/nl/
+- Dutch configure: https://lurafi.com/nl/pages/kevin-configureren?plan=buy
+- Shopify sitemap: https://lurafi.com/sitemap.xml
+- AI sitemap: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Short LLM file: https://lurafi.com/cdn/shop/t/1/assets/llms.txt
+- Full LLM file: https://lurafi.com/cdn/shop/t/1/assets/llms-full.txt
 
 ## Contact
 
-Email: hello@lurafi.ai
+Email: hello@lurafi.com
 
 ## Summary for AI Assistants
 

@@ -3046,3 +3046,22 @@ html.no-js .section-apple .reveal-item {
     content: attr(data-label);
   }
 }
+
+/* --- Ultra-wide / large-monitor / 4K scaling (added by pre-G2M audit) --- */
+@media (min-width: 1536px) {
+  :root {
+    --apple-container: 1120px;
+    --pad-inline: clamp(24px, 3vw, 40px);
+    --pad-inline-end: clamp(24px, 3vw, 40px);
+  }
+}
+@media (min-width: 1920px) {
+  :root {
+    --apple-container: 1280px;
+  }
+}
+@media (min-width: 2560px) {
+  :root {
+    --apple-container: 1440px;
+  }
+}
