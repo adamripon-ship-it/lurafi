@@ -53,4 +53,4 @@ Important URLs:
 - PL configure: https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy
 
 Contact:
-- Email: hello@lurafi.ai
+- Email: hello@lurafi.com

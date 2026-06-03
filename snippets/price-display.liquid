@@ -1,6 +1,6 @@
 {%- comment -%}
   @param product {Product}
-  @param fallback {String} e.g. "649 CHF"
+  @param fallback {String} e.g. "649 EUR"
 {%- endcomment -%}
 {%- if product != blank -%}
   <span data-countup>{{ product.price | money }}</span>

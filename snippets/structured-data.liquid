@@ -8,9 +8,10 @@
     render 'configure-url', plan: 'buy'
   endcapture
   assign configure_buy_url = configure_buy_url | strip
+  assign offer_currency = cart.currency.iso_code | default: shop.currency
   assign offer_price = 649
   if buy_product != blank
-    assign offer_price = buy_product.price | divided_by: 100
+    assign offer_price = buy_product.price | divided_by: 100.0
   endif
   assign offer_availability = 'https://schema.org/PreOrder'
   if buy_product != blank and buy_product.available
@@ -53,8 +54,8 @@
   "offers": {
     "@type": "Offer",
     "url": {{ shop.url | append: configure_buy_url | json }},
-    "priceCurrency": "CHF",
-    "price": {{ offer_price }},
+    "priceCurrency": {{ offer_currency | json }},
+    "price": {{ offer_price | json }},
     "availability": {{ offer_availability | json }}
   }
 }

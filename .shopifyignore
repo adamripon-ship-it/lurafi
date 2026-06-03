@@ -2,11 +2,17 @@
 .github/
 docs/
 scripts/
+tests/
+playwright.config.js
 node_modules/
 package.json
 package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
 .env
 .env.*
 README.md
 SECURITY.md
+CONTRIBUTING.md
+AGENTS.md
 .editorconfig

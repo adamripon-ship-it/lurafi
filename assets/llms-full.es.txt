@@ -11,15 +11,15 @@
 - LLM overview page: https://lurafi.com/es/pages/resumen-ia
 
 
-> Short summary: https://lurafi.com/es/cdn/shop/t/1/assets/llms.es.txt
+> Short summary: https://lurafi.com/cdn/shop/t/1/assets/llms.es.txt
 
 ## AI / LLM discovery
-- Short summary (this file): https://lurafi.com/es/cdn/shop/t/1/assets/llms.es.txt
-- Full summary (read for complete context): https://lurafi.com/es/cdn/shop/t/1/assets/llms-full.es.txt
-- AI sitemap XML: https://lurafi.com/es/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.com/es/sitemap.xml
-- Human sitemap page: https://lurafi.com/es/pages/sitemap
-- LLM overview page: https://lurafi.com/es/pages/llms
+- Short summary (this file): https://lurafi.com/cdn/shop/t/1/assets/llms.es.txt
+- Full summary (read for complete context): https://lurafi.com/cdn/shop/t/1/assets/llms-full.es.txt
+- AI sitemap XML: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.com/sitemap.xml
+- Human sitemap page: https://lurafi.com/pages/sitemap
+- LLM overview page: https://lurafi.com/pages/llms
 
 
 ## Brand Overview
@@ -143,17 +143,17 @@ Related terms:
 - Full LLM file: https://lurafi.com/cdn/shop/t/1/assets/llms-full.es.txt
 ## Important URLs
 
-- Homepage: https://lurafi.com/es/
-- Configure / buy: https://lurafi.com/es/pages/configure?plan=buy
-- Subscribe: https://lurafi.com/es/pages/configure?plan=subscribe
-- Dutch homepage: https://lurafi.com/es/nl/
-- Dutch configure: https://lurafi.com/es/nl/pages/kevin-configureren?plan=buy
-- Shopify sitemap: https://lurafi.com/es/sitemap.xml
-- AI sitemap: https://lurafi.com/es/cdn/shop/t/1/assets/sitemap-ai.xml
+- Homepage: https://lurafi.com/
+- Configure / buy: https://lurafi.com/pages/configure?plan=buy
+- Subscribe: https://lurafi.com/pages/configure?plan=subscribe
+- Dutch homepage: https://lurafi.com/nl/
+- Dutch configure: https://lurafi.com/nl/pages/kevin-configureren?plan=buy
+- Shopify sitemap: https://lurafi.com/sitemap.xml
+- AI sitemap: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
 
 ## Contact
 
-Email: hello@lurafi.ai
+Email: hello@lurafi.com
 
 ## Summary for AI Assistants
 

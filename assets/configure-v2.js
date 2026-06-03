@@ -338,7 +338,27 @@
     return n > 0 && Number.isFinite(n);
   }
 
-  function goToCartPermalink(item) {
+  function trackBeginCheckout(variant, item) {
+    if (!window.LurafiCart || typeof window.LurafiCart.track !== 'function') return;
+    var unitPrice = variant && variant.price != null ? variant.price : 0;
+    window.LurafiCart.track('begin_checkout', {
+      items: [
+        {
+          product_id: variant && variant.product_id,
+          id: variant && variant.id,
+          product_title: (variant && variant.product_title) || 'Kevin',
+          variant_title: (variant && variant.color) || '',
+          final_price: unitPrice,
+          price: unitPrice,
+          quantity: item.quantity || 1
+        }
+      ],
+      total_price: unitPrice * (item.quantity || 1)
+    }, { plan: state.plan });
+  }
+
+  function goToCartPermalink(item, variant) {
+    trackBeginCheckout(variant, item);
     var quantity = Number(item.quantity) || 1;
     var url = '/cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity) + '?checkout';
     if (item.selling_plan) {
@@ -384,7 +404,7 @@
         item.selling_plan = state.sellingPlanId;
       }
 
-      goToCartPermalink(item);
+      goToCartPermalink(item, variant);
     });
   });
 

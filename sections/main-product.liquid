@@ -114,6 +114,8 @@
 
 <script type="application/json" data-product-json>{{ product | json }}</script>
 
+{% render 'structured-data-product', product: product %}
+
 {% schema %}
 { "name": "Product", "settings": [] }
 {% endschema %}

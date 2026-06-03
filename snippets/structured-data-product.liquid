@@ -1,0 +1,32 @@
+{%- comment -%}
+  Product JSON-LD for the product detail page.
+  @param product {Product}
+{%- endcomment -%}
+{%- liquid
+  assign p = product
+  assign v = p.selected_or_first_available_variant
+  assign product_currency = cart.currency.iso_code | default: shop.currency
+  assign next_year = 'now' | date: '%Y' | plus: 1
+-%}
+{%- if p != blank -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": {{ p.title | json }},
+  "description": {{ p.description | strip_html | truncatewords: 50 | json }},
+  "image": [{{ p.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}],
+  "brand": { "@type": "Brand", "name": "Kevin" },
+  "sku": {{ v.sku | default: p.handle | json }},
+  "url": {{ shop.url | append: p.url | json }},
+  "offers": {
+    "@type": "Offer",
+    "url": {{ shop.url | append: p.url | json }},
+    "priceCurrency": {{ product_currency | json }},
+    "price": {{ v.price | divided_by: 100.0 | json }},
+    "availability": "{% if v.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "priceValidUntil": {{ next_year | append: '-12-31' | json }}
+  }
+}
+</script>
+{%- endif -%}
