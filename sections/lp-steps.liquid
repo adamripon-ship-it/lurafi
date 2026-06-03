@@ -1,36 +1,56 @@
+{%- liquid
+  assign steps_image = section.settings.image
+  assign steps_image_fallback = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+  assign steps_image_alt = section.settings.image_alt
+  if steps_image_alt == blank
+    assign steps_image_alt = 'home.steps.image_alt' | t
+  endif
+-%}
+
 <section id="product" class="section-apple bg-gray">
   <div class="apple-container">
-    <p class="overline-blue">{{ 'home.steps.overline' | t: default: section.settings.overline }}</p>
-    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ 'home.steps.heading' | t: default: section.settings.heading }}</h2>
-    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 64px">{{ 'home.steps.subheading' | t: default: section.settings.subheading }}</p>
+    <p class="overline-blue">{{ section.settings.overline | default: 'home.steps.overline' | t }}</p>
+    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ section.settings.heading | default: 'home.steps.heading' | t }}</h2>
+    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 64px">{{ section.settings.subheading | default: 'home.steps.subheading' | t }}</p>
 
     <div class="tile-grid-3" style="margin-bottom:56px">
       <div class="tile tile--white text-center">
         <p class="step-num" data-countup>1</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.steps.step_1_title' | t: default: section.settings.step_1_title }}</h3>
-        <p class="body-standard text-muted">{{ 'home.steps.step_1_body' | t: default: section.settings.step_1_body }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.step_1_title | default: 'home.steps.step_1_title' | t }}</h3>
+        <p class="body-standard text-muted">{{ section.settings.step_1_body | default: 'home.steps.step_1_body' | t }}</p>
       </div>
       <div class="tile tile--white text-center">
         <p class="step-num" data-countup>2</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.steps.step_2_title' | t: default: section.settings.step_2_title }}</h3>
-        <p class="body-standard text-muted">{{ 'home.steps.step_2_body' | t: default: section.settings.step_2_body }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.step_2_title | default: 'home.steps.step_2_title' | t }}</h3>
+        <p class="body-standard text-muted">{{ section.settings.step_2_body | default: 'home.steps.step_2_body' | t }}</p>
       </div>
       <div class="tile tile--white text-center">
         <p class="step-num" data-countup>3</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.steps.step_3_title' | t: default: section.settings.step_3_title }}</h3>
-        <p class="body-standard text-muted">{{ 'home.steps.step_3_body' | t: default: section.settings.step_3_body }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.step_3_title | default: 'home.steps.step_3_title' | t }}</h3>
+        <p class="body-standard text-muted">{{ section.settings.step_3_body | default: 'home.steps.step_3_body' | t }}</p>
       </div>
     </div>
 
     <div style="display:flex;justify-content:center;margin-bottom:40px">
-      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp" alt="Kevin device" width="400" height="320" style="max-width:400px;width:100%" loading="lazy">
+      {%- if steps_image -%}
+        <img
+          src="{{ steps_image | image_url: width: 800 }}"
+          alt="{{ steps_image.alt | default: steps_image_alt | escape }}"
+          width="{{ steps_image.width | default: 400 }}"
+          height="{{ steps_image.height | default: 320 }}"
+          style="max-width:400px;width:100%"
+          loading="lazy"
+        >
+      {%- else -%}
+        <img src="{{ steps_image_fallback }}" alt="{{ steps_image_alt | escape }}" width="400" height="320" style="max-width:400px;width:100%" loading="lazy">
+      {%- endif -%}
     </div>
 
     <div class="stats-row" data-countup-duration="1100">
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_1_value' | t: default: section.settings.stat_1_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_1_label' | t: default: section.settings.stat_1_label }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_2_value' | t: default: section.settings.stat_2_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_2_label' | t: default: section.settings.stat_2_label }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_3_value' | t: default: section.settings.stat_3_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_3_label' | t: default: section.settings.stat_3_label }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.steps.stat_4_value' | t: default: section.settings.stat_4_value }}</p><p class="stat-item__label">{{ 'home.steps.stat_4_label' | t: default: section.settings.stat_4_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_1_value | default: 'home.steps.stat_1_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_1_label | default: 'home.steps.stat_1_label' | t }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_2_value | default: 'home.steps.stat_2_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_2_label | default: 'home.steps.stat_2_label' | t }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_3_value | default: 'home.steps.stat_3_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_3_label | default: 'home.steps.stat_3_label' | t }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_4_value | default: 'home.steps.stat_4_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_4_label | default: 'home.steps.stat_4_label' | t }}</p></div>
     </div>
   </div>
 </section>
@@ -40,17 +60,48 @@
   "name": "How it works",
   "settings": [
     { "type": "text", "id": "overline", "label": "Overline", "default": "The Plan" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Three steps. Zero complexity." },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "No installation. No wiring. Plug in, set your routine, and let Swiss AI handle the rest—in under 60 seconds." },
-    { "type": "text", "id": "step_1_title", "label": "Step 1 title", "default": "Plug In" },
-    { "type": "textarea", "id": "step_1_body", "label": "Step 1 body", "default": "Place Kevin near a window. Connect to power. That is the only setup you will ever need." },
-    { "type": "text", "id": "step_2_title", "label": "Step 2 title", "default": "Set & Go" },
-    { "type": "textarea", "id": "step_2_body", "label": "Step 2 body", "default": "Use the app, schedules, or automatic activation when you leave. Protection follows your day—not the other way around." },
-    { "type": "text", "id": "step_3_title", "label": "Step 3 title", "default": "Live Protected" },
-    { "type": "textarea", "id": "step_3_body", "label": "Step 3 body", "default": "From this moment, your home never looks empty. Someone is always home." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Plug in. Set routines. Leave calmly." },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "No installation, no wiring, no monthly monitoring panel. Kevin starts with a simple setup and grows more useful through schedules, geofencing, and updates."
+    },
+    { "type": "text", "id": "step_1_title", "label": "Step 1 title", "default": "Place Kevin" },
+    {
+      "type": "textarea",
+      "id": "step_1_body",
+      "label": "Step 1 body",
+      "default": "Set it near a visible window with a wall or ceiling for shadows. Connect power and let the room become the stage."
+    },
+    { "type": "text", "id": "step_2_title", "label": "Step 2 title", "default": "Set your routine" },
+    {
+      "type": "textarea",
+      "id": "step_2_body",
+      "label": "Step 2 body",
+      "default": "Use the app for weekly schedules, holiday mode, or geo-aware activation when you leave the area."
+    },
+    { "type": "text", "id": "step_3_title", "label": "Step 3 title", "default": "Stay believable" },
+    {
+      "type": "textarea",
+      "id": "step_3_body",
+      "label": "Step 3 body",
+      "default": "Kevin plays varied light and sound scenarios from local storage, so your routines are not streamed from the cloud or shared with third parties."
+    },
+    {
+      "type": "header",
+      "content": "Section image"
+    },
+    { "type": "image_picker", "id": "image", "label": "Kevin device image" },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Kevin device"
+    },
     { "type": "text", "id": "stat_1_value", "label": "Stat 1 value", "default": "60s" },
     { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "Setup time" },
-    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "0" },
+    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "1" },
     { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "Wires needed" },
     { "type": "text", "id": "stat_3_value", "label": "Stat 3 value", "default": "100%" },
     { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "Privacy" },

@@ -5,11 +5,11 @@
 
 <section class="section-apple bg-black">
   <div class="apple-container text-center">
-    <h2 class="headline-section text-white" style="margin-bottom:16px">{{ 'home.cta.heading' | t: default: section.settings.heading }}</h2>
-    <p class="body-elevated text-muted-dark" style="max-width:500px;margin:0 auto 32px">{{ 'home.cta.subheading' | t: default: section.settings.subheading }}</p>
+    <h2 class="headline-section text-white" style="margin-bottom:16px">{{ section.settings.heading | default: 'home.cta.heading' | t }}</h2>
+    <p class="body-elevated text-muted-dark" style="max-width:500px;margin:0 auto 32px">{{ section.settings.subheading | default: 'home.cta.subheading' | t }}</p>
     <div class="cta-row">
-      <a href="{{ configure_url }}" class="cta-white-btn">{{ 'home.cta.primary_cta' | t: default: section.settings.primary_cta }}</a>
-      <a href="{{ routes.root_url }}#how-it-works" class="cta-outline-btn">{{ 'home.cta.secondary_cta' | t: default: section.settings.secondary_cta }}</a>
+      <a href="{{ configure_url }}" class="cta-white-btn">{{ section.settings.primary_cta | default: 'home.cta.primary_cta' | t }}</a>
+      <a href="{{ routes.root_url }}#how-it-works" class="cta-outline-btn">{{ section.settings.secondary_cta | default: 'home.cta.secondary_cta' | t }}</a>
     </div>
   </div>
 </section>

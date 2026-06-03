@@ -9,7 +9,18 @@
         "cta_primary_label": "Buy Kevin",
         "cta_primary_url": "",
         "cta_secondary_label": "How it works",
-        "cta_secondary_url": "#how-it-works"
+        "cta_secondary_url": "#how-it-works",
+        "image_alt": "Kevin presence simulation device",
+        "callouts_aria_label": "Kevin benefits",
+        "away_eyebrow": "Away mode",
+        "away_title": "Living room active",
+        "away_body": "Light, shadow, and sound vary automatically.",
+        "privacy_eyebrow": "Privacy",
+        "privacy_title": "No cameras. No mics.",
+        "privacy_body": "Simulation plays locally on the device.",
+        "checkout_eyebrow": "Checkout",
+        "checkout_title": "Free delivery",
+        "checkout_body": "Secure Shopify checkout."
       }
     },
     "problem": {
@@ -37,7 +48,8 @@
         "pillar_2_title": "Moving shadows",
         "pillar_2_body": "Projected silhouettes and shifting light suggest people moving through the space, without cameras or microphones.",
         "pillar_3_title": "Everyday sound",
-        "pillar_3_body": "Kitchen noise, TV ambience, footsteps, voices, and your own recordings help the simulation feel personal and less repetitive."
+        "pillar_3_body": "Kitchen noise, TV ambience, footsteps, voices, and your own recordings help the simulation feel personal and less repetitive.",
+        "image_alt": "Kevin presence simulation at night"
       }
     },
     "steps": {
@@ -59,7 +71,8 @@
         "stat_3_value": "100%",
         "stat_3_label": "Privacy",
         "stat_4_value": "24/7",
-        "stat_4_label": "Protection"
+        "stat_4_label": "Protection",
+        "image_alt": "Kevin device"
       }
     },
     "app": {
@@ -75,7 +88,9 @@
         "tile_3_title": "Your own sounds",
         "tile_3_body": "Upload recordings and tag them by room or activity so the simulation can sound more like your household.",
         "tile_4_title": "Multiple places",
-        "tile_4_body": "Use more than one Kevin for apartments, extra floors, offices, or second homes that should not feel abandoned."
+        "tile_4_body": "Use more than one Kevin for apartments, extra floors, offices, or second homes that should not feel abandoned.",
+        "phone_1_alt": "Kevin app dashboard",
+        "phone_2_alt": "Kevin app schedule"
       }
     },
     "personas": {

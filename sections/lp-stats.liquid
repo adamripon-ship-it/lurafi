@@ -1,11 +1,11 @@
 <section class="stats-section section-apple bg-white">
   <div class="apple-container">
-    <h2 class="headline-section text-center" style="margin-bottom:56px">{{ 'home.stats.heading' | t: default: section.settings.heading }}</h2>
+    <h2 class="headline-section text-center" style="margin-bottom:56px">{{ section.settings.heading | default: 'home.stats.heading' | t }}</h2>
     <div class="stats-grid-4" data-countup-duration="1100">
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_1_value' | t: default: section.settings.stat_1_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_1_label' | t: default: section.settings.stat_1_label }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_2_value' | t: default: section.settings.stat_2_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_2_label' | t: default: section.settings.stat_2_label }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_3_value' | t: default: section.settings.stat_3_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_3_label' | t: default: section.settings.stat_3_label }}</p></div>
-      <div class="text-center"><p class="stat-item__value" data-countup>{{ 'home.stats.stat_4_value' | t: default: section.settings.stat_4_value }}</p><p class="stat-item__label">{{ 'home.stats.stat_4_label' | t: default: section.settings.stat_4_label }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_1_value | default: 'home.stats.stat_1_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_1_label | default: 'home.stats.stat_1_label' | t }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_2_value | default: 'home.stats.stat_2_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_2_label | default: 'home.stats.stat_2_label' | t }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_3_value | default: 'home.stats.stat_3_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_3_label | default: 'home.stats.stat_3_label' | t }}</p></div>
+      <div class="text-center"><p class="stat-item__value" data-countup>{{ section.settings.stat_4_value | default: 'home.stats.stat_4_value' | t }}</p><p class="stat-item__label">{{ section.settings.stat_4_label | default: 'home.stats.stat_4_label' | t }}</p></div>
     </div>
     <div class="trust-badges trust-badges--single">
       <span class="swiss-made-badge">

@@ -174,6 +174,7 @@
     "device_in": "Kevin in {{ color }}"
   },
   "hero": {
+    "callouts_aria_label": "Kevin-voordelen",
     "away_eyebrow": "Weg-modus",
     "away_title": "Woonkamer actief",
     "away_body": "Licht, schaduw en geluid variëren automatisch.",
@@ -192,7 +193,18 @@
       "cta_primary_label": "Koop Kevin",
       "cta_primary_url": "",
       "cta_secondary_label": "Hoe het werkt",
-      "cta_secondary_url": "#how-it-works"
+      "cta_secondary_url": "#how-it-works",
+      "image_alt": "Kevin presence simulation device",
+      "callouts_aria_label": "Kevin benefits",
+      "away_eyebrow": "Away mode",
+      "away_title": "Living room active",
+      "away_body": "Light, shadow, and sound vary automatically.",
+      "privacy_eyebrow": "Privacy",
+      "privacy_title": "No cameras. No mics.",
+      "privacy_body": "Simulation plays locally on the device.",
+      "checkout_eyebrow": "Checkout",
+      "checkout_title": "Free delivery",
+      "checkout_body": "Secure Shopify checkout."
     },
     "problem": {
       "overline": "Het probleem",
@@ -214,7 +226,8 @@
       "pillar_2_title": "Bewegende schaduwen",
       "pillar_2_body": "Geprojecteerde silhouetten en verschuivend licht suggereren mensen in de ruimte, zonder camera’s of microfoons.",
       "pillar_3_title": "Alledaags geluid",
-      "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief."
+      "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief.",
+      "image_alt": "Kevin presence simulation at night"
     },
     "steps": {
       "overline": "Het plan",
@@ -233,7 +246,8 @@
       "stat_3_value": "100%",
       "stat_3_label": "Privacy",
       "stat_4_value": "24/7",
-      "stat_4_label": "Bescherming"
+      "stat_4_label": "Bescherming",
+      "image_alt": "Kevin device"
     },
     "app": {
       "overline": "Kevin-app",
@@ -246,7 +260,9 @@
       "tile_3_title": "Je eigen geluiden",
       "tile_3_body": "Upload opnames en label ze per kamer of activiteit zodat de simulatie meer op jouw huishouden klinkt.",
       "tile_4_title": "Meerdere locaties",
-      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken."
+      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken.",
+      "phone_1_alt": "Kevin app dashboard",
+      "phone_2_alt": "Kevin app schedule"
     },
     "personas": {
       "overline": "Gemaakt voor jou",
@@ -403,8 +419,7 @@
   },
   "errors": {
     "not_found_title": "Pagina niet gevonden",
-    "not_found_body": "De pagina die je zoekt bestaat niet.",
-    "back_home": "Back to home"
+    "not_found_body": "De pagina die je zoekt bestaat niet."
   },
   "spec_row": {
     "dimensions_label": "Afmeting",

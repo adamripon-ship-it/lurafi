@@ -1,20 +1,20 @@
 <section id="problem" class="section-apple bg-white">
   <div class="apple-container">
-    <p class="overline-blue">{{ 'home.problem.overline' | t: default: section.settings.overline }}</p>
-    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ 'home.problem.heading' | t: default: section.settings.heading }}</h2>
-    <p class="body-elevated text-muted text-center" style="max-width:600px;margin:0 auto 64px">{{ 'home.problem.subheading' | t: default: section.settings.subheading }}</p>
+    <p class="overline-blue">{{ section.settings.overline | default: 'home.problem.overline' | t }}</p>
+    <h2 class="headline-section text-center" style="margin-bottom:16px">{{ section.settings.heading | default: 'home.problem.heading' | t }}</h2>
+    <p class="body-elevated text-muted text-center" style="max-width:600px;margin:0 auto 64px">{{ section.settings.subheading | default: 'home.problem.subheading' | t }}</p>
     <div class="tile-grid-3">
       <div class="tile tile--gray text-center">
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.problem.tile_1_title' | t: default: section.settings.tile_1_title }}</h3>
-        <p class="body-standard text-muted">{{ 'home.problem.tile_1_body' | t: default: section.settings.tile_1_body }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.tile_1_title | default: 'home.problem.tile_1_title' | t }}</h3>
+        <p class="body-standard text-muted">{{ section.settings.tile_1_body | default: 'home.problem.tile_1_body' | t }}</p>
       </div>
       <div class="tile tile--gray text-center">
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.problem.tile_2_title' | t: default: section.settings.tile_2_title }}</h3>
-        <p class="body-standard text-muted">{{ 'home.problem.tile_2_body' | t: default: section.settings.tile_2_body }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.tile_2_title | default: 'home.problem.tile_2_title' | t }}</h3>
+        <p class="body-standard text-muted">{{ section.settings.tile_2_body | default: 'home.problem.tile_2_body' | t }}</p>
       </div>
       <div class="tile tile--gray text-center">
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ 'home.problem.tile_3_title' | t: default: section.settings.tile_3_title }}</h3>
-        <p class="body-standard text-muted">{{ 'home.problem.tile_3_body' | t: default: section.settings.tile_3_body }}</p>
+        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{{ section.settings.tile_3_title | default: 'home.problem.tile_3_title' | t }}</h3>
+        <p class="body-standard text-muted">{{ section.settings.tile_3_body | default: 'home.problem.tile_3_body' | t }}</p>
       </div>
     </div>
   </div>

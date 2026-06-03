@@ -159,6 +159,7 @@ const en = {
     device_alt: 'Kevin device'
   },
   hero: {
+    callouts_aria_label: 'Kevin benefits',
     away_eyebrow: 'Away mode',
     away_title: 'Living room active',
     away_body: 'Light, shadow, and sound vary automatically.',
@@ -580,6 +581,7 @@ nl.configure = {
   device_alt: 'Kevin-apparaat'
 };
 nl.hero = {
+  callouts_aria_label: 'Kevin-voordelen',
   away_eyebrow: 'Weg-modus',
   away_title: 'Woonkamer actief',
   away_body: 'Licht, schaduw en geluid variëren automatisch.',

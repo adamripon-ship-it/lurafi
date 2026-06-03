@@ -58,5 +58,16 @@
         "label": "Favicon"
       }
     ]
+  },
+  {
+    "name": "Social sharing",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "default_share_image",
+        "label": "Default Open Graph image",
+        "info": "Used when a page has no featured image. Falls back to the hero device image URL if empty."
+      }
+    ]
   }
 ]

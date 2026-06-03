@@ -57,6 +57,9 @@
   endcase
 
   assign lurafi_og_image = page_image
+  if lurafi_og_image == blank and settings.default_share_image != blank
+    assign lurafi_og_image = settings.default_share_image
+  endif
   if lurafi_og_image == blank and settings.favicon != blank
     assign lurafi_og_image = settings.favicon
   endif
