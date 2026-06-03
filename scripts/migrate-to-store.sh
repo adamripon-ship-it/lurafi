@@ -54,13 +54,17 @@ if [[ -n "${TOKEN}" ]] && ! shopify_token_is_placeholder "${TOKEN}"; then
   echo "  Verifying with: shopify theme list -s ${STORE} --password [REDACTED]"
   theme_cli theme list -s "$STORE"
 else
-  echo "Step 0: Browser OAuth (no SHOPIFY_ADMIN_TOKEN in .env)"
-  echo "  If you see Unauthorized Access, use token auth instead:"
-  echo "    Add SHOPIFY_ADMIN_TOKEN to .env, then re-run this script."
-  echo "    ./scripts/auth-with-token.sh ${STORE}"
-  echo ""
-  shopify store auth --store "$STORE" --scopes "$AUTH_SCOPES"
-  theme_cli theme list -s "$STORE"
+  echo "Step 0: Theme CLI (no SHOPIFY_ADMIN_TOKEN in .env)"
+  if theme_cli theme list -s "$STORE" >/dev/null 2>&1; then
+    echo "  Theme CLI OK — skipping shopify store auth (Admin steps need token or store auth)"
+    theme_cli theme list -s "$STORE"
+  else
+    echo "  Theme CLI failed — trying browser OAuth (or add SHOPIFY_ADMIN_TOKEN to .env)"
+    echo "    ./scripts/auth-with-token.sh ${STORE}"
+    echo ""
+    shopify store auth --store "$STORE" --scopes "$AUTH_SCOPES"
+    theme_cli theme list -s "$STORE"
+  fi
 fi
 
 echo ""
@@ -87,7 +91,12 @@ fi
 
 echo ""
 echo "Step 4: Admin locales, markets, pages, product translations"
-SHOPIFY_STORE="$STORE" PUBLISH="$PUBLISH" SHOPIFY_ADMIN_TOKEN="${TOKEN}" "$ROOT/scripts/activate-locales.sh"
+if ! SHOPIFY_STORE="$STORE" PUBLISH="$PUBLISH" SHOPIFY_ADMIN_TOKEN="${TOKEN}" "$ROOT/scripts/activate-locales.sh"; then
+  echo ""
+  echo "WARN: Step 4 did not complete — Admin API needs SHOPIFY_ADMIN_TOKEN in .env or:"
+  echo "  shopify store auth --store ${STORE} --scopes ${AUTH_SCOPES}"
+  echo "  Then: SHOPIFY_STORE=${STORE} ./scripts/activate-locales.sh"
+fi
 
 echo ""
 echo "=== Automated steps complete ==="
