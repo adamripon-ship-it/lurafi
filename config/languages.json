@@ -8,6 +8,7 @@
     "llmsFull": "llms-full.txt",
     "aiSitemap": "sitemap-ai.xml"
   },
+  "publishedCountries": ["DE", "FR", "IE", "NL", "CZ"],
   "locales": [
     {
       "code": "en",
@@ -98,6 +99,33 @@
           "body_html": "<p>Kevin+ enthält das Kevin-Gerät mit monatlichem Abo für Premium-KI-Präsenzsimulationen und laufende Updates.</p>",
           "meta_title": "Kevin+ — Monatsabo",
           "meta_description": "Kevin-Gerät inklusive, Monatsabo, Premium-Bibliothek und Hardware-Ersatz."
+        }
+      }
+    },
+    {
+      "code": "cs",
+      "shopifyLocale": "cs",
+      "label": "CS",
+      "nativeName": "Čeština",
+      "ogLocale": "cs_CZ",
+      "urlPrefix": "/cs",
+      "publish": true,
+      "llmAssets": true,
+      "pages": {
+        "configure": { "handle": "konfigurovat-kevin", "title": "Konfigurace", "body": "<p>Nakonfigurujte svůj Kevin.</p>" },
+        "sitemap": { "handle": "prehled-stranek", "title": "Přehled stránek", "body": "<p>Přehled webu</p>" },
+        "llms": { "handle": "ai-prehled", "title": "AI přehled", "body": "<p>AI čitelné shrnutí webu</p>" }
+      },
+      "products": {
+        "kevin": {
+          "body_html": "<p>Kevin je švýcarský simulátor přítomnosti, který pomocí světla, stínu a zvuku vytváří dojem, že je doma někdo, když jste pryč.</p>",
+          "meta_title": "Kevin — Simulátor přítomnosti",
+          "meta_description": "Švýcarská AI simulace přítomnosti světlem, stínem a zvukem. Váš domov bude působit obydleně, když jste pryč."
+        },
+        "kevin-plus": {
+          "body_html": "<p>Kevin+ zahrnuje zařízení Kevin s měsíčním předplatným pro prémiové AI simulace přítomnosti a průběžné aktualizace.</p>",
+          "meta_title": "Kevin+ — Měsíční předplatné",
+          "meta_description": "Zařízení Kevin v ceně, měsíční předplatné, prémiová knihovna a výměna hardwaru."
         }
       }
     }

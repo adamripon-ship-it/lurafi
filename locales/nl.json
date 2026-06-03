@@ -28,7 +28,8 @@
     "en": "EN",
     "nl": "NL",
     "fr": "FR",
-    "de": "DE"
+    "de": "DE",
+    "cs": "CS"
   },
   "country": {
     "label": "Country / region"

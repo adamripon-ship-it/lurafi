@@ -45,6 +45,11 @@ export function getLanguageLabels() {
   return labels;
 }
 
+export function getPublishedCountries() {
+  const cfg = loadLanguagesConfig();
+  return cfg.publishedCountries || [];
+}
+
 export function localeUrlPrefix(code) {
   const loc = getLocale(code);
   if (!loc || !loc.urlPrefix) return '';

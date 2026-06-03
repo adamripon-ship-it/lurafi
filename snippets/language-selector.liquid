@@ -8,12 +8,20 @@
   comment
     LURAFI_PUBLISHED_LOCALES — updated by npm run locales:build
   endcomment
-  assign lurafi_published_locale_csv = ',en,nl,fr,de,'
+  assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
+  assign lurafi_published_country_csv = ',DE,FR,IE,NL,CZ,'
   assign form_id = form_id | default: 'LocalizationForm'
   assign selector_id = selector_id | default: 'LanguageSelector'
   assign country_selector_id = country_selector_id | default: 'CountrySelector'
+  assign published_country_count = 0
+  for country in localization.available_countries
+    assign country_token = ',' | append: country.iso_code | append: ','
+    if lurafi_published_country_csv contains country_token
+      assign published_country_count = published_country_count | plus: 1
+    endif
+  endfor
   assign show_country = false
-  if localization.available_countries.size > 1
+  if published_country_count > 1
     assign show_country = true
   endif
   assign published_language_count = 0
@@ -73,14 +81,17 @@
           autocomplete="country"
         >
           {%- for country in localization.available_countries -%}
-            <option
-              value="{{ country.iso_code }}"
-              {% if country.iso_code == localization.country.iso_code %}
-                selected
-              {% endif %}
-            >
-              {{ country.name }} ({{ country.currency.iso_code }})
-            </option>
+            {%- assign country_token = ',' | append: country.iso_code | append: ',' -%}
+            {%- if lurafi_published_country_csv contains country_token -%}
+              <option
+                value="{{ country.iso_code }}"
+                {% if country.iso_code == localization.country.iso_code %}
+                  selected
+                {% endif %}
+              >
+                {{ country.name }} ({{ country.currency.iso_code }})
+              </option>
+            {%- endif -%}
           {%- endfor -%}
         </select>
       {%- endif -%}

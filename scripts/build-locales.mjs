@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { getLanguageLabels, getPublishedLocales } from './i18n/registry.mjs';
+import { getLanguageLabels, getPublishedCountries, getPublishedLocales } from './i18n/registry.mjs';
 import { customersEn, customersNl } from './customers-locale.mjs';
 
 const root = path.join(import.meta.dirname, '..');
@@ -770,5 +770,17 @@ for (const rel of [
   );
   fs.writeFileSync(filePath, text);
 }
+const publishedCountryCodes = getPublishedCountries().join(',');
+const countryCsv = publishedCountryCodes ? `,${publishedCountryCodes},` : ',';
+const countryAssign = `assign lurafi_published_country_csv = '${countryCsv}'`;
+const languageSelectorPath = path.join(root, 'snippets/language-selector.liquid');
+let languageSelectorText = fs.readFileSync(languageSelectorPath, 'utf8');
+languageSelectorText = languageSelectorText.replace(
+  /assign lurafi_published_country_csv = '[^']*'/,
+  countryAssign,
+);
+fs.writeFileSync(languageSelectorPath, languageSelectorText);
+
 console.log('Wrote locales:', Object.keys(enFlat).length, 'keys');
 console.log('Published storefront locales:', publishedCodes);
+console.log('Published storefront countries:', publishedCountryCodes || '(all)');
