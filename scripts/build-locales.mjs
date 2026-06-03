@@ -750,12 +750,13 @@ fs.writeFileSync(path.join(root, 'locales/nl.json'), JSON.stringify(nlOut, null,
 const publishedCodes = getPublishedLocales()
   .map((l) => l.shopifyLocale || l.code)
   .join(',');
-const allowlistSnippet = `{%- comment -%} Auto-generated from config/languages.json — run npm run locales:build {%- endcomment -%}
-{%- assign lurafi_published_locale_codes = "${publishedCodes}" | split: "," -%}
-`;
-fs.writeFileSync(
-  path.join(root, 'snippets/lurafi-published-locales.liquid'),
-  allowlistSnippet,
+const themeLayoutPath = path.join(root, 'layout/theme.liquid');
+let themeLayout = fs.readFileSync(themeLayoutPath, 'utf8');
+const localeAssign = `assign lurafi_published_locale_codes = '${publishedCodes}' | split: ','`;
+themeLayout = themeLayout.replace(
+  /assign lurafi_published_locale_codes = '[^']*' \| split: ','/,
+  localeAssign,
 );
+fs.writeFileSync(themeLayoutPath, themeLayout);
 console.log('Wrote locales:', Object.keys(enFlat).length, 'keys');
 console.log('Published storefront locales:', publishedCodes);

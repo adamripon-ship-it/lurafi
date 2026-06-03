@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     {%- liquid
+      comment
+        LURAFI_PUBLISHED_LOCALES_START — updated by npm run locales:build
+      endcomment
+      assign lurafi_published_locale_codes = 'en,nl,fr,de' | split: ','
+      comment
+        LURAFI_PUBLISHED_LOCALES_END
+      endcomment
+
       assign show_configure = false
       if template.suffix == 'configure'
         assign show_configure = true

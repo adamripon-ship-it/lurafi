@@ -66,7 +66,6 @@
 
 <meta property="og:site_name" content="{{ shop.name }}">
 <meta property="og:locale" content="{{ og_locale }}">
-{%- render 'lurafi-published-locales' -%}
 {%- for language in localization.available_languages -%}
   {%- assign alt_lang_root = language.iso_code | split: '-' | first | downcase -%}
   {%- unless lurafi_published_locale_codes contains alt_lang_root -%}
