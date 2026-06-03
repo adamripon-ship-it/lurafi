@@ -5,20 +5,27 @@
 #   SHOPIFY_STORE=new-store.myshopify.com ./scripts/migrate-to-store.sh
 #   SHOPIFY_STORE=new-store.myshopify.com PUBLISH_THEME=1 ./scripts/migrate-to-store.sh
 #
-# Requires staff access on the destination store and Shopify CLI auth (see docs/MIGRATION.md).
+# Auth (pick one):
+#   A) SHOPIFY_ADMIN_TOKEN in .env — skips browser OAuth (recommended for mitipi-2)
+#   B) shopify store auth — interactive; fails with Unauthorized Access if wrong Shopify login
 
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
+# shellcheck source=scripts/lib/shopify-env.sh
+source "${ROOT}/scripts/lib/shopify-env.sh"
+shopify_load_dotenv
 
 OLD_STORE="${OLD_SHOPIFY_STORE:-fu03cn-1v.myshopify.com}"
 STORE="${SHOPIFY_STORE:-}"
 PUBLISH="${PUBLISH:-true}"
 PUBLISH_THEME="${PUBLISH_THEME:-0}"
+THEME_NAME="${SHOPIFY_THEME_NAME:-lurafi-deploy}"
+TOKEN="$(shopify_theme_password)"
 
 if [[ -z "$STORE" ]]; then
   echo "Error: set SHOPIFY_STORE to the destination store hostname."
-  echo "  Example: SHOPIFY_STORE=your-store.myshopify.com $0"
+  echo "  Example: SHOPIFY_STORE=mitipi-2.myshopify.com $0"
   exit 1
 fi
 
@@ -29,25 +36,31 @@ if [[ "$STORE" == "$OLD_STORE" ]]; then
 fi
 
 AUTH_SCOPES="read_themes,write_themes,read_locales,write_locales,read_translations,write_translations,read_content,write_content,read_online_store_pages,write_online_store_pages,read_markets,write_markets,read_products"
-TOKEN="${SHOPIFY_ADMIN_TOKEN:-${SHOPIFY_CLI_THEME_TOKEN:-}}"
-THEME_PASSWORD_ARGS=()
-if [[ -n "${TOKEN}" ]]; then
-  THEME_PASSWORD_ARGS=(--password "${TOKEN}")
-  echo "Using SHOPIFY_ADMIN_TOKEN (no browser OAuth)."
-else
-  echo "No SHOPIFY_ADMIN_TOKEN — will use browser OAuth (shopify store auth)."
-fi
+
+theme_cli() {
+  local -a args=("$@")
+  if [[ -n "${TOKEN}" ]] && ! shopify_token_is_placeholder "${TOKEN}"; then
+    shopify "${args[@]}" --password "${TOKEN}"
+  else
+    shopify "${args[@]}"
+  fi
+}
 
 echo "=== lurafi migration → $STORE ==="
 echo ""
-if [[ -z "${TOKEN}" ]]; then
-  echo "Step 0: Authenticate (approve in browser if prompted)"
-  echo "  shopify store auth --store $STORE --scopes $AUTH_SCOPES"
+
+if [[ -n "${TOKEN}" ]] && ! shopify_token_is_placeholder "${TOKEN}"; then
+  echo "Step 0: Token auth (SHOPIFY_ADMIN_TOKEN) — skipping shopify store auth"
+  echo "  Verifying with: shopify theme list -s ${STORE} --password [REDACTED]"
+  theme_cli theme list -s "$STORE"
+else
+  echo "Step 0: Browser OAuth (no SHOPIFY_ADMIN_TOKEN in .env)"
+  echo "  If you see Unauthorized Access, use token auth instead:"
+  echo "    Add SHOPIFY_ADMIN_TOKEN to .env, then re-run this script."
+  echo "    ./scripts/auth-with-token.sh ${STORE}"
   echo ""
   shopify store auth --store "$STORE" --scopes "$AUTH_SCOPES"
-else
-  echo "Step 0: Verify token"
-  shopify theme list -s "$STORE" "${THEME_PASSWORD_ARGS[@]}"
+  theme_cli theme list -s "$STORE"
 fi
 
 echo ""
@@ -62,19 +75,19 @@ npm run theme:check
 echo ""
 if [[ "$PUBLISH_THEME" == "1" ]]; then
   echo "Step 3: Push theme to LIVE (main) on $STORE"
-  shopify theme push -s "$STORE" "${THEME_PASSWORD_ARGS[@]}" --allow-live
+  theme_cli theme push -s "$STORE" --allow-live --theme "$THEME_NAME"
 else
-  echo "Step 3: Push theme as UNPUBLISHED (safe default)"
-  shopify theme push -s "$STORE" "${THEME_PASSWORD_ARGS[@]}" --unpublished
+  echo "Step 3: Push theme as UNPUBLISHED (safe default), name: ${THEME_NAME}"
+  theme_cli theme push -s "$STORE" --unpublished --theme "$THEME_NAME"
   echo ""
   echo "  → Publish when ready: Online Store → Themes, or:"
-  echo "     shopify theme list -s $STORE"
-  echo "     shopify theme publish -s $STORE --theme THEME_ID"
+  echo "     theme_cli theme list -s $STORE"
+  echo "     theme_cli theme publish -s $STORE --theme THEME_ID"
 fi
 
 echo ""
 echo "Step 4: Admin locales, markets, pages, product translations"
-SHOPIFY_STORE="$STORE" PUBLISH="$PUBLISH" "$ROOT/scripts/activate-locales.sh"
+SHOPIFY_STORE="$STORE" PUBLISH="$PUBLISH" SHOPIFY_ADMIN_TOKEN="${TOKEN}" "$ROOT/scripts/activate-locales.sh"
 
 echo ""
 echo "=== Automated steps complete ==="
