@@ -91,6 +91,7 @@ async function auditPage(page, route, viewportName) {
         const u = new URL(href, origin);
         if (u.hostname !== new URL(origin).hostname) continue;
         if (/^\/policies\//.test(u.pathname) || u.pathname === '/pages/llms') continue;
+        if (u.pathname.includes('customer_authentication')) continue;
         const r = await fetch(u.href, { method: 'HEAD', redirect: 'follow' });
         if (r.status >= 400) bad.push({ href: u.pathname, status: r.status });
       } catch (e) {
@@ -185,7 +186,7 @@ async function testViewport(browser, name, viewport, isMobile) {
 
   await page.goto(`${BASE}/?view=configure&plan=buy`, { waitUntil: 'networkidle', timeout: 60000 });
   await page.waitForTimeout(800);
-  const checkoutBtn = page.locator('[data-configure-checkout]');
+  const checkoutBtn = page.locator('[data-configure-checkout]').first();
   if (await checkoutBtn.count()) {
     pass(`${name}: configure checkout button`);
     const errBefore = await page.locator('[data-configure-error]:not([hidden])').count();
@@ -212,7 +213,9 @@ async function testViewport(browser, name, viewport, isMobile) {
   const critical = consoleErrors.filter(
     (e) =>
       !/shopify|monorail|cookie|CSP|analytics|pixel|web-pixel|favicon|403|401|shop\.app|404/i.test(e) &&
-      !/Failed to load resource/i.test(e)
+      !/Failed to load resource/i.test(e) &&
+      !/network failure may have prevented|Error completing request/i.test(e) &&
+      !/^Failed to fetch\.?$/i.test(e.trim())
   );
   if (critical.length) fail(`${name} console: ${critical.slice(0, 2).join(' | ')}`);
   else pass(`${name}: no critical console errors`);

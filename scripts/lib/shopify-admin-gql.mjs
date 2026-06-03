@@ -1,9 +1,14 @@
 /**
  * Admin GraphQL via access token (preferred) or shopify store execute (CLI session).
+ * Refreshes SHOPIFY_ADMIN_TOKEN from client credentials when the token is missing or expired.
  */
 import { execFileSync } from 'node:child_process';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const API_VERSION = process.env.SHOPIFY_API_VERSION || '2025-01';
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
 export function getAdminToken() {
   return (
@@ -14,6 +19,37 @@ export function getAdminToken() {
   );
 }
 
+async function refreshAdminTokenFromClientCredentials() {
+  const id = process.env.SHOPIFY_CLIENT_ID;
+  const secret = process.env.SHOPIFY_CLIENT_SECRET;
+  const store = (process.env.SHOPIFY_STORE || 'mitipi-2.myshopify.com')
+    .replace(/^https?:\/\//, '')
+    .replace(/\/$/, '');
+  if (!id || !secret) return null;
+  const res = await fetch(`https://${store}/admin/oauth/access_token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'client_credentials',
+      client_id: id,
+      client_secret: secret,
+    }),
+  });
+  const payload = await res.json();
+  if (!payload.access_token) return null;
+  process.env.SHOPIFY_ADMIN_TOKEN = payload.access_token;
+  const envPath = join(ROOT, '.env');
+  if (existsSync(envPath)) {
+    const text = readFileSync(envPath, 'utf8');
+    const line = `SHOPIFY_ADMIN_TOKEN=${payload.access_token}`;
+    const next = /^SHOPIFY_ADMIN_TOKEN=/m.test(text)
+      ? text.replace(/^SHOPIFY_ADMIN_TOKEN=.*$/m, line)
+      : `${text.trimEnd()}\n${line}\n`;
+    writeFileSync(envPath, next);
+  }
+  return payload.access_token;
+}
+
 function tokenLooksInvalid(token) {
   if (!token) return true;
   if (token.includes('paste') || token.includes('...')) return true;
@@ -21,8 +57,8 @@ function tokenLooksInvalid(token) {
   return token.length < 20;
 }
 
-/** @param {string} store @param {string} query @param {Record<string, unknown>} [variables] */
-async function gqlWithToken(store, token, query, variables) {
+/** @param {string} store @param {string} token @param {string} query @param {Record<string, unknown>} [variables] @param {boolean} [retry] */
+async function gqlWithToken(store, token, query, variables, retry = true) {
   const res = await fetch(`https://${store}/admin/api/${API_VERSION}/graphql.json`, {
     method: 'POST',
     headers: {
@@ -32,6 +68,10 @@ async function gqlWithToken(store, token, query, variables) {
     body: JSON.stringify({ query, variables: variables ?? undefined }),
   });
   const text = await res.text();
+  if (res.status === 401 && retry) {
+    const fresh = await refreshAdminTokenFromClientCredentials();
+    if (fresh) return gqlWithToken(store, fresh, query, variables, false);
+  }
   if (!res.ok) {
     throw new Error(`GraphQL HTTP ${res.status}: ${text.slice(0, 500)}`);
   }
@@ -80,7 +120,11 @@ function assertNoUserErrors(data) {
 }
 
 export async function adminGql({ store, query, variables, mutate = false }) {
-  const token = getAdminToken();
+  let token = getAdminToken();
+  if (tokenLooksInvalid(token)) {
+    await refreshAdminTokenFromClientCredentials();
+    token = getAdminToken();
+  }
   if (!tokenLooksInvalid(token)) {
     return assertNoUserErrors(await gqlWithToken(store, token, query, variables));
   }

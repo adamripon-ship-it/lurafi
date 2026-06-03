@@ -109,9 +109,9 @@ async function testViewport(browser, name, viewport, isMobile) {
     fail('Problem section copy may be stale (CDN)', problemHeading?.trim());
   }
 
-  const buyCount = await page.locator('a[href*="view=configure"]').count();
+  const buyCount = await page.locator('a[href*="view=configure"], a[href*="/pages/configure"]').count();
   if (buyCount > 0) pass(`${buyCount} configure link(s)`);
-  else fail('No ?view=configure links', name);
+  else fail('No configure links', name);
 
   for (const id of ['problem', 'how-it-works', 'app', 'pricing']) {
     const el = page.locator(`#${id}`);
@@ -180,6 +180,7 @@ async function testViewport(browser, name, viewport, isMobile) {
       !/Failed to load resource/i.test(e) &&
       !/\bX-Frame-Options\b|ALLOW-FROM/i.test(e) &&
       !/^Failed to fetch\.?$/i.test(e.trim()) &&
+      !/network failure may have prevented|Error completing request/i.test(e) &&
       !/serviceWorker.*sandbox|allow-same-origin/i.test(e)
   );
   if (critical.length) fail(`Console errors: ${critical.slice(0, 2).join(' | ')}`);

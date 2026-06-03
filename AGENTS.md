@@ -12,8 +12,11 @@ Shopify OS 2.0 theme for **lurafi.ai** (Kevin). Store: `fu03cn-1v.myshopify.com`
 
 ## Deploy
 
+- Store: `mitipi-2.myshopify.com` (migration target). Refresh API token: `./scripts/shopify-refresh-admin-token.sh` (uses `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` in `.env`; auto-runs from scripts when token expires).
 - Theme push: `npm run theme:push:live` or push `locales/*` after JSON changes.
 - Admin locales/pages: `./scripts/activate-locales.sh` (not in theme zip).
+- Products: `node scripts/migrate-products-from-lurafi.mjs` (needs `write_products` on lurafi app) or import `scripts/data/products-import.csv` in Admin → Products → Import.
+- Shopify MCP: call `learn_shopify_api` (api: `admin` or `use-shopify-cli`) before other `user-shopify-dev-mcp` tools; pass returned `conversationId` on every call.
 
 ## GitHub
 

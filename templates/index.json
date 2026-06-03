@@ -149,59 +149,7 @@
       "settings": {
         "eyebrow": "At a glance",
         "heading": "Designed to be simple, private, and portable."
-      },
-      "blocks": {
-        "dimensions": {
-          "type": "row",
-          "settings": {
-            "label": "Size",
-            "value": "Approx. 21.2 × 10.2 × 9.2 cm"
-          }
-        },
-        "power": {
-          "type": "row",
-          "settings": {
-            "label": "Power",
-            "value": "Mains powered with 3 m cable; typical use around 9 W"
-          }
-        },
-        "connectivity": {
-          "type": "row",
-          "settings": {
-            "label": "Connectivity",
-            "value": "Wi-Fi, Bluetooth, app control, and local on-device playback"
-          }
-        },
-        "privacy": {
-          "type": "row",
-          "settings": {
-            "label": "Privacy",
-            "value": "No camera. No microphone. No listening. No third-party sharing."
-          }
-        },
-        "storage": {
-          "type": "row",
-          "settings": {
-            "label": "Simulation library",
-            "value": "70+ hours of activities and sounds stored locally on the device"
-          }
-        },
-        "placement": {
-          "type": "row",
-          "settings": {
-            "label": "Best placement",
-            "value": "Near a visible window, with a wall or ceiling for shadows"
-          }
-        }
-      },
-      "block_order": [
-        "dimensions",
-        "power",
-        "connectivity",
-        "privacy",
-        "storage",
-        "placement"
-      ]
+      }
     },
     "cta": {
       "type": "lp-cta",

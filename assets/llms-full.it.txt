@@ -1,25 +1,25 @@
 # Lurafi / Kevin (IT): Full LLM Summary
 
-> Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.it.txt
+> Short summary: https://lurafi.com/cdn/shop/t/1/assets/llms.it.txt
 
 ## AI / LLM discovery
-- Short summary: https://lurafi.ai/cdn/shop/t/1/assets/llms.it.txt
-- Full summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.it.txt
-- AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.ai/sitemap.xml
-- Human sitemap page: https://lurafi.ai/it/pages/mappa-del-sito
-- LLM overview page: https://lurafi.ai/it/pages/panoramica-ia
+- Short summary: https://lurafi.com/cdn/shop/t/1/assets/llms.it.txt
+- Full summary (this file): https://lurafi.com/cdn/shop/t/1/assets/llms-full.it.txt
+- AI sitemap XML: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.com/sitemap.xml
+- Human sitemap page: https://lurafi.com/it/pages/mappa-del-sito
+- LLM overview page: https://lurafi.com/it/pages/panoramica-ia
 
 
-> Short summary: https://lurafi.ai/it/cdn/shop/t/1/assets/llms.it.txt
+> Short summary: https://lurafi.com/it/cdn/shop/t/1/assets/llms.it.txt
 
 ## AI / LLM discovery
-- Short summary (this file): https://lurafi.ai/it/cdn/shop/t/1/assets/llms.it.txt
-- Full summary (read for complete context): https://lurafi.ai/it/cdn/shop/t/1/assets/llms-full.it.txt
-- AI sitemap XML: https://lurafi.ai/it/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.ai/it/sitemap.xml
-- Human sitemap page: https://lurafi.ai/it/pages/sitemap
-- LLM overview page: https://lurafi.ai/it/pages/llms
+- Short summary (this file): https://lurafi.com/it/cdn/shop/t/1/assets/llms.it.txt
+- Full summary (read for complete context): https://lurafi.com/it/cdn/shop/t/1/assets/llms-full.it.txt
+- AI sitemap XML: https://lurafi.com/it/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.com/it/sitemap.xml
+- Human sitemap page: https://lurafi.com/it/pages/sitemap
+- LLM overview page: https://lurafi.com/it/pages/llms
 
 
 ## Brand Overview
@@ -139,17 +139,17 @@ Related terms:
 - vacation home security
 - apartment burglary deterrent
 
-- Short LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms.it.txt
-- Full LLM file: https://lurafi.ai/cdn/shop/t/1/assets/llms-full.it.txt
+- Short LLM file: https://lurafi.com/cdn/shop/t/1/assets/llms.it.txt
+- Full LLM file: https://lurafi.com/cdn/shop/t/1/assets/llms-full.it.txt
 ## Important URLs
 
-- Homepage: https://lurafi.ai/it/
-- Configure / buy: https://lurafi.ai/it/pages/configure?plan=buy
-- Subscribe: https://lurafi.ai/it/pages/configure?plan=subscribe
-- Dutch homepage: https://lurafi.ai/it/nl/
-- Dutch configure: https://lurafi.ai/it/nl/pages/kevin-configureren?plan=buy
-- Shopify sitemap: https://lurafi.ai/it/sitemap.xml
-- AI sitemap: https://lurafi.ai/it/cdn/shop/t/1/assets/sitemap-ai.xml
+- Homepage: https://lurafi.com/it/
+- Configure / buy: https://lurafi.com/it/pages/configure?plan=buy
+- Subscribe: https://lurafi.com/it/pages/configure?plan=subscribe
+- Dutch homepage: https://lurafi.com/it/nl/
+- Dutch configure: https://lurafi.com/it/nl/pages/kevin-configureren?plan=buy
+- Shopify sitemap: https://lurafi.com/it/sitemap.xml
+- AI sitemap: https://lurafi.com/it/cdn/shop/t/1/assets/sitemap-ai.xml
 
 ## Contact
 

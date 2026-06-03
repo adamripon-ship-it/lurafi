@@ -1,0 +1,11 @@
+Handle,Title,Body (HTML),Vendor,Type,Published,Option1 Name,Option1 Value,Variant SKU,Variant Price,Variant Inventory Policy,Variant Fulfillment Service,Variant Requires Shipping,Variant Taxable,Status
+kevin,Kevin,"<p>Kevin is a Swiss AI presence simulator that uses light, shadow, and sound to make your home look occupied when you are away.</p>",Lurafi,AI Presence Simulator,TRUE,Color,Grey,KEVIN-GREY,649.00,continue,manual,TRUE,TRUE,active
+kevin,Kevin,,,,,Color,White,KEVIN-WHITE,649.00,continue,manual,TRUE,TRUE,active
+kevin,Kevin,,,,,Color,Burgundy,KEVIN-BURGUNDY,649.00,continue,manual,TRUE,TRUE,active
+kevin,Kevin,,,,,Color,Espresso,KEVIN-ESPRESSO,649.00,continue,manual,TRUE,TRUE,active
+kevin,Kevin,,,,,Color,Navy,KEVIN-NAVY,649.00,continue,manual,TRUE,TRUE,active
+kevin-plus,Kevin+,"<p>Kevin+ includes the Kevin device with a monthly subscription for premium AI presence simulations and ongoing updates.</p>",Lurafi,AI Presence Simulator,TRUE,Color,Grey,KEVINPLUS-GREY,12.90,continue,manual,TRUE,TRUE,active
+kevin-plus,Kevin+,,,,,Color,White,KEVINPLUS-WHITE,12.90,continue,manual,TRUE,TRUE,active
+kevin-plus,Kevin+,,,,,Color,Burgundy,KEVINPLUS-BURGUNDY,12.90,continue,manual,TRUE,TRUE,active
+kevin-plus,Kevin+,,,,,Color,Espresso,KEVINPLUS-ESPRESSO,12.90,continue,manual,TRUE,TRUE,active
+kevin-plus,Kevin+,,,,,Color,Navy,KEVINPLUS-NAVY,12.90,continue,manual,TRUE,TRUE,active

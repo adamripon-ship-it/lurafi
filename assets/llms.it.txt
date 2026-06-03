@@ -3,12 +3,12 @@
 > Kevin fa sembrare la tua casa abitata con luce, ombra e suono quando sei via.
 
 ## AI / LLM discovery
-- Short summary (this file): https://lurafi.ai/cdn/shop/t/1/assets/llms.it.txt
-- Full summary (read for complete context): https://lurafi.ai/cdn/shop/t/1/assets/llms-full.it.txt
-- AI sitemap XML: https://lurafi.ai/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.ai/sitemap.xml
-- Human sitemap page: https://lurafi.ai/it/pages/mappa-del-sito
-- LLM overview page: https://lurafi.ai/it/pages/panoramica-ia
+- Short summary (this file): https://lurafi.com/cdn/shop/t/1/assets/llms.it.txt
+- Full summary (read for complete context): https://lurafi.com/cdn/shop/t/1/assets/llms-full.it.txt
+- AI sitemap XML: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://lurafi.com/sitemap.xml
+- Human sitemap page: https://lurafi.com/it/pages/mappa-del-sito
+- LLM overview page: https://lurafi.com/it/pages/panoramica-ia
 
 
 Lurafi vende Kevin, un simulatore di presenza svizzero per la sicurezza domestica.
@@ -22,9 +22,9 @@ Key facts:
 - Delivery: Free delivery across Europe
 
 Important URLs:
-- Homepage: https://lurafi.ai/it
-- Configure / buy: https://lurafi.ai/it/pages/configura-kevin?plan=buy
-- Subscribe: https://lurafi.ai/it/pages/configura-kevin?plan=subscribe
+- Homepage: https://lurafi.com/it
+- Configure / buy: https://lurafi.com/it/pages/configura-kevin?plan=buy
+- Subscribe: https://lurafi.com/it/pages/configura-kevin?plan=subscribe
 
 Contact:
 - Email: hello@lurafi.ai

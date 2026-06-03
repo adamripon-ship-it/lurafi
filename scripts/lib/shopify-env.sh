@@ -22,6 +22,24 @@ shopify_load_dotenv() {
   fi
 }
 
+# Refresh SHOPIFY_ADMIN_TOKEN from Dev Dashboard client credentials when ID+secret exist.
+shopify_ensure_admin_token() {
+  shopify_load_dotenv
+  local token
+  token="$(shopify_theme_password)"
+  if ! shopify_token_is_placeholder "${token}"; then
+    return 0
+  fi
+  if [[ -z "${SHOPIFY_CLIENT_ID:-}" || -z "${SHOPIFY_CLIENT_SECRET:-}" ]]; then
+    return 1
+  fi
+  local refresh="${LURAFI_ROOT:-$(shopify_env_root)}/scripts/shopify-refresh-admin-token.sh"
+  if [[ -x "${refresh}" ]]; then
+    "${refresh}" >/dev/null
+    shopify_load_dotenv
+  fi
+}
+
 # Theme Access password / Admin API token (same flag for shopify theme * --password)
 shopify_theme_password() {
   printf '%s' "${SHOPIFY_ADMIN_TOKEN:-${SHOPIFY_CLI_THEME_TOKEN:-${SHOPIFY_THEME_PASSWORD:-}}}"

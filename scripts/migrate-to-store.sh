@@ -15,6 +15,8 @@ cd "$ROOT"
 # shellcheck source=scripts/lib/shopify-env.sh
 source "${ROOT}/scripts/lib/shopify-env.sh"
 shopify_load_dotenv
+shopify_ensure_admin_token || true
+shopify_load_dotenv
 
 OLD_STORE="${OLD_SHOPIFY_STORE:-fu03cn-1v.myshopify.com}"
 STORE="${SHOPIFY_STORE:-}"

@@ -115,7 +115,7 @@ async function ensureWebPresence() {
     );
   } else {
     await gql(
-      `mutation($marketId: ID!, $domainId: ID!, $wp: MarketWebPresenceCreateInput!) {
+      `mutation($marketId: ID!, $wp: MarketWebPresenceCreateInput!) {
         marketWebPresenceCreate(marketId: $marketId, webPresence: $wp) {
           userErrors { message }
           market { webPresences(first: 1) { nodes { rootUrls { locale url } } } }
@@ -123,8 +123,11 @@ async function ensureWebPresence() {
       }`,
       {
         marketId: market.id,
-        domainId: shop.primaryDomain.id,
-        wp: { defaultLocale: primary, alternateLocales: alternates, domainId: shop.primaryDomain.id },
+        wp: {
+          defaultLocale: primary,
+          alternateLocales: alternates,
+          domainId: shop.primaryDomain.id,
+        },
       },
       true,
     );

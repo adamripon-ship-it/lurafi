@@ -1,0 +1,12 @@
+---
+description: Shopify Dev MCP + mitipi-2 API access for lurafi migration
+globs: scripts/**/*
+alwaysApply: false
+---
+
+# Shopify (mitipi-2)
+
+- Store: `mitipi-2.myshopify.com`. Secrets in gitignored `.env` only.
+- Token: `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` → `./scripts/shopify-refresh-admin-token.sh` or auto-refresh in `scripts/lib/shopify-admin-gql.mjs`.
+- MCP `user-shopify-dev-mcp`: call `learn_shopify_api` first; pass `conversationId` to `search_docs_chunks` / `validate_graphql_codeblocks`.
+- Product create needs app scope `write_products` on lurafi Dev Dashboard version.
