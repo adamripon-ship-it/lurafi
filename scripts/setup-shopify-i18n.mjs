@@ -7,23 +7,21 @@
  * - Creates utility pages if missing
  * - Registers Admin translations (pages + products) via translationsRegister
  *
- * Prerequisite:
- *   shopify store auth --store fu03cn-1v.myshopify.com \
- *     --scopes read_locales,write_locales,read_translations,write_translations,\
- * read_content,write_content,read_online_store_pages,write_online_store_pages,\
- * read_markets,write_markets,read_products
+ * Prerequisite (one of):
+ *   SHOPIFY_ADMIN_TOKEN in .env (recommended — no browser OAuth)
+ *   shopify store auth --store STORE --scopes read_locales,write_locales,...
  *
  * Usage:
  *   node scripts/setup-shopify-i18n.mjs
  *   node scripts/setup-shopify-i18n.mjs --publish=false
- *   SHOPIFY_STORE=your-store.myshopify.com node scripts/setup-shopify-i18n.mjs
+ *   SHOPIFY_STORE=mitipi-2.myshopify.com node scripts/setup-shopify-i18n.mjs
  */
-import { execFileSync } from 'node:child_process';
 import {
   getAlternateLocales,
   getPrimaryLocale,
   loadLanguagesConfig,
 } from './i18n/registry.mjs';
+import { adminAuthMode, adminGql } from './lib/shopify-admin-gql.mjs';
 
 const STORE = process.env.SHOPIFY_STORE || 'fu03cn-1v.myshopify.com';
 const publish =
@@ -32,27 +30,12 @@ const publish =
     : true;
 
 /** @param {string} query @param {Record<string, unknown>} [variables] @param {boolean} [mutate] */
-function gql(query, variables, mutate = false) {
-  const args = ['store', 'execute', '-s', STORE, '--json', '--query', query];
-  if (mutate) args.push('--allow-mutations');
-  if (variables) args.push('--variables', JSON.stringify(variables));
-  const out = execFileSync('shopify', args, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-  });
-  const jsonStart = out.indexOf('{');
-  if (jsonStart === -1) throw new Error(`No JSON in CLI output:\n${out}`);
-  const data = JSON.parse(out.slice(jsonStart));
-  const errKey = Object.keys(data).find((k) => data[k]?.userErrors?.length);
-  if (errKey && data[errKey].userErrors.length) {
-    const msgs = data[errKey].userErrors.map((e) => e.message).join('; ');
-    throw new Error(`${errKey}: ${msgs}`);
-  }
-  return data;
+async function gql(query, variables, mutate = false) {
+  return adminGql({ store: STORE, query, variables, mutate });
 }
 
-function ensureLocales() {
-  const { shopLocales } = gql('query { shopLocales { locale primary published name } }');
+async function ensureLocales() {
+  const { shopLocales } = await gql('query { shopLocales { locale primary published name } }');
   const existing = Object.fromEntries(shopLocales.map((l) => [l.locale, l]));
   const targets = getAlternateLocales();
 
@@ -61,7 +44,7 @@ function ensureLocales() {
     let row = existing[code];
     if (!row) {
       console.log(`→ Enabling ${code}…`);
-      gql(
+      await gql(
         `mutation { shopLocaleEnable(locale: "${code}") { shopLocale { locale published } userErrors { message } } }`,
         undefined,
         true,
@@ -71,14 +54,14 @@ function ensureLocales() {
     const shouldPublish = loc.publish !== false && publish;
     if (shouldPublish && !row.published) {
       console.log(`→ Publishing ${code}…`);
-      gql(
+      await gql(
         `mutation { shopLocaleUpdate(locale: "${code}", shopLocale: { published: true }) { shopLocale { locale published } userErrors { message } } }`,
         undefined,
         true,
       );
     } else if (!shouldPublish && row.published) {
       console.log(`→ Unpublishing ${code} (draft mode)…`);
-      gql(
+      await gql(
         `mutation { shopLocaleUpdate(locale: "${code}", shopLocale: { published: false }) { shopLocale { locale published } userErrors { message } } }`,
         undefined,
         true,
@@ -86,17 +69,17 @@ function ensureLocales() {
     }
   }
 
-  const { shopLocales: updated } = gql('query { shopLocales { locale published primary } }');
+  const { shopLocales: updated } = await gql('query { shopLocales { locale published primary } }');
   console.log(
     '✓ Locales:',
     updated.map((l) => `${l.locale}${l.published ? '' : ' (draft)'}`).join(', '),
   );
 }
 
-function ensureWebPresence() {
+async function ensureWebPresence() {
   const cfg = loadLanguagesConfig();
   const alternates = getAlternateLocales().map((l) => l.shopifyLocale || l.code);
-  const { shop, markets } = gql(`
+  const { shop, markets } = await gql(`
     query {
       shop { primaryDomain { id host } }
       markets(first: 1) { nodes { id webPresences(first: 3) { nodes { id rootUrls { locale url } } } } }
@@ -117,7 +100,7 @@ function ensureWebPresence() {
   const primary = getPrimaryLocale().shopifyLocale || 'en';
   console.log(`→ Updating market web presence (${primary} + ${alternates.join(', ')})…`);
   if (wp?.id) {
-    gql(
+    await gql(
       `mutation($webPresenceId: ID!, $wp: MarketWebPresenceUpdateInput!) {
         marketWebPresenceUpdate(webPresenceId: $webPresenceId, webPresence: $wp) {
           userErrors { message }
@@ -131,7 +114,7 @@ function ensureWebPresence() {
       true,
     );
   } else {
-    gql(
+    await gql(
       `mutation($marketId: ID!, $domainId: ID!, $wp: MarketWebPresenceCreateInput!) {
         marketWebPresenceCreate(marketId: $marketId, webPresence: $wp) {
           userErrors { message }
@@ -150,8 +133,8 @@ function ensureWebPresence() {
 }
 
 /** @param {string} resourceId @param {string} locale @param {{ handle?: string, title?: string, body?: string, body_html?: string, meta_title?: string, meta_description?: string }} fields */
-function registerTranslations(resourceId, locale, fields) {
-  const { translatableResource } = gql(
+async function registerTranslations(resourceId, locale, fields) {
+  const { translatableResource } = await gql(
     `query($id: ID!) {
       translatableResource(resourceId: $id) {
         translatableContent { key digest }
@@ -175,7 +158,7 @@ function registerTranslations(resourceId, locale, fields) {
     });
   }
   if (!translations.length) return;
-  gql(
+  await gql(
     `mutation($id: ID!, $t: [TranslationInput!]!) {
       translationsRegister(resourceId: $id, translations: $t) {
         userErrors { message field }
@@ -190,7 +173,7 @@ function registerTranslations(resourceId, locale, fields) {
 async function ensurePages() {
   const cfg = loadLanguagesConfig();
   const pageKeys = ['configure', 'sitemap', 'llms'];
-  const { pages } = gql('query { pages(first: 50) { nodes { id handle title templateSuffix } } }');
+  const { pages } = await gql('query { pages(first: 50) { nodes { id handle title templateSuffix } } }');
   const byHandle = Object.fromEntries(pages.nodes.map((p) => [p.handle, p]));
 
   for (const key of pageKeys) {
@@ -198,7 +181,7 @@ async function ensurePages() {
     let page = byHandle[enSpec.handle];
     if (!page) {
       console.log(`→ Creating page "${enSpec.handle}"…`);
-      const { pageCreate } = gql(
+      const { pageCreate } = await gql(
         `mutation($page: PageCreateInput!) {
           pageCreate(page: $page) {
             page { id handle templateSuffix }
@@ -223,7 +206,7 @@ async function ensurePages() {
       if (!spec) continue;
       const code = loc.shopifyLocale || loc.code;
       console.log(`→ ${code} translations: /pages/${enSpec.handle} → ${loc.urlPrefix}/pages/${spec.handle}`);
-      registerTranslations(page.id, code, {
+      await registerTranslations(page.id, code, {
         handle: spec.handle,
         title: spec.title,
         body_html: spec.body,
@@ -233,7 +216,7 @@ async function ensurePages() {
 }
 
 async function ensureProducts() {
-  const { products } = gql(`
+  const { products } = await gql(`
     query {
       products(first: 20, query: "title:Kevin") {
         nodes { id title handle }
@@ -260,14 +243,14 @@ async function ensureProducts() {
       if (!copy) continue;
       const code = loc.shopifyLocale || loc.code;
       console.log(`→ ${code} product translations: ${product.title}`);
-      registerTranslations(product.id, code, copy);
+      await registerTranslations(product.id, code, copy);
     }
   }
 }
 
-function summary() {
+async function summary() {
   const cfg = loadLanguagesConfig();
-  const { shopLocales, shop, markets } = gql(`
+  const { shopLocales, shop, markets } = await gql(`
     query {
       shopLocales { locale published primary }
       shop { primaryDomain { host } }
@@ -290,12 +273,12 @@ function summary() {
 }
 
 async function main() {
-  console.log(`Setting up Shopify i18n on ${STORE} (publish=${publish})…\n`);
-  ensureLocales();
-  ensureWebPresence();
+  console.log(`Setting up Shopify i18n on ${STORE} (publish=${publish}, auth=${adminAuthMode()})…\n`);
+  await ensureLocales();
+  await ensureWebPresence();
   await ensurePages();
   await ensureProducts();
-  summary();
+  await summary();
 }
 
 main().catch((err) => {
