@@ -6,14 +6,19 @@
 import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import { buildConfigureUrl, getLocale, loadLanguagesConfig } from './i18n/registry.mjs';
+import {
+  buildConfigureUrl,
+  getLocale,
+  getPublishedLocales,
+  loadLanguagesConfig,
+} from './i18n/registry.mjs';
 
-const BASE = process.env.LURAFI_URL || 'https://lurafi.ai';
+const BASE = process.env.LURAFI_URL || `https://${loadLanguagesConfig().domain}`;
 const cfg = loadLanguagesConfig();
 const smokeArg = process.env.SMOKE_LOCALES?.split(',').filter(Boolean);
 const SMOKE = smokeArg?.length
   ? smokeArg
-  : ['en', 'nl', 'fr', 'de', 'es', 'pl', 'nb'];
+  : getPublishedLocales().map((l) => l.code);
 
 const expectations = {
   en: {
@@ -57,6 +62,13 @@ const expectations = {
     hero: /Kevin|hjem|Kjøp/i,
     configure: /Kevin|checkout|Konfigur/i,
     leak: /Why Kevin|Your bag/i,
+  },
+  cs: {
+    hero: /Kevin|domov|Proč|Koupit/i,
+    configure: /Konfigurace|Kevin|pokladna|košík/i,
+    cart: /košík|K pokladně|pokračovat v nákupu/i,
+    login: /Přihlásit|vytvořit účet|E-mail/i,
+    leak: /Why Kevin|Your bag|Choose your Kevin|Log in|Create an account/i,
   },
 };
 
