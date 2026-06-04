@@ -53,7 +53,7 @@ Server id in Cursor may appear as `shopify-dev-mcp` or `user-shopify-dev-mcp` (M
 
 Live store operations use gitignored `.env` and repo scripts — not the docs-only MCP.
 
-- Store: `6mzhe1-yf.myshopify.com` (primary domain `lurafi.com`; `mitipi-2.myshopify.com` is a connected alias only).
+- Store: `6mzhe1-yf.myshopify.com` (primary domain `www.lurafi.com`; `mitipi-2.myshopify.com` is a connected alias only).
 - Token: `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` → `./scripts/shopify-refresh-admin-token.sh`, or auto-refresh in `scripts/lib/shopify-admin-gql.mjs`.
 - Product mutations need lurafi app scope `write_products` (see `docs/FIX-LURAFI-APP-AND-PRODUCTS.md`).
 - Theme push: `npm run shopify:publish:mitipi` / Shopify CLI with `SHOPIFY_FLAG_STORE=6mzhe1-yf.myshopify.com`.

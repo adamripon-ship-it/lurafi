@@ -18,7 +18,8 @@
     "hero_benefits": "Kevin-voordelen",
     "llm_assets_nl": "Nederlandse LLM-samenvatting",
     "previous": "Vorige",
-    "next": "Volgende"
+    "next": "Volgende",
+    "configure_steps": "Checkout steps"
   },
   "general": {
     "search": {
@@ -194,7 +195,19 @@
       "headline": "Laat je huis levend lijken.",
       "lede": "Kevin gebruikt Zwitsers ontworpen licht, schaduw en alledaags geluid zodat je huis bewoond aanvoelt voordat iemand de deur test.",
       "cta_primary_label": "Koop Kevin",
-      "cta_secondary_label": "Hoe het werkt"
+      "cta_secondary_label": "Hoe het werkt",
+      "cta_primary_url": "",
+      "image_alt": "Kevin presence simulation device",
+      "callouts_aria_label": "Kevin benefits",
+      "away_eyebrow": "Away mode",
+      "away_title": "Living room active",
+      "away_body": "Light, shadow, and sound vary automatically.",
+      "privacy_eyebrow": "Privacy",
+      "privacy_title": "No cameras. No mics.",
+      "privacy_body": "Simulation plays locally on the device.",
+      "checkout_eyebrow": "Checkout",
+      "checkout_title": "Free delivery",
+      "checkout_body": "Secure Shopify checkout."
     },
     "problem": {
       "overline": "Het probleem",
@@ -216,7 +229,8 @@
       "pillar_2_title": "Bewegende schaduwen",
       "pillar_2_body": "Geprojecteerde silhouetten en verschuivend licht suggereren mensen in de ruimte, zonder camera’s of microfoons.",
       "pillar_3_title": "Alledaags geluid",
-      "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief."
+      "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief.",
+      "image_alt": "Kevin presence simulation at night"
     },
     "steps": {
       "overline": "Het plan",
@@ -231,7 +245,12 @@
       "stat_1_label": "Installatietijd",
       "stat_2_label": "Kabels nodig",
       "stat_3_label": "Privacy",
-      "stat_4_label": "Bescherming"
+      "stat_4_label": "Bescherming",
+      "stat_1_value": "60s",
+      "stat_2_value": "1",
+      "stat_3_value": "100%",
+      "stat_4_value": "24/7",
+      "image_alt": "Kevin device"
     },
     "app": {
       "overline": "Kevin-app",
@@ -244,7 +263,12 @@
       "tile_3_title": "Je eigen geluiden",
       "tile_3_body": "Upload opnames en label ze per kamer of activiteit zodat de simulatie meer op jouw huishouden klinkt.",
       "tile_4_title": "Meerdere locaties",
-      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken."
+      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken.",
+      "phone_image_1_alt": "Kevin app protected status screen",
+      "phone_1_caption": "Protected — arm and disarm from anywhere",
+      "phone_image_2_alt": "Kevin app weekly schedule grid",
+      "phone_2_caption": "Schedule — set protection by day and hour",
+      "carousel_label": "App screenshots"
     },
     "personas": {
       "overline": "Gemaakt voor jou",
@@ -265,7 +289,15 @@
       "stat_1_label": "Risicovermindering volgens Mitipi",
       "stat_2_label": "Ingebouwde simulaties",
       "stat_3_label": "Typisch energieverbruik",
-      "stat_4_label": "Camera's of microfoons"
+      "stat_4_label": "Camera's of microfoons",
+      "stat_1_value": "97%",
+      "stat_2_value": "70h+",
+      "stat_3_value": "9W",
+      "stat_4_value": "0",
+      "badge_1": "European Security Award 2024",
+      "badge_2": "Swiss Engineered",
+      "badge_3": "No monitoring subscription",
+      "badge_4": "On-device simulation"
     },
     "proof": {
       "heading": "Realistisch waar het telt: van buitenaf.",
@@ -274,7 +306,10 @@
       "quote_2": "\"Een vriend dacht dat er iemand binnen was en belde aan. Kevin deed zijn werk voordat iemand de deur bereikte.\"",
       "author_2_location": "Lyon, Frankrijk",
       "quote_3": "\"De schaduweffecten vallen op. Vanuit het trappenhuis voelt het appartement niet leeg.\"",
-      "author_3_location": "München, Duitsland"
+      "author_3_location": "München, Duitsland",
+      "author_1_name": "Sarah M.",
+      "author_2_name": "Marc D.",
+      "author_3_name": "Thomas K."
     },
     "pricing": {
       "overline": "Prijzen",
@@ -390,7 +425,8 @@
   },
   "errors": {
     "not_found_title": "Pagina niet gevonden",
-    "not_found_body": "De pagina die je zoekt bestaat niet."
+    "not_found_body": "De pagina die je zoekt bestaat niet.",
+    "back_home": "Back to home"
   },
   "spec_row": {
     "dimensions_label": "Afmeting",

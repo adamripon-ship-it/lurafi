@@ -20,12 +20,12 @@
         assign show_configure = true
       endif
 
-      assign seo_canonical_url = canonical_url
+      assign seo_canonical_url = canonical_url | replace: '//lurafi.com', '//www.lurafi.com'
       if request.query_string contains 'view=configure'
         capture configure_canonical_url
           render 'configure-url'
         endcapture
-        assign seo_canonical_url = configure_canonical_url | strip | split: '?' | first
+        assign seo_canonical_url = configure_canonical_url | strip | split: '?' | first | replace: '//lurafi.com', '//www.lurafi.com'
       endif
     -%}
     <link rel="canonical" href="{{ seo_canonical_url }}">
@@ -54,7 +54,7 @@
       {%- unless seo_document_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    <!-- lurafi-head-v16 schema-defaults-locale-first -->
+    <!-- lurafi-head-v17 www-canonical -->
     {% render 'meta-tags', seo_canonical_url: seo_canonical_url %}
     {% render 'structured-data' %}
     {% render 'configure-redirect' %}

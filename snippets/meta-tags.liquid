@@ -2,7 +2,7 @@
   assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
   assign lurafi_default_image = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
   assign lurafi_meta_description = page_description
-  assign lurafi_canonical_url = seo_canonical_url | default: canonical_url
+  assign lurafi_canonical_url = seo_canonical_url | default: canonical_url | replace: '//lurafi.com', '//www.lurafi.com'
   assign llms_page_url = pages.llms.url
   assign lurafi_meta_title = page_title
 

@@ -1,1237 +1,348 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lurafi.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
+    <loc>https://www.lurafi.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/nl</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
+    <loc>https://www.lurafi.com/nl</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/fr</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
+    <loc>https://www.lurafi.com/fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/de</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
+    <loc>https://www.lurafi.com/de</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
+    <loc>https://www.lurafi.com/cs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/it</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/nb</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/da</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/sv</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/fi</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cs</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pl</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pages/configure?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/pages/configure?plan=buy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=buy"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/nl/pages/kevin-configureren?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/nl/pages/kevin-configureren?plan=buy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=buy"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/fr/pages/configurer-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/fr/pages/configurer-kevin?plan=buy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=buy"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=buy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=buy"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/es/pages/configurar-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=buy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=buy"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/it/pages/configura-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/pages/configure?plan=subscribe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/nl/pages/kevin-configureren?plan=subscribe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/da/pages/konfigurer-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/fr/pages/configurer-kevin?plan=subscribe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
+    <loc>https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/configure?plan=subscribe"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=buy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=buy"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pages/configure?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/es/pages/configurar-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/it/pages/configura-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/kevin-configureren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/configurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/configurar-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/configura-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/konfigurer-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/konfigurera-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/konfigurovat-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/konfiguruj-kevin?plan=subscribe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/configure?plan=subscribe"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pages/llms</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/pages/llms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/llms"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/ai-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/apercu-ia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/ki-uebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/ai-prehled"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/llms"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/nl/pages/ai-overzicht</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/nl/pages/ai-overzicht</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/llms"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/ai-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/apercu-ia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/ki-uebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/ai-prehled"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/llms"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/fr/pages/apercu-ia</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/fr/pages/apercu-ia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/llms"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/ai-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/apercu-ia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/ki-uebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/ai-prehled"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/llms"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/de/pages/ki-uebersicht</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/de/pages/ki-uebersicht</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/llms"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/ai-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/apercu-ia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/ki-uebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/ai-prehled"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/llms"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/es/pages/resumen-ia</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/cs/pages/ai-prehled</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/llms"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/ai-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/apercu-ia"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/ki-uebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/ai-prehled"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/llms"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/it/pages/panoramica-ia</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/pages/sitemap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/site-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/plan-du-site"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/seitenuebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/prehled-stranek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/sitemap"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/nb/pages/ai-oversikt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/nl/pages/site-overzicht</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/site-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/plan-du-site"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/seitenuebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/prehled-stranek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/sitemap"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/da/pages/ai-oversigt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/fr/pages/plan-du-site</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/site-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/plan-du-site"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/seitenuebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/prehled-stranek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/sitemap"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/sv/pages/ai-oversikt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/de/pages/seitenuebersicht</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/site-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/plan-du-site"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/seitenuebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/prehled-stranek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/sitemap"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/fi/pages/ai-yhteenveto</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
+    <loc>https://www.lurafi.com/cs/pages/prehled-stranek</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lurafi.com/pages/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.lurafi.com/nl/pages/site-overzicht"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lurafi.com/fr/pages/plan-du-site"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.lurafi.com/de/pages/seitenuebersicht"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.lurafi.com/cs/pages/prehled-stranek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lurafi.com/pages/sitemap"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cs/pages/ai-prehled</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pl/pages/podsumowanie-ai</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/llms"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/ai-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/apercu-ia"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/ki-uebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/resumen-ia"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/panoramica-ia"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/ai-oversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/ai-oversikt"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/ai-yhteenveto"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/ai-prehled"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/podsumowanie-ai"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/llms"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pages/sitemap</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/nl/pages/site-overzicht</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/fr/pages/plan-du-site</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/de/pages/seitenuebersicht</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/es/pages/mapa-del-sitio</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/it/pages/mappa-del-sito</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/nb/pages/nettstedkart</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/da/pages/sideoversigt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/sv/pages/webbplatskarta</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/fi/pages/sivukartta</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cs/pages/prehled-stranek</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/pl/pages/mapa-strony</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lurafi.com/pages/sitemap"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://lurafi.com/nl/pages/site-overzicht"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://lurafi.com/fr/pages/plan-du-site"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://lurafi.com/de/pages/seitenuebersicht"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lurafi.com/es/pages/mapa-del-sitio"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://lurafi.com/it/pages/mappa-del-sito"/>
-    <xhtml:link rel="alternate" hreflang="nb" href="https://lurafi.com/nb/pages/nettstedkart"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://lurafi.com/da/pages/sideoversigt"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://lurafi.com/sv/pages/webbplatskarta"/>
-    <xhtml:link rel="alternate" hreflang="fi" href="https://lurafi.com/fi/pages/sivukartta"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://lurafi.com/cs/pages/prehled-stranek"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://lurafi.com/pl/pages/mapa-strony"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lurafi.com/pages/sitemap"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.cs.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.cs.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.da.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.de.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.de.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.fr.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.es.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.nl.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.fi.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.fr.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms.cs.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.it.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms.de.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.nb.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms.fr.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.nl.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms.nl.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.pl.txt</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/llms.txt</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.sv.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms-full.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.cs.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.da.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.de.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.es.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.fi.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.fr.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.it.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.nb.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.nl.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.pl.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.sv.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/llms.txt</loc>
-
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml</loc>
+    <loc>https://www.lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml</loc>
 
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://lurafi.com/sitemap.xml</loc>
+    <loc>https://www.lurafi.com/sitemap.xml</loc>
 
     <changefreq>daily</changefreq>
     <priority>0.95</priority>

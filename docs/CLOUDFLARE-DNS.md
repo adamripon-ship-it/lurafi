@@ -89,7 +89,7 @@ If Shopify shows **SSL pending** for more than a few hours:
 After DNS is **Connected**:
 
 1. **Settings → Domains**
-2. Set **Primary domain** to `lurafi.com` or `www.lurafi.com` (pick one canonical URL)
+2. Set **Primary domain** to **`www.lurafi.com`** (apex `lurafi.com` redirects to www). See [PRIMARY-DOMAIN-WWW.md](./PRIMARY-DOMAIN-WWW.md).
 3. Enable redirect from the non-primary host and from `*.myshopify.com`
 
 ### 5. Verify
@@ -102,7 +102,8 @@ dig www.lurafi.com CNAME +short
 Browser checks:
 
 - [ ] `https://lurafi.com/` loads the Shopify storefront (not “domain not configured”)
-- [ ] `https://www.lurafi.com/` redirects to primary (if configured)
+- [ ] `https://www.lurafi.com/` returns **200** (primary)
+- [ ] `https://lurafi.com/` **301** → `https://www.lurafi.com/`
 - [ ] Padlock / valid certificate
 - [ ] `/pages/configure?plan=buy` works
 - [ ] One locale prefix (e.g. `/nl/`) works

@@ -3,6 +3,7 @@
   Pairs with canonical in layout/theme.liquid.
 {%- endcomment -%}
 {%- liquid
+  assign lurafi_seo_origin = request.origin | replace: '//lurafi.com', '//www.lurafi.com'
   assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
   assign path_suffix = request.path
   assign locale_root = request.locale.root_url
@@ -16,7 +17,7 @@
     assign path_suffix = '/' | append: path_suffix
   endunless
 
-  assign x_default_href = request.origin | append: path_suffix
+  assign x_default_href = lurafi_seo_origin | append: path_suffix
   assign published_hreflang_count = 0
   for language in localization.available_languages
     assign lang_root = language.iso_code | split: '-' | first | downcase
@@ -26,7 +27,7 @@
     endunless
     assign published_hreflang_count = published_hreflang_count | plus: 1
     if language.primary
-      assign x_default_href = request.origin | append: language.root_url | append: path_suffix
+      assign x_default_href = lurafi_seo_origin | append: language.root_url | append: path_suffix
     endif
   endfor
 -%}
@@ -35,7 +36,7 @@
     {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
     {%- assign lang_token = ',' | append: lang_root | append: ',' -%}
     {%- if lurafi_published_locale_csv contains lang_token -%}
-    {%- assign lang_href = request.origin | append: language.root_url | append: path_suffix -%}
+    {%- assign lang_href = lurafi_seo_origin | append: language.root_url | append: path_suffix -%}
     {%- if request.search != blank -%}
       {%- assign lang_href = lang_href | append: request.search -%}
     {%- endif -%}

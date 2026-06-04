@@ -21,14 +21,14 @@
     "shopify:products:migrate": "node scripts/migrate-products-productSet.mjs",
     "shopify:commerce:setup": "node scripts/setup-mitipi-commerce.mjs",
     "shopify:approve-scopes": "./scripts/request-app-scope-approval.sh",
-    "qa:full": "LURAFI_URL=https://lurafi.com node scripts/qa-full.mjs",
+    "qa:full": "LURAFI_URL=https://www.lurafi.com node scripts/qa-full.mjs",
     "qa:mitipi": "node scripts/qa-mitipi-report.mjs",
     "qa:mitipi:backend": "node scripts/qa-mitipi-backend.mjs",
-    "qa:mitipi:browser": "LURAFI_URL=https://lurafi.com node scripts/browser-qa.mjs",
-    "qa:mitipi:audit": "LURAFI_URL=https://lurafi.com node scripts/full-site-audit.mjs",
+    "qa:mitipi:browser": "LURAFI_URL=https://www.lurafi.com node scripts/browser-qa.mjs",
+    "qa:mitipi:audit": "LURAFI_URL=https://www.lurafi.com node scripts/full-site-audit.mjs",
     "qa:i18n": "node scripts/i18n-browser-qa.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:live": "LURAFI_URL=https://lurafi.com playwright test"
+    "test:e2e:live": "LURAFI_URL=https://www.lurafi.com playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
