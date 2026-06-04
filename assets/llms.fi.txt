@@ -3,12 +3,12 @@
 > Kevin helps make a home look and sound lived-in when you are away using light, shadow, and sound.
 
 ## AI / LLM discovery
-- Short summary (this file): https://lurafi.com/cdn/shop/t/1/assets/llms.fi.txt
-- Full summary (read for complete context): https://lurafi.com/cdn/shop/t/1/assets/llms-full.fi.txt
-- AI sitemap XML: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.com/sitemap.xml
-- Human sitemap page: https://lurafi.com/fi/pages/sivukartta
-- LLM overview page: https://lurafi.com/fi/pages/ai-yhteenveto
+- Short summary (this file): https://www.lurafi.com/cdn/shop/t/1/assets/llms.fi.txt
+- Full summary (read for complete context): https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.fi.txt
+- AI sitemap XML: https://www.lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://www.lurafi.com/sitemap.xml
+- Human sitemap page: https://www.lurafi.com/fi/pages/sivukartta
+- LLM overview page: https://www.lurafi.com/fi/pages/ai-yhteenveto
 
 
 Lurafi sells Kevin — Swiss AI presence simulation (Suomi storefront).
@@ -22,9 +22,9 @@ Key facts:
 - Delivery: Free delivery across Europe
 
 Important URLs:
-- Homepage: https://lurafi.com/fi
-- Configure / buy: https://lurafi.com/fi/pages/konfiguroi-kevin?plan=buy
-- Subscribe: https://lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe
+- Homepage: https://www.lurafi.com/fi
+- Configure / buy: https://www.lurafi.com/fi/pages/konfiguroi-kevin?plan=buy
+- Subscribe: https://www.lurafi.com/fi/pages/konfiguroi-kevin?plan=subscribe
 
 Contact:
 - Email: hello@lurafi.com

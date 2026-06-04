@@ -11,15 +11,15 @@
 - LLM overview page: https://www.lurafi.com/de/pages/ki-uebersicht
 
 
-> Short summary: https://lurafi.com/cdn/shop/t/1/assets/llms.de.txt
+> Short summary: https://www.lurafi.com/cdn/shop/t/1/assets/llms.de.txt
 
 ## AI / LLM discovery
-- Short summary (this file): https://lurafi.com/cdn/shop/t/1/assets/llms.de.txt
-- Full summary (read for complete context): https://lurafi.com/cdn/shop/t/1/assets/llms-full.de.txt
-- AI sitemap XML: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://lurafi.com/sitemap.xml
-- Human sitemap page: https://lurafi.com/pages/sitemap
-- LLM overview page: https://lurafi.com/pages/llms
+- Short summary (this file): https://www.lurafi.com/cdn/shop/t/1/assets/llms.de.txt
+- Full summary (read for complete context): https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.de.txt
+- AI sitemap XML: https://www.lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://www.lurafi.com/sitemap.xml
+- Human sitemap page: https://www.lurafi.com/pages/sitemap
+- LLM overview page: https://www.lurafi.com/pages/llms
 
 
 ## Brand Overview
@@ -143,13 +143,13 @@ Related terms:
 - Full LLM file: https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.de.txt
 ## Important URLs
 
-- Homepage: https://lurafi.com/
-- Configure / buy: https://lurafi.com/pages/configure?plan=buy
-- Subscribe: https://lurafi.com/pages/configure?plan=subscribe
-- Dutch homepage: https://lurafi.com/nl/
-- Dutch configure: https://lurafi.com/nl/pages/kevin-configureren?plan=buy
-- Shopify sitemap: https://lurafi.com/sitemap.xml
-- AI sitemap: https://lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
+- Homepage: https://www.lurafi.com/
+- Configure / buy: https://www.lurafi.com/pages/configure?plan=buy
+- Subscribe: https://www.lurafi.com/pages/configure?plan=subscribe
+- Dutch homepage: https://www.lurafi.com/nl/
+- Dutch configure: https://www.lurafi.com/nl/pages/kevin-configureren?plan=buy
+- Shopify sitemap: https://www.lurafi.com/sitemap.xml
+- AI sitemap: https://www.lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
 
 ## Contact
 
