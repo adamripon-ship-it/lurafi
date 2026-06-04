@@ -47,7 +47,22 @@ export function getLanguageLabels() {
 
 export function getPublishedCountries() {
   const cfg = loadLanguagesConfig();
-  return cfg.publishedCountries || [];
+  if (cfg.countries?.length) {
+    const order = cfg.publishedCountries || cfg.countries.map((c) => c.code);
+    const byCode = Object.fromEntries(cfg.countries.map((c) => [c.code, c]));
+    return order.filter((code) => byCode[code]).map((code) => byCode[code]);
+  }
+  return (cfg.publishedCountries || []).map((code) => ({ code, currency: null, label: code }));
+}
+
+/** ISO country codes in storefront display order. */
+export function getPublishedCountryCodes() {
+  return getPublishedCountries().map((c) => c.code);
+}
+
+export function getCountryCurrency(code) {
+  const row = getPublishedCountries().find((c) => c.code === code);
+  return row?.currency || null;
 }
 
 export function localeUrlPrefix(code) {

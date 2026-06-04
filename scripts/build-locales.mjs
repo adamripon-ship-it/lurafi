@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import { getLanguageLabels, getPublishedCountries, getPublishedLocales } from './i18n/registry.mjs';
+import {
+  getLanguageLabels,
+  getPublishedCountries,
+  getPublishedCountryCodes,
+  getPublishedLocales,
+} from './i18n/registry.mjs';
 import { customersEn, customersNl } from './customers-locale.mjs';
 
 const root = path.join(import.meta.dirname, '..');
@@ -35,7 +40,13 @@ const en = {
     nl: 'NL'
   },
   country: {
-    label: 'Country / region'
+    label: 'Country / region',
+    ...Object.fromEntries(
+      getPublishedCountries().map((c) => [
+        c.code.toLowerCase(),
+        c.label || c.code,
+      ]),
+    ),
   },
   header: {
     why_kevin: 'Why Kevin',
@@ -798,14 +809,19 @@ for (const rel of [
   );
   fs.writeFileSync(filePath, text);
 }
-const publishedCountryCodes = getPublishedCountries().join(',');
+const publishedCountryCodes = getPublishedCountryCodes().join(',');
 const countryCsv = publishedCountryCodes ? `,${publishedCountryCodes},` : ',';
 const countryAssign = `assign lurafi_published_country_csv = '${countryCsv}'`;
+const countryOrderAssign = `assign lurafi_country_order_csv = '${countryCsv}'`;
 const languageSelectorPath = path.join(root, 'snippets/language-selector.liquid');
 let languageSelectorText = fs.readFileSync(languageSelectorPath, 'utf8');
 languageSelectorText = languageSelectorText.replace(
   /assign lurafi_published_country_csv = '[^']*'/,
   countryAssign,
+);
+languageSelectorText = languageSelectorText.replace(
+  /assign lurafi_country_order_csv = '[^']*'/,
+  countryOrderAssign,
 );
 fs.writeFileSync(languageSelectorPath, languageSelectorText);
 

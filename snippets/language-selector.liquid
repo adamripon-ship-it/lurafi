@@ -1,5 +1,6 @@
 {%- comment -%}
   Language + country (Markets) switcher via POST /localization.
+  Country change updates market + presentment currency (Shopify Markets).
   @param form_id {String}
   @param selector_id {String}
   @param country_selector_id {String}
@@ -9,7 +10,8 @@
     LURAFI_PUBLISHED_LOCALES — updated by npm run locales:build
   endcomment
   assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
-  assign lurafi_published_country_csv = ',DE,FR,IE,NL,CZ,'
+  assign lurafi_published_country_csv = ',CH,DE,FR,IE,NL,CZ,'
+  assign lurafi_country_order_csv = ',CH,DE,FR,IE,NL,CZ,'
   assign form_id = form_id | default: 'LocalizationForm'
   assign selector_id = selector_id | default: 'LanguageSelector'
   assign country_selector_id = country_selector_id | default: 'CountrySelector'
@@ -46,13 +48,23 @@
   elsif request.query_string != blank
     assign return_to = return_to | append: '?' | append: request.query_string
   endif
+
+  assign lurafi_active_currency = localization.country.currency.iso_code
+  if cart.currency.iso_code != blank
+    assign lurafi_active_currency = cart.currency.iso_code
+  endif
 -%}
 {%- if show_country or show_language -%}
-  <!-- lurafi-lang-filter-v3 -->
-  <div class="language-selector" data-language-selector>
+  <!-- lurafi-lang-filter-v4 -->
+  <div
+    class="language-selector"
+    data-language-selector
+    data-active-country="{{ localization.country.iso_code }}"
+    data-active-currency="{{ lurafi_active_currency }}"
+  >
     <form
       method="post"
-      action="/localization"
+      action="{{ routes.root_url }}localization"
       id="{{ form_id }}"
       class="language-selector__form"
       accept-charset="UTF-8"
@@ -80,18 +92,24 @@
           data-country-select
           autocomplete="country"
         >
-          {%- for country in localization.available_countries -%}
-            {%- assign country_token = ',' | append: country.iso_code | append: ',' -%}
-            {%- if lurafi_published_country_csv contains country_token -%}
+          {%- assign lurafi_country_order = lurafi_country_order_csv | split: ',' -%}
+          {%- for ordered_code in lurafi_country_order -%}
+            {%- if ordered_code == blank -%}{%- continue -%}{%- endif -%}
+            {%- for country in localization.available_countries -%}
+              {%- if country.iso_code != ordered_code -%}{%- continue -%}{%- endif -%}
+              {%- assign country_token = ',' | append: country.iso_code | append: ',' -%}
+              {%- unless lurafi_published_country_csv contains country_token -%}{%- continue -%}{%- endunless -%}
+              {%- assign country_label_key = 'country.' | append: country.iso_code | downcase -%}
               <option
                 value="{{ country.iso_code }}"
+                data-currency="{{ country.currency.iso_code }}"
                 {% if country.iso_code == localization.country.iso_code %}
                   selected
                 {% endif %}
               >
-                {{ country.name }} ({{ country.currency.iso_code }})
+                {{ country_label_key | t: default: country.name }} ({{ country.currency.iso_code }})
               </option>
-            {%- endif -%}
+            {%- endfor -%}
           {%- endfor -%}
         </select>
       {%- endif -%}
@@ -136,6 +154,7 @@
     (function () {
       var form = document.getElementById({{ form_id | json }});
       if (!form) return;
+      var wrapper = form.closest('[data-language-selector]');
       var langSelect = form.querySelector('[data-language-select]');
       var countrySelect = form.querySelector('[data-country-select]');
       function syncReturnTo() {
@@ -144,19 +163,34 @@
           input.value = (window.location.pathname || '/') + (window.location.search || '');
         }
       }
+      function syncActiveCurrency() {
+        if (!countrySelect || !wrapper) return;
+        var opt = countrySelect.options[countrySelect.selectedIndex];
+        var currency = opt && opt.getAttribute('data-currency');
+        if (currency) {
+          wrapper.setAttribute('data-active-currency', currency);
+          if (window.lurafiLocalization) window.lurafiLocalization.currency = currency;
+        }
+        if (countrySelect.value) {
+          wrapper.setAttribute('data-active-country', countrySelect.value);
+          if (window.lurafiLocalization) window.lurafiLocalization.country = countrySelect.value;
+        }
+      }
       form.addEventListener('submit', syncReturnTo);
-      function submitLocalization(source) {
+      function submitLocalization() {
         syncReturnTo();
+        syncActiveCurrency();
         if (form.requestSubmit) form.requestSubmit();
         else form.submit();
       }
       if (langSelect) {
-        langSelect.addEventListener('change', function () { submitLocalization('language'); });
+        langSelect.addEventListener('change', submitLocalization);
       }
       if (countrySelect) {
-        countrySelect.addEventListener('change', function () { submitLocalization('country'); });
+        countrySelect.addEventListener('change', submitLocalization);
       }
       syncReturnTo();
+      syncActiveCurrency();
     })();
   </script>
 {%- endif -%}

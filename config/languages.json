@@ -8,7 +8,15 @@
     "llmsFull": "llms-full.txt",
     "aiSitemap": "sitemap-ai.xml"
   },
-  "publishedCountries": ["DE", "FR", "IE", "NL", "CZ"],
+  "publishedCountries": ["CH", "DE", "FR", "IE", "NL", "CZ"],
+  "countries": [
+    { "code": "CH", "currency": "CHF", "label": "Switzerland" },
+    { "code": "DE", "currency": "EUR", "label": "Germany" },
+    { "code": "FR", "currency": "EUR", "label": "France" },
+    { "code": "IE", "currency": "EUR", "label": "Ireland" },
+    { "code": "NL", "currency": "EUR", "label": "Netherlands" },
+    { "code": "CZ", "currency": "CZK", "label": "Czech Republic" }
+  ],
   "locales": [
     {
       "code": "en",

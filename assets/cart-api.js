@@ -29,6 +29,7 @@
       var currency =
         (window.Shopify && Shopify.currency && Shopify.currency.active) ||
         (cart && cart.currency) ||
+        (window.lurafiLocalization && window.lurafiLocalization.currency) ||
         'EUR';
       var items = ((cart && cart.items) || []).map(function (item, index) {
         return {

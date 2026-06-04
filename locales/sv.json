@@ -530,6 +530,12 @@
     }
   },
   "country": {
-    "label": "Country / region"
+    "label": "Country / region",
+    "ch": "Switzerland",
+    "de": "Germany",
+    "fr": "France",
+    "ie": "Ireland",
+    "nl": "Netherlands",
+    "cz": "Czech Republic"
   }
 }

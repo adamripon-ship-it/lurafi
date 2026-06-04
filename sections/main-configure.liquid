@@ -262,6 +262,7 @@
 {
   "defaultImage": {{ default_image | json }},
   "moneyFormat": {{ shop.money_format | json }},
+  "currency": {{ cart.currency.iso_code | default: localization.country.currency.iso_code | json }},
   "colorHex": {
     "grey": "#817976",
     "white": "#ded7d5",

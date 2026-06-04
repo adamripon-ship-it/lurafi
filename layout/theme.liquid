@@ -90,6 +90,11 @@
         }
       };
       window.themeLocale = {{ request.locale.iso_code | json }};
+      window.lurafiLocalization = {
+        country: {{ localization.country.iso_code | json }},
+        currency: {{ cart.currency.iso_code | default: localization.country.currency.iso_code | json }},
+        language: {{ request.locale.iso_code | json }}
+      };
     </script>
     <script src="{{ 'cart-api.js' | asset_url }}" defer></script>
     <script src="{{ 'header.js' | asset_url }}" defer></script>
