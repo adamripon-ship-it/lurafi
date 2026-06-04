@@ -6,6 +6,9 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadDotenv } from './load-dotenv.mjs';
+
+loadDotenv();
 
 const API_VERSION = process.env.SHOPIFY_API_VERSION || '2025-01';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
