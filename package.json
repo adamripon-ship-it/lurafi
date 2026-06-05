@@ -28,6 +28,7 @@
     "qa:mitipi:browser": "LURAFI_URL=https://www.lurafi.com node scripts/browser-qa.mjs",
     "qa:mitipi:audit": "LURAFI_URL=https://www.lurafi.com node scripts/full-site-audit.mjs",
     "qa:i18n": "node scripts/i18n-browser-qa.mjs",
+    "qa:language": "LURAFI_URL=https://www.lurafi.com node scripts/qa-language-selector.mjs",
     "test:e2e": "playwright test",
     "test:e2e:live": "LURAFI_URL=https://www.lurafi.com playwright test"
   },

@@ -53,6 +53,14 @@ async function mobileSuite(browser) {
   });
   await probe(page, 'A', 'mobile:header-lang', 'header language selector', headerLang);
 
+  const mobileCountryCheck = await page.evaluate(() => ({
+    countrySelects: document.querySelectorAll('[data-country-select]').length,
+    countryCodeInputs: document.querySelectorAll('select[name="country_code"]').length,
+  }));
+  if (mobileCountryCheck.countrySelects > 0 || mobileCountryCheck.countryCodeInputs > 0) {
+    throw new Error('Country selector markup detected in mobile header');
+  }
+
   const menuBtn = page.locator('[data-menu-open]');
   await menuBtn.click();
   await page.waitForTimeout(500);
@@ -111,7 +119,6 @@ async function configureSuite(browser) {
   await page.waitForTimeout(300);
   const cfgLang = await page.evaluate(() => {
     const el = document.querySelector('.configure-nav__tools [data-language-select]');
-    const countryEl = document.querySelector('.configure-nav__tools [data-country-select]');
     const tools = document.querySelector('.configure-nav__tools');
     if (!el) return { present: false, toolsHtml: tools?.innerHTML?.slice(0, 80) };
     const r = el.getBoundingClientRect();
@@ -121,8 +128,6 @@ async function configureSuite(browser) {
       visible: r.width > 0 && r.height > 0 && toolsStyle?.display !== 'none',
       rect: { w: r.width, h: r.height },
       optionCount: el.options?.length || 0,
-      countryPresent: !!countryEl,
-      countryOptions: countryEl?.options?.length || 0,
       returnTo: document.querySelector('#ConfigureLanguageForm [data-language-return-to]')?.value,
       url: location.pathname + location.search,
       hasPlanInReturnTo: (document.querySelector('#ConfigureLanguageForm [data-language-return-to]')?.value || '').includes('plan='),
@@ -130,12 +135,35 @@ async function configureSuite(browser) {
   });
   await probe(page, 'C', 'configure:lang', 'configure language selector', cfgLang);
 
-  const countryFields = await page.evaluate(() => ({
-    countrySelects: document.querySelectorAll('select[name*="country"]').length,
-    localizationForms: document.querySelectorAll('form[action="/localization"]').length,
-    availableCountriesSnippet: !!document.querySelector('[data-country-select]'),
+  const localizationFields = await page.evaluate(() => ({
+    localizationForms: document.querySelectorAll('form[action*="localization"]').length,
+    languageSelects: document.querySelectorAll('[data-language-select]').length,
+    countrySelects: document.querySelectorAll('[data-country-select]').length,
+    badFormActions: Array.from(document.querySelectorAll('form[action*="localization"]'))
+      .map((form) => form.getAttribute('action'))
+      .filter((action) => action && action !== '/localization'),
   }));
-  await probe(page, 'F', 'configure:country', 'country vs language controls', countryFields);
+  await probe(page, 'F', 'configure:localization', 'language controls only', localizationFields);
+
+  if (localizationFields.countrySelects > 0) {
+    throw new Error(
+      `Country selector must not exist (found ${localizationFields.countrySelects} [data-country-select])`,
+    );
+  }
+  if (localizationFields.badFormActions.length > 0) {
+    throw new Error(
+      `Localization form action must be /localization (found: ${localizationFields.badFormActions.join(', ')})`,
+    );
+  }
+
+  const headerCountryCheck = await page.evaluate(() => ({
+    countrySelects: document.querySelectorAll('[data-country-select]').length,
+    countryCodeInputs: document.querySelectorAll('select[name="country_code"]').length,
+  }));
+  await probe(page, 'F', 'home:localization', 'no country selector on home', headerCountryCheck);
+  if (headerCountryCheck.countrySelects > 0 || headerCountryCheck.countryCodeInputs > 0) {
+    throw new Error('Country selector markup detected on homepage');
+  }
 
   const checkout = page.locator('[data-configure-checkout]');
   await probe(page, 'E', 'configure:checkout', 'checkout CTA', {
