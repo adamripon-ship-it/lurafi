@@ -1,0 +1,224 @@
+{
+  "generatedAt": "2026-06-04T19:20:27.068Z",
+  "store": "6mzhe1-yf.myshopify.com",
+  "overall": "warning",
+  "scripts": {
+    "shopify:markets:countries": { "exitCode": 0, "status": "passed" },
+    "qa:mitipi:backend": { "exitCode": 0, "status": "passed" }
+  },
+  "httpRedirects": {
+    "www.lurafi.com": { "status": 301, "location": "https://lurafi.com/", "expected": "200 on www (primary)" },
+    "lurafi.com": { "status": 200, "expected": "301 to www" }
+  },
+  "areas": {
+    "markets_currencies": {
+      "status": "passed",
+      "details": {
+        "presentment": ["CHF", "CZK", "EUR"],
+        "countries": { "CH": "CHF", "DE": "EUR", "FR": "EUR", "IE": "EUR", "NL": "EUR", "CZ": "CZK" },
+        "markets": ["European Union (EUR, local on)", "Switzerland (CHF)"]
+      },
+      "fixes": []
+    },
+    "themes_catalog": {
+      "status": "passed",
+      "details": { "liveTheme": "lurafi-deploy", "products": ["kevin", "kevin-plus"], "pages": ["configure", "sitemap", "llms"] },
+      "fixes": []
+    },
+    "domains": {
+      "status": "warning",
+      "details": {
+        "primaryUrl": "https://lurafi.com",
+        "primaryHost": "lurafi.com",
+        "configDomain": "www.lurafi.com"
+      },
+      "fixes": [
+        "Admin → Settings → Domains → set www.lurafi.com as primary (docs/PRIMARY-DOMAIN-WWW.md)"
+      ]
+    },
+    "locales": {
+      "status": "passed",
+      "details": {
+        "expected": [
+          "en",
+          "nl",
+          "fr",
+          "de",
+          "cs"
+        ],
+        "published": [
+          "cs",
+          "de",
+          "en",
+          "fr",
+          "nl"
+        ],
+        "all": [
+          {
+            "locale": "cs",
+            "published": true,
+            "primary": false
+          },
+          {
+            "locale": "da",
+            "published": false,
+            "primary": false
+          },
+          {
+            "locale": "de",
+            "published": true,
+            "primary": false
+          },
+          {
+            "locale": "en",
+            "published": true,
+            "primary": true
+          },
+          {
+            "locale": "es",
+            "published": false,
+            "primary": false
+          },
+          {
+            "locale": "fi",
+            "published": false,
+            "primary": false
+          },
+          {
+            "locale": "fr",
+            "published": true,
+            "primary": false
+          },
+          {
+            "locale": "it",
+            "published": false,
+            "primary": false
+          },
+          {
+            "locale": "nb",
+            "published": false,
+            "primary": false
+          },
+          {
+            "locale": "nl",
+            "published": true,
+            "primary": false
+          },
+          {
+            "locale": "pl",
+            "published": false,
+            "primary": false
+          },
+          {
+            "locale": "sv",
+            "published": false,
+            "primary": false
+          }
+        ]
+      },
+      "fixes": []
+    },
+    "market_web_presence": {
+      "status": "passed",
+      "details": {
+        "rootLocales": [
+          "en",
+          "cs",
+          "de",
+          "fr",
+          "nl"
+        ]
+      },
+      "fixes": []
+    },
+    "products_catalog": {
+      "status": "passed",
+      "details": {
+        "products": [
+          {
+            "handle": "kevin",
+            "status": "ACTIVE",
+            "publications": [
+              {
+                "pub": "Online Store",
+                "isPublished": true
+              },
+              {
+                "pub": "Shop",
+                "isPublished": true
+              }
+            ]
+          },
+          {
+            "handle": "kevin-plus",
+            "status": "ACTIVE",
+            "publications": [
+              {
+                "pub": "Online Store",
+                "isPublished": true
+              },
+              {
+                "pub": "Shop",
+                "isPublished": true
+              }
+            ]
+          }
+        ]
+      },
+      "fixes": []
+    },
+    "translations_api": {
+      "status": "passed",
+      "details": {
+        "issues": []
+      },
+      "fixes": []
+    },
+    "shipping": {
+      "status": "passed",
+      "details": {
+        "zoneCount": 2,
+        "countries": [
+          "AE",
+          "AT",
+          "AU",
+          "BE",
+          "CA",
+          "CH",
+          "CZ",
+          "DE",
+          "DK",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "HK",
+          "IE",
+          "IL",
+          "IT",
+          "JP",
+          "KR",
+          "MY",
+          "NL",
+          "NO",
+          "NZ",
+          "PL",
+          "PT",
+          "SE",
+          "SG",
+          "US"
+        ]
+      },
+      "fixes": []
+    },
+    "payments": {
+      "status": "warning",
+      "details": {
+        "activated": false
+      },
+      "fixes": [
+        "Admin → Settings → Payments"
+      ]
+    }
+  }
+}

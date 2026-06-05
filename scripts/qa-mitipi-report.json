@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-06-03T13:53:04.867Z",
+  "store": "mitipi-2.myshopify.com",
+  "compareUrl": "https://mitipi-2.myshopify.com",
+  "backend": {
+    "pass": [
+      "Shop: Mitipi GmbH (mma@surfstr.com)",
+      "Primary domain: https://lurafi.com",
+      "Live theme: lurafi-deploy",
+      "12 locales published",
+      "Product kevin",
+      "Product kevin-plus",
+      "Page configure",
+      "Page sitemap",
+      "Page llms"
+    ],
+    "warn": [],
+    "fail": []
+  },
+  "compare": [
+    {
+      "check": "hero",
+      "old": 404,
+      "new": 404,
+      "oldOk": false,
+      "newOk": false
+    },
+    {
+      "check": "configure",
+      "old": 404,
+      "new": 404,
+      "oldOk": false,
+      "newOk": false
+    },
+    {
+      "check": "kevin",
+      "old": 200,
+      "new": 404,
+      "oldOk": true,
+      "newOk": false
+    }
+  ],
+  "storefront": {
+    "locales": [
+      {
+        "code": "en",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "code": "nl",
+        "status": 404,
+        "ok": false
+      },
+      {
+        "code": "de",
+        "status": 404,
+        "ok": false
+      },
+      {
+        "code": "fr",
+        "status": 404,
+        "ok": false
+      }
+    ]
+  }
+}

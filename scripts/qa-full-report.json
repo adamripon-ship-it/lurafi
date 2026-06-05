@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-06-03T21:57:26.239Z",
+  "lurafiUrl": "https://lurafi.com",
+  "shopifyStore": "6mzhe1-yf.myshopify.com",
+  "suites": [
+    {
+      "name": "Backend (Admin API)",
+      "ok": false,
+      "exitCode": 1
+    },
+    {
+      "name": "HTTP storefront",
+      "ok": true,
+      "exitCode": 0
+    },
+    {
+      "name": "Compare lurafi.ai → lurafi.com",
+      "ok": true,
+      "exitCode": 0
+    },
+    {
+      "name": "QA report JSON",
+      "ok": false,
+      "exitCode": 1
+    },
+    {
+      "name": "Browser QA (desktop/tablet/mobile)",
+      "ok": true,
+      "exitCode": 0
+    },
+    {
+      "name": "Full-site audit",
+      "ok": true,
+      "exitCode": 0
+    },
+    {
+      "name": "i18n browser QA",
+      "ok": true,
+      "exitCode": 0
+    },
+    {
+      "name": "Checkout smoke",
+      "ok": true,
+      "exitCode": 0
+    }
+  ],
+  "passed": 6,
+  "failed": 2
+}
