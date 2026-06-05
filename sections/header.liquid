@@ -14,10 +14,10 @@
 <header class="site-header" role="banner" data-theme="dark">
   <div class="site-header__inner">
     <div class="site-header__brand" data-header-zone="brand">
-      <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="{{ shop.name | escape }} home">{{ shop.name | default: 'Kevin' | escape }}</a>
+      <a href="{{ routes.root_url }}" class="site-header__logo" aria-label="{{ shop.name | escape }} home">
+        {% render 'lurafi-logo', class: 'site-header__logo-img' %}
+      </a>
     </div>
-
-    <div class="site-header__divider" aria-hidden="true" data-header-zone="divider"></div>
 
     <nav class="site-nav" aria-label="{{ 'accessibility.main_navigation' | t }}" data-header-zone="nav">
       <a href="{{ routes.root_url }}#problem" class="site-nav__link">{{ 'header.why_kevin' | t }}</a>
@@ -29,7 +29,7 @@
 
     <div class="site-header__utilities" data-header-zone="utilities">
       <div class="site-header__lang">
-        {% render 'language-selector', form_id: 'HeaderLanguageForm', selector_id: 'HeaderLanguageSelector', country_selector_id: 'HeaderCountrySelector' %}
+        {% render 'language-selector', form_id: 'HeaderLanguageForm', selector_id: 'HeaderLanguageSelector' %}
       </div>
 
       <div class="site-header__actions">
@@ -72,7 +72,9 @@
     tabindex="-1"
   >
     <div class="mobile-nav__header">
-      <a href="{{ routes.root_url }}" id="MobileNavBrand" class="mobile-nav__brand" data-menu-close>{{ shop.name | default: 'Kevin' | escape }}</a>
+      <a href="{{ routes.root_url }}" id="MobileNavBrand" class="mobile-nav__brand" data-menu-close aria-label="{{ shop.name | escape }} home">
+        {% render 'lurafi-logo', class: 'mobile-nav__brand-img' %}
+      </a>
       <button type="button" class="mobile-nav__close" data-menu-close aria-label="{{ 'accessibility.close_menu' | t }}">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -81,7 +83,7 @@
     </div>
     <div class="mobile-nav__lang">
       <p class="mobile-nav__group-label">{{ 'language.label' | t }}</p>
-      {% render 'language-selector', form_id: 'MobileNavLanguageForm', selector_id: 'MobileNavLanguageSelector', country_selector_id: 'MobileNavCountrySelector' %}
+      {% render 'language-selector', form_id: 'MobileNavLanguageForm', selector_id: 'MobileNavLanguageSelector' %}
     </div>
     <nav class="mobile-nav__links" aria-label="{{ 'accessibility.mobile_navigation' | t }}">
       <p class="mobile-nav__group-label">{{ 'header.explore' | t }}</p>

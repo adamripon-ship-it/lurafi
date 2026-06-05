@@ -1,0 +1,31 @@
+{%- liquid
+  assign logo_class = class | default: 'lurafi-logo'
+  assign logo_alt = shop.name | default: 'LURAFI' | escape
+  assign logo_render_width = 466
+  assign logo_render_height = 128
+
+  if settings.logo != blank
+    assign logo_render_width = settings.logo.width | default: 512
+    assign logo_render_height = settings.logo.height | default: 128
+  endif
+-%}
+{%- if settings.logo != blank -%}
+  {{ settings.logo | image_url: width: logo_render_width | image_tag:
+    class: logo_class,
+    width: logo_render_width,
+    height: logo_render_height,
+    alt: logo_alt,
+    loading: 'eager',
+    decoding: 'async'
+  }}
+{%- else -%}
+  <img
+    src="{{ 'lurafi-logo.png' | asset_url }}"
+    class="{{ logo_class }}"
+    width="{{ logo_render_width }}"
+    height="{{ logo_render_height }}"
+    alt="{{ logo_alt }}"
+    loading="eager"
+    decoding="async"
+  >
+{%- endif -%}
