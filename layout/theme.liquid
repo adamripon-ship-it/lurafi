@@ -95,7 +95,9 @@
         currency: {{ cart.currency.iso_code | default: localization.country.currency.iso_code | json }},
         language: {{ request.locale.iso_code | json }}
       };
+      window.lurafiLocaleRoutes = {"en":{"prefix":"","configurePath":"/pages/configure"},"nl":{"prefix":"/nl","configurePath":"/nl/pages/kevin-configureren"},"fr":{"prefix":"/fr","configurePath":"/fr/pages/configurer-kevin"},"de":{"prefix":"/de","configurePath":"/de/pages/kevin-konfigurieren"},"cs":{"prefix":"/cs","configurePath":"/cs/pages/konfigurovat-kevin"}};
     </script>
+    <script src="{{ 'language-selector.js' | asset_url }}" defer></script>
     <script src="{{ 'cart-api.js' | asset_url }}" defer></script>
     <script src="{{ 'header.js' | asset_url }}" defer></script>
     <script src="{{ 'theme.js' | asset_url }}" defer></script>

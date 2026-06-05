@@ -40,9 +40,26 @@ export function getLocale(code) {
 export function getLanguageLabels() {
   const labels = {};
   for (const l of getLocales()) {
-    labels[l.code] = l.label;
+    const flag = l.flag ? `${l.flag} ` : '';
+    labels[l.code] = `${flag}${l.label}`;
   }
   return labels;
+}
+
+/** Locale URL prefixes and configure page paths for language-switch return_to rewriting. */
+export function getLocaleRouteMap() {
+  const cfg = loadLanguagesConfig();
+  const defaultConfigure = cfg.pages?.configure?.handle || 'configure';
+  const routes = {};
+  for (const loc of getPublishedLocales()) {
+    const prefix = loc.urlPrefix || '';
+    const configureHandle = loc.pages?.configure?.handle || defaultConfigure;
+    routes[loc.code] = {
+      prefix,
+      configurePath: `${prefix}/pages/${configureHandle}`.replace('//', '/'),
+    };
+  }
+  return routes;
 }
 
 export function getPublishedCountries() {
