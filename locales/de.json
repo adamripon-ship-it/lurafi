@@ -356,7 +356,7 @@
     "shopify_sitemap": "Shopify XML-Sitemap",
     "ai_geo_sitemap": "KI / AEO / GEO XML-Sitemap",
     "robots": "Robots.txt-Entdeckungsdatei",
-    "human_sitemap": "Human-readable sitemap",
+    "human_sitemap": "Sitemap für Menschen",
     "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
     "llms_points_to_full": "links to full summary"
   },

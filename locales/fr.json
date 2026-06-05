@@ -356,7 +356,7 @@
     "shopify_sitemap": "Plan du site XML Shopify",
     "ai_geo_sitemap": "Plan du site XML IA / AEO / GEO",
     "robots": "Fichier de découverte Robots.txt",
-    "human_sitemap": "Human-readable sitemap",
+    "human_sitemap": "Plan du site lisible",
     "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
     "llms_points_to_full": "links to full summary"
   },

@@ -356,7 +356,7 @@
     "shopify_sitemap": "Shopify XML mapa webu",
     "ai_geo_sitemap": "AI / AEO / GEO XML mapa webu",
     "robots": "Soubor Robots.txt",
-    "human_sitemap": "Human-readable sitemap",
+    "human_sitemap": "Mapa webu pro lidi",
     "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
     "llms_points_to_full": "links to full summary"
   },
