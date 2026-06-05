@@ -28,20 +28,14 @@
   },
   "language": {
     "label": "Language",
-    "en": "EN",
-    "nl": "NL",
-    "fr": "FR",
-    "de": "DE",
-    "cs": "CS"
+    "en": "🇬🇧 EN",
+    "nl": "🇳🇱 NL",
+    "fr": "🇫🇷 FR",
+    "de": "🇩🇪 DE",
+    "cs": "🇨🇿 CS"
   },
   "country": {
-    "label": "Country / region",
-    "ch": "Switzerland",
-    "de": "Germany",
-    "fr": "France",
-    "ie": "Ireland",
-    "nl": "Netherlands",
-    "cz": "Czech Republic"
+    "label": "Country / region"
   },
   "header": {
     "why_kevin": "Why Kevin",

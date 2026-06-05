@@ -2,8 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import {
   getLanguageLabels,
-  getPublishedCountries,
-  getPublishedCountryCodes,
+  getLocaleRouteMap,
   getPublishedLocales,
 } from './i18n/registry.mjs';
 import { customersEn, customersNl } from './customers-locale.mjs';
@@ -40,12 +39,6 @@ const en = {
   },
   country: {
     label: 'Country / region',
-    ...Object.fromEntries(
-      getPublishedCountries().map((c) => [
-        c.code.toLowerCase(),
-        c.label || c.code,
-      ]),
-    ),
   },
   header: {
     why_kevin: 'Why Kevin',
@@ -785,11 +778,31 @@ const nlOut = unflatten(nlFlat);
 fs.writeFileSync(path.join(root, 'locales/en.default.json'), JSON.stringify(enOut, null, 2) + '\n');
 fs.writeFileSync(path.join(root, 'locales/nl.json'), JSON.stringify(nlOut, null, 2) + '\n');
 
+const COUNTRY_SELECTOR_MARKERS = [
+  'data-country-select',
+  'country_code',
+  'lurafi_published_country_csv',
+  'lurafi_country_order_csv',
+  'HeaderCountrySelector',
+  'language-selector__select--country',
+];
+
+function assertNoCountrySelector(relPath, text) {
+  const hits = COUNTRY_SELECTOR_MARKERS.filter((marker) => text.includes(marker));
+  if (hits.length) {
+    throw new Error(
+      `${relPath} must remain language-only. Remove country selector markers: ${hits.join(', ')}`,
+    );
+  }
+}
+
 const publishedCodes = getPublishedLocales()
   .map((l) => l.shopifyLocale || l.code)
   .join(',');
 const localeCsv = `,${publishedCodes},`;
 const localeAssign = `assign lurafi_published_locale_csv = '${localeCsv}'`;
+const localeRoutesJson = JSON.stringify(getLocaleRouteMap());
+
 for (const rel of [
   'layout/theme.liquid',
   'snippets/language-selector.liquid',
@@ -806,24 +819,28 @@ for (const rel of [
     /assign lurafi_published_locale_codes = '[^']*' \| split: ','/,
     localeAssign,
   );
+  if (rel === 'snippets/language-selector.liquid') {
+    assertNoCountrySelector(rel, text);
+  }
   fs.writeFileSync(filePath, text);
 }
-const publishedCountryCodes = getPublishedCountryCodes().join(',');
-const countryCsv = publishedCountryCodes ? `,${publishedCountryCodes},` : ',';
-const countryAssign = `assign lurafi_published_country_csv = '${countryCsv}'`;
-const countryOrderAssign = `assign lurafi_country_order_csv = '${countryCsv}'`;
-const languageSelectorPath = path.join(root, 'snippets/language-selector.liquid');
-let languageSelectorText = fs.readFileSync(languageSelectorPath, 'utf8');
-languageSelectorText = languageSelectorText.replace(
-  /assign lurafi_published_country_csv = '[^']*'/,
-  countryAssign,
+
+const themePath = path.join(root, 'layout/theme.liquid');
+let themeText = fs.readFileSync(themePath, 'utf8');
+themeText = themeText.replace(
+  /window\.lurafiLocaleRoutes = \{[\s\S]*?\};/,
+  `window.lurafiLocaleRoutes = ${localeRoutesJson};`,
 );
-languageSelectorText = languageSelectorText.replace(
-  /assign lurafi_country_order_csv = '[^']*'/,
-  countryOrderAssign,
-);
-fs.writeFileSync(languageSelectorPath, languageSelectorText);
+if (!themeText.includes('window.lurafiLocaleRoutes')) {
+  themeText = themeText.replace(
+    /window\.lurafiLocalization = \{[\s\S]*?\};/,
+    (block) => `${block}\n      window.lurafiLocaleRoutes = ${localeRoutesJson};`,
+  );
+}
+fs.writeFileSync(themePath, themeText);
+
+assertNoCountrySelector('snippets/language-selector.liquid', fs.readFileSync(path.join(root, 'snippets/language-selector.liquid'), 'utf8'));
 
 console.log('Wrote locales:', Object.keys(enFlat).length, 'keys');
 console.log('Published storefront locales:', publishedCodes);
-console.log('Published storefront countries:', publishedCountryCodes || '(all)');
+console.log('Locale route map injected for language switcher');
