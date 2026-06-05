@@ -6,6 +6,7 @@
 import { spawnSync } from 'node:child_process';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { getPublishedLocales } from './i18n/registry.mjs';
 import { adminGql } from './lib/shopify-admin-gql.mjs';
 
 const ROOT = join(import.meta.dirname, '..');
@@ -48,9 +49,11 @@ async function backend() {
   const live = data.themes.nodes.find((t) => t.role === 'MAIN');
   if (live?.name?.toLowerCase().includes('lurafi')) report.backend.pass.push(`Live theme: ${live.name}`);
   else report.backend.fail.push(`Live theme: ${live?.name}`);
-  const pub = data.shopLocales.filter((l) => l.published).length;
-  if (pub >= 12) report.backend.pass.push(`${pub} locales published`);
-  else report.backend.warn.push(`${pub} locales published`);
+  const expected = getPublishedLocales().map((l) => l.shopifyLocale || l.code);
+  const published = data.shopLocales.filter((l) => l.published).map((l) => l.locale);
+  const missing = expected.filter((code) => !published.includes(code));
+  if (!missing.length) report.backend.pass.push(`Locales published: ${expected.join(', ')}`);
+  else report.backend.fail.push(`Missing locales: ${missing.join(', ')}`);
   for (const h of ['kevin', 'kevin-plus']) {
     if (data.products.nodes.some((p) => p.handle === h)) report.backend.pass.push(`Product ${h}`);
     else report.backend.fail.push(`Missing product ${h}`);

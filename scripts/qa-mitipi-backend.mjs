@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /** Admin/backend checklist for mitipi-2 migration QA */
+import { getPublishedLocales } from './i18n/registry.mjs';
 import { adminGql } from './lib/shopify-admin-gql.mjs';
 
 const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
@@ -48,9 +49,11 @@ async function main() {
   const horizonLive = themes.nodes.find((t) => /^horizon$/i.test(t.name) && t.role === 'MAIN');
   if (horizonLive) bad('Horizon is still MAIN — storefront may show wrong theme');
 
+  const expectedLocales = getPublishedLocales().map((l) => l.shopifyLocale || l.code);
   const published = shopLocales.filter((l) => l.published);
-  if (published.length >= 12) ok(`${published.length} published locales`);
-  else caution(`Only ${published.length} published locales (expected 12)`);
+  const missing = expectedLocales.filter((code) => !published.some((l) => l.locale === code));
+  if (!missing.length) ok(`${published.length} published locales (${expectedLocales.join(', ')})`);
+  else bad(`Missing published locales: ${missing.join(', ')} (have ${published.map((l) => l.locale).join(', ')})`);
 
   const handles = ['kevin', 'kevin-plus'];
   for (const h of handles) {
