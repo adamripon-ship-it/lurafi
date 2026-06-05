@@ -38,22 +38,8 @@
       assign og_locale = 'fr_FR'
     when 'de'
       assign og_locale = 'de_DE'
-    when 'es'
-      assign og_locale = 'es_ES'
-    when 'it'
-      assign og_locale = 'it_IT'
-    when 'nb'
-      assign og_locale = 'nb_NO'
-    when 'da'
-      assign og_locale = 'da_DK'
-    when 'sv'
-      assign og_locale = 'sv_SE'
-    when 'fi'
-      assign og_locale = 'fi_FI'
     when 'cs'
       assign og_locale = 'cs_CZ'
-    when 'pl'
-      assign og_locale = 'pl_PL'
   endcase
 
   assign lurafi_og_image = page_image
@@ -81,14 +67,7 @@
       {%- when 'nl' -%}{%- assign alt_og = 'nl_NL' -%}
       {%- when 'fr' -%}{%- assign alt_og = 'fr_FR' -%}
       {%- when 'de' -%}{%- assign alt_og = 'de_DE' -%}
-      {%- when 'es' -%}{%- assign alt_og = 'es_ES' -%}
-      {%- when 'it' -%}{%- assign alt_og = 'it_IT' -%}
-      {%- when 'nb' -%}{%- assign alt_og = 'nb_NO' -%}
-      {%- when 'da' -%}{%- assign alt_og = 'da_DK' -%}
-      {%- when 'sv' -%}{%- assign alt_og = 'sv_SE' -%}
-      {%- when 'fi' -%}{%- assign alt_og = 'fi_FI' -%}
       {%- when 'cs' -%}{%- assign alt_og = 'cs_CZ' -%}
-      {%- when 'pl' -%}{%- assign alt_og = 'pl_PL' -%}
     {%- endcase -%}
     <meta property="og:locale:alternate" content="{{ alt_og }}">
   {%- endunless -%}

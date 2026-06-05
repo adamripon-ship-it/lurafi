@@ -36,8 +36,7 @@ const en = {
   general: { search: { search: 'Search' } },
   language: {
     label: 'Language',
-    en: 'EN',
-    nl: 'NL'
+    ...getLanguageLabels(),
   },
   country: {
     label: 'Country / region',

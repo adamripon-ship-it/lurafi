@@ -6,8 +6,14 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getPublishedLocales } from './i18n/registry.mjs';
 
 const localesDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'locales');
+const publishedLocaleFiles = new Set(
+  getPublishedLocales()
+    .filter((l) => !l.primary)
+    .map((l) => `${l.shopifyLocale || l.code}.json`),
+);
 
 function flatten(obj, prefix = '') {
   const out = {};
@@ -37,12 +43,22 @@ const enFlat = flatten(en);
 
 for (const file of fs.readdirSync(localesDir)) {
   if (!file.endsWith('.json') || file === 'en.default.json' || file.endsWith('.schema.json')) continue;
+  if (!publishedLocaleFiles.has(file)) continue;
   const p = path.join(localesDir, file);
   const flat = flatten(JSON.parse(fs.readFileSync(p, 'utf8')));
   let added = 0;
   for (const [key, val] of Object.entries(enFlat)) {
-    if (flat[key] === undefined || flat[key] === '') {
+    const isLanguageKey = key.startsWith('language.');
+    if (isLanguageKey || flat[key] === undefined || flat[key] === '') {
+      if (isLanguageKey && flat[key] === val) continue;
+      if (!isLanguageKey && flat[key] !== undefined && flat[key] !== '') continue;
       flat[key] = val;
+      added++;
+    }
+  }
+  for (const key of Object.keys(flat)) {
+    if (key.startsWith('language.') && enFlat[key] === undefined) {
+      delete flat[key];
       added++;
     }
   }

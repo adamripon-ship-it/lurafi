@@ -27,19 +27,12 @@
     }
   },
   "language": {
-    "label": "Jazyk",
+    "label": "Language",
     "en": "EN",
     "nl": "NL",
     "fr": "FR",
     "de": "DE",
-    "es": "ES",
-    "it": "IT",
-    "nb": "NO",
-    "da": "DA",
-    "sv": "SV",
-    "fi": "FI",
-    "cs": "CS",
-    "pl": "PL"
+    "cs": "CS"
   },
   "header": {
     "why_kevin": "Proč Kevin",

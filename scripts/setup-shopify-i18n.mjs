@@ -76,10 +76,17 @@ async function ensureLocales() {
   for (const row of shopLocales) {
     if (row.primary) continue
     if (publishedCodes.has(row.locale)) continue
-    if (!row.published) continue
-    console.log(`→ Unpublishing removed locale ${row.locale}…`)
+    if (row.published) {
+      console.log(`→ Unpublishing removed locale ${row.locale}…`)
+      await gql(
+        `mutation { shopLocaleUpdate(locale: "${row.locale}", shopLocale: { published: false }) { shopLocale { locale published } userErrors { message } } }`,
+        undefined,
+        true,
+      )
+    }
+    console.log(`→ Disabling removed locale ${row.locale}…`)
     await gql(
-      `mutation { shopLocaleUpdate(locale: "${row.locale}", shopLocale: { published: false }) { shopLocale { locale published } userErrors { message } } }`,
+      `mutation { shopLocaleDisable(locale: "${row.locale}") { userErrors { message } } }`,
       undefined,
       true,
     )
