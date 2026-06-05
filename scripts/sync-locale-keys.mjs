@@ -2,11 +2,20 @@
 /**
  * Copy missing keys from en.default.json into other locale files (English fallback).
  * Run after build-locales.mjs when new keys are added.
+ *
+ * Never overwrites existing non-empty translations.
+ * Skips home.* keys managed by build-locales (NL) and duplicate home.hero.* callout keys.
  */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getPublishedLocales } from './i18n/registry.mjs';
+import {
+  HERO_DUPLICATE_HOME_SUFFIXES,
+  LOCALE_NATIVE_STRINGS,
+  localeCodeFromFile,
+  shouldSkipSyncKey,
+} from './i18n/locale-overrides.mjs';
 
 const localesDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'locales');
 const publishedLocaleFiles = new Set(
@@ -38,6 +47,40 @@ function unflatten(flat) {
   return out;
 }
 
+function stripHeroDuplicateHomeKeys(flat) {
+  let removed = 0;
+  for (const key of Object.keys(flat)) {
+    if (!key.startsWith('home.hero.')) continue;
+    const suffix = key.slice('home.hero.'.length);
+    if (HERO_DUPLICATE_HOME_SUFFIXES.has(suffix)) {
+      delete flat[key];
+      removed++;
+    }
+  }
+  return removed;
+}
+
+function applyNativeStrings(file, flat, enFlat) {
+  const code = localeCodeFromFile(file);
+  const overrides = LOCALE_NATIVE_STRINGS[code];
+  if (!overrides) return 0;
+
+  let changed = 0;
+  for (const [key, nativeVal] of Object.entries(overrides)) {
+    const current = flat[key];
+    const enVal = enFlat[key];
+    const isLanguageLabel = key === 'language.label';
+
+    if (isLanguageLabel && current && current !== enVal) continue;
+    if (!isLanguageLabel && current !== undefined && current !== '' && current !== enVal) continue;
+    if (current === nativeVal) continue;
+
+    flat[key] = nativeVal;
+    changed++;
+  }
+  return changed;
+}
+
 const en = JSON.parse(fs.readFileSync(path.join(localesDir, 'en.default.json'), 'utf8'));
 const enFlat = flatten(en);
 
@@ -45,25 +88,32 @@ for (const file of fs.readdirSync(localesDir)) {
   if (!file.endsWith('.json') || file === 'en.default.json' || file.endsWith('.schema.json')) continue;
   if (!publishedLocaleFiles.has(file)) continue;
   const p = path.join(localesDir, file);
-  const flat = flatten(JSON.parse(fs.readFileSync(p, 'utf8')));
+  const before = fs.readFileSync(p, 'utf8');
+  const flat = flatten(JSON.parse(before));
   let added = 0;
+
+  added += stripHeroDuplicateHomeKeys(flat);
+
   for (const [key, val] of Object.entries(enFlat)) {
-    const isLanguageKey = key.startsWith('language.');
-    if (isLanguageKey || flat[key] === undefined || flat[key] === '') {
-      if (isLanguageKey && flat[key] === val) continue;
-      if (!isLanguageKey && flat[key] !== undefined && flat[key] !== '') continue;
-      flat[key] = val;
-      added++;
-    }
+    if (shouldSkipSyncKey(file, key)) continue;
+    if (flat[key] !== undefined && flat[key] !== '') continue;
+    if (flat[key] === val) continue;
+    flat[key] = val;
+    added++;
   }
+
   for (const key of Object.keys(flat)) {
     if (key.startsWith('language.') && enFlat[key] === undefined) {
       delete flat[key];
       added++;
     }
   }
-  if (added) {
-    fs.writeFileSync(p, JSON.stringify(unflatten(flat), null, 2) + '\n');
-    console.log(`✓ ${file}: +${added} keys`);
+
+  added += applyNativeStrings(file, flat, enFlat);
+
+  const after = JSON.stringify(unflatten(flat), null, 2) + '\n';
+  if (added && before !== after) {
+    fs.writeFileSync(p, after);
+    console.log(`✓ ${file}: ${added} change(s)`);
   }
 }

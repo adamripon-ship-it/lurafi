@@ -489,6 +489,7 @@ nl.accessibility = {
   main_navigation: 'Hoofdnavigatie',
   mobile_navigation: 'Mobiele navigatie',
   configure_navigation: 'Configureren',
+  configure_steps: 'Afrekenstappen',
   hero_benefits: 'Kevin-voordelen',
   llm_assets_nl: 'Nederlandse LLM-samenvatting',
   previous: 'Vorige',

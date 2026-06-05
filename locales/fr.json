@@ -19,7 +19,7 @@
     "llm_assets_nl": "Résumé LLM en néerlandais",
     "previous": "Previous",
     "next": "Next",
-    "configure_steps": "Checkout steps"
+    "configure_steps": "Étapes de paiement"
   },
   "general": {
     "search": {
@@ -27,7 +27,7 @@
     }
   },
   "language": {
-    "label": "Language",
+    "label": "Langue",
     "en": "🇬🇧 EN",
     "nl": "🇳🇱 NL",
     "fr": "🇫🇷 FR",
@@ -198,17 +198,7 @@
       "cta_primary_url": "",
       "cta_secondary_label": "Comment ça marche",
       "cta_secondary_url": "#how-it-works",
-      "image_alt": "Kevin presence simulation device",
-      "callouts_aria_label": "Kevin benefits",
-      "away_eyebrow": "Away mode",
-      "away_title": "Living room active",
-      "away_body": "Light, shadow, and sound vary automatically.",
-      "privacy_eyebrow": "Privacy",
-      "privacy_title": "No cameras. No mics.",
-      "privacy_body": "Simulation plays locally on the device.",
-      "checkout_eyebrow": "Checkout",
-      "checkout_title": "Free delivery",
-      "checkout_body": "Secure Shopify checkout."
+      "image_alt": "Kevin presence simulation device"
     },
     "problem": {
       "overline": "Le problème",

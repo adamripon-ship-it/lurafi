@@ -15,6 +15,7 @@
     "main_navigation": "Hoofdnavigatie",
     "mobile_navigation": "Mobiele navigatie",
     "configure_navigation": "Configureren",
+    "configure_steps": "Afrekenstappen",
     "hero_benefits": "Kevin-voordelen",
     "llm_assets_nl": "Nederlandse LLM-samenvatting",
     "previous": "Vorige",
@@ -390,7 +391,8 @@
   },
   "errors": {
     "not_found_title": "Pagina niet gevonden",
-    "not_found_body": "De pagina die je zoekt bestaat niet."
+    "not_found_body": "De pagina die je zoekt bestaat niet.",
+    "back_home": "Back to home"
   },
   "spec_row": {
     "dimensions_label": "Afmeting",
