@@ -1,4 +1,9 @@
 {%- liquid
+  if settings.logo != blank
+    assign lurafi_org_logo = settings.logo | image_url: width: 512
+  else
+    assign lurafi_org_logo = 'lurafi-logo.png' | asset_url
+  endif
   assign lurafi_hero_image = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
   assign lurafi_description = 'seo.org_description' | t
   assign org_id = shop.url | append: '/#organization'
@@ -25,7 +30,7 @@
   "@id": {{ org_id | json }},
   "name": {{ shop.name | json }},
   "url": {{ shop.url | json }},
-  "logo": {{ lurafi_hero_image | json }},
+  "logo": {{ lurafi_org_logo | json }},
   "description": {{ lurafi_description | json }},
   "email": "hello@lurafi.ai"
 }
