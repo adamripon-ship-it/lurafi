@@ -17,14 +17,34 @@ Use these tokens (from `TOKENS.json`):
 - **Container:** max 980px centered, section padding `clamp(52px, 8vw, 92px)`
 - **Buttons:** pill-shaped (border-radius 980px), min-height 44px
 - **Tiles:** 20px radius, 12px grid gap
-- **Breakpoints:** mobile-first, `md:768px`, `lg:1024px`
+- **Breakpoints:** mobile-first, `md:768px`, `lg:1024px`, inline nav @1440px
+
+## Header (critical — match live site)
+
+**3-zone layout at 1440px+:** brand (left) | nav links (center, flex 1) | utilities (right).
+
+- **Logo:** LURAFI wordmark image (`assets/lurafi-logo.png`), NOT "Mitipi GmbH" text. Invert to white on dark hero header.
+- **Nav:** Why Kevin, Product, How it works, App, Pricing — anchor links.
+- **Utilities:** language selector, Log in, cart icon, blue "Buy Now" pill.
+- **Language only:** pill select with flag labels — 🇬🇧 EN, 🇳🇱 NL, 🇫🇷 FR, 🇩🇪 DE, 🇨🇿 CS. **Never add a country/currency/region selector.**
+- **No divider** between logo and nav.
+- Mobile/tablet (<1440px): hamburger drawer for nav; language pill stays in header bar from 768px+.
+- Sticky header: transparent dark over hero → frosted light below on scroll.
+
+## CTA URLs
+
+All primary buy CTAs link to:
+
+`https://www.lurafi.com/pages/configure?plan=buy`
+
+Secondary "How it works" → `#how-it-works`. Pricing section cards use the same configure URL.
 
 ## Pages to build
 
 Single long-scroll landing page with these sections in order:
 
-1. **Header** — transparent dark theme over hero. Logo "Mitipi GmbH", nav: Why Kevin, Product, How it works, App, Pricing. Right: country selector (Switzerland CHF), language EN, Log in, cart icon, blue "Buy Now" pill.
-2. **Hero** — full viewport black. Overline "Swiss presence simulation" in light blue. H1 "Make Home Look Alive." Subhead about Swiss-engineered light/shadow/sound. CTAs: "Buy Kevin" (blue pill) + "How it works" link with chevron. Center product image (wedge speaker device). Three floating glass cards: Away mode, Privacy, Checkout.
+1. **Header** — see above.
+2. **Hero** — full viewport black. Overline "Swiss presence simulation" in light blue. H1 "Make Home Look Alive." Subhead about Swiss-engineered light/shadow/sound. CTAs: "Buy Kevin" (configure URL) + "How it works" link with chevron. Center product image (wedge speaker device). Three floating glass cards: Away mode, Privacy, Checkout.
 3. **Problem** — "Empty is an invitation." 3 gray tiles: Alarms react, Cameras record, Lights are predictable.
 4. **Solution** — "Deterrence that feels human." 3 pillars + product image.
 5. **Steps** — "Plug in. Set routines. Leave calmly." 3 numbered steps + stats row (60s setup, 1 wire, 100% privacy, 24/7).
@@ -35,7 +55,7 @@ Single long-scroll landing page with these sections in order:
 10. **Pricing** — two cards side by side: Kevin CHF 609 one-time (gray) vs Kevin+ CHF 13/mo subscription (dark card).
 11. **Specs** — "Designed to be simple, private, and portable." spec table.
 12. **Final CTA** — "Leave without advertising it." Buy + Learn more.
-13. **Footer** — 4 columns: Product, Company, Support, Where to Buy. Copyright Mitipi GmbH.
+13. **Footer** — disclaimer note, 4 columns (Product, Company, Support, Where to Buy), copyright Mitipi GmbH, Privacy/Terms links.
 
 ## Copy source
 
@@ -43,6 +63,7 @@ Use exact copy from attached `content-home-en.json`.
 
 ## Images
 
+- Logo: `assets/lurafi-logo.png` (933×256 PNG, invert on dark header)
 - Hero device: `https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp`
 - App mockups: iphone-mockup + schedule-mockup URLs in DESIGN-SPEC.md
 

@@ -9,7 +9,7 @@
 - **Product:** Kevin — Swiss-engineered home presence simulator (light, shadow, sound)
 - **Company:** Mitipi GmbH (shop name on storefront)
 - **Tone:** Apple.com-inspired — minimal, confident, privacy-first, premium hardware
-- **Primary conversion:** Buy Kevin / Configure → Shopify checkout
+- **Primary conversion:** Buy Kevin / Configure → `https://www.lurafi.com/pages/configure?plan=buy`
 
 ## Design system (Apple-inspired)
 
@@ -84,16 +84,20 @@ Order from `templates/index.json`:
 
 ### Header (`header.liquid`)
 
-- `data-theme="dark"` on hero (transparent over black)
-- Logo | divider | nav links | utilities (lang, login, cart, Buy Now)
-- Mobile: hamburger → slide-in panel with grouped links
+- `data-theme="dark"` on hero (transparent over black); frosted light bar after scroll
+- **3-zone layout @1440px+:** LURAFI wordmark logo | nav links (flex 1) | utilities
+- Logo: `lurafi-logo.png` image (933×256), inverted white on dark header — not text
+- **No divider** between logo and nav
+- Utilities: language-only selector, Log in (@1440px+), cart, Buy Now
+- Mobile/tablet (<1440px): hamburger → slide-in panel with grouped links
 - Sticky offset: `--header-offset` accounts for safe area
 
 ### Language selector (`language-selector.liquid`)
 
-- Country dropdown (Markets): CH, DE, FR, IE, NL, CZ
-- Language pills: EN, NL, FR, DE, CS
-- Pill selects: 36px min-height, 999px radius, translucent on dark header
+- **Language only** — no country/currency/region selector (permanent merchant policy)
+- Flag labels: 🇬🇧 EN, 🇳🇱 NL, 🇫🇷 FR, 🇩🇪 DE, 🇨🇿 CS
+- Pill select: 36px min-height, 999px radius, translucent on dark header
+- Mobile: compact pill in header bar; full control also in mobile drawer
 
 ### Hero
 
@@ -118,7 +122,10 @@ Order from `templates/index.json`:
 
 ### Footer
 
-- Disclaimer note, 4-column link grid, copyright + legal links
+- Disclaimer note (`footer.note`), 4-column link grid (Product, Company, Support, Where to Buy)
+- Configure link → `/pages/configure?plan=buy`
+- Copyright: `Copyright © {{ year }} {{ shop_name }}. All rights reserved.` (Mitipi GmbH)
+- Legal links: Privacy Policy, Terms of Use, optional LLM summary
 
 ## Content copy (EN)
 
