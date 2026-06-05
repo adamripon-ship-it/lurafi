@@ -1,0 +1,34 @@
+---
+description: Language-only header selector — never re-add country/currency dropdown
+globs: snippets/language-selector.liquid,sections/header.liquid,assets/language-selector.js,scripts/build-locales.mjs,scripts/qa-commerce-debug.mjs
+alwaysApply: false
+---
+
+# No country / currency selector in header
+
+The merchant **permanently removed** the Shopify Markets country/region/currency dropdown from the lurafi theme header.
+
+## Required behavior
+
+- Header and mobile nav show a **language-only** selector (`locale_code` → POST `/localization`).
+- Keep language labels visible; flags are decorative extras only (do not rely on flags alone).
+
+## Never add or restore
+
+- `country_code` form fields or `data-country-select`
+- `HeaderCountrySelector`, `language-selector__select--country`
+- `lurafi_published_country_csv`, `lurafi_country_order_csv` in Liquid
+- Country/currency pills next to the language control in `sections/header.liquid`
+
+## Allowed elsewhere
+
+- `localization.country` / `cart.currency` for analytics, pricing JSON, and address forms (`sections/main-addresses.liquid`) — not a storefront country switcher.
+
+## Build & QA guards
+
+- `scripts/build-locales.mjs` must **not** inject country CSV into `snippets/language-selector.liquid` (build fails if country markers appear).
+- `scripts/qa-commerce-debug.mjs` must fail when `[data-country-select]` is present on the storefront.
+
+## If asked to add country selector
+
+Decline and explain the language-only policy unless the user explicitly reverses this permanent removal.
