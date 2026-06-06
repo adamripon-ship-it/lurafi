@@ -1,6 +1,6 @@
 {%- liquid
   assign section_image = section.settings.image
-  assign section_image_fallback = 'lurafi-product-split-usecases.jpg' | asset_url
+  assign section_image_fallback = 'lurafi-product-studio.jpg' | asset_url
   assign section_image_alt = section.settings.image_alt
   if section_image_alt == blank
     assign section_image_alt = 'home.solution.image_alt' | t
@@ -27,7 +27,7 @@
           loading="lazy"
           decoding="async"
           width="{{ section_image.width | default: 1024 }}"
-          height="{{ section_image.height | default: 555 }}"
+          height="{{ section_image.height | default: 682 }}"
         >
       {%- else -%}
         <img
@@ -36,7 +36,7 @@
           loading="lazy"
           decoding="async"
           width="1024"
-          height="555"
+          height="682"
         >
       {%- endif -%}
     </div>
@@ -76,7 +76,7 @@
       "type": "header",
       "content": "Section image"
     },
-    { "type": "image_picker", "id": "image", "label": "Split product / use-case image" },
+    { "type": "image_picker", "id": "image", "label": "Product image" },
     {
       "type": "text",
       "id": "image_alt",
