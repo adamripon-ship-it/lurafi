@@ -1413,6 +1413,11 @@ body.mobile-nav-open { overflow: hidden; }
   object-fit: cover;
 }
 
+.section-image--split-product {
+  aspect-ratio: 1024 / 555;
+  background: transparent;
+}
+
 .steps-section__image {
   display: flex;
   justify-content: center;

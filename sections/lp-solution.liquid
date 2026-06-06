@@ -1,6 +1,6 @@
 {%- liquid
   assign section_image = section.settings.image
-  assign section_image_fallback = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-living-room-night-9F7io8GPfpmikRnGHgHLvy.webp'
+  assign section_image_fallback = 'lurafi-product-split-usecases.jpg' | asset_url
   assign section_image_alt = section.settings.image_alt
   if section_image_alt == blank
     assign section_image_alt = 'home.solution.image_alt' | t
@@ -13,15 +13,21 @@
     <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.solution.heading' | t }}{%- endif -%}</h2>
     <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.solution.subheading' | t }}{%- endif -%}</p>
 
-    <div class="section-image">
+    <div class="section-image section-image--split-product">
       {%- if section_image -%}
         <img
           src="{{ section_image | image_url: width: 1200 }}"
+          srcset="
+            {{ section_image | image_url: width: 640 }} 640w,
+            {{ section_image | image_url: width: 980 }} 980w,
+            {{ section_image | image_url: width: 1200 }} 1200w
+          "
+          sizes="(min-width: 768px) 980px, 100vw"
           alt="{{ section_image.alt | default: section_image_alt | escape }}"
           loading="lazy"
           decoding="async"
-          width="{{ section_image.width | default: 980 }}"
-          height="{{ section_image.height | default: 550 }}"
+          width="{{ section_image.width | default: 1024 }}"
+          height="{{ section_image.height | default: 555 }}"
         >
       {%- else -%}
         <img
@@ -29,8 +35,8 @@
           alt="{{ section_image_alt | escape }}"
           loading="lazy"
           decoding="async"
-          width="980"
-          height="550"
+          width="1024"
+          height="555"
         >
       {%- endif -%}
     </div>
@@ -70,7 +76,7 @@
       "type": "header",
       "content": "Section image"
     },
-    { "type": "image_picker", "id": "image", "label": "Living room / simulation image" },
+    { "type": "image_picker", "id": "image", "label": "Split product / use-case image" },
     {
       "type": "text",
       "id": "image_alt",
