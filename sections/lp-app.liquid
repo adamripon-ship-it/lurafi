@@ -4,11 +4,13 @@
   assign phone_3 = section.settings.phone_image_3
   assign phone_4 = section.settings.phone_image_4
   assign phone_5 = section.settings.phone_image_5
+  assign phone_6 = section.settings.phone_image_6
   assign phone_1_fallback = 'lurafi-app-simulation.jpg' | asset_url
   assign phone_2_fallback = 'lurafi-app-schedule.jpg' | asset_url
   assign phone_3_fallback = 'lurafi-app-edit-device.jpg' | asset_url
   assign phone_4_fallback = 'lurafi-app-auto-activation.jpg' | asset_url
   assign phone_5_fallback = 'lurafi-app-location.jpg' | asset_url
+  assign phone_6_fallback = 'lurafi-app-kevin-home.jpg' | asset_url
   assign phone_1_alt = section.settings.phone_image_1_alt
   if phone_1_alt == blank
     assign phone_1_alt = 'home.app.phone_image_1_alt' | t
@@ -29,6 +31,10 @@
   if phone_5_alt == blank
     assign phone_5_alt = 'home.app.phone_image_5_alt' | t
   endif
+  assign phone_6_alt = section.settings.phone_image_6_alt
+  if phone_6_alt == blank
+    assign phone_6_alt = 'home.app.phone_image_6_alt' | t
+  endif
   assign phone_1_caption = section.settings.phone_1_caption
   if phone_1_caption == blank
     assign phone_1_caption = 'home.app.phone_1_caption' | t
@@ -48,6 +54,10 @@
   assign phone_5_caption = section.settings.phone_5_caption
   if phone_5_caption == blank
     assign phone_5_caption = 'home.app.phone_5_caption' | t
+  endif
+  assign phone_6_caption = section.settings.phone_6_caption
+  if phone_6_caption == blank
+    assign phone_6_caption = 'home.app.phone_6_caption' | t
   endif
   assign carousel_label = 'home.app.carousel_label' | t
   assign animate = section.settings.enable_animations
@@ -80,11 +90,18 @@
         aria-label="{{ carousel_label | escape }}"
       >
         {% render 'app-showcase-phone',
+          image: phone_6,
+          fallback_url: phone_6_fallback,
+          alt: phone_6_alt,
+          caption: phone_6_caption,
+          tilt_class: 'app-showcase__phone--left'
+        %}
+        {% render 'app-showcase-phone',
           image: phone_1,
           fallback_url: phone_1_fallback,
           alt: phone_1_alt,
           caption: phone_1_caption,
-          tilt_class: 'app-showcase__phone--left'
+          tilt_class: 'app-showcase__phone--center'
         %}
         {% render 'app-showcase-phone',
           image: phone_2,
@@ -200,6 +217,9 @@
     { "type": "image_picker", "id": "phone_image_5", "label": "Phone mockup 5" },
     { "type": "text", "id": "phone_image_5_alt", "label": "Phone 5 alt text" },
     { "type": "text", "id": "phone_5_caption", "label": "Phone 5 caption" },
+    { "type": "image_picker", "id": "phone_image_6", "label": "Phone mockup 6" },
+    { "type": "text", "id": "phone_image_6_alt", "label": "Phone 6 alt text" },
+    { "type": "text", "id": "phone_6_caption", "label": "Phone 6 caption" },
     {
       "type": "header",
       "content": "Feature tiles"

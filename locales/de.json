@@ -266,7 +266,9 @@
       "phone_image_4_alt": "Kevin app enable auto-activation screen",
       "phone_4_caption": "Auto-activation — enable location when you leave",
       "phone_image_5_alt": "Kevin app location picker screen",
-      "phone_5_caption": "Location — set where Kevin activates automatically"
+      "phone_5_caption": "Location — set where Kevin activates automatically",
+      "phone_image_6_alt": "Kevin app device home screen",
+      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls"
     },
     "personas": {
       "overline": "Für Sie gemacht",
