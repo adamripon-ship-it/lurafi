@@ -19,11 +19,19 @@
           src="{{ section_image | image_url: width: 1200 }}"
           alt="{{ section_image.alt | default: section_image_alt | escape }}"
           loading="lazy"
+          decoding="async"
           width="{{ section_image.width | default: 980 }}"
           height="{{ section_image.height | default: 550 }}"
         >
       {%- else -%}
-        <img src="{{ section_image_fallback }}" alt="{{ section_image_alt | escape }}" loading="lazy" width="980" height="550">
+        <img
+          src="{{ section_image_fallback }}"
+          alt="{{ section_image_alt | escape }}"
+          loading="lazy"
+          decoding="async"
+          width="980"
+          height="550"
+        >
       {%- endif -%}
     </div>
 

@@ -1,0 +1,31 @@
+{%- comment -%}
+  Testimonial quote card.
+  @param quote {String}
+  @param author_name {String}
+  @param author_location {String}
+{%- endcomment -%}
+{%- liquid
+  assign proof_quote = quote | strip | remove: '"'
+  assign proof_name = author_name | strip
+  assign name_parts = proof_name | split: ' '
+  assign proof_initial_1 = name_parts[0] | slice: 0, 1
+  assign proof_initial_2 = ''
+  if name_parts.size > 1
+    assign proof_initial_2 = name_parts[1] | slice: 0, 1
+  endif
+  assign proof_initials = proof_initial_1 | append: proof_initial_2 | upcase
+-%}
+<article class="proof-quote-card tile tile--white">
+  <span class="proof-quote-card__mark" aria-hidden="true">"</span>
+  <div class="proof-quote-card__stars stars" aria-hidden="true">★★★★★</div>
+  <blockquote class="proof-quote-card__quote">
+    <p>{{ proof_quote }}</p>
+  </blockquote>
+  <footer class="proof-quote-card__author">
+    <span class="proof-quote-card__avatar" aria-hidden="true">{{ proof_initials }}</span>
+    <span class="proof-quote-card__meta">
+      <cite class="proof-quote-card__name">{{ proof_name }}</cite>
+      <span class="proof-quote-card__location">{{ author_location }}</span>
+    </span>
+  </footer>
+</article>

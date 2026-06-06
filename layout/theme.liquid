@@ -55,6 +55,9 @@
     </title>
 
     <!-- lurafi-head-v17 www-canonical -->
+    {%- if request.page_type == 'index' and show_configure == false -%}
+      {% render 'lurafi-hero-preload' %}
+    {%- endif -%}
     {% render 'meta-tags', seo_canonical_url: seo_canonical_url %}
     {% render 'structured-data' %}
     {% render 'configure-redirect' %}

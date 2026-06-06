@@ -19,7 +19,8 @@
     "llm_assets_nl": "Niederländische LLM-Zusammenfassung",
     "previous": "Previous",
     "next": "Next",
-    "configure_steps": "Kassenschritte"
+    "configure_steps": "Kassenschritte",
+    "scroll_to_content": "Zum Inhalt scrollen"
   },
   "general": {
     "search": {
@@ -300,7 +301,9 @@
       "author_2_location": "Lyon, Frankreich",
       "quote_3": "„Die Schatteneffekte fallen am meisten auf. Vom Treppenhaus wirkt die Wohnung nicht leer.“",
       "author_3_name": "Thomas K.",
-      "author_3_location": "München, Deutschland"
+      "author_3_location": "München, Deutschland",
+      "summary_eyebrow": "Warum aus Zögern Vertrauen wird",
+      "summary_body": "Kevin ist einfach zu platzieren, datenschutzfreundlich konzipiert und am überzeugendsten aus genau der Perspektive, die zählt: von außen."
     },
     "pricing": {
       "overline": "Preise",

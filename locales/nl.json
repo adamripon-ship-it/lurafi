@@ -19,7 +19,8 @@
     "hero_benefits": "Kevin-voordelen",
     "llm_assets_nl": "Nederlandse LLM-samenvatting",
     "previous": "Vorige",
-    "next": "Volgende"
+    "next": "Volgende",
+    "scroll_to_content": "Naar inhoud scrollen"
   },
   "general": {
     "search": {
@@ -275,7 +276,9 @@
       "quote_2": "\"Een vriend dacht dat er iemand binnen was en belde aan. Kevin deed zijn werk voordat iemand de deur bereikte.\"",
       "author_2_location": "Lyon, Frankrijk",
       "quote_3": "\"De schaduweffecten vallen op. Vanuit het trappenhuis voelt het appartement niet leeg.\"",
-      "author_3_location": "München, Duitsland"
+      "author_3_location": "München, Duitsland",
+      "summary_eyebrow": "Waarom twijfel verandert in vertrouwen",
+      "summary_body": "Kevin is eenvoudig te plaatsen, privacy-first ontworpen en het meest overtuigend vanuit het perspectief dat telt: buiten het huis."
     },
     "pricing": {
       "overline": "Prijzen",

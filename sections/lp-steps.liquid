@@ -31,19 +31,28 @@
       </div>
     </div>
 
-    <div style="display:flex;justify-content:center;margin-bottom:40px">
-      {%- if steps_image -%}
-        <img
-          src="{{ steps_image | image_url: width: 800 }}"
-          alt="{{ steps_image.alt | default: steps_image_alt | escape }}"
-          width="{{ steps_image.width | default: 400 }}"
-          height="{{ steps_image.height | default: 320 }}"
-          style="max-width:400px;width:100%"
-          loading="lazy"
-        >
-      {%- else -%}
-        <img src="{{ steps_image_fallback }}" alt="{{ steps_image_alt | escape }}" width="400" height="320" style="max-width:400px;width:100%" loading="lazy">
-      {%- endif -%}
+    <div class="steps-section__image">
+      <div class="steps-section__image-frame">
+        {%- if steps_image -%}
+          <img
+            src="{{ steps_image | image_url: width: 800 }}"
+            alt="{{ steps_image.alt | default: steps_image_alt | escape }}"
+            width="{{ steps_image.width | default: 400 }}"
+            height="{{ steps_image.height | default: 320 }}"
+            loading="lazy"
+            decoding="async"
+          >
+        {%- else -%}
+          <img
+            src="{{ steps_image_fallback }}"
+            alt="{{ steps_image_alt | escape }}"
+            width="400"
+            height="320"
+            loading="lazy"
+            decoding="async"
+          >
+        {%- endif -%}
+      </div>
     </div>
 
     <div class="stats-row" data-countup-duration="1100">

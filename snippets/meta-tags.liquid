@@ -81,10 +81,16 @@
 {%- if lurafi_og_image -%}
   <meta property="og:image" content="https:{{ lurafi_og_image | image_url: width: 1200 }}">
   <meta property="og:image:secure_url" content="https:{{ lurafi_og_image | image_url: width: 1200 }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="{{ lurafi_og_image.height | default: 630 }}">
+  <meta property="og:image:alt" content="{{ lurafi_meta_title | escape }}">
   <meta name="twitter:image" content="https:{{ lurafi_og_image | image_url: width: 1200 }}">
 {%- elsif request.page_type == 'index' -%}
   <meta property="og:image" content="{{ lurafi_default_image }}">
   <meta property="og:image:secure_url" content="{{ lurafi_default_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1500">
+  <meta property="og:image:alt" content="{{ 'home.hero.image_alt' | t | escape }}">
   <meta name="twitter:image" content="{{ lurafi_default_image }}">
 {%- endif -%}
 

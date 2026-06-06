@@ -29,6 +29,7 @@
   data-lp-app
   {% if animate %}data-lp-app-animate{% endif %}
 >
+  <div class="lp-app__atmosphere" aria-hidden="true"></div>
   <div class="apple-container">
     <header class="lp-app__header">
       <p class="overline-blue-dark">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.app.overline' | t }}{%- endif -%}</p>
