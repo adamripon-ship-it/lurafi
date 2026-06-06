@@ -49,7 +49,6 @@
     '.tile-grid-2 > *',
     '.stats-row > *',
     '.stats-grid-4 > *',
-    '.app-showcase__phone',
     '.lp-app__bento > *',
     '.trust-badges > span',
     '.proof-summary-card',

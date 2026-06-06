@@ -1822,8 +1822,16 @@ body.mobile-nav-open { overflow: hidden; }
   gap: var(--space-sm);
   width: min(100%, 320px);
   position: relative;
+  opacity: 1;
   transform: translate3d(0, var(--parallax-y, 0), 0);
   transition: transform 0.15s linear;
+}
+
+/* Phones use float/parallax motion — exclude from scroll-reveal opacity */
+.motion-ready .section-apple .app-showcase__phone.reveal-item {
+  opacity: 1;
+  transform: translate3d(0, var(--parallax-y, 0), 0);
+  animation: none;
 }
 
 .app-showcase__phone::before {
@@ -2015,25 +2023,35 @@ body.mobile-nav-open { overflow: hidden; }
 
 @keyframes appShowcaseFloatLeft {
   0%, 100% {
+    opacity: 1;
     transform: perspective(900px) rotateY(-10deg) rotateZ(-4deg) translate3d(0, var(--parallax-y, 0), 0);
   }
   50% {
+    opacity: 1;
     transform: perspective(900px) rotateY(-10deg) rotateZ(-4deg) translate3d(0, calc(var(--parallax-y, 0px) - 10px), 0);
   }
 }
 
 @keyframes appShowcaseFloatRight {
   0%, 100% {
+    opacity: 1;
     transform: perspective(900px) rotateY(6deg) rotateZ(2deg) translate3d(0, var(--parallax-y, 0), 0);
   }
   50% {
+    opacity: 1;
     transform: perspective(900px) rotateY(6deg) rotateZ(2deg) translate3d(0, calc(var(--parallax-y, 0px) - 8px), 0);
   }
 }
 
 @keyframes appShowcaseFloatMobile {
-  0%, 100% { transform: translate3d(0, var(--parallax-y, 0), 0); }
-  50% { transform: translate3d(0, calc(var(--parallax-y, 0px) - 6px), 0); }
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(0, var(--parallax-y, 0), 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, calc(var(--parallax-y, 0px) - 6px), 0);
+  }
 }
 
 .cta-white-btn {
