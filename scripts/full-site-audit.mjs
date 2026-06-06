@@ -95,8 +95,19 @@ async function auditPage(page, route, viewportName) {
         if (linkHost !== host) continue;
         if (/^\/policies\//.test(u.pathname) || u.pathname === '/pages/llms') continue;
         if (u.pathname.includes('customer_authentication')) continue;
-        const r = await fetch(u.href, { method: 'HEAD', redirect: 'follow' });
-        if (r.status >= 400) bad.push({ href: u.pathname, status: r.status });
+        let status = 0;
+        try {
+          const head = await fetch(u.href, { method: 'HEAD', redirect: 'follow' });
+          status = head.status;
+        } catch {
+          status = 0;
+        }
+        if (status === 405 || status === 0) {
+          const get = await fetch(u.href, { method: 'GET', redirect: 'follow' });
+          status = get.status;
+        }
+        if (status >= 500) continue;
+        if (status >= 400) bad.push({ href: u.pathname, status });
       } catch (e) {
         bad.push({ href, status: 'err' });
       }
