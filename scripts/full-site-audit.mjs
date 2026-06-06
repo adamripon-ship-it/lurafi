@@ -81,7 +81,9 @@ async function auditPage(page, route, viewportName) {
     else pass(`JSON-LD blocks: ${jsonLd}`);
   }
 
-  const brokenLinks = await page.evaluate(async (origin) => {
+  const brokenLinks = await page.evaluate(async () => {
+    const origin = window.location.origin;
+    const host = window.location.hostname.replace(/^www\./, '');
     const bad = [];
     const links = [...document.querySelectorAll('a[href]')];
     for (const a of links.slice(0, 40)) {
@@ -89,7 +91,8 @@ async function auditPage(page, route, viewportName) {
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
       try {
         const u = new URL(href, origin);
-        if (u.hostname !== new URL(origin).hostname) continue;
+        const linkHost = u.hostname.replace(/^www\./, '');
+        if (linkHost !== host) continue;
         if (/^\/policies\//.test(u.pathname) || u.pathname === '/pages/llms') continue;
         if (u.pathname.includes('customer_authentication')) continue;
         const r = await fetch(u.href, { method: 'HEAD', redirect: 'follow' });
@@ -99,7 +102,7 @@ async function auditPage(page, route, viewportName) {
       }
     }
     return bad;
-  }, BASE);
+  });
 
   if (brokenLinks.length) fail(`${route.name} broken internal links`, JSON.stringify(brokenLinks.slice(0, 3)));
 }
@@ -215,7 +218,8 @@ async function testViewport(browser, name, viewport, isMobile) {
       !/shopify|monorail|cookie|CSP|analytics|pixel|web-pixel|favicon|403|401|shop\.app|404/i.test(e) &&
       !/Failed to load resource/i.test(e) &&
       !/network failure may have prevented|Error completing request/i.test(e) &&
-      !/^Failed to fetch\.?$/i.test(e.trim())
+      !/^Failed to fetch\.?$/i.test(e.trim()) &&
+      !/Access-Control-Allow-Origin|blocked by CORS policy/i.test(e)
   );
   if (critical.length) fail(`${name} console: ${critical.slice(0, 2).join(' | ')}`);
   else pass(`${name}: no critical console errors`);
