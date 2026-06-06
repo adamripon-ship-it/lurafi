@@ -1887,29 +1887,18 @@ body.mobile-nav-open { overflow: hidden; }
 .app-showcase__frame {
   position: relative;
   width: 100%;
-  padding: 6px;
-  border-radius: 2.75rem;
-  background: linear-gradient(155deg, #48484a 0%, #1c1c1e 55%, #0a0a0b 100%);
-  box-shadow:
-    0 28px 56px rgba(0, 0, 0, 0.55),
-    0 8px 20px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.14);
-}
-
-.app-showcase__frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .app-showcase__image {
   width: 100%;
   height: auto;
-  border-radius: 2.35rem;
   display: block;
+  border-radius: 0;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.42));
 }
 
 .app-showcase__caption {
