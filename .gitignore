@@ -11,6 +11,8 @@ node_modules/
 scripts/qa-screenshots/
 scripts/i18n-qa-report.json
 scripts/audit-report.json
+scripts/qa-full-report.json
+scripts/qa-mitipi-report.json
 
 # Secrets
 .env
