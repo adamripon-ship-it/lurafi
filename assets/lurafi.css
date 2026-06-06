@@ -1847,22 +1847,6 @@ body.mobile-nav-open { overflow: hidden; }
   background: radial-gradient(ellipse at center, rgba(41, 151, 255, 0.22) 0%, transparent 72%);
 }
 
-.app-showcase__phone::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 12%;
-  z-index: 0;
-  width: 72%;
-  height: 14px;
-  transform: translateX(-50%);
-  pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, transparent 72%);
-  filter: blur(6px);
-  opacity: 0.85;
-}
-
 .app-showcase__phone > * {
   position: relative;
   z-index: 1;
@@ -1898,7 +1882,6 @@ body.mobile-nav-open { overflow: hidden; }
   height: auto;
   display: block;
   border-radius: 0;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.42));
 }
 
 .app-showcase__caption {

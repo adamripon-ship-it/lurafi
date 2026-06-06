@@ -1,8 +1,8 @@
 {%- liquid
   assign phone_1 = section.settings.phone_image_1
   assign phone_2 = section.settings.phone_image_2
-  assign phone_1_fallback = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-app-iphone-mockup-8uNpRd5swi832cYXserPzn.webp'
-  assign phone_2_fallback = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-app-schedule-mockup-kyUXBFJHfo5Kk8TJi6rwbt.webp'
+  assign phone_1_fallback = 'lurafi-app-simulation.jpg' | asset_url
+  assign phone_2_fallback = 'lurafi-app-schedule.jpg' | asset_url
   assign phone_1_alt = section.settings.phone_image_1_alt
   if phone_1_alt == blank
     assign phone_1_alt = 'home.app.phone_image_1_alt' | t
@@ -63,8 +63,8 @@
                 "
                 sizes="(min-width: 768px) 28vw, 78vw"
                 alt="{{ phone_1.alt | default: phone_1_alt | escape }}"
-                width="{{ phone_1.width | default: 320 }}"
-                height="{{ phone_1.height | default: 640 }}"
+                width="{{ phone_1.width | default: 473 }}"
+                height="{{ phone_1.height | default: 1024 }}"
                 loading="lazy"
               >
             {%- else -%}
@@ -72,8 +72,8 @@
                 class="app-showcase__image"
                 src="{{ phone_1_fallback }}"
                 alt="{{ phone_1_alt | escape }}"
-                width="320"
-                height="640"
+                width="473"
+                height="1024"
                 loading="lazy"
               >
             {%- endif -%}
@@ -97,8 +97,8 @@
                 "
                 sizes="(min-width: 768px) 28vw, 78vw"
                 alt="{{ phone_2.alt | default: phone_2_alt | escape }}"
-                width="{{ phone_2.width | default: 320 }}"
-                height="{{ phone_2.height | default: 640 }}"
+                width="{{ phone_2.width | default: 473 }}"
+                height="{{ phone_2.height | default: 1024 }}"
                 loading="lazy"
               >
             {%- else -%}
@@ -106,8 +106,8 @@
                 class="app-showcase__image"
                 src="{{ phone_2_fallback }}"
                 alt="{{ phone_2_alt | escape }}"
-                width="320"
-                height="640"
+                width="473"
+                height="1024"
                 loading="lazy"
               >
             {%- endif -%}
