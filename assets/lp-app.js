@@ -138,6 +138,7 @@
 
   function initParallax(section) {
     if (reducedMotion || !section.hasAttribute('data-lp-app-animate')) return;
+    if (section.querySelector('.app-showcase__track--multi')) return;
 
     var phones = section.querySelectorAll('.app-showcase__phone');
     if (!phones.length) return;

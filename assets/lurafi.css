@@ -1845,7 +1845,7 @@ body.mobile-nav-open { overflow: hidden; }
   margin-inline: calc(var(--pad-inline) * -1);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  align-items: end;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
@@ -1868,7 +1868,12 @@ body.mobile-nav-open { overflow: hidden; }
   .app-showcase__track--multi .app-showcase__caption {
     font-size: 13px;
     max-width: 20ch;
+    min-height: 3.6em;
   }
+}
+
+.lp-app[data-lp-app-animate] .app-showcase__track--multi .app-showcase__phone--right {
+  animation-delay: 0s;
 }
 
 .app-showcase__phone {
@@ -1935,17 +1940,22 @@ body.mobile-nav-open { overflow: hidden; }
 .app-showcase__frame {
   position: relative;
   width: 100%;
+  aspect-ratio: 473 / 1024;
   padding: 0;
   background: transparent;
   border-radius: 0;
   box-shadow: none;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .app-showcase__image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   border-radius: 0;
+  object-fit: contain;
+  object-position: top center;
 }
 
 .app-showcase__caption {
@@ -1954,6 +1964,8 @@ body.mobile-nav-open { overflow: hidden; }
   color: var(--apple-text-muted-dark);
   text-align: center;
   max-width: 22ch;
+  min-height: 3.4em;
+  margin: 0;
 }
 
 .app-showcase__controls {
@@ -2054,6 +2066,10 @@ body.mobile-nav-open { overflow: hidden; }
 
   .lp-app[data-lp-app-animate] .app-showcase__phone--right {
     animation-delay: 0.35s;
+  }
+
+  .lp-app[data-lp-app-animate] .app-showcase__track--multi .app-showcase__phone--right {
+    animation-delay: 0s;
   }
 }
 
