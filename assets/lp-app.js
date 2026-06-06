@@ -10,6 +10,15 @@
     return window.matchMedia('(max-width: 767px)').matches;
   }
 
+  function isMultiTrackCarousel(section) {
+    var track = section.querySelector('[data-lp-app-track]');
+    return !!(track && track.classList.contains('app-showcase__track--multi'));
+  }
+
+  function shouldUseCarousel(section) {
+    return isMobileCarousel() || isMultiTrackCarousel(section);
+  }
+
   function initCarousel(section) {
     var track = section.querySelector('[data-lp-app-track]');
     var controls = section.querySelector('[data-lp-app-controls]');
@@ -95,7 +104,7 @@
     }
 
     function mount() {
-      if (isMobileCarousel()) {
+      if (shouldUseCarousel(section)) {
         buildDots();
         setControlsVisible(true);
         track.addEventListener('scroll', onScroll, { passive: true });
@@ -144,10 +153,11 @@
       }
       var center = rect.top + rect.height * 0.5;
       var progress = (vh * 0.5 - center) / vh;
-      phones[0].style.setProperty('--parallax-y', (progress * 14).toFixed(2) + 'px');
-      if (phones[1]) {
-        phones[1].style.setProperty('--parallax-y', (-progress * 10).toFixed(2) + 'px');
-      }
+      phones.forEach(function (phone, index) {
+        var direction = index % 2 === 0 ? 1 : -1;
+        var amount = 8 + (index % 3) * 2;
+        phone.style.setProperty('--parallax-y', (progress * amount * direction).toFixed(2) + 'px');
+      });
       ticking = false;
     }
 

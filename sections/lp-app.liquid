@@ -1,8 +1,14 @@
 {%- liquid
   assign phone_1 = section.settings.phone_image_1
   assign phone_2 = section.settings.phone_image_2
+  assign phone_3 = section.settings.phone_image_3
+  assign phone_4 = section.settings.phone_image_4
+  assign phone_5 = section.settings.phone_image_5
   assign phone_1_fallback = 'lurafi-app-simulation.jpg' | asset_url
   assign phone_2_fallback = 'lurafi-app-schedule.jpg' | asset_url
+  assign phone_3_fallback = 'lurafi-app-edit-device.jpg' | asset_url
+  assign phone_4_fallback = 'lurafi-app-auto-activation.jpg' | asset_url
+  assign phone_5_fallback = 'lurafi-app-location.jpg' | asset_url
   assign phone_1_alt = section.settings.phone_image_1_alt
   if phone_1_alt == blank
     assign phone_1_alt = 'home.app.phone_image_1_alt' | t
@@ -11,6 +17,18 @@
   if phone_2_alt == blank
     assign phone_2_alt = 'home.app.phone_image_2_alt' | t
   endif
+  assign phone_3_alt = section.settings.phone_image_3_alt
+  if phone_3_alt == blank
+    assign phone_3_alt = 'home.app.phone_image_3_alt' | t
+  endif
+  assign phone_4_alt = section.settings.phone_image_4_alt
+  if phone_4_alt == blank
+    assign phone_4_alt = 'home.app.phone_image_4_alt' | t
+  endif
+  assign phone_5_alt = section.settings.phone_image_5_alt
+  if phone_5_alt == blank
+    assign phone_5_alt = 'home.app.phone_image_5_alt' | t
+  endif
   assign phone_1_caption = section.settings.phone_1_caption
   if phone_1_caption == blank
     assign phone_1_caption = 'home.app.phone_1_caption' | t
@@ -18,6 +36,18 @@
   assign phone_2_caption = section.settings.phone_2_caption
   if phone_2_caption == blank
     assign phone_2_caption = 'home.app.phone_2_caption' | t
+  endif
+  assign phone_3_caption = section.settings.phone_3_caption
+  if phone_3_caption == blank
+    assign phone_3_caption = 'home.app.phone_3_caption' | t
+  endif
+  assign phone_4_caption = section.settings.phone_4_caption
+  if phone_4_caption == blank
+    assign phone_4_caption = 'home.app.phone_4_caption' | t
+  endif
+  assign phone_5_caption = section.settings.phone_5_caption
+  if phone_5_caption == blank
+    assign phone_5_caption = 'home.app.phone_5_caption' | t
   endif
   assign carousel_label = 'home.app.carousel_label' | t
   assign animate = section.settings.enable_animations
@@ -43,79 +73,47 @@
 
     <div class="lp-app__showcase app-showcase">
       <div
-        class="app-showcase__track"
+        class="app-showcase__track app-showcase__track--multi"
         data-lp-app-track
         role="region"
         aria-roledescription="carousel"
         aria-label="{{ carousel_label | escape }}"
       >
-        <figure class="app-showcase__phone app-showcase__phone--left" data-lp-app-slide>
-          <div class="app-showcase__frame">
-            {%- if phone_1 -%}
-              <img
-                class="app-showcase__image"
-                src="{{ phone_1 | image_url: width: 720 }}"
-                srcset="
-                  {{ phone_1 | image_url: width: 360 }} 360w,
-                  {{ phone_1 | image_url: width: 480 }} 480w,
-                  {{ phone_1 | image_url: width: 640 }} 640w,
-                  {{ phone_1 | image_url: width: 720 }} 720w
-                "
-                sizes="(min-width: 768px) 28vw, 78vw"
-                alt="{{ phone_1.alt | default: phone_1_alt | escape }}"
-                width="{{ phone_1.width | default: 473 }}"
-                height="{{ phone_1.height | default: 1024 }}"
-                loading="lazy"
-              >
-            {%- else -%}
-              <img
-                class="app-showcase__image"
-                src="{{ phone_1_fallback }}"
-                alt="{{ phone_1_alt | escape }}"
-                width="473"
-                height="1024"
-                loading="lazy"
-              >
-            {%- endif -%}
-          </div>
-          {%- if phone_1_caption != blank -%}
-            <figcaption class="app-showcase__caption">{{ phone_1_caption }}</figcaption>
-          {%- endif -%}
-        </figure>
-
-        <figure class="app-showcase__phone app-showcase__phone--right" data-lp-app-slide>
-          <div class="app-showcase__frame">
-            {%- if phone_2 -%}
-              <img
-                class="app-showcase__image"
-                src="{{ phone_2 | image_url: width: 720 }}"
-                srcset="
-                  {{ phone_2 | image_url: width: 360 }} 360w,
-                  {{ phone_2 | image_url: width: 480 }} 480w,
-                  {{ phone_2 | image_url: width: 640 }} 640w,
-                  {{ phone_2 | image_url: width: 720 }} 720w
-                "
-                sizes="(min-width: 768px) 28vw, 78vw"
-                alt="{{ phone_2.alt | default: phone_2_alt | escape }}"
-                width="{{ phone_2.width | default: 473 }}"
-                height="{{ phone_2.height | default: 1024 }}"
-                loading="lazy"
-              >
-            {%- else -%}
-              <img
-                class="app-showcase__image"
-                src="{{ phone_2_fallback }}"
-                alt="{{ phone_2_alt | escape }}"
-                width="473"
-                height="1024"
-                loading="lazy"
-              >
-            {%- endif -%}
-          </div>
-          {%- if phone_2_caption != blank -%}
-            <figcaption class="app-showcase__caption">{{ phone_2_caption }}</figcaption>
-          {%- endif -%}
-        </figure>
+        {% render 'app-showcase-phone',
+          image: phone_1,
+          fallback_url: phone_1_fallback,
+          alt: phone_1_alt,
+          caption: phone_1_caption,
+          tilt_class: 'app-showcase__phone--left'
+        %}
+        {% render 'app-showcase-phone',
+          image: phone_2,
+          fallback_url: phone_2_fallback,
+          alt: phone_2_alt,
+          caption: phone_2_caption,
+          tilt_class: 'app-showcase__phone--right'
+        %}
+        {% render 'app-showcase-phone',
+          image: phone_3,
+          fallback_url: phone_3_fallback,
+          alt: phone_3_alt,
+          caption: phone_3_caption,
+          tilt_class: 'app-showcase__phone--center'
+        %}
+        {% render 'app-showcase-phone',
+          image: phone_4,
+          fallback_url: phone_4_fallback,
+          alt: phone_4_alt,
+          caption: phone_4_caption,
+          tilt_class: 'app-showcase__phone--center'
+        %}
+        {% render 'app-showcase-phone',
+          image: phone_5,
+          fallback_url: phone_5_fallback,
+          alt: phone_5_alt,
+          caption: phone_5_caption,
+          tilt_class: 'app-showcase__phone--center'
+        %}
       </div>
 
       <div class="app-showcase__controls" data-lp-app-controls hidden>
@@ -187,28 +185,21 @@
       "type": "header",
       "content": "Phone mockups"
     },
-    { "type": "image_picker", "id": "phone_image_1", "label": "Phone mockup (left)" },
-    {
-      "type": "text",
-      "id": "phone_image_1_alt",
-      "label": "Left phone alt text"
-    },
-    {
-      "type": "text",
-      "id": "phone_1_caption",
-      "label": "Left phone caption"
-    },
-    { "type": "image_picker", "id": "phone_image_2", "label": "Phone mockup (right)" },
-    {
-      "type": "text",
-      "id": "phone_image_2_alt",
-      "label": "Right phone alt text"
-    },
-    {
-      "type": "text",
-      "id": "phone_2_caption",
-      "label": "Right phone caption"
-    },
+    { "type": "image_picker", "id": "phone_image_1", "label": "Phone mockup 1" },
+    { "type": "text", "id": "phone_image_1_alt", "label": "Phone 1 alt text" },
+    { "type": "text", "id": "phone_1_caption", "label": "Phone 1 caption" },
+    { "type": "image_picker", "id": "phone_image_2", "label": "Phone mockup 2" },
+    { "type": "text", "id": "phone_image_2_alt", "label": "Phone 2 alt text" },
+    { "type": "text", "id": "phone_2_caption", "label": "Phone 2 caption" },
+    { "type": "image_picker", "id": "phone_image_3", "label": "Phone mockup 3" },
+    { "type": "text", "id": "phone_image_3_alt", "label": "Phone 3 alt text" },
+    { "type": "text", "id": "phone_3_caption", "label": "Phone 3 caption" },
+    { "type": "image_picker", "id": "phone_image_4", "label": "Phone mockup 4" },
+    { "type": "text", "id": "phone_image_4_alt", "label": "Phone 4 alt text" },
+    { "type": "text", "id": "phone_4_caption", "label": "Phone 4 caption" },
+    { "type": "image_picker", "id": "phone_image_5", "label": "Phone mockup 5" },
+    { "type": "text", "id": "phone_image_5_alt", "label": "Phone 5 alt text" },
+    { "type": "text", "id": "phone_5_caption", "label": "Phone 5 caption" },
     {
       "type": "header",
       "content": "Feature tiles"

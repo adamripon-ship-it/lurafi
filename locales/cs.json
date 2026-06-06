@@ -260,7 +260,13 @@
       "phone_1_caption": "Protected — arm and disarm from anywhere",
       "phone_image_2_alt": "Kevin app weekly schedule grid",
       "phone_2_caption": "Schedule — set protection by day and hour",
-      "carousel_label": "App screenshots"
+      "carousel_label": "App screenshots",
+      "phone_image_3_alt": "Kevin app edit device screen",
+      "phone_3_caption": "Device — rename, customize, and manage firmware",
+      "phone_image_4_alt": "Kevin app enable auto-activation screen",
+      "phone_4_caption": "Auto-activation — enable location when you leave",
+      "phone_image_5_alt": "Kevin app location picker screen",
+      "phone_5_caption": "Location — set where Kevin activates automatically"
     },
     "personas": {
       "overline": "Pro vás",
