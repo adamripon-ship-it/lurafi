@@ -189,7 +189,8 @@
   "home": {
     "specs": {
       "eyebrow": "En bref",
-      "heading": "Conçu pour être simple, privé et portable."
+      "heading": "Conçu pour être simple, privé et portable.",
+      "image_alt": "Close-up of Kevin fabric front panel and top controls on marble"
     },
     "hero": {
       "eyebrow": "Simulation de présence suisse",
