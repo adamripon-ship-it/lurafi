@@ -1413,9 +1413,15 @@ body.mobile-nav-open { overflow: hidden; }
   object-fit: cover;
 }
 
-.section-image--split-product {
+.section-image--product-studio {
   aspect-ratio: 1024 / 682;
+  max-width: 640px;
+  margin-inline: auto;
   background: transparent;
+}
+
+.section-image--product-studio img {
+  object-fit: contain;
 }
 
 .steps-section__image {

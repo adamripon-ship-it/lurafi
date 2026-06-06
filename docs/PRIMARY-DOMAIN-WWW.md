@@ -39,6 +39,8 @@ curl -sI https://lurafi.com/ | head -8
 
 **Before change (wrong for this project):** www 301 → apex, apex 200.
 
+**Incident:** If apex DNS fails while www redirects to apex, the storefront appears down. See [INCIDENT-2026-06-06.md](./INCIDENT-2026-06-06.md).
+
 ## Repo alignment
 
 | Item | Value |

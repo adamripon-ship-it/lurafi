@@ -13,16 +13,16 @@
     <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.solution.heading' | t }}{%- endif -%}</h2>
     <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.solution.subheading' | t }}{%- endif -%}</p>
 
-    <div class="section-image section-image--split-product">
+    <div class="section-image section-image--product-studio">
       {%- if section_image -%}
         <img
-          src="{{ section_image | image_url: width: 1200 }}"
+          src="{{ section_image | image_url: width: 720 }}"
           srcset="
+            {{ section_image | image_url: width: 480 }} 480w,
             {{ section_image | image_url: width: 640 }} 640w,
-            {{ section_image | image_url: width: 980 }} 980w,
-            {{ section_image | image_url: width: 1200 }} 1200w
+            {{ section_image | image_url: width: 720 }} 720w
           "
-          sizes="(min-width: 768px) 980px, 100vw"
+          sizes="(min-width: 768px) 640px, 88vw"
           alt="{{ section_image.alt | default: section_image_alt | escape }}"
           loading="lazy"
           decoding="async"
