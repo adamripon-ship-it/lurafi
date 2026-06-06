@@ -19,7 +19,8 @@
     "llm_assets_nl": "Nizozemské LLM shrnutí",
     "previous": "Previous",
     "next": "Next",
-    "configure_steps": "Kroky pokladny"
+    "configure_steps": "Kroky pokladny",
+    "scroll_to_content": "Přejít na obsah"
   },
   "general": {
     "search": {
@@ -300,7 +301,9 @@
       "author_2_location": "Lyon, Francie",
       "quote_3": "\"Stínové efekty si lidé všimnou nejvíc. Ze schodiště byt nepůsobí prázdně.\"",
       "author_3_name": "Thomas K.",
-      "author_3_location": "Mnichov, Německo"
+      "author_3_location": "Mnichov, Německo",
+      "summary_eyebrow": "Proč se pochybnost mění v důvěru",
+      "summary_body": "Kevin se snadno umístí, je navržen s důrazem na soukromí a nejvíce přesvědčí z perspektivy, na které záleží: zvenčí."
     },
     "pricing": {
       "overline": "Ceník",

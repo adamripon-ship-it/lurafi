@@ -41,14 +41,26 @@ export const LOCALE_NATIVE_STRINGS = {
   de: {
     'language.label': 'Sprache',
     'accessibility.configure_steps': 'Kassenschritte',
+    'accessibility.scroll_to_content': 'Zum Inhalt scrollen',
+    'home.proof.summary_eyebrow': 'Warum aus Zögern Vertrauen wird',
+    'home.proof.summary_body':
+      'Kevin ist einfach zu platzieren, datenschutzfreundlich konzipiert und am überzeugendsten aus genau der Perspektive, die zählt: von außen.',
   },
   fr: {
     'language.label': 'Langue',
     'accessibility.configure_steps': 'Étapes de paiement',
+    'accessibility.scroll_to_content': 'Faire défiler vers le contenu',
+    'home.proof.summary_eyebrow': 'Pourquoi le doute se transforme en confiance',
+    'home.proof.summary_body':
+      "Kevin est simple à installer, conçu pour la confidentialité, et le plus convaincant du point de vue qui compte : depuis l'extérieur.",
   },
   cs: {
     'language.label': 'Jazyk',
     'accessibility.configure_steps': 'Kroky pokladny',
+    'accessibility.scroll_to_content': 'Přejít na obsah',
+    'home.proof.summary_eyebrow': 'Proč se pochybnost mění v důvěru',
+    'home.proof.summary_body':
+      'Kevin se snadno umístí, je navržen s důrazem na soukromí a nejvíce přesvědčí z perspektivy, na které záleží: zvenčí.',
   },
 };
 

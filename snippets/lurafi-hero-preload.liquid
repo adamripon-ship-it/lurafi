@@ -1,0 +1,7 @@
+{%- liquid
+  assign lurafi_hero_lcp_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+-%}
+{%- comment -%}
+  Preload default Kevin device image for homepage LCP. Matches hero.liquid CDN fallback.
+{%- endcomment -%}
+<link rel="preload" as="image" href="{{ lurafi_hero_lcp_url }}" fetchpriority="high">

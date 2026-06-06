@@ -57,6 +57,7 @@
 
 <section class="hero-apple" aria-labelledby="HeroHeading">
   <div class="hero-apple__glow" aria-hidden="true"></div>
+  <div class="hero-apple__grain" aria-hidden="true"></div>
 
   <div class="hero-apple__content">
     <div class="hero-apple__text">
@@ -120,11 +121,11 @@
       </div>
     </div>
 
-    <div class="hero-apple__scroll" aria-hidden="true">
-      <div class="hero-apple__scroll-icon">
+    <a href="#problem" class="hero-apple__scroll" aria-label="{{ 'accessibility.scroll_to_content' | t }}">
+      <span class="hero-apple__scroll-icon" aria-hidden="true">
         <span class="hero-apple__scroll-dot"></span>
-      </div>
-    </div>
+      </span>
+    </a>
   </div>
 </section>
 

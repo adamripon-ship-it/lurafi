@@ -1,14 +1,72 @@
-<section class="section-apple bg-gray">
+<section id="proof" class="section-apple bg-gray">
   <div class="apple-container">
-    <h2 class="headline-section text-center" style="margin-bottom:56px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.proof.heading' | t }}{%- endif -%}</h2>
-    <div class="tile-grid-3">
-      <div class="tile tile--white"><div class="stars">★★★★★</div><p class="body-standard" style="margin-bottom:20px">{%- if section.settings.quote_1 != blank -%}{{ section.settings.quote_1 }}{%- else -%}{{ 'home.proof.quote_1' | t }}{%- endif -%}</p><p style="font-size:14px;font-weight:600">{%- if section.settings.author_1_name != blank -%}{{ section.settings.author_1_name }}{%- else -%}{{ 'home.proof.author_1_name' | t }}{%- endif -%}</p><p class="body-reduced text-muted">{%- if section.settings.author_1_location != blank -%}{{ section.settings.author_1_location }}{%- else -%}{{ 'home.proof.author_1_location' | t }}{%- endif -%}</p></div>
-      <div class="tile tile--white"><div class="stars">★★★★★</div><p class="body-standard" style="margin-bottom:20px">{%- if section.settings.quote_2 != blank -%}{{ section.settings.quote_2 }}{%- else -%}{{ 'home.proof.quote_2' | t }}{%- endif -%}</p><p style="font-size:14px;font-weight:600">{%- if section.settings.author_2_name != blank -%}{{ section.settings.author_2_name }}{%- else -%}{{ 'home.proof.author_2_name' | t }}{%- endif -%}</p><p class="body-reduced text-muted">{%- if section.settings.author_2_location != blank -%}{{ section.settings.author_2_location }}{%- else -%}{{ 'home.proof.author_2_location' | t }}{%- endif -%}</p></div>
-      <div class="tile tile--white"><div class="stars">★★★★★</div><p class="body-standard" style="margin-bottom:20px">{%- if section.settings.quote_3 != blank -%}{{ section.settings.quote_3 }}{%- else -%}{{ 'home.proof.quote_3' | t }}{%- endif -%}</p><p style="font-size:14px;font-weight:600">{%- if section.settings.author_3_name != blank -%}{{ section.settings.author_3_name }}{%- else -%}{{ 'home.proof.author_3_name' | t }}{%- endif -%}</p><p class="body-reduced text-muted">{%- if section.settings.author_3_location != blank -%}{{ section.settings.author_3_location }}{%- else -%}{{ 'home.proof.author_3_location' | t }}{%- endif -%}</p></div>
+    <h2 class="headline-section text-center proof-section__heading">
+      {%- if section.settings.heading != blank -%}
+        {{ section.settings.heading }}
+      {%- else -%}
+        {{ 'home.proof.heading' | t }}
+      {%- endif -%}
+    </h2>
+    <div class="tile-grid-3 proof-quote-grid">
+      {%- liquid
+        assign quote_1 = section.settings.quote_1
+        if quote_1 == blank
+          assign quote_1 = 'home.proof.quote_1' | t
+        endif
+        assign author_1_name = section.settings.author_1_name
+        if author_1_name == blank
+          assign author_1_name = 'home.proof.author_1_name' | t
+        endif
+        assign author_1_location = section.settings.author_1_location
+        if author_1_location == blank
+          assign author_1_location = 'home.proof.author_1_location' | t
+        endif
+
+        assign quote_2 = section.settings.quote_2
+        if quote_2 == blank
+          assign quote_2 = 'home.proof.quote_2' | t
+        endif
+        assign author_2_name = section.settings.author_2_name
+        if author_2_name == blank
+          assign author_2_name = 'home.proof.author_2_name' | t
+        endif
+        assign author_2_location = section.settings.author_2_location
+        if author_2_location == blank
+          assign author_2_location = 'home.proof.author_2_location' | t
+        endif
+
+        assign quote_3 = section.settings.quote_3
+        if quote_3 == blank
+          assign quote_3 = 'home.proof.quote_3' | t
+        endif
+        assign author_3_name = section.settings.author_3_name
+        if author_3_name == blank
+          assign author_3_name = 'home.proof.author_3_name' | t
+        endif
+        assign author_3_location = section.settings.author_3_location
+        if author_3_location == blank
+          assign author_3_location = 'home.proof.author_3_location' | t
+        endif
+      -%}
+      {% render 'proof-quote-card', quote: quote_1, author_name: author_1_name, author_location: author_1_location %}
+      {% render 'proof-quote-card', quote: quote_2, author_name: author_2_name, author_location: author_2_location %}
+      {% render 'proof-quote-card', quote: quote_3, author_name: author_3_name, author_location: author_3_location %}
     </div>
     <div class="proof-summary-card">
-      <p class="proof-summary-card__eyebrow">Why it converts hesitation into confidence</p>
-      <p>Kevin is simple to place, private by design, and most convincing from the exact perspective that matters: outside the home.</p>
+      <p class="proof-summary-card__eyebrow">
+        {%- if section.settings.summary_eyebrow != blank -%}
+          {{ section.settings.summary_eyebrow }}
+        {%- else -%}
+          {{ 'home.proof.summary_eyebrow' | t }}
+        {%- endif -%}
+      </p>
+      <p>
+        {%- if section.settings.summary_body != blank -%}
+          {{ section.settings.summary_body }}
+        {%- else -%}
+          {{ 'home.proof.summary_body' | t }}
+        {%- endif -%}
+      </p>
     </div>
   </div>
 </section>
@@ -26,7 +84,9 @@
     { "type": "text", "id": "author_2_location", "label": "Author 2 location" },
     { "type": "textarea", "id": "quote_3", "label": "Quote 3" },
     { "type": "text", "id": "author_3_name", "label": "Author 3 name" },
-    { "type": "text", "id": "author_3_location", "label": "Author 3 location" }
+    { "type": "text", "id": "author_3_location", "label": "Author 3 location" },
+    { "type": "text", "id": "summary_eyebrow", "label": "Summary eyebrow" },
+    { "type": "textarea", "id": "summary_body", "label": "Summary body" }
   ],
   "presets": [{ "name": "Testimonials" }]
 }

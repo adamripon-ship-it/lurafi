@@ -19,7 +19,8 @@
     "llm_assets_nl": "Résumé LLM en néerlandais",
     "previous": "Previous",
     "next": "Next",
-    "configure_steps": "Étapes de paiement"
+    "configure_steps": "Étapes de paiement",
+    "scroll_to_content": "Faire défiler vers le contenu"
   },
   "general": {
     "search": {
@@ -300,7 +301,9 @@
       "author_2_location": "Lyon, France",
       "quote_3": "« Les effets d'ombre sont ce que les gens remarquent. Depuis la cage d'escalier, l'appartement ne paraît pas vide. »",
       "author_3_name": "Thomas K.",
-      "author_3_location": "Munich, Allemagne"
+      "author_3_location": "Munich, Allemagne",
+      "summary_eyebrow": "Pourquoi le doute se transforme en confiance",
+      "summary_body": "Kevin est simple à installer, conçu pour la confidentialité, et le plus convaincant du point de vue qui compte : depuis l'extérieur."
     },
     "pricing": {
       "overline": "Tarifs",

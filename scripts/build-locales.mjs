@@ -30,7 +30,8 @@ const en = {
     configure_navigation: 'Configure',
     configure_steps: 'Checkout steps',
     hero_benefits: 'Kevin benefits',
-    llm_assets_nl: 'Dutch LLM summary'
+    llm_assets_nl: 'Dutch LLM summary',
+    scroll_to_content: 'Scroll to content'
   },
   general: { search: { search: 'Search' } },
   language: {
@@ -401,7 +402,10 @@ const nlHome = {
     author_2_location: 'Lyon, Frankrijk',
     quote_3:
       '"De schaduweffecten vallen op. Vanuit het trappenhuis voelt het appartement niet leeg."',
-    author_3_location: 'München, Duitsland'
+    author_3_location: 'München, Duitsland',
+    summary_eyebrow: 'Waarom twijfel verandert in vertrouwen',
+    summary_body:
+      'Kevin is eenvoudig te plaatsen, privacy-first ontworpen en het meest overtuigend vanuit het perspectief dat telt: buiten het huis.'
   },
   pricing: {
     overline: 'Prijzen',
@@ -493,7 +497,8 @@ nl.accessibility = {
   hero_benefits: 'Kevin-voordelen',
   llm_assets_nl: 'Nederlandse LLM-samenvatting',
   previous: 'Vorige',
-  next: 'Volgende'
+  next: 'Volgende',
+  scroll_to_content: 'Naar inhoud scrollen'
 };
 en.language = { label: 'Language', ...languageLabels };
 nl.language = { label: 'Taal', ...languageLabels };

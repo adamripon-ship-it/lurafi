@@ -237,6 +237,10 @@ async function auditSEOHeadless(browser) {
     h2count: document.querySelectorAll('h2').length,
     imgsNoAlt: [...document.querySelectorAll('img:not([alt])')].length,
     imgsEmptyAlt: [...document.querySelectorAll('img[alt=""]')].filter((i) => !i.getAttribute('role')).length,
+    imgsNoDimensions: [...document.querySelectorAll('img')].filter(
+      (i) => !i.getAttribute('width') || !i.getAttribute('height')
+    ).length,
+    hasHeroPreload: !!document.querySelector('link[rel="preload"][as="image"]'),
     hasSkipLink: !!document.querySelector('.skip-to-content-link'),
     viewport: document.querySelector('meta[name="viewport"]')?.content,
   }));
@@ -248,6 +252,10 @@ async function auditSEOHeadless(browser) {
   else warn('No skip link');
   if (seo.imgsNoAlt === 0) pass('All images have alt attribute');
   else warn(`${seo.imgsNoAlt} images without alt`);
+  if (seo.imgsNoDimensions === 0) pass('All images have width and height');
+  else warn(`${seo.imgsNoDimensions} images missing width/height (CLS risk)`);
+  if (seo.hasHeroPreload) pass('Hero LCP image preloaded');
+  else warn('No hero image preload link');
   const jsonLdCount = await page.locator('script[type="application/ld+json"]').count();
   if (seo.ogImage) pass('OG image set');
   else warn('No og:image on homepage — deploy meta-tags.liquid or set favicon');
