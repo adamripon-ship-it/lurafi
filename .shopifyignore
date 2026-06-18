@@ -2,6 +2,10 @@
 .github/
 docs/
 scripts/
+config/brandscript.json
+config/copy-matrix.json
+config/home-en.json
+config/languages.json
 tests/
 playwright.config.js
 node_modules/
