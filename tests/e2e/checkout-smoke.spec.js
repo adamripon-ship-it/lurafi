@@ -25,14 +25,12 @@ test.describe('Critical purchase path', () => {
       const cta = page.locator('[data-configure-checkout]').first();
       await expect(cta).toBeVisible();
 
-      await Promise.all([
-        page.waitForURL(CHECKOUT, { timeout: 45000 }),
-        cta.click(),
-      ]);
+      await cta.click();
+      await page.waitForURL(CHECKOUT, { timeout: 60000 });
 
       await expect(page).toHaveURL(CHECKOUT);
       if (plan === 'subscribe') {
-        expect(page.url()).toMatch(/selling_plan=/);
+        await expect(page).toHaveURL(/selling_plan=/);
       }
       await expect(page.locator('body')).not.toContainText(/almost ready|sold out|unavailable/i);
     });

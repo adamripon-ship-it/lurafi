@@ -404,6 +404,13 @@
         item.selling_plan = state.sellingPlanId;
       }
 
+      if (window.LurafiCart && typeof window.LurafiCart.addAndCheckout === 'function') {
+        window.LurafiCart.addAndCheckout(item).catch(function () {
+          goToCartPermalink(item, variant);
+        });
+        return;
+      }
+
       goToCartPermalink(item, variant);
     });
   });

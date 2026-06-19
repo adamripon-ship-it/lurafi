@@ -82,26 +82,59 @@ async function cmsStructureChecks() {
   return fails === 0;
 }
 
+function ensureSubscribeCommerce() {
+  console.log('Ensuring kevin-plus selling plan (required for subscribe checkout)…');
+  const r = spawnSync('node', ['scripts/setup-mitipi-commerce.mjs'], {
+    cwd: ROOT,
+    env: { ...process.env, SHOPIFY_STORE: STORE },
+    encoding: 'utf8',
+    timeout: 120000,
+  });
+  const out = (r.stdout || '') + (r.stderr || '');
+  if (out.trim()) process.stdout.write(out);
+  if (r.status !== 0) {
+    console.warn('⚠ setup-mitipi-commerce failed — subscribe checkout may fail\n');
+  }
+}
+
 async function checkoutSmoke() {
   console.log(`\n${'='.repeat(60)}\n▶ Checkout smoke (buy + subscribe)\n${'='.repeat(60)}\n`);
+  ensureSubscribeCommerce();
   const { chromium } = await import('playwright');
   const results = [];
-  for (const plan of ['buy', 'subscribe']) {
+  // Subscribe first — needs selling plan; also avoids buy-then-subscribe rate limits.
+  for (const plan of ['subscribe', 'buy']) {
     const browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(`${LURAFI}/pages/configure?plan=${plan}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await page.waitForTimeout(1200);
+    if (plan === 'subscribe') {
+      const subCard = page.locator('[data-plan="subscribe"]');
+      if (await subCard.isEnabled()) await subCard.click();
+      await page.waitForTimeout(400);
+    }
     const btn = page.locator('[data-configure-checkout]').first();
-    await Promise.all([
-      page.waitForNavigation({ timeout: 45000, waitUntil: 'domcontentloaded' }).catch(() => null),
-      btn.click(),
-    ]);
+    await btn.click();
+    try {
+      await page.waitForURL(/\/checkouts\//, { timeout: 60000 });
+    } catch {
+      /* cart permalink may stop at /cart/...?checkout under Shopify rate limits */
+    }
     const url = page.url();
-    const ok = /\/checkouts\//i.test(url);
-    const hasPlan = plan === 'subscribe' ? /selling_plan=/i.test(url) : true;
-    console.log(`${plan}: ${ok && hasPlan ? '✓' : '✗'} → ${url.slice(0, 90)}`);
-    results.push({ plan, ok: ok && hasPlan, url });
+    const atCheckout = /\/checkouts\//i.test(url);
+    const hasSellingPlan = /selling_plan=/i.test(url);
+    let ok = false;
+    if (plan === 'buy') {
+      ok = atCheckout;
+    } else {
+      // Subscribe must attach selling_plan (checkout URL or cart permalink).
+      ok = atCheckout ? hasSellingPlan : /\/cart\/[^?]+\?checkout/.test(url) && hasSellingPlan;
+    }
+    const note = plan === 'subscribe' && !atCheckout && ok ? ' (cart permalink; plan attached)' : '';
+    console.log(`${plan}: ${ok ? '✓' : '✗'}${note} → ${url.slice(0, 90)}`);
+    results.push({ plan, ok, url });
     await browser.close();
+    if (plan === 'subscribe') await new Promise((r) => setTimeout(r, 8000));
   }
   const ok = results.every((r) => r.ok);
   suites.push({ name: 'Checkout smoke', ok, exitCode: ok ? 0 : 1 });
