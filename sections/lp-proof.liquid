@@ -8,49 +8,62 @@
       {%- endif -%}
     </h2>
     <div class="tile-grid-3 proof-quote-grid">
-      {%- liquid
-        assign quote_1 = section.settings.quote_1
-        if quote_1 == blank
-          assign quote_1 = 'home.proof.quote_1' | t
-        endif
-        assign author_1_name = section.settings.author_1_name
-        if author_1_name == blank
-          assign author_1_name = 'home.proof.author_1_name' | t
-        endif
-        assign author_1_location = section.settings.author_1_location
-        if author_1_location == blank
-          assign author_1_location = 'home.proof.author_1_location' | t
-        endif
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'quote' -%}
+            {%- liquid
+              assign quote_text = block.settings.text
+              assign quote_author = block.settings.author_name
+              assign quote_location = block.settings.author_location
+            -%}
+            {% render 'proof-quote-card', quote: quote_text, author_name: quote_author, author_location: quote_location, block_attributes: block.shopify_attributes %}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- liquid
+          assign quote_1 = section.settings.quote_1
+          if quote_1 == blank
+            assign quote_1 = 'home.proof.quote_1' | t
+          endif
+          assign author_1_name = section.settings.author_1_name
+          if author_1_name == blank
+            assign author_1_name = 'home.proof.author_1_name' | t
+          endif
+          assign author_1_location = section.settings.author_1_location
+          if author_1_location == blank
+            assign author_1_location = 'home.proof.author_1_location' | t
+          endif
 
-        assign quote_2 = section.settings.quote_2
-        if quote_2 == blank
-          assign quote_2 = 'home.proof.quote_2' | t
-        endif
-        assign author_2_name = section.settings.author_2_name
-        if author_2_name == blank
-          assign author_2_name = 'home.proof.author_2_name' | t
-        endif
-        assign author_2_location = section.settings.author_2_location
-        if author_2_location == blank
-          assign author_2_location = 'home.proof.author_2_location' | t
-        endif
+          assign quote_2 = section.settings.quote_2
+          if quote_2 == blank
+            assign quote_2 = 'home.proof.quote_2' | t
+          endif
+          assign author_2_name = section.settings.author_2_name
+          if author_2_name == blank
+            assign author_2_name = 'home.proof.author_2_name' | t
+          endif
+          assign author_2_location = section.settings.author_2_location
+          if author_2_location == blank
+            assign author_2_location = 'home.proof.author_2_location' | t
+          endif
 
-        assign quote_3 = section.settings.quote_3
-        if quote_3 == blank
-          assign quote_3 = 'home.proof.quote_3' | t
-        endif
-        assign author_3_name = section.settings.author_3_name
-        if author_3_name == blank
-          assign author_3_name = 'home.proof.author_3_name' | t
-        endif
-        assign author_3_location = section.settings.author_3_location
-        if author_3_location == blank
-          assign author_3_location = 'home.proof.author_3_location' | t
-        endif
-      -%}
-      {% render 'proof-quote-card', quote: quote_1, author_name: author_1_name, author_location: author_1_location %}
-      {% render 'proof-quote-card', quote: quote_2, author_name: author_2_name, author_location: author_2_location %}
-      {% render 'proof-quote-card', quote: quote_3, author_name: author_3_name, author_location: author_3_location %}
+          assign quote_3 = section.settings.quote_3
+          if quote_3 == blank
+            assign quote_3 = 'home.proof.quote_3' | t
+          endif
+          assign author_3_name = section.settings.author_3_name
+          if author_3_name == blank
+            assign author_3_name = 'home.proof.author_3_name' | t
+          endif
+          assign author_3_location = section.settings.author_3_location
+          if author_3_location == blank
+            assign author_3_location = 'home.proof.author_3_location' | t
+          endif
+        -%}
+        {% render 'proof-quote-card', quote: quote_1, author_name: author_1_name, author_location: author_1_location %}
+        {% render 'proof-quote-card', quote: quote_2, author_name: author_2_name, author_location: author_2_location %}
+        {% render 'proof-quote-card', quote: quote_3, author_name: author_3_name, author_location: author_3_location %}
+      {%- endif -%}
     </div>
     <div class="proof-summary-card">
       <p class="proof-summary-card__eyebrow">
@@ -75,7 +88,12 @@
 {
   "name": "Testimonials",
   "settings": [
+    { "type": "header", "content": "Section" },
     { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "header", "content": "Summary (below quotes)" },
+    { "type": "text", "id": "summary_eyebrow", "label": "Summary eyebrow" },
+    { "type": "textarea", "id": "summary_body", "label": "Summary body" },
+    { "type": "header", "content": "Legacy quote slots", "info": "Used when no quote blocks are added below." },
     { "type": "textarea", "id": "quote_1", "label": "Quote 1" },
     { "type": "text", "id": "author_1_name", "label": "Author 1 name" },
     { "type": "text", "id": "author_1_location", "label": "Author 1 location" },
@@ -84,10 +102,20 @@
     { "type": "text", "id": "author_2_location", "label": "Author 2 location" },
     { "type": "textarea", "id": "quote_3", "label": "Quote 3" },
     { "type": "text", "id": "author_3_name", "label": "Author 3 name" },
-    { "type": "text", "id": "author_3_location", "label": "Author 3 location" },
-    { "type": "text", "id": "summary_eyebrow", "label": "Summary eyebrow" },
-    { "type": "textarea", "id": "summary_body", "label": "Summary body" }
+    { "type": "text", "id": "author_3_location", "label": "Author 3 location" }
   ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Quote" },
+        { "type": "text", "id": "author_name", "label": "Author name" },
+        { "type": "text", "id": "author_location", "label": "Author location" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
   "presets": [{ "name": "Testimonials" }]
 }
 {% endschema %}

@@ -15,7 +15,7 @@
   endif
   assign proof_initials = proof_initial_1 | append: proof_initial_2 | upcase
 -%}
-<article class="proof-quote-card tile tile--white">
+<article class="proof-quote-card tile tile--white"{{ block_attributes }}>
   <span class="proof-quote-card__mark" aria-hidden="true">"</span>
   <div class="proof-quote-card__stars stars" aria-hidden="true">★★★★★</div>
   <blockquote class="proof-quote-card__quote">

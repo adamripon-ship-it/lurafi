@@ -282,7 +282,14 @@ const enHome = JSON.parse(fs.readFileSync(path.join(root, 'config/home-en.json')
 
 en.home = {};
 for (const [id, sec] of Object.entries(index.sections)) {
-  en.home[id] = { ...(enHome[id] || {}), ...nonBlankSectionSettings(sec) };
+  const overrides = nonBlankSectionSettings(sec);
+  const hasCmsOverrides = Object.keys(overrides).length > 0;
+  if (hasCmsOverrides) {
+    // CMS guard: section settings in index.json win; do not merge home-en.json for this section
+    en.home[id] = { ...(en.home[id] || {}), ...overrides };
+  } else {
+    en.home[id] = { ...(enHome[id] || {}), ...overrides };
+  }
 }
 
 if (en.home.app) {

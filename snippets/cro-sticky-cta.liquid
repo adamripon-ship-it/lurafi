@@ -1,12 +1,25 @@
 {%- if request.page_type == 'index' -%}
   {%- unless request.query_string contains 'view=configure' -%}
-  {%- capture configure_buy_url -%}
-    {%- render 'configure-url', plan: 'buy' -%}
-  {%- endcapture -%}
-  <aside class="sticky-cta" aria-label="{{ 'home.hero.cta_primary_label' | t }}" data-sticky-cta hidden>
-    <a href="{{ configure_buy_url | strip }}" class="sticky-cta__btn btn-apple-primary">
-      {{ 'home.hero.cta_primary_label' | t }}
+  {%- liquid
+    assign sticky_enabled = sticky_enabled | default: true
+    assign sticky_label = sticky_label
+    if sticky_label == blank
+      assign sticky_label = 'home.hero.cta_primary_label' | t
+    endif
+    capture configure_buy_url
+      render 'configure-url', plan: 'buy'
+    endcapture
+    assign sticky_url = sticky_url | strip
+    if sticky_url == blank
+      assign sticky_url = configure_buy_url | strip
+    endif
+  -%}
+  {%- if sticky_enabled -%}
+  <aside class="sticky-cta" aria-label="{{ sticky_label | escape }}" data-sticky-cta hidden>
+    <a href="{{ sticky_url }}" class="sticky-cta__btn btn-apple-primary">
+      {{ sticky_label | escape }}
     </a>
   </aside>
+  {%- endif -%}
   {%- endunless -%}
 {%- endif -%}

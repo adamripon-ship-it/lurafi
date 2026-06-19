@@ -1,19 +1,19 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "type": "footer",
   "name": "Footer group",
   "sections": {
     "footer": {
       "type": "footer",
-      "settings": {}
+      "settings": {
+        "note": "Kevin simulates human presence using light, shadow, and sound. Actual deterrence results may vary. See product documentation for details.",
+        "column_product_title": "Product",
+        "column_company_title": "Company",
+        "column_support_title": "Support",
+        "column_shop_title": "Where to Buy",
+        "support_email": "hello@lurafi.ai",
+        "press_email": "press@lurafi.ai",
+        "careers_email": "hello@lurafi.ai"
+      }
     }
   },
   "order": [

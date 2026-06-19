@@ -6,7 +6,7 @@
 |-------|----------|---------|
 | Homepage copy (EN) | `config/home-en.json` | Canonical English strings for `home.*` locale keys |
 | Theme locales | `locales/en.default.json`, `locales/nl.json`, … | Storefront `{{ 'key' | t }}` strings |
-| Theme template | `templates/index.json` | Empty text settings — do **not** store English here |
+| Theme template | `templates/index.json` | Homepage section settings (seed via `npm run cms:seed`) |
 | Markets / pages | `config/languages.json` | Published locales, translated page handles, product copy |
 | Admin API | `scripts/setup-shopify-i18n.mjs` | Publish locales, markets web presence, page/product translations |
 
@@ -32,6 +32,20 @@ Never pipe `section.settings` through `| t` when the setting holds English place
 ```
 
 Merchant overrides in the theme editor show the setting value as-is; blank settings fall back to locale keys.
+
+## CMS migration (mitipi.eu)
+
+Content team edits copy in **Shopify Customize** per locale. See [CONTENT-TEAM-GUIDE.md](./CONTENT-TEAM-GUIDE.md).
+
+| Priority | Source of truth |
+|----------|-----------------|
+| Section setting (non-blank) | Theme Editor — wins on storefront |
+| Locale `{{ 'key' \| t }}` | Fallback when setting is blank |
+| `config/home-en.json` | Git/dev seed only; used by `npm run cms:seed` |
+
+When `templates/index.json` has non-empty section settings, `build-locales.mjs` **does not** overwrite that section's `home.*` keys from `home-en.json` (CMS guard).
+
+Optional bulk translation: [TRANSLATE-AND-ADAPT.md](./TRANSLATE-AND-ADAPT.md).
 
 ## build-locales.mjs
 

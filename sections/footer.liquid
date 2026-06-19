@@ -6,47 +6,113 @@
   assign configure_url = configure_url | strip
   assign footer_year = 'now' | date: '%Y'
   assign copyright_text = 'footer.copyright' | t: year: footer_year, shop_name: shop.name
+
+  assign footer_note = section.settings.note
+  if footer_note == blank
+    assign footer_note = 'footer.note' | t
+  endif
+
+  assign col_product_title = section.settings.column_product_title
+  if col_product_title == blank
+    if section.settings.menu_product != blank
+      assign col_product_title = section.settings.menu_product.title
+    else
+      assign col_product_title = 'footer.product' | t
+    endif
+  endif
+  assign col_company_title = section.settings.column_company_title
+  if col_company_title == blank
+    if section.settings.menu_company != blank
+      assign col_company_title = section.settings.menu_company.title
+    else
+      assign col_company_title = 'footer.company' | t
+    endif
+  endif
+  assign col_support_title = section.settings.column_support_title
+  if col_support_title == blank
+    if section.settings.menu_support != blank
+      assign col_support_title = section.settings.menu_support.title
+    else
+      assign col_support_title = 'footer.support' | t
+    endif
+  endif
+  assign col_shop_title = section.settings.column_shop_title
+  if col_shop_title == blank
+    if section.settings.menu_shop != blank
+      assign col_shop_title = section.settings.menu_shop.title
+    else
+      assign col_shop_title = 'footer.where_to_buy' | t
+    endif
+  endif
+
+  assign support_email = section.settings.support_email | default: 'hello@lurafi.ai'
+  assign press_email = section.settings.press_email | default: 'press@lurafi.ai'
+  assign careers_email = section.settings.careers_email | default: 'hello@lurafi.ai'
 -%}
 <footer class="site-footer-apple">
   <div class="apple-container">
-    <p class="site-footer-apple__note">{{ 'footer.note' | t }}</p>
+    <p class="site-footer-apple__note">{{ footer_note }}</p>
     <div class="site-footer-apple__grid">
       <div>
-        <h4>{{ 'footer.product' | t }}</h4>
+        <h4>{{ col_product_title }}</h4>
         <ul>
-          <li><a href="{{ root }}#product">{{ 'footer.features' | t }}</a></li>
-          <li><a href="{{ root }}#how-it-works">{{ 'footer.how_it_works' | t }}</a></li>
-          <li><a href="{{ root }}#app">{{ 'footer.the_app' | t }}</a></li>
-          <li><a href="{{ root }}#pricing">{{ 'footer.pricing' | t }}</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>{{ 'footer.company' | t }}</h4>
-        <ul>
-          <li><a href="mailto:hello@lurafi.ai?subject=About%20Kevin">{{ 'footer.about' | t }}</a></li>
-          <li><a href="mailto:press@lurafi.ai?subject=Press%20inquiry">{{ 'footer.press' | t }}</a></li>
-          <li><a href="mailto:hello@lurafi.ai?subject=Careers">{{ 'footer.careers' | t }}</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>{{ 'footer.support' | t }}</h4>
-        <ul>
-          <li><a href="{{ root }}#how-it-works">{{ 'footer.setup_guide' | t }}</a></li>
-          <li><a href="mailto:hello@lurafi.ai?subject=Support">{{ 'footer.contact' | t }}</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>{{ 'footer.where_to_buy' | t }}</h4>
-        <ul>
-          <li><a href="{{ configure_url }}">{{ 'footer.configure' | t }}</a></li>
-          <li><a href="{{ routes.cart_url }}">{{ 'footer.cart' | t }}</a></li>
-          {%- if pages.sitemap -%}
-            <li><a href="{{ pages.sitemap.url }}">{{ 'sitemap.human_sitemap' | t }}</a></li>
-          {%- endif -%}
-          {%- if customer -%}
-            <li><a href="{{ routes.account_url }}">{{ 'header.account' | t }}</a></li>
+          {%- if section.settings.menu_product != blank and section.settings.menu_product.links.size > 0 -%}
+            {%- for link in section.settings.menu_product.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
           {%- else -%}
-            <li><a href="{{ routes.account_login_url }}">{{ 'header.log_in' | t }}</a></li>
+            <li><a href="{{ root }}#product">{{ 'footer.features' | t }}</a></li>
+            <li><a href="{{ root }}#how-it-works">{{ 'footer.how_it_works' | t }}</a></li>
+            <li><a href="{{ root }}#app">{{ 'footer.the_app' | t }}</a></li>
+            <li><a href="{{ root }}#pricing">{{ 'footer.pricing' | t }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+      <div>
+        <h4>{{ col_company_title }}</h4>
+        <ul>
+          {%- if section.settings.menu_company != blank and section.settings.menu_company.links.size > 0 -%}
+            {%- for link in section.settings.menu_company.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          {%- else -%}
+            <li><a href="mailto:{{ support_email }}?subject=About%20Kevin">{{ 'footer.about' | t }}</a></li>
+            <li><a href="mailto:{{ press_email }}?subject=Press%20inquiry">{{ 'footer.press' | t }}</a></li>
+            <li><a href="mailto:{{ careers_email }}?subject=Careers">{{ 'footer.careers' | t }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+      <div>
+        <h4>{{ col_support_title }}</h4>
+        <ul>
+          {%- if section.settings.menu_support != blank and section.settings.menu_support.links.size > 0 -%}
+            {%- for link in section.settings.menu_support.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          {%- else -%}
+            <li><a href="{{ root }}#how-it-works">{{ 'footer.setup_guide' | t }}</a></li>
+            <li><a href="mailto:{{ support_email }}?subject=Support">{{ 'footer.contact' | t }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+      <div>
+        <h4>{{ col_shop_title }}</h4>
+        <ul>
+          {%- if section.settings.menu_shop != blank and section.settings.menu_shop.links.size > 0 -%}
+            {%- for link in section.settings.menu_shop.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          {%- else -%}
+            <li><a href="{{ configure_url }}">{{ 'footer.configure' | t }}</a></li>
+            <li><a href="{{ routes.cart_url }}">{{ 'footer.cart' | t }}</a></li>
+            {%- if pages.sitemap -%}
+              <li><a href="{{ pages.sitemap.url }}">{{ 'sitemap.human_sitemap' | t }}</a></li>
+            {%- endif -%}
+            {%- if customer -%}
+              <li><a href="{{ routes.account_url }}">{{ 'header.account' | t }}</a></li>
+            {%- else -%}
+              <li><a href="{{ routes.account_login_url }}">{{ 'header.log_in' | t }}</a></li>
+            {%- endif -%}
           {%- endif -%}
         </ul>
       </div>
@@ -67,4 +133,86 @@
     </div>
   </div>
 </footer>
-{% schema %}{ "name": "Footer", "settings": [] }{% endschema %}
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Footer note",
+      "info": "Leave blank to use the translated default."
+    },
+    {
+      "type": "header",
+      "content": "Link columns"
+    },
+    {
+      "type": "text",
+      "id": "column_product_title",
+      "label": "Product column title"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_product",
+      "label": "Product column menu"
+    },
+    {
+      "type": "text",
+      "id": "column_company_title",
+      "label": "Company column title"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_company",
+      "label": "Company column menu"
+    },
+    {
+      "type": "text",
+      "id": "column_support_title",
+      "label": "Support column title"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_support",
+      "label": "Support column menu"
+    },
+    {
+      "type": "text",
+      "id": "column_shop_title",
+      "label": "Where to buy column title"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_shop",
+      "label": "Where to buy column menu"
+    },
+    {
+      "type": "header",
+      "content": "Contact emails"
+    },
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support email",
+      "default": "hello@lurafi.ai"
+    },
+    {
+      "type": "text",
+      "id": "press_email",
+      "label": "Press email",
+      "default": "press@lurafi.ai"
+    },
+    {
+      "type": "text",
+      "id": "careers_email",
+      "label": "Careers email",
+      "default": "hello@lurafi.ai"
+    }
+  ]
+}
+{% endschema %}

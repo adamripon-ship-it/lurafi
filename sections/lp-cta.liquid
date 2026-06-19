@@ -1,15 +1,28 @@
 {%- capture configure_url -%}
   {%- render 'configure-url', plan: 'buy' -%}
 {%- endcapture -%}
-{%- assign configure_url = configure_url | strip -%}
+{%- liquid
+  assign configure_url = configure_url | strip
+  assign primary_url = section.settings.primary_cta_url | strip
+  if primary_url == blank
+    assign primary_url = configure_url
+  endif
+  assign secondary_url = section.settings.secondary_cta_url | strip
+  if secondary_url == blank
+    assign secondary_url = '#how-it-works'
+  endif
+  unless secondary_url contains '://' or secondary_url contains routes.root_url
+    assign secondary_url = routes.root_url | append: secondary_url
+  endunless
+-%}
 
 <section class="section-apple bg-black">
   <div class="apple-container text-center">
     <h2 class="headline-section text-white" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.cta.heading' | t }}{%- endif -%}</h2>
     <p class="body-elevated text-muted-dark" style="max-width:500px;margin:0 auto 32px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.cta.subheading' | t }}{%- endif -%}</p>
     <div class="cta-row">
-      <a href="{{ configure_url }}" class="cta-white-btn">{%- if section.settings.primary_cta != blank -%}{{ section.settings.primary_cta }}{%- else -%}{{ 'home.cta.primary_cta' | t }}{%- endif -%}</a>
-      <a href="{{ routes.root_url }}#how-it-works" class="cta-outline-btn">{%- if section.settings.secondary_cta != blank -%}{{ section.settings.secondary_cta }}{%- else -%}{{ 'home.cta.secondary_cta' | t }}{%- endif -%}</a>
+      <a href="{{ primary_url }}" class="cta-white-btn">{%- if section.settings.primary_cta != blank -%}{{ section.settings.primary_cta }}{%- else -%}{{ 'home.cta.primary_cta' | t }}{%- endif -%}</a>
+      <a href="{{ secondary_url }}" class="cta-outline-btn">{%- if section.settings.secondary_cta != blank -%}{{ section.settings.secondary_cta }}{%- else -%}{{ 'home.cta.secondary_cta' | t }}{%- endif -%}</a>
     </div>
   </div>
 </section>
@@ -18,10 +31,14 @@
 {
   "name": "Final CTA",
   "settings": [
+    { "type": "header", "content": "Content" },
     { "type": "text", "id": "heading", "label": "Heading" },
     { "type": "textarea", "id": "subheading", "label": "Subheading" },
-    { "type": "text", "id": "primary_cta", "label": "Primary CTA" },
-    { "type": "text", "id": "secondary_cta", "label": "Secondary CTA" }
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "primary_cta", "label": "Primary button label" },
+    { "type": "url", "id": "primary_cta_url", "label": "Primary button URL", "info": "Leave blank for Configure (buy) page." },
+    { "type": "text", "id": "secondary_cta", "label": "Secondary button label" },
+    { "type": "text", "id": "secondary_cta_url", "label": "Secondary button URL or anchor", "default": "#how-it-works" }
   ],
   "presets": [{ "name": "Final CTA" }]
 }

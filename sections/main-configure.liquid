@@ -27,6 +27,31 @@
 
   assign buy_features = 'configure.buy_features' | t | split: '|'
   assign sub_features = 'configure.sub_features' | t | split: '|'
+
+  assign configure_back = section.settings.back_label
+  if configure_back == blank
+    assign configure_back = 'configure.back' | t
+  endif
+  assign configure_nav_title = section.settings.nav_title
+  if configure_nav_title == blank
+    assign configure_nav_title = 'configure.nav_title' | t
+  endif
+  assign configure_header_eyebrow = section.settings.header_eyebrow
+  if configure_header_eyebrow == blank
+    assign configure_header_eyebrow = 'configure.header_eyebrow' | t
+  endif
+  assign configure_title = section.settings.title
+  if configure_title == blank
+    assign configure_title = 'configure.title' | t
+  endif
+  assign configure_lede = section.settings.lede
+  if configure_lede == blank
+    assign configure_lede = 'configure.lede' | t
+  endif
+  assign configure_checkout_cta = section.settings.checkout_cta
+  if configure_checkout_cta == blank
+    assign configure_checkout_cta = 'configure.checkout_cta' | t
+  endif
 -%}
 
 <section class="configure-page" data-configure>
@@ -36,9 +61,9 @@
         <svg width="8" height="13" viewBox="0 0 8 13" fill="none" aria-hidden="true">
           <path d="M7 1L1.5 6.5L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        {{ 'configure.back' | t }}
+        {{ configure_back }}
       </a>
-      <span class="configure-nav__title">{{ 'configure.nav_title' | t }}</span>
+      <span class="configure-nav__title">{{ configure_nav_title }}</span>
       <div class="configure-nav__tools">
         {% render 'language-selector', form_id: 'ConfigureLanguageForm', selector_id: 'ConfigureLanguageSelector' %}
       </div>
@@ -68,9 +93,9 @@
 
   <div class="apple-container configure-page__inner">
     <header class="configure-header">
-      <p class="configure-header__eyebrow">{{ 'configure.header_eyebrow' | t | default: 'Secure checkout' }}</p>
-      <h1 class="configure-header__title">{{ 'configure.title' | t }}</h1>
-      <p class="configure-header__lede">{{ 'configure.lede' | t }}</p>
+      <p class="configure-header__eyebrow">{{ configure_header_eyebrow }}</p>
+      <h1 class="configure-header__title">{{ configure_title }}</h1>
+      <p class="configure-header__lede">{{ configure_lede }}</p>
     </header>
 
     <div class="configure-grid">
@@ -205,7 +230,7 @@
               <p class="configure-summary__per" data-configure-per-device hidden></p>
             </div>
             <button type="button" class="btn-apple-primary btn-block configure-cta" data-configure-checkout>
-              <span data-configure-cta-label>{{ 'configure.checkout_cta' | t }}</span>
+              <span data-configure-cta-label>{{ configure_checkout_cta }}</span>
               <svg class="configure-cta__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -342,7 +367,17 @@
 {% schema %}
 {
   "name": "Configure",
-  "settings": [],
+  "settings": [
+    { "type": "header", "content": "Navigation" },
+    { "type": "text", "id": "back_label", "label": "Back link label" },
+    { "type": "text", "id": "nav_title", "label": "Nav title" },
+    { "type": "header", "content": "Page header" },
+    { "type": "text", "id": "header_eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "title", "label": "Page title" },
+    { "type": "textarea", "id": "lede", "label": "Introduction" },
+    { "type": "header", "content": "Checkout" },
+    { "type": "text", "id": "checkout_cta", "label": "Checkout button label" }
+  ],
   "presets": [{ "name": "Configure" }]
 }
 {% endschema %}

@@ -8,7 +8,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = join(import.meta.dirname, '..');
-const LURAFI = (process.env.LURAFI_URL || 'https://lurafi.com').replace(/\/$/, '');
+const LURAFI = (process.env.LURAFI_URL || 'https://mitipi.eu').replace(/\/$/, '');
 const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
 const OLD = process.env.OLD_URL || 'https://lurafi.ai';
 
@@ -61,6 +61,27 @@ async function httpChecks() {
   return fails === 0;
 }
 
+async function cmsStructureChecks() {
+  console.log(`\n${'='.repeat(60)}\n▶ CMS structure checks (${LURAFI})\n${'='.repeat(60)}\n`);
+  const res = await fetch(`${LURAFI}/`, { redirect: 'follow' });
+  const html = await res.text();
+  const checks = [
+    { name: 'Header nav present', ok: html.includes('site-nav') && html.includes('site-nav__link') },
+    { name: 'Footer grid present', ok: html.includes('site-footer-apple__grid') },
+    { name: 'Hero headline present', ok: html.includes('Make Home Look Alive') || html.includes('headline-hero') },
+    { name: 'Pricing section anchor', ok: html.includes('id="pricing"') },
+    { name: 'Specs table present', ok: html.includes('lp-specs__table') },
+    { name: 'Sticky CTA markup', ok: html.includes('sticky-cta') || html.includes('data-sticky-cta') },
+  ];
+  let fails = 0;
+  for (const c of checks) {
+    console.log(`${c.name}: ${c.ok ? '✓' : '✗'}`);
+    if (!c.ok) fails++;
+  }
+  suites.push({ name: 'CMS structure', ok: fails === 0, exitCode: fails ? 1 : 0 });
+  return fails === 0;
+}
+
 async function checkoutSmoke() {
   console.log(`\n${'='.repeat(60)}\n▶ Checkout smoke (buy + subscribe)\n${'='.repeat(60)}\n`);
   const { chromium } = await import('playwright');
@@ -92,6 +113,7 @@ async function main() {
 
   runSuite('Backend (Admin API)', 'node', ['scripts/qa-mitipi-backend.mjs'], { SHOPIFY_STORE: STORE });
   await httpChecks();
+  await cmsStructureChecks();
   runSuite('Compare lurafi.ai → lurafi.com', 'node', ['scripts/qa-compare-stores.mjs'], {
     OLD_URL: OLD,
     NEW_URL: LURAFI,

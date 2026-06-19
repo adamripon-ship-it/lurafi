@@ -5,9 +5,12 @@
     "header": {
       "type": "header",
       "settings": {
-        "cta_label": "Buy Kevin"
+        "cta_label": "Buy Now",
+        "cta_label_mobile": "Buy"
       }
     }
   },
-  "order": ["header"]
+  "order": [
+    "header"
+  ]
 }
