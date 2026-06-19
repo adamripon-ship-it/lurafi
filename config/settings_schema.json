@@ -56,7 +56,7 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo",
-        "info": "Optional. Leave empty to use the default LURAFI logo."
+        "info": "Optional. Leave empty to use the default Kevin wordmark logo."
       },
       {
         "type": "image_picker",

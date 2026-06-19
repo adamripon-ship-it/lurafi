@@ -9,8 +9,18 @@
   endcapture
   assign configure_buy_url = configure_buy_url | strip
   assign configure_sub_url = configure_sub_url | strip
-  assign buy_features = 'home.pricing.buy_features' | t | split: '|'
-  assign sub_features = 'home.pricing.sub_features' | t | split: '|'
+  assign buy_features_raw = section.settings.buy_features | strip
+  assign sub_features_raw = section.settings.sub_features | strip
+  if buy_features_raw != blank
+    assign buy_features = buy_features_raw | split: '|'
+  else
+    assign buy_features = 'home.pricing.buy_features' | t | split: '|'
+  endif
+  if sub_features_raw != blank
+    assign sub_features = sub_features_raw | split: '|'
+  else
+    assign sub_features = 'home.pricing.sub_features' | t | split: '|'
+  endif
 -%}
 
 <section id="pricing" class="section-apple bg-white">
@@ -63,17 +73,20 @@
 {
   "name": "Pricing",
   "settings": [
+    { "type": "header", "content": "Section copy" },
     { "type": "text", "id": "overline", "label": "Overline" },
     { "type": "text", "id": "heading", "label": "Heading" },
     { "type": "textarea", "id": "subheading", "label": "Subheading" },
-    { "type": "text", "id": "buy_label", "label": "Buy plan label" },
-    { "type": "text", "id": "buy_tagline", "label": "Buy tagline" },
-    { "type": "text", "id": "buy_cta", "label": "Buy CTA" },
-    { "type": "text", "id": "sub_label", "label": "Subscribe plan label" },
-    { "type": "text", "id": "sub_tagline", "label": "Subscribe tagline" },
-    { "type": "text", "id": "sub_cta", "label": "Subscribe CTA" },
-    { "type": "textarea", "id": "buy_features", "label": "Buy features (pipe-separated)" },
-    { "type": "textarea", "id": "sub_features", "label": "Subscribe features (pipe-separated)" }
+    { "type": "header", "content": "Buy plan (Kevin)" },
+    { "type": "text", "id": "buy_label", "label": "Plan label" },
+    { "type": "text", "id": "buy_tagline", "label": "Tagline" },
+    { "type": "text", "id": "buy_cta", "label": "Button label" },
+    { "type": "textarea", "id": "buy_features", "label": "Feature list (pipe-separated)" },
+    { "type": "header", "content": "Subscribe plan (Kevin+)" },
+    { "type": "text", "id": "sub_label", "label": "Plan label" },
+    { "type": "text", "id": "sub_tagline", "label": "Tagline" },
+    { "type": "text", "id": "sub_cta", "label": "Button label" },
+    { "type": "textarea", "id": "sub_features", "label": "Feature list (pipe-separated)" }
   ],
   "presets": [{ "name": "Pricing" }]
 }

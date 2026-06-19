@@ -1,6 +1,6 @@
 <div class="page-width blog-page">
   <header class="collection-page__header">
-    <p class="eyebrow">Journal</p>
+    <p class="eyebrow">{%- if section.settings.eyebrow != blank -%}{{ section.settings.eyebrow }}{%- else -%}Journal{%- endif -%}</p>
     <h1>{{ blog.title }}</h1>
   </header>
 
@@ -55,6 +55,12 @@
 {
   "name": "Blog",
   "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Page eyebrow",
+      "default": "Journal"
+    },
     {
       "type": "range",
       "id": "posts_per_page",

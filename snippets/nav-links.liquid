@@ -1,0 +1,17 @@
+{%- comment -%}
+  Renders navigation links from a Shopify menu or skips (caller handles fallback).
+  @param menu {linklist}
+  @param link_class {string} CSS class for each anchor
+  @param close_menu {boolean} add data-menu-close for mobile drawer
+{%- endcomment -%}
+{%- if menu != blank and menu.links.size > 0 -%}
+  {%- for link in menu.links -%}
+    <a
+      href="{{ link.url }}"
+      class="{{ link_class }}"
+      {%- if close_menu -%} data-menu-close{%- endif -%}
+    >
+      {{ link.title | escape }}
+    </a>
+  {%- endfor -%}
+{%- endif -%}

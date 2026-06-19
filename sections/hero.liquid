@@ -129,6 +129,12 @@
   </div>
 </section>
 
+{% render 'cro-sticky-cta',
+  sticky_label: section.settings.sticky_cta_label,
+  sticky_enabled: section.settings.sticky_cta_enabled,
+  sticky_url: section.settings.sticky_cta_url
+%}
+
 {% schema %}
 {
   "name": "Hero",
@@ -211,6 +217,27 @@
       "type": "textarea",
       "id": "checkout_body",
       "label": "Callout 3 — subtext"
+    },
+    {
+      "type": "header",
+      "content": "Sticky mobile CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_cta_enabled",
+      "label": "Show sticky buy button on mobile",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sticky_cta_label",
+      "label": "Sticky button label"
+    },
+    {
+      "type": "url",
+      "id": "sticky_cta_url",
+      "label": "Sticky button URL",
+      "info": "Leave blank to use Configure (buy) page."
     }
   ],
   "presets": [{ "name": "Hero" }]

@@ -331,7 +331,8 @@
       "heading": "Odjeďte, aniž byste to oznamovali.",
       "subheading": "Kevin nechá váš domov vypadat a znít aktivně díky švýcarské simulaci přítomnosti. Doprava zdarma. Nastavení za 60 sekund. Žádné kamery ani mikrofony.",
       "primary_cta": "Koupit Kevin",
-      "secondary_cta": "Zjistit více"
+      "secondary_cta": "Zjistit více",
+      "secondary_cta_url": "#how-it-works"
     }
   },
   "stats": {

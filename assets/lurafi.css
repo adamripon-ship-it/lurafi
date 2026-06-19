@@ -38,8 +38,8 @@
   --header-brand-max: 10.35rem;
   --header-nav-gap: clamp(20px, 2.5vw, 36px);
   --header-nav-font-size: 0.9375rem;
-  /* Wordmark — fixed px per breakpoint (933×256 PNG ≈ 3.645:1); never em/vw on the img */
-  --header-logo-aspect: 3.645;
+  /* Wordmark — fixed px per breakpoint (404×108 PNG ≈ 3.741:1); never em/vw on the img */
+  --header-logo-aspect: 3.741;
   --header-logo-height: 26px;
   --header-logo-width: calc(var(--header-logo-height) * var(--header-logo-aspect));
   --header-util-gap: 6px;
@@ -470,11 +470,8 @@ select:focus-visible,
   max-width: none;
   object-fit: contain;
   object-position: left center;
-  transition: filter 0.5s;
 }
-.site-header[data-theme="dark"] .site-header__logo-img {
-  filter: brightness(0) invert(1);
-}
+.site-header[data-theme="dark"] .site-header__logo-img,
 .site-header[data-theme="light"] .site-header__logo-img {
   filter: none;
 }
@@ -1114,7 +1111,6 @@ body.mobile-nav-open { overflow: hidden; }
   max-width: none;
   object-fit: contain;
   object-position: left center;
-  filter: brightness(0) invert(1);
 }
 .mobile-nav__title {
   font-size: 20px;

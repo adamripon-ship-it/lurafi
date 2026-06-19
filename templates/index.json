@@ -20,7 +20,10 @@
         "privacy_body": "",
         "checkout_eyebrow": "",
         "checkout_title": "",
-        "checkout_body": ""
+        "checkout_body": "",
+        "sticky_cta_label": "",
+        "sticky_cta_enabled": true,
+        "sticky_cta_url": ""
       }
     },
     "problem": {
@@ -171,7 +174,9 @@
         "heading": "",
         "subheading": "",
         "primary_cta": "",
-        "secondary_cta": ""
+        "secondary_cta": "",
+        "primary_cta_url": "",
+        "secondary_cta_url": "#how-it-works"
       }
     }
   },
