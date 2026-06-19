@@ -4,16 +4,22 @@
 {%- liquid
   assign configure_url = configure_url | strip
   assign primary_url = section.settings.primary_cta_url | strip
-  if primary_url == blank
+  if primary_url == blank or primary_url contains '/pages/configure' and pages.configure == blank
     assign primary_url = configure_url
   endif
   assign secondary_url = section.settings.secondary_cta_url | strip
   if secondary_url == blank
     assign secondary_url = '#how-it-works'
   endif
-  unless secondary_url contains '://' or secondary_url contains routes.root_url
+  if secondary_url contains '://' or secondary_url contains routes.root_url
+    # absolute or already prefixed — keep as-is
+  elsif secondary_url contains '#'
     assign secondary_url = routes.root_url | append: secondary_url
-  endunless
+  elsif secondary_url contains '/'
+    # root-relative path — keep as-is
+  else
+    assign secondary_url = routes.root_url | append: secondary_url
+  endif
 -%}
 
 <section class="section-apple bg-black">

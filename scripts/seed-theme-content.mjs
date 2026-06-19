@@ -3,10 +3,8 @@
  * Seed theme section settings from config/home-en.json + locales/en.default.json.
  * Writes templates/index.json, sections/header-group.json (header settings only).
  *
- * Usage:
- *   node scripts/seed-theme-content.mjs           # dry-run, print summary
- *   node scripts/seed-theme-content.mjs --write   # write files
- *   node scripts/seed-theme-content.mjs --write --include-blocks  # specs + proof blocks
+ * Optional one-time bootstrap: npm run cms:seed -- --write --include-blocks
+ * Default deploy keeps templates/index.json settings empty so locale fallbacks work for all languages.
  */
 import fs from 'node:fs';
 import path from 'node:path';

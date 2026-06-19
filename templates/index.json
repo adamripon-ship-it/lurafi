@@ -3,276 +3,178 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "Swiss presence simulation",
-        "headline": "Make Home Look Alive.",
-        "lede": "Kevin uses Swiss-engineered light, shadow, and everyday sound to make your home feel occupied before anyone tests the door.",
-        "cta_primary_label": "Buy Kevin",
+        "eyebrow": "",
+        "headline": "",
+        "lede": "",
+        "cta_primary_label": "",
         "cta_primary_url": "",
-        "cta_secondary_label": "How it works",
+        "cta_secondary_label": "",
         "cta_secondary_url": "#how-it-works",
-        "image_alt": "Kevin presence simulation device",
-        "callouts_aria_label": "Kevin benefits",
-        "away_eyebrow": "Away mode",
-        "away_title": "Living room active",
-        "away_body": "Light, shadow, and sound vary automatically.",
-        "privacy_eyebrow": "Privacy",
-        "privacy_title": "No cameras. No mics.",
-        "privacy_body": "Simulation plays locally on the device.",
-        "checkout_eyebrow": "Checkout",
-        "checkout_title": "Free delivery",
-        "checkout_body": "Secure Shopify checkout.",
-        "sticky_cta_label": "Buy Kevin",
-        "sticky_cta_enabled": true
+        "image_alt": "",
+        "callouts_aria_label": "",
+        "away_eyebrow": "",
+        "away_title": "",
+        "away_body": "",
+        "privacy_eyebrow": "",
+        "privacy_title": "",
+        "privacy_body": "",
+        "checkout_eyebrow": "",
+        "checkout_title": "",
+        "checkout_body": "",
+        "sticky_cta_label": "",
+        "sticky_cta_enabled": true,
+        "sticky_cta_url": ""
       }
     },
     "problem": {
       "type": "lp-problem",
       "settings": {
-        "overline": "The Problem",
-        "heading": "Empty is an invitation.",
-        "subheading": "Most security products react after the risk has already started. Kevin is built for the moment before: when a home, flat, or office needs to look lived-in from the outside.",
-        "tile_1_title": "Alarms react",
-        "tile_1_body": "A siren starts after entry. Kevin adds visible presence beforehand, so your place looks like the harder target.",
-        "tile_2_title": "Cameras record",
-        "tile_2_body": "Footage can help later, but it does not make a quiet room feel occupied. Burglars still count on speed and distance.",
-        "tile_3_title": "Lights are predictable",
-        "tile_3_body": "Timers switch lamps on and off. Kevin creates changing shadows, TV-like flicker, and household sounds that feel more natural."
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "tile_1_title": "",
+        "tile_1_body": "",
+        "tile_2_title": "",
+        "tile_2_body": "",
+        "tile_3_title": "",
+        "tile_3_body": ""
       }
     },
     "solution": {
       "type": "lp-solution",
       "settings": {
-        "overline": "The Kevin Method",
-        "heading": "Deterrence that feels human.",
-        "subheading": "Place Kevin near a wall or ceiling it can use like a stage. From outside, light, shadows, and sound suggest everyday life—not only burglary deterrence, but a home that feels occupied when you travel, work late, or live alone.",
-        "pillar_1_title": "Warm light",
-        "pillar_1_body": "Bright, warm scenes make a room look lived-in instead of simply lit. Kevin varies the rhythm for mornings, evenings, and nights.",
-        "pillar_2_title": "Moving shadows",
-        "pillar_2_body": "Projected silhouettes show families at dinner, someone reading, or quiet company—so the room reads as active, not empty.",
-        "pillar_3_title": "Everyday sound",
-        "pillar_3_body": "Kitchen noise, TV ambience, footsteps, voices, and your own recordings help the simulation feel personal and less repetitive.",
-        "image_alt": "Kevin presence simulation device on a navy surface with fabric front and top controls"
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "pillar_1_title": "",
+        "pillar_1_body": "",
+        "pillar_2_title": "",
+        "pillar_2_body": "",
+        "pillar_3_title": "",
+        "pillar_3_body": "",
+        "image_alt": ""
       }
     },
     "steps": {
       "type": "lp-steps",
       "settings": {
-        "overline": "The Plan",
-        "heading": "Plug in. Set routines. Leave calmly.",
-        "subheading": "No installation, no wiring, no monthly monitoring panel. Kevin starts with a simple setup and grows more useful through schedules, geofencing, and updates.",
-        "step_1_title": "Place Kevin",
-        "step_1_body": "Set it near a visible window with a wall or ceiling for shadows. Connect power and let the room become the stage.",
-        "step_2_title": "Set your routine",
-        "step_2_body": "Use the app for weekly schedules, holiday mode, or geo-aware activation when you leave the area.",
-        "step_3_title": "Stay believable",
-        "step_3_body": "Kevin plays varied light and sound scenarios from local storage, so your routines are not streamed from the cloud or shared with third parties.",
-        "stat_1_value": "60s",
-        "stat_1_label": "Setup time",
-        "stat_2_value": "1",
-        "stat_2_label": "Wires needed",
-        "stat_3_value": "100%",
-        "stat_3_label": "Privacy",
-        "stat_4_value": "24/7",
-        "stat_4_label": "Protection",
-        "image_alt": "Kevin device"
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "step_1_title": "",
+        "step_1_body": "",
+        "step_2_title": "",
+        "step_2_body": "",
+        "step_3_title": "",
+        "step_3_body": "",
+        "stat_1_value": "",
+        "stat_1_label": "",
+        "stat_2_value": "",
+        "stat_2_label": "",
+        "stat_3_value": "",
+        "stat_3_label": "",
+        "stat_4_value": "",
+        "stat_4_label": "",
+        "image_alt": ""
       }
     },
     "app": {
       "type": "lp-app",
       "settings": {
-        "overline": "Kevin App",
-        "heading": "Presence on your schedule.",
-        "subheading": "Turn Kevin on, plan weekly routines, and manage multiple devices from one simple app built for peace of mind.",
+        "overline": "",
+        "heading": "",
+        "subheading": "",
         "enable_animations": true,
-        "phone_image_1_alt": "Kevin app simulation settings screen",
-        "phone_1_caption": "Simulation — tune volume, night mode, and characteristics",
-        "phone_image_2_alt": "Kevin app scheduled simulation screen",
-        "phone_2_caption": "Schedule — set protection by day and hour",
-        "tile_1_title": "Weekly schedules",
-        "tile_1_body": "Plan mornings, evenings, nights, weekends, and holidays so your home follows a believable rhythm while you are away.",
-        "tile_2_title": "Geo-aware activation",
-        "tile_2_body": "Kevin can start when you leave the area, while still letting you trigger a simulation manually for quick errands.",
-        "tile_3_title": "Your own sounds",
-        "tile_3_body": "Upload recordings and tag them by room or activity so the simulation can sound more like your household.",
-        "tile_4_title": "Multiple places",
-        "tile_4_body": "Use more than one Kevin for apartments, extra floors, offices, or second homes that should not feel abandoned.",
-        "phone_image_6_alt": "Kevin app device home screen",
-        "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
-        "phone_image_3_alt": "Kevin app edit device screen",
-        "phone_3_caption": "Device — rename, customize, and manage firmware",
-        "phone_image_4_alt": "Kevin app enable auto-activation screen",
-        "phone_4_caption": "Auto-activation — enable location when you leave",
-        "phone_image_5_alt": "Kevin app location picker screen",
-        "phone_5_caption": "Location — set where Kevin activates automatically",
-        "carousel_label": "App screenshots"
+        "phone_image_1_alt": "",
+        "phone_1_caption": "",
+        "phone_image_2_alt": "",
+        "phone_2_caption": "",
+        "tile_1_title": "",
+        "tile_1_body": "",
+        "tile_2_title": "",
+        "tile_2_body": "",
+        "tile_3_title": "",
+        "tile_3_body": "",
+        "tile_4_title": "",
+        "tile_4_body": ""
       }
     },
     "personas": {
       "type": "lp-personas",
       "settings": {
-        "overline": "Made for You",
-        "heading": "A smarter layer for real life.",
-        "subheading": "Whether you travel, live alone, commute, or already own an alarm, Kevin adds the missing signal: everyday life appears to be happening inside.",
-        "persona_1_title": "Travel often",
-        "persona_1_body": "Weekend away or long holiday, Kevin keeps the room active with varied scenes instead of a fixed light timer.",
-        "persona_1_quote": "\"I wanted the house to feel occupied, not just illuminated. Kevin gives me that.\"",
-        "persona_2_title": "Already have an alarm?",
-        "persona_2_body": "Keep it. Kevin complements detection with deterrence, helping your home look occupied before anyone considers entry.",
-        "persona_2_quote": "\"Our alarm tells us if something happens. Kevin helps make the house look like the wrong target.\"",
-        "persona_3_title": "Living alone",
-        "persona_3_body": "Students, young professionals, or anyone home by themselves can run believable scenes—so from the hallway or street it looks like everyday life is happening inside.",
-        "persona_3_quote": "\"I wanted my flat to feel active, not just lit. Kevin makes it look like someone is home—even when I am there alone.\""
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "persona_1_title": "",
+        "persona_1_body": "",
+        "persona_1_quote": "",
+        "persona_2_title": "",
+        "persona_2_body": "",
+        "persona_2_quote": "",
+        "persona_3_title": "",
+        "persona_3_body": "",
+        "persona_3_quote": ""
       }
     },
     "stats": {
       "type": "lp-stats",
       "settings": {
-        "heading": "Built for believable deterrence.",
-        "stat_1_value": "97%",
-        "stat_1_label": "Risk reduction cited by Mitipi",
-        "stat_2_value": "70h+",
-        "stat_2_label": "Built-in simulations",
-        "stat_3_value": "9W",
-        "stat_3_label": "Typical energy use",
-        "stat_4_value": "0",
-        "stat_4_label": "Cameras or mics",
-        "badge_1": "European Security Award 2024",
-        "badge_2": "Swiss Engineered",
-        "badge_3": "No monitoring subscription",
-        "badge_4": "On-device simulation"
+        "heading": "",
+        "stat_1_value": "",
+        "stat_1_label": "",
+        "stat_2_value": "",
+        "stat_2_label": "",
+        "stat_3_value": "",
+        "stat_3_label": "",
+        "stat_4_value": "",
+        "stat_4_label": ""
       }
     },
     "proof": {
       "type": "lp-proof",
       "settings": {
-        "heading": "Realistic where it matters: from outside.",
-        "quote_1": "\"From the pavement, the light and movement make the room feel occupied. That is exactly what I wanted.\"",
-        "author_1_name": "Sarah M.",
-        "author_1_location": "Zurich, Switzerland",
-        "quote_2": "\"A friend thought someone was inside and rang the bell. Kevin did its job before anyone reached the door.\"",
-        "author_2_name": "Marc D.",
-        "author_2_location": "Lyon, France",
-        "quote_3": "\"The shadow effects are the part people notice. From the stairwell, the apartment does not feel empty.\"",
-        "author_3_name": "Thomas K.",
-        "author_3_location": "Munich, Germany",
-        "summary_eyebrow": "Why it converts hesitation into confidence",
-        "summary_body": "Kevin is simple to place, private by design, and most convincing from the exact perspective that matters: outside the home."
-      },
-      "blocks": {
-        "quote_1": {
-          "type": "quote",
-          "settings": {
-            "text": "\"From the pavement, the light and movement make the room feel occupied. That is exactly what I wanted.\"",
-            "author_name": "Sarah M.",
-            "author_location": "Zurich, Switzerland"
-          }
-        },
-        "quote_2": {
-          "type": "quote",
-          "settings": {
-            "text": "\"A friend thought someone was inside and rang the bell. Kevin did its job before anyone reached the door.\"",
-            "author_name": "Marc D.",
-            "author_location": "Lyon, France"
-          }
-        },
-        "quote_3": {
-          "type": "quote",
-          "settings": {
-            "text": "\"The shadow effects are the part people notice. From the stairwell, the apartment does not feel empty.\"",
-            "author_name": "Thomas K.",
-            "author_location": "Munich, Germany"
-          }
-        }
-      },
-      "block_order": [
-        "quote_1",
-        "quote_2",
-        "quote_3"
-      ]
+        "heading": "",
+        "quote_1": "",
+        "author_1_name": "",
+        "author_1_location": "",
+        "quote_2": "",
+        "author_2_name": "",
+        "author_2_location": "",
+        "quote_3": "",
+        "author_3_name": "",
+        "author_3_location": ""
+      }
     },
     "pricing": {
       "type": "lp-pricing",
       "settings": {
-        "overline": "Pricing",
-        "heading": "Choose your security layer.",
-        "subheading": "Own Kevin outright or subscribe monthly. Either way, you get a privacy-first presence simulator built to deter before an alarm is needed.",
-        "buy_label": "One-time purchase",
-        "buy_tagline": "Own it forever.",
-        "buy_cta": "Buy Now",
-        "sub_label": "Monthly subscription",
-        "sub_tagline": "Device included. Cancel anytime.",
-        "sub_cta": "Subscribe Now",
-        "buy_features": "Full device ownership|70+ hours of built-in simulations|Weekly schedules and geo-aware activation|Upload your own household sounds|Flexible placement with 3 m power cable|Free delivery|3-year warranty",
-        "sub_features": "Device included free|Premium simulation library|Regular software updates|Priority support|Hardware replacement support|Flexible for multiple rooms or properties|Free delivery"
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "buy_label": "",
+        "buy_tagline": "",
+        "buy_cta": "",
+        "sub_label": "",
+        "sub_tagline": "",
+        "sub_cta": "",
+        "buy_features": "",
+        "sub_features": ""
       }
     },
     "specs": {
       "type": "lp-specs",
       "settings": {
-        "eyebrow": "At a glance",
-        "heading": "Designed to be simple, private, and portable.",
-        "image_alt": "Close-up of Kevin fabric front panel and top controls on marble"
-      },
-      "blocks": {
-        "spec_row_1": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Size",
-            "value": "Approx. 21.2 × 10.2 × 9.2 cm"
-          }
-        },
-        "spec_row_2": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Power",
-            "value": "Mains powered with 3 m cable; typical use around 9 W"
-          }
-        },
-        "spec_row_3": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Connectivity",
-            "value": "Wi-Fi, Bluetooth, app control, and local on-device playback"
-          }
-        },
-        "spec_row_4": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Privacy",
-            "value": "No camera. No microphone. No listening. No third-party sharing."
-          }
-        },
-        "spec_row_5": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Simulation library",
-            "value": "70+ hours of activities and sounds stored locally on the device"
-          }
-        },
-        "spec_row_6": {
-          "type": "spec_row",
-          "settings": {
-            "label": "Best placement",
-            "value": "Near a visible window, with a wall or ceiling for shadows"
-          }
-        }
-      },
-      "block_order": [
-        "spec_row_1",
-        "spec_row_2",
-        "spec_row_3",
-        "spec_row_4",
-        "spec_row_5",
-        "spec_row_6"
-      ]
+        "eyebrow": "",
+        "heading": ""
+      }
     },
     "cta": {
       "type": "lp-cta",
       "settings": {
-        "heading": "Leave without advertising it.",
-        "subheading": "Kevin makes your home look and sound active with Swiss-engineered presence simulation. Free delivery. 60-second setup. No cameras or microphones.",
-        "primary_cta": "Buy Kevin",
-        "secondary_cta": "Learn more",
+        "heading": "",
+        "subheading": "",
+        "primary_cta": "",
+        "secondary_cta": "",
         "primary_cta_url": "",
         "secondary_cta_url": "#how-it-works"
       }

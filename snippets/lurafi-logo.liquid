@@ -1,12 +1,12 @@
 {%- liquid
   assign logo_class = class | default: 'lurafi-logo'
-  assign logo_alt = shop.name | default: 'LURAFI' | escape
-  assign logo_render_width = 466
-  assign logo_render_height = 128
+  assign logo_alt = 'Kevin' | escape
+  assign logo_render_width = 404
+  assign logo_render_height = 108
 
   if settings.logo != blank
-    assign logo_render_width = settings.logo.width | default: 512
-    assign logo_render_height = settings.logo.height | default: 128
+    assign logo_render_width = settings.logo.width | default: 404
+    assign logo_render_height = settings.logo.height | default: 108
   endif
 -%}
 {%- if settings.logo != blank -%}
@@ -20,7 +20,7 @@
   }}
 {%- else -%}
   <img
-    src="{{ 'lurafi-logo.png' | asset_url }}"
+    src="{{ 'kevin-header-logo.png' | asset_url }}"
     class="{{ logo_class }}"
     width="{{ logo_render_width }}"
     height="{{ logo_render_height }}"

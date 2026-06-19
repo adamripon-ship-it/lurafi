@@ -13,8 +13,17 @@
           {%- if block.type == 'quote' -%}
             {%- liquid
               assign quote_text = block.settings.text
+              if quote_text == blank
+                assign quote_text = 'home.proof.quote_1' | t
+              endif
               assign quote_author = block.settings.author_name
+              if quote_author == blank
+                assign quote_author = 'home.proof.author_1_name' | t
+              endif
               assign quote_location = block.settings.author_location
+              if quote_location == blank
+                assign quote_location = 'home.proof.author_1_location' | t
+              endif
             -%}
             {% render 'proof-quote-card', quote: quote_text, author_name: quote_author, author_location: quote_location, block_attributes: block.shopify_attributes %}
           {%- endif -%}

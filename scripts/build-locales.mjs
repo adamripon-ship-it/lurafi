@@ -277,19 +277,13 @@ function nonBlankSectionSettings(sec) {
   return settings;
 }
 
-/** Canonical EN homepage copy — theme index.json stays empty; locales are source of truth. */
+/** Canonical EN homepage copy — merged with non-empty CMS overrides from templates/index.json. */
 const enHome = JSON.parse(fs.readFileSync(path.join(root, 'config/home-en.json'), 'utf8'));
 
 en.home = {};
 for (const [id, sec] of Object.entries(index.sections)) {
   const overrides = nonBlankSectionSettings(sec);
-  const hasCmsOverrides = Object.keys(overrides).length > 0;
-  if (hasCmsOverrides) {
-    // CMS guard: section settings in index.json win; do not merge home-en.json for this section
-    en.home[id] = { ...(en.home[id] || {}), ...overrides };
-  } else {
-    en.home[id] = { ...(enHome[id] || {}), ...overrides };
-  }
+  en.home[id] = { ...(enHome[id] || {}), ...overrides };
 }
 
 if (en.home.app) {

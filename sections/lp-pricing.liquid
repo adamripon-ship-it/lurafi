@@ -9,13 +9,15 @@
   endcapture
   assign configure_buy_url = configure_buy_url | strip
   assign configure_sub_url = configure_sub_url | strip
-  if section.settings.buy_features != blank
-    assign buy_features = section.settings.buy_features | split: '|'
+  assign buy_features_raw = section.settings.buy_features | strip
+  assign sub_features_raw = section.settings.sub_features | strip
+  if buy_features_raw != blank
+    assign buy_features = buy_features_raw | split: '|'
   else
     assign buy_features = 'home.pricing.buy_features' | t | split: '|'
   endif
-  if section.settings.sub_features != blank
-    assign sub_features = section.settings.sub_features | split: '|'
+  if sub_features_raw != blank
+    assign sub_features = sub_features_raw | split: '|'
   else
     assign sub_features = 'home.pricing.sub_features' | t | split: '|'
   endif

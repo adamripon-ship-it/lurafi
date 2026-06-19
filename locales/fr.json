@@ -331,7 +331,8 @@
       "heading": "Partez sans le faire savoir.",
       "subheading": "Kevin rend votre maison active visuellement et auditivement grâce à la simulation de présence suisse. Livraison gratuite. Installation en 60 secondes. Pas de caméras ni de microphones.",
       "primary_cta": "Acheter Kevin",
-      "secondary_cta": "En savoir plus"
+      "secondary_cta": "En savoir plus",
+      "secondary_cta_url": "#how-it-works"
     }
   },
   "stats": {

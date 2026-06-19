@@ -45,9 +45,18 @@
     endif
   endif
 
-  assign support_email = section.settings.support_email | default: 'hello@lurafi.ai'
-  assign press_email = section.settings.press_email | default: 'press@lurafi.ai'
-  assign careers_email = section.settings.careers_email | default: 'hello@lurafi.ai'
+  assign support_email = section.settings.support_email
+  if support_email == blank
+    assign support_email = 'hello@lurafi.ai'
+  endif
+  assign press_email = section.settings.press_email
+  if press_email == blank
+    assign press_email = 'press@lurafi.ai'
+  endif
+  assign careers_email = section.settings.careers_email
+  if careers_email == blank
+    assign careers_email = 'hello@lurafi.ai'
+  endif
 -%}
 <footer class="site-footer-apple">
   <div class="apple-container">
