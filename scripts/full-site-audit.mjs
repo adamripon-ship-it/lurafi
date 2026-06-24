@@ -95,6 +95,7 @@ async function auditPage(page, route, viewportName) {
         const linkHost = u.hostname.replace(/^www\./, '');
         if (linkHost !== host) continue;
         if (/^\/policies\//.test(u.pathname) || u.pathname === '/pages/llms') continue;
+        if (u.pathname === '/checkout' || u.pathname.startsWith('/checkouts/')) continue;
         if (u.pathname.includes('customer_authentication')) continue;
         let status = 0;
         try {
