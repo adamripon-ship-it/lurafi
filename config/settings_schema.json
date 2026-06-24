@@ -50,18 +50,32 @@
     ]
   },
   {
+    "name": "Editorial (content team)",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Homepage and section text: use Customize and switch language (EN / NL / FR / DE / CS) before editing. Logo and favicon below are the same for all languages."
+      },
+      {
+        "type": "paragraph",
+        "content": "Navigation menus: Online Store → Navigation, or run npm run cms:navigation from the theme repo. See docs/CONTENT-TEAM-GUIDE.md."
+      }
+    ]
+  },
+  {
     "name": "Logo",
     "settings": [
       {
         "type": "image_picker",
         "id": "logo",
         "label": "Logo",
-        "info": "Optional. Leave empty to use the default Kevin wordmark logo."
+        "info": "Optional. Same for all languages. Leave empty to use the default KEVIN wordmark."
       },
       {
         "type": "image_picker",
         "id": "favicon",
-        "label": "Favicon"
+        "label": "Favicon",
+        "info": "Same for all languages. Square PNG recommended."
       }
     ]
   },

@@ -2,6 +2,8 @@
 
 This guide explains how to update the mitipi.eu storefront **without code or GitHub**. All changes are made in **Shopify Admin → Online Store → Themes**.
 
+**Full editorial plan (per-language copy, footer, menus, images):** [CMS-EDITORIAL-WORKFLOW-PLAN.md](./CMS-EDITORIAL-WORKFLOW-PLAN.md)
+
 ## Store & theme
 
 | Item | Value |

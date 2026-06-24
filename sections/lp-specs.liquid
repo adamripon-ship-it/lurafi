@@ -90,6 +90,10 @@
   "name": "Specifications",
   "tag": "section",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language."
+    },
     { "type": "header", "content": "Content" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
     { "type": "text", "id": "heading", "label": "Heading" },
@@ -97,7 +101,7 @@
       "type": "header",
       "content": "Product image"
     },
-    { "type": "image_picker", "id": "image", "label": "Product close-up" },
+    { "type": "image_picker", "id": "image", "label": "Product close-up", "info": "Default theme asset: lurafi-product-closeup.jpg" },
     {
       "type": "text",
       "id": "image_alt",
@@ -109,7 +113,7 @@
       "type": "spec_row",
       "name": "Specification row",
       "settings": [
-        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "text", "id": "label", "label": "Label", "info": "Per language when editor language is switched." },
         { "type": "text", "id": "value", "label": "Value" }
       ]
     }

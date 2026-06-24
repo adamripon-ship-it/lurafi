@@ -73,6 +73,10 @@
 {
   "name": "Pricing",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language."
+    },
     { "type": "header", "content": "Section copy" },
     { "type": "text", "id": "overline", "label": "Overline" },
     { "type": "text", "id": "heading", "label": "Heading" },
@@ -81,12 +85,12 @@
     { "type": "text", "id": "buy_label", "label": "Plan label" },
     { "type": "text", "id": "buy_tagline", "label": "Tagline" },
     { "type": "text", "id": "buy_cta", "label": "Button label" },
-    { "type": "textarea", "id": "buy_features", "label": "Feature list (pipe-separated)" },
+    { "type": "textarea", "id": "buy_features", "label": "Feature list (pipe-separated)", "info": "Example: Feature one|Feature two|Feature three" },
     { "type": "header", "content": "Subscribe plan (Kevin+)" },
     { "type": "text", "id": "sub_label", "label": "Plan label" },
     { "type": "text", "id": "sub_tagline", "label": "Tagline" },
     { "type": "text", "id": "sub_cta", "label": "Button label" },
-    { "type": "textarea", "id": "sub_features", "label": "Feature list (pipe-separated)" }
+    { "type": "textarea", "id": "sub_features", "label": "Feature list (pipe-separated)", "info": "Example: Device included|Premium library|Free delivery" }
   ],
   "presets": [{ "name": "Pricing" }]
 }
