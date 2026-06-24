@@ -5,6 +5,7 @@
 import { chromium, devices } from 'playwright';
 import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import { filterCriticalConsoleErrors, gotoStorefront, PAGE_GOTO_WAIT } from './lib/playwright-qa.mjs';
 
 const BASE = process.env.LURAFI_URL || 'https://lurafi.ai';
 const report = { issues: [], passes: [], warnings: [], pages: {} };
@@ -150,10 +151,10 @@ async function testViewport(browser, name, viewport, isMobile) {
     }));
   }
 
-  await page.goto(`${BASE}/?motion-qa=${Date.now()}`, { waitUntil: 'networkidle', timeout: 60000 });
+  await gotoStorefront(page, `${BASE}/?motion-qa=${Date.now()}`);
   let motion = await waitForMotion();
   for (let attempt = 0; attempt < 2 && !motion.motionReady && !motion.motionReduced; attempt += 1) {
-    await page.goto(`${BASE}/?motion-qa=${Date.now()}&retry=${attempt}`, { waitUntil: 'networkidle', timeout: 60000 });
+    await gotoStorefront(page, `${BASE}/?motion-qa=${Date.now()}&retry=${attempt}`);
     motion = await waitForMotion();
   }
   if (motion.motionReady || motion.motionReduced) pass(`${name}: animations (${motion.motionReduced ? 'motion-reduced' : 'motion-ready'})`);
@@ -198,7 +199,7 @@ async function testViewport(browser, name, viewport, isMobile) {
     else pass(`${name}: tap target check OK`);
   }
 
-  await page.goto(`${BASE}/?view=configure&plan=buy`, { waitUntil: 'networkidle', timeout: 60000 });
+  await gotoStorefront(page, `${BASE}/?view=configure&plan=buy`, { readySelector: '[data-configure]' });
   await page.waitForTimeout(800);
   const checkoutBtn = page.locator('[data-configure-checkout]').first();
   if (await checkoutBtn.count()) {
@@ -215,7 +216,7 @@ async function testViewport(browser, name, viewport, isMobile) {
   }
 
   const cartPage = await context.newPage();
-  await cartPage.goto(`${BASE}/cart`, { waitUntil: 'networkidle', timeout: 45000 });
+  await cartPage.goto(`${BASE}/cart`, { waitUntil: PAGE_GOTO_WAIT, timeout: 45000 });
   const cartCheckout = cartPage.locator('button[name="checkout"], a[href*="checkout"], .cart__checkout');
   if (await cartCheckout.count()) pass(`${name}: cart has checkout path`);
   else warn(`${name}: cart checkout CTA not found (empty cart?)`);
@@ -224,14 +225,7 @@ async function testViewport(browser, name, viewport, isMobile) {
   mkdirSync(screenshotDir, { recursive: true });
   await page.screenshot({ path: join(screenshotDir, `${name.toLowerCase()}-final.png`) });
 
-  const critical = consoleErrors.filter(
-    (e) =>
-      !/shopify|monorail|cookie|CSP|analytics|pixel|web-pixel|favicon|403|401|shop\.app|404/i.test(e) &&
-      !/Failed to load resource/i.test(e) &&
-      !/network failure may have prevented|Error completing request/i.test(e) &&
-      !/^Failed to fetch\.?$/i.test(e.trim()) &&
-      !/Access-Control-Allow-Origin|blocked by CORS policy/i.test(e)
-  );
+  const critical = filterCriticalConsoleErrors(consoleErrors);
   if (critical.length) fail(`${name} console: ${critical.slice(0, 2).join(' | ')}`);
   else pass(`${name}: no critical console errors`);
 
@@ -241,7 +235,7 @@ async function testViewport(browser, name, viewport, isMobile) {
 async function auditSEOHeadless(browser) {
   console.log('\n========== SEO / AI-SEO ==========');
   const page = await browser.newPage();
-  await page.goto(`${BASE}/?seo-audit=${Date.now()}`, { waitUntil: 'networkidle', timeout: 60000 });
+  await gotoStorefront(page, `${BASE}/?seo-audit=${Date.now()}`);
   const seo = await page.evaluate(() => ({
     title: document.title,
     metaDesc: document.querySelector('meta[name="description"]')?.content,

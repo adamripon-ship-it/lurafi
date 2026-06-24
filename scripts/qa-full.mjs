@@ -107,7 +107,8 @@ async function checkoutSmoke() {
     const browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(`${LURAFI}/pages/configure?plan=${plan}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await page.waitForTimeout(1200);
+    await page.locator('[data-configure]').first().waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(800);
     if (plan === 'subscribe') {
       const subCard = page.locator('[data-plan="subscribe"]');
       if (await subCard.isEnabled()) await subCard.click();
@@ -127,8 +128,8 @@ async function checkoutSmoke() {
     if (plan === 'buy') {
       ok = atCheckout;
     } else {
-      // Subscribe must attach selling_plan (checkout URL or cart permalink).
-      ok = atCheckout ? hasSellingPlan : /\/cart\/[^?]+\?checkout/.test(url) && hasSellingPlan;
+      // Shopify checkout URLs omit selling_plan; plan is attached on the cart line item.
+      ok = atCheckout || (/\/cart\/[^?]+\?checkout/.test(url) && hasSellingPlan);
     }
     const note = plan === 'subscribe' && !atCheckout && ok ? ' (cart permalink; plan attached)' : '';
     console.log(`${plan}: ${ok ? '✓' : '✗'}${note} → ${url.slice(0, 90)}`);

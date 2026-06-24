@@ -6,6 +6,7 @@
 import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import { filterCriticalConsoleErrors, gotoStorefront, PAGE_GOTO_WAIT } from './lib/playwright-qa.mjs';
 import {
   buildConfigureUrl,
   getLocale,
@@ -124,7 +125,7 @@ async function testLocale(browser, code) {
   mkdirSync(join(process.cwd(), 'scripts', 'qa-screenshots', 'i18n'), { recursive: true });
 
   const homeUrl = `${BASE}${prefix}/${cacheBust}`;
-  const homeRes = await page.goto(homeUrl, { waitUntil: 'networkidle', timeout: 60000 });
+  const homeRes = await gotoStorefront(page, homeUrl);
   if (!homeRes || homeRes.status() >= 400) fail(`${label} homepage HTTP`, String(homeRes?.status()));
   else pass(`${label} homepage loads (${homeRes.status()})`);
 
@@ -147,10 +148,7 @@ async function testLocale(browser, code) {
 
   const configurePathStr = configurePath(code);
   const cfgPage = await context.newPage();
-  await cfgPage.goto(`${BASE}${configurePathStr}&qa=${Date.now()}`, {
-    waitUntil: 'networkidle',
-    timeout: 60000,
-  });
+  await gotoStorefront(cfgPage, `${BASE}${configurePathStr}&qa=${Date.now()}`, { readySelector: '[data-configure]' });
   await cfgPage.waitForTimeout(1000);
 
   if (await cfgPage.locator('[data-configure]').count()) pass(`${label} configure page renders`);
@@ -167,14 +165,11 @@ async function testLocale(browser, code) {
 
   if (code !== 'en') {
     const switchPage = await context.newPage();
-    await switchPage.goto(`${BASE}${prefix}/?qa=${Date.now()}`, {
-      waitUntil: 'networkidle',
-      timeout: 60000,
-    });
+    await gotoStorefront(switchPage, `${BASE}${prefix}/?qa=${Date.now()}`);
     const sel = switchPage.locator('[data-language-select]').first();
     if (await sel.count()) {
       await Promise.all([
-        switchPage.waitForNavigation({ waitUntil: 'networkidle', timeout: 30000 }).catch(() => {}),
+        switchPage.waitForNavigation({ waitUntil: PAGE_GOTO_WAIT, timeout: 30000 }).catch(() => {}),
         sel.selectOption({ value: 'en' }),
       ]);
       await switchPage.waitForTimeout(1500);
@@ -186,7 +181,7 @@ async function testLocale(browser, code) {
     await switchPage.close();
   }
 
-  await page.goto(`${BASE}${prefix}/?qa=${Date.now()}`, { waitUntil: 'networkidle' });
+  await gotoStorefront(page, `${BASE}${prefix}/?qa=${Date.now()}`);
   const cartBtn = page.locator('[data-cart-drawer-open]').first();
   if (await cartBtn.count()) {
     await page.evaluate(() => {
@@ -206,7 +201,8 @@ async function testLocale(browser, code) {
   }
 
   const loginUrl = `${BASE}${prefix}/account/login${cacheBust}`;
-  const loginRes = await page.goto(loginUrl, { waitUntil: 'networkidle', timeout: 60000 });
+  const loginRes = await page.goto(loginUrl, { waitUntil: PAGE_GOTO_WAIT, timeout: 60000 });
+  await page.locator('main, form, .customer').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
   if (!loginRes || loginRes.status() >= 400) fail(`${label} login HTTP`, String(loginRes?.status()));
   else pass(`${label} login page loads (${loginRes.status()})`);
 
@@ -219,13 +215,7 @@ async function testLocale(browser, code) {
     path: join(process.cwd(), 'scripts', 'qa-screenshots', 'i18n', `${code}-login.png`),
   });
 
-  const critical = consoleErrors.filter(
-    (e) =>
-      !/shopify|monorail|cookie|CSP|analytics|pixel|401|403|404|Failed to load resource/i.test(e) &&
-      !/X-Frame-Options|ALLOW-FROM/i.test(e) &&
-      !/^Failed to fetch\.?$/i.test(e.trim()) &&
-      !/network failure may have prevented|Error completing request/i.test(e),
-  );
+  const critical = filterCriticalConsoleErrors(consoleErrors);
   if (critical.length) fail(`${label} console errors`, critical.slice(0, 2).join(' | '));
   else pass(`${label} no critical console errors`);
 
