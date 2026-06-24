@@ -30,8 +30,13 @@ export function filterCriticalConsoleErrors(errors) {
 
 /** @param {import('playwright').Page} page */
 export async function gotoStorefront(page, url, options = {}) {
-  const { timeout = 60000, readySelector = PAGE_READY_SELECTOR } = options;
-  const res = await page.goto(url, { waitUntil: PAGE_GOTO_WAIT, timeout });
+  const { timeout = 60000, readySelector = PAGE_READY_SELECTOR, retries = 2 } = options;
+  let res;
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    res = await page.goto(url, { waitUntil: PAGE_GOTO_WAIT, timeout });
+    if (!res || res.status() !== 429 || attempt === retries) break;
+    await page.waitForTimeout(3000 * (attempt + 1));
+  }
   await page.locator(readySelector).first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
   return res;
 }

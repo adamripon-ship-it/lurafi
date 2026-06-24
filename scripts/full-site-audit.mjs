@@ -54,7 +54,8 @@ async function auditPage(page, route, viewportName) {
     (finalUrl.includes('view=configure') || (await page.locator('[data-configure]').count()) > 0);
 
   if (status >= 400 && route.name !== '404' && !legacyConfigureOk) {
-    fail(`${route.name} HTTP ${status}`, viewportName);
+    if (status === 429) warn(`${route.name} HTTP 429 (rate limited — re-run later)`);
+    else fail(`${route.name} HTTP ${status}`, viewportName);
   } else if (legacyConfigureOk && status >= 400) {
     pass(`${route.name}: HTTP ${status} with redirect to configure`);
   } else if (route.name === '404' && status === 404) pass(`404 page returns 404`);
@@ -96,6 +97,7 @@ async function auditPage(page, route, viewportName) {
         if (linkHost !== host) continue;
         if (/^\/policies\//.test(u.pathname) || u.pathname === '/pages/llms') continue;
         if (u.pathname === '/checkout' || u.pathname.startsWith('/checkouts/')) continue;
+        if (u.pathname.startsWith('/cdn-cgi/')) continue;
         if (u.pathname.includes('customer_authentication')) continue;
         let status = 0;
         try {
@@ -109,6 +111,7 @@ async function auditPage(page, route, viewportName) {
           status = get.status;
         }
         if (status >= 500) continue;
+        if (status === 429) continue;
         if (status >= 400) bad.push({ href: u.pathname, status });
       } catch (e) {
         bad.push({ href, status: 'err' });

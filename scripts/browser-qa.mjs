@@ -49,8 +49,10 @@ async function testViewport(browser, name, viewport, isMobile) {
   }
 
   let homeRes = await loadHomeFresh();
-  if (!homeRes || homeRes.status() >= 400) fail(`Homepage HTTP ${homeRes?.status()}`, name);
-  else pass(`Homepage loads (${homeRes.status()})`);
+  if (!homeRes || homeRes.status() >= 400) {
+    if (homeRes?.status() === 429) fail(`Homepage HTTP 429 (rate limited)`, name);
+    else fail(`Homepage HTTP ${homeRes?.status()}`, name);
+  } else pass(`Homepage loads (${homeRes.status()})`);
 
   async function waitForMotion() {
     await page
@@ -173,6 +175,7 @@ async function testViewport(browser, name, viewport, isMobile) {
 
   const cartRes = await page.goto(`${BASE}/cart`, { waitUntil: PAGE_GOTO_WAIT, timeout: 45000 });
   if (cartRes && cartRes.status() < 400) pass('Cart page loads');
+  else if (cartRes?.status() === 429) fail('Cart HTTP 429 (rate limited — re-run qa:full later)', name);
   else fail(`Cart HTTP ${cartRes?.status()}`, name);
 
   const critical = filterCriticalConsoleErrors(consoleErrors);
