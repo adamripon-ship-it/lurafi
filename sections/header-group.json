@@ -6,7 +6,8 @@
       "type": "header",
       "settings": {
         "cta_label": "Buy Now",
-        "cta_label_mobile": "Buy"
+        "cta_label_mobile": "Buy",
+        "main_menu": "main-menu"
       }
     }
   },

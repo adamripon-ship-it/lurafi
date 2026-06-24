@@ -154,10 +154,18 @@ if (INCLUDE_BLOCKS) {
 
 if (WRITE) {
   writeJson('templates/index.json', index);
+  headerGroup.sections.header.settings.main_menu = 'main-menu';
+  footerGroup.sections.footer.settings = {
+    ...footerGroup.sections.footer.settings,
+    menu_product: 'footer-product',
+    menu_company: 'footer-company',
+    menu_support: 'footer-support',
+    menu_shop: 'footer-shop',
+  };
   writeJson('sections/header-group.json', headerGroup);
   writeJson('sections/footer-group.json', footerGroup);
   console.log('\nDone. Review diff, then theme:push:live when ready.');
-  console.log('Navigation menus: create in Admin → Navigation and assign in Header/Footer Customize.');
+  console.log('Navigation menus: run npm run cms:navigation in Admin if menus missing.');
 } else {
   console.log('\nDry run — pass --write to update files. Add --include-blocks for specs/proof blocks.');
 }

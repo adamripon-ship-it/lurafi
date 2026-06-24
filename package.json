@@ -16,6 +16,7 @@
     "geo:generate": "node scripts/generate-sitemap-ai.mjs && node scripts/generate-llms-assets.mjs",
     "cms:seed": "node scripts/seed-theme-content.mjs --write --include-blocks",
     "cms:seed:dry": "node scripts/seed-theme-content.mjs",
+    "cms:navigation": "node scripts/setup-cms-navigation.mjs",
     "shopify:locales": "./scripts/activate-locales.sh",
     "shopify:markets:countries": "node scripts/setup-market-countries.mjs",
     "shopify:refresh-token": "./scripts/shopify-refresh-admin-token.sh",
