@@ -35,3 +35,9 @@ Use the Vercel MCP plugin and `npx vercel` with team **adamripon-6504s-projects*
 - Commit secrets or paste tokens in chat.
 - Edit the plan file in `.cursor/plans/`.
 - Hardcode EN/NL-only language lists — use `localization.available_languages`.
+
+## Cursor Cloud specific instructions
+
+- Install deps with `npm install` (the startup update script does this). `@shopify/cli` is a local devDependency, so use `npx shopify ...` (no global install).
+- Offline green checks: `npm run locales:build` (writes `locales/*`), `npm run locales:sync`, and `npx shopify theme check` (Theme Check; currently only informational warnings). `npm run test:e2e` runs Playwright against a `LURAFI_URL` and targets the live site, not a local server.
+- This is a Shopify theme: `npm run theme:push:live` / `shopify theme dev` require store auth for `6mzhe1-yf.myshopify.com` (interactive `shopify auth login` or `SHOPIFY_CLI_THEME_TOKEN`), so live theme preview/push is not runnable in an unauthenticated cloud VM.
