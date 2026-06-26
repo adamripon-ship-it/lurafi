@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@shopify/cli": "^3.84.0",
+    "@shopify/cli": "^4.3.0",
     "playwright": "^1.52.0"
   },
   "engines": {
