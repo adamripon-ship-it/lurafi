@@ -3,12 +3,12 @@
 > Kevin lässt Ihr Zuhause bewohnt wirken und klingen, wenn Sie weg sind — Licht, Schatten und Sound als Abschreckung.
 
 ## AI / LLM discovery
-- Short summary (this file): https://www.lurafi.com/cdn/shop/t/1/assets/llms.de.txt
-- Full summary (read for complete context): https://www.lurafi.com/cdn/shop/t/1/assets/llms-full.de.txt
-- AI sitemap XML: https://www.lurafi.com/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://www.lurafi.com/sitemap.xml
-- Human sitemap page: https://www.lurafi.com/de/pages/seitenuebersicht
-- LLM overview page: https://www.lurafi.com/de/pages/ki-uebersicht
+- Short summary (this file): https://mitipi.eu/cdn/shop/t/1/assets/llms.de.txt
+- Full summary (read for complete context): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
+- AI sitemap XML: https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify sitemap XML: https://mitipi.eu/sitemap.xml
+- Human sitemap page: https://mitipi.eu/de/pages/seitenuebersicht
+- LLM overview page: https://mitipi.eu/de/pages/ki-uebersicht
 
 
 Lurafi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.
@@ -22,9 +22,9 @@ Key facts:
 - Delivery: Free delivery across Europe
 
 Important URLs:
-- Homepage: https://www.lurafi.com/de
-- Configure / buy: https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=buy
-- Subscribe: https://www.lurafi.com/de/pages/kevin-konfigurieren?plan=subscribe
+- Homepage: https://mitipi.eu/de
+- Configure / buy: https://mitipi.eu/de/pages/kevin-konfigurieren?plan=buy
+- Subscribe: https://mitipi.eu/de/pages/kevin-konfigurieren?plan=subscribe
 
 Contact:
 - Email: hello@lurafi.com

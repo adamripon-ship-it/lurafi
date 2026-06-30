@@ -1,10 +1,10 @@
 /**
  * Fullstack QA for language selector on lurafi storefront.
- * Usage: LURAFI_URL=https://www.lurafi.com node scripts/qa-language-selector.mjs
+ * Usage: LURAFI_URL=https://mitipi.eu node scripts/qa-language-selector.mjs
  */
 import { chromium, devices } from 'playwright'
 
-const BASE = process.env.LURAFI_URL || 'https://www.lurafi.com'
+const BASE = process.env.LURAFI_URL || 'https://mitipi.eu'
 const LOCALES = ['en', 'nl', 'fr', 'de', 'cs']
 const PREFIX = { en: '', nl: '/nl', fr: '/fr', de: '/de', cs: '/cs' }
 

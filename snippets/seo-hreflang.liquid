@@ -3,7 +3,7 @@
   Pairs with canonical in layout/theme.liquid.
 {%- endcomment -%}
 {%- liquid
-  assign lurafi_seo_origin = request.origin | replace: '//lurafi.com', '//www.lurafi.com'
+  assign lurafi_seo_origin = request.origin
   assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
   assign path_suffix = request.path
   assign locale_root = request.locale.root_url

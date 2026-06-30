@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /**
  * Full QA: backend Admin API + HTTP storefront + Playwright (browser, audit, i18n) + checkout.
- * Run: LURAFI_URL=https://lurafi.com node scripts/qa-full.mjs
+ * Run: LURAFI_URL=https://mitipi.eu node scripts/qa-full.mjs
+ *
+ * Production guardrail: do not run back-to-back on mitipi.eu — triggers Cloudflare/Shopify 429 and
+ * false failures. Wait ≥30 min between full runs on live domain. See docs/QA-LEARNINGS.md.
  */
 import { spawnSync } from 'node:child_process';
 import { writeFileSync, mkdirSync } from 'node:fs';
@@ -143,6 +146,11 @@ async function checkoutSmoke() {
 }
 
 async function main() {
+  if (/mitipi\.eu/i.test(LURAFI) && !process.env.QA_FULL_SKIP_PROD_WARN) {
+    console.warn(
+      '⚠ qa:full on production — run at most once per 30 min on mitipi.eu (see docs/QA-LEARNINGS.md)\n'
+    );
+  }
   console.log(`\nFull QA — storefront: ${LURAFI} | Admin: ${STORE}\n`);
 
   runSuite('Backend (Admin API)', 'node', ['scripts/qa-mitipi-backend.mjs'], { SHOPIFY_STORE: STORE });

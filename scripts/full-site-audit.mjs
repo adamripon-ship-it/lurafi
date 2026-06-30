@@ -7,7 +7,7 @@ import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { filterCriticalConsoleErrors, gotoStorefront, PAGE_GOTO_WAIT } from './lib/playwright-qa.mjs';
 
-const BASE = process.env.LURAFI_URL || 'https://lurafi.ai';
+const BASE = process.env.LURAFI_URL || 'https://mitipi.eu';
 const report = { issues: [], passes: [], warnings: [], pages: {} };
 const screenshotDir = join(process.cwd(), 'scripts', 'qa-screenshots', 'audit');
 

@@ -1,5 +1,5 @@
 /**
- * Multi-locale browser QA for lurafi.ai
+ * Multi-locale browser QA for mitipi.eu
  * Run: node scripts/i18n-browser-qa.mjs
  *      SMOKE_LOCALES=fr,de,es node scripts/i18n-browser-qa.mjs
  */

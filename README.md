@@ -1,8 +1,8 @@
-# Lurafi — Shopify theme
+# Lurafi — Shopify theme (mitipi.eu)
 
 [![Theme Check](https://github.com/adamripon-ship-it/lurafi/actions/workflows/theme-check.yml/badge.svg)](https://github.com/adamripon-ship-it/lurafi/actions/workflows/theme-check.yml)
 
-Shopify Online Store 2.0 theme for **[lurafi.ai](https://lurafi.ai/)** — the Kevin Swiss presence-simulator storefront.
+Shopify Online Store 2.0 theme for **[mitipi.eu](https://mitipi.eu/)** — Kevin Swiss presence simulator (Mitipi GmbH).
 
 ## Stack
 
@@ -25,14 +25,24 @@ npm run locales:build
 |-----|---------|
 | [docs/SHOPIFY.md](docs/SHOPIFY.md) | Store IDs, deploy flow, repo layout |
 | [docs/I18N.md](docs/I18N.md) | Locales, Markets, translation pipeline |
+| [docs/QA-LEARNINGS.md](docs/QA-LEARNINGS.md) | Production QA guardrails |
 
 ## Deploy to production
+
+Store: `6mzhe1-yf.myshopify.com` · Live theme: **lurafi-deploy** `184679596410`
 
 ```bash
 npm run theme:push:live
 ```
 
 Or use GitHub Actions → **Deploy theme (manual)** after adding repository secrets (see [docs/SHOPIFY.md](docs/SHOPIFY.md)).
+
+Post-deploy smoke (lightweight — do not hammer production):
+
+```bash
+node scripts/qa-mitipi-backend.mjs
+curl -sI https://mitipi.eu/ | head -5
+```
 
 ## Branching
 
@@ -48,4 +58,4 @@ npm run predeploy
 
 ## License
 
-Proprietary — Lurafi / Kevin. All rights reserved.
+Proprietary — Lurafi / Kevin / Mitipi GmbH. All rights reserved.

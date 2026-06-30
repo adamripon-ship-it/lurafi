@@ -1,4 +1,6 @@
-# Primary domain: www.lurafi.com
+# Primary domain: www.lurafi.com (legacy)
+
+> **Current production:** [mitipi.eu](./PRIMARY-DOMAIN.md) — this doc is kept for the lurafi.com migration period only.
 
 **Canonical storefront URL:** `https://www.lurafi.com`  
 **Apex** `https://lurafi.com` should **301 redirect** to www (Shopify `canonical_host_redirection`).

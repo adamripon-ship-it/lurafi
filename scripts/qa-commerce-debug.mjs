@@ -5,7 +5,7 @@
 import { chromium, devices } from 'playwright';
 import { writeFileSync } from 'fs';
 
-const BASE = process.env.LURAFI_URL || 'https://lurafi.ai';
+const BASE = process.env.LURAFI_URL || 'https://mitipi.eu';
 const LOG_PATH = '/Users/adam/lurafi/.cursor/debug-11faae.log';
 const ENDPOINT = 'http://127.0.0.1:7263/ingest/dae70615-580c-448e-a7ca-4c14c98c300c';
 const SESSION = '11faae';

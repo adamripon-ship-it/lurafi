@@ -1,5 +1,5 @@
 /**
- * Full-site browser QA for lurafi.ai
+ * Full-site browser QA for mitipi.eu
  * Run: node scripts/browser-qa.mjs
  */
 import { chromium, devices } from 'playwright';
@@ -7,7 +7,7 @@ import { mkdirSync } from 'fs';
 import { join } from 'path';
 import { filterCriticalConsoleErrors, gotoStorefront, PAGE_GOTO_WAIT } from './lib/playwright-qa.mjs';
 
-const BASE = process.env.LURAFI_URL || 'https://lurafi.ai';
+const BASE = process.env.LURAFI_URL || 'https://mitipi.eu';
 const issues = [];
 const passes = [];
 const screenshotDir = join(process.cwd(), 'scripts', 'qa-screenshots');

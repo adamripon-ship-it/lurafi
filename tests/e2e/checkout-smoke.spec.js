@@ -1,11 +1,11 @@
 // Critical-path E2E smoke test for the lurafi storefront.
 // Covers: configure (buy + subscribe) -> Shopify checkout, and PDP -> cart -> checkout.
 //
-// Run:  LURAFI_URL=https://lurafi.com npx playwright test
+// Run:  LURAFI_URL=https://mitipi.eu npx playwright test
 // CI :  npm run test:e2e
 import { test, expect } from '@playwright/test';
 
-const BASE = (process.env.LURAFI_URL || 'https://lurafi.com').replace(/\/$/, '');
+const BASE = (process.env.LURAFI_URL || 'https://mitipi.eu').replace(/\/$/, '');
 const CHECKOUT = /\/checkouts\//;
 
 test.describe('Critical purchase path', () => {

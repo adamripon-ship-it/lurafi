@@ -74,7 +74,7 @@ gh auth setup-git
 | **Old** `fu03cn-1v.myshopify.com` | Staff (read) | Export products, reference settings |
 | **New** `____.myshopify.com` | Owner or staff with Themes + Products | Theme push, catalog, domain |
 
-**Canonical store (verified 2026-06-03):** `6mzhe1-yf.myshopify.com` — shop **Mitipi GmbH**, primary domain **`www.lurafi.com`** ([PRIMARY-DOMAIN-WWW.md](./PRIMARY-DOMAIN-WWW.md)).  
+**Canonical store (verified 2026-06-26):** `6mzhe1-yf.myshopify.com` — shop **Mitipi GmbH**, primary domain **`https://mitipi.eu`** ([PRIMARY-DOMAIN.md](./PRIMARY-DOMAIN.md)).  
 **Admin URL:** `https://admin.shopify.com/store/6mzhe1-yf` (not `mitipi-2`).  
 **Legacy hostname in theme/markets:** `mitipi-2.myshopify.com` appears in `hreflang` links but is **not** a separate OAuth/API store (OAuth and client-credentials token only work on `6mzhe1-yf`).
 
