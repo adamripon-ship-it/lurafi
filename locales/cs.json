@@ -267,7 +267,34 @@
       "callout_3_eyebrow": "Peace of mind",
       "callout_3_title": "One device",
       "callout_3_body": "No need to ask neighbours to pull blinds — Kevin handles believable occupancy from inside."
-    }
+    },
+    "slide_7": {
+      "label": "Lock the door, home keeps living",
+      "image_alt": "Editorial illustration of a European couple leaving a Dutch suburban home for holiday at dusk",
+      "callout_1_eyebrow": "On holiday",
+      "callout_1_title": "Home still lives",
+      "callout_1_body": "Light and sound vary while you are abroad — passers-by see everyday rhythms, not a dark shell.",
+      "callout_2_eyebrow": "Airport bound",
+      "callout_2_title": "Away mode on",
+      "callout_2_body": "Lock up and Kevin shifts scenes through the day without timers on six different lamps.",
+      "callout_3_eyebrow": "Peace of mind",
+      "callout_3_title": "One device",
+      "callout_3_body": "Skip explaining your schedule to new neighbours — occupancy runs believably from inside."
+    },
+    "slide_8": {
+      "label": "Ski week, city break, second home",
+      "image_alt": "Editorial illustration of a warm occupied European holiday home viewed from inside at night",
+      "callout_1_eyebrow": "Days away",
+      "callout_1_title": "Multi-room scenes",
+      "callout_1_body": "Hallway, living room, and kitchen rhythms rotate — not one lamp on a timer for a whole week.",
+      "callout_2_eyebrow": "Pet home alone",
+      "callout_2_title": "Sounds they expect",
+      "callout_2_body": "Layer believable pet and human activity so watchers cannot tell the house is empty.",
+      "callout_3_eyebrow": "Second home",
+      "callout_3_title": "Set once per season",
+      "callout_3_body": "Weekly schedules for your Alpine flat or coast house — believable occupancy between your visits."
+    },
+    "drag_to_rotate": "Drag to rotate Kevin"
   },
   "home": {
     "specs": {
@@ -478,7 +505,9 @@
     "q3": "Používá Kevin kamery nebo mikrofony?",
     "a3": "Ne. Kevin simuluje přítomnost pouze světlem, stínem a zvukem. V domácnosti nejsou kamery ani mikrofony. Simulace jsou uloženy lokálně na zařízení – nestreamují se z cloudu ani se nesdílejí s třetími stranami.",
     "q4": "Jak si koupím Kevin?",
-    "a4": "Na stránce konfigurace zvolte barvu a tarif a pokračujte do bezpečné pokladny Shopify s dopravou zdarma po celé Evropě a 3letou švýcarskou zárukou."
+    "a4": "Na stránce konfigurace zvolte barvu a tarif a pokračujte do bezpečné pokladny Shopify s dopravou zdarma po celé Evropě a 3letou švýcarskou zárukou.",
+    "q5": "Funguje Kevin, když je Wi-Fi rušeno?",
+    "a5": "Ano. Základní simulace běží z lokálního úložiště v zařízení. Kevin dál promítá světlo, stín a zvuk, i když zloději ruší Wi-Fi kamery a alarmy."
   },
   "errors": {
     "not_found_title": "Stránka nenalezena",

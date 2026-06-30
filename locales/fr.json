@@ -267,7 +267,34 @@
       "callout_3_eyebrow": "Peace of mind",
       "callout_3_title": "One device",
       "callout_3_body": "No need to ask neighbours to pull blinds — Kevin handles believable occupancy from inside."
-    }
+    },
+    "slide_7": {
+      "label": "Lock the door, home keeps living",
+      "image_alt": "Editorial illustration of a European couple leaving a Dutch suburban home for holiday at dusk",
+      "callout_1_eyebrow": "On holiday",
+      "callout_1_title": "Home still lives",
+      "callout_1_body": "Light and sound vary while you are abroad — passers-by see everyday rhythms, not a dark shell.",
+      "callout_2_eyebrow": "Airport bound",
+      "callout_2_title": "Away mode on",
+      "callout_2_body": "Lock up and Kevin shifts scenes through the day without timers on six different lamps.",
+      "callout_3_eyebrow": "Peace of mind",
+      "callout_3_title": "One device",
+      "callout_3_body": "Skip explaining your schedule to new neighbours — occupancy runs believably from inside."
+    },
+    "slide_8": {
+      "label": "Ski week, city break, second home",
+      "image_alt": "Editorial illustration of a warm occupied European holiday home viewed from inside at night",
+      "callout_1_eyebrow": "Days away",
+      "callout_1_title": "Multi-room scenes",
+      "callout_1_body": "Hallway, living room, and kitchen rhythms rotate — not one lamp on a timer for a whole week.",
+      "callout_2_eyebrow": "Pet home alone",
+      "callout_2_title": "Sounds they expect",
+      "callout_2_body": "Layer believable pet and human activity so watchers cannot tell the house is empty.",
+      "callout_3_eyebrow": "Second home",
+      "callout_3_title": "Set once per season",
+      "callout_3_body": "Weekly schedules for your Alpine flat or coast house — believable occupancy between your visits."
+    },
+    "drag_to_rotate": "Drag to rotate Kevin"
   },
   "home": {
     "specs": {
@@ -478,7 +505,9 @@
     "q3": "Kevin utilise-t-il des caméras ou des microphones ?",
     "a3": "Non. Kevin simule la présence uniquement avec la lumière, l'ombre et le son. Pas de caméras ni de microphones chez vous. Les simulations sont stockées localement sur l'appareil, pas diffusées depuis le cloud ni partagées avec des tiers.",
     "q4": "Comment acheter Kevin ?",
-    "a4": "Choisissez votre couleur et votre formule sur la page de configuration, puis passez au paiement sécurisé Shopify avec livraison gratuite en Europe et garantie suisse 3 ans."
+    "a4": "Choisissez votre couleur et votre formule sur la page de configuration, puis passez au paiement sécurisé Shopify avec livraison gratuite en Europe et garantie suisse 3 ans.",
+    "q5": "Kevin fonctionne-t-il si le Wi-Fi est brouillé ?",
+    "a5": "Oui. Les simulations essentielles sont lues depuis le stockage local de l'appareil. Kevin continue de projeter lumière, ombre et son, même lorsque des brouilleurs désactivent les caméras Wi-Fi et les alarmes."
   },
   "errors": {
     "not_found_title": "Page introuvable",
