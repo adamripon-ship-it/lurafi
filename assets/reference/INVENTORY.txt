@@ -1,0 +1,58 @@
+/Users/adam/lurafi/assets/reference/417376906_xxl3.avif
+/Users/adam/lurafi/assets/reference/417376916_xxl3.avif
+/Users/adam/lurafi/assets/reference/417376918_xxl3.webp
+/Users/adam/lurafi/assets/reference/417376920_xxl3.avif
+/Users/adam/lurafi/assets/reference/417376922_xxl3.jpg
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of 4988 & 4989.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of 4993 & 4994.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of 4996 & 4997.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of 4999 & 5000.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of 5004 & 5005.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of 5006 & 5007.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_4982.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_4985.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_4992.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_4998.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_5001.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_5003.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_5008.png
+/Users/adam/lurafi/assets/reference/Edited - no BG/Copy of Copy of 810_5010.png
+/Users/adam/lurafi/assets/reference/Edited - white BG/4988 & 4989.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/4993 & 4994.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/4996 & 4997.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/4999 & 5000.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/5004 & 5005.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/5006 & 5007.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_4982.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_4985.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_4992.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_4998.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_5001.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_5003.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_5008.jpg
+/Users/adam/lurafi/assets/reference/Edited - white BG/810_5010.jpg
+/Users/adam/lurafi/assets/reference/INVENTORY.txt
+/Users/adam/lurafi/assets/reference/Unedited png/810_4982.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4985.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4988.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4989.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4992.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4993.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4994.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4996.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4997.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4998.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_4999.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5000.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5001.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5002.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5003.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5004.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5005.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5006.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5007.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5008.png
+/Users/adam/lurafi/assets/reference/Unedited png/810_5010.png
+/Users/adam/lurafi/assets/reference/clean-01-studio-white.png
+/Users/adam/lurafi/assets/reference/clean-02-charcoal.png
+/Users/adam/lurafi/assets/reference/clean-03-coral.png

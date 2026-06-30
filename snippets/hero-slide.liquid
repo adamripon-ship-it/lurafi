@@ -1,0 +1,71 @@
+{%- liquid
+  assign slide_image = image
+  assign slide_image_url = ''
+
+  if slide_image != blank
+    assign slide_image_url = slide_image | image_url: width: 1200
+    assign slide_image_alt = slide_image.alt | default: image_alt
+  elsif image_fallback == 'burglary'
+    assign slide_image_url = 'kevin-hero-burglary-prevention.jpg' | asset_url
+    assign slide_image_alt = image_alt
+  elsif image_fallback == 'children'
+    assign slide_image_url = 'kevin-hero-protecting-children.jpg' | asset_url
+    assign slide_image_alt = image_alt
+  elsif image_fallback == 'seniors'
+    assign slide_image_url = 'kevin-hero-seniors-widows.jpg' | asset_url
+    assign slide_image_alt = image_alt
+  elsif image_fallback == 'women' or image_fallback == 'luxury'
+    assign slide_image_url = 'kevin-hero-luxury-dutch-villa.jpg' | asset_url
+    assign slide_image_alt = image_alt
+  elsif image_fallback == 'students'
+    assign slide_image_url = 'kevin-hero-students-university.jpg' | asset_url
+    assign slide_image_alt = image_alt
+  elsif image_fallback == 'houseboat'
+    assign slide_image_url = 'kevin-hero-dutch-houseboat.jpg' | asset_url
+    assign slide_image_alt = image_alt
+  elsif image_fallback == 'protection'
+    assign slide_image_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+    assign slide_image_alt = image_alt
+  endif
+
+  if slide_image_alt == blank
+    assign slide_image_alt = 'home.hero.image_alt' | t
+  endif
+-%}
+
+<div
+  class="hero-slider__slide{% if is_active %} hero-slider__slide--active{% endif %}"
+  data-hero-slide
+  data-hero-slide-label="{{ slide_label | escape }}"
+  {% unless is_active %}hidden{% endunless %}
+  id="hero-slide-{{ block_id }}"
+>
+  {%- if slide_image_url != blank -%}
+    <img
+      class="hero-slider__image"
+      src="{{ slide_image_url }}"
+      alt="{{ slide_image_alt | escape }}"
+      width="800"
+      height="1000"
+      {% if is_active and is_first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+    >
+  {%- endif -%}
+
+  <div class="hero-context-cards" aria-label="{{ callouts_aria_label | escape }}">
+    <div class="hero-context-card hero-context-card--primary">
+      <span class="hero-context-card__eyebrow">{{ callout_1_eyebrow | escape }}</span>
+      <strong>{{ callout_1_title | escape }}</strong>
+      <span>{{ callout_1_body | escape }}</span>
+    </div>
+    <div class="hero-context-card hero-context-card--privacy">
+      <span class="hero-context-card__eyebrow">{{ callout_2_eyebrow | escape }}</span>
+      <strong>{{ callout_2_title | escape }}</strong>
+      <span>{{ callout_2_body | escape }}</span>
+    </div>
+    <div class="hero-context-card hero-context-card--delivery">
+      <span class="hero-context-card__eyebrow">{{ callout_3_eyebrow | escape }}</span>
+      <strong>{{ callout_3_title | escape }}</strong>
+      <span>{{ callout_3_body | escape }}</span>
+    </div>
+  </div>
+</div>

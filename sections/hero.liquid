@@ -1,6 +1,4 @@
 {%- liquid
-  assign hero_image = section.settings.image
-  assign hero_image_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
   capture configure_url
     render 'configure-url', plan: 'buy'
   endcapture
@@ -10,49 +8,18 @@
     assign cta_primary_url = configure_url
   endif
 
-  assign away_eyebrow = section.settings.away_eyebrow
-  if away_eyebrow == blank
-    assign away_eyebrow = 'hero.away_eyebrow' | t
-  endif
-  assign away_title = section.settings.away_title
-  if away_title == blank
-    assign away_title = 'hero.away_title' | t
-  endif
-  assign away_body = section.settings.away_body
-  if away_body == blank
-    assign away_body = 'hero.away_body' | t
+  assign callouts_aria_label = section.settings.callouts_aria_label
+  if callouts_aria_label == blank
+    assign callouts_aria_label = 'hero.callouts_aria_label' | t
   endif
 
-  assign privacy_eyebrow = section.settings.privacy_eyebrow
-  if privacy_eyebrow == blank
-    assign privacy_eyebrow = 'hero.privacy_eyebrow' | t
-  endif
-  assign privacy_title = section.settings.privacy_title
-  if privacy_title == blank
-    assign privacy_title = 'hero.privacy_title' | t
-  endif
-  assign privacy_body = section.settings.privacy_body
-  if privacy_body == blank
-    assign privacy_body = 'hero.privacy_body' | t
+  assign carousel_label = section.settings.carousel_label
+  if carousel_label == blank
+    assign carousel_label = 'hero.carousel_label' | t
   endif
 
-  assign checkout_eyebrow = section.settings.checkout_eyebrow
-  if checkout_eyebrow == blank
-    assign checkout_eyebrow = 'hero.checkout_eyebrow' | t
-  endif
-  assign checkout_title = section.settings.checkout_title
-  if checkout_title == blank
-    assign checkout_title = 'hero.checkout_title' | t
-  endif
-  assign checkout_body = section.settings.checkout_body
-  if checkout_body == blank
-    assign checkout_body = 'hero.checkout_body' | t
-  endif
-
-  assign hero_image_alt = section.settings.image_alt
-  if hero_image_alt == blank
-    assign hero_image_alt = 'home.hero.image_alt' | t
-  endif
+  assign slide_count = section.blocks.size
+  assign autoplay_ms = section.settings.autoplay_seconds | times: 1000
 -%}
 
 <section class="hero-apple" aria-labelledby="HeroHeading">
@@ -82,43 +49,183 @@
       </div>
     </div>
 
-    <div class="hero-apple__product">
-      {%- if hero_image -%}
-        <img
-          src="{{ hero_image | image_url: width: 1200 }}"
-          alt="{{ hero_image.alt | default: hero_image_alt | escape }}"
-          width="{{ hero_image.width }}"
-          height="{{ hero_image.height }}"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- else -%}
-        <img
-          src="{{ hero_image_url }}"
-          alt="{%- if section.settings.image_alt != blank -%}{{ section.settings.image_alt | escape }}{%- else -%}{{ 'home.hero.image_alt' | t | escape }}{%- endif -%}"
-          loading="eager"
-          fetchpriority="high"
-          width="800"
-          height="1000"
-        >
-      {%- endif -%}
-      <div class="hero-context-cards" aria-label="{%- if section.settings.callouts_aria_label != blank -%}{{ section.settings.callouts_aria_label | escape }}{%- else -%}{{ 'hero.callouts_aria_label' | t | escape }}{%- endif -%}">
-        <div class="hero-context-card hero-context-card--primary">
-          <span class="hero-context-card__eyebrow">{{ away_eyebrow | escape }}</span>
-          <strong>{{ away_title | escape }}</strong>
-          <span>{{ away_body | escape }}</span>
-        </div>
-        <div class="hero-context-card hero-context-card--privacy">
-          <span class="hero-context-card__eyebrow">{{ privacy_eyebrow | escape }}</span>
-          <strong>{{ privacy_title | escape }}</strong>
-          <span>{{ privacy_body | escape }}</span>
-        </div>
-        <div class="hero-context-card hero-context-card--delivery">
-          <span class="hero-context-card__eyebrow">{{ checkout_eyebrow | escape }}</span>
-          <strong>{{ checkout_title | escape }}</strong>
-          <span>{{ checkout_body | escape }}</span>
-        </div>
+    <div
+      class="hero-apple__product hero-slider"
+      {% if slide_count > 1 %}
+        data-hero-slider
+        data-autoplay-ms="{{ autoplay_ms }}"
+        data-label-pause="{{ 'hero.pause_autoplay' | t | escape }}"
+        data-label-play="{{ 'hero.play_autoplay' | t | escape }}"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="{{ carousel_label | escape }}"
+      {% endif %}
+    >
+      <div class="hero-slider__stage">
+        {%- if slide_count > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign slide_prefix = 'hero.slide_' | append: forloop.index
+
+              assign slide_label = block.settings.slide_label
+              if slide_label == blank
+                assign slide_label_key = slide_prefix | append: '.label'
+                assign slide_label = slide_label_key | t
+              endif
+
+              assign image_alt = block.settings.image_alt
+              if image_alt == blank
+                assign image_alt_key = slide_prefix | append: '.image_alt'
+                assign image_alt = image_alt_key | t
+              endif
+
+              assign callout_1_eyebrow = block.settings.callout_1_eyebrow
+              if callout_1_eyebrow == blank
+                assign callout_1_key = slide_prefix | append: '.callout_1_eyebrow'
+                assign callout_1_eyebrow = callout_1_key | t
+              endif
+              assign callout_1_title = block.settings.callout_1_title
+              if callout_1_title == blank
+                assign callout_1_key = slide_prefix | append: '.callout_1_title'
+                assign callout_1_title = callout_1_key | t
+              endif
+              assign callout_1_body = block.settings.callout_1_body
+              if callout_1_body == blank
+                assign callout_1_key = slide_prefix | append: '.callout_1_body'
+                assign callout_1_body = callout_1_key | t
+              endif
+
+              assign callout_2_eyebrow = block.settings.callout_2_eyebrow
+              if callout_2_eyebrow == blank
+                assign callout_2_key = slide_prefix | append: '.callout_2_eyebrow'
+                assign callout_2_eyebrow = callout_2_key | t
+              endif
+              assign callout_2_title = block.settings.callout_2_title
+              if callout_2_title == blank
+                assign callout_2_key = slide_prefix | append: '.callout_2_title'
+                assign callout_2_title = callout_2_key | t
+              endif
+              assign callout_2_body = block.settings.callout_2_body
+              if callout_2_body == blank
+                assign callout_2_key = slide_prefix | append: '.callout_2_body'
+                assign callout_2_body = callout_2_key | t
+              endif
+
+              assign callout_3_eyebrow = block.settings.callout_3_eyebrow
+              if callout_3_eyebrow == blank
+                assign callout_3_key = slide_prefix | append: '.callout_3_eyebrow'
+                assign callout_3_eyebrow = callout_3_key | t
+              endif
+              assign callout_3_title = block.settings.callout_3_title
+              if callout_3_title == blank
+                assign callout_3_key = slide_prefix | append: '.callout_3_title'
+                assign callout_3_title = callout_3_key | t
+              endif
+              assign callout_3_body = block.settings.callout_3_body
+              if callout_3_body == blank
+                assign callout_3_key = slide_prefix | append: '.callout_3_body'
+                assign callout_3_body = callout_3_key | t
+              endif
+            -%}
+            {% render 'hero-slide',
+              block_id: block.id,
+              is_active: forloop.first,
+              is_first: forloop.first,
+              slide_label: slide_label,
+              image: block.settings.image,
+              image_alt: image_alt,
+              image_fallback: block.settings.image_fallback,
+              callouts_aria_label: callouts_aria_label,
+              callout_1_eyebrow: callout_1_eyebrow,
+              callout_1_title: callout_1_title,
+              callout_1_body: callout_1_body,
+              callout_2_eyebrow: callout_2_eyebrow,
+              callout_2_title: callout_2_title,
+              callout_2_body: callout_2_body,
+              callout_3_eyebrow: callout_3_eyebrow,
+              callout_3_title: callout_3_title,
+              callout_3_body: callout_3_body
+            %}
+          {%- endfor -%}
+        {%- else -%}
+          {%- liquid
+            assign fallback_slide_label = 'hero.slide_1.label' | t
+            assign fallback_image_alt = 'home.hero.image_alt' | t
+            assign fallback_c1e = 'hero.away_eyebrow' | t
+            assign fallback_c1t = 'hero.away_title' | t
+            assign fallback_c1b = 'hero.away_body' | t
+            assign fallback_c2e = 'hero.privacy_eyebrow' | t
+            assign fallback_c2t = 'hero.privacy_title' | t
+            assign fallback_c2b = 'hero.privacy_body' | t
+            assign fallback_c3e = 'hero.checkout_eyebrow' | t
+            assign fallback_c3t = 'hero.checkout_title' | t
+            assign fallback_c3b = 'hero.checkout_body' | t
+          -%}
+          {% render 'hero-slide',
+            block_id: section.id,
+            is_active: true,
+            is_first: true,
+            slide_label: fallback_slide_label,
+            image: blank,
+            image_alt: fallback_image_alt,
+            image_fallback: 'burglary',
+            callouts_aria_label: callouts_aria_label,
+            callout_1_eyebrow: fallback_c1e,
+            callout_1_title: fallback_c1t,
+            callout_1_body: fallback_c1b,
+            callout_2_eyebrow: fallback_c2e,
+            callout_2_title: fallback_c2t,
+            callout_2_body: fallback_c2b,
+            callout_3_eyebrow: fallback_c3e,
+            callout_3_title: fallback_c3t,
+            callout_3_body: fallback_c3b
+          %}
+        {%- endif -%}
       </div>
+
+      {%- if slide_count > 1 -%}
+        <div class="hero-slider__toolbar" data-hero-slider-controls hidden>
+          <div
+            class="visually-hidden"
+            data-hero-slider-live
+            aria-live="polite"
+            aria-atomic="true"
+          ></div>
+          <div class="hero-slider__controls">
+            <button
+              type="button"
+              class="hero-slider__nav hero-slider__nav--prev"
+              data-hero-slider-prev
+              aria-label="{{ 'hero.previous_slide' | t | escape }}"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <div class="hero-slider__dots" data-hero-slider-dots role="tablist" aria-label="{{ carousel_label | escape }}"></div>
+            <button
+              type="button"
+              class="hero-slider__nav hero-slider__nav--next"
+              data-hero-slider-next
+              aria-label="{{ 'hero.next_slide' | t | escape }}"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+          <div class="hero-slider__progress-track" aria-hidden="true">
+            <div class="hero-slider__progress-bar" data-hero-slider-progress></div>
+          </div>
+          <button
+            type="button"
+            class="hero-slider__pause"
+            data-hero-slider-pause
+            aria-pressed="false"
+            aria-label="{{ 'hero.pause_autoplay' | t | escape }}"
+            hidden
+          >
+            <span class="hero-slider__pause-icon hero-slider__pause-icon--pause" aria-hidden="true"></span>
+            <span class="hero-slider__pause-label">{{ 'hero.pause_autoplay' | t }}</span>
+          </button>
+        </div>
+      {%- endif -%}
     </div>
 
     <a href="#problem" class="hero-apple__scroll" aria-label="{{ 'accessibility.scroll_to_content' | t }}">
@@ -135,14 +242,18 @@
   sticky_url: section.settings.sticky_cta_url
 %}
 
+{%- if slide_count > 1 -%}
+  <script src="{{ 'hero-slider.js' | asset_url }}" defer></script>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Hero",
   "settings": [
-    {
-      "type": "paragraph",
-      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language."
-    },
+        {
+          "type": "paragraph",
+          "content": "Location-based hero images: use docs/HERO-IMAGE-PROMPTS.md — Dutch/German towns only, correct window geometry, no skyscrapers."
+        },
     {
       "type": "header",
       "content": "Headline"
@@ -160,67 +271,27 @@
     { "type": "text", "id": "cta_secondary_url", "label": "Secondary link (anchor OK)", "default": "#how-it-works" },
     {
       "type": "header",
-      "content": "Product image"
+      "content": "Slider"
     },
-    { "type": "image_picker", "id": "image", "label": "Product image", "info": "Leave empty for the default hero device image." },
     {
       "type": "text",
-      "id": "image_alt",
-      "label": "Product image alt text"
+      "id": "carousel_label",
+      "label": "Carousel label (accessibility)"
     },
     {
-      "type": "header",
-      "content": "Feature callouts"
+      "type": "range",
+      "id": "autoplay_seconds",
+      "label": "Autoplay interval (seconds)",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 7,
+      "info": "Set to 0 to disable autoplay."
     },
     {
       "type": "text",
       "id": "callouts_aria_label",
       "label": "Callouts region label (accessibility)"
-    },
-    {
-      "type": "text",
-      "id": "away_eyebrow",
-      "label": "Callout 1 — category (top-left)"
-    },
-    {
-      "type": "text",
-      "id": "away_title",
-      "label": "Callout 1 — title"
-    },
-    {
-      "type": "textarea",
-      "id": "away_body",
-      "label": "Callout 1 — subtext"
-    },
-    {
-      "type": "text",
-      "id": "privacy_eyebrow",
-      "label": "Callout 2 — category (right)"
-    },
-    {
-      "type": "text",
-      "id": "privacy_title",
-      "label": "Callout 2 — title"
-    },
-    {
-      "type": "textarea",
-      "id": "privacy_body",
-      "label": "Callout 2 — subtext"
-    },
-    {
-      "type": "text",
-      "id": "checkout_eyebrow",
-      "label": "Callout 3 — category (bottom)"
-    },
-    {
-      "type": "text",
-      "id": "checkout_title",
-      "label": "Callout 3 — title"
-    },
-    {
-      "type": "textarea",
-      "id": "checkout_body",
-      "label": "Callout 3 — subtext"
     },
     {
       "type": "header",
@@ -244,6 +315,170 @@
       "info": "Leave blank to use Configure (buy) page."
     }
   ],
-  "presets": [{ "name": "Hero" }]
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slide_label",
+          "label": "Slide label",
+          "info": "Used for slider dots and screen readers."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product image"
+        },
+        {
+          "type": "select",
+          "id": "image_fallback",
+          "label": "Default image when none uploaded",
+          "options": [
+            { "value": "burglary", "label": "Slide 1 — Burglary prevention (product on white)" },
+            { "value": "children", "label": "Slide 2 — NL rijtjeshuis (Haarlem-scale suburb)" },
+            { "value": "seniors", "label": "Slide 3 — DE Kleinstadt apartment" },
+            { "value": "luxury", "label": "Slide 4 — NL luxury country villa" },
+            { "value": "women", "label": "Slide 4 — alias: luxury villa" },
+            { "value": "students", "label": "Slide 5 — DE student Altbau Wohnung" },
+            { "value": "houseboat", "label": "Slide 6 — NL houseboat (woonboot)" },
+            { "value": "protection", "label": "Legacy transparent angle" },
+            { "value": "none", "label": "None" }
+          ],
+          "default": "burglary"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Product image alt text"
+        },
+        {
+          "type": "header",
+          "content": "Callout 1 (top-left)"
+        },
+        { "type": "text", "id": "callout_1_eyebrow", "label": "Category" },
+        { "type": "text", "id": "callout_1_title", "label": "Title" },
+        { "type": "textarea", "id": "callout_1_body", "label": "Subtext" },
+        {
+          "type": "header",
+          "content": "Callout 2 (right)"
+        },
+        { "type": "text", "id": "callout_2_eyebrow", "label": "Category" },
+        { "type": "text", "id": "callout_2_title", "label": "Title" },
+        { "type": "textarea", "id": "callout_2_body", "label": "Subtext" },
+        {
+          "type": "header",
+          "content": "Callout 3 (bottom)"
+        },
+        { "type": "text", "id": "callout_3_eyebrow", "label": "Category" },
+        { "type": "text", "id": "callout_3_title", "label": "Title" },
+        { "type": "textarea", "id": "callout_3_body", "label": "Subtext" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Preventing burglary",
+            "image_fallback": "burglary",
+            "callout_1_eyebrow": "Away mode",
+            "callout_1_title": "Living room active",
+            "callout_1_body": "Light, shadow, and sound vary automatically.",
+            "callout_2_eyebrow": "Privacy",
+            "callout_2_title": "No cameras. No mics.",
+            "callout_2_body": "Simulation plays locally on the device.",
+            "callout_3_eyebrow": "Checkout",
+            "callout_3_title": "Free delivery",
+            "callout_3_body": "Secure Shopify checkout."
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Protecting children",
+            "image_fallback": "children",
+            "callout_1_eyebrow": "After school",
+            "callout_1_title": "Home looks occupied",
+            "callout_1_body": "Kevin keeps believable light and sound running when parents are delayed or out.",
+            "callout_2_eyebrow": "No cameras",
+            "callout_2_title": "Privacy first",
+            "callout_2_body": "Simulation plays on the device — nothing records your family inside.",
+            "callout_3_eyebrow": "Easy scenes",
+            "callout_3_title": "One tap away",
+            "callout_3_body": "Start a living-room scene from the Kevin app in seconds."
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Seniors & widows",
+            "image_fallback": "seniors",
+            "callout_1_eyebrow": "Living alone",
+            "callout_1_title": "Visible presence",
+            "callout_1_body": "From the hallway or street, it looks like everyday life is happening inside.",
+            "callout_2_eyebrow": "No monitoring",
+            "callout_2_title": "Dignity intact",
+            "callout_2_body": "Light, shadow, and household sound — not cameras or microphones.",
+            "callout_3_eyebrow": "Routines",
+            "callout_3_title": "Set weekly scenes",
+            "callout_3_body": "Schedule believable activity while you rest easy at home."
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Women & single mothers",
+            "image_fallback": "luxury",
+            "callout_1_eyebrow": "Single mothers",
+            "callout_1_title": "Occupied home",
+            "callout_1_body": "Make your home feel lived-in before anyone tests the door or intercom.",
+            "callout_2_eyebrow": "Women alone",
+            "callout_2_title": "Confidence inside",
+            "callout_2_body": "Visible deterrence without relying on an alarm that only reacts after entry.",
+            "callout_3_eyebrow": "Night scenes",
+            "callout_3_title": "Believable activity",
+            "callout_3_body": "TV flicker, voices, and footsteps — varied so patterns never feel obvious."
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Students away from home",
+            "image_fallback": "students",
+            "callout_1_eyebrow": "First flat",
+            "callout_1_title": "Away from home",
+            "callout_1_body": "Help a new studio look less empty to neighbours in the hallway or courtyard below.",
+            "callout_2_eyebrow": "Portable",
+            "callout_2_title": "Room to room",
+            "callout_2_body": "Move Kevin between bedroom and living area — or take it when you relocate.",
+            "callout_3_eyebrow": "Quiet deterrence",
+            "callout_3_title": "Exam season",
+            "callout_3_body": "Presence simulation without blasting music through thin walls."
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Houseboat & unique homes",
+            "image_fallback": "houseboat",
+            "callout_1_eyebrow": "Woonboot",
+            "callout_1_title": "Life on the water",
+            "callout_1_body": "Kevin runs believable scenes in a houseboat as easily as in a flat or villa.",
+            "callout_2_eyebrow": "Portable",
+            "callout_2_title": "Take it with you",
+            "callout_2_body": "Move between home, boat, or holiday house — one device, multiple safe spaces.",
+            "callout_3_eyebrow": "Away mode",
+            "callout_3_title": "Quay-side quiet",
+            "callout_3_body": "Light and sound vary automatically while you are ashore or travelling."
+          }
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

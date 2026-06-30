@@ -1,6 +1,6 @@
 {%- liquid
   assign steps_image = section.settings.image
-  assign steps_image_fallback = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+  assign steps_image_fallback = 'kevin-device-angle.jpg' | asset_url
   assign steps_image_alt = section.settings.image_alt
   if steps_image_alt == blank
     assign steps_image_alt = 'home.steps.image_alt' | t

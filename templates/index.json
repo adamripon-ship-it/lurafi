@@ -2,6 +2,118 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "slide_burglary": {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Preventing burglary",
+            "image_fallback": "burglary",
+            "image_alt": "",
+            "callout_1_eyebrow": "",
+            "callout_1_title": "",
+            "callout_1_body": "",
+            "callout_2_eyebrow": "",
+            "callout_2_title": "",
+            "callout_2_body": "",
+            "callout_3_eyebrow": "",
+            "callout_3_title": "",
+            "callout_3_body": ""
+          }
+        },
+        "slide_children": {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Protecting children",
+            "image_fallback": "children",
+            "image_alt": "",
+            "callout_1_eyebrow": "",
+            "callout_1_title": "",
+            "callout_1_body": "",
+            "callout_2_eyebrow": "",
+            "callout_2_title": "",
+            "callout_2_body": "",
+            "callout_3_eyebrow": "",
+            "callout_3_title": "",
+            "callout_3_body": ""
+          }
+        },
+        "slide_seniors": {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Seniors & widows",
+            "image_fallback": "seniors",
+            "image_alt": "",
+            "callout_1_eyebrow": "",
+            "callout_1_title": "",
+            "callout_1_body": "",
+            "callout_2_eyebrow": "",
+            "callout_2_title": "",
+            "callout_2_body": "",
+            "callout_3_eyebrow": "",
+            "callout_3_title": "",
+            "callout_3_body": ""
+          }
+        },
+        "slide_women": {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Women & single mothers",
+            "image_fallback": "luxury",
+            "image_alt": "",
+            "callout_1_eyebrow": "",
+            "callout_1_title": "",
+            "callout_1_body": "",
+            "callout_2_eyebrow": "",
+            "callout_2_title": "",
+            "callout_2_body": "",
+            "callout_3_eyebrow": "",
+            "callout_3_title": "",
+            "callout_3_body": ""
+          }
+        },
+        "slide_students": {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Students away from home",
+            "image_fallback": "students",
+            "image_alt": "",
+            "callout_1_eyebrow": "",
+            "callout_1_title": "",
+            "callout_1_body": "",
+            "callout_2_eyebrow": "",
+            "callout_2_title": "",
+            "callout_2_body": "",
+            "callout_3_eyebrow": "",
+            "callout_3_title": "",
+            "callout_3_body": ""
+          }
+        },
+        "slide_houseboat": {
+          "type": "slide",
+          "settings": {
+            "slide_label": "Houseboat & unique homes",
+            "image_fallback": "houseboat",
+            "image_alt": "",
+            "callout_1_eyebrow": "",
+            "callout_1_title": "",
+            "callout_1_body": "",
+            "callout_2_eyebrow": "",
+            "callout_2_title": "",
+            "callout_2_body": "",
+            "callout_3_eyebrow": "",
+            "callout_3_title": "",
+            "callout_3_body": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_burglary",
+        "slide_children",
+        "slide_seniors",
+        "slide_women",
+        "slide_students",
+        "slide_houseboat"
+      ],
       "settings": {
         "eyebrow": "",
         "headline": "",
@@ -10,17 +122,9 @@
         "cta_primary_url": "",
         "cta_secondary_label": "",
         "cta_secondary_url": "#how-it-works",
-        "image_alt": "",
+        "carousel_label": "",
+        "autoplay_seconds": 7,
         "callouts_aria_label": "",
-        "away_eyebrow": "",
-        "away_title": "",
-        "away_body": "",
-        "privacy_eyebrow": "",
-        "privacy_title": "",
-        "privacy_body": "",
-        "checkout_eyebrow": "",
-        "checkout_title": "",
-        "checkout_body": "",
         "sticky_cta_label": "",
         "sticky_cta_enabled": true,
         "sticky_cta_url": ""

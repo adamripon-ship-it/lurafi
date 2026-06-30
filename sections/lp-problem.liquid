@@ -5,14 +5,35 @@
     <p class="body-elevated text-muted text-center" style="max-width:600px;margin:0 auto 64px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.problem.subheading' | t }}{%- endif -%}</p>
     <div class="tile-grid-3">
       <div class="tile tile--gray text-center">
+        <div class="feature-tile__media">
+          {%- if section.settings.tile_1_image -%}
+            <img src="{{ section.settings.tile_1_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+          {%- else -%}
+            <img src="{{ 'kevin-feature-problem-alarms.jpg' | asset_url }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+          {%- endif -%}
+        </div>
         <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.tile_1_title != blank -%}{{ section.settings.tile_1_title }}{%- else -%}{{ 'home.problem.tile_1_title' | t }}{%- endif -%}</h3>
         <p class="body-standard text-muted">{%- if section.settings.tile_1_body != blank -%}{{ section.settings.tile_1_body }}{%- else -%}{{ 'home.problem.tile_1_body' | t }}{%- endif -%}</p>
       </div>
       <div class="tile tile--gray text-center">
+        <div class="feature-tile__media">
+          {%- if section.settings.tile_2_image -%}
+            <img src="{{ section.settings.tile_2_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+          {%- else -%}
+            <img src="{{ 'kevin-feature-problem-cameras.jpg' | asset_url }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+          {%- endif -%}
+        </div>
         <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.tile_2_title != blank -%}{{ section.settings.tile_2_title }}{%- else -%}{{ 'home.problem.tile_2_title' | t }}{%- endif -%}</h3>
         <p class="body-standard text-muted">{%- if section.settings.tile_2_body != blank -%}{{ section.settings.tile_2_body }}{%- else -%}{{ 'home.problem.tile_2_body' | t }}{%- endif -%}</p>
       </div>
       <div class="tile tile--gray text-center">
+        <div class="feature-tile__media">
+          {%- if section.settings.tile_3_image -%}
+            <img src="{{ section.settings.tile_3_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+          {%- else -%}
+            <img src="{{ 'kevin-feature-problem-lights.jpg' | asset_url }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+          {%- endif -%}
+        </div>
         <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.tile_3_title != blank -%}{{ section.settings.tile_3_title }}{%- else -%}{{ 'home.problem.tile_3_title' | t }}{%- endif -%}</h3>
         <p class="body-standard text-muted">{%- if section.settings.tile_3_body != blank -%}{{ section.settings.tile_3_body }}{%- else -%}{{ 'home.problem.tile_3_body' | t }}{%- endif -%}</p>
       </div>
@@ -45,18 +66,21 @@
       "id": "tile_1_body",
       "label": "Tile 1 body"
     },
+    { "type": "image_picker", "id": "tile_1_image", "label": "Tile 1 image", "info": "Default: kevin-feature-problem-alarms.jpg" },
     { "type": "text", "id": "tile_2_title", "label": "Tile 2 title" },
     {
       "type": "textarea",
       "id": "tile_2_body",
       "label": "Tile 2 body"
     },
+    { "type": "image_picker", "id": "tile_2_image", "label": "Tile 2 image", "info": "Default: kevin-feature-problem-cameras.jpg" },
     { "type": "text", "id": "tile_3_title", "label": "Tile 3 title" },
     {
       "type": "textarea",
       "id": "tile_3_body",
       "label": "Tile 3 body"
-    }
+    },
+    { "type": "image_picker", "id": "tile_3_image", "label": "Tile 3 image", "info": "Default: kevin-feature-problem-lights.jpg" }
   ],
   "presets": [{ "name": "Problem" }]
 }
