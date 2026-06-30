@@ -20,3 +20,9 @@ SECURITY.md
 CONTRIBUTING.md
 AGENTS.md
 .editorconfig
+
+# Local reference photos (gitignored; never upload)
+assets/reference/**
+
+# Oversized legacy hero JPGs (theme uses PNG cutouts; avoid HTTP 413 on push)
+assets/kevin-hero-*.jpg
