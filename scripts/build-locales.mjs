@@ -261,7 +261,7 @@ const en = {
     },
     slide_7: {
       label: 'Lock the door, home keeps living',
-      image_alt: 'Editorial illustration of a European couple leaving a Dutch suburban home for holiday at dusk',
+      image_alt: 'Night photograph of a German apartment facade — silhouettes of a woman holding a baby and a man visible through lit windows',
       callout_1_eyebrow: 'On holiday',
       callout_1_title: 'Home still lives',
       callout_1_body: 'Light and sound vary while you are abroad — passers-by see everyday rhythms, not a dark shell.',
