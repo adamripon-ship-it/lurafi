@@ -12,6 +12,9 @@
   if (header) {
     var hero = document.querySelector('.hero-apple');
     var onScroll = function () {
+      // Solidify the header the instant the page moves, so hero content can't
+      // bleed through the fixed bar and collide with the nav (transparent only at rest).
+      header.setAttribute('data-scrolled', window.scrollY > 8 ? 'true' : 'false');
       if (!hero) {
         header.setAttribute('data-theme', 'light');
         return;

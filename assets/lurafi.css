@@ -422,6 +422,14 @@ select:focus-visible,
   border-bottom: 1px solid rgba(210,210,215,0.6);
 }
 .site-header[data-theme="dark"] { background: transparent; }
+/* Once scrolled, the transparent dark header gains a blurred scrim so hero text
+   passing underneath can't collide with the nav (legibility + clean separation). */
+.site-header[data-theme="dark"][data-scrolled="true"] {
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: saturate(160%) blur(20px);
+  backdrop-filter: saturate(160%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
 .site-header__inner {
   width: 100%;
@@ -1285,15 +1293,30 @@ body.mobile-nav-open { overflow: hidden; }
   object-fit: contain;
   background: transparent;
 }
+.hero-slider__image--persona {
+  object-fit: cover;
+  object-position: center top;
+  border-radius: clamp(12px, 2vw, 20px);
+  max-height: min(48vh, 480px);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
 .hero-apple__product > img:not(.hero-slider__image),
-.hero-slider:not([data-hero-slider]) .hero-slider__image {
+.hero-slider:not([data-hero-slider]) .hero-slider__image--product,
+.hero-slider__image--product {
   filter:
     drop-shadow(0 24px 48px rgba(0, 113, 227, 0.18))
     drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
 }
+.hero-slider:not([data-hero-slider]) .hero-slider__image--persona,
+.hero-slider__image--persona {
+  filter: none;
+}
 @media (min-width: 768px) {
   .hero-apple__product img,
   .hero-slider__image { max-height: 45vh; }
+  .hero-slider__image--persona { max-height: min(52vh, 520px); }
 }
 .hero-slider__stage {
   position: relative;
@@ -1328,11 +1351,15 @@ body.mobile-nav-open { overflow: hidden; }
   background: transparent;
   transition: opacity 0.25s var(--ease-out);
 }
-.hero-slider[data-hero-slider] .hero-slider__slide--active .hero-slider__image {
+.hero-slider[data-hero-slider] .hero-slider__slide--active .hero-slider__image--product {
   opacity: 1;
   filter:
     drop-shadow(0 24px 48px rgba(0, 113, 227, 0.18))
     drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+}
+.hero-slider[data-hero-slider] .hero-slider__slide--active .hero-slider__image--persona {
+  opacity: 1;
+  filter: none;
 }
 .hero-slider[data-hero-slider] .hero-context-cards {
   opacity: 0;
@@ -1745,6 +1772,19 @@ body.mobile-nav-open { overflow: hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Icon fallback when no tile image is set — keeps the tile rhythm without a photo. */
+.feature-tile__media--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(120% 120% at 50% 14%, rgba(0,113,227,0.12), rgba(0,113,227,0.04) 55%, transparent 100%);
+}
+.feature-tile__icon {
+  width: clamp(56px, 24%, 92px);
+  height: auto;
+  color: var(--apple-blue);
 }
 
 .feature-tile__media--persona {
