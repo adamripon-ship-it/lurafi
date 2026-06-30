@@ -70,13 +70,15 @@
       slides.forEach(function (slide, i) {
         var isActive = i === activeIndex;
         slide.classList.toggle('hero-slider__slide--active', isActive);
-        slide.removeAttribute('hidden');
-        slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
         if (isActive) {
+          slide.removeAttribute('hidden');
           slide.inert = false;
           slide.removeAttribute('inert');
+          slide.setAttribute('aria-hidden', 'false');
         } else {
+          slide.setAttribute('hidden', '');
           slide.inert = true;
+          slide.setAttribute('aria-hidden', 'true');
         }
         slide.tabIndex = isActive ? 0 : -1;
       });

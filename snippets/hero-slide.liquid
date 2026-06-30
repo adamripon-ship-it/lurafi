@@ -38,7 +38,7 @@
   data-hero-slide
   data-hero-slide-label="{{ slide_label | escape }}"
   aria-hidden="{% if is_active %}false{% else %}true{% endif %}"
-  {% unless is_active %}inert{% endunless %}
+  {% unless is_active %}hidden inert{% endunless %}
   id="hero-slide-{{ block_id }}"
 >
   {%- if slide_image_url != blank -%}
