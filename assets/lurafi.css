@@ -1218,42 +1218,104 @@ body.mobile-nav-open { overflow: hidden; }
 }
 .hero-apple--product-active .hero-apple__glow {
   background:
-    radial-gradient(ellipse 92% 72% at 50% 66%, rgba(41, 151, 255, 0.34) 0%, transparent 72%),
-    radial-gradient(ellipse 48% 85% at 0% 58%, rgba(72, 156, 255, 0.3) 0%, transparent 78%),
-    radial-gradient(ellipse 48% 85% at 100% 54%, rgba(255, 92, 188, 0.26) 0%, transparent 78%),
-    radial-gradient(ellipse 62% 38% at 50% 90%, rgba(168, 72, 210, 0.26) 0%, transparent 100%),
-    radial-gradient(ellipse 100% 62% at 50% 100%, rgba(0, 113, 227, 0.14) 0%, transparent 58%),
-    radial-gradient(ellipse 55% 45% at 50% 68%, rgba(255, 255, 255, 0.05) 0%, transparent 72%);
+    radial-gradient(ellipse 88% 68% at 50% 64%, rgba(41, 151, 255, 0.22) 0%, transparent 72%),
+    radial-gradient(ellipse 38% 55% at 12% 62%, rgba(72, 156, 255, 0.14) 0%, transparent 78%),
+    radial-gradient(ellipse 38% 55% at 88% 58%, rgba(255, 92, 188, 0.12) 0%, transparent 78%),
+    radial-gradient(ellipse 55% 32% at 50% 88%, rgba(168, 72, 210, 0.2) 0%, transparent 100%),
+    radial-gradient(ellipse 100% 58% at 50% 100%, rgba(0, 113, 227, 0.1) 0%, transparent 55%);
 }
-/* Full-hero side arcs — behind product, not clipped to slider stage */
-.hero-apple--product-active .hero-apple__glow::before,
-.hero-apple--product-active .hero-apple__glow::after {
-  content: '';
+/* KEVIN.3-style luminous beams — SVG in snippets/hero-product-beams.liquid */
+.hero-apple__beams {
   position: absolute;
-  width: min(56vw, 920px);
-  height: min(78vh, 820px);
-  bottom: 0;
+  inset: 0;
+  z-index: 0;
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.55s var(--ease-out, ease-out), visibility 0s linear 0.55s;
+}
+.hero-apple--product-active .hero-apple__beams {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.55s var(--ease-out, ease-out), visibility 0s;
+}
+.hero-apple__beams-svg {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(32px, 8vh, 120px);
+  width: min(150vw, 1920px);
+  height: min(78vh, 860px);
+  transform: translateX(-50%);
+  display: block;
+  overflow: visible;
+}
+.hero-apple__beam {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hero-apple__beam--halo.hero-apple__beam--blue {
+  stroke: #2e8fff;
+  stroke-width: 36;
+  opacity: 0.42;
+}
+.hero-apple__beam--core.hero-apple__beam--blue {
+  stroke: #a8d8ff;
+  stroke-width: 5;
+  opacity: 1;
+}
+.hero-apple__beam--halo.hero-apple__beam--pink {
+  stroke: #ff2dad;
+  stroke-width: 36;
+  opacity: 0.38;
+}
+.hero-apple__beam--core.hero-apple__beam--pink {
+  stroke: #ffb0e8;
+  stroke-width: 5;
+  opacity: 0.98;
+}
+.hero-apple__beam-pool {
   opacity: 0.92;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center bottom;
+  filter: blur(22px);
 }
-.hero-apple--product-active .hero-apple__glow::before {
-  left: max(-4vw, -48px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 720' fill='none'%3E%3Cpath d='M-48 700 C 140 560, 220 360, 380 280 C 480 230, 540 240, 600 310' stroke='%2368b4ff' stroke-width='3' stroke-linecap='round' opacity='0.62'/%3E%3Cpath d='M-48 700 C 140 560, 220 360, 380 280 C 480 230, 540 240, 600 310' stroke='%234da3ff' stroke-width='14' stroke-linecap='round' opacity='0.16'/%3E%3C/svg%3E");
-  filter: drop-shadow(0 0 28px rgba(80, 165, 255, 0.45));
-}
-.hero-apple--product-active .hero-apple__glow::after {
-  right: max(-4vw, -48px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 720' fill='none'%3E%3Cpath d='M848 700 C 660 560, 580 360, 420 280 C 320 230, 260 240, 200 310' stroke='%23ff6ec8' stroke-width='3' stroke-linecap='round' opacity='0.62'/%3E%3Cpath d='M848 700 C 660 560, 580 360, 420 280 C 320 230, 260 240, 200 310' stroke='%23ff6ec8' stroke-width='14' stroke-linecap='round' opacity='0.14'/%3E%3C/svg%3E");
-  filter: drop-shadow(0 0 28px rgba(255, 96, 192, 0.4));
+@media (min-width: 768px) {
+  .hero-apple__beams-svg {
+    width: min(128vw, 1800px);
+    height: min(76vh, 860px);
+    bottom: clamp(64px, 14vh, 160px);
+  }
+  .hero-apple__beam--halo.hero-apple__beam--blue,
+  .hero-apple__beam--halo.hero-apple__beam--pink {
+    stroke-width: 34;
+  }
+  .hero-apple__beam--core.hero-apple__beam--blue,
+  .hero-apple__beam--core.hero-apple__beam--pink {
+    stroke-width: 5;
+  }
+  .hero-apple__beam-pool {
+    rx: 260;
+    ry: 82;
+  }
 }
 @media (min-width: 1024px) {
-  .hero-apple--product-active .hero-apple__glow::before,
-  .hero-apple--product-active .hero-apple__glow::after {
-    width: min(52vw, 980px);
-    height: min(82vh, 880px);
+  .hero-apple__beams-svg {
+    bottom: clamp(80px, 16vh, 180px);
+  }
+}
+@media (max-width: 767px) {
+  .hero-apple__beams-svg {
+    width: 160vw;
+    height: min(58vh, 520px);
+    bottom: clamp(36px, 10vh, 100px);
+  }
+  .hero-apple__beam--halo.hero-apple__beam--blue,
+  .hero-apple__beam--halo.hero-apple__beam--pink {
+    stroke-width: 22;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-apple__beams {
+    transition: none;
   }
 }
 

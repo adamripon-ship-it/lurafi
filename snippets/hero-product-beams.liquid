@@ -1,0 +1,72 @@
+{%- comment -%}
+  KEVIN.3-style luminous side beams — full hero, behind product.
+  Visible when .hero-apple--product-active (hero-slider.js).
+{%- endcomment -%}
+{%- assign beam_uid = section.id | default: 'hero' -%}
+<div class="hero-apple__beams" aria-hidden="true">
+  <svg
+    class="hero-apple__beams-svg"
+    viewBox="0 0 1440 820"
+    preserveAspectRatio="xMidYMid meet"
+    focusable="false"
+  >
+    <defs>
+      <filter id="hero-beam-blue-{{ beam_uid }}" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="b1"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b2"/>
+        <feMerge>
+          <feMergeNode in="b1"/>
+          <feMergeNode in="b1"/>
+          <feMergeNode in="b2"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="hero-beam-pink-{{ beam_uid }}" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="b1"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b2"/>
+        <feMerge>
+          <feMergeNode in="b1"/>
+          <feMergeNode in="b1"/>
+          <feMergeNode in="b2"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <radialGradient id="hero-beam-pool-{{ beam_uid }}" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#e060c8" stop-opacity="0.55"/>
+        <stop offset="45%" stop-color="#9040b0" stop-opacity="0.28"/>
+        <stop offset="100%" stop-color="#9040b0" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <path
+      class="hero-apple__beam hero-apple__beam--blue hero-apple__beam--halo"
+      d="M -80 820 C 100 790, 190 640, 250 500 C 285 420, 330 370, 395 375 C 455 385, 510 430, 560 490 C 620 535, 680 545, 720 548"
+      filter="url(#hero-beam-blue-{{ beam_uid }})"
+    />
+    <path
+      class="hero-apple__beam hero-apple__beam--blue hero-apple__beam--core"
+      d="M -80 820 C 100 790, 190 640, 250 500 C 285 420, 330 370, 395 375 C 455 385, 510 430, 560 490 C 620 535, 680 545, 720 548"
+      filter="url(#hero-beam-blue-{{ beam_uid }})"
+    />
+
+    <path
+      class="hero-apple__beam hero-apple__beam--pink hero-apple__beam--halo"
+      d="M 1520 810 C 1340 780, 1240 630, 1180 490 C 1145 410, 1095 360, 1030 370 C 970 380, 915 425, 865 485 C 805 535, 760 545, 720 548"
+      filter="url(#hero-beam-pink-{{ beam_uid }})"
+    />
+    <path
+      class="hero-apple__beam hero-apple__beam--pink hero-apple__beam--core"
+      d="M 1520 810 C 1340 780, 1240 630, 1180 490 C 1145 410, 1095 360, 1030 370 C 970 380, 915 425, 865 485 C 805 535, 760 545, 720 548"
+      filter="url(#hero-beam-pink-{{ beam_uid }})"
+    />
+
+    <ellipse
+      class="hero-apple__beam-pool"
+      cx="720"
+      cy="558"
+      rx="240"
+      ry="78"
+      fill="url(#hero-beam-pool-{{ beam_uid }})"
+    />
+  </svg>
+</div>

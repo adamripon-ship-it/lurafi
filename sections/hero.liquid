@@ -20,10 +20,23 @@
 
   assign slide_count = section.blocks.size
   assign autoplay_ms = section.settings.autoplay_seconds | times: 1000
+
+  assign hero_has_product_rotator = false
+  for block in section.blocks
+    assign block_fallback = block.settings.image_fallback
+    if block_fallback == 'model3d' or block_fallback == 'burglary'
+      assign hero_has_product_rotator = true
+      break
+    endif
+  endfor
+  if slide_count == 0
+    assign hero_has_product_rotator = true
+  endif
 -%}
 
 <section class="hero-apple" aria-labelledby="HeroHeading">
   <div class="hero-apple__glow" aria-hidden="true"></div>
+  {% render 'hero-product-beams' %}
   <div class="hero-apple__grain" aria-hidden="true"></div>
 
   <div class="hero-apple__content">
@@ -168,7 +181,7 @@
             slide_label: fallback_slide_label,
             image: blank,
             image_alt: fallback_image_alt,
-            image_fallback: 'burglary',
+            image_fallback: 'model3d',
             callouts_aria_label: callouts_aria_label,
             callout_1_eyebrow: fallback_c1e,
             callout_1_title: fallback_c1t,
@@ -242,7 +255,7 @@
   sticky_url: section.settings.sticky_cta_url
 %}
 
-{%- if slide_count > 1 -%}
+{%- if slide_count > 1 or hero_has_product_rotator -%}
   <script src="{{ 'hero-slider.js' | asset_url }}" defer></script>
 {%- endif -%}
 
@@ -336,19 +349,27 @@
           "id": "image_fallback",
           "label": "Default image when none uploaded",
           "options": [
-            { "value": "burglary", "label": "Slide 1 — Burglary prevention" },
-            { "value": "children", "label": "Slide 2 — Protecting children (NL rijtjeshuis)" },
-            { "value": "seniors", "label": "Slide 3 — Retired & widows (DE Kleinstadt)" },
-            { "value": "women", "label": "Slide 4 — Women living alone / single mothers" },
-            { "value": "luxury", "label": "Slide 4 — alias: women alone" },
-            { "value": "students", "label": "Slide 5 — University students (DE Altbau)" },
-            { "value": "travel", "label": "Slide 6 — Home while travelling" },
-            { "value": "travelling", "label": "Legacy alias — travel" },
-            { "value": "houseboat", "label": "Legacy — NL houseboat (woonboot)" },
+            { "value": "model3d", "label": "Slide 1 — Interactive 3D Kevin" },
+            { "value": "burglary", "label": "Legacy alias — 3D Kevin" },
+            { "value": "widow89", "label": "Slide 2 — Widow 89, living alone" },
+            { "value": "mom-baby", "label": "Slide 3 — Mom and baby" },
+            { "value": "mom-toddler", "label": "Slide 4 — Mom and toddler" },
+            { "value": "student-studio", "label": "Slide 5 — Student studio" },
+            { "value": "expat-solo", "label": "Slide 6 — Expat solo" },
+            { "value": "expat-couple", "label": "Slide 7 — Expat couple on holiday" },
+            { "value": "away-home", "label": "Slide 8 — Away / second home" },
+            { "value": "children", "label": "Legacy alias — mom baby" },
+            { "value": "seniors", "label": "Legacy alias — widow 89" },
+            { "value": "women", "label": "Legacy alias — mom toddler" },
+            { "value": "luxury", "label": "Legacy alias — mom toddler" },
+            { "value": "students", "label": "Legacy alias — student studio" },
+            { "value": "travel", "label": "Legacy alias — away home" },
+            { "value": "travelling", "label": "Legacy alias — away home" },
+            { "value": "houseboat", "label": "Legacy — NL houseboat" },
             { "value": "protection", "label": "Legacy transparent angle" },
             { "value": "none", "label": "None" }
           ],
-          "default": "burglary"
+          "default": "model3d"
         },
         {
           "type": "text",
