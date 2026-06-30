@@ -1,12 +1,13 @@
 /**
- * Full-site browser QA for lurafi.ai
+ * Full-site browser QA for mitipi.eu
  * Run: node scripts/browser-qa.mjs
  */
 import { chromium, devices } from 'playwright';
-import { writeFileSync, mkdirSync } from 'fs';
+import { mkdirSync } from 'fs';
 import { join } from 'path';
+import { filterCriticalConsoleErrors, gotoStorefront, PAGE_GOTO_WAIT } from './lib/playwright-qa.mjs';
 
-const BASE = process.env.LURAFI_URL || 'https://lurafi.ai';
+const BASE = process.env.LURAFI_URL || 'https://mitipi.eu';
 const issues = [];
 const passes = [];
 const screenshotDir = join(process.cwd(), 'scripts', 'qa-screenshots');
@@ -44,13 +45,14 @@ async function testViewport(browser, name, viewport, isMobile) {
   page.on('pageerror', (e) => consoleErrors.push(e.message));
 
   async function loadHomeFresh() {
-    const res = await page.goto(`${BASE}/?qa=${Date.now()}`, { waitUntil: 'networkidle', timeout: 60000 });
-    return res;
+    return gotoStorefront(page, `${BASE}/?qa=${Date.now()}`);
   }
 
   let homeRes = await loadHomeFresh();
-  if (!homeRes || homeRes.status() >= 400) fail(`Homepage HTTP ${homeRes?.status()}`, name);
-  else pass(`Homepage loads (${homeRes.status()})`);
+  if (!homeRes || homeRes.status() >= 400) {
+    if (homeRes?.status() === 429) fail(`Homepage HTTP 429 (rate limited)`, name);
+    else fail(`Homepage HTTP ${homeRes?.status()}`, name);
+  } else pass(`Homepage loads (${homeRes.status()})`);
 
   async function waitForMotion() {
     await page
@@ -76,7 +78,7 @@ async function testViewport(browser, name, viewport, isMobile) {
     return motionBad || problemBad;
   }
   for (let attempt = 0; attempt < 4 && homeLooksStale(); attempt += 1) {
-    await page.goto(`${BASE}/?qa=${Date.now()}&retry=${attempt}`, { waitUntil: 'networkidle', timeout: 60000 });
+    await gotoStorefront(page, `${BASE}/?qa=${Date.now()}&retry=${attempt}`);
     motion = await waitForMotion();
     problemHeading = await page.locator('#problem h2').textContent().catch(() => '');
   }
@@ -149,7 +151,7 @@ async function testViewport(browser, name, viewport, isMobile) {
   }
 
   const configurePage = await context.newPage();
-  await configurePage.goto(`${BASE}/?view=configure&plan=buy`, { waitUntil: 'networkidle', timeout: 60000 });
+  await gotoStorefront(configurePage, `${BASE}/?view=configure&plan=buy`, { readySelector: '[data-configure]' });
   await configurePage.waitForTimeout(800);
   if (await configurePage.locator('[data-configure]').count()) {
     pass('Configure page OK');
@@ -161,7 +163,8 @@ async function testViewport(browser, name, viewport, isMobile) {
   await configurePage.close();
 
   const legacyPage = await context.newPage();
-  await legacyPage.goto(`${BASE}/pages/configure?plan=buy`, { waitUntil: 'networkidle', timeout: 45000 });
+  await legacyPage.goto(`${BASE}/pages/configure?plan=buy`, { waitUntil: PAGE_GOTO_WAIT, timeout: 45000 });
+  await legacyPage.locator('[data-configure]').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
   await legacyPage.waitForTimeout(2000);
   const legacyUrl = legacyPage.url();
   const hasConfigure = (await legacyPage.locator('[data-configure]').count()) > 0;
@@ -170,19 +173,12 @@ async function testViewport(browser, name, viewport, isMobile) {
   else fail('/pages/configure did not redirect', legacyUrl);
   await legacyPage.close();
 
-  const cartRes = await page.goto(`${BASE}/cart`, { waitUntil: 'networkidle', timeout: 45000 });
+  const cartRes = await page.goto(`${BASE}/cart`, { waitUntil: PAGE_GOTO_WAIT, timeout: 45000 });
   if (cartRes && cartRes.status() < 400) pass('Cart page loads');
+  else if (cartRes?.status() === 429) fail('Cart HTTP 429 (rate limited — re-run qa:full later)', name);
   else fail(`Cart HTTP ${cartRes?.status()}`, name);
 
-  const critical = consoleErrors.filter(
-    (e) =>
-      !/shopify|monorail|cookie|CSP|analytics|pixel|web-pixel|401|403|404/i.test(e) &&
-      !/Failed to load resource/i.test(e) &&
-      !/\bX-Frame-Options\b|ALLOW-FROM/i.test(e) &&
-      !/^Failed to fetch\.?$/i.test(e.trim()) &&
-      !/network failure may have prevented|Error completing request/i.test(e) &&
-      !/serviceWorker.*sandbox|allow-same-origin/i.test(e)
-  );
+  const critical = filterCriticalConsoleErrors(consoleErrors);
   if (critical.length) fail(`Console errors: ${critical.slice(0, 2).join(' | ')}`);
   else pass('No critical console errors');
 

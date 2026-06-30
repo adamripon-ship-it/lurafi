@@ -6,7 +6,7 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [['github'], ['list']] : 'list',
   use: {
-    baseURL: process.env.LURAFI_URL || 'https://www.lurafi.com',
+    baseURL: process.env.LURAFI_URL || 'https://mitipi.eu',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },

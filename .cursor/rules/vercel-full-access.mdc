@@ -48,3 +48,13 @@ npx vercel@latest env pull .env.local --yes
 ## lurafi repo
 
 This workspace is a **Shopify theme**, not a linked Vercel project (no `.vercel/project.json`). Use Vercel tools for other apps on the same account/team, not for theme push to Shopify.
+
+Theme build & test in this repo (audit-verified; see [docs/REPO_AUDIT.md](../../docs/REPO_AUDIT.md)):
+
+```bash
+npm ci
+npm run locales:build
+npm run locales:sync
+npm run theme:check
+npm run predeploy
+```

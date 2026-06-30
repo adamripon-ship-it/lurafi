@@ -42,3 +42,14 @@ git push origin <branch>
 ## Store / theme
 
 Shopify deploy is separate — see `docs/SHOPIFY.md`. GitHub is source control + CI only.
+
+## Theme CI build & test (audit-verified)
+
+`.github/workflows/theme-check.yml` runs these verified scripts on push/PR to `main`:
+
+```bash
+npm ci
+npm run locales:build
+npm run locales:sync
+npm run theme:check
+```

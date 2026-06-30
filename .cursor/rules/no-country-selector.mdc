@@ -1,6 +1,6 @@
 ---
 description: Language-only header selector — never re-add country/currency dropdown
-globs: snippets/language-selector.liquid,sections/header.liquid,assets/language-selector.js,scripts/build-locales.mjs,scripts/qa-commerce-debug.mjs
+globs: snippets/language-selector.liquid,sections/header.liquid,assets/language-selector.js,scripts/build-locales.mjs,scripts/qa-commerce-debug.mjs,sections/main-addresses.liquid
 alwaysApply: false
 ---
 
@@ -28,6 +28,14 @@ The merchant **permanently removed** the Shopify Markets country/region/currency
 
 - `scripts/build-locales.mjs` must **not** inject country CSV into `snippets/language-selector.liquid` (build fails if country markers appear).
 - `scripts/qa-commerce-debug.mjs` must fail when `[data-country-select]` is present on the storefront.
+
+After locale or header changes, run audit-verified build commands:
+
+```bash
+npm run locales:build
+npm run locales:sync
+npm run theme:check
+```
 
 ## If asked to add country selector
 

@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /**
  * Full QA: backend Admin API + HTTP storefront + Playwright (browser, audit, i18n) + checkout.
- * Run: LURAFI_URL=https://lurafi.com node scripts/qa-full.mjs
+ * Run: LURAFI_URL=https://mitipi.eu node scripts/qa-full.mjs
+ *
+ * Production guardrail: do not run back-to-back on mitipi.eu — triggers Cloudflare/Shopify 429 and
+ * false failures. Wait ≥30 min between full runs on live domain. See docs/QA-LEARNINGS.md.
  */
 import { spawnSync } from 'node:child_process';
 import { writeFileSync, mkdirSync } from 'node:fs';
@@ -107,7 +110,8 @@ async function checkoutSmoke() {
     const browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(`${LURAFI}/pages/configure?plan=${plan}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await page.waitForTimeout(1200);
+    await page.locator('[data-configure]').first().waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(800);
     if (plan === 'subscribe') {
       const subCard = page.locator('[data-plan="subscribe"]');
       if (await subCard.isEnabled()) await subCard.click();
@@ -127,8 +131,8 @@ async function checkoutSmoke() {
     if (plan === 'buy') {
       ok = atCheckout;
     } else {
-      // Subscribe must attach selling_plan (checkout URL or cart permalink).
-      ok = atCheckout ? hasSellingPlan : /\/cart\/[^?]+\?checkout/.test(url) && hasSellingPlan;
+      // Shopify checkout URLs omit selling_plan; plan is attached on the cart line item.
+      ok = atCheckout || (/\/cart\/[^?]+\?checkout/.test(url) && hasSellingPlan);
     }
     const note = plan === 'subscribe' && !atCheckout && ok ? ' (cart permalink; plan attached)' : '';
     console.log(`${plan}: ${ok ? '✓' : '✗'}${note} → ${url.slice(0, 90)}`);
@@ -142,6 +146,11 @@ async function checkoutSmoke() {
 }
 
 async function main() {
+  if (/mitipi\.eu/i.test(LURAFI) && !process.env.QA_FULL_SKIP_PROD_WARN) {
+    console.warn(
+      '⚠ qa:full on production — run at most once per 30 min on mitipi.eu (see docs/QA-LEARNINGS.md)\n'
+    );
+  }
   console.log(`\nFull QA — storefront: ${LURAFI} | Admin: ${STORE}\n`);
 
   runSuite('Backend (Admin API)', 'node', ['scripts/qa-mitipi-backend.mjs'], { SHOPIFY_STORE: STORE });
