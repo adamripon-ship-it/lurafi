@@ -153,7 +153,7 @@ upload_ref() {
 }
 
 run_3d() {
-  echo "→ kevin-hero-3d.glb (multi_image_to_3d)"
+  echo "→ kevin-hero-3d.glb"
   if [[ "$SKIP_EXISTING" -eq 1 ]] && asset_exists "kevin-hero-3d.glb"; then
     echo "  skip (exists): $OUT/kevin-hero-3d.glb"
     return 0
@@ -167,7 +167,7 @@ run_3d() {
     echo "  [dry-run] front=$FRONT_REF side=$SIDE_REF"
     return 0
   fi
-  local front_id side_id raw url attempt=1 max=8 wait_s=15
+  local front_id side_id raw url attempt=1 max=4 wait_s=15
   echo "  uploading refs..."
   front_id="$(upload_ref "$FRONT_REF")"
   side_id="$(upload_ref "$SIDE_REF")"
@@ -177,29 +177,46 @@ run_3d() {
     return 1
   fi
   echo "  media: front=$front_id side=$side_id"
+
+  # Preferred: multi-image (two studio angles). CLI may require enable_rigging when animation flags leak.
+  echo "  trying multi_image_to_3d..."
   while [[ "$attempt" -le "$max" ]]; do
     raw="$(higgsfield generate create multi_image_to_3d \
       --image-references "$front_id" \
       --image-references "$side_id" \
+      --enable-rigging true \
       --wait \
       --wait-timeout 35m \
-      --wait-interval 12s 2>&1)" || true
-    url="$(printf '%s\n' "$raw" | extract_url || true)"
-    if [[ -z "$url" ]]; then
-      url="$(printf '%s\n' "$raw" | grep -Eo 'https://[^[:space:]]+\.glb' | tail -1 || true)"
-    fi
+      --wait-interval 15s 2>&1)" || true
+    url="$(printf '%s\n' "$raw" | grep -Eo 'https://[^[:space:]]+\.glb' | tail -1 || true)"
     if [[ -n "$url" ]]; then
       curl -fsSL "$url" -o "$OUT/kevin-hero-3d.glb"
-      echo "  saved $OUT/kevin-hero-3d.glb ($(wc -c < "$OUT/kevin-hero-3d.glb" | tr -d ' ') bytes)"
+      echo "  saved (multi_image_to_3d) $OUT/kevin-hero-3d.glb ($(wc -c < "$OUT/kevin-hero-3d.glb" | tr -d ' ') bytes)"
       echo "  url: $url"
       return 0
     fi
-    echo "  attempt $attempt/$max failed: $raw" >&2
-    [[ "$raw" == *"522"* || "$raw" == *"503"* || "$raw" == *"520"* ]] && wait_s=45 || wait_s=15
+    [[ "$raw" == *"enable_animation"* ]] && break
+    echo "  multi_image attempt $attempt/$max failed: $raw" >&2
     attempt=$((attempt + 1))
     sleep "$wait_s"
   done
-  echo "  ERROR: kevin-hero-3d.glb — retry: higgsfield generate create multi_image_to_3d --image-references $front_id --image-references $side_id --wait" >&2
+
+  # Fallback: single-image sam_3_3d (faster, avoids rigging validation)
+  echo "  fallback sam_3_3d..."
+  raw="$(higgsfield generate create sam_3_3d \
+    --image-references "$front_id" \
+    --prompt "Kevin presence simulator device, charcoal grey acoustic fabric, studio product" \
+    --wait \
+    --wait-timeout 25m \
+    --wait-interval 15s 2>&1)" || true
+  url="$(printf '%s\n' "$raw" | grep -Eo 'https://[^[:space:]]+\.glb' | tail -1 || true)"
+  if [[ -n "$url" ]]; then
+    curl -fsSL "$url" -o "$OUT/kevin-hero-3d.glb"
+    echo "  saved (sam_3_3d) $OUT/kevin-hero-3d.glb ($(wc -c < "$OUT/kevin-hero-3d.glb" | tr -d ' ') bytes)"
+    echo "  url: $url"
+    return 0
+  fi
+  echo "  ERROR: kevin-hero-3d.glb — $raw" >&2
   FAILED=$((FAILED + 1))
   return 1
 }
