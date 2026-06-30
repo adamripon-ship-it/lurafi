@@ -69,6 +69,7 @@
     {%- if use_product_rotator -%}
       {% render 'hero-product-symbols' %}
       <div class="hero-product-stage">
+        {% render 'hero-product-waves', block_id: block_id %}
         <div
           class="hero-product-rotator"
           data-product-rotator
