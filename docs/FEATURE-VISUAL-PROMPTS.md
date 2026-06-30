@@ -14,7 +14,8 @@ Maps each mitipi.eu theme section to target assets, Higgsfield mode, user-intent
 
 | Role | Local path |
 |------|------------|
-| Lifestyle / hero | `assets/kevin-hero-burglary-prevention.jpg` |
+| **Primary product ref (lifestyle + hero)** | `assets/reference/Edited - white BG/810_4982.jpg` |
+| Lifestyle fallback | `assets/kevin-hero-burglary-prevention.jpg` |
 | Studio product | `assets/reference/Edited - white BG/810_4982.jpg` |
 | Close-up detail | `assets/reference/Edited - white BG/810_5010.jpg` |
 | Device angle | `assets/reference/clean-01-studio-white.png` |

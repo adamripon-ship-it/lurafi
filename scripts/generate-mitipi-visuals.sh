@@ -30,6 +30,8 @@ CLOSEUP_REF="$REF_DIR/Edited - white BG/810_5010.jpg"
 ANGLE_REF="$REF_DIR/clean-01-studio-white.png"
 SHADOW_REF="$REF_DIR/Edited - white BG/810_4998.jpg"
 
+WORKSPACE_ID="${HIGGSFIELD_WORKSPACE_ID:-c47ef442-fa47-46cf-ba90-113e76988a77}"
+
 RUN_HERO=1
 RUN_FEATURES=1
 DRY_RUN=0
@@ -53,6 +55,7 @@ if ! command -v higgsfield >/dev/null 2>&1; then
 fi
 
 if [[ "$DRY_RUN" -eq 0 ]]; then
+  higgsfield workspace set "$WORKSPACE_ID" >/dev/null 2>&1 || true
   authed=0
   for _ in 1 2 3 4 5 6; do
     if higgsfield account status >/dev/null 2>&1; then authed=1; break; fi
@@ -90,26 +93,57 @@ run_photoshoot() {
     echo "  [dry-run] $prompt"
     return 0
   fi
-  local url attempt=1 max_attempts=3
+  local raw url attempt=1 max_attempts=15 wait_s=10
   while [[ "$attempt" -le "$max_attempts" ]]; do
-    url="$(higgsfield product-photoshoot create \
+    raw="$(higgsfield product-photoshoot create \
       --mode "$mode" \
       --prompt "$prompt" \
       --image "$ref" \
       --aspect_ratio "$aspect" \
-      --count 1 2>&1 | extract_url || true)"
+      --count 1 2>&1)" || true
+    url="$(printf '%s\n' "$raw" | extract_url || true)"
     if [[ -n "$url" ]]; then
       curl -fsSL "$url" -o "$OUT/$outfile"
       echo "  saved $OUT/$outfile"
       echo "  url: $url"
       return 0
     fi
-    echo "  attempt $attempt/$max_attempts failed for $outfile, retrying in 10s..." >&2
+    echo "  attempt $attempt/$max_attempts failed for $outfile: $raw" >&2
+    if [[ "$raw" == *"522"* ]] || [[ "$raw" == *"503"* ]] || [[ "$raw" == *"429"* ]]; then
+      wait_s=30
+    else
+      wait_s=10
+    fi
+    echo "  retrying in ${wait_s}s..." >&2
     attempt=$((attempt + 1))
-    sleep 10
+    sleep "$wait_s"
   done
   echo "  ERROR: no URL returned for $outfile after $max_attempts attempts" >&2
   FAILED=$((FAILED + 1))
+  return 1
+}
+
+
+run_photoshoot_with_fallback() {
+  local outfile="$1" aspect="$2" ref="$3" prompt="$4"
+  shift 4
+  local modes=("$@")
+  local mode start_failed=$FAILED i=0 n=${#modes[@]}
+  for mode in "${modes[@]}"; do
+    i=$((i + 1))
+    if run_photoshoot "$outfile" "$mode" "$aspect" "$ref" "$prompt"; then
+      FAILED=$start_failed
+      if [[ "$mode" != "${modes[0]}" ]]; then
+        echo "  succeeded with fallback mode: $mode"
+      fi
+      return 0
+    fi
+    FAILED=$((FAILED - 1))
+    if [[ "$i" -lt "$n" ]]; then
+      echo "  mode $mode failed; trying fallback..." >&2
+    fi
+  done
+  FAILED=$((start_failed + 1))
   return 1
 }
 
@@ -124,23 +158,30 @@ run_marketplace_asset() {
     echo "  [dry-run] $prompt"
     return 0
   fi
-  local url attempt=1 max_attempts=3
+  local raw url attempt=1 max_attempts=15 wait_s=10
   while [[ "$attempt" -le "$max_attempts" ]]; do
-    url="$(higgsfield marketplace-cards create \
+    raw="$(higgsfield marketplace-cards create \
       --asset "$asset" \
       --prompt "$prompt" \
       --image "$ref" \
       --category "smart home security" \
-      --brand_context "Mitipi Kevin, grey heather fabric wedge, Swiss engineered, minimal white palette" 2>&1 | extract_url || true)"
+      --brand_context "Mitipi Kevin, grey heather fabric wedge, Swiss engineered, minimal white palette" 2>&1)" || true
+    url="$(printf '%s\n' "$raw" | extract_url || true)"
     if [[ -n "$url" ]]; then
       curl -fsSL "$url" -o "$OUT/$outfile"
       echo "  saved $OUT/$outfile"
       echo "  url: $url"
       return 0
     fi
-    echo "  attempt $attempt/$max_attempts failed for $outfile, retrying in 10s..." >&2
+    echo "  attempt $attempt/$max_attempts failed for $outfile: $raw" >&2
+    if [[ "$raw" == *"522"* ]] || [[ "$raw" == *"503"* ]] || [[ "$raw" == *"429"* ]]; then
+      wait_s=30
+    else
+      wait_s=10
+    fi
+    echo "  retrying in ${wait_s}s..." >&2
     attempt=$((attempt + 1))
-    sleep 10
+    sleep "$wait_s"
   done
   echo "  ERROR: no URL returned for $outfile after $max_attempts attempts" >&2
   FAILED=$((FAILED + 1))
@@ -181,12 +222,15 @@ fi
 if [[ "$RUN_FEATURES" -eq 1 ]]; then
   echo ""
   echo "=== Problem tiles ==="
-  run_photoshoot "kevin-feature-problem-alarms.jpg" conceptual_product 4:3 "$PRODUCT_REF" \
-    "Editorial split: empty hallway vs alarm siren after entry, deterrence before vs reaction after, no faces, cool security photography"
-  run_photoshoot "kevin-feature-problem-cameras.jpg" conceptual_product 4:3 "$PRODUCT_REF" \
-    "CCTV camera watching dark empty living room, footage does not make home feel occupied, cold monitor glow, editorial"
-  run_photoshoot "kevin-feature-problem-lights.jpg" conceptual_product 4:3 "$PRODUCT_REF" \
-    "Timer lamp predictable on-off in empty room vs warm varied light through window suggesting life inside, editorial contrast"
+  run_photoshoot_with_fallback "kevin-feature-problem-alarms.jpg" 4:3 "$PRODUCT_REF" \
+    "Editorial split: empty hallway vs alarm siren after entry, deterrence before vs reaction after, no faces, cool security photography" \
+    conceptual_product lifestyle_scene product_shot
+  run_photoshoot_with_fallback "kevin-feature-problem-cameras.jpg" 4:3 "$PRODUCT_REF" \
+    "CCTV camera watching dark empty living room, footage does not make home feel occupied, cold monitor glow, editorial" \
+    conceptual_product lifestyle_scene product_shot
+  run_photoshoot_with_fallback "kevin-feature-problem-lights.jpg" 4:3 "$PRODUCT_REF" \
+    "Timer lamp predictable on-off in empty room vs warm varied light through window suggesting life inside, editorial contrast" \
+    conceptual_product lifestyle_scene product_shot
 
   echo ""
   echo "=== Solution ==="
