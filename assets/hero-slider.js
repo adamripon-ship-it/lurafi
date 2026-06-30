@@ -2,11 +2,88 @@
   'use strict';
 
   var sliders = document.querySelectorAll('[data-hero-slider]');
-  if (!sliders.length) return;
-
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function initProductRotators(scope) {
+    var rotators = scope.querySelectorAll('[data-product-rotator]');
+    rotators.forEach(function (rotator) {
+      if (rotator.dataset.rotatorReady) return;
+      rotator.dataset.rotatorReady = 'true';
+
+      var frames = rotator.querySelectorAll('[data-product-angle]');
+      if (frames.length < 2) return;
+
+      var angleIndex = 0;
+      var dragStartX = 0;
+      var dragDelta = 0;
+      var isDragging = false;
+      var pixelsPerStep = 56;
+
+      function showAngle(index) {
+        angleIndex = (index + frames.length) % frames.length;
+        frames.forEach(function (frame, i) {
+          var isActive = i === angleIndex;
+          frame.classList.toggle('hero-product-rotator__frame--active', isActive);
+          if (isActive) {
+            frame.removeAttribute('hidden');
+          } else {
+            frame.setAttribute('hidden', '');
+          }
+        });
+      }
+
+      function handlePointerDown(event) {
+        isDragging = true;
+        dragStartX = event.clientX;
+        dragDelta = 0;
+        rotator.classList.add('hero-product-rotator--dragging');
+        if (rotator.setPointerCapture && event.pointerId != null) {
+          rotator.setPointerCapture(event.pointerId);
+        }
+      }
+
+      function handlePointerMove(event) {
+        if (!isDragging) return;
+        dragDelta = event.clientX - dragStartX;
+        while (dragDelta <= -pixelsPerStep) {
+          showAngle(angleIndex + 1);
+          dragStartX = event.clientX;
+          dragDelta = event.clientX - dragStartX;
+        }
+        while (dragDelta >= pixelsPerStep) {
+          showAngle(angleIndex - 1);
+          dragStartX = event.clientX;
+          dragDelta = event.clientX - dragStartX;
+        }
+      }
+
+      function handlePointerUp() {
+        isDragging = false;
+        rotator.classList.remove('hero-product-rotator--dragging');
+      }
+
+      rotator.addEventListener('pointerdown', handlePointerDown);
+      rotator.addEventListener('pointermove', handlePointerMove);
+      rotator.addEventListener('pointerup', handlePointerUp);
+      rotator.addEventListener('pointercancel', handlePointerUp);
+      rotator.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showAngle(angleIndex + 1);
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showAngle(angleIndex - 1);
+        }
+      });
+    });
+  }
+
+  initProductRotators(document);
+
+  if (!sliders.length) return;
+
   sliders.forEach(function (root) {
+    initProductRotators(root);
     var stage = root.querySelector('.hero-slider__stage');
     var slides = root.querySelectorAll('[data-hero-slide]');
     if (slides.length < 2) return;
@@ -42,7 +119,8 @@
     function preloadAdjacent(index) {
       [index - 1, index + 1].forEach(function (i) {
         var normalized = (i + slides.length) % slides.length;
-        var img = slides[normalized].querySelector('img');
+        var slide = slides[normalized];
+        var img = slide.querySelector('.hero-slider__image--illustration, .hero-product-rotator__frame--active');
         if (!img || img.complete) return;
         var preload = new Image();
         preload.src = img.currentSrc || img.src;
@@ -67,21 +145,21 @@
     function setActive(index) {
       activeIndex = (index + slides.length) % slides.length;
 
+      var heroSection = root.closest('.hero-apple');
+
       slides.forEach(function (slide, i) {
         var isActive = i === activeIndex;
         slide.classList.toggle('hero-slider__slide--active', isActive);
-        if (isActive) {
-          slide.removeAttribute('hidden');
-          slide.inert = false;
-          slide.removeAttribute('inert');
-          slide.setAttribute('aria-hidden', 'false');
-        } else {
-          slide.setAttribute('hidden', '');
-          slide.inert = true;
-          slide.setAttribute('aria-hidden', 'true');
-        }
+        slide.toggleAttribute('inert', !isActive);
+        slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
         slide.tabIndex = isActive ? 0 : -1;
       });
+
+      if (heroSection) {
+        var activeSlide = slides[activeIndex];
+        var isProductSlide = activeSlide && activeSlide.classList.contains('hero-slider__slide--product');
+        heroSection.classList.toggle('hero-apple--product-active', isProductSlide);
+      }
 
       dots.forEach(function (dot, i) {
         var isActive = i === activeIndex;
@@ -208,6 +286,7 @@
 
     function handleTouchStart(event) {
       if (!stage || event.touches.length !== 1) return;
+      if (event.target.closest('[data-product-rotator]')) return;
       touchStartX = event.touches[0].clientX;
       touchStartY = event.touches[0].clientY;
     }
