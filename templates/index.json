@@ -40,7 +40,7 @@
         "slide_seniors": {
           "type": "slide",
           "settings": {
-            "slide_label": "Seniors & widows",
+            "slide_label": "Protecting retired & widows living alone",
             "image_fallback": "seniors",
             "image_alt": "",
             "callout_1_eyebrow": "",
@@ -57,8 +57,8 @@
         "slide_women": {
           "type": "slide",
           "settings": {
-            "slide_label": "Women & single mothers",
-            "image_fallback": "luxury",
+            "slide_label": "Protecting women living alone / single mothers",
+            "image_fallback": "women",
             "image_alt": "",
             "callout_1_eyebrow": "",
             "callout_1_title": "",
@@ -74,7 +74,7 @@
         "slide_students": {
           "type": "slide",
           "settings": {
-            "slide_label": "Students away from home",
+            "slide_label": "University students living alone",
             "image_fallback": "students",
             "image_alt": "",
             "callout_1_eyebrow": "",
@@ -88,11 +88,11 @@
             "callout_3_body": ""
           }
         },
-        "slide_houseboat": {
+        "slide_travelling": {
           "type": "slide",
           "settings": {
-            "slide_label": "Houseboat & unique homes",
-            "image_fallback": "houseboat",
+            "slide_label": "Protecting your home while travelling",
+            "image_fallback": "travel",
             "image_alt": "",
             "callout_1_eyebrow": "",
             "callout_1_title": "",
@@ -112,7 +112,7 @@
         "slide_seniors",
         "slide_women",
         "slide_students",
-        "slide_houseboat"
+        "slide_travelling"
       ],
       "settings": {
         "eyebrow": "",

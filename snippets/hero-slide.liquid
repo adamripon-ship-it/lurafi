@@ -1,40 +1,50 @@
 {%- liquid
   assign slide_image = image
   assign slide_image_url = ''
+  assign slide_visual = 'persona'
 
   if slide_image != blank
     assign slide_image_url = slide_image | image_url: width: 1200
     assign slide_image_alt = slide_image.alt | default: image_alt
-  elsif image_fallback == 'burglary'
-    assign slide_image_url = 'kevin-hero-burglary-prevention.png' | asset_url
+  elsif image_fallback == 'burglary' or image_fallback == 'protection'
+    assign slide_visual = 'product'
+    if image_fallback == 'burglary'
+      assign slide_image_url = 'kevin-hero-burglary-prevention.png' | asset_url
+    else
+      assign slide_image_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+    endif
     assign slide_image_alt = image_alt
   elsif image_fallback == 'children'
-    assign slide_image_url = 'kevin-hero-protecting-children.png' | asset_url
+    assign slide_image_url = 'kevin-hero-persona-children.png' | asset_url
     assign slide_image_alt = image_alt
   elsif image_fallback == 'seniors'
-    assign slide_image_url = 'kevin-hero-seniors-widows.png' | asset_url
+    assign slide_image_url = 'kevin-hero-persona-seniors.png' | asset_url
     assign slide_image_alt = image_alt
   elsif image_fallback == 'women' or image_fallback == 'luxury'
-    assign slide_image_url = 'kevin-hero-luxury-dutch-villa.png' | asset_url
+    assign slide_image_url = 'kevin-hero-persona-women.png' | asset_url
     assign slide_image_alt = image_alt
   elsif image_fallback == 'students'
-    assign slide_image_url = 'kevin-hero-students-university.png' | asset_url
+    assign slide_image_url = 'kevin-hero-persona-students.png' | asset_url
+    assign slide_image_alt = image_alt
+  elsif image_fallback == 'travel' or image_fallback == 'travelling'
+    assign slide_image_url = 'kevin-hero-persona-travel.png' | asset_url
     assign slide_image_alt = image_alt
   elsif image_fallback == 'houseboat'
     assign slide_image_url = 'kevin-hero-dutch-houseboat.png' | asset_url
     assign slide_image_alt = image_alt
-  elsif image_fallback == 'protection'
-    assign slide_image_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
-    assign slide_image_alt = image_alt
   endif
 
   if slide_image_alt == blank
-    assign slide_image_alt = 'home.hero.image_alt' | t
+    if slide_visual == 'product'
+      assign slide_image_alt = 'home.hero.image_alt' | t
+    else
+      assign slide_image_alt = slide_label
+    endif
   endif
 -%}
 
 <div
-  class="hero-slider__slide{% if is_active %} hero-slider__slide--active{% endif %}"
+  class="hero-slider__slide hero-slider__slide--{{ slide_visual }}{% if is_active %} hero-slider__slide--active{% endif %}"
   data-hero-slide
   data-hero-slide-label="{{ slide_label | escape }}"
   aria-hidden="{% if is_active %}false{% else %}true{% endif %}"
@@ -43,7 +53,7 @@
 >
   {%- if slide_image_url != blank -%}
     <img
-      class="hero-slider__image"
+      class="hero-slider__image hero-slider__image--{{ slide_visual }}"
       src="{{ slide_image_url }}"
       alt="{{ slide_image_alt | escape }}"
       width="800"

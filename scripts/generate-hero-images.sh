@@ -4,7 +4,10 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-REF="$ROOT/assets/kevin-hero-burglary-prevention.jpg"
+REF="$ROOT/assets/reference/Edited - white BG/810_4982.jpg"
+if [[ ! -f "$REF" ]]; then
+  REF="$ROOT/assets/kevin-hero-burglary-prevention.jpg"
+fi
 OUT="$ROOT/assets"
 ASPECT="3:4"
 
@@ -39,18 +42,18 @@ run_slide() {
 }
 
 run_slide "kevin-hero-protecting-children.jpg" \
-  "Kevin wedge on wide white windowsill, Dutch rijtjeshuis living room Haarlem suburb, brick street at eye level through window, dusk, product 25% frame width lower-center, photorealistic"
+  "Kevin wedge on wide white windowsill, Dutch rijtjeshuis family living room Haarlem suburb, school bag on hook, brick street at eye level through window, dusk, product 25% frame width lower-center, photorealistic"
 
 run_slide "kevin-hero-seniors-widows.jpg" \
-  "Kevin wedge on wooden side table, German Kleinstadt senior apartment, Marktplatz cobblestones and timber façades through window, dusk, product 25% frame width, photorealistic"
+  "Kevin wedge on wooden side table, German Kleinstadt senior apartment, reading chair, Marktplatz cobblestones and timber façades through window, dusk, product 25% frame width, photorealistic"
 
-run_slide "kevin-hero-luxury-dutch-villa.jpg" \
-  "Kevin wedge on side table, luxury Dutch villa living room Blaricum, tall window to garden lawn and old trees, dusk, product 25% frame width, photorealistic"
+run_slide "kevin-hero-women-alone.jpg" \
+  "Kevin wedge on side table, compact Dutch terraced flat Utrecht-scale, quiet side street and courtyard through window, dusk, product 25% frame width, photorealistic, no canal"
 
 run_slide "kevin-hero-students-university.jpg" \
-  "Kevin wedge on desk shelf, German Altbau student Wohnung Heidelberg, low-rise rooftops through window, dusk, product 25% frame width, photorealistic"
+  "Kevin wedge on desk shelf, German Altbau student Wohnung Heidelberg, textbooks, low-rise courtyard through window, dusk, product 25% frame width, photorealistic"
 
-run_slide "kevin-hero-dutch-houseboat.jpg" \
-  "Kevin wedge on interior shelf, Dutch woonboot houseboat living room, quay and brick bank at waterline through window, dusk, product 25% frame width, photorealistic"
+run_slide "kevin-hero-travelling-away.jpg" \
+  "Kevin wedge on windowsill, Dutch rijtjeshuis living room, packed suitcase by door, suburban brick street at eye level through window, dusk away mode, product 25% frame width, photorealistic"
 
 echo "Done. Review assets/ then npm run theme:push:live"

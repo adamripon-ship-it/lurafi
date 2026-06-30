@@ -32,9 +32,9 @@ Slide 1 keeps real photo. Regenerate slides 2–6 only.
 | 1 | `burglary` | `kevin-hero-burglary-prevention.jpg` | — | 3:4 | Real photo (keep) |
 | 2 | `children` | `kevin-hero-protecting-children.jpg` | `lifestyle_scene` | 3:4 | Kevin on white windowsill, Dutch rijtjeshuis Haarlem suburb, brick street at eye level, dusk, product 25% frame width |
 | 3 | `seniors` | `kevin-hero-seniors-widows.jpg` | `lifestyle_scene` | 3:4 | Kevin on side table, German Kleinstadt senior apartment, Marktplatz cobblestones through window, dusk |
-| 4 | `luxury` | `kevin-hero-luxury-dutch-villa.jpg` | `lifestyle_scene` | 3:4 | Kevin on marble console, Dutch landgoed villa, garden and old trees through tall window, dusk |
+| 4 | `women` | `kevin-hero-women-alone.jpg` | `lifestyle_scene` | 3:4 | Kevin on side table, Dutch terraced flat Utrecht-scale, quiet side street through window, dusk |
 | 5 | `students` | `kevin-hero-students-university.jpg` | `lifestyle_scene` | 3:4 | Kevin on desk, German Altbau student Wohnung Heidelberg, courtyard rooftops through window, dusk |
-| 6 | `houseboat` | `kevin-hero-dutch-houseboat.jpg` | `lifestyle_scene` | 3:4 | Kevin on shelf, Dutch woonboot interior, quay and opposite bank at waterline through window, dusk |
+| 6 | `travelling` | `kevin-hero-travelling-away.jpg` | `lifestyle_scene` | 3:4 | Kevin on windowsill, Dutch rijtjeshuis, packed suitcase by door, suburban street through window, dusk |
 
 ---
 

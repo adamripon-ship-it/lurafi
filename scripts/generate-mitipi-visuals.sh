@@ -62,10 +62,15 @@ if [[ "$DRY_RUN" -eq 0 ]]; then
     sleep 8
   done
   if [[ "$authed" -eq 0 ]]; then
-    echo "Auth required (or Higgsfield API unreachable):"
-    echo "  higgsfield auth login"
-    echo "  higgsfield workspace set <workspace_id>"
-    exit 1
+    cred="$HOME/.config/higgsfield/credentials.json"
+    if [[ -f "$cred" && -s "$cred" ]]; then
+      echo "Warning: account status unavailable; continuing with cached credentials"
+    else
+      echo "Auth required (or Higgsfield API unreachable):"
+      echo "  higgsfield auth login"
+      echo "  higgsfield workspace set <workspace_id>"
+      exit 1
+    fi
   fi
 fi
 
@@ -80,6 +85,48 @@ pick_ref() {
 
 extract_url() {
   grep -Eo 'https://[^[:space:]]+\.(jpg|jpeg|png|webp)' | tail -1
+}
+
+run_persona_scene() {
+  local outfile="$1" aspect="$2" prompt="$3"
+  echo "→ $outfile (persona scene, $aspect, no product)"
+  if [[ "$SKIP_EXISTING" -eq 1 ]] && asset_exists "$outfile"; then
+    echo "  skip (exists): $OUT/$outfile"
+    return 0
+  fi
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "  [dry-run] $prompt"
+    return 0
+  fi
+  local raw url attempt=1 max_attempts=15 wait_s=10
+  while [[ "$attempt" -le "$max_attempts" ]]; do
+    raw="$(higgsfield generate create gpt_image_2 \
+      --prompt "$prompt" \
+      --aspect_ratio "$aspect" \
+      --resolution 2k \
+      --wait \
+      --wait-timeout 20m \
+      --wait-interval 5s 2>&1)" || true
+    url="$(printf '%s\n' "$raw" | extract_url || true)"
+    if [[ -n "$url" ]]; then
+      curl -fsSL "$url" -o "$OUT/$outfile"
+      echo "  saved $OUT/$outfile"
+      echo "  url: $url"
+      return 0
+    fi
+    echo "  attempt $attempt/$max_attempts failed for $outfile: $raw" >&2
+    if [[ "$raw" == *"520"* ]] || [[ "$raw" == *"522"* ]] || [[ "$raw" == *"503"* ]] || [[ "$raw" == *"429"* ]]; then
+      wait_s=30
+    else
+      wait_s=10
+    fi
+    echo "  retrying in ${wait_s}s..." >&2
+    attempt=$((attempt + 1))
+    sleep "$wait_s"
+  done
+  echo "  ERROR: no URL returned for $outfile after $max_attempts attempts" >&2
+  FAILED=$((FAILED + 1))
+  return 1
 }
 
 run_photoshoot() {
@@ -109,7 +156,10 @@ run_photoshoot() {
       return 0
     fi
     echo "  attempt $attempt/$max_attempts failed for $outfile: $raw" >&2
-    if [[ "$raw" == *"522"* ]] || [[ "$raw" == *"503"* ]] || [[ "$raw" == *"429"* ]]; then
+    if [[ "$raw" == *"main image"* ]] || [[ "$raw" == *"main-job"* ]]; then
+      break
+    fi
+    if [[ "$raw" == *"522"* ]] || [[ "$raw" == *"503"* ]] || [[ "$raw" == *"429"* ]] || [[ "$raw" == *"520"* ]]; then
       wait_s=30
     else
       wait_s=10
@@ -161,7 +211,7 @@ run_marketplace_asset() {
   local raw url attempt=1 max_attempts=15 wait_s=10
   while [[ "$attempt" -le "$max_attempts" ]]; do
     raw="$(higgsfield marketplace-cards create \
-      --asset "$asset" \
+      --scope main \
       --prompt "$prompt" \
       --image "$ref" \
       --category "smart home security" \
@@ -174,7 +224,10 @@ run_marketplace_asset() {
       return 0
     fi
     echo "  attempt $attempt/$max_attempts failed for $outfile: $raw" >&2
-    if [[ "$raw" == *"522"* ]] || [[ "$raw" == *"503"* ]] || [[ "$raw" == *"429"* ]]; then
+    if [[ "$raw" == *"main image"* ]] || [[ "$raw" == *"main-job"* ]]; then
+      break
+    fi
+    if [[ "$raw" == *"522"* ]] || [[ "$raw" == *"503"* ]] || [[ "$raw" == *"429"* ]] || [[ "$raw" == *"520"* ]]; then
       wait_s=30
     else
       wait_s=10
@@ -206,17 +259,20 @@ echo "  closeup:   $CLOSEUP_REF"
 echo ""
 
 if [[ "$RUN_HERO" -eq 1 ]]; then
-  echo "=== Hero slides 2–6 ==="
-  run_photoshoot "kevin-hero-protecting-children.jpg" lifestyle_scene 3:4 "$PRODUCT_REF" \
-    "Kevin wedge on wide white windowsill, Dutch rijtjeshuis living room Haarlem suburb, brick street at eye level through window, dusk, product 25% frame width lower-center, photorealistic"
-  run_photoshoot "kevin-hero-seniors-widows.jpg" lifestyle_scene 3:4 "$PRODUCT_REF" \
-    "Kevin wedge on wooden side table, German Kleinstadt senior apartment, Marktplatz cobblestones and timber façades through window, dusk, product 25% frame width, photorealistic"
-  run_photoshoot "kevin-hero-luxury-dutch-villa.jpg" lifestyle_scene 3:4 "$PRODUCT_REF" \
-    "Kevin wedge on marble console, luxury Dutch villa living room Blaricum, tall window to garden lawn and old trees, dusk, product 25% frame width, photorealistic"
-  run_photoshoot "kevin-hero-students-university.jpg" lifestyle_scene 3:4 "$PRODUCT_REF" \
-    "Kevin wedge on desk shelf, German Altbau student Wohnung Heidelberg, low-rise rooftops through window, dusk, product 25% frame width, photorealistic"
-  run_photoshoot "kevin-hero-dutch-houseboat.jpg" lifestyle_scene 3:4 "$PRODUCT_REF" \
-    "Kevin wedge on interior shelf, Dutch woonboot houseboat living room, quay and brick bank at waterline through window, dusk, product 25% frame width, photorealistic"
+  echo "=== Hero slide 1 (product — keep existing) ==="
+  echo "  burglary: assets/kevin-hero-burglary-prevention.png (real photo, not regenerated)"
+  echo ""
+  echo "=== Hero slides 2–6 (persona scenes, no Kevin device) ==="
+  run_persona_scene "kevin-hero-persona-children.png" 3:4 \
+    "European white Dutch family in rijtjeshuis suburban home at dusk, parent at door saying goodbye, child safe inside warm living room, brick street through window, photorealistic editorial, no smart home devices visible"
+  run_persona_scene "kevin-hero-persona-seniors.png" 3:4 \
+    "European white senior woman in dignified German Kleinstadt apartment at dusk, reading chair, warm lamp, Marktplatz cobblestones through window, lived-in calm interior, photorealistic, no gadgets"
+  run_persona_scene "kevin-hero-persona-women.png" 3:4 \
+    "European white single mother with young child in compact Dutch terraced flat at evening, warm interior light, quiet courtyard through window, confident safe mood, photorealistic, no security devices"
+  run_persona_scene "kevin-hero-persona-students.png" 3:4 \
+    "European white university student in German Altbau student flat Heidelberg-style, first time living alone, textbooks on desk, courtyard through window at dusk, photorealistic, no product shots"
+  run_persona_scene "kevin-hero-persona-travel.png" 3:4 \
+    "European white couple leaving Dutch rijtjeshuis for holiday, packed suitcase by door, warm occupied light glowing inside at dusk, suburban brick street through window, photorealistic, no devices visible"
 fi
 
 if [[ "$RUN_FEATURES" -eq 1 ]]; then
