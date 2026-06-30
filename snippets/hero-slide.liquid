@@ -1,36 +1,42 @@
 {%- liquid
   assign slide_image = image
   assign slide_image_url = ''
-  assign slide_visual = 'persona'
+  assign slide_visual = 'shadow'
+  assign use_product_rotator = false
 
   if slide_image != blank
     assign slide_image_url = slide_image | image_url: width: 1200
     assign slide_image_alt = slide_image.alt | default: image_alt
-  elsif image_fallback == 'burglary' or image_fallback == 'protection'
+    assign slide_visual = 'shadow'
+  elsif image_fallback == 'model3d' or image_fallback == 'burglary' or image_fallback == 'protection'
+    assign use_product_rotator = true
     assign slide_visual = 'product'
-    if image_fallback == 'burglary'
-      assign slide_image_url = 'kevin-hero-burglary-prevention.png' | asset_url
-    else
-      assign slide_image_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+    assign slide_image_alt = image_alt
+    if image_fallback == 'protection'
+      assign use_product_rotator = false
+      assign slide_visual = 'product'
+      assign slide_image_url = 'kevin-hero-product-front.png' | asset_url
     endif
+  elsif image_fallback == 'widow89' or image_fallback == 'seniors'
+    assign slide_image_url = 'kevin-hero-shadow-widow-89.webp' | asset_url
     assign slide_image_alt = image_alt
-  elsif image_fallback == 'children'
-    assign slide_image_url = 'kevin-hero-persona-children.png' | asset_url
+  elsif image_fallback == 'mom-baby' or image_fallback == 'children'
+    assign slide_image_url = 'kevin-hero-shadow-mom-baby.webp' | asset_url
     assign slide_image_alt = image_alt
-  elsif image_fallback == 'seniors'
-    assign slide_image_url = 'kevin-hero-persona-seniors.png' | asset_url
+  elsif image_fallback == 'mom-toddler' or image_fallback == 'women' or image_fallback == 'luxury'
+    assign slide_image_url = 'kevin-hero-shadow-mom-toddler.webp' | asset_url
     assign slide_image_alt = image_alt
-  elsif image_fallback == 'women' or image_fallback == 'luxury'
-    assign slide_image_url = 'kevin-hero-persona-women.png' | asset_url
+  elsif image_fallback == 'student-studio' or image_fallback == 'students'
+    assign slide_image_url = 'kevin-hero-shadow-student-studio.webp' | asset_url
     assign slide_image_alt = image_alt
-  elsif image_fallback == 'students'
-    assign slide_image_url = 'kevin-hero-persona-students.png' | asset_url
+  elsif image_fallback == 'expat-solo'
+    assign slide_image_url = 'kevin-hero-shadow-expat-solo.webp' | asset_url
     assign slide_image_alt = image_alt
-  elsif image_fallback == 'travel' or image_fallback == 'travelling'
-    assign slide_image_url = 'kevin-hero-persona-travel.png' | asset_url
+  elsif image_fallback == 'expat-couple'
+    assign slide_image_url = 'kevin-hero-shadow-expat-couple.webp' | asset_url
     assign slide_image_alt = image_alt
-  elsif image_fallback == 'houseboat'
-    assign slide_image_url = 'kevin-hero-dutch-houseboat.png' | asset_url
+  elsif image_fallback == 'away-home' or image_fallback == 'travel' or image_fallback == 'travelling'
+    assign slide_image_url = 'kevin-hero-shadow-away-home.webp' | asset_url
     assign slide_image_alt = image_alt
   endif
 
@@ -41,26 +47,91 @@
       assign slide_image_alt = slide_label
     endif
   endif
+
+  assign product_front = 'kevin-hero-product-front.png' | asset_url
+  assign product_side = 'kevin-hero-product-side.png' | asset_url
+  assign product_top = 'kevin-hero-product-top.png' | asset_url
+  assign product_back = 'kevin-hero-product-back.png' | asset_url
 -%}
 
 <div
   class="hero-slider__slide hero-slider__slide--{{ slide_visual }}{% if is_active %} hero-slider__slide--active{% endif %}"
   data-hero-slide
   data-hero-slide-label="{{ slide_label | escape }}"
+  {% if use_product_rotator %}data-hero-slide-product{% endif %}
   aria-hidden="{% if is_active %}false{% else %}true{% endif %}"
-  {% unless is_active %}hidden inert{% endunless %}
+  {% unless is_active %}inert{% endunless %}
   id="hero-slide-{{ block_id }}"
 >
-  {%- if slide_image_url != blank -%}
-    <img
-      class="hero-slider__image hero-slider__image--{{ slide_visual }}"
-      src="{{ slide_image_url }}"
-      alt="{{ slide_image_alt | escape }}"
-      width="800"
-      height="1000"
-      {% if is_active and is_first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
-    >
-  {%- endif -%}
+  <div class="hero-slide-visual hero-slide-visual--{{ slide_visual }}">
+    <div class="hero-slide-visual__glow" aria-hidden="true"></div>
+
+    {%- if use_product_rotator -%}
+      <div class="hero-product-stage">
+        {% render 'hero-product-symbols' %}
+        <div
+          class="hero-product-rotator"
+          data-product-rotator
+          tabindex="0"
+          role="img"
+          aria-label="{{ slide_image_alt | escape }}"
+          aria-roledescription="carousel"
+        >
+        <img
+          class="hero-product-rotator__frame hero-product-rotator__frame--active"
+          data-product-angle="0"
+          src="{{ product_front }}"
+          alt="{{ slide_image_alt | escape }}"
+          width="1200"
+          height="1200"
+          {% if is_active and is_first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+        >
+        <img
+          class="hero-product-rotator__frame"
+          data-product-angle="1"
+          src="{{ product_side }}"
+          alt=""
+          width="1200"
+          height="1200"
+          loading="lazy"
+          hidden
+        >
+        <img
+          class="hero-product-rotator__frame"
+          data-product-angle="2"
+          src="{{ product_top }}"
+          alt=""
+          width="1200"
+          height="1200"
+          loading="lazy"
+          hidden
+        >
+        <img
+          class="hero-product-rotator__frame"
+          data-product-angle="3"
+          src="{{ product_back }}"
+          alt=""
+          width="1200"
+          height="1200"
+          loading="lazy"
+          hidden
+        >
+        <span class="hero-product-rotator__hint">{{ 'hero.drag_to_rotate' | t }}</span>
+        </div>
+      </div>
+    {%- elsif slide_image_url != blank -%}
+      <figure class="hero-slide-visual__figure">
+        <img
+          class="hero-slider__image hero-slider__image--shadow"
+          src="{{ slide_image_url }}"
+          alt="{{ slide_image_alt | escape }}"
+          width="1200"
+          height="1600"
+          {% if is_active and is_first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+        >
+      </figure>
+    {%- endif -%}
+  </div>
 
   <div class="hero-context-cards" aria-label="{{ callouts_aria_label | escape }}">
     <div class="hero-context-card hero-context-card--primary">
