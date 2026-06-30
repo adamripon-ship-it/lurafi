@@ -1224,7 +1224,7 @@ body.mobile-nav-open { overflow: hidden; }
     radial-gradient(ellipse 55% 32% at 50% 88%, rgba(168, 72, 210, 0.2) 0%, transparent 100%),
     radial-gradient(ellipse 100% 58% at 50% 100%, rgba(0, 113, 227, 0.1) 0%, transparent 55%);
 }
-/* KEVIN.3-style luminous beams — SVG in snippets/hero-product-beams.liquid */
+/* Sound-wave ripples from product — snippets/hero-product-beams.liquid */
 .hero-apple__beams {
   position: absolute;
   inset: 0;
@@ -1249,96 +1249,115 @@ body.mobile-nav-open { overflow: hidden; }
   display: block;
   overflow: visible;
 }
-.hero-apple__beam {
+.hero-apple__wave {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   opacity: 0;
+  vector-effect: non-scaling-stroke;
 }
-.hero-apple:not(.hero-apple--product-active) .hero-apple__beam {
+.hero-apple__wave--blue {
+  stroke: #7ec8ff;
+  stroke-width: 2.25;
+}
+.hero-apple__wave--pink {
+  stroke: #ff9ee0;
+  stroke-width: 2.25;
+}
+.hero-apple__wave--1 { stroke-width: 1.75; }
+.hero-apple__wave--2 { stroke-width: 2; }
+.hero-apple__wave--3 { stroke-width: 2.25; }
+.hero-apple__wave--4 { stroke-width: 2.5; }
+.hero-apple__wave-origin {
+  opacity: 0;
+  transform: scale(0.15);
+  transform-origin: 720px 548px;
+  transform-box: view-box;
+  filter: blur(14px);
+}
+.hero-apple:not(.hero-apple--product-active) .hero-apple__wave {
   animation: none;
 }
-.hero-apple:not(.hero-apple--product-active) .hero-apple__beam-pool {
+.hero-apple:not(.hero-apple--product-active) .hero-apple__wave-origin {
   animation: none;
   opacity: 0;
-  transform: scale(0.2);
+  transform: scale(0.15);
 }
-.hero-apple--product-active .hero-apple__beam--blue.hero-apple__beam--halo {
-  animation: hero-beam-emanate-halo-blue 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+.hero-apple--product-active .hero-apple__wave-origin {
+  animation: hero-wave-origin-pulse 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.hero-apple--product-active .hero-apple__beam--blue.hero-apple__beam--core {
-  animation: hero-beam-emanate-core 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+.hero-apple--product-active .hero-apple__wave--blue.hero-apple__wave--1 {
+  animation:
+    hero-wave-emanate 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.04s forwards,
+    hero-wave-breathe 2.4s 0.8s ease-in-out infinite;
 }
-.hero-apple--product-active .hero-apple__beam--pink.hero-apple__beam--halo {
-  animation: hero-beam-emanate-halo-pink 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
+.hero-apple--product-active .hero-apple__wave--blue.hero-apple__wave--2 {
+  animation:
+    hero-wave-emanate 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards,
+    hero-wave-breathe 2.6s 0.95s ease-in-out infinite;
 }
-.hero-apple--product-active .hero-apple__beam--pink.hero-apple__beam--core {
-  animation: hero-beam-emanate-core-pink 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.26s forwards;
+.hero-apple--product-active .hero-apple__wave--blue.hero-apple__wave--3 {
+  animation:
+    hero-wave-emanate 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards,
+    hero-wave-breathe 2.8s 1.1s ease-in-out infinite;
 }
-.hero-apple--product-active .hero-apple__beam-pool {
-  animation: hero-beam-pool-emanate 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.hero-apple--product-active .hero-apple__wave--blue.hero-apple__wave--4 {
+  animation:
+    hero-wave-emanate 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.26s forwards,
+    hero-wave-breathe 3s 1.25s ease-in-out infinite;
 }
-@keyframes hero-beam-emanate-halo-blue {
-  0% { stroke-dashoffset: 1; opacity: 0; }
-  10% { opacity: 0.35; }
-  100% { stroke-dashoffset: 0; opacity: 0.42; }
+.hero-apple--product-active .hero-apple__wave--pink.hero-apple__wave--1 {
+  animation:
+    hero-wave-emanate 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.06s forwards,
+    hero-wave-breathe 2.5s 0.85s ease-in-out infinite;
 }
-@keyframes hero-beam-emanate-halo-pink {
-  0% { stroke-dashoffset: 1; opacity: 0; }
-  10% { opacity: 0.3; }
-  100% { stroke-dashoffset: 0; opacity: 0.38; }
+.hero-apple--product-active .hero-apple__wave--pink.hero-apple__wave--2 {
+  animation:
+    hero-wave-emanate 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards,
+    hero-wave-breathe 2.7s 1s ease-in-out infinite;
 }
-@keyframes hero-beam-emanate-core {
-  0% { stroke-dashoffset: 1; opacity: 0; }
-  10% { opacity: 0.7; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
+.hero-apple--product-active .hero-apple__wave--pink.hero-apple__wave--3 {
+  animation:
+    hero-wave-emanate 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards,
+    hero-wave-breathe 2.9s 1.15s ease-in-out infinite;
 }
-@keyframes hero-beam-emanate-core-pink {
-  0% { stroke-dashoffset: 1; opacity: 0; }
-  10% { opacity: 0.65; }
-  100% { stroke-dashoffset: 0; opacity: 0.98; }
+.hero-apple--product-active .hero-apple__wave--pink.hero-apple__wave--4 {
+  animation:
+    hero-wave-emanate 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.28s forwards,
+    hero-wave-breathe 3.1s 1.3s ease-in-out infinite;
 }
-@keyframes hero-beam-pool-emanate {
+@keyframes hero-wave-emanate {
   0% {
+    stroke-dashoffset: 1;
     opacity: 0;
-    transform: scale(0.18);
   }
-  55% {
-    opacity: 0.95;
+  12% {
+    opacity: 0.75;
   }
   100% {
-    opacity: 0.92;
-    transform: scale(1);
+    stroke-dashoffset: 0;
+    opacity: 0.88;
   }
 }
-.hero-apple__beam--halo.hero-apple__beam--blue {
-  stroke: #2e8fff;
-  stroke-width: 36;
-  opacity: 0.42;
+@keyframes hero-wave-breathe {
+  0%, 100% {
+    stroke-opacity: 0.42;
+  }
+  50% {
+    stroke-opacity: 0.92;
+  }
 }
-.hero-apple__beam--core.hero-apple__beam--blue {
-  stroke: #a8d8ff;
-  stroke-width: 5;
-  opacity: 1;
-}
-.hero-apple__beam--halo.hero-apple__beam--pink {
-  stroke: #ff2dad;
-  stroke-width: 36;
-  opacity: 0.38;
-}
-.hero-apple__beam--core.hero-apple__beam--pink {
-  stroke: #ffb0e8;
-  stroke-width: 5;
-  opacity: 0.98;
-}
-.hero-apple__beam-pool {
-  opacity: 0;
-  transform: scale(0.2);
-  transform-origin: 720px 558px;
-  transform-box: view-box;
-  filter: blur(22px);
+@keyframes hero-wave-origin-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
 }
 @media (min-width: 768px) {
   .hero-apple__beams-svg {
@@ -1346,18 +1365,12 @@ body.mobile-nav-open { overflow: hidden; }
     height: min(76vh, 860px);
     bottom: clamp(64px, 14vh, 160px);
   }
-  .hero-apple__beam--halo.hero-apple__beam--blue,
-  .hero-apple__beam--halo.hero-apple__beam--pink {
-    stroke-width: 34;
+  .hero-apple__wave--blue,
+  .hero-apple__wave--pink {
+    stroke-width: 2.5;
   }
-  .hero-apple__beam--core.hero-apple__beam--blue,
-  .hero-apple__beam--core.hero-apple__beam--pink {
-    stroke-width: 5;
-  }
-  .hero-apple__beam-pool {
-    rx: 260;
-    ry: 82;
-  }
+  .hero-apple__wave--1 { stroke-width: 2; }
+  .hero-apple__wave--4 { stroke-width: 2.75; }
 }
 @media (min-width: 1024px) {
   .hero-apple__beams-svg {
@@ -1370,24 +1383,24 @@ body.mobile-nav-open { overflow: hidden; }
     height: min(58vh, 520px);
     bottom: clamp(36px, 10vh, 100px);
   }
-  .hero-apple__beam--halo.hero-apple__beam--blue,
-  .hero-apple__beam--halo.hero-apple__beam--pink {
-    stroke-width: 22;
+  .hero-apple__wave--blue,
+  .hero-apple__wave--pink {
+    stroke-width: 1.85;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-apple__beams {
     transition: none;
   }
-  .hero-apple--product-active .hero-apple__beam,
-  .hero-apple--product-active .hero-apple__beam-pool {
+  .hero-apple--product-active .hero-apple__wave,
+  .hero-apple--product-active .hero-apple__wave-origin {
     animation: none;
     stroke-dashoffset: 0;
-    opacity: 1;
+    opacity: 0.75;
     transform: none;
   }
-  .hero-apple--product-active .hero-apple__beam-pool {
-    opacity: 0.92;
+  .hero-apple--product-active .hero-apple__wave-origin {
+    opacity: 0.6;
   }
 }
 
