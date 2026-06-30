@@ -39,28 +39,6 @@
   <div class="hero-apple__grain" aria-hidden="true"></div>
 
   <div class="hero-apple__content">
-    <div class="hero-apple__text">
-      <p class="overline-blue-dark">{%- if section.settings.eyebrow != blank -%}{{ section.settings.eyebrow }}{%- else -%}{{ 'home.hero.eyebrow' | t }}{%- endif -%}</p>
-
-      <h1 class="headline-hero hero-apple__headline" id="HeroHeading">
-        {%- if section.settings.headline != blank -%}{{ section.settings.headline | escape }}{%- else -%}{{ 'home.hero.headline' | t | escape }}{%- endif -%}
-      </h1>
-
-      <p class="body-elevated hero-apple__sub">{%- if section.settings.lede != blank -%}{{ section.settings.lede }}{%- else -%}{{ 'home.hero.lede' | t }}{%- endif -%}</p>
-
-      <div class="hero-apple__ctas">
-        <a href="{{ cta_primary_url }}" class="btn-apple-blue">
-          {%- if section.settings.cta_primary_label != blank -%}{{ section.settings.cta_primary_label }}{%- else -%}{{ 'home.hero.cta_primary_label' | t }}{%- endif -%}
-        </a>
-        <a href="{{ section.settings.cta_secondary_url | default: '#how-it-works' }}" class="link-apple-blue">
-          {%- if section.settings.cta_secondary_label != blank -%}{{ section.settings.cta_secondary_label }}{%- else -%}{{ 'home.hero.cta_secondary_label' | t }}{%- endif -%}
-          <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true">
-            <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
     <div
       class="hero-apple__product hero-slider"
       {% if slide_count > 1 %}
@@ -73,7 +51,30 @@
         aria-label="{{ carousel_label | escape }}"
       {% endif %}
     >
-      <div class="hero-slider__stage">
+      <div class="hero-slider__unit">
+        <div class="hero-apple__text hero-slider__copy">
+          <p class="overline-blue-dark">{%- if section.settings.eyebrow != blank -%}{{ section.settings.eyebrow }}{%- else -%}{{ 'home.hero.eyebrow' | t }}{%- endif -%}</p>
+
+          <h1 class="headline-hero hero-apple__headline" id="HeroHeading">
+            {%- if section.settings.headline != blank -%}{{ section.settings.headline | escape }}{%- else -%}{{ 'home.hero.headline' | t | escape }}{%- endif -%}
+          </h1>
+
+          <p class="body-elevated hero-apple__sub">{%- if section.settings.lede != blank -%}{{ section.settings.lede }}{%- else -%}{{ 'home.hero.lede' | t }}{%- endif -%}</p>
+
+          <div class="hero-apple__ctas">
+            <a href="{{ cta_primary_url }}" class="btn-apple-blue">
+              {%- if section.settings.cta_primary_label != blank -%}{{ section.settings.cta_primary_label }}{%- else -%}{{ 'home.hero.cta_primary_label' | t }}{%- endif -%}
+            </a>
+            <a href="{{ section.settings.cta_secondary_url | default: '#how-it-works' }}" class="link-apple-blue">
+              {%- if section.settings.cta_secondary_label != blank -%}{{ section.settings.cta_secondary_label }}{%- else -%}{{ 'home.hero.cta_secondary_label' | t }}{%- endif -%}
+              <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true">
+                <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-slider__stage">
         {%- if slide_count > 0 -%}
           {%- for block in section.blocks -%}
             {%- liquid
@@ -194,6 +195,7 @@
           %}
         {%- endif -%}
       </div>
+      </div>
 
       {%- if slide_count > 1 -%}
         <div class="hero-slider__toolbar" data-hero-slider-controls hidden>
@@ -239,7 +241,6 @@
         </div>
       {%- endif -%}
     </div>
-
     <a href="#problem" class="hero-apple__scroll" aria-label="{{ 'accessibility.scroll_to_content' | t }}">
       <span class="hero-apple__scroll-icon" aria-hidden="true">
         <span class="hero-apple__scroll-dot"></span>
