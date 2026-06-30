@@ -36,13 +36,51 @@ Apple editorial illustration style, soft gradient lighting, minimal clean lines,
 **Tool:** Higgsfield `generate_3d`  
 **Model:** `multi_image_to_3d` (preferred) or `image_to_3d`
 
-### Reference images (local paths — upload via MCP before generate)
+### Product reference sources (Google Drive)
 
-| Role | File | Notes |
-|------|------|-------|
-| Primary front / 3-4 view | `assets/reference/clean-01-studio-white.png` | Transparent-friendly studio angle |
-| Side / depth | `assets/reference/Edited - white BG/810_4982.jpg` | White BG studio shot |
-| Optional rear | `assets/reference/Edited - white BG/810_4998.jpg` | Improves mesh accuracy |
+| Source | Local root |
+|--------|------------|
+| [Mitipi product photos](https://drive.google.com/drive/folders/16kLAXwX-Yv8ZcbgZpS8As5G5LWYIFXtB?usp=drive_link) | `assets/reference/` (gitignored except `README.md` + `INVENTORY.txt`) |
+
+**Sync (only if local files missing):**
+
+```bash
+python3 -m pip install gdown --user
+python3 -m gdown --folder "https://drive.google.com/drive/folders/16kLAXwX-Yv8ZcbgZpS8As5G5LWYIFXtB?usp=sharing" \
+  -O assets/reference --remaining-ok
+```
+
+Inventory on disk (2026-06-30): **57 files** in `INVENTORY.txt`. Nine Drive items still fail (rate limit / permissions): `clean-04-features.png`, `glass-01-hero.png` … `glass-07-bundle-4.png`, `KEVIN Logo.pdf` — **not required** for slide 1 3D.
+
+### Drive folder → local path mapping (slide 1 3D only)
+
+Use **consumer Kevin .3** shots (grey acoustic fabric, white top/sides). Early `810_4982`–`810_4989` frames are prototype / internal LED-grid — **do not** pass those to `multi_image_to_3d`.
+
+| View | Best local file | Drive subfolder | Alt / higher-res |
+|------|-----------------|-----------------|------------------|
+| **Front / hero 3-4** | `assets/reference/clean-01-studio-white.png` | Drive root | `Edited - white BG/810_4998.jpg` (orthographic front), `Edited - white BG/810_5001.jpg` (3/4 front-right, dark side panel) |
+| **Side (profile)** | `assets/reference/Edited - white BG/810_4992.jpg` | `Edited - white BG/` | `Unedited png/810_4992.png` |
+| **Top** | `assets/reference/Edited - white BG/810_5008.jpg` | `Edited - white BG/` | `Unedited png/810_5008.png` |
+| **Back / rear 3-4** | `assets/reference/Unedited png/810_5004.png` | `Unedited png/` | `Edited - white BG/4988 & 4989.jpg` (composite sheet — rear-right panel only; prefer single-file `810_5004`) |
+| **Bottom** (optional) | `assets/reference/Edited - white BG/810_5010.jpg` | `Edited - white BG/` | `Unedited png/810_5010.png` |
+
+**`Edited - white BG/` — all studio JPGs on disk (14):**  
+`4988 & 4989.jpg`, `4993 & 4994.jpg`, `4996 & 4997.jpg`, `4999 & 5000.jpg`, `5004 & 5005.jpg`, `5006 & 5007.jpg`, `810_4982.jpg`, `810_4985.jpg`, `810_4992.jpg`, `810_4998.jpg`, `810_5001.jpg`, `810_5003.jpg`, `810_5008.jpg`, `810_5010.jpg`
+
+**`Unedited png/` — all source PNGs on disk (22):**  
+`810_4982.png` … `810_5010.png` (every frame `810_4982`–`810_5010` except gaps; includes `810_5002.png`)
+
+### Reference images — what to pass to `multi_image_to_3d`
+
+| Preset | Medias (local paths, in order) | When |
+|--------|--------------------------------|------|
+| **Minimum (2 views)** | 1. `clean-01-studio-white.png` · 2. `Edited - white BG/810_4992.jpg` | Default hero GLB; fastest credit use |
+| **Recommended (3 views)** | 1. `clean-01-studio-white.png` · 2. `810_4992.jpg` · 3. `810_5008.jpg` | Adds top controls / depth |
+| **Best mesh (4 views)** | 1. `clean-01-studio-white.png` · 2. `810_4992.jpg` · 3. `810_5008.jpg` · 4. `810_5001.jpg` or `810_4998.jpg` | Extra orthographic front or alternate 3/4 |
+
+Upload each path via MCP `media_upload` / widget → collect `media_id`s → `generate_3d` with `model: "multi_image_to_3d"`. **Do not** use `--wait 35m` in unattended agent runs; poll separately or run locally.
+
+**Poster still (LCP):** export from GLB default camera, or use `Edited - white BG/810_4998.jpg` / `810_5001.jpg` cropped to 3:4.
 
 ### Workflow
 
@@ -53,13 +91,14 @@ Apple editorial illustration style, soft gradient lighting, minimal clean lines,
 #    generate_3d params: { model: "multi_image_to_3d", medias: [...], get_cost: true }
 # 4. Submit job with both medias
 # 5. Download GLB → assets/kevin-hero-3d.glb
-# 6. Render poster still (model-viewer screenshot or 810_4982 export) → kevin-hero-3d-poster.webp
+# 6. Render poster still (model-viewer screenshot or 810_4998.jpg export) → kevin-hero-3d-poster.webp
 ```
 
 ### 3D generation notes
 
 - **Do not** use lifestyle/persona refs for 3D — product studio only
 - Target GLB **≤ 2 MB** (Draco mesh compression if tool offers)
+- **Note:** `scripts/generate-hero-illustrations.sh` still points `SIDE_REF` at legacy `810_4982.jpg` (prototype LED grid) — update to `810_4992.jpg` before regen.
 - Fabric texture: charcoal grey acoustic fabric, subtle ribbing — match `clean-01-studio-white.png`
 - No environment in mesh — device only, origin centered, Y-up
 - Poster: same angle as default camera; **800×1000** WebP, transparent or soft shadow on transparent

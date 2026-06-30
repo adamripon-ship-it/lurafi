@@ -82,13 +82,20 @@ Legacy `image_fallback` keys (`children`, `seniors`, `women`, etc.) remain until
 
 **Shopify delivery:** Upload to **Files** or theme `assets/`; illustrations as `image_picker` on blocks; GLB via `assets/kevin-hero-3d.glb` (Shopify allows `.glb` in assets).
 
-**Reference inputs (local only, gitignored):**
+### Product reference sources
 
-| Purpose | Path |
-|---------|------|
-| 3D front / hero angle | `assets/reference/clean-01-studio-white.png` |
-| 3D side / depth | `assets/reference/Edited - white BG/810_4982.jpg` |
-| Optional third angle | `assets/reference/Edited - white BG/810_4998.jpg` |
+Canonical pack: [Google Drive — Mitipi product photos](https://drive.google.com/drive/folders/16kLAXwX-Yv8ZcbgZpS8As5G5LWYIFXtB?usp=drive_link) → sync to `assets/reference/` (see `assets/reference/README.md`). **57 files** present locally (2026-06-30); full list in `INVENTORY.txt`.
+
+**Slide 1 `multi_image_to_3d` (consumer Kevin .3 only):**
+
+| View | Path |
+|------|------|
+| Front / hero 3-4 | `assets/reference/clean-01-studio-white.png` |
+| Side profile | `assets/reference/Edited - white BG/810_4992.jpg` |
+| Top (3rd view) | `assets/reference/Edited - white BG/810_5008.jpg` |
+| Optional 4th | `810_5001.jpg` or orthographic front `810_4998.jpg` |
+
+Drive → path matrix and regen presets: [HERO-HIGGSFIELD-PROMPTS.md § Slide 1](./HERO-HIGGSFIELD-PROMPTS.md#slide-1--interactive-3d-kevin-product). Avoid prototype frames `810_4982`–`810_4989` (internal LED grid, not retail Kevin).
 
 ---
 
