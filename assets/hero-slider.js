@@ -70,8 +70,14 @@
       slides.forEach(function (slide, i) {
         var isActive = i === activeIndex;
         slide.classList.toggle('hero-slider__slide--active', isActive);
-        slide.hidden = !isActive;
+        slide.removeAttribute('hidden');
         slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        if (isActive) {
+          slide.inert = false;
+          slide.removeAttribute('inert');
+        } else {
+          slide.inert = true;
+        }
         slide.tabIndex = isActive ? 0 : -1;
       });
 
