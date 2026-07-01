@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Republish live theme only (no file push). Use after partial pushes or when storefront shows stale HTML.
+# Republish live theme + bust Shopify homepage page cache (no file push).
+# Use after partial theme push when storefront HTML is stale.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 LURAFI_ROOT="${ROOT}"
@@ -15,14 +16,9 @@ shopify_load_dotenv
 STORE="$(live_theme_store)"
 THEME_ID="$(live_theme_id)"
 THEME_NAME="$(live_theme_name)"
-TOKEN="$(shopify_require_theme_password)"
 
-echo "Republishing ${THEME_NAME} (#${THEME_ID}) on ${STORE}…"
-shopify theme publish \
-  -s "${STORE}" \
-  --theme "${THEME_ID}" \
-  --password "${TOKEN}" \
-  --force
+echo "Republishing ${THEME_NAME} (#${THEME_ID}) on ${STORE} + busting homepage cache…"
+node "${ROOT}/scripts/bust-homepage-page-cache.mjs"
 
 sleep 2
 node "${ROOT}/scripts/verify-live-storefront.mjs"

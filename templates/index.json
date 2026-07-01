@@ -61,7 +61,8 @@
         "trust_3": "Free delivery in Europe",
         "sticky_cta_label": "Get Kevin",
         "sticky_cta_enabled": true,
-        "sticky_cta_url": ""
+        "sticky_cta_url": "",
+        "deploy_cache_bust": ""
       }
     },
     "problem": {

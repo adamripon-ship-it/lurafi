@@ -57,14 +57,20 @@ This script (`scripts/deploy-theme-live.sh`):
 
 1. Reads **theme ID from `config/live-theme.json`** (single source of truth)
 2. Pushes files to that theme
-3. **Republishes** the theme (`--force`) to bust Shopify’s homepage page cache
+3. **Republishes** and **busts homepage page cache** via Admin API (`themeFilesUpsert` on `templates/index.json` + `themePublish`)
 4. Verifies https://mitipi.eu/ serves the expected theme + HTML markers
 
-After a partial push only, republish + verify without re-uploading everything:
+After a partial push only, republish + cache bust + verify without re-uploading everything:
 
 ```bash
 npm run theme:publish:live
 npm run theme:verify:live
+```
+
+Homepage cache still stale after publish? Run the dedicated bust script:
+
+```bash
+npm run theme:cache:bust
 ```
 
 Partial push (still republishes + verifies):
@@ -87,9 +93,9 @@ npm run theme:verify:live
 curl -sI https://mitipi.eu/ | head -5
 ```
 
-### Why republish?
+### Why republish + cache bust?
 
-Shopify caches rendered homepage HTML (`etag: page_cache:…`). Uploading files via `theme push` does **not** always invalidate that cache. Republishing the live theme forces a fresh render so customers see your changes on mitipi.eu immediately.
+Shopify caches rendered homepage HTML (`etag: page_cache:…`). `theme push` and CLI `theme publish` update theme files but **do not always invalidate** that cache. The deploy script calls `scripts/bust-homepage-page-cache.mjs`, which uses Admin GraphQL `themeFilesUpsert` (same effect as Theme Editor → Save on `templates/index.json`) plus `themePublish` to force a fresh homepage render.
 
 ## Theme settings (merchant data)
 

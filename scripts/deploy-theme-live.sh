@@ -45,16 +45,11 @@ shopify theme push \
   "$@"
 
 echo ""
-echo "→ Republishing theme (bust Shopify homepage page cache)…"
-shopify theme publish \
-  -s "${STORE}" \
-  --theme "${THEME_ID}" \
-  --password "${TOKEN}" \
-  --force
+echo "→ Republishing theme + busting homepage page cache…"
+"${ROOT}/scripts/publish-theme-live.sh"
 
 echo ""
 echo "→ Verifying storefront…"
-sleep 2
 node "${ROOT}/scripts/verify-live-storefront.mjs"
 
 echo "✓ Deploy complete — ${STOREFRONT}"

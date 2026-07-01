@@ -25,5 +25,17 @@ AGENTS.md
 # Local reference photos (gitignored; never upload)
 assets/reference/**
 
-# Oversized legacy hero JPGs (theme uses PNG cutouts; avoid HTTP 413 on push)
+# Oversized legacy hero JPGs (theme uses PNG/webp cutouts; avoid HTTP 413 on push)
 assets/kevin-hero-*.jpg
+
+# Legacy carousel persona scenes — not referenced by live templates (saves ~80MB+ on push)
+assets/kevin-hero-persona-*.png
+assets/kevin-hero-protecting-children.*
+assets/kevin-hero-women-alone.*
+assets/kevin-hero-students-university.*
+assets/kevin-hero-seniors-widows.*
+assets/kevin-hero-dutch-houseboat.*
+assets/kevin-hero-travelling-away.png
+assets/kevin-hero-3d.glb
+assets/kevin-hero-shadow-mom-baby-man-night-germany*
+assets/.hero-illust-backup-*/

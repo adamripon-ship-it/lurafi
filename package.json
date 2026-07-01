@@ -9,6 +9,7 @@
     "theme:push:live": "./scripts/deploy-theme-live.sh",
     "theme:deploy:live": "./scripts/deploy-theme-live.sh",
     "theme:publish:live": "./scripts/publish-theme-live.sh",
+    "theme:cache:bust": "node scripts/bust-homepage-page-cache.mjs --verify",
     "theme:verify:live": "node scripts/verify-live-storefront.mjs",
     "locales:build": "node scripts/build-locales.mjs",
     "locales:sync": "node scripts/sync-locale-keys.mjs",
