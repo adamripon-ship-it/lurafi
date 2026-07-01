@@ -1,8 +1,16 @@
 # Kevin product reference photos
 
-Downloaded from [Google Drive — Mitipi product photos](https://drive.google.com/drive/folders/16kLAXwX-Yv8ZcbgZpS8As5G5LWYIFXtB?usp=sharing) on 2026-06-30 via `gdown`.
+**Canonical local pack:** `~/Downloads/3. Mitipi Kevin 3 Content` (69 files, Jun 2026)  
+Also mirrored on [Google Drive](https://drive.google.com/drive/folders/16kLAXwX-Yv8ZcbgZpS8As5G5LWYIFXtB?usp=sharing).
 
-**Do not commit this folder to git** — add `assets/reference/` to `.gitignore` if pushing theme assets (964 MB). Reference files stay local for Higgsfield generation; generated outputs go in `assets/` with kebab-case names.
+Re-sync from your Mac:
+
+```bash
+./scripts/sync-kevin3-product-refs.sh
+# or: KEVIN3_CONTENT_DIR="/path/to/folder" ./scripts/sync-kevin3-product-refs.sh
+```
+
+**Do not commit this folder to git** — `assets/reference/` is gitignored (~1 GB). Generated hero outputs live in `assets/kevin-hero-product-*`.
 
 ## Download summary
 
@@ -20,15 +28,24 @@ Downloaded from [Google Drive — Mitipi product photos](https://drive.google.co
 | `Unedited png/` | 22 PNG | High-res source, detail angles |
 | Root | 7 | Color variants + web thumbnails |
 
-### Canonical references (used by `scripts/generate-mitipi-visuals.sh`)
+### Hero slide 1 — product rotator (live theme)
+
+| View | Source in local pack | Theme asset |
+|------|----------------------|-------------|
+| Front 3/4 | `Unedited png/810_4993.png` | `kevin-hero-product-front.webp` |
+| Side | `Edited - no BG/Copy of Copy of 810_4992.png` | `kevin-hero-product-side.webp` |
+| Top | `Edited - no BG/Copy of Copy of 810_5008.png` | `kevin-hero-product-top.webp` |
+| Back | `Edited - no BG/Copy of 5004 & 5005.png` | `kevin-hero-product-back.webp` |
+
+Avoid prototype frames `810_4982`–`810_4989` (internal LED grid, not retail Kevin .3).
+
+### Canonical references (legacy scripts)
 
 | Alias | Path | Purpose |
 |-------|------|---------|
-| Lifestyle | `../kevin-hero-burglary-prevention.jpg` | Hero slides 2–6, personas, lifestyle scenes |
-| Studio | `Edited - white BG/810_4982.jpg` | Product-on-white, solution section |
+| Studio hero | `clean-01-studio-white.png` | Marketing still, 3D regen front ref |
+| Side profile | `Edited - white BG/810_4992.jpg` | `multi_image_to_3d` side ref |
 | Close-up | `Edited - white BG/810_5010.jpg` | Specs, fabric detail |
-| 3/4 angle | `clean-01-studio-white.png` | Steps section device angle |
-| Multi-angle | `Edited - white BG/810_4998.jpg` | Shadow projection demo |
 
 ### Failed downloads (retry manually or re-share folder)
 

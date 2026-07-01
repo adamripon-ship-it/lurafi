@@ -14,12 +14,14 @@ set -uo pipefail
 
 FAILED=0
 SKIP_EXISTING="${SKIP_EXISTING:-1}"
+ILLUST_MODEL="${ILLUST_MODEL:-recraft_v4_1}"
+ILLUST_MODEL_TYPE="${ILLUST_MODEL_TYPE:-standard}"
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="$ROOT/assets"
 REF_DIR="$ROOT/assets/reference"
 FRONT_REF="$REF_DIR/clean-01-studio-white.png"
-SIDE_REF="$REF_DIR/Edited - white BG/810_4982.jpg"
+SIDE_REF="$REF_DIR/Edited - white BG/810_4992.jpg"
 POSTER_SRC="$SIDE_REF"
 WORKSPACE_ID="${HIGGSFIELD_WORKSPACE_ID:-c47ef442-fa47-46cf-ba90-113e76988a77}"
 
@@ -28,8 +30,8 @@ RUN_ILLUST=1
 DRY_RUN=0
 SLIDE_FILTER=""
 
-GLOBAL_NEG="photorealistic, photograph, DSLR, stock photo, Kevin device, Mitipi product, smart home gadget, security camera, CCTV, alarm panel, text overlay, watermark, logo, skyscraper, American suburb, picket fence, Amsterdam canal cliché, tulip field, oversaturated, harsh flash, lens flare, anime, chibi, 3D render look, low poly, cluttered composition, busy upper third, neon colors, Kevin box, product shot"
-GLOBAL_STYLE="Apple editorial illustration style, soft gradient lighting, minimal clean lines, muted palette with warm interior amber glow against cool dusk exterior, dark edges blending into black background, upper third of frame relatively empty and soft for UI overlay, European Netherlands or Germany setting, dignified mood, no visible technology products"
+GLOBAL_NEG="photorealistic, photograph, photo, DSLR, mirrorless camera, realistic photo, stock photo, lifestyle photography, corporate stock photo, Getty Images style, Shutterstock, live action, cinematic photo, 35mm film, RAW photo, bokeh, shallow depth of field, lens flare, camera flash, studio lighting setup, naturalistic lighting, ambient occlusion photorealism, hyperrealistic skin, pores, wrinkles detail, eye reflections, individual hair strands, fabric texture photography, ray traced render masquerading as photo, Unreal Engine screenshot, Octane render, 3D render that looks like a photograph, CGI photorealism, Midjourney photoreal, Kevin device, Mitipi product, smart home gadget, security camera, CCTV, alarm panel, text overlay, watermark, logo, skyscraper, American suburb, picket fence, Amsterdam canal cliché, tulip field, oversaturated, harsh flash, anime, chibi, low poly, cluttered composition, busy upper third, neon colors, Kevin box, product shot, film grain, noise, white background, light grey backdrop, hard rectangular crop, border frame, real human faces, portrait photography, documentary photography"
+GLOBAL_STYLE="MANDATORY: flat 2D editorial marketing illustration ONLY — painted vector-style graphic poster like Apple Health, Vision Pro, and iPhone feature pages on apple.com, NOT a photograph, NOT photoreal, NOT a 3D render pretending to be a photo, simplified geometric architecture with minimal line weight, soft airbrush gradients and matte illustration finish, muted palette warm amber interior glow against cool blue dusk exterior, human figures as stylized editorial silhouettes and soft shapes with simplified faces — no photographic skin or realistic eyes, all four corners and outer edges dissolve seamlessly into pure black #000000 with no white matting or rectangular photo crop, upper third empty soft dark gradient for UI overlay, European Netherlands or Germany setting, no visible technology products, graphic design poster aesthetic"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -109,8 +111,8 @@ compress_webp() {
 run_illustration() {
   local key="$1" outfile="$2" prompt="$3" slide_neg="$4"
   if [[ -n "$SLIDE_FILTER" && "$SLIDE_FILTER" != "$key" ]]; then return 0; fi
-  local full_prompt="${prompt} ${GLOBAL_STYLE}. Avoid: ${GLOBAL_NEG}, ${slide_neg}"
-  echo "→ $outfile (gpt_image_2, 3:4)"
+  local full_prompt="Flat 2D editorial illustration ONLY — absolutely NOT a photograph, NOT photoreal, NOT a 3D render, NOT stock photography. ${prompt} ${GLOBAL_STYLE}. Strictly avoid: ${GLOBAL_NEG}, ${slide_neg}"
+  echo "→ $outfile ($ILLUST_MODEL/$ILLUST_MODEL_TYPE, 3:4)"
   if [[ "$SKIP_EXISTING" -eq 1 ]] && asset_exists "$outfile"; then
     echo "  skip (exists): $OUT/$outfile"
     return 0
@@ -121,10 +123,12 @@ run_illustration() {
   fi
   local tmp="${OUT}/${outfile%.webp}.png" raw url attempt=1 max=12 wait_s=10
   while [[ "$attempt" -le "$max" ]]; do
-    raw="$(higgsfield generate create gpt_image_2 \
+    raw="$(higgsfield generate create "$ILLUST_MODEL" \
       --prompt "$full_prompt" \
       --aspect_ratio 3:4 \
       --resolution 2k \
+      --model_type "$ILLUST_MODEL_TYPE" \
+      --background_color "#000000" \
       --wait \
       --wait-timeout 25m \
       --wait-interval 8s 2>&1)" || true
@@ -257,8 +261,8 @@ fi
 if [[ "$RUN_ILLUST" -eq 1 ]]; then
   echo "=== Slides 2–8 — Editorial illustrations ==="
   run_illustration "widow-89" "kevin-hero-illust-widow-89.webp" \
-    "Editorial illustration of a dignified 89-year-old European white widow in a small German Kleinstadt apartment at dusk, seated in a worn but cared-for armchair beside a side table with reading glasses and teacup, warm lamp glow on her face, through the window soft cobblestone Marktplatz and gabled roofs in blue hour, interior feels lived-in and safe, she is calm not fearful, suggestion of recent visitor warmth in the room, caregiver visit energy without showing another person, upper third soft dark gradient empty for text overlay" \
-    "frail caricature, nursing home, wheelchair unless subtle, medical equipment, sad poverty aesthetic, American interior, open door showing intruder, Kevin device, product on windowsill"
+    "Editorial illustration of a dignified 89-year-old European white WOMAN widow (female, not male), short silver hair, in a small German Kleinstadt apartment at dusk, seated in a worn but cared-for armchair beside a side table with reading glasses and teacup, warm lamp glow on her face, through the window soft cobblestone Marktplatz and gabled roofs in blue hour, interior feels lived-in and safe, she is calm not fearful, suggestion of recent visitor warmth in the room, caregiver visit energy without showing another person, upper third soft dark gradient empty for text overlay" \
+    "frail caricature, nursing home, wheelchair unless subtle, medical equipment, sad poverty aesthetic, American interior, open door showing intruder, Kevin device, product on windowsill, elderly man, male figure, beard, mustache, masculine face"
 
   run_illustration "mom-baby" "kevin-hero-illust-mom-baby.webp" \
     "Editorial illustration of a European white single mother in her early 30s holding a sleeping infant in a compact Dutch rijtjeshuis living room at evening, baby monitor glow subtle on sideboard, warm kitchen light spill from archway, through front window quiet brick street and neighbour windows with lights, mother confident and protective, upstairs implied safe nursery, ground floor feels actively occupied, soft Apple-style gradients, upper third muted for callout cards, no technology products visible" \

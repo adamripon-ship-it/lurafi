@@ -3,11 +3,7 @@
   capture configure_buy_url
     render 'configure-url', plan: 'buy'
   endcapture
-  capture configure_sub_url
-    render 'configure-url', plan: 'subscribe'
-  endcapture
   assign configure_buy_url = configure_buy_url | strip
-  assign configure_sub_url = configure_sub_url | strip
   assign llms_short_url = 'llms.txt' | asset_url
   assign llms_full_url = 'llms-full.txt' | asset_url
   assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
@@ -37,7 +33,6 @@
 
 ## {{ 'llms_page.what_we_sell' | t }}
 - {{ 'llms_page.buy_bullet' | t }}
-- {{ 'llms_page.sub_bullet' | t }}
 
 ## {{ 'llms_page.how_heading' | t }}
 1. {{ 'llms_page.how_1' | t }}
@@ -53,7 +48,6 @@
 ## {{ 'llms_page.urls_heading' | t }}
 - Homepage: {{ shop.url }}
 - Configure / Buy: {{ shop.url }}{{ configure_buy_url }}
-- Subscribe: {{ shop.url }}{{ configure_sub_url }}
 - Cart: {{ shop.url }}/cart
 
 ## {{ 'llms_page.contact_heading' | t }}

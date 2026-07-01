@@ -1,4 +1,4 @@
-<section class="section-apple bg-gray">
+<section id="personas" class="section-apple bg-gray">
   <div class="apple-container">
     <p class="overline-blue">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.personas.overline' | t }}{%- endif -%}</p>
     <h2 class="headline-section text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.personas.heading' | t }}{%- endif -%}</h2>
@@ -9,7 +9,7 @@
           {%- if section.settings.persona_1_image -%}
             <img src="{{ section.settings.persona_1_image | image_url: width: 640 }}" alt="{%- if section.settings.persona_1_title != blank -%}{{ section.settings.persona_1_title | escape }}{%- else -%}{{ 'home.personas.persona_1_title' | t | escape }}{%- endif -%}" loading="lazy" decoding="async" width="640" height="480">
           {%- else -%}
-            <img src="{{ 'kevin-persona-travel.jpg' | asset_url }}" alt="{{ 'home.personas.persona_1_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
+            <img src="{{ 'kevin-persona-work.jpg' | asset_url }}" alt="{{ 'home.personas.persona_1_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
           {%- endif -%}
         </div>
         <h3 style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.persona_1_title != blank -%}{{ section.settings.persona_1_title }}{%- else -%}{{ 'home.personas.persona_1_title' | t }}{%- endif -%}</h3><p class="body-standard text-muted" style="margin-bottom:16px">{%- if section.settings.persona_1_body != blank -%}{{ section.settings.persona_1_body }}{%- else -%}{{ 'home.personas.persona_1_body' | t }}{%- endif -%}</p><p style="font-size:14px;color:var(--apple-blue)">{%- if section.settings.persona_1_quote != blank -%}{{ section.settings.persona_1_quote }}{%- else -%}{{ 'home.personas.persona_1_quote' | t }}{%- endif -%}</p></div>
@@ -27,7 +27,7 @@
           {%- if section.settings.persona_3_image -%}
             <img src="{{ section.settings.persona_3_image | image_url: width: 640 }}" alt="{%- if section.settings.persona_3_title != blank -%}{{ section.settings.persona_3_title | escape }}{%- else -%}{{ 'home.personas.persona_3_title' | t | escape }}{%- endif -%}" loading="lazy" decoding="async" width="640" height="480">
           {%- else -%}
-            <img src="{{ 'kevin-persona-living-alone.jpg' | asset_url }}" alt="{{ 'home.personas.persona_3_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
+            <img src="{{ 'kevin-persona-multi-property.jpg' | asset_url }}" alt="{{ 'home.personas.persona_3_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
           {%- endif -%}
         </div>
         <h3 style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.persona_3_title != blank -%}{{ section.settings.persona_3_title }}{%- else -%}{{ 'home.personas.persona_3_title' | t }}{%- endif -%}</h3><p class="body-standard text-muted" style="margin-bottom:16px">{%- if section.settings.persona_3_body != blank -%}{{ section.settings.persona_3_body }}{%- else -%}{{ 'home.personas.persona_3_body' | t }}{%- endif -%}</p><p style="font-size:14px;color:var(--apple-blue)">{%- if section.settings.persona_3_quote != blank -%}{{ section.settings.persona_3_quote }}{%- else -%}{{ 'home.personas.persona_3_quote' | t }}{%- endif -%}</p></div>
@@ -49,7 +49,7 @@
     { "type": "text", "id": "persona_1_title", "label": "Persona 1 title" },
     { "type": "textarea", "id": "persona_1_body", "label": "Persona 1 body" },
     { "type": "text", "id": "persona_1_quote", "label": "Persona 1 quote" },
-    { "type": "image_picker", "id": "persona_1_image", "label": "Persona 1 image", "info": "Default: kevin-persona-travel.jpg" },
+    { "type": "image_picker", "id": "persona_1_image", "label": "Persona 1 image", "info": "Default: kevin-persona-work.jpg (kevinswiss.com)" },
     { "type": "text", "id": "persona_2_title", "label": "Persona 2 title" },
     { "type": "textarea", "id": "persona_2_body", "label": "Persona 2 body" },
     { "type": "text", "id": "persona_2_quote", "label": "Persona 2 quote" },
@@ -57,7 +57,7 @@
     { "type": "text", "id": "persona_3_title", "label": "Persona 3 title" },
     { "type": "textarea", "id": "persona_3_body", "label": "Persona 3 body" },
     { "type": "text", "id": "persona_3_quote", "label": "Persona 3 quote" },
-    { "type": "image_picker", "id": "persona_3_image", "label": "Persona 3 image", "info": "Default: kevin-persona-living-alone.jpg" }
+    { "type": "image_picker", "id": "persona_3_image", "label": "Persona 3 image", "info": "Default: kevin-persona-multi-property.jpg (kevinswiss.com)" }
   ],
   "presets": [{ "name": "Personas" }]
 }

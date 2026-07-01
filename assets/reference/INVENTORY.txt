@@ -1,3 +1,4 @@
+/Users/adam/lurafi/assets/reference/.DS_Store
 /Users/adam/lurafi/assets/reference/417376906_xxl3.avif
 /Users/adam/lurafi/assets/reference/417376916_xxl3.avif
 /Users/adam/lurafi/assets/reference/417376918_xxl3.webp
@@ -32,6 +33,8 @@
 /Users/adam/lurafi/assets/reference/Edited - white BG/810_5008.jpg
 /Users/adam/lurafi/assets/reference/Edited - white BG/810_5010.jpg
 /Users/adam/lurafi/assets/reference/INVENTORY.txt
+/Users/adam/lurafi/assets/reference/KEVIN Logo.pdf
+/Users/adam/lurafi/assets/reference/README.md
 /Users/adam/lurafi/assets/reference/Unedited png/810_4982.png
 /Users/adam/lurafi/assets/reference/Unedited png/810_4985.png
 /Users/adam/lurafi/assets/reference/Unedited png/810_4988.png
@@ -56,3 +59,11 @@
 /Users/adam/lurafi/assets/reference/clean-01-studio-white.png
 /Users/adam/lurafi/assets/reference/clean-02-charcoal.png
 /Users/adam/lurafi/assets/reference/clean-03-coral.png
+/Users/adam/lurafi/assets/reference/clean-04-features.png
+/Users/adam/lurafi/assets/reference/glass-01-hero.png
+/Users/adam/lurafi/assets/reference/glass-02-features.png
+/Users/adam/lurafi/assets/reference/glass-03-statement.png
+/Users/adam/lurafi/assets/reference/glass-04-detail.png
+/Users/adam/lurafi/assets/reference/glass-05-bundle-2.png
+/Users/adam/lurafi/assets/reference/glass-06-bundle-3.png
+/Users/adam/lurafi/assets/reference/glass-07-bundle-4.png

@@ -7,7 +7,7 @@
     if (!window.LurafiCart || typeof window.LurafiCart.addAndCheckout !== 'function') return;
     var base = window.LurafiCart.addAndCheckout.bind(window.LurafiCart);
     var msg = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.errorProducts) ||
-      'Checkout needs a published product. In Shopify Admin create the Kevin device, enable Online Store, then assign it under Theme settings → Products (Kevin buy / Kevin+).';
+      'Checkout needs a published product. In Shopify Admin create the Kevin device, enable Online Store, then assign it under Theme settings → Products (Kevin buy).';
     window.LurafiCart.addAndCheckout = function (item) {
       var n = Number(item && item.id);
       if (!item || !Number.isFinite(n) || n <= 0) {

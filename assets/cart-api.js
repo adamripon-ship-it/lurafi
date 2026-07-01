@@ -244,7 +244,7 @@
       var n = Number(vid);
       if (!item || !Number.isFinite(n) || n <= 0) {
         var msgInvalid =
-          (window.themeTranslations?.configure?.errorProducts || 'Checkout needs a published product. In Shopify Admin create the Kevin device, enable Online Store, then assign it under Theme settings → Products (Kevin buy / Kevin+).');
+          (window.themeTranslations?.configure?.errorProducts || 'Checkout needs a published product. In Shopify Admin create the Kevin device, enable Online Store, then assign it under Theme settings → Products (Kevin buy).');
         return Promise.reject(new Error(msgInvalid));
       }
 

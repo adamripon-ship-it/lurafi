@@ -19,14 +19,24 @@ Per-asset generation prompts for the Apple-style hero carousel.
 ### Global negative prompt (append to every slide 2+ job)
 
 ```
-photorealistic, photograph, DSLR, stock photo, Kevin device, Mitipi product, smart home gadget, security camera, CCTV, alarm panel, text overlay, watermark, logo, skyscraper, American suburb, picket fence, Amsterdam canal cliché, tulip field, oversaturated, harsh flash, lens flare, anime, chibi, 3D render look, low poly, cluttered composition, busy upper third, neon colors, Kevin box, product shot
+photorealistic, photograph, photo, DSLR, realistic photo, stock photo, live action, cinematic photo, 35mm film, bokeh, depth of field, hyperrealistic skin, pores, ray traced render masquerading as photo, 3D render that looks like a photograph, Kevin device, Mitipi product, smart home gadget, security camera, CCTV, alarm panel, text overlay, watermark, logo, skyscraper, American suburb, picket fence, Amsterdam canal cliché, tulip field, oversaturated, harsh flash, lens flare, anime, chibi, 3D render look, low poly, cluttered composition, busy upper third, neon colors, Kevin box, product shot, white background, hard rectangular crop
 ```
 
 ### Global style suffix (append to every slide 2+ prompt)
 
 ```
-Apple editorial illustration style, soft gradient lighting, minimal clean lines, muted palette with warm interior amber glow against cool dusk exterior, dark edges blending into black background, upper third of frame relatively empty and soft for UI overlay, European Netherlands or Germany setting, dignified mood, no visible technology products
+Vector editorial marketing illustration ONLY — flat painted shapes with soft airbrush gradients, NOT a photograph, NOT a 3D render pretending to be a photo, painted graphic poster like Apple Health and Vision Pro feature pages, muted palette with warm interior amber glow against cool dusk exterior, dark edges blending into pure black #000000, upper third of frame relatively empty and soft for UI overlay, European Netherlands or Germany setting, dignified mood, no visible technology products
 ```
+
+### Model (slides 2+)
+
+| Setting | Value |
+|---------|-------|
+| Model | `recraft_v4_1` |
+| `model_type` | `standard` (raster PNG; avoid `vector` SVG output) |
+| `background_color` | `#000000` |
+| Aspect ratio | **3:4** |
+| Resolution | **2k** → compress to WebP ~150–250 KB |
 
 ---
 

@@ -11,22 +11,8 @@
     assign buy_product = all_products.kevin
   endif
 
-  assign sub_product = settings.product_subscribe
-  if sub_product == blank
-    assign sub_product = all_products['kevin-plus']
-  else
-    if sub_product.variants == blank
-      assign sub_product = all_products[settings.product_subscribe]
-    endif
-  endif
-  if sub_product == blank
-    assign sub_product = all_products['kevin-plus']
-  endif
-
   assign default_image = 'kevin-front-cover-grey-v2.png' | asset_url
-
   assign buy_features = 'configure.buy_features' | t | split: '|'
-  assign sub_features = 'configure.sub_features' | t | split: '|'
 
   assign configure_back = section.settings.back_label
   if configure_back == blank
@@ -127,56 +113,6 @@
           <p class="configure-color-text">{{ 'configure.color_prefix' | t }} <strong data-configure-color-name-inline>Grey</strong></p>
         </section>
 
-        <section class="configure-section" aria-labelledby="ConfigurePlanHeading">
-          <h2 id="ConfigurePlanHeading" class="configure-label">{{ 'configure.plan_label' | t }}</h2>
-          <div class="configure-plans">
-            <button type="button" class="configure-plan-card is-selected" data-plan="buy" aria-pressed="true">
-              <span class="configure-plan-card__radio" aria-hidden="true"></span>
-              <span class="configure-plan-card__badge configure-plan-card__badge--popular">{{ 'configure.plan_badge_popular' | t }}</span>
-              <p class="configure-plan-card__title">{{ 'configure.plan_buy' | t }}</p>
-              <p class="configure-plan-card__sub">{{ 'configure.plan_buy_sub' | t }}</p>
-              <p class="configure-plan-card__price">
-                {%- if buy_product != blank -%}
-                  {{ buy_product.price | money }}
-                {%- else -%}
-                  649 <span>EUR</span>
-                {%- endif -%}
-              </p>
-            </button>
-            <button
-              type="button"
-              class="configure-plan-card"
-              data-plan="subscribe"
-              aria-pressed="false"
-              {% if sub_product == blank %}disabled title="Assign Kevin+ in theme settings"{% endif %}
-            >
-              <span class="configure-plan-card__radio" aria-hidden="true"></span>
-              <span class="configure-plan-card__badge">{{ 'configure.plan_sub_badge' | t }}</span>
-              <p class="configure-plan-card__title">{{ 'configure.plan_sub' | t }}</p>
-              <p class="configure-plan-card__sub">{{ 'configure.plan_sub_sub' | t }}</p>
-              <p class="configure-plan-card__price">
-                {%- if sub_product != blank -%}
-                  {{ sub_product.price | money }}<span>/mo</span>
-                {%- else -%}
-                  12.90 <span>EUR/mo</span>
-                {%- endif -%}
-              </p>
-            </button>
-          </div>
-          {%- if sub_product != blank and sub_product.selling_plan_groups.size > 0 -%}
-            <div class="configure-selling-plan" data-selling-plan-select-wrap hidden>
-              <label class="configure-label configure-label--inline" for="SellingPlanSelect">{{ 'configure.billing' | t }}</label>
-              <select id="SellingPlanSelect" class="configure-select" data-selling-plan-select hidden>
-                {%- for group in sub_product.selling_plan_groups -%}
-                  {%- for plan in group.selling_plans -%}
-                    <option value="{{ plan.id }}">{{ plan.name }}</option>
-                  {%- endfor -%}
-                {%- endfor -%}
-              </select>
-            </div>
-          {%- endif -%}
-        </section>
-
         <section class="configure-section configure-section--compact" data-configure-qty aria-labelledby="ConfigureQtyHeading">
           <h2 id="ConfigureQtyHeading" class="configure-label">{{ 'configure.quantity' | t }}</h2>
           <div class="configure-qty" role="group" aria-label="{{ 'configure.quantity' | t }}">
@@ -209,7 +145,7 @@
               </div>
               <div>
                 <dt>{{ 'configure.summary_plan' | t }}</dt>
-                <dd data-configure-summary-plan>Buy</dd>
+                <dd data-configure-summary-plan>{{ 'configure.summary_plan_buy' | t }}</dd>
               </div>
               <div>
                 <dt>{{ 'configure.summary_delivery' | t }}</dt>
@@ -327,35 +263,6 @@
         {"id":"preview-burgundy","color":"Burgundy","price":64900,"available":true,"image":null},
         {"id":"preview-espresso","color":"Espresso","price":64900,"available":true,"image":null},
         {"id":"preview-navy","color":"Navy","price":64900,"available":true,"image":null}
-      {%- endif -%}
-    ]
-  },
-  "subscribe": {
-    "features": {{ sub_features | json }},
-    "variants": [
-      {%- if sub_product != blank -%}
-        {%- for variant in sub_product.variants -%}
-          {
-            "id": {{ variant.id }},
-            "color": {{ variant.option1 | default: variant.title | json }},
-            "price": {{ variant.price }},
-            "available": {{ variant.available | json }},
-            "image": null
-          }{% unless forloop.last %},{% endunless %}
-        {%- endfor -%}
-      {%- endif -%}
-    ],
-    "sellingPlans": [
-      {%- if sub_product != blank -%}
-        {%- for group in sub_product.selling_plan_groups -%}
-          {%- for plan in group.selling_plans -%}
-            {
-              "id": {{ plan.id }},
-              "name": {{ plan.name | json }},
-              "price": {{ sub_product.selected_or_first_available_variant.price | default: sub_product.price }}
-            }{% unless forloop.last %},{% endunless %}
-          {%- endfor -%}
-        {%- endfor -%}
       {%- endif -%}
     ]
   }

@@ -8,14 +8,14 @@
 
 ## Executive summary
 
-The hero becomes an **Apple product-page carousel** on a **pure black stage** (`#000`) with blue radial glow (`--apple-blue` / `#2997ff`). **Slide 1** is an **interactive 3D Kevin** (Google `<model-viewer>` + Higgsfield `generate_3d` GLB from Drive refs in `assets/reference/`). **Slides 2–8** are **editorial illustrations** — soft gradients, minimal geometry, European NL/DE settings — **never photoreal lifestyle photos** and **never showing the Kevin device**. Each slide maps to one audience micro-persona with three floating context callouts (already wired in Liquid).
+The hero is an **Apple product-page carousel** on a **charcoal-blue stage** with soft cool glow. **Slide 1** is a **static Kevin product photo** (`kevin-hero-product-front.png`) with ECG waves and glass callout chips — **no drag-to-rotate**. **Slides 2–8** are **shadow illustrations** — European NL/DE settings, no Kevin device in frame. Each slide shows **headline + CTAs only** (no subhead); callouts are **title-only** glass pills.
 
 ### Slide count recommendation: **8 total** (1 product + 7 illustrations)
 
 | Option | Slides | Verdict |
 |--------|--------|---------|
-| **8 (recommended)** | 1 × 3D + 7 × illustration | Covers all four audience groups and seven distinct emotional hooks without over-merging widows, moms, and students into one “women alone” frame. ~49 s full cycle at 7 s autoplay — acceptable with pause control. |
-| 6 (fallback) | 1 × 3D + 5 × illustration | Use if dot nav feels crowded on 320 px viewports or Higgsfield budget is tight. Merge slides per [6-slide compression map](#6-slide-fallback-compression) below. |
+| **8 (recommended)** | 1 × product + 7 × shadow illustration | Covers all audience micro-personas. ~49 s full cycle at 7 s autoplay — glass pill nav + pause control. |
+| 6 (fallback) | 1 × product + 5 × illustration | Use if dot nav feels crowded on 320 px viewports. |
 
 **Why not 9+:** Mobile dot labels truncate; LCP preload budget stays on slide 1 only; more slides dilute message before CTA.
 
@@ -25,9 +25,9 @@ The hero becomes an **Apple product-page carousel** on a **pure black stage** (`
 
 | Principle | Implementation |
 |-----------|----------------|
-| Dark hero stage | Existing `.hero-apple` black + grain + blue glow — illustrations sit *inside* the glow, not on white |
-| Product moment | Slide 1 only — 3D Kevin with orbit + optional auto-rotate (respects reduced motion) |
-| Editorial illustration | Slides 2+ — flat/soft-3D hybrid, muted palette, **no Kevin product**, no security cameras |
+| Dark hero stage | `.hero-apple` charcoal gradient + grain + cool glow — illustrations sit inside the glow |
+| Product moment | Slide 1 only — static Kevin PNG, waves, title-only glass callouts |
+| Shadow illustration | Slides 2+ — silhouette scenes, muted palette, **no Kevin product** in art |
 | European cast | White European faces/hands, NL rijtjeshuis / DE Altbau / Kleinstadt — not US suburban stock |
 | Callout safe zone | **Upper third** of each illustration relatively clear for `.hero-context-cards` |
 | Brand blues | Accent glow `#2997ff`, CTA `#0071e3` — illustrations may include warm interior amber; avoid competing saturated blues in art |
@@ -221,7 +221,7 @@ Add:
 | Setting | Value |
 |---------|-------|
 | Workspace ID | `c47ef442-fa47-46cf-ba90-113e76988a77` |
-| Illustration model | `gpt_image_2` or successor — text-to-image, **no product reference** |
+| Illustration model | `recraft_v4_1` (`model_type: standard`, `background_color: #000000`) — text-to-image only, **no product reference** |
 | 3D model | `multi_image_to_3d` (2 views minimum) |
 | Aspect ratio | **3:4** (matches `.hero-slider__image` portrait slot) |
 

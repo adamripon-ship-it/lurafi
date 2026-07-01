@@ -9,6 +9,8 @@ node_modules/
 
 # QA artifacts
 scripts/qa-screenshots/
+test-results/
+.tmp-*/
 scripts/i18n-qa-report.json
 scripts/audit-report.json
 scripts/qa-full-report.json

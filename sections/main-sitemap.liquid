@@ -2,12 +2,8 @@
   capture configure_buy_url
     render 'configure-url', plan: 'buy'
   endcapture
-  capture configure_sub_url
-    render 'configure-url', plan: 'subscribe'
-  endcapture
 
   assign configure_buy_url = configure_buy_url | strip
-  assign configure_sub_url = configure_sub_url | strip
   assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
 -%}
 
@@ -25,7 +21,6 @@
         <ul>
           <li><a href="{{ routes.root_url }}">{{ 'sitemap.homepage' | t }}</a></li>
           <li><a href="{{ configure_buy_url }}">{{ 'sitemap.configure_buy' | t }}</a></li>
-          <li><a href="{{ configure_sub_url }}">{{ 'sitemap.configure_sub' | t }}</a></li>
           <li><a href="{{ routes.cart_url }}">{{ 'sitemap.cart' | t }}</a></li>
           {%- if pages.llms -%}
             <li><a href="{{ pages.llms.url }}">{{ 'sitemap.llm_page' | t }}</a></li>

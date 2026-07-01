@@ -31,25 +31,25 @@ const MENUS = {
   'footer-product': {
     title: 'Footer — Product',
     items: [
-      { title: 'Features', url: '/#product' },
-      { title: 'How It Works', url: '/#how-it-works' },
-      { title: 'The App', url: '/#app' },
-      { title: 'Pricing', url: '/#pricing' },
+      { title: 'Features', url: '/pages/features' },
+      { title: 'How It Works', url: '/pages/how-it-works' },
+      { title: 'The App', url: '/pages/the-kevin-app' },
+      { title: 'Pricing', url: '/pages/pricing' },
     ],
   },
   'footer-company': {
     title: 'Footer — Company',
     items: [
-      { title: 'About Kevin', url: 'mailto:hello@lurafi.ai?subject=About%20Kevin' },
-      { title: 'Press', url: 'mailto:press@lurafi.ai?subject=Press%20inquiry' },
-      { title: 'Careers', url: 'mailto:hello@lurafi.ai?subject=Careers' },
+      { title: 'About Kevin', url: '/pages/about-kevin' },
+      { title: 'Press', url: '/pages/press' },
+      { title: 'Careers', url: '/pages/careers' },
     ],
   },
   'footer-support': {
     title: 'Footer — Support',
     items: [
-      { title: 'Setup Guide', url: '/#how-it-works' },
-      { title: 'Contact Us', url: 'mailto:hello@lurafi.ai?subject=Support' },
+      { title: 'Setup Guide', url: '/pages/setup-guide' },
+      { title: 'Contact Us', url: '/pages/contact' },
     ],
   },
   'footer-shop': {
