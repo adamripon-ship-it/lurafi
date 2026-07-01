@@ -1,71 +1,120 @@
 {%- comment -%}
-  ECG / heart-monitor sound lines from product center — left and right, full bleed.
-  Rendered inside hero-product-stage so origin tracks the rotator on all viewports.
+  ECG + wavy sound lines from product center — traveling beam and hotspot sparks.
+  snippets/hero-product-waves.liquid
 {%- endcomment -%}
 {%- assign wave_uid = block_id | default: section.id | default: 'hero' -%}
+{%- capture ecg_path -%}
+M 0 0
+  L -18 0 L -21 4 L -25 0 L -27 0 L -29 16 L -31 -26 L -33 18 L -35 0 L -53 0 L -56 -5 L -59 0 L -72 0
+  L -90 0 L -93 4 L -97 0 L -99 0 L -101 16 L -103 -26 L -105 18 L -107 0 L -125 0 L -128 -5 L -131 0 L -144 0
+  L -162 0 L -165 4 L -169 0 L -171 0 L -173 16 L -175 -26 L -177 18 L -179 0 L -197 0 L -200 -5 L -203 0 L -216 0
+  L -234 0 L -237 4 L -241 0 L -243 0 L -245 16 L -247 -26 L -249 18 L -251 0 L -269 0 L -272 -5 L -275 0 L -288 0
+  L -306 0 L -309 4 L -313 0 L -315 0 L -317 16 L -319 -26 L -321 18 L -323 0 L -341 0 L -344 -5 L -347 0 L -360 0
+  L -378 0 L -381 4 L -385 0 L -387 0 L -389 16 L -391 -26 L -393 18 L -395 0 L -413 0 L -416 -5 L -419 0 L -432 0
+  L -450 0 L -453 4 L -457 0 L -459 0 L -461 16 L -463 -26 L -465 18 L -467 0 L -485 0 L -488 -5 L -491 0 L -504 0
+  L -522 0 L -525 4 L -529 0 L -531 0 L -533 16 L -535 -26 L -537 18 L -539 0 L -557 0 L -560 -5 L -563 0 L -576 0
+  L -594 0 L -597 4 L -601 0 L -603 0 L -605 16 L -607 -26 L -609 18 L -611 0 L -629 0 L -632 -5 L -635 0 L -648 0
+  L -666 0 L -669 4 L -673 0 L -675 0 L -677 16 L -679 -26 L -681 18 L -683 0 L -701 0 L -704 -5 L -707 0 L -720 0
+  L -738 0 L -741 4 L -745 0 L -747 0 L -749 16 L -751 -26 L -753 18 L -755 0 L -773 0 L -776 -5 L -779 0 L -792 0
+  L -810 0 L -813 4 L -817 0 L -819 0 L -821 16 L -823 -26 L -825 18 L -827 0 L -845 0 L -848 -5 L -851 0 L -864 0
+  L -882 0 L -885 4 L -889 0 L -891 0 L -893 16 L -895 -26 L -897 18 L -899 0 L -917 0 L -920 -5 L -923 0 L -936 0
+  L -954 0 L -957 4 L -961 0 L -963 0 L -965 16 L -967 -26 L -969 18 L -971 0 L -989 0 L -992 -5 L -995 0 L -1008 0
+  L -1026 0 L -1029 4 L -1033 0 L -1035 0 L -1037 16 L -1039 -26 L -1041 18 L -1043 0 L -1061 0 L -1064 -5 L -1067 0 L -1080 0
+  L -1098 0 L -1101 4 L -1105 0 L -1107 0 L -1109 16 L -1111 -26 L -1113 18 L -1115 0 L -1133 0 L -1136 -5 L -1139 0 L -1152 0
+  L -1170 0 L -1173 4 L -1177 0 L -1179 0 L -1181 16 L -1183 -26 L -1185 18 L -1187 0 L -1205 0 L -1208 -5 L -1211 0 L -1224 0
+{%- endcapture -%}
+{%- capture wave_carrier -%}
+M 0 0
+{%- for i in (1..34) -%}
+  {%- assign x_end = i | times: 36 | times: -1 -%}
+  {%- assign x_ctrl = i | times: 36 | minus: 18 | times: -1 -%}
+  {%- assign y_ctrl = 9 -%}
+  {%- assign phase = i | modulo: 2 -%}
+  {%- if phase == 0 -%}
+    {%- assign y_ctrl = -9 -%}
+  {%- endif -%}
+  Q {{ x_ctrl }} {{ y_ctrl }} {{ x_end }} 0
+{%- endfor -%}
+{%- endcapture -%}
 <div class="hero-product-waves" aria-hidden="true">
   <svg
     class="hero-product-waves__svg"
-    viewBox="0 0 2400 100"
+    viewBox="0 0 2400 120"
     preserveAspectRatio="none"
     focusable="false"
   >
     <defs>
-      <filter id="hero-ecg-glow-{{ wave_uid }}" x="-80%" y="-400%" width="260%" height="900%" color-interpolation-filters="sRGB">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+      <path id="hero-ecg-path-{{ wave_uid }}" d="{{ ecg_path | strip }}"/>
+      <path id="hero-wave-carrier-{{ wave_uid }}" d="{{ wave_carrier | strip }}"/>
+      <filter id="hero-ecg-soft-{{ wave_uid }}" x="-40%" y="-400%" width="180%" height="900%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="hero-ecg-beam-{{ wave_uid }}" x="-120%" y="-500%" width="340%" height="1100%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5.5" result="blur"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="core"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="core"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="hero-ecg-spark-{{ wave_uid }}" x="-80%" y="-400%" width="260%" height="900%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
         <feMerge>
           <feMergeNode in="blur"/>
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
     </defs>
-    <g class="hero-product-waves__origin" transform="translate(1200, 50)" filter="url(#hero-ecg-glow-{{ wave_uid }})">
-      {%- comment -%} One ECG segment repeated — path starts at product, extends left {%- endcomment -%}
-      <path
-        pathLength="1"
-        class="hero-product-wave hero-product-wave--left"
-        d="M 0 0
-          L -18 0 L -21 4 L -25 0 L -27 0 L -29 16 L -31 -26 L -33 18 L -35 0 L -53 0 L -56 -5 L -59 0 L -72 0
-          L -90 0 L -93 4 L -97 0 L -99 0 L -101 16 L -103 -26 L -105 18 L -107 0 L -125 0 L -128 -5 L -131 0 L -144 0
-          L -162 0 L -165 4 L -169 0 L -171 0 L -173 16 L -175 -26 L -177 18 L -179 0 L -197 0 L -200 -5 L -203 0 L -216 0
-          L -234 0 L -237 4 L -241 0 L -243 0 L -245 16 L -247 -26 L -249 18 L -251 0 L -269 0 L -272 -5 L -275 0 L -288 0
-          L -306 0 L -309 4 L -313 0 L -315 0 L -317 16 L -319 -26 L -321 18 L -323 0 L -341 0 L -344 -5 L -347 0 L -360 0
-          L -378 0 L -381 4 L -385 0 L -387 0 L -389 16 L -391 -26 L -393 18 L -395 0 L -413 0 L -416 -5 L -419 0 L -432 0
-          L -450 0 L -453 4 L -457 0 L -459 0 L -461 16 L -463 -26 L -465 18 L -467 0 L -485 0 L -488 -5 L -491 0 L -504 0
-          L -522 0 L -525 4 L -529 0 L -531 0 L -533 16 L -535 -26 L -537 18 L -539 0 L -557 0 L -560 -5 L -563 0 L -576 0
-          L -594 0 L -597 4 L -601 0 L -603 0 L -605 16 L -607 -26 L -609 18 L -611 0 L -629 0 L -632 -5 L -635 0 L -648 0
-          L -666 0 L -669 4 L -673 0 L -675 0 L -677 16 L -679 -26 L -681 18 L -683 0 L -701 0 L -704 -5 L -707 0 L -720 0
-          L -738 0 L -741 4 L -745 0 L -747 0 L -749 16 L -751 -26 L -753 18 L -755 0 L -773 0 L -776 -5 L -779 0 L -792 0
-          L -810 0 L -813 4 L -817 0 L -819 0 L -821 16 L -823 -26 L -825 18 L -827 0 L -845 0 L -848 -5 L -851 0 L -864 0
-          L -882 0 L -885 4 L -889 0 L -891 0 L -893 16 L -895 -26 L -897 18 L -899 0 L -917 0 L -920 -5 L -923 0 L -936 0
-          L -954 0 L -957 4 L -961 0 L -963 0 L -965 16 L -967 -26 L -969 18 L -971 0 L -989 0 L -992 -5 L -995 0 L -1008 0
-          L -1026 0 L -1029 4 L -1033 0 L -1035 0 L -1037 16 L -1039 -26 L -1041 18 L -1043 0 L -1061 0 L -1064 -5 L -1067 0 L -1080 0
-          L -1098 0 L -1101 4 L -1105 0 L -1107 0 L -1109 16 L -1111 -26 L -1113 18 L -1115 0 L -1133 0 L -1136 -5 L -1139 0 L -1152 0
-          L -1170 0 L -1173 4 L -1177 0 L -1179 0 L -1181 16 L -1183 -26 L -1185 18 L -1187 0 L -1205 0 L -1208 -5 L -1211 0 L -1224 0"
+    <g class="hero-product-waves__origin" transform="translate(1200, 60)">
+      {%- comment -%} Left side {%- endcomment -%}
+      <use
+        href="#hero-wave-carrier-{{ wave_uid }}"
+        class="hero-product-wave-carrier hero-product-wave-carrier--left"
       />
-      <path
-        pathLength="1"
-        class="hero-product-wave hero-product-wave--right"
-        transform="scale(-1, 1)"
-        d="M 0 0
-          L -18 0 L -21 4 L -25 0 L -27 0 L -29 16 L -31 -26 L -33 18 L -35 0 L -53 0 L -56 -5 L -59 0 L -72 0
-          L -90 0 L -93 4 L -97 0 L -99 0 L -101 16 L -103 -26 L -105 18 L -107 0 L -125 0 L -128 -5 L -131 0 L -144 0
-          L -162 0 L -165 4 L -169 0 L -171 0 L -173 16 L -175 -26 L -177 18 L -179 0 L -197 0 L -200 -5 L -203 0 L -216 0
-          L -234 0 L -237 4 L -241 0 L -243 0 L -245 16 L -247 -26 L -249 18 L -251 0 L -269 0 L -272 -5 L -275 0 L -288 0
-          L -306 0 L -309 4 L -313 0 L -315 0 L -317 16 L -319 -26 L -321 18 L -323 0 L -341 0 L -344 -5 L -347 0 L -360 0
-          L -378 0 L -381 4 L -385 0 L -387 0 L -389 16 L -391 -26 L -393 18 L -395 0 L -413 0 L -416 -5 L -419 0 L -432 0
-          L -450 0 L -453 4 L -457 0 L -459 0 L -461 16 L -463 -26 L -465 18 L -467 0 L -485 0 L -488 -5 L -491 0 L -504 0
-          L -522 0 L -525 4 L -529 0 L -531 0 L -533 16 L -535 -26 L -537 18 L -539 0 L -557 0 L -560 -5 L -563 0 L -576 0
-          L -594 0 L -597 4 L -601 0 L -603 0 L -605 16 L -607 -26 L -609 18 L -611 0 L -629 0 L -632 -5 L -635 0 L -648 0
-          L -666 0 L -669 4 L -673 0 L -675 0 L -677 16 L -679 -26 L -681 18 L -683 0 L -701 0 L -704 -5 L -707 0 L -720 0
-          L -738 0 L -741 4 L -745 0 L -747 0 L -749 16 L -751 -26 L -753 18 L -755 0 L -773 0 L -776 -5 L -779 0 L -792 0
-          L -810 0 L -813 4 L -817 0 L -819 0 L -821 16 L -823 -26 L -825 18 L -827 0 L -845 0 L -848 -5 L -851 0 L -864 0
-          L -882 0 L -885 4 L -889 0 L -891 0 L -893 16 L -895 -26 L -897 18 L -899 0 L -917 0 L -920 -5 L -923 0 L -936 0
-          L -954 0 L -957 4 L -961 0 L -963 0 L -965 16 L -967 -26 L -969 18 L -971 0 L -989 0 L -992 -5 L -995 0 L -1008 0
-          L -1026 0 L -1029 4 L -1033 0 L -1035 0 L -1037 16 L -1039 -26 L -1041 18 L -1043 0 L -1061 0 L -1064 -5 L -1067 0 L -1080 0
-          L -1098 0 L -1101 4 L -1105 0 L -1107 0 L -1109 16 L -1111 -26 L -1113 18 L -1115 0 L -1133 0 L -1136 -5 L -1139 0 L -1152 0
-          L -1170 0 L -1173 4 L -1177 0 L -1179 0 L -1181 16 L -1183 -26 L -1185 18 L -1187 0 L -1205 0 L -1208 -5 L -1211 0 L -1224 0"
+      <use
+        href="#hero-ecg-path-{{ wave_uid }}"
+        class="hero-product-wave-baseline hero-product-wave-baseline--left"
       />
+      <use
+        href="#hero-ecg-path-{{ wave_uid }}"
+        pathLength="1"
+        class="hero-product-wave-spark hero-product-wave-spark--left"
+        filter="url(#hero-ecg-spark-{{ wave_uid }})"
+      />
+      <use
+        href="#hero-ecg-path-{{ wave_uid }}"
+        pathLength="1"
+        class="hero-product-wave-beam hero-product-wave-beam--left"
+        filter="url(#hero-ecg-beam-{{ wave_uid }})"
+      />
+      {%- comment -%} Right side (mirrored) {%- endcomment -%}
+      <g transform="scale(-1, 1)">
+        <use
+          href="#hero-wave-carrier-{{ wave_uid }}"
+          class="hero-product-wave-carrier hero-product-wave-carrier--right"
+        />
+        <use
+          href="#hero-ecg-path-{{ wave_uid }}"
+          class="hero-product-wave-baseline hero-product-wave-baseline--right"
+        />
+        <use
+          href="#hero-ecg-path-{{ wave_uid }}"
+          pathLength="1"
+          class="hero-product-wave-spark hero-product-wave-spark--right"
+          filter="url(#hero-ecg-spark-{{ wave_uid }})"
+        />
+        <use
+          href="#hero-ecg-path-{{ wave_uid }}"
+          pathLength="1"
+          class="hero-product-wave-beam hero-product-wave-beam--right"
+          filter="url(#hero-ecg-beam-{{ wave_uid }})"
+        />
+      </g>
     </g>
   </svg>
 </div>

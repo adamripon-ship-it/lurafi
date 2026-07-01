@@ -2,130 +2,29 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "blocks": {
-        "slide_burglary": {
-          "type": "slide",
-          "settings": {
-            "slide_label": "Preventing burglary",
-            "image_fallback": "burglary",
-            "image_alt": "",
-            "callout_1_eyebrow": "",
-            "callout_1_title": "",
-            "callout_1_body": "",
-            "callout_2_eyebrow": "",
-            "callout_2_title": "",
-            "callout_2_body": "",
-            "callout_3_eyebrow": "",
-            "callout_3_title": "",
-            "callout_3_body": ""
-          }
-        },
-        "slide_children": {
-          "type": "slide",
-          "settings": {
-            "slide_label": "Protecting children",
-            "image_fallback": "children",
-            "image_alt": "",
-            "callout_1_eyebrow": "",
-            "callout_1_title": "",
-            "callout_1_body": "",
-            "callout_2_eyebrow": "",
-            "callout_2_title": "",
-            "callout_2_body": "",
-            "callout_3_eyebrow": "",
-            "callout_3_title": "",
-            "callout_3_body": ""
-          }
-        },
-        "slide_seniors": {
-          "type": "slide",
-          "settings": {
-            "slide_label": "Protecting retired & widows living alone",
-            "image_fallback": "seniors",
-            "image_alt": "",
-            "callout_1_eyebrow": "",
-            "callout_1_title": "",
-            "callout_1_body": "",
-            "callout_2_eyebrow": "",
-            "callout_2_title": "",
-            "callout_2_body": "",
-            "callout_3_eyebrow": "",
-            "callout_3_title": "",
-            "callout_3_body": ""
-          }
-        },
-        "slide_women": {
-          "type": "slide",
-          "settings": {
-            "slide_label": "Protecting women living alone / single mothers",
-            "image_fallback": "women",
-            "image_alt": "",
-            "callout_1_eyebrow": "",
-            "callout_1_title": "",
-            "callout_1_body": "",
-            "callout_2_eyebrow": "",
-            "callout_2_title": "",
-            "callout_2_body": "",
-            "callout_3_eyebrow": "",
-            "callout_3_title": "",
-            "callout_3_body": ""
-          }
-        },
-        "slide_students": {
-          "type": "slide",
-          "settings": {
-            "slide_label": "University students living alone",
-            "image_fallback": "students",
-            "image_alt": "",
-            "callout_1_eyebrow": "",
-            "callout_1_title": "",
-            "callout_1_body": "",
-            "callout_2_eyebrow": "",
-            "callout_2_title": "",
-            "callout_2_body": "",
-            "callout_3_eyebrow": "",
-            "callout_3_title": "",
-            "callout_3_body": ""
-          }
-        },
-        "slide_travelling": {
-          "type": "slide",
-          "settings": {
-            "slide_label": "Protecting your home while travelling",
-            "image_fallback": "travel",
-            "image_alt": "",
-            "callout_1_eyebrow": "",
-            "callout_1_title": "",
-            "callout_1_body": "",
-            "callout_2_eyebrow": "",
-            "callout_2_title": "",
-            "callout_2_body": "",
-            "callout_3_eyebrow": "",
-            "callout_3_title": "",
-            "callout_3_body": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_burglary",
-        "slide_children",
-        "slide_seniors",
-        "slide_women",
-        "slide_students",
-        "slide_travelling"
-      ],
       "settings": {
-        "eyebrow": "",
-        "headline": "",
-        "lede": "",
-        "cta_primary_label": "",
+        "eyebrow": "For every home",
+        "headline": "Deter burglaries before they happen.",
+        "lede": "Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play.",
+        "cta_primary_label": "Get Kevin",
         "cta_primary_url": "",
-        "cta_secondary_label": "",
+        "cta_secondary_label": "How it works",
         "cta_secondary_url": "#how-it-works",
-        "carousel_label": "",
-        "autoplay_seconds": 7,
-        "callouts_aria_label": "",
-        "sticky_cta_label": "",
+        "image_alt": "",
+        "callouts_aria_label": "Kevin benefits",
+        "callout_1_eyebrow": "Plug and play",
+        "callout_1_title": "9 watts",
+        "callout_1_body": "Connect power and place near a window—typical use around 9 W. No installation or wiring.",
+        "callout_2_eyebrow": "100% privacy",
+        "callout_2_title": "No cameras. No mics.",
+        "callout_2_body": "Simulations run locally on the device. Nothing uploaded to the cloud or shared with third parties.",
+        "callout_3_eyebrow": "Jammer-proof",
+        "callout_3_title": "Local storage",
+        "callout_3_body": "70+ hours of light, shadow, and sound keep playing—even when burglars jam Wi-Fi cameras and alarms.",
+        "callout_4_eyebrow": "Checkout",
+        "callout_4_title": "Free delivery",
+        "callout_4_body": "Secure checkout with free delivery across Europe.",
+        "sticky_cta_label": "Get Kevin",
         "sticky_cta_enabled": true,
         "sticky_cta_url": ""
       }

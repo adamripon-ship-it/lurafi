@@ -1,0 +1,14 @@
+{%- comment -%}
+  Single hero callout card. Pass: modifier, eyebrow, title, body
+{%- endcomment -%}
+<div class="hero-context-card hero-context-card--{{ modifier }}">
+  {%- if eyebrow != blank -%}
+    <span class="hero-context-card__eyebrow">{{ eyebrow | escape }}</span>
+  {%- endif -%}
+  {%- if title != blank -%}
+    <strong class="hero-context-card__title">{{ title | escape }}</strong>
+  {%- endif -%}
+  {%- if body != blank -%}
+    <span class="hero-context-card__body">{{ body | escape }}</span>
+  {%- endif -%}
+</div>
