@@ -1,0 +1,14 @@
+{
+  "store": "6mzhe1-yf.myshopify.com",
+  "theme_id": "185079038330",
+  "theme_name": "lurafi-footer-pages",
+  "storefront_url": "https://mitipi.eu",
+  "storefront_markers": [
+    "lp-layout.css",
+    "hero-banner__chips",
+    "hero-spec-chip",
+    "solution-split"
+  ],
+  "deploy_head_marker": "lurafi-head-v18",
+  "_comment": "Single source of truth for live deploys. Update theme_id if the published theme changes in Admin."
+}

@@ -65,18 +65,18 @@
 
 <section
   id="app"
-  class="section-apple lp-app bg-black"
+  class="section-apple lp-app bg-gray"
   data-lp-app
   {% if animate %}data-lp-app-animate{% endif %}
 >
   <div class="lp-app__atmosphere" aria-hidden="true"></div>
   <div class="apple-container">
     <header class="lp-app__header">
-      <p class="overline-blue-dark">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.app.overline' | t }}{%- endif -%}</p>
-      <h2 class="headline-section text-white text-center lp-app__heading">
+      <p class="overline-blue">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.app.overline' | t }}{%- endif -%}</p>
+      <h2 class="headline-section text-center lp-app__heading">
         {%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.app.heading' | t }}{%- endif -%}
       </h2>
-      <p class="body-elevated text-muted-dark text-center lp-app__subheading">
+      <p class="body-elevated text-muted text-center lp-app__subheading section-intro__subhead section-intro__subhead--narrow">
         {%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.app.subheading' | t }}{%- endif -%}
       </p>
     </header>

@@ -1,0 +1,25 @@
+{%- comment -%}
+  Compact trust row under hero CTAs. Locale fallbacks when blank.
+{%- endcomment -%}
+{%- liquid
+  if trust_1 == blank
+    assign trust_1 = 'home.hero.trust_1' | t
+  endif
+  if trust_2 == blank
+    assign trust_2 = 'home.hero.trust_2' | t
+  endif
+  if trust_3 == blank
+    assign trust_3 = 'home.hero.trust_3' | t
+  endif
+-%}
+<ul class="hero-banner__trust" role="list">
+  {%- if trust_1 != blank -%}
+    <li class="hero-banner__trust-item">{{ trust_1 | escape }}</li>
+  {%- endif -%}
+  {%- if trust_2 != blank -%}
+    <li class="hero-banner__trust-item">{{ trust_2 | escape }}</li>
+  {%- endif -%}
+  {%- if trust_3 != blank -%}
+    <li class="hero-banner__trust-item">{{ trust_3 | escape }}</li>
+  {%- endif -%}
+</ul>

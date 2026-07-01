@@ -1,14 +1,18 @@
 {%- comment -%}
-  Single hero callout card. Pass: modifier, eyebrow, title, body
+  Hero spec chip — eyebrow + title; body expands on tap (mobile). Pass: modifier, eyebrow, title, body, block_attributes
 {%- endcomment -%}
-<div class="hero-context-card hero-context-card--{{ modifier }}">
-  {%- if eyebrow != blank -%}
-    <span class="hero-context-card__eyebrow">{{ eyebrow | escape }}</span>
-  {%- endif -%}
-  {%- if title != blank -%}
-    <strong class="hero-context-card__title">{{ title | escape }}</strong>
-  {%- endif -%}
-  {%- if body != blank -%}
-    <span class="hero-context-card__body">{{ body | escape }}</span>
-  {%- endif -%}
-</div>
+<li class="hero-spec-chip hero-spec-chip--{{ modifier }}"{{ block_attributes }}>
+  <details class="hero-spec-chip__details">
+    <summary class="hero-spec-chip__summary">
+      {%- if eyebrow != blank -%}
+        <span class="hero-spec-chip__eyebrow">{{ eyebrow | escape }}</span>
+      {%- endif -%}
+      {%- if title != blank -%}
+        <strong class="hero-spec-chip__title">{{ title | escape }}</strong>
+      {%- endif -%}
+    </summary>
+    {%- if body != blank -%}
+      <p class="hero-spec-chip__body">{{ body | escape }}</p>
+    {%- endif -%}
+  </details>
+</li>

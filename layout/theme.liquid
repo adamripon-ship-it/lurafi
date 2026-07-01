@@ -54,7 +54,7 @@
       {%- unless seo_document_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    <!-- lurafi-head-v17 www-canonical -->
+    <!-- lurafi-head-v18 hero-chips-v2 -->
     {%- if request.page_type == 'index' and show_configure == false -%}
       {% render 'lurafi-hero-preload' %}
     {%- endif -%}
@@ -64,6 +64,7 @@
     {{ content_for_header }}
     {{ 'lurafi.css' | asset_url | stylesheet_tag }}
     {{ 'hero.css' | asset_url | stylesheet_tag }}
+    {{ 'lp-layout.css' | asset_url | stylesheet_tag }}
     <script>
       window.themeMoneyFormat = {{ shop.money_format | json }};
       window.themeTranslations = {

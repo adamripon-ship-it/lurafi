@@ -6,6 +6,7 @@ config/brandscript.json
 config/copy-matrix.json
 config/home-en.json
 config/languages.json
+config/live-theme.json
 tests/
 playwright.config.js
 node_modules/

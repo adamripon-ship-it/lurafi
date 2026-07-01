@@ -1628,7 +1628,18 @@ body.mobile-nav-open { overflow: hidden; }
 .lp-app {
   position: relative;
   overflow: hidden;
+}
+
+.lp-app.bg-black {
   background: linear-gradient(180deg, #0a0a0c 0%, #000 52%, #000 100%) !important;
+}
+
+.lp-app.bg-gray {
+  background: var(--apple-bg-gray, #f5f5f7) !important;
+}
+
+.lp-app.bg-gray .lp-app__atmosphere {
+  opacity: 0.35;
 }
 
 .lp-app__atmosphere {

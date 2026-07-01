@@ -7,7 +7,7 @@
 | Storefront | https://mitipi.eu/ |
 | Admin store | `6mzhe1-yf.myshopify.com` (Mitipi GmbH) |
 | Admin URL | https://admin.shopify.com/store/6mzhe1-yf |
-| Live theme | **lurafi-deploy** — ID `184679596410` |
+| Live theme | **lurafi-footer-pages** — ID `185079038330` (see `config/live-theme.json`) |
 | Products | Kevin (buy), Kevin+ (subscribe) |
 
 This repository is the **Online Store 2.0 theme** only. Checkout, Markets, shipping, and payments are configured in Shopify Admin.
@@ -49,22 +49,47 @@ read_content,write_content,read_online_store_pages,write_online_store_pages,read
 3. Push to live only when ready:
 
 ```bash
-npm run theme:push:live
-# or: shopify theme push -s 6mzhe1-yf.myshopify.com --theme 184679596410 --allow-live
+npm run theme:deploy:live
+# alias: npm run theme:push:live
 ```
 
-After locale changes, push the whole `locales/` folder:
+This script (`scripts/deploy-theme-live.sh`):
+
+1. Reads **theme ID from `config/live-theme.json`** (single source of truth)
+2. Pushes files to that theme
+3. **Republishes** the theme (`--force`) to bust Shopify’s homepage page cache
+4. Verifies https://mitipi.eu/ serves the expected theme + HTML markers
+
+After a partial push only, republish + verify without re-uploading everything:
 
 ```bash
-shopify theme push -s 6mzhe1-yf.myshopify.com --theme 184679596410 --only "locales/*"
+npm run theme:publish:live
+npm run theme:verify:live
+```
+
+Partial push (still republishes + verifies):
+
+```bash
+./scripts/deploy-theme-live.sh --only "sections/hero.liquid"
+```
+
+After locale-only changes:
+
+```bash
+./scripts/deploy-theme-live.sh --only "locales/*"
 ```
 
 Post-deploy smoke:
 
 ```bash
 node scripts/qa-mitipi-backend.mjs
+npm run theme:verify:live
 curl -sI https://mitipi.eu/ | head -5
 ```
+
+### Why republish?
+
+Shopify caches rendered homepage HTML (`etag: page_cache:…`). Uploading files via `theme push` does **not** always invalidate that cache. Republishing the live theme forces a fresh render so customers see your changes on mitipi.eu immediately.
 
 ## Theme settings (merchant data)
 

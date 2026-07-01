@@ -1,6 +1,6 @@
 {%- comment -%}
-  Hero copy block: eyebrow, headline, USP, CTAs.
-  Pass: eyebrow, headline, lede, cta_primary_url, cta_primary_label, cta_secondary_url, cta_secondary_label
+  Hero copy block: eyebrow, headline, USP, CTAs, trust strip.
+  Pass: eyebrow, headline, lede, cta_*, trust_1, trust_2, trust_3
 {%- endcomment -%}
 <div class="hero-banner__copy">
   {%- if eyebrow != blank -%}
@@ -26,4 +26,6 @@
       </svg>
     </a>
   </div>
+
+  {% render 'hero-banner-trust', trust_1: trust_1, trust_2: trust_2, trust_3: trust_3 %}
 </div>

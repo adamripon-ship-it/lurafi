@@ -135,14 +135,12 @@
     "step_configure": "Konfigurace",
     "step_checkout": "Pokladna",
     "title": "Vyberte si Kevin.",
-    "lede": "Zvolte barvu a tarif – jste krok od domova, který nikdy nevypadá prázdně.",
+    "lede": "Vyberte barvu—jste jen krok od domova, který nikdy nevypadá prázdně.",
     "color_label": "Barva předního panelu",
     "color_prefix": "Barva:",
     "plan_label": "Vyberte tarif",
     "plan_buy": "Koupit",
     "plan_buy_sub": "Jednorázový nákup",
-    "plan_sub": "Kevin+",
-    "plan_sub_sub": "Měsíční předplatné",
     "billing": "Fakturace",
     "quantity": "Množství",
     "qty_hint": "Doporučeno: 2 zařízení pro domy s více patry",
@@ -161,9 +159,7 @@
     "warranty": "3letá záruka",
     "secure": "Bezpečná pokladna Shopify",
     "buy_features": "Zařízení je vaše|Více než 70 hodin věrohodné AI přítomnosti|Ovládání v aplikaci Kevin App|Doprava zdarma po celé Evropě|3letá švýcarská záruka|Doživotní aktualizace softwaru",
-    "sub_features": "Zařízení v ceně – bez akontace|Prémiová AI knihovna, která se neustále zlepšuje|Nové simulace s vývojem hrozeb|Výměna hardwaru při poruše|Zrušení kdykoli|Doprava a vrácení zdarma",
     "summary_plan_buy": "Jednorázový nákup",
-    "summary_plan_sub": "Kevin+ měsíčně",
     "per_device": " za zařízení",
     "error_products": "Přiřaďte produkty v Nastavení motivu → Produkty.",
     "error_checkout": "Online pokladna je téměř připravena. Objednejte e-mailem na hello@lurafi.ai nebo to zkuste brzy znovu.",
@@ -171,8 +167,7 @@
     "device_alt": "Zařízení Kevin",
     "device_in": "Kevin v barvě {{ color }}",
     "header_eyebrow": "Secure checkout",
-    "plan_badge_popular": "Most popular",
-    "plan_sub_badge": "Flexible"
+    "plan_badge_popular": "Most popular"
   },
   "hero": {
     "away_eyebrow": "Away mode",
@@ -201,7 +196,13 @@
       "callout_2_body": "Simulation plays locally on the device.",
       "callout_3_eyebrow": "Checkout",
       "callout_3_title": "Free delivery",
-      "callout_3_body": "Secure Shopify checkout."
+      "callout_3_body": "Secure Shopify checkout.",
+      "callout_4_eyebrow": "Checkout",
+      "callout_4_title": "Free delivery",
+      "callout_4_body": "Secure checkout with free delivery across Europe.",
+      "eyebrow": "Smart. Secure. Swiss.",
+      "headline": "Deter Burglaries Before They Happen.",
+      "lede": "Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play."
     },
     "slide_2": {
       "label": "Protecting children",
@@ -214,7 +215,10 @@
       "callout_2_body": "Schedule scenes that match homework time, dinner prep, and evening TV — just like when you are home.",
       "callout_3_eyebrow": "Kids upstairs",
       "callout_3_title": "Downstairs active",
-      "callout_3_body": "Simulate adult activity on the ground floor while children stay safely upstairs."
+      "callout_3_body": "Simulate adult activity on the ground floor while children stay safely upstairs.",
+      "eyebrow": "Living alone",
+      "headline": "Dignity at home, without surveillance.",
+      "lede": "Neighbours see warm light and believable movement—Kevin keeps your home looking cared for with no cameras and no microphones."
     },
     "slide_3": {
       "label": "Protecting retired & widows living alone",
@@ -227,7 +231,10 @@
       "callout_2_body": "Presence without cameras or microphones — dignity and deterrence in one quiet device.",
       "callout_3_eyebrow": "Daily rhythms",
       "callout_3_title": "Set and forget",
-      "callout_3_body": "Weekly schedules turn on familiar scenes without fiddling with complicated security panels."
+      "callout_3_body": "Weekly schedules turn on familiar scenes without fiddling with complicated security panels.",
+      "eyebrow": "Mom and baby",
+      "headline": "Safe upstairs while home looks occupied.",
+      "lede": "While you settle the baby, Kevin keeps believable adult movement on the ground floor—light, shadow, and sound from local storage."
     },
     "slide_4": {
       "label": "Protecting women living alone / single mothers",
@@ -240,7 +247,10 @@
       "callout_2_body": "Simulate an occupied ground floor while you settle children on the floor above.",
       "callout_3_eyebrow": "After dark",
       "callout_3_title": "Never predictable",
-      "callout_3_body": "Varied TV glow, footsteps, and voices — patterns that never repeat obviously night after night."
+      "callout_3_body": "Varied TV glow, footsteps, and voices — patterns that never repeat obviously night after night.",
+      "eyebrow": "Single mothers",
+      "headline": "Upstairs with your toddler—downstairs looks busy.",
+      "lede": "Kevin simulates cooking rhythms, TV glow, and hallway footsteps so passers-by see an occupied ground floor while you are upstairs."
     },
     "slide_5": {
       "label": "University students living alone",
@@ -253,7 +263,10 @@
       "callout_2_body": "Realistic low-level household sounds — not loud music through thin walls during exam week.",
       "callout_3_eyebrow": "Next lease",
       "callout_3_title": "Pack and go",
-      "callout_3_body": "Move Kevin between bedroom and living area or take it when you relocate next semester."
+      "callout_3_body": "Move Kevin between bedroom and living area or take it when you relocate next semester.",
+      "eyebrow": "Student life",
+      "headline": "Your first flat should not look empty.",
+      "lede": "Kevin makes your studio look lived-in to neighbours in the corridor—realistic household sounds without blasting music through thin walls."
     },
     "slide_6": {
       "label": "Protecting your home while travelling",
@@ -266,7 +279,10 @@
       "callout_2_body": "Lock the door and Kevin takes over automatically with scenes that shift through the day.",
       "callout_3_eyebrow": "Peace of mind",
       "callout_3_title": "One device",
-      "callout_3_body": "No need to ask neighbours to pull blinds — Kevin handles believable occupancy from inside."
+      "callout_3_body": "No need to ask neighbours to pull blinds — Kevin handles believable occupancy from inside.",
+      "eyebrow": "Expat solo",
+      "headline": "New city—home still looks lived in.",
+      "lede": "One plug-and-play device simulates believable presence while you work late or explore a new country—no drilling, no landlord drama."
     },
     "slide_7": {
       "label": "Lock the door, home keeps living",
@@ -279,7 +295,10 @@
       "callout_2_body": "Lock up and Kevin shifts scenes through the day without timers on six different lamps.",
       "callout_3_eyebrow": "Peace of mind",
       "callout_3_title": "One device",
-      "callout_3_body": "Skip explaining your schedule to new neighbours — occupancy runs believably from inside."
+      "callout_3_body": "Skip explaining your schedule to new neighbours — occupancy runs believably from inside.",
+      "eyebrow": "On holiday",
+      "headline": "Lock the door—home keeps living.",
+      "lede": "Light, shadow, and sound vary while you are abroad so passers-by see everyday rhythms—not a dark, silent flat."
     },
     "slide_8": {
       "label": "Ski week, city break, second home",
@@ -292,7 +311,10 @@
       "callout_2_body": "Layer believable pet and human activity so watchers cannot tell the house is empty.",
       "callout_3_eyebrow": "Second home",
       "callout_3_title": "Set once per season",
-      "callout_3_body": "Weekly schedules for your Alpine flat or coast house — believable occupancy between your visits."
+      "callout_3_body": "Weekly schedules for your Alpine flat or coast house — believable occupancy between your visits.",
+      "eyebrow": "Second home",
+      "headline": "Believable scenes between your visits.",
+      "lede": "Schedule weekly occupancy for your holiday home or city break—hallway, living room, and kitchen rhythms rotate automatically."
     },
     "drag_to_rotate": "Drag to rotate Kevin"
   },
@@ -310,7 +332,15 @@
       "cta_primary_url": "",
       "cta_secondary_label": "Jak to funguje",
       "cta_secondary_url": "#how-it-works",
-      "image_alt": "Kevin presence simulation device"
+      "image_alt": "Kevin presence simulation device",
+      "sticky_cta_label": "Get Kevin",
+      "callout_1_title": "9 watts",
+      "callout_2_title": "No cameras. No mics.",
+      "callout_3_title": "Local storage",
+      "callout_4_title": "Free delivery",
+      "trust_1": "Swiss engineered",
+      "trust_2": "No cameras or mics",
+      "trust_3": "Free delivery in Europe"
     },
     "problem": {
       "overline": "Problém",
@@ -333,7 +363,9 @@
       "pillar_2_body": "Promítané siluety a proměnlivé světlo naznačují pohyb lidí v prostoru – bez kamer a mikrofonů.",
       "pillar_3_title": "Každodenní zvuk",
       "pillar_3_body": "Kuchyňský hluk, televizní atmosféra, kroky, hlasy a vaše vlastní nahrávky dělají simulaci osobnější a méně opakující se.",
-      "image_alt": "Kevin presence simulation at night"
+      "image_alt": "Kevin presence simulation at night",
+      "outside_image_alt": "European home at night — warm window light and moving shadow visible from the street",
+      "outside_caption": "What passers-by see: warm light and believable movement—not a dark, empty home."
     },
     "steps": {
       "overline": "Plán",
@@ -425,17 +457,13 @@
       "summary_body": "Kevin se snadno umístí, je navržen s důrazem na soukromí a nejvíce přesvědčí z perspektivy, na které záleží: zvenčí."
     },
     "pricing": {
-      "overline": "Ceník",
-      "heading": "Vyberte si vrstvu zabezpečení.",
-      "subheading": "Kupte Kevin jednorázově nebo si ho předplaťte měsíčně. V obou případech získáte simulátor přítomnosti s důrazem na soukromí, který odrazuje dřív, než je potřeba alarm.",
-      "buy_label": "Jednorázový nákup",
-      "buy_tagline": "Váš navždy.",
-      "buy_cta": "Koupit hned",
-      "sub_label": "Měsíční předplatné",
-      "sub_tagline": "Zařízení v ceně. Zrušení kdykoli.",
-      "sub_cta": "Předplatit",
-      "buy_features": "Plné vlastnictví zařízení|Více než 70 hodin vestavěných simulací|Týdenní plány a aktivace podle polohy|Nahrajte vlastní domácí zvuky|Flexibilní umístění s 3m napájecím kabelem|Doprava zdarma|3letá záruka",
-      "sub_features": "Zařízení v ceně bez akontace|Prémiová simulační knihovna|Pravidelné aktualizace softwaru|Prioritní podpora|Podpora výměny hardwaru|Flexibilní pro více místností a nemovitostí|Doprava zdarma"
+      "overline": "Vlastněte Kevin®",
+      "heading": "Jednorázový nákup. Doživotní aktualizace v ceně.",
+      "subheading": "Kupte Kevin® jednorázově s bezplatným doživotním členstvím, aktualizacemi softwaru, 3letou švýcarskou zárukou a dopravou zdarma po Evropě.",
+      "buy_label": "Vlastněte Kevin®",
+      "buy_tagline": "Jednorázový nákup. Všechny aktualizace v ceně.",
+      "buy_cta": "Koupit",
+      "buy_features": "Plné vlastnictví zařízení|Více než 70 hodin vestavěných simulací|Týdenní plány a aktivace podle polohy|Nahrajte vlastní domácí zvuky|Flexibilní umístění s 3m napájecím kabelem|Doprava zdarma|3letá záruka"
     },
     "cta": {
       "heading": "Odjeďte, aniž byste to oznamovali.",
@@ -458,7 +486,6 @@
     "primary": "Hlavní stránky",
     "homepage": "Domovská stránka",
     "configure_buy": "Konfigurace / nákup Kevin",
-    "configure_sub": "Předplatné Kevin+",
     "cart": "Košík",
     "ai_files": "Soubory AI a LLM",
     "short_llm": "Krátké LLM shrnutí",
@@ -477,7 +504,6 @@
     "oneliner": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem – váš domov zůstane viditelně obydlený a zloději půjdou dál.",
     "what_we_sell": "Co prodáváme",
     "buy_bullet": "**Kevin (Koupit)**: Jednorázový nákup. Zařízení s více než 70 hodinami věrohodné AI přítomnosti, ovládání Kevin App, doprava zdarma v Evropě, 3letá švýcarská záruka.",
-    "sub_bullet": "**Kevin+ (Předplatit)**: Měsíční tarif se zařízením v ceně, prémiová AI knihovna, výměna hardwaru, zrušení kdykoli.",
     "how_heading": "Jak to funguje",
     "how_1": "Zapojte ho u okna.",
     "how_2": "Nastavte plán nebo nechte Kevin aktivovat, když odjedete.",
@@ -505,7 +531,7 @@
     "q3": "Používá Kevin kamery nebo mikrofony?",
     "a3": "Ne. Kevin simuluje přítomnost pouze světlem, stínem a zvukem. V domácnosti nejsou kamery ani mikrofony. Simulace jsou uloženy lokálně na zařízení – nestreamují se z cloudu ani se nesdílejí s třetími stranami.",
     "q4": "Jak si koupím Kevin?",
-    "a4": "Na stránce konfigurace zvolte barvu a tarif a pokračujte do bezpečné pokladny Shopify s dopravou zdarma po celé Evropě a 3letou švýcarskou zárukou.",
+    "a4": "Vyberte barvu na stránce konfigurace a pokračujte k bezpečné Shopify platbě s dopravou zdarma po Evropě a 3letou švýcarskou zárukou.",
     "q5": "Funguje Kevin, když je Wi-Fi rušeno?",
     "a5": "Ano. Základní simulace běží z lokálního úložiště v zařízení. Kevin dál promítá světlo, stín a zvuk, i když zloději ruší Wi-Fi kamery a alarmy."
   },

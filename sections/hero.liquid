@@ -97,6 +97,19 @@
   if callout_4_body == blank
     assign callout_4_body = 'hero.slide_1.callout_4_body' | t
   endif
+
+  assign trust_1 = section.settings.trust_1
+  if trust_1 == blank
+    assign trust_1 = 'home.hero.trust_1' | t
+  endif
+  assign trust_2 = section.settings.trust_2
+  if trust_2 == blank
+    assign trust_2 = 'home.hero.trust_2' | t
+  endif
+  assign trust_3 = section.settings.trust_3
+  if trust_3 == blank
+    assign trust_3 = 'home.hero.trust_3' | t
+  endif
 -%}
 
 <section class="hero-apple" aria-labelledby="HeroHeading">
@@ -107,6 +120,7 @@
     <div class="hero-apple__frame">
       <div class="hero-apple__stage">
         {% render 'hero-banner',
+          section: section,
           hero_eyebrow: hero_eyebrow,
           hero_headline: hero_headline,
           hero_lede: hero_lede,
@@ -129,11 +143,15 @@
           callout_4_eyebrow: callout_4_eyebrow,
           callout_4_title: callout_4_title,
           callout_4_body: callout_4_body,
+          trust_1: trust_1,
+          trust_2: trust_2,
+          trust_3: trust_3,
           banner_id: section.id
         %}
       </div>
     </div>
     <a href="#problem" class="hero-apple__scroll" aria-label="{{ 'accessibility.scroll_to_content' | t }}">
+      <span class="hero-apple__scroll-label">{{ 'accessibility.scroll_to_content' | t }}</span>
       <span class="hero-apple__scroll-icon" aria-hidden="true">
         <span class="hero-apple__scroll-dot"></span>
       </span>
@@ -182,6 +200,10 @@
       "id": "callouts_aria_label",
       "label": "Callouts region label (accessibility)"
     },
+    {
+      "type": "paragraph",
+      "content": "Add up to four callout blocks below. Legacy callout settings are used only when no blocks are present."
+    },
     { "type": "text", "id": "callout_1_eyebrow", "label": "Callout 1 eyebrow" },
     { "type": "text", "id": "callout_1_title", "label": "Callout 1 title (top-left)" },
     { "type": "textarea", "id": "callout_1_body", "label": "Callout 1 body" },
@@ -194,6 +216,13 @@
     { "type": "text", "id": "callout_4_eyebrow", "label": "Callout 4 eyebrow" },
     { "type": "text", "id": "callout_4_title", "label": "Callout 4 title (bottom-right)" },
     { "type": "textarea", "id": "callout_4_body", "label": "Callout 4 body" },
+    {
+      "type": "header",
+      "content": "Trust strip"
+    },
+    { "type": "text", "id": "trust_1", "label": "Trust item 1" },
+    { "type": "text", "id": "trust_2", "label": "Trust item 2" },
+    { "type": "text", "id": "trust_3", "label": "Trust item 3" },
     {
       "type": "header",
       "content": "Sticky mobile CTA"
@@ -216,9 +245,71 @@
       "info": "Leave blank to use Configure (buy) page."
     }
   ],
+  "blocks": [
+    {
+      "type": "callout",
+      "name": "Product callout",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "default": "primary",
+          "options": [
+            { "value": "primary", "label": "Top left" },
+            { "value": "privacy", "label": "Top right" },
+            { "value": "delivery", "label": "Bottom left" },
+            { "value": "feature", "label": "Bottom right" }
+          ]
+        },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Hero"
+      "name": "Hero",
+      "blocks": [
+        {
+          "type": "callout",
+          "settings": {
+            "position": "primary",
+            "eyebrow": "Plug and play",
+            "title": "9 watts",
+            "body": "Connect power and place near a window—typical use around 9 W. No installation or wiring."
+          }
+        },
+        {
+          "type": "callout",
+          "settings": {
+            "position": "privacy",
+            "eyebrow": "100% privacy",
+            "title": "No cameras. No mics.",
+            "body": "Simulations run locally on the device. Nothing uploaded to the cloud or shared with third parties."
+          }
+        },
+        {
+          "type": "callout",
+          "settings": {
+            "position": "delivery",
+            "eyebrow": "Jammer-proof",
+            "title": "Local storage",
+            "body": "70+ hours of light, shadow, and sound keep playing—even when burglars jam Wi-Fi cameras and alarms."
+          }
+        },
+        {
+          "type": "callout",
+          "settings": {
+            "position": "feature",
+            "eyebrow": "Checkout",
+            "title": "Free delivery",
+            "body": "Secure checkout with free delivery across Europe."
+          }
+        }
+      ]
     }
   ]
 }

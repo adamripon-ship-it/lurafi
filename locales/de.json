@@ -135,14 +135,12 @@
     "step_configure": "Konfigurieren",
     "step_checkout": "Kasse",
     "title": "Wählen Sie Ihren Kevin.",
-    "lede": "Farbe und Tarif wählen—nur noch ein Schritt bis zu einem Zuhause, das nie leer wirkt.",
+    "lede": "Wählen Sie Ihre Farbe—nur noch ein Schritt bis zu einem Zuhause, das nie leer wirkt.",
     "color_label": "Frontpanel-Farbe",
     "color_prefix": "Farbe:",
     "plan_label": "Tarif wählen",
     "plan_buy": "Kaufen",
     "plan_buy_sub": "Einmaliger Kauf",
-    "plan_sub": "Kevin+",
-    "plan_sub_sub": "Monatliches Abo",
     "billing": "Abrechnung",
     "quantity": "Menge",
     "qty_hint": "Empfohlen: 2 Geräte für Häuser mit mehreren Etagen",
@@ -161,9 +159,7 @@
     "warranty": "3 Jahre Garantie",
     "secure": "Sicherer Checkout über Shopify",
     "buy_features": "Volles Eigentum am Gerät|70+ Stunden glaubwürdige KI-Anwesenheit|Alles steuern über die Kevin App|Kostenlose Lieferung in ganz Europa|3 Jahre Schweizer Garantie|Lebenslange Software-Updates inklusive",
-    "sub_features": "Gerät inklusive—keine Vorauszahlung|Premium-KI-Bibliothek in stetiger Weiterentwicklung|Neue Simulationen bei sich wandelnden Bedrohungen|Hardware-Ersatz bei Defekt|Jederzeit kündbar|Kostenlose Lieferung und Rückgabe",
     "summary_plan_buy": "Einmaliger Kauf",
-    "summary_plan_sub": "Kevin+ monatlich",
     "per_device": " pro Gerät",
     "error_products": "Bitte weisen Sie Produkte unter Theme-Einstellungen → Produkte zu.",
     "error_checkout": "Online-Checkout ist fast bereit. Schreiben Sie an hello@lurafi.ai zum Bestellen oder versuchen Sie es bald erneut.",
@@ -171,8 +167,7 @@
     "device_alt": "Kevin-Gerät",
     "device_in": "Kevin in {{ color }}",
     "header_eyebrow": "Secure checkout",
-    "plan_badge_popular": "Most popular",
-    "plan_sub_badge": "Flexible"
+    "plan_badge_popular": "Most popular"
   },
   "hero": {
     "away_eyebrow": "Away mode",
@@ -201,7 +196,13 @@
       "callout_2_body": "Simulation plays locally on the device.",
       "callout_3_eyebrow": "Checkout",
       "callout_3_title": "Free delivery",
-      "callout_3_body": "Secure Shopify checkout."
+      "callout_3_body": "Secure Shopify checkout.",
+      "callout_4_eyebrow": "Checkout",
+      "callout_4_title": "Free delivery",
+      "callout_4_body": "Secure checkout with free delivery across Europe.",
+      "eyebrow": "Smart. Secure. Swiss.",
+      "headline": "Deter Burglaries Before They Happen.",
+      "lede": "Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play."
     },
     "slide_2": {
       "label": "Protecting children",
@@ -214,7 +215,10 @@
       "callout_2_body": "Schedule scenes that match homework time, dinner prep, and evening TV — just like when you are home.",
       "callout_3_eyebrow": "Kids upstairs",
       "callout_3_title": "Downstairs active",
-      "callout_3_body": "Simulate adult activity on the ground floor while children stay safely upstairs."
+      "callout_3_body": "Simulate adult activity on the ground floor while children stay safely upstairs.",
+      "eyebrow": "Living alone",
+      "headline": "Dignity at home, without surveillance.",
+      "lede": "Neighbours see warm light and believable movement—Kevin keeps your home looking cared for with no cameras and no microphones."
     },
     "slide_3": {
       "label": "Protecting retired & widows living alone",
@@ -227,7 +231,10 @@
       "callout_2_body": "Presence without cameras or microphones — dignity and deterrence in one quiet device.",
       "callout_3_eyebrow": "Daily rhythms",
       "callout_3_title": "Set and forget",
-      "callout_3_body": "Weekly schedules turn on familiar scenes without fiddling with complicated security panels."
+      "callout_3_body": "Weekly schedules turn on familiar scenes without fiddling with complicated security panels.",
+      "eyebrow": "Mom and baby",
+      "headline": "Safe upstairs while home looks occupied.",
+      "lede": "While you settle the baby, Kevin keeps believable adult movement on the ground floor—light, shadow, and sound from local storage."
     },
     "slide_4": {
       "label": "Protecting women living alone / single mothers",
@@ -240,7 +247,10 @@
       "callout_2_body": "Simulate an occupied ground floor while you settle children on the floor above.",
       "callout_3_eyebrow": "After dark",
       "callout_3_title": "Never predictable",
-      "callout_3_body": "Varied TV glow, footsteps, and voices — patterns that never repeat obviously night after night."
+      "callout_3_body": "Varied TV glow, footsteps, and voices — patterns that never repeat obviously night after night.",
+      "eyebrow": "Single mothers",
+      "headline": "Upstairs with your toddler—downstairs looks busy.",
+      "lede": "Kevin simulates cooking rhythms, TV glow, and hallway footsteps so passers-by see an occupied ground floor while you are upstairs."
     },
     "slide_5": {
       "label": "University students living alone",
@@ -253,7 +263,10 @@
       "callout_2_body": "Realistic low-level household sounds — not loud music through thin walls during exam week.",
       "callout_3_eyebrow": "Next lease",
       "callout_3_title": "Pack and go",
-      "callout_3_body": "Move Kevin between bedroom and living area or take it when you relocate next semester."
+      "callout_3_body": "Move Kevin between bedroom and living area or take it when you relocate next semester.",
+      "eyebrow": "Student life",
+      "headline": "Your first flat should not look empty.",
+      "lede": "Kevin makes your studio look lived-in to neighbours in the corridor—realistic household sounds without blasting music through thin walls."
     },
     "slide_6": {
       "label": "Protecting your home while travelling",
@@ -266,7 +279,10 @@
       "callout_2_body": "Lock the door and Kevin takes over automatically with scenes that shift through the day.",
       "callout_3_eyebrow": "Peace of mind",
       "callout_3_title": "One device",
-      "callout_3_body": "No need to ask neighbours to pull blinds — Kevin handles believable occupancy from inside."
+      "callout_3_body": "No need to ask neighbours to pull blinds — Kevin handles believable occupancy from inside.",
+      "eyebrow": "Expat solo",
+      "headline": "New city—home still looks lived in.",
+      "lede": "One plug-and-play device simulates believable presence while you work late or explore a new country—no drilling, no landlord drama."
     },
     "slide_7": {
       "label": "Lock the door, home keeps living",
@@ -279,7 +295,10 @@
       "callout_2_body": "Lock up and Kevin shifts scenes through the day without timers on six different lamps.",
       "callout_3_eyebrow": "Peace of mind",
       "callout_3_title": "One device",
-      "callout_3_body": "Skip explaining your schedule to new neighbours — occupancy runs believably from inside."
+      "callout_3_body": "Skip explaining your schedule to new neighbours — occupancy runs believably from inside.",
+      "eyebrow": "On holiday",
+      "headline": "Lock the door—home keeps living.",
+      "lede": "Light, shadow, and sound vary while you are abroad so passers-by see everyday rhythms—not a dark, silent flat."
     },
     "slide_8": {
       "label": "Ski week, city break, second home",
@@ -292,7 +311,10 @@
       "callout_2_body": "Layer believable pet and human activity so watchers cannot tell the house is empty.",
       "callout_3_eyebrow": "Second home",
       "callout_3_title": "Set once per season",
-      "callout_3_body": "Weekly schedules for your Alpine flat or coast house — believable occupancy between your visits."
+      "callout_3_body": "Weekly schedules for your Alpine flat or coast house — believable occupancy between your visits.",
+      "eyebrow": "Second home",
+      "headline": "Believable scenes between your visits.",
+      "lede": "Schedule weekly occupancy for your holiday home or city break—hallway, living room, and kitchen rhythms rotate automatically."
     },
     "drag_to_rotate": "Drag to rotate Kevin"
   },
@@ -310,7 +332,15 @@
       "cta_primary_url": "",
       "cta_secondary_label": "So funktioniert's",
       "cta_secondary_url": "#how-it-works",
-      "image_alt": "Kevin presence simulation device"
+      "image_alt": "Kevin presence simulation device",
+      "sticky_cta_label": "Get Kevin",
+      "callout_1_title": "9 watts",
+      "callout_2_title": "No cameras. No mics.",
+      "callout_3_title": "Local storage",
+      "callout_4_title": "Free delivery",
+      "trust_1": "Swiss engineered",
+      "trust_2": "No cameras or mics",
+      "trust_3": "Free delivery in Europe"
     },
     "problem": {
       "overline": "Das Problem",
@@ -333,7 +363,9 @@
       "pillar_2_body": "Projizierte Silhouetten und wechselndes Licht suggerieren Menschen, die sich durch den Raum bewegen—ohne Kameras oder Mikrofone.",
       "pillar_3_title": "Alltägliche Geräusche",
       "pillar_3_body": "Küchengeräusche, TV-Ambiente, Schritte, Stimmen und Ihre eigenen Aufnahmen machen die Simulation persönlicher und weniger repetitiv.",
-      "image_alt": "Kevin presence simulation at night"
+      "image_alt": "Kevin presence simulation at night",
+      "outside_image_alt": "European home at night — warm window light and moving shadow visible from the street",
+      "outside_caption": "What passers-by see: warm light and believable movement—not a dark, empty home."
     },
     "steps": {
       "overline": "Der Plan",
@@ -425,17 +457,13 @@
       "summary_body": "Kevin ist einfach zu platzieren, datenschutzfreundlich konzipiert und am überzeugendsten aus genau der Perspektive, die zählt: von außen."
     },
     "pricing": {
-      "overline": "Preise",
-      "heading": "Wählen Sie Ihre Sicherheitsebene.",
-      "subheading": "Kevin kaufen oder monatlich abonnieren. In beiden Fällen erhalten Sie einen datenschutzorientierten Anwesenheitssimulator, der abschreckt, bevor ein Alarm nötig wird.",
-      "buy_label": "Einmaliger Kauf",
-      "buy_tagline": "Ihr Eigentum, für immer.",
+      "overline": "Kevin® besitzen",
+      "heading": "Einmalkauf. Lebenslange Updates inklusive.",
+      "subheading": "Kaufen Sie Kevin® einmalig mit kostenloser lebenslanger Mitgliedschaft, Software-Updates, 3-jähriger Schweizer Garantie und kostenloser Lieferung in Europa.",
+      "buy_label": "Kevin® besitzen",
+      "buy_tagline": "Einmalkauf. Alle Updates inklusive.",
       "buy_cta": "Jetzt kaufen",
-      "sub_label": "Monatliches Abo",
-      "sub_tagline": "Gerät inklusive. Jederzeit kündbar.",
-      "sub_cta": "Jetzt abonnieren",
-      "buy_features": "Volles Geräteeigentum|70+ Stunden integrierte Simulationen|Wochenpläne und geo-basierte Aktivierung|Eigene Haushaltsgeräusche hochladen|Flexible Platzierung mit 3 m Stromkabel|Kostenlose Lieferung|3 Jahre Garantie",
-      "sub_features": "Gerät kostenlos inklusive|Premium-Simulationsbibliothek|Regelmäßige Software-Updates|Prioritäts-Support|Hardware-Ersatz|Flexibel für mehrere Räume oder Objekte|Kostenlose Lieferung"
+      "buy_features": "Volles Geräteeigentum|70+ Stunden integrierte Simulationen|Wochenpläne und geo-basierte Aktivierung|Eigene Haushaltsgeräusche hochladen|Flexible Platzierung mit 3 m Stromkabel|Kostenlose Lieferung|3 Jahre Garantie"
     },
     "cta": {
       "heading": "Gehen, ohne es zu verraten.",
@@ -458,7 +486,6 @@
     "primary": "Hauptseiten",
     "homepage": "Startseite",
     "configure_buy": "Konfigurieren / Kevin kaufen",
-    "configure_sub": "Kevin+-Abo",
     "cart": "Warenkorb",
     "ai_files": "KI- und LLM-Dateien",
     "short_llm": "Kurze LLM-Zusammenfassung",
@@ -477,7 +504,6 @@
     "oneliner": "Wenn Sie unterwegs sind, nutzt Kevin Schweizer KI, um echte menschliche Anwesenheit mit Licht, Schatten und Ton zu simulieren—damit Ihr Zuhause sichtbar bewohnt wirkt und Einbrecher weiterziehen.",
     "what_we_sell": "Was wir verkaufen",
     "buy_bullet": "**Kevin (Kaufen)**: Einmaliger Kauf. Gerät mit 70+ Stunden glaubwürdiger KI-Anwesenheit, Kevin App-Steuerung, kostenlose Lieferung in Europa, 3 Jahre Schweizer Garantie.",
-    "sub_bullet": "**Kevin+ (Abonnieren)**: Monatstarif mit Gerät inklusive, Premium-KI-Bibliothek, Hardware-Ersatz, jederzeit kündbar.",
     "how_heading": "So funktioniert's",
     "how_1": "Nahe einem Fenster einstecken.",
     "how_2": "Zeitplan setzen oder Kevin aktivieren lassen, wenn Sie gehen.",
@@ -505,7 +531,7 @@
     "q3": "Nutzt Kevin Kameras oder Mikrofone?",
     "a3": "Nein. Kevin simuliert Anwesenheit nur mit Licht, Schatten und Ton. Keine Kameras und keine Mikrofone in Ihrem Zuhause. Simulationen werden lokal auf dem Gerät gespeichert, nicht aus der Cloud gestreamt oder an Dritte weitergegeben.",
     "q4": "Wie kaufe ich Kevin?",
-    "a4": "Wählen Sie Farbe und Tarif auf der Konfigurationsseite und gehen Sie weiter zum sicheren Shopify-Checkout mit kostenloser Lieferung in ganz Europa und 3 Jahren Schweizer Garantie.",
+    "a4": "Wählen Sie Ihre Farbe auf der Konfigurationsseite und fahren Sie mit dem sicheren Shopify-Checkout fort – kostenlose Lieferung in Europa und 3 Jahre Schweizer Garantie.",
     "q5": "Funktioniert Kevin, wenn Wi-Fi gejammt wird?",
     "a5": "Ja. Kernsimulationen werden lokal auf dem Gerät abgespielt. Kevin projiziert weiterhin Licht, Schatten und Ton—auch wenn Einbrecher Wi-Fi-Kameras und Alarmanlagen stören."
   },

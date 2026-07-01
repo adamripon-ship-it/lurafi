@@ -1,42 +1,75 @@
+{%- liquid
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.problem.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.problem.heading' | t
+  endif
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'home.problem.subheading' | t
+  endif
+-%}
+
 <section id="problem" class="section-apple bg-white">
   <div class="apple-container">
-    <p class="overline-blue">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.problem.overline' | t }}{%- endif -%}</p>
-    <h2 class="headline-section text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.problem.heading' | t }}{%- endif -%}</h2>
-    <p class="body-elevated text-muted text-center" style="max-width:600px;margin:0 auto 64px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.problem.subheading' | t }}{%- endif -%}</p>
-    <div class="tile-grid-3">
-      <div class="tile tile--gray text-center">
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading,
+      theme: 'light'
+    %}
+
+    <div class="problem-bento">
+      <article class="problem-bento__lead tile tile--gray">
         <div class="feature-tile__media">
           {%- if section.settings.tile_1_image -%}
-            <img src="{{ section.settings.tile_1_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+            <img src="{{ section.settings.tile_1_image | image_url: width: 800 }}" alt="" loading="lazy" decoding="async" width="800" height="480">
           {%- else -%}
-            <img src="{{ 'kevin-feature-problem-alarms.jpg' | asset_url }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+            <img src="{{ 'kevin-feature-problem-alarms.jpg' | asset_url }}" alt="{{ 'home.problem.tile_1_title' | t | escape }}" loading="lazy" decoding="async" width="800" height="480">
           {%- endif -%}
         </div>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.tile_1_title != blank -%}{{ section.settings.tile_1_title }}{%- else -%}{{ 'home.problem.tile_1_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted">{%- if section.settings.tile_1_body != blank -%}{{ section.settings.tile_1_body }}{%- else -%}{{ 'home.problem.tile_1_body' | t }}{%- endif -%}</p>
-      </div>
-      <div class="tile tile--gray text-center">
+        <h3 class="problem-bento__title headline-tile">
+          {%- if section.settings.tile_1_title != blank -%}{{ section.settings.tile_1_title }}{%- else -%}{{ 'home.problem.tile_1_title' | t }}{%- endif -%}
+        </h3>
+        <p class="body-standard text-muted">
+          {%- if section.settings.tile_1_body != blank -%}{{ section.settings.tile_1_body }}{%- else -%}{{ 'home.problem.tile_1_body' | t }}{%- endif -%}
+        </p>
+      </article>
+
+      <article class="problem-bento__tile tile tile--gray">
         <div class="feature-tile__media">
           {%- if section.settings.tile_2_image -%}
             <img src="{{ section.settings.tile_2_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
           {%- else -%}
-            <img src="{{ 'kevin-feature-problem-cameras.jpg' | asset_url }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+            <img src="{{ 'kevin-feature-problem-cameras.jpg' | asset_url }}" alt="{{ 'home.problem.tile_2_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
           {%- endif -%}
         </div>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.tile_2_title != blank -%}{{ section.settings.tile_2_title }}{%- else -%}{{ 'home.problem.tile_2_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted">{%- if section.settings.tile_2_body != blank -%}{{ section.settings.tile_2_body }}{%- else -%}{{ 'home.problem.tile_2_body' | t }}{%- endif -%}</p>
-      </div>
-      <div class="tile tile--gray text-center">
+        <h3 class="problem-bento__title headline-tile">
+          {%- if section.settings.tile_2_title != blank -%}{{ section.settings.tile_2_title }}{%- else -%}{{ 'home.problem.tile_2_title' | t }}{%- endif -%}
+        </h3>
+        <p class="body-standard text-muted">
+          {%- if section.settings.tile_2_body != blank -%}{{ section.settings.tile_2_body }}{%- else -%}{{ 'home.problem.tile_2_body' | t }}{%- endif -%}
+        </p>
+      </article>
+
+      <article class="problem-bento__tile tile tile--gray">
         <div class="feature-tile__media">
           {%- if section.settings.tile_3_image -%}
             <img src="{{ section.settings.tile_3_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
           {%- else -%}
-            <img src="{{ 'kevin-feature-problem-lights.jpg' | asset_url }}" alt="" loading="lazy" decoding="async" width="640" height="480">
+            <img src="{{ 'kevin-feature-problem-lights.jpg' | asset_url }}" alt="{{ 'home.problem.tile_3_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
           {%- endif -%}
         </div>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.tile_3_title != blank -%}{{ section.settings.tile_3_title }}{%- else -%}{{ 'home.problem.tile_3_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted">{%- if section.settings.tile_3_body != blank -%}{{ section.settings.tile_3_body }}{%- else -%}{{ 'home.problem.tile_3_body' | t }}{%- endif -%}</p>
-      </div>
+        <h3 class="problem-bento__title headline-tile">
+          {%- if section.settings.tile_3_title != blank -%}{{ section.settings.tile_3_title }}{%- else -%}{{ 'home.problem.tile_3_title' | t }}{%- endif -%}
+        </h3>
+        <p class="body-standard text-muted">
+          {%- if section.settings.tile_3_body != blank -%}{{ section.settings.tile_3_body }}{%- else -%}{{ 'home.problem.tile_3_body' | t }}{%- endif -%}
+        </p>
+      </article>
     </div>
   </div>
 </section>
@@ -50,36 +83,16 @@
       "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language."
     },
     { "type": "text", "id": "overline", "label": "Overline" },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading"
-    },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading"
-    },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
     { "type": "text", "id": "tile_1_title", "label": "Tile 1 title" },
-    {
-      "type": "textarea",
-      "id": "tile_1_body",
-      "label": "Tile 1 body"
-    },
+    { "type": "textarea", "id": "tile_1_body", "label": "Tile 1 body" },
     { "type": "image_picker", "id": "tile_1_image", "label": "Tile 1 image", "info": "Default: kevin-feature-problem-alarms.jpg" },
     { "type": "text", "id": "tile_2_title", "label": "Tile 2 title" },
-    {
-      "type": "textarea",
-      "id": "tile_2_body",
-      "label": "Tile 2 body"
-    },
+    { "type": "textarea", "id": "tile_2_body", "label": "Tile 2 body" },
     { "type": "image_picker", "id": "tile_2_image", "label": "Tile 2 image", "info": "Default: kevin-feature-problem-cameras.jpg" },
     { "type": "text", "id": "tile_3_title", "label": "Tile 3 title" },
-    {
-      "type": "textarea",
-      "id": "tile_3_body",
-      "label": "Tile 3 body"
-    },
+    { "type": "textarea", "id": "tile_3_body", "label": "Tile 3 body" },
     { "type": "image_picker", "id": "tile_3_image", "label": "Tile 3 image", "info": "Default: kevin-feature-problem-lights.jpg" }
   ],
   "presets": [{ "name": "Problem" }]
