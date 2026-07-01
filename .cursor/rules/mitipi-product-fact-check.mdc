@@ -1,0 +1,35 @@
+---
+description: Mandatory Kevin product fact-check before any mitipi.eu customer-facing change. Auto-loads kevin-product-fact-check skill.
+alwaysApply: true
+---
+
+# mitipi.eu — mandatory product fact-check
+
+This repo is the **mitipi.eu** Shopify theme. Any update that can reach customers must pass product fact-check **before** you finish the task, open a PR, commit, or deploy.
+
+## Automatic trigger
+
+When you change **any** of the following, you **must** read and follow `.cursor/skills/kevin-product-fact-check/SKILL.md` in the same session — do not skip:
+
+- `locales/**` — all locale strings
+- `sections/**`, `snippets/**`, `templates/**`, `layout/**` — Liquid with customer-visible text
+- `assets/llms*.txt` — AI / SEO product summaries
+- `config/*.json` — theme content (home, pages)
+- `docs/**` — only when editing customer-facing or product-claim copy
+- Scripts that generate or sync the above (`scripts/build-locales.mjs`, etc.)
+
+Pure CSS/JS/asset changes with **no** copy changes: fact-check not required unless embedded strings or alt text changed.
+
+## Required workflow (non-optional)
+
+1. **Read** `.cursor/skills/kevin-product-fact-check/SKILL.md` (and `product-facts.md` if needed).
+2. **Fetch** https://kevinswiss.com for claims you write or touch.
+3. **Cross-check** in-repo sources: `assets/llms-full.txt`, `locales/en.default.json`.
+4. **Complete** the skill’s 5-step checklist; fix ❌ and ⚠️ claims.
+5. **Report** a brief fact-check summary when customer-facing copy changed (see skill output template).
+
+## Hard stop
+
+Do **not** mark the task complete, suggest deploy, or say copy is ready until fact-check passes.
+
+If kevinswiss.com and in-repo sources conflict, flag for the user — do not silently merge.

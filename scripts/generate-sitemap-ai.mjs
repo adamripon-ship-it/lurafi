@@ -59,12 +59,6 @@ const htmlRoutes = [
     changefreq: 'weekly',
     priority: '0.9',
   },
-  {
-    name: 'configure-sub',
-    getUrl: (loc) => buildConfigureUrl(domain, loc.code, 'subscribe'),
-    changefreq: 'weekly',
-    priority: '0.9',
-  },
   { name: 'llms', getUrl: (loc) => pageUrl(loc, 'llms'), changefreq: 'monthly', priority: '0.7' },
   { name: 'sitemap', getUrl: (loc) => pageUrl(loc, 'sitemap'), changefreq: 'monthly', priority: '0.7' },
 ];

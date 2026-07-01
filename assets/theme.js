@@ -158,10 +158,18 @@
   function initStickyCta() {
     var bar = document.querySelector('[data-sticky-cta]');
     if (!bar) return;
+    var heroActions = document.querySelector('.hero-banner__actions');
     var hero = document.querySelector('.hero-apple');
     var show = function () {
-      var pastHero = !hero || window.scrollY > (hero.offsetHeight || 400) * 0.55;
-      bar.hidden = !pastHero;
+      var triggerY;
+      if (heroActions) {
+        triggerY = heroActions.getBoundingClientRect().bottom + window.scrollY + 32;
+      } else if (hero) {
+        triggerY = hero.offsetHeight * 0.92;
+      } else {
+        triggerY = 400;
+      }
+      bar.hidden = window.scrollY <= triggerY;
     };
     show();
     window.addEventListener('scroll', show, { passive: true });

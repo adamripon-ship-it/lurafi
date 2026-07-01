@@ -24,7 +24,6 @@ Key facts:
 Important URLs:
 - Homepage: https://mitipi.eu/nl
 - Configure / buy: https://mitipi.eu/nl/pages/kevin-configureren?plan=buy
-- Subscribe: https://mitipi.eu/nl/pages/kevin-configureren?plan=subscribe
 
 Contact:
 - Email: hello@lurafi.com

@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "Own Kevin®",
+        "heading": "One-time purchase. Lifetime updates included.",
+        "lede": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
+        "theme": "white",
+        "image_asset": "kevin-hero-product-top.png",
+        "image_alt": "Kevin® device — top view product photo",
+        "cta_heading": "Configure and buy Kevin.",
+        "cta_subheading": "Choose your front cover color and continue to secure checkout.",
+        "cta_primary": "Buy Now",
+        "cta_primary_url": "/pages/configure?plan=buy",
+        "cta_secondary": "Features",
+        "cta_secondary_url": "/pages/features"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "What's included",
+            "heading": "Everything you need to deter burglaries.",
+            "body": "One transparent price. No hidden monitoring fees. Device ownership with software updates for life.",
+            "variant": "default"
+          }
+        },
+        "block_2": {
+          "type": "richtext",
+          "settings": {
+            "title": "Your Kevin purchase includes",
+            "body": "<p>Kevin® device with your chosen front cover color · Kevin App control · 70+ hours of built-in simulations · Weekly schedules and geo-fencing · Upload your own household sounds · AI-generated household audio · Bluetooth speaker and lamp at home · Flexible placement with approx. 3 m power cable · Free delivery across Europe · 3-year Swiss warranty · Lifetime software updates · 30-day returns</p>"
+          }
+        },
+        "block_3": {
+          "type": "stat_row",
+          "settings": {
+            "stat_1_value": "3 yr",
+            "stat_1_label": "Swiss warranty",
+            "stat_2_value": "Free",
+            "stat_2_label": "Delivery across Europe",
+            "stat_3_value": "30",
+            "stat_3_label": "Day returns"
+          }
+        },
+        "block_4": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Questions",
+            "heading": "Pricing FAQ",
+            "body": "Common questions about buying Kevin on mitipi.eu.",
+            "variant": "default"
+          }
+        },
+        "block_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Kevin a subscription?",
+            "answer": "<p>On mitipi.eu you buy Kevin outright with a one-time payment. Lifetime software updates are included. There are no mandatory monthly monitoring fees.</p>"
+          }
+        },
+        "block_6": {
+          "type": "faq",
+          "settings": {
+            "question": "What does free delivery cover?",
+            "answer": "<p>Free delivery across Europe on qualifying orders through mitipi.eu. Taxes are calculated at checkout based on your country.</p>"
+          }
+        },
+        "block_7": {
+          "type": "faq",
+          "settings": {
+            "question": "What if Kevin stops working?",
+            "answer": "<p>Kevin includes a 3-year Swiss warranty. Contact support with your serial number (on the bottom of the device) and order reference for repair or replacement guidance.</p>"
+          }
+        },
+        "block_8": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I return Kevin?",
+            "answer": "<p>Yes—30-day returns apply as stated at checkout. Configure your color, try Kevin at home, and contact support if you need help with a return.</p>"
+          }
+        },
+        "block_9": {
+          "type": "richtext",
+          "settings": {
+            "title": "Transparent checkout",
+            "body": "<p>Configure your color on the secure Shopify checkout flow at mitipi.eu. Taxes calculated at checkout. Kevin is prevention-first protection you own outright—no surveillance subscriptions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8",
+        "block_9"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

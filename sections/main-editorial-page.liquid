@@ -1,0 +1,488 @@
+{%- liquid
+  assign page_theme = section.settings.theme | default: 'white'
+  assign hero_image = section.settings.image
+  assign hero_image_asset = section.settings.image_asset | strip
+  if hero_image == blank and hero_image_asset != blank
+    assign hero_image_url = hero_image_asset | asset_url
+  endif
+  assign hero_alt = section.settings.image_alt | default: page.title | escape
+
+  capture configure_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_url = configure_url | strip
+
+  assign cta_primary_url = section.settings.cta_primary_url | strip
+  if cta_primary_url == blank
+    assign cta_primary_url = configure_url
+  elsif cta_primary_url contains '://' or cta_primary_url contains routes.root_url
+    # keep
+  elsif cta_primary_url contains '/'
+    assign cta_primary_url = cta_primary_url
+  else
+    assign cta_primary_url = routes.root_url | append: cta_primary_url
+  endif
+
+  assign cta_secondary_url = section.settings.cta_secondary_url | strip
+  if cta_secondary_url == blank
+    assign how_it_works_page = pages['how-it-works']
+    if how_it_works_page
+      assign cta_secondary_url = how_it_works_page.url
+    else
+      assign cta_secondary_url = routes.root_url | append: 'pages/how-it-works'
+    endif
+  elsif cta_secondary_url contains '://' or cta_secondary_url contains 'mailto:'
+    # keep
+  elsif cta_secondary_url contains '/'
+    assign cta_secondary_url = cta_secondary_url
+  else
+    assign cta_secondary_url = routes.root_url | append: cta_secondary_url
+  endif
+
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'pages.editorial.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = page.title
+  endif
+  assign lede = section.settings.lede
+  if lede == blank and page.content != blank
+    assign lede = page.content | strip_html | truncate: 280
+  endif
+-%}
+
+<section class="editorial-page editorial-page--{{ page_theme }}" aria-labelledby="EditorialPageHeading">
+  <div class="apple-container editorial-page__hero">
+    <p class="{% if page_theme == 'black' %}overline-blue-dark{% else %}overline-blue{% endif %} text-center">{{ overline }}</p>
+    <h1 id="EditorialPageHeading" class="headline-section text-center editorial-page__title{% if page_theme == 'black' %} text-white{% endif %}">{{ heading }}</h1>
+    {%- if lede != blank -%}
+      <p class="body-elevated text-center editorial-page__lede{% if page_theme == 'black' %} text-muted-dark{% else %} text-muted{% endif %}">{{ lede }}</p>
+    {%- endif -%}
+
+    {%- if hero_image != blank or hero_image_url != blank -%}
+      <div class="editorial-page__media">
+        {%- if hero_image != blank -%}
+          <img
+            src="{{ hero_image | image_url: width: 960 }}"
+            srcset="
+              {{ hero_image | image_url: width: 480 }} 480w,
+              {{ hero_image | image_url: width: 720 }} 720w,
+              {{ hero_image | image_url: width: 960 }} 960w
+            "
+            sizes="(min-width: 768px) 720px, 92vw"
+            alt="{{ hero_image.alt | default: hero_alt }}"
+            width="{{ hero_image.width | default: 1024 }}"
+            height="{{ hero_image.height | default: 682 }}"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        {%- else -%}
+          <img
+            src="{{ hero_image_url }}"
+            alt="{{ hero_alt }}"
+            width="1024"
+            height="682"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="apple-container editorial-page__body">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'richtext' -%}
+            <article class="editorial-block editorial-block--richtext" {{ block.shopify_attributes }}>
+              {%- if block.settings.title != blank -%}
+                <h2 class="editorial-block__title">{{ block.settings.title }}</h2>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <div class="editorial-block__prose rte">{{ block.settings.body }}</div>
+              {%- endif -%}
+            </article>
+
+          {%- when 'pillar' -%}
+            <article class="editorial-block editorial-block--pillar tile tile--gray" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <span class="editorial-block__icon" aria-hidden="true">{{ block.settings.icon }}</span>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <h3 class="editorial-block__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <p class="body-standard text-muted">{{ block.settings.body }}</p>
+              {%- endif -%}
+            </article>
+
+          {%- when 'step' -%}
+            <article class="editorial-block editorial-block--step" {{ block.shopify_attributes }}>
+              <span class="editorial-block__step-num" aria-hidden="true">{{ block.settings.number }}</span>
+              <div>
+                {%- if block.settings.title != blank -%}
+                  <h3 class="editorial-block__title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <p class="body-standard text-muted">{{ block.settings.body }}</p>
+                {%- endif -%}
+              </div>
+            </article>
+
+          {%- when 'quote' -%}
+            <blockquote class="editorial-block editorial-block--quote tile tile--gray" {{ block.shopify_attributes }}>
+              {%- if block.settings.quote != blank -%}
+                <p class="editorial-block__quote">“{{ block.settings.quote | strip | remove: '"' }}”</p>
+              {%- endif -%}
+              {%- if block.settings.source != blank -%}
+                <footer class="editorial-block__source text-muted">{{ block.settings.source }}</footer>
+              {%- endif -%}
+            </blockquote>
+
+          {%- when 'stat_row' -%}
+            <div class="editorial-block editorial-block--stats" {{ block.shopify_attributes }}>
+              <div class="editorial-stats">
+                {%- for i in (1..3) -%}
+                  {%- capture value_key -%}stat_{{ i }}_value{%- endcapture -%}
+                  {%- capture label_key -%}stat_{{ i }}_label{%- endcapture -%}
+                  {%- assign stat_value = block.settings[value_key] -%}
+                  {%- assign stat_label = block.settings[label_key] -%}
+                  {%- if stat_value != blank -%}
+                    <div class="editorial-stats__item">
+                      <p class="editorial-stats__value">{{ stat_value }}</p>
+                      <p class="editorial-stats__label text-muted">{{ stat_label }}</p>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+
+          {%- when 'contact_row' -%}
+            <div class="editorial-block editorial-block--contacts tile-grid-2" {{ block.shopify_attributes }}>
+              {%- for i in (1..4) -%}
+                {%- capture label_key -%}contact_{{ i }}_label{%- endcapture -%}
+                {%- capture value_key -%}contact_{{ i }}_value{%- endcapture -%}
+                {%- capture link_key -%}contact_{{ i }}_link{%- endcapture -%}
+                {%- assign contact_label = block.settings[label_key] -%}
+                {%- assign contact_value = block.settings[value_key] -%}
+                {%- assign contact_link = block.settings[link_key] -%}
+                {%- if contact_label != blank -%}
+                  <div class="editorial-contact tile tile--gray">
+                    <p class="editorial-contact__label">{{ contact_label }}</p>
+                    {%- if contact_link != blank -%}
+                      <a href="{{ contact_link }}" class="editorial-contact__value">{{ contact_value }}</a>
+                    {%- else -%}
+                      <p class="editorial-contact__value text-muted">{{ contact_value }}</p>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+          {%- when 'section_intro' -%}
+            <header
+              class="editorial-block editorial-block--section-intro editorial-block--section-intro-{{ block.settings.variant | default: 'default' }}"
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.overline != blank -%}
+                <p class="{% if block.settings.variant == 'dark' %}overline-blue-dark{% else %}overline-blue{% endif %} text-center">{{ block.settings.overline }}</p>
+              {%- endif -%}
+              {%- if block.settings.heading != blank -%}
+                <h2 class="editorial-block__title editorial-block__section-heading text-center{% if block.settings.variant == 'dark' %} text-white{% endif %}">{{ block.settings.heading }}</h2>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <p class="body-elevated text-center editorial-block__section-lede{% if block.settings.variant == 'dark' %} text-muted-dark{% else %} text-muted{% endif %}">{{ block.settings.body }}</p>
+              {%- endif -%}
+            </header>
+
+          {%- when 'media_split' -%}
+            {%- liquid
+              assign split_asset = block.settings.image_asset | strip
+              assign split_image = block.settings.image
+              assign split_alt = block.settings.image_alt | default: block.settings.title | escape
+              if split_image == blank and split_asset != blank
+                assign split_url = split_asset | asset_url
+              endif
+            -%}
+            <article
+              class="editorial-block editorial-block--media-split{% if block.settings.reverse %} editorial-block--media-split-reverse{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              <div class="editorial-media-split__copy">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="editorial-block__title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <p class="body-standard text-muted">{{ block.settings.body }}</p>
+                {%- endif -%}
+              </div>
+              {%- if split_image != blank or split_url != blank -%}
+                <div class="editorial-media-split__media">
+                  {%- if split_image != blank -%}
+                    <img
+                      src="{{ split_image | image_url: width: 640 }}"
+                      srcset="
+                        {{ split_image | image_url: width: 400 }} 400w,
+                        {{ split_image | image_url: width: 640 }} 640w
+                      "
+                      sizes="(min-width: 768px) 320px, 88vw"
+                      alt="{{ split_image.alt | default: split_alt }}"
+                      width="{{ split_image.width | default: 640 }}"
+                      height="{{ split_image.height | default: 427 }}"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  {%- else -%}
+                    <img
+                      src="{{ split_url }}"
+                      alt="{{ split_alt }}"
+                      width="640"
+                      height="427"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </article>
+
+          {%- when 'image_pillar' -%}
+            {%- liquid
+              assign pillar_asset = block.settings.image_asset | strip
+              assign pillar_image = block.settings.image
+              assign pillar_alt = block.settings.image_alt | default: block.settings.title | escape
+              if pillar_image == blank and pillar_asset != blank
+                assign pillar_url = pillar_asset | asset_url
+              endif
+            -%}
+            <article class="editorial-block editorial-block--image-pillar tile tile--gray" {{ block.shopify_attributes }}>
+              {%- if pillar_image != blank or pillar_url != blank -%}
+                <div class="editorial-image-pillar__media">
+                  {%- if pillar_image != blank -%}
+                    <img
+                      src="{{ pillar_image | image_url: width: 480 }}"
+                      alt="{{ pillar_image.alt | default: pillar_alt }}"
+                      width="{{ pillar_image.width | default: 480 }}"
+                      height="{{ pillar_image.height | default: 320 }}"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  {%- else -%}
+                    <img
+                      src="{{ pillar_url }}"
+                      alt="{{ pillar_alt }}"
+                      width="480"
+                      height="320"
+                      loading="lazy"
+                      decoding="async"
+                    >
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                <h3 class="editorial-block__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <p class="body-standard text-muted">{{ block.settings.body }}</p>
+              {%- endif -%}
+            </article>
+
+          {%- when 'faq' -%}
+            <details class="editorial-block editorial-block--faq tile tile--gray" {{ block.shopify_attributes }}>
+              {%- if block.settings.question != blank -%}
+                <summary class="editorial-faq__question">{{ block.settings.question }}</summary>
+              {%- endif -%}
+              {%- if block.settings.answer != blank -%}
+                <div class="editorial-faq__answer body-standard text-muted rte">{{ block.settings.answer }}</div>
+              {%- endif -%}
+            </details>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.cta_heading != blank -%}
+    <div class="editorial-page__cta-wrap">
+      <div class="apple-container text-center">
+        <h2 class="headline-section text-white editorial-page__cta-title">{{ section.settings.cta_heading }}</h2>
+        {%- if section.settings.cta_subheading != blank -%}
+          <p class="body-elevated text-muted-dark editorial-page__cta-lede">{{ section.settings.cta_subheading }}</p>
+        {%- endif -%}
+        <div class="cta-row editorial-page__cta-row">
+          <a href="{{ cta_primary_url }}" class="cta-white-btn">{{ section.settings.cta_primary | default: 'Get Kevin' }}</a>
+          {%- if section.settings.cta_secondary != blank -%}
+            <a href="{{ cta_secondary_url }}" class="cta-outline-btn">{{ section.settings.cta_secondary }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Editorial page",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Switch language at the top of the editor before editing. Blank fields fall back to page title or locale defaults."
+    },
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "overline", "label": "Overline" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "lede", "label": "Lede" },
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Hero theme",
+      "default": "white",
+      "options": [
+        { "value": "white", "label": "Light" },
+        { "value": "black", "label": "Dark" }
+      ]
+    },
+    { "type": "image_picker", "id": "image", "label": "Hero image" },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Hero image asset filename",
+      "info": "Used when no image is picked above (theme asset)."
+    },
+    { "type": "text", "id": "image_alt", "label": "Hero image alt text" },
+    { "type": "header", "content": "Footer CTA" },
+    { "type": "text", "id": "cta_heading", "label": "CTA heading" },
+    { "type": "textarea", "id": "cta_subheading", "label": "CTA subheading" },
+    { "type": "text", "id": "cta_primary", "label": "Primary button label" },
+    { "type": "text", "id": "cta_primary_url", "label": "Primary button URL" },
+    { "type": "text", "id": "cta_secondary", "label": "Secondary button label" },
+    { "type": "text", "id": "cta_secondary_url", "label": "Secondary button URL" }
+  ],
+  "blocks": [
+    {
+      "type": "richtext",
+      "name": "Rich text",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "richtext", "id": "body", "label": "Body" }
+      ]
+    },
+    {
+      "type": "pillar",
+      "name": "Feature pillar",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icon (emoji or symbol)" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    },
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Step number", "default": "1" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Press quote",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote" },
+        { "type": "text", "id": "source", "label": "Source / attribution" }
+      ]
+    },
+    {
+      "type": "stat_row",
+      "name": "Stats row",
+      "settings": [
+        { "type": "text", "id": "stat_1_value", "label": "Stat 1 value" },
+        { "type": "text", "id": "stat_1_label", "label": "Stat 1 label" },
+        { "type": "text", "id": "stat_2_value", "label": "Stat 2 value" },
+        { "type": "text", "id": "stat_2_label", "label": "Stat 2 label" },
+        { "type": "text", "id": "stat_3_value", "label": "Stat 3 value" },
+        { "type": "text", "id": "stat_3_label", "label": "Stat 3 label" }
+      ]
+    },
+    {
+      "type": "contact_row",
+      "name": "Contact cards",
+      "settings": [
+        { "type": "text", "id": "contact_1_label", "label": "Contact 1 label" },
+        { "type": "text", "id": "contact_1_value", "label": "Contact 1 value" },
+        { "type": "text", "id": "contact_1_link", "label": "Contact 1 link (URL or mailto:)" },
+        { "type": "text", "id": "contact_2_label", "label": "Contact 2 label" },
+        { "type": "text", "id": "contact_2_value", "label": "Contact 2 value" },
+        { "type": "text", "id": "contact_2_link", "label": "Contact 2 link (URL or mailto:)" },
+        { "type": "text", "id": "contact_3_label", "label": "Contact 3 label" },
+        { "type": "text", "id": "contact_3_value", "label": "Contact 3 value" },
+        { "type": "text", "id": "contact_3_link", "label": "Contact 3 link (URL or mailto:)" },
+        { "type": "text", "id": "contact_4_label", "label": "Contact 4 label" },
+        { "type": "text", "id": "contact_4_value", "label": "Contact 4 value" },
+        { "type": "text", "id": "contact_4_link", "label": "Contact 4 link (URL or mailto:)" }
+      ]
+    },
+    {
+      "type": "section_intro",
+      "name": "Section intro",
+      "settings": [
+        { "type": "text", "id": "overline", "label": "Overline" },
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "textarea", "id": "body", "label": "Body" },
+        {
+          "type": "select",
+          "id": "variant",
+          "label": "Style",
+          "default": "default",
+          "options": [
+            { "value": "default", "label": "Light" },
+            { "value": "dark", "label": "Dark band" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "media_split",
+      "name": "Image + text split",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_asset", "label": "Image asset filename" },
+        { "type": "text", "id": "image_alt", "label": "Image alt text" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Image on right",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "image_pillar",
+      "name": "Image feature card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_asset", "label": "Image asset filename" },
+        { "type": "text", "id": "image_alt", "label": "Image alt text" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Editorial page" }]
+}
+{% endschema %}

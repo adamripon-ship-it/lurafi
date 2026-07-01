@@ -39,11 +39,9 @@ async function httpChecks() {
   const paths = [
     { path: '/', need: 'Make Home Look Alive', name: 'Home' },
     { path: '/products/kevin', name: 'Kevin PDP', status: 200 },
-    { path: '/products/kevin-plus', name: 'Kevin+ PDP', status: 200 },
     { path: '/products/kevin.json', need: '"handle":"kevin"', name: 'kevin JSON' },
-    { path: '/products/kevin-plus.json', need: '"handle":"kevin-plus"', name: 'kevin-plus JSON' },
-    { path: '/pages/configure?plan=subscribe', need: '"sellingPlans"', name: 'Configure subscribe plans' },
     { path: '/pages/configure?plan=buy', need: 'data-configure', name: 'Configure buy' },
+    { path: '/pages/configure?plan=subscribe', need: 'data-configure', name: 'Configure legacy subscribe URL' },
     { path: '/pages/sitemap', name: 'Sitemap page', status: 200 },
     { path: '/pages/llms', name: 'LLMs page', status: 200 },
     { path: '/robots.txt', need: 'Sitemap', name: 'robots.txt' },
@@ -85,62 +83,25 @@ async function cmsStructureChecks() {
   return fails === 0;
 }
 
-function ensureSubscribeCommerce() {
-  console.log('Ensuring kevin-plus selling plan (required for subscribe checkout)…');
-  const r = spawnSync('node', ['scripts/setup-mitipi-commerce.mjs'], {
-    cwd: ROOT,
-    env: { ...process.env, SHOPIFY_STORE: STORE },
-    encoding: 'utf8',
-    timeout: 120000,
-  });
-  const out = (r.stdout || '') + (r.stderr || '');
-  if (out.trim()) process.stdout.write(out);
-  if (r.status !== 0) {
-    console.warn('⚠ setup-mitipi-commerce failed — subscribe checkout may fail\n');
-  }
-}
-
 async function checkoutSmoke() {
-  console.log(`\n${'='.repeat(60)}\n▶ Checkout smoke (buy + subscribe)\n${'='.repeat(60)}\n`);
-  ensureSubscribeCommerce();
+  console.log(`\n${'='.repeat(60)}\n▶ Checkout smoke (buy)\n${'='.repeat(60)}\n`);
   const { chromium } = await import('playwright');
-  const results = [];
-  // Subscribe first — needs selling plan; also avoids buy-then-subscribe rate limits.
-  for (const plan of ['subscribe', 'buy']) {
-    const browser = await chromium.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.goto(`${LURAFI}/pages/configure?plan=${plan}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await page.locator('[data-configure]').first().waitFor({ state: 'visible', timeout: 15000 });
-    await page.waitForTimeout(800);
-    if (plan === 'subscribe') {
-      const subCard = page.locator('[data-plan="subscribe"]');
-      if (await subCard.isEnabled()) await subCard.click();
-      await page.waitForTimeout(400);
-    }
-    const btn = page.locator('[data-configure-checkout]').first();
-    await btn.click();
-    try {
-      await page.waitForURL(/\/checkouts\//, { timeout: 60000 });
-    } catch {
-      /* cart permalink may stop at /cart/...?checkout under Shopify rate limits */
-    }
-    const url = page.url();
-    const atCheckout = /\/checkouts\//i.test(url);
-    const hasSellingPlan = /selling_plan=/i.test(url);
-    let ok = false;
-    if (plan === 'buy') {
-      ok = atCheckout;
-    } else {
-      // Shopify checkout URLs omit selling_plan; plan is attached on the cart line item.
-      ok = atCheckout || (/\/cart\/[^?]+\?checkout/.test(url) && hasSellingPlan);
-    }
-    const note = plan === 'subscribe' && !atCheckout && ok ? ' (cart permalink; plan attached)' : '';
-    console.log(`${plan}: ${ok ? '✓' : '✗'}${note} → ${url.slice(0, 90)}`);
-    results.push({ plan, ok, url });
-    await browser.close();
-    if (plan === 'subscribe') await new Promise((r) => setTimeout(r, 8000));
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
+  await page.goto(`${LURAFI}/pages/configure?plan=buy`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await page.locator('[data-configure]').first().waitFor({ state: 'visible', timeout: 15000 });
+  await page.waitForTimeout(800);
+  const btn = page.locator('[data-configure-checkout]').first();
+  await btn.click();
+  try {
+    await page.waitForURL(/\/checkouts\//, { timeout: 60000 });
+  } catch {
+    /* cart permalink may stop at /cart/...?checkout under Shopify rate limits */
   }
-  const ok = results.every((r) => r.ok);
+  const url = page.url();
+  const ok = /\/checkouts\//i.test(url);
+  console.log(`buy: ${ok ? '✓' : '✗'} → ${url.slice(0, 90)}`);
+  await browser.close();
   suites.push({ name: 'Checkout smoke', ok, exitCode: ok ? 0 : 1 });
   return ok;
 }

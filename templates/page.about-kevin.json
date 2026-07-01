@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "Company",
+        "heading": "Swiss innovation for prevention-first home security.",
+        "lede": "Mitipi AG develops Kevin®, a presence simulation device that helps homes, flats, offices, and holiday properties look occupied when people are away—without cameras or microphones.",
+        "theme": "black",
+        "image_asset": "kevin-hero-burglary-prevention.png",
+        "image_alt": "Kevin® presence simulation — editorial product visual",
+        "cta_heading": "Join the movement for safer homes.",
+        "cta_subheading": "Smart. Secure. Swiss.",
+        "cta_primary": "Get Kevin",
+        "cta_primary_url": "/pages/configure?plan=buy",
+        "cta_secondary": "Press",
+        "cta_secondary_url": "/pages/press"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Our vision",
+            "heading": "Everyone deserves to feel safe.",
+            "body": "Burglars choose easy targets—dark windows, silent halls, predictable timers. Kevin adds believable light, shadow, and sound so your home reads as lived-in from the street.",
+            "variant": "default"
+          }
+        },
+        "block_2": {
+          "type": "richtext",
+          "settings": {
+            "title": "Prevention, not surveillance",
+            "body": "<p>We believe deterrence should not require cameras or microphones. Kevin stores simulations locally on the device, uses typical power around 9 watts, and complements alarms and cameras rather than replacing them.</p>"
+          }
+        },
+        "block_3": {
+          "type": "stat_row",
+          "settings": {
+            "stat_1_value": "97%",
+            "stat_1_label": "Burglary probability reduced (Mitipi research)",
+            "stat_2_value": "Swiss",
+            "stat_2_label": "Engineered & designed",
+            "stat_3_value": "Award",
+            "stat_3_label": "Winning innovation"
+          }
+        },
+        "block_4": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Our story",
+            "heading": "From Zurich idea to global protection.",
+            "body": "Kevin was conceived in Zurich. Mitipi was founded in 2018 and has since launched Kevin across Switzerland, Europe, and the United States.",
+            "variant": "default"
+          }
+        },
+        "block_5": {
+          "type": "step",
+          "settings": {
+            "number": "2017",
+            "title": "Kevin idea born in Zurich",
+            "body": "Development begins on a device that simulates human presence through light, shadow, and sound."
+          }
+        },
+        "block_6": {
+          "type": "step",
+          "settings": {
+            "number": "2019",
+            "title": "Launch in Switzerland",
+            "body": "Kevin launches in Switzerland. Mitipi wins the Global Digital Insurance Agenda Award (DIA) in Amsterdam."
+          }
+        },
+        "block_7": {
+          "type": "step",
+          "settings": {
+            "number": "2021",
+            "title": "Kevin.2 and Bluefactory",
+            "body": "Kevin.2 adds own recording and geo-fencing. Mitipi moves to Bluefactory in Fribourg and wins the Plus X Award in Germany."
+          }
+        },
+        "block_8": {
+          "type": "step",
+          "settings": {
+            "number": "2023",
+            "title": "Kevin.3 launch",
+            "body": "Kevin.3 launches with upgraded hardware, personalizable features, and extended simulation. European and US patents granted."
+          }
+        },
+        "block_9": {
+          "type": "step",
+          "settings": {
+            "number": "2024",
+            "title": "European Security Award",
+            "body": "Mitipi wins the European Security Award for the most innovative burglary protection in Europe."
+          }
+        },
+        "block_10": {
+          "type": "media_split",
+          "settings": {
+            "image_asset": "kevin-hero-3d-poster.webp",
+            "image_alt": "Kevin® award-winning Swiss security device",
+            "title": "Award-winning innovation",
+            "body": "Kevin is an award-winning anti-intrusion device, engineered in Switzerland, with worldwide patents on technology to simulate the presence of people.",
+            "reverse": false
+          }
+        },
+        "block_11": {
+          "type": "richtext",
+          "settings": {
+            "title": "Mitipi AG",
+            "body": "<p>Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Switzerland · CHE-356.372.981. Kevin® is developed by Mitipi and sold in Europe through mitipi.eu.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8",
+        "block_9",
+        "block_10",
+        "block_11"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

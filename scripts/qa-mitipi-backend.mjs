@@ -2,8 +2,10 @@
 /** Admin/backend checklist for mitipi-2 migration QA */
 import { getPublishedLocales } from './i18n/registry.mjs';
 import { adminGql } from './lib/shopify-admin-gql.mjs';
+import { getLiveThemeConfig, liveThemeStore } from './lib/live-theme.mjs';
 
-const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
+const STORE = (process.env.SHOPIFY_STORE || liveThemeStore()).replace(/^https?:\/\//, '').replace(/\/$/, '');
+const { theme_id: expectedThemeId, theme_name: expectedThemeName } = getLiveThemeConfig();
 const report = { pass: [], warn: [], fail: [] };
 
 function ok(m) {
@@ -43,8 +45,17 @@ async function main() {
   ok(`Currency: ${shop.currencyCode}`);
 
   const live = themes.nodes.find((t) => t.role === 'MAIN');
-  if (live?.name?.toLowerCase().includes('lurafi')) ok(`Live theme: ${live.name}`);
-  else bad(`Live theme is "${live?.name || 'unknown'}" — expected lurafi-deploy`);
+  const liveId = live?.id?.replace(/.*\//, '') || '';
+  if (liveId === expectedThemeId) {
+    ok(`Live theme: ${live.name} (#${liveId}) — matches config/live-theme.json`);
+  } else if (live?.name?.toLowerCase().includes('lurafi')) {
+    bad(
+      `Live theme is ${live.name} (#${liveId}) but config expects ${expectedThemeName} (#${expectedThemeId}). ` +
+        'Update config/live-theme.json or run npm run theme:publish:live',
+    );
+  } else {
+    bad(`Live theme is "${live?.name || 'unknown'}" (#${liveId}) — expected ${expectedThemeName}`);
+  }
 
   const horizonLive = themes.nodes.find((t) => /^horizon$/i.test(t.name) && t.role === 'MAIN');
   if (horizonLive) bad('Horizon is still MAIN — storefront may show wrong theme');

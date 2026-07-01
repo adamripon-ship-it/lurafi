@@ -1,86 +1,101 @@
 {%- liquid
   assign specs_image = section.settings.image
-  assign specs_image_fallback = 'lurafi-product-closeup.jpg' | asset_url
+  assign specs_image_fallback = 'kevin-hero-product-top.png' | asset_url
   assign specs_image_alt = section.settings.image_alt
   if specs_image_alt == blank
     assign specs_image_alt = 'home.specs.image_alt' | t
+  endif
+
+  assign specs_eyebrow = section.settings.eyebrow
+  if specs_eyebrow == blank
+    assign specs_eyebrow = 'home.specs.eyebrow' | t
+  endif
+  assign specs_heading = section.settings.heading
+  if specs_heading == blank
+    assign specs_heading = 'home.specs.heading' | t
   endif
 -%}
 
 <section class="section-apple bg-white lp-specs" aria-labelledby="SpecsHeading-{{ section.id }}">
   <div class="apple-container">
-    <p class="overline-blue">{%- if section.settings.eyebrow != blank -%}{{ section.settings.eyebrow }}{%- else -%}{{ 'home.specs.eyebrow' | t }}{%- endif -%}</p>
-    <h2 id="SpecsHeading-{{ section.id }}" class="headline-section text-center">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.specs.heading' | t }}{%- endif -%}</h2>
+    {% render 'section-intro',
+      overline: specs_eyebrow,
+      heading: specs_heading,
+      subheading: blank,
+      theme: 'light'
+    %}
 
-    <div class="lp-specs__media">
-      {%- if specs_image -%}
-        <img
-          src="{{ specs_image | image_url: width: 1200 }}"
-          srcset="
-            {{ specs_image | image_url: width: 640 }} 640w,
-            {{ specs_image | image_url: width: 980 }} 980w,
-            {{ specs_image | image_url: width: 1200 }} 1200w
-          "
-          sizes="(min-width: 768px) 980px, 100vw"
-          alt="{{ specs_image.alt | default: specs_image_alt | escape }}"
-          width="{{ specs_image.width | default: 1024 }}"
-          height="{{ specs_image.height | default: 682 }}"
-          loading="lazy"
-          decoding="async"
-        >
-      {%- else -%}
-        <img
-          src="{{ specs_image_fallback }}"
-          alt="{{ specs_image_alt | escape }}"
-          width="1024"
-          height="682"
-          loading="lazy"
-          decoding="async"
-        >
-      {%- endif -%}
-    </div>
+    <div class="lp-specs-split">
+      <div class="lp-specs-split__media lp-specs__media">
+        {%- if specs_image -%}
+          <img
+            src="{{ specs_image | image_url: width: 1200 }}"
+            srcset="
+              {{ specs_image | image_url: width: 640 }} 640w,
+              {{ specs_image | image_url: width: 980 }} 980w,
+              {{ specs_image | image_url: width: 1200 }} 1200w
+            "
+            sizes="(min-width: 1024px) 360px, 92vw"
+            alt="{{ specs_image.alt | default: specs_image_alt | escape }}"
+            width="{{ specs_image.width | default: 1024 }}"
+            height="{{ specs_image.height | default: 682 }}"
+            loading="lazy"
+            decoding="async"
+          >
+        {%- else -%}
+          <img
+            src="{{ specs_image_fallback }}"
+            alt="{{ specs_image_alt | escape }}"
+            width="1024"
+            height="682"
+            loading="lazy"
+            decoding="async"
+          >
+        {%- endif -%}
+      </div>
 
-    <div class="lp-specs__card">
-      <table class="lp-specs__table">
-        <caption class="visually-hidden">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.specs.heading' | t }}{%- endif -%}</caption>
-        <tbody>
-          {%- if section.blocks.size > 0 -%}
-            {%- for block in section.blocks -%}
-              {%- if block.type == 'spec_row' -%}
-                <tr {{ block.shopify_attributes }}>
-                  <th scope="row">{{ block.settings.label | escape }}</th>
-                  <td>{{ block.settings.value | escape }}</td>
-                </tr>
-              {%- endif -%}
-            {%- endfor -%}
-          {%- else -%}
-            <tr>
-              <th scope="row">{{ 'spec_row.dimensions_label' | t }}</th>
-              <td>{{ 'spec_row.dimensions_value' | t }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'spec_row.power_label' | t }}</th>
-              <td>{{ 'spec_row.power_value' | t }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'spec_row.connectivity_label' | t }}</th>
-              <td>{{ 'spec_row.connectivity_value' | t }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'spec_row.privacy_label' | t }}</th>
-              <td>{{ 'spec_row.privacy_value' | t }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'spec_row.storage_label' | t }}</th>
-              <td>{{ 'spec_row.storage_value' | t }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'spec_row.placement_label' | t }}</th>
-              <td>{{ 'spec_row.placement_value' | t }}</td>
-            </tr>
-          {%- endif -%}
-        </tbody>
-      </table>
+      <div class="lp-specs-split__rows lp-specs__card">
+        <table class="lp-specs__table">
+          <caption class="visually-hidden">{{ specs_heading | escape }}</caption>
+          <tbody>
+            {%- if section.blocks.size > 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'spec_row' -%}
+                  <tr {{ block.shopify_attributes }}>
+                    <th scope="row">{{ block.settings.label | escape }}</th>
+                    <td>{{ block.settings.value | escape }}</td>
+                  </tr>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              <tr>
+                <th scope="row">{{ 'spec_row.dimensions_label' | t }}</th>
+                <td>{{ 'spec_row.dimensions_value' | t }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'spec_row.power_label' | t }}</th>
+                <td>{{ 'spec_row.power_value' | t }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'spec_row.connectivity_label' | t }}</th>
+                <td>{{ 'spec_row.connectivity_value' | t }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'spec_row.privacy_label' | t }}</th>
+                <td>{{ 'spec_row.privacy_value' | t }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'spec_row.storage_label' | t }}</th>
+                <td>{{ 'spec_row.storage_value' | t }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'spec_row.placement_label' | t }}</th>
+                <td>{{ 'spec_row.placement_value' | t }}</td>
+              </tr>
+            {%- endif -%}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>

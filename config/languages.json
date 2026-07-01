@@ -43,7 +43,16 @@
       "pages": {
         "configure": { "handle": "kevin-configureren", "title": "Configureren", "body": "<p>Configureer je Kevin.</p>" },
         "sitemap": { "handle": "site-overzicht", "title": "Site-overzicht", "body": "<p>Overzicht van de site</p>" },
-        "llms": { "handle": "ai-overzicht", "title": "AI-overzicht", "body": "<p>AI-leesbare sitesamenvatting</p>" }
+        "llms": { "handle": "ai-overzicht", "title": "AI-overzicht", "body": "<p>AI-leesbare sitesamenvatting</p>" },
+        "features": { "handle": "kevin-functies", "title": "Functies", "body": "<p>Kevin-functies — licht, schaduw en geluid.</p>" },
+        "how-it-works": { "handle": "hoe-het-werkt", "title": "Hoe het werkt", "body": "<p>Hoe Kevin aanwezigheid simuleert.</p>" },
+        "the-kevin-app": { "handle": "kevin-mobiele-app", "title": "De Kevin-app", "body": "<p>Plan, geo-fence en personaliseer Kevin.</p>" },
+        "pricing": { "handle": "prijzen", "title": "Prijzen", "body": "<p>Koop Kevin eenmalig.</p>" },
+        "about-kevin": { "handle": "over-kevin", "title": "Over Kevin", "body": "<p>Over Mitipi en Kevin.</p>" },
+        "press": { "handle": "pers", "title": "Pers", "body": "<p>Persberichten en media.</p>" },
+        "careers": { "handle": "vacatures", "title": "Vacatures", "body": "<p>Werken bij Mitipi.</p>" },
+        "setup-guide": { "handle": "installatie", "title": "Installatiegids", "body": "<p>Sluit Kevin aan en configureer.</p>" },
+        "contact": { "handle": "contact-opnemen", "title": "Contact", "body": "<p>Contact opnemen met Mitipi.</p>" }
       },
       "products": {
         "kevin": {
@@ -71,7 +80,16 @@
       "pages": {
         "configure": { "handle": "configurer-kevin", "title": "Configurer", "body": "<p>Configurez votre Kevin.</p>" },
         "sitemap": { "handle": "plan-du-site", "title": "Plan du site", "body": "<p>Vue d'ensemble du site</p>" },
-        "llms": { "handle": "apercu-ia", "title": "Aperçu IA", "body": "<p>Résumé du site lisible par l'IA</p>" }
+        "llms": { "handle": "apercu-ia", "title": "Aperçu IA", "body": "<p>Résumé du site lisible par l'IA</p>" },
+        "features": { "handle": "fonctionnalites", "title": "Fonctionnalités", "body": "<p>Fonctionnalités Kevin — lumière, ombre et son.</p>" },
+        "how-it-works": { "handle": "comment-ca-marche", "title": "Comment ça marche", "body": "<p>Comment Kevin simule la présence.</p>" },
+        "the-kevin-app": { "handle": "application-kevin", "title": "L'app Kevin", "body": "<p>Planifier, géolocaliser et personnaliser.</p>" },
+        "pricing": { "handle": "tarifs", "title": "Tarifs", "body": "<p>Acheter Kevin en une fois.</p>" },
+        "about-kevin": { "handle": "a-propos", "title": "À propos", "body": "<p>À propos de Mitipi et Kevin.</p>" },
+        "press": { "handle": "presse", "title": "Presse", "body": "<p>Presse et ressources médias.</p>" },
+        "careers": { "handle": "carrieres", "title": "Carrières", "body": "<p>Carrières chez Mitipi.</p>" },
+        "setup-guide": { "handle": "guide-installation", "title": "Guide d'installation", "body": "<p>Brancher et configurer Kevin.</p>" },
+        "contact": { "handle": "contact", "title": "Contact", "body": "<p>Contacter le support Mitipi.</p>" }
       },
       "products": {
         "kevin": {
@@ -99,7 +117,16 @@
       "pages": {
         "configure": { "handle": "kevin-konfigurieren", "title": "Konfigurieren", "body": "<p>Konfigurieren Sie Ihren Kevin.</p>" },
         "sitemap": { "handle": "seitenuebersicht", "title": "Seitenübersicht", "body": "<p>Site-Übersicht</p>" },
-        "llms": { "handle": "ki-uebersicht", "title": "KI-Übersicht", "body": "<p>KI-lesbare Site-Zusammenfassung</p>" }
+        "llms": { "handle": "ki-uebersicht", "title": "KI-Übersicht", "body": "<p>KI-lesbare Site-Zusammenfassung</p>" },
+        "features": { "handle": "funktionen", "title": "Funktionen", "body": "<p>Kevin-Funktionen — Licht, Schatten und Sound.</p>" },
+        "how-it-works": { "handle": "so-funktionierts", "title": "So funktioniert's", "body": "<p>Wie Kevin Präsenz simuliert.</p>" },
+        "the-kevin-app": { "handle": "kevin-app-de", "title": "Die Kevin-App", "body": "<p>Planen, Geo-Fencing und personalisieren.</p>" },
+        "pricing": { "handle": "preise", "title": "Preise", "body": "<p>Kevin einmalig kaufen.</p>" },
+        "about-kevin": { "handle": "ueber-kevin", "title": "Über Kevin", "body": "<p>Über Mitipi und Kevin.</p>" },
+        "press": { "handle": "presse", "title": "Presse", "body": "<p>Presse und Medienressourcen.</p>" },
+        "careers": { "handle": "karriere", "title": "Karriere", "body": "<p>Karriere bei Mitipi.</p>" },
+        "setup-guide": { "handle": "einrichtung", "title": "Einrichtung", "body": "<p>Kevin anschließen und einrichten.</p>" },
+        "contact": { "handle": "kontakt", "title": "Kontakt", "body": "<p>Mitipi-Support kontaktieren.</p>" }
       },
       "products": {
         "kevin": {
@@ -127,7 +154,16 @@
       "pages": {
         "configure": { "handle": "konfigurovat-kevin", "title": "Konfigurace", "body": "<p>Nakonfigurujte svůj Kevin.</p>" },
         "sitemap": { "handle": "prehled-stranek", "title": "Přehled stránek", "body": "<p>Přehled webu</p>" },
-        "llms": { "handle": "ai-prehled", "title": "AI přehled", "body": "<p>AI čitelné shrnutí webu</p>" }
+        "llms": { "handle": "ai-prehled", "title": "AI přehled", "body": "<p>AI čitelné shrnutí webu</p>" },
+        "features": { "handle": "funkce", "title": "Funkce", "body": "<p>Funkce Kevin — světlo, stín a zvuk.</p>" },
+        "how-it-works": { "handle": "jak-to-funguje", "title": "Jak to funguje", "body": "<p>Jak Kevin simuluje přítomnost.</p>" },
+        "the-kevin-app": { "handle": "aplikace-kevin", "title": "Aplikace Kevin", "body": "<p>Plánování, geo-fencing a personalizace.</p>" },
+        "pricing": { "handle": "ceny", "title": "Ceny", "body": "<p>Jednorázový nákup Kevin.</p>" },
+        "about-kevin": { "handle": "o-kevin", "title": "O Kevin", "body": "<p>O Mitipi a Kevin.</p>" },
+        "press": { "handle": "tisk", "title": "Tisk", "body": "<p>Tiskové zprávy a média.</p>" },
+        "careers": { "handle": "kariera", "title": "Kariéra", "body": "<p>Kariéra v Mitipi.</p>" },
+        "setup-guide": { "handle": "navod", "title": "Návod k instalaci", "body": "<p>Připojení a nastavení Kevin.</p>" },
+        "contact": { "handle": "kontakt", "title": "Kontakt", "body": "<p>Kontakt na podporu Mitipi.</p>" }
       },
       "products": {
         "kevin": {
@@ -146,6 +182,15 @@
   "pages": {
     "configure": { "handle": "configure", "title": "Configure", "body": "<p>Configure your Kevin.</p>" },
     "sitemap": { "handle": "sitemap", "title": "Sitemap", "body": "<p>Site overview</p>" },
-    "llms": { "handle": "llms", "title": "LLM summary", "body": "<p>AI-readable site summary</p>" }
+    "llms": { "handle": "llms", "title": "LLM summary", "body": "<p>AI-readable site summary</p>" },
+    "features": { "handle": "features", "title": "Features", "body": "<p>Kevin features — light, shadow, and sound.</p>" },
+    "how-it-works": { "handle": "how-it-works", "title": "How it works", "body": "<p>How Kevin simulates presence.</p>" },
+    "the-kevin-app": { "handle": "the-kevin-app", "title": "The Kevin App", "body": "<p>Schedule, geo-fence, and personalize Kevin.</p>" },
+    "pricing": { "handle": "pricing", "title": "Pricing", "body": "<p>Own Kevin outright.</p>" },
+    "about-kevin": { "handle": "about-kevin", "title": "About Kevin", "body": "<p>About Mitipi and Kevin.</p>" },
+    "press": { "handle": "press", "title": "Press", "body": "<p>Press coverage and media resources.</p>" },
+    "careers": { "handle": "careers", "title": "Careers", "body": "<p>Careers at Mitipi.</p>" },
+    "setup-guide": { "handle": "setup-guide", "title": "Setup guide", "body": "<p>Plug in and configure Kevin.</p>" },
+    "contact": { "handle": "contact", "title": "Contact", "body": "<p>Contact Mitipi support.</p>" }
   }
 }

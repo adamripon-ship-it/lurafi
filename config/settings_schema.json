@@ -16,11 +16,6 @@
         "label": "Kevin (one-time purchase)"
       },
       {
-        "type": "product",
-        "id": "product_subscribe",
-        "label": "Kevin+ (subscription)"
-      },
-      {
         "type": "page",
         "id": "configure_page",
         "label": "Configure page (optional)",
@@ -28,7 +23,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Required: Assign Kevin (buy) product below with Color variants. Optional: Kevin+ with monthly selling plan. Without products, configure preview works but checkout will not. Create a Page with handle \"llms\" and template \"llms\" for AI crawler summary at /pages/llms."
+        "content": "Required: Assign Kevin (buy) product below with Color variants. Without a product, configure preview works but checkout will not. Create a Page with handle \"llms\" and template \"llms\" for AI-readable summary at /pages/llms."
       },
       {
         "type": "paragraph",

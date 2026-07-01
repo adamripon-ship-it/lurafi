@@ -1,0 +1,135 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "The method",
+        "heading": "Kevin® simulates people at home—so you can leave calmly.",
+        "lede": "Swiss-engineered presence simulation: light scenarios, moving shadows, and everyday sounds. Plug in near a visible window, set schedules or geo-fencing in the app, and let believable occupancy run from local storage.",
+        "theme": "black",
+        "image_asset": "kevin-hero-product-side.png",
+        "image_alt": "Kevin® device — side profile product photo",
+        "cta_heading": "Ready to configure yours?",
+        "cta_subheading": "Pick your color and continue to secure Shopify checkout.",
+        "cta_primary": "Get Kevin",
+        "cta_primary_url": "/pages/configure?plan=buy",
+        "cta_secondary": "Setup guide",
+        "cta_secondary_url": "/pages/setup-guide"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Three steps",
+            "heading": "Plug in. Schedule. Leave with peace of mind.",
+            "body": "Setup takes about 60 seconds. No installation, no wiring, no monitoring panel.",
+            "variant": "default"
+          }
+        },
+        "block_2": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "Plug & play",
+            "body": "Place Kevin near a visible window with a wall or ceiling for shadows. Connect the included power cable (approx. 3 m)—typical use around 9 watts."
+          }
+        },
+        "block_3": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "Schedule or geo-fence",
+            "body": "Tell Kevin when to simulate presence—or let geo-fencing activate automatically the moment you leave, even for a short walk or coffee run."
+          }
+        },
+        "block_4": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "Stay believable",
+            "body": "Light, shadow, and sound play from local storage—not streamed from the cloud. Jammer-resilient protection when Wi-Fi security fails."
+          }
+        },
+        "block_5": {
+          "type": "stat_row",
+          "settings": {
+            "stat_1_value": "60s",
+            "stat_1_label": "Typical setup time",
+            "stat_2_value": "9W",
+            "stat_2_label": "Typical power use",
+            "stat_3_value": "70+",
+            "stat_3_label": "Hours of simulations"
+          }
+        },
+        "block_6": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Real life",
+            "heading": "Built for how you actually leave home.",
+            "body": "Whether you commute, travel, or manage multiple properties—Kevin adapts to your routine.",
+            "variant": "default"
+          }
+        },
+        "block_7": {
+          "type": "image_pillar",
+          "settings": {
+            "image_asset": "kevin-persona-work.jpg",
+            "image_alt": "Activate Kevin via the app on your way to work",
+            "title": "Heading to work",
+            "body": "Activate Kevin via the app on your way out. While you focus on your day, Kevin makes it look like you are still at home."
+          }
+        },
+        "block_8": {
+          "type": "image_pillar",
+          "settings": {
+            "image_asset": "kevin-persona-travel.jpg",
+            "image_alt": "Schedule Kevin for holidays and weekend trips",
+            "title": "Weekends and holidays",
+            "body": "Schedule simulations in advance for getaways. Your home looks lived-in and cared for—even from thousands of miles away."
+          }
+        },
+        "block_9": {
+          "type": "image_pillar",
+          "settings": {
+            "image_asset": "kevin-persona-multi-property.jpg",
+            "image_alt": "Manage multiple Kevin devices in one app",
+            "title": "Multiple properties",
+            "body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app."
+          }
+        },
+        "block_10": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Why it matters",
+            "heading": "Prevention beats reaction.",
+            "body": "Mitipi research cites up to 97% reduction in burglary probability when prevention is used. 70% of burglaries happen during daytime. Burglars need as little as five minutes.",
+            "variant": "dark"
+          }
+        },
+        "block_11": {
+          "type": "richtext",
+          "settings": {
+            "title": "Works in homes, offices, and shops",
+            "body": "<p>Kevin simulates presence in apartments, houses, offices, shops, and warehouses. Place near a window or visible area, configure in the Kevin app, and let believable occupancy run from local storage.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8",
+        "block_9",
+        "block_10",
+        "block_11"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

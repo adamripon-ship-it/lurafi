@@ -2,7 +2,7 @@
 
 Operational notes for agents and CI running QA against the **production** Mitipi store.
 
-**Store:** `6mzhe1-yf.myshopify.com` · **URL:** https://mitipi.eu · **Live theme:** `lurafi-deploy` (`184679596410`)
+**Store:** `6mzhe1-yf.myshopify.com` · **URL:** https://mitipi.eu · **Live theme:** `lurafi-footer-pages` (`185079038330`, `config/live-theme.json`)
 
 See also [INCIDENT-2026-06-24.md](./INCIDENT-2026-06-24.md) for the full post-mortem.
 

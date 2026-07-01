@@ -1,61 +1,100 @@
 {%- liquid
-  assign section_image = section.settings.image
-  assign section_image_fallback = 'lurafi-product-studio.jpg' | asset_url
-  assign section_image_alt = section.settings.image_alt
-  if section_image_alt == blank
-    assign section_image_alt = 'home.solution.image_alt' | t
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.solution.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.solution.heading' | t
+  endif
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'home.solution.subheading' | t
+  endif
+
+  assign outside_image = section.settings.outside_image
+  assign outside_fallback = 'kevin-hero-shadow-widow-89.webp' | asset_url
+  assign outside_alt = section.settings.outside_image_alt
+  if outside_alt == blank
+    assign outside_alt = 'home.solution.outside_image_alt' | t
+  endif
+  assign outside_caption = section.settings.outside_caption
+  if outside_caption == blank
+    assign outside_caption = 'home.solution.outside_caption' | t
   endif
 -%}
 
-<section id="how-it-works" class="section-apple bg-black">
+<section id="how-it-works" class="section-apple bg-white">
   <div class="apple-container">
-    <p class="overline-blue-dark">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.solution.overline' | t }}{%- endif -%}</p>
-    <h2 class="headline-section text-white text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.solution.heading' | t }}{%- endif -%}</h2>
-    <p class="body-elevated text-muted-dark text-center" style="max-width:600px;margin:0 auto 56px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.solution.subheading' | t }}{%- endif -%}</p>
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading,
+      theme: 'light'
+    %}
 
-    <div class="section-image section-image--product-studio">
-      {%- if section_image -%}
-        <img
-          src="{{ section_image | image_url: width: 720 }}"
-          srcset="
-            {{ section_image | image_url: width: 480 }} 480w,
-            {{ section_image | image_url: width: 640 }} 640w,
-            {{ section_image | image_url: width: 720 }} 720w
-          "
-          sizes="(min-width: 768px) 640px, 88vw"
-          alt="{{ section_image.alt | default: section_image_alt | escape }}"
-          loading="lazy"
-          decoding="async"
-          width="{{ section_image.width | default: 1024 }}"
-          height="{{ section_image.height | default: 682 }}"
-        >
-      {%- else -%}
-        <img
-          src="{{ section_image_fallback }}"
-          alt="{{ section_image_alt | escape }}"
-          loading="lazy"
-          decoding="async"
-          width="1024"
-          height="682"
-        >
-      {%- endif -%}
-    </div>
+    <div class="solution-split">
+      <figure class="solution-split__visual">
+        {%- if outside_image -%}
+          <img
+            class="solution-split__image"
+            src="{{ outside_image | image_url: width: 960 }}"
+            srcset="
+              {{ outside_image | image_url: width: 480 }} 480w,
+              {{ outside_image | image_url: width: 720 }} 720w,
+              {{ outside_image | image_url: width: 960 }} 960w
+            "
+            sizes="(min-width: 1024px) 44vw, 92vw"
+            alt="{{ outside_image.alt | default: outside_alt | escape }}"
+            loading="lazy"
+            decoding="async"
+            width="{{ outside_image.width | default: 960 }}"
+            height="{{ outside_image.height | default: 1280 }}"
+          >
+        {%- else -%}
+          <img
+            class="solution-split__image"
+            src="{{ outside_fallback }}"
+            alt="{{ outside_alt | escape }}"
+            loading="lazy"
+            decoding="async"
+            width="960"
+            height="1280"
+          >
+        {%- endif -%}
+        {%- if outside_caption != blank -%}
+          <figcaption class="solution-split__caption">{{ outside_caption | escape }}</figcaption>
+        {%- endif -%}
+      </figure>
 
-    <div class="tile-grid-3">
-      <div class="text-center">
-        <div class="pillar-icon">☀</div>
-        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.pillar_1_title != blank -%}{{ section.settings.pillar_1_title }}{%- else -%}{{ 'home.solution.pillar_1_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted-dark">{%- if section.settings.pillar_1_body != blank -%}{{ section.settings.pillar_1_body }}{%- else -%}{{ 'home.solution.pillar_1_body' | t }}{%- endif -%}</p>
-      </div>
-      <div class="text-center">
-        <div class="pillar-icon">◐</div>
-        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.pillar_2_title != blank -%}{{ section.settings.pillar_2_title }}{%- else -%}{{ 'home.solution.pillar_2_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted-dark">{%- if section.settings.pillar_2_body != blank -%}{{ section.settings.pillar_2_body }}{%- else -%}{{ 'home.solution.pillar_2_body' | t }}{%- endif -%}</p>
-      </div>
-      <div class="text-center">
-        <div class="pillar-icon">♪</div>
-        <h3 class="text-white" style="font-size:21px;font-weight:600;margin-bottom:8px">{%- if section.settings.pillar_3_title != blank -%}{{ section.settings.pillar_3_title }}{%- else -%}{{ 'home.solution.pillar_3_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted-dark">{%- if section.settings.pillar_3_body != blank -%}{{ section.settings.pillar_3_body }}{%- else -%}{{ 'home.solution.pillar_3_body' | t }}{%- endif -%}</p>
+      <div class="solution-split__pillars">
+        <article class="solution-pillar tile tile--gray">
+          <div class="pillar-icon" aria-hidden="true">☀</div>
+          <h3 class="solution-pillar__title headline-tile">
+            {%- if section.settings.pillar_1_title != blank -%}{{ section.settings.pillar_1_title }}{%- else -%}{{ 'home.solution.pillar_1_title' | t }}{%- endif -%}
+          </h3>
+          <p class="body-standard text-muted">
+            {%- if section.settings.pillar_1_body != blank -%}{{ section.settings.pillar_1_body }}{%- else -%}{{ 'home.solution.pillar_1_body' | t }}{%- endif -%}
+          </p>
+        </article>
+        <article class="solution-pillar tile tile--gray">
+          <div class="pillar-icon" aria-hidden="true">◐</div>
+          <h3 class="solution-pillar__title headline-tile">
+            {%- if section.settings.pillar_2_title != blank -%}{{ section.settings.pillar_2_title }}{%- else -%}{{ 'home.solution.pillar_2_title' | t }}{%- endif -%}
+          </h3>
+          <p class="body-standard text-muted">
+            {%- if section.settings.pillar_2_body != blank -%}{{ section.settings.pillar_2_body }}{%- else -%}{{ 'home.solution.pillar_2_body' | t }}{%- endif -%}
+          </p>
+        </article>
+        <article class="solution-pillar tile tile--gray">
+          <div class="pillar-icon" aria-hidden="true">♪</div>
+          <h3 class="solution-pillar__title headline-tile">
+            {%- if section.settings.pillar_3_title != blank -%}{{ section.settings.pillar_3_title }}{%- else -%}{{ 'home.solution.pillar_3_title' | t }}{%- endif -%}
+          </h3>
+          <p class="body-standard text-muted">
+            {%- if section.settings.pillar_3_body != blank -%}{{ section.settings.pillar_3_body }}{%- else -%}{{ 'home.solution.pillar_3_body' | t }}{%- endif -%}
+          </p>
+        </article>
       </div>
     </div>
   </div>
@@ -71,39 +110,25 @@
     },
     { "type": "text", "id": "overline", "label": "Overline" },
     { "type": "text", "id": "heading", "label": "Heading" },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading"
-    },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
     {
       "type": "header",
-      "content": "Section image"
+      "content": "Outside view"
     },
-    { "type": "image_picker", "id": "image", "label": "Product image", "info": "Default theme asset: lurafi-product-studio.jpg" },
     {
-      "type": "text",
-      "id": "image_alt",
-      "label": "Image alt text"
+      "type": "image_picker",
+      "id": "outside_image",
+      "label": "Street / window image",
+      "info": "Default: kevin-hero-shadow-widow-89.webp — warm light visible from outside."
     },
+    { "type": "text", "id": "outside_image_alt", "label": "Outside image alt text" },
+    { "type": "text", "id": "outside_caption", "label": "Outside image caption" },
     { "type": "text", "id": "pillar_1_title", "label": "Pillar 1 title" },
-    {
-      "type": "textarea",
-      "id": "pillar_1_body",
-      "label": "Pillar 1 body"
-    },
+    { "type": "textarea", "id": "pillar_1_body", "label": "Pillar 1 body" },
     { "type": "text", "id": "pillar_2_title", "label": "Pillar 2 title" },
-    {
-      "type": "textarea",
-      "id": "pillar_2_body",
-      "label": "Pillar 2 body"
-    },
+    { "type": "textarea", "id": "pillar_2_body", "label": "Pillar 2 body" },
     { "type": "text", "id": "pillar_3_title", "label": "Pillar 3 title" },
-    {
-      "type": "textarea",
-      "id": "pillar_3_body",
-      "label": "Pillar 3 body"
-    }
+    { "type": "textarea", "id": "pillar_3_body", "label": "Pillar 3 body" }
   ],
   "presets": [{ "name": "Solution pillars" }]
 }

@@ -21,9 +21,7 @@
   var STORAGE_KEY = 'lurafi_configure';
 
   var state = {
-    plan: 'buy',
     variantId: null,
-    sellingPlanId: null,
     quantity: 1
   };
 
@@ -34,7 +32,6 @@
     chipDot: root.querySelector('[data-configure-chip-dot]'),
     stickyColor: root.querySelector('[data-configure-sticky-color]'),
     swatches: root.querySelector('[data-configure-swatches]'),
-    planCards: root.querySelectorAll('[data-plan]'),
     qtyWrap: root.querySelector('[data-configure-qty]'),
     qtyValue: root.querySelector('[data-configure-qty-value]'),
     qtyMinus: root.querySelector('[data-configure-qty-minus]'),
@@ -49,12 +46,11 @@
     perDevice: root.querySelector('[data-configure-per-device]'),
     ctas: root.querySelectorAll('[data-configure-checkout]'),
     ctaLabels: root.querySelectorAll('[data-configure-cta-label]'),
-    error: root.querySelector('[data-configure-error]'),
-    sellingPlanSelect: root.querySelector('[data-selling-plan-select]')
+    error: root.querySelector('[data-configure-error]')
   };
 
   function getPlanData() {
-    return state.plan === 'subscribe' ? data.subscribe : data.buy;
+    return data.buy;
   }
 
   function getVariants() {
@@ -137,11 +133,10 @@
 
   function initPlanFromUrl() {
     var params = new URLSearchParams(window.location.search);
-    var plan = params.get('plan');
-    if (plan === 'subscribe' && data.subscribe && data.subscribe.variants.length) {
-      state.plan = 'subscribe';
-    } else {
-      state.plan = 'buy';
+    if (params.get('plan') === 'subscribe') {
+      params.delete('plan');
+      var next = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+      window.history.replaceState({}, '', next);
     }
   }
 
@@ -151,13 +146,9 @@
     var saved = loadState();
     if (saved && saved.variantId && findVariantById(saved.variantId)) {
       state.variantId = saved.variantId;
-      if (saved.plan) state.plan = saved.plan;
       if (saved.quantity) state.quantity = saved.quantity;
     }
     if (!state.variantId) state.variantId = variants[0].id;
-    if (state.plan === 'subscribe' && data.subscribe.sellingPlans && data.subscribe.sellingPlans.length) {
-      state.sellingPlanId = (saved && saved.sellingPlanId) || data.subscribe.sellingPlans[0].id;
-    }
   }
 
   function renderSwatches() {
@@ -192,31 +183,12 @@
   }
 
   function renderPlanCards() {
-    els.planCards.forEach(function (card) {
-      var plan = card.getAttribute('data-plan');
-      card.classList.toggle('is-selected', plan === state.plan);
-      card.setAttribute('aria-pressed', plan === state.plan);
-    });
-    if (els.sellingPlanSelect) {
-      var showPlans = state.plan === 'subscribe' && data.subscribe.sellingPlans && data.subscribe.sellingPlans.length > 1;
-      els.sellingPlanSelect.hidden = !showPlans;
-      var wrap = root.querySelector('[data-selling-plan-select-wrap]');
-      if (wrap) wrap.hidden = !showPlans;
-    }
-    if (els.qtyWrap) {
-      els.qtyWrap.hidden = state.plan !== 'buy';
-    }
+    if (els.qtyWrap) els.qtyWrap.hidden = false;
   }
 
   function getLinePriceCents() {
     var variant = findVariantById(state.variantId);
     if (!variant) return 0;
-    if (state.plan === 'subscribe') {
-      var plans = data.subscribe.sellingPlans || [];
-      var sp = plans.find(function (p) { return String(p.id) === String(state.sellingPlanId); });
-      if (sp && sp.price) return sp.price;
-      return variant.price;
-    }
     return variant.price * state.quantity;
   }
 
@@ -228,16 +200,16 @@
       els.total.textContent = formatted;
     }
     if (els.totalSuffix) {
-      els.totalSuffix.textContent = state.plan === 'subscribe' ? '/mo' : '';
+      els.totalSuffix.textContent = '';
     }
     if (els.stickyTotal) {
       els.stickyTotal.textContent = formatted;
     }
     if (els.stickyTotalSuffix) {
-      els.stickyTotalSuffix.textContent = state.plan === 'subscribe' ? '/mo' : '';
+      els.stickyTotalSuffix.textContent = '';
     }
     if (els.perDevice) {
-      if (state.plan === 'buy' && state.quantity > 1 && variant) {
+      if (state.quantity > 1 && variant) {
         els.perDevice.hidden = false;
         var perSuffix = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.perDevice) || ' per device';
         els.perDevice.textContent = window.LurafiCart.formatMoney(variant.price) + perSuffix;
@@ -254,9 +226,7 @@
     }
     if (els.summaryPlan) {
       var t = window.themeTranslations && window.themeTranslations.configure;
-      els.summaryPlan.textContent = state.plan === 'subscribe'
-        ? (t && t.summaryPlanSub) || 'Kevin+ monthly'
-        : (t && t.summaryPlanBuy) || 'One-time purchase';
+      els.summaryPlan.textContent = (t && t.summaryPlanBuy) || 'One-time purchase';
     }
   }
 
@@ -295,23 +265,6 @@
     renderSummary();
     saveState();
   }
-
-  els.planCards.forEach(function (card) {
-    card.addEventListener('click', function () {
-      var plan = card.getAttribute('data-plan');
-      if (plan === 'subscribe' && (!data.subscribe || !data.subscribe.variants.length)) return;
-      state.plan = plan;
-      if (plan === 'subscribe' && data.subscribe.sellingPlans && data.subscribe.sellingPlans.length) {
-        state.sellingPlanId = data.subscribe.sellingPlans[0].id;
-        state.quantity = 1;
-      }
-      var variants = getVariants();
-      if (variants.length && !findVariantById(state.variantId)) {
-        state.variantId = variants[0].id;
-      }
-      render();
-    });
-  });
 
   if (els.qtyMinus) {
     els.qtyMinus.addEventListener('click', function () {
@@ -354,16 +307,13 @@
         }
       ],
       total_price: unitPrice * (item.quantity || 1)
-    }, { plan: state.plan });
+    }, { plan: 'buy' });
   }
 
   function goToCartPermalink(item, variant) {
     trackBeginCheckout(variant, item);
     var quantity = Number(item.quantity) || 1;
     var url = '/cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity) + '?checkout';
-    if (item.selling_plan) {
-      url += '&selling_plan=' + encodeURIComponent(item.selling_plan);
-    }
     window.location.href = url;
   }
 
@@ -398,11 +348,8 @@
 
       var item = {
         id: variant.id,
-        quantity: state.plan === 'buy' ? state.quantity : 1
+        quantity: state.quantity
       };
-      if (state.plan === 'subscribe' && state.sellingPlanId) {
-        item.selling_plan = state.sellingPlanId;
-      }
 
       if (window.LurafiCart && typeof window.LurafiCart.addAndCheckout === 'function') {
         window.LurafiCart.addAndCheckout(item).catch(function () {

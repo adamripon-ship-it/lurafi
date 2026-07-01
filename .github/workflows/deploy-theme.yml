@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       theme_id:
-        description: Live theme ID (6mzhe1-yf lurafi-deploy)
+        description: Live theme ID (see config/live-theme.json)
         required: true
-        default: "184679596410"
+        default: "185079038330"
 
 permissions:
   contents: read
@@ -77,3 +77,17 @@ jobs:
             --password "${SHOPIFY_CLI_THEME_TOKEN}" \
             --theme "${{ github.event.inputs.theme_id }}" \
             --allow-live
+
+      - name: Republish theme (bust Shopify page cache)
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ env.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+        run: |
+          npx shopify theme publish \
+            --store "${SHOPIFY_FLAG_STORE}" \
+            --password "${SHOPIFY_CLI_THEME_TOKEN}" \
+            --theme "${{ github.event.inputs.theme_id }}" \
+            --force
+
+      - name: Verify live storefront
+        run: node scripts/verify-live-storefront.mjs

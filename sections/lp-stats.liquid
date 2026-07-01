@@ -1,13 +1,24 @@
 <section class="stats-section section-apple bg-white">
   <div class="apple-container">
-    <h2 class="headline-section text-center" style="margin-bottom:56px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.stats.heading' | t }}{%- endif -%}</h2>
+    {%- liquid
+      assign stats_heading = section.settings.heading
+      if stats_heading == blank
+        assign stats_heading = 'home.stats.heading' | t
+      endif
+    -%}
+    {% render 'section-intro',
+      heading: stats_heading,
+      subheading: blank,
+      theme: 'light',
+      compact: true
+    %}
     <div class="stats-grid-4" data-countup-duration="1100">
       <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_1_value != blank -%}{{ section.settings.stat_1_value }}{%- else -%}{{ 'home.stats.stat_1_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_1_label != blank -%}{{ section.settings.stat_1_label }}{%- else -%}{{ 'home.stats.stat_1_label' | t }}{%- endif -%}</p></div>
       <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_2_value != blank -%}{{ section.settings.stat_2_value }}{%- else -%}{{ 'home.stats.stat_2_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_2_label != blank -%}{{ section.settings.stat_2_label }}{%- else -%}{{ 'home.stats.stat_2_label' | t }}{%- endif -%}</p></div>
       <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_3_value != blank -%}{{ section.settings.stat_3_value }}{%- else -%}{{ 'home.stats.stat_3_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_3_label != blank -%}{{ section.settings.stat_3_label }}{%- else -%}{{ 'home.stats.stat_3_label' | t }}{%- endif -%}</p></div>
       <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_4_value != blank -%}{{ section.settings.stat_4_value }}{%- else -%}{{ 'home.stats.stat_4_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_4_label != blank -%}{{ section.settings.stat_4_label }}{%- else -%}{{ 'home.stats.stat_4_label' | t }}{%- endif -%}</p></div>
     </div>
-    <div class="trust-badges trust-badges--single">
+    <div class="trust-badges">
       <span class="swiss-made-badge">
         <svg class="swiss-made-badge__icon" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
           <rect width="22" height="22" rx="5" fill="#e11d2e"/>
@@ -15,6 +26,9 @@
         </svg>
         <span>{{ 'stats.swiss_engineered' | t }}</span>
       </span>
+      <span class="trust-badges__item">{{ 'home.stats.badge_1' | t }}</span>
+      <span class="trust-badges__item">{{ 'home.stats.badge_3' | t }}</span>
+      <span class="trust-badges__item">{{ 'home.stats.badge_4' | t }}</span>
     </div>
   </div>
 </section>

@@ -29,10 +29,10 @@ npm run locales:build
 
 ## Deploy to production
 
-Store: `6mzhe1-yf.myshopify.com` · Live theme: **lurafi-deploy** `184679596410`
+Store: `6mzhe1-yf.myshopify.com` · Live theme: **lurafi-footer-pages** `185079038330` (`config/live-theme.json`)
 
 ```bash
-npm run theme:push:live
+npm run theme:deploy:live   # push + republish (cache bust) + verify mitipi.eu
 ```
 
 Or use GitHub Actions → **Deploy theme (manual)** after adding repository secrets (see [docs/SHOPIFY.md](docs/SHOPIFY.md)).
@@ -40,6 +40,7 @@ Or use GitHub Actions → **Deploy theme (manual)** after adding repository secr
 Post-deploy smoke (lightweight — do not hammer production):
 
 ```bash
+npm run theme:verify:live
 node scripts/qa-mitipi-backend.mjs
 curl -sI https://mitipi.eu/ | head -5
 ```

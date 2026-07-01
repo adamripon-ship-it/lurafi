@@ -83,10 +83,10 @@ const en = {
   seo: {
     home: {
       description:
-        'When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.'
+        'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play.'
     },
     org_description:
-      'When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound so your home stays visibly lived-in and burglars move on.',
+      'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play.',
     sitemap: {
       title: 'Sitemap — Lurafi & Kevin',
       description:
@@ -104,7 +104,8 @@ const en = {
       buy_now: 'Buy now',
       configure_buy: 'Configure & buy',
       sold_out: 'Sold out',
-      image_alt: 'Kevin smart home security device'
+      image_alt: 'Kevin® smart home presence simulator',
+      shipping_note: 'Free delivery · Plug & play · 3-year Swiss warranty'
     }
   },
   sections: { cart: { title: 'Your cart' } },
@@ -124,16 +125,13 @@ const en = {
     step_checkout: 'Checkout',
     header_eyebrow: 'Secure checkout',
     title: 'Choose your Kevin.',
-    lede: 'Pick your color and plan—you are one step from a home that never looks empty.',
+    lede: 'Pick your color—you are one step from a home that never looks empty.',
     color_label: 'Front Cover Color',
     color_prefix: 'Color:',
     plan_label: 'Choose Your Plan',
     plan_buy: 'Buy',
     plan_buy_sub: 'One-time purchase',
     plan_badge_popular: 'Most popular',
-    plan_sub: 'Kevin+',
-    plan_sub_sub: 'Monthly subscription',
-    plan_sub_badge: 'Flexible',
     billing: 'Billing',
     quantity: 'Quantity',
     qty_hint: 'Recommended: 2 devices for homes with multiple floors',
@@ -152,19 +150,22 @@ const en = {
     warranty: '3-year warranty',
     secure: 'Secure checkout powered by Shopify',
     buy_features:
-      'Own your device outright|70+ hours of believable AI presence|Control everything from the Kevin App|Free delivery across Europe|3-year Swiss warranty|Lifetime software updates included',
-    sub_features:
-      'Device included—nothing upfront|Premium AI library that keeps improving|New simulations as threats evolve|Hardware replacement if anything fails|Cancel anytime|Free delivery and returns',
+      'Own your device outright|70+ hours of built-in simulations|Control from the Kevin App|Bluetooth speaker and lamp at home|Free delivery across Europe|3-year Swiss warranty|Lifetime software updates included',
     summary_plan_buy: 'One-time purchase',
-    summary_plan_sub: 'Kevin+ monthly',
     per_device: ' per device',
     error_products: 'Please assign products in Theme settings → Products.',
-    error_checkout: 'Online checkout is almost ready. Email hello@lurafi.ai to order, or try again soon.',
+    error_checkout: 'Online checkout is almost ready. Email hello@lurafi.com to order, or try again soon.',
     processing: 'Processing…',
     device_alt: 'Kevin device'
   },
   hero: {
     callouts_aria_label: 'Kevin benefits',
+    carousel_label: 'Who is Kevin for?',
+    pause_autoplay: 'Pause slideshow',
+    play_autoplay: 'Play slideshow',
+    previous_slide: 'Previous slide',
+    next_slide: 'Next slide',
+    drag_to_rotate: 'Drag to rotate Kevin',
     away_eyebrow: 'Away mode',
     away_title: 'Living room active',
     away_body: 'Light, shadow, and sound vary automatically.',
@@ -173,10 +174,146 @@ const en = {
     privacy_body: 'Simulation plays locally on the device.',
     checkout_eyebrow: 'Checkout',
     checkout_title: 'Free delivery',
-    checkout_body: 'Secure Shopify checkout.'
+    checkout_body: 'Secure Shopify checkout.',
+    slide_1: {
+      label: 'Everyone',
+      eyebrow: 'For every home',
+      headline: 'Deter burglaries before they happen.',
+      lede: 'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play.',
+      image_alt: 'Kevin® presence simulator — Swiss-engineered Kevin 3 device',
+      callout_1_eyebrow: 'Plug and play',
+      callout_1_title: '9 watts',
+      callout_1_body: 'Connect power and place near a window—typical use around 9 W. No installation or wiring.',
+      callout_2_eyebrow: '100% privacy',
+      callout_2_title: 'No cameras. No mics.',
+      callout_2_body: 'Simulations run locally on the device. Nothing uploaded to the cloud or shared with third parties.',
+      callout_3_eyebrow: 'Jammer-proof',
+      callout_3_title: 'Local storage',
+      callout_3_body: '70+ hours of light, shadow, and sound keep playing—even when burglars jam Wi-Fi cameras and alarms.',
+      callout_4_eyebrow: 'Checkout',
+      callout_4_title: 'Free delivery',
+      callout_4_body: 'Secure checkout with free delivery across Europe.'
+    },
+    slide_2: {
+      label: 'Seniors',
+      eyebrow: 'Living alone · 80+',
+      headline: 'Feel safe at home—without surveillance.',
+      lede: 'Neighbours see warm light and believable movement—Kevin keeps your home looking cared for with no cameras and no microphones.',
+      image_alt: 'Night photograph of a half-timbered European house — warm lit windows with a wheelchair silhouette visible inside',
+      callout_1_eyebrow: 'Living alone',
+      callout_1_title: 'Not an easy target',
+      callout_1_body: 'Neighbours see warm light and movement — a home that looks cared for, not vacant.',
+      callout_2_eyebrow: 'Privacy',
+      callout_2_title: 'No cameras. No mics.',
+      callout_2_body: 'Presence without surveillance — quiet deterrence that respects your privacy and dignity.',
+      callout_3_eyebrow: 'Schedule',
+      callout_3_title: 'Like family just left',
+      callout_3_body: 'Evening scenes that match when your daughter visits — believable shadow and sound without a monitoring panel.'
+    },
+    slide_3: {
+      label: 'New parents',
+      eyebrow: 'New parent · mom and baby',
+      headline: 'Hold your baby—home looks occupied.',
+      lede: 'While you settle the baby, Kevin keeps believable adult movement on the ground floor—light, shadow, and sound from local storage.',
+      image_alt: 'Editorial illustration of a single mother with infant in a Dutch terraced home at evening',
+      callout_1_eyebrow: 'After bedtime',
+      callout_1_title: 'Downstairs still active',
+      callout_1_body: 'While you settle the baby upstairs, Kevin keeps believable adult movement on the ground floor.',
+      callout_2_eyebrow: 'From the street',
+      callout_2_title: 'Visible deterrence',
+      callout_2_body: 'Warm windows and shifting light dissuade opportunists who watch for dark, silent flats.',
+      callout_3_eyebrow: 'Privacy',
+      callout_3_title: 'No nursery cameras',
+      callout_3_body: 'No cameras watching your nursery — only light, shadow, and everyday sound inside your home.'
+    },
+    slide_4: {
+      label: 'Single parents',
+      eyebrow: 'Single parent · toddler',
+      headline: 'Upstairs with your child—downstairs looks busy.',
+      lede: 'Kevin simulates cooking rhythms, TV glow, and hallway footsteps so passers-by see an occupied ground floor while you are upstairs.',
+      image_alt: 'Night photograph of a brick apartment — warm upstairs bedroom light with a mother and toddler silhouetted at the window',
+      callout_1_eyebrow: 'Dinner hour',
+      callout_1_title: 'Kitchen sounds on',
+      callout_1_body: 'Simulated cooking rhythms and hallway footsteps — like another adult is still downstairs.',
+      callout_2_eyebrow: 'Single parent',
+      callout_2_title: 'Kids safe upstairs',
+      callout_2_body: 'Ground-floor TV glow and voices while you read bedtime stories on the floor above.',
+      callout_3_eyebrow: 'Shadows',
+      callout_3_title: 'Someone else home',
+      callout_3_body: 'Silhouette and voice layers — the signal passers-by notice without you shouting.'
+    },
+    slide_5: {
+      label: 'Students',
+      eyebrow: 'Student · first flat',
+      headline: 'Your first flat should not look empty.',
+      lede: 'Kevin makes your studio look lived-in to neighbours in the corridor—realistic household sounds without blasting music through thin walls.',
+      image_alt: 'Editorial illustration of a European student in a German Altbau studio at blue hour',
+      callout_1_eyebrow: 'First year away',
+      callout_1_title: 'Miles from family',
+      callout_1_body: 'Your door looks lived-in to neighbours in the corridor who notice when flats go dark.',
+      callout_2_eyebrow: 'Shared halls',
+      callout_2_title: 'Quiet deterrence',
+      callout_2_body: 'Realistic low-level household sounds — not loud music through thin walls during exam week.',
+      callout_3_eyebrow: 'Portable',
+      callout_3_title: 'Pack and go',
+      callout_3_body: 'Move Kevin between bedroom and desk nook, or take it when you relocate next semester.'
+    },
+    slide_6: {
+      label: 'Expat solo',
+      eyebrow: 'Expat · living alone',
+      headline: 'New city—home still looks lived in.',
+      lede: 'One plug-and-play device simulates believable presence while you work late or explore a new country—no drilling, no landlord drama.',
+      image_alt: 'Night photograph of a brick apartment building — silhouette of a woman working on a laptop visible through a warmly lit window',
+      callout_1_eyebrow: 'New country',
+      callout_1_title: 'No neighbour favours',
+      callout_1_body: 'You have not built local trust — Kevin makes the flat look occupied while you learn the city.',
+      callout_2_eyebrow: 'Late nights',
+      callout_2_title: 'Home still awake',
+      callout_2_body: 'Varied evening scenes run while you work late or travel for the weekend — outsiders see life inside.',
+      callout_3_eyebrow: 'Rental-friendly',
+      callout_3_title: 'No install drama',
+      callout_3_body: 'One device, no drilling, no landlord fights — presence simulation that travels with you.'
+    },
+    slide_7: {
+      label: 'On holiday',
+      eyebrow: 'Couple · away together',
+      headline: 'Enjoy the trip—home keeps living.',
+      lede: 'Light, shadow, and sound vary while you are abroad so passers-by see everyday rhythms—not a dark, silent flat.',
+      image_alt: 'Night photograph of a German apartment facade — silhouettes of a woman holding a baby and a man visible through lit windows',
+      callout_1_eyebrow: 'On holiday',
+      callout_1_title: 'Home still lives',
+      callout_1_body: 'Light and sound vary while you are abroad — passers-by see everyday rhythms, not a dark shell.',
+      callout_2_eyebrow: 'Away mode',
+      callout_2_title: 'One tap to protect',
+      callout_2_body: 'Lock up and Kevin shifts scenes through the day without timers on six different lamps.',
+      callout_3_eyebrow: 'Schedule',
+      callout_3_title: 'Set before you fly',
+      callout_3_body: 'Schedule simulations in advance—protection that fits around your getaway.'
+    },
+    slide_8: {
+      label: 'Second home',
+      eyebrow: 'Second home · rental',
+      headline: 'Every property looks occupied between visits.',
+      lede: 'Schedule weekly occupancy for your holiday home or city break—hallway, living room, and kitchen rhythms rotate automatically.',
+      image_alt: 'Editorial illustration of a warm occupied European holiday home viewed from inside at night',
+      callout_1_eyebrow: 'Days away',
+      callout_1_title: 'Multi-room scenes',
+      callout_1_body: 'Hallway, living room, and kitchen rhythms rotate — not one lamp on a timer for a whole week.',
+      callout_2_eyebrow: 'One app',
+      callout_2_title: 'All properties',
+      callout_2_body: 'Manage every Kevin from one app—full coverage day and night across locations.',
+      callout_3_eyebrow: 'Second home',
+      callout_3_title: 'Set once per season',
+      callout_3_body: 'Weekly schedules for your Alpine flat or coast house — believable occupancy between your visits.'
+    }
   },
   home: {},
-  stats: { swiss_engineered: 'Swiss Engineered' },
+  stats: {
+    swiss_engineered: 'Swiss engineered & designed',
+    badge_1: 'Police-recommended in Europe & US',
+    badge_3: 'Jammer-resilient local playback',
+    badge_4: 'Award-winning innovation'
+  },
   sitemap: {
     overline: 'SEO sitemap',
     heading: 'Sitemap for people, search engines, and AI assistants.',
@@ -184,7 +321,6 @@ const en = {
     primary: 'Primary pages',
     homepage: 'Homepage',
     configure_buy: 'Configure / buy Kevin',
-    configure_sub: 'Kevin+ subscription',
     cart: 'Cart',
     ai_files: 'AI and LLM files',
     short_llm: 'Short LLM summary',
@@ -203,39 +339,39 @@ const en = {
     ai_discovery: 'AI / LLM machine-readable files',
     short_points_to_full: 'Each short llms.txt file links to its matching llms-full.txt for complete brand and product context.',
     oneliner:
-      'When you are away, Kevin uses Swiss AI to simulate real human presence with light, shadow, and sound—so your home stays visibly lived-in and burglars move on.',
+      'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on.',
     what_we_sell: 'What we sell',
     buy_bullet:
-      '**Kevin (Buy)**: One-time purchase. Device with 70+ hours of believable AI presence, Kevin App control, free delivery in Europe, 3-year Swiss warranty.',
-    sub_bullet:
-      '**Kevin+ (Subscribe)**: Monthly plan with device included, premium AI library, hardware replacement, cancel anytime.',
+      '**Kevin (Buy)**: One-time purchase. Device with 70+ hours of built-in simulations, Kevin App control, Bluetooth speaker at home, free delivery in Europe, 3-year Swiss warranty.',
     how_heading: 'How it works',
     how_1: 'Plug in near a window.',
-    how_2: 'Set a schedule or let Kevin activate when you leave.',
-    how_3: 'Your home never looks empty—light, shadow, and sound adapt over time.',
+    how_2: 'Schedule simulations or let geo-fencing activate Kevin when you leave.',
+    how_3: 'Light, shadow, and sound play from local storage—believable presence day and night.',
     diff_heading: 'Key differentiators',
-    diff_1: 'Prevention, not reaction (vs alarms that trigger after entry)',
-    diff_2: 'No cameras, no microphones',
-    diff_3: 'Swiss-engineered AI; ~9W power',
-    diff_4: 'Qualitative daytime burglary risk positioning (no unsourced police statistics)',
+    diff_1: 'Prevention before break-in (vs alarms that trigger after entry)',
+    diff_2: 'No cameras, no microphones — 100% privacy',
+    diff_3: 'Swiss-engineered AI; ~9W power; plug and play',
+    diff_4: 'Jammer-resilient local playback when Wi-Fi security fails',
     urls_heading: 'Primary URLs',
     contact_heading: 'Contact',
     brand_heading: 'Brand',
-    tagline: 'Tagline: Presence that prevents.',
-    character: 'Character: Homeowners in Switzerland/Europe who want peace of mind when away.',
+    tagline: 'Tagline: Smart. Secure. Swiss.',
+    character: 'Character: Homeowners in Europe who want peace of mind when away—without cameras or monitoring.',
     guide: 'Guide: Swiss-engineered AI presence simulation.',
     lede:
-      'Swiss AI presence simulation for your home. When you are away, Kevin uses light, shadow, and sound so your home looks and sounds lived-in—and burglars move on.'
+      'Kevin® simulates human presence with Swiss AI. Light, shadow, and sound make your home look and sound lived-in—burglars move on. No cameras. No microphones.'
   },
   faq: {
     q1: 'What is Kevin?',
-    a1: 'Kevin is Swiss AI presence simulation for your home. It uses light, shadow, and sound to make your home look and sound lived-in when you are away.',
+    a1: 'Kevin® is a Swiss-engineered AI presence simulator. It uses light, shadow, and sound to make your home look and sound lived-in when you are away—in homes, flats, offices, and holiday properties.',
     q2: 'How is Kevin different from alarms and cameras?',
-    a2: 'Alarms react after entry. Cameras record evidence but rarely deter in the moment. Kevin focuses on prevention so your home never looks empty from the street.',
+    a2: 'Alarms react after entry. Cameras record evidence and can fail when Wi-Fi is jammed. Kevin focuses on prevention—believable occupancy from outside before anyone tests the door.',
     q3: 'Does Kevin use cameras or microphones?',
-    a3: 'No. Kevin simulates presence with light, shadow, and sound only. No cameras and no microphones in your home. Simulations are stored locally on the device, not streamed from the cloud or shared with third parties.',
+    a3: 'No. Kevin simulates presence with light, shadow, and sound only. No cameras and no microphones. Simulations are stored locally on the device, not streamed from the cloud or shared with third parties.',
     q4: 'How do I buy Kevin?',
-    a4: 'Choose your color and plan on the configure page, then continue to secure Shopify checkout with free delivery across Europe and a 3-year Swiss warranty.'
+    a4: 'Choose your color on the configure page, then continue to secure Shopify checkout with free delivery across Europe and a 3-year Swiss warranty.',
+    q5: 'Does Kevin work if Wi-Fi is jammed?',
+    a5: 'Yes. Core simulations play from local storage on the device. Kevin keeps projecting light, shadow, and sound even when burglars use jamming devices to disable Wi-Fi cameras and alarm systems.'
   },
   errors: {
     not_found_title: 'Page not found',
@@ -248,7 +384,7 @@ en.home.specs = en.home.specs || {};
 en.home.specs.rows = {
   dimensions: { label: 'Size', value: 'Approx. 21.2 × 10.2 × 9.2 cm' },
   power: { label: 'Power', value: 'Mains powered with 3 m cable; typical use around 9 W' },
-  connectivity: { label: 'Connectivity', value: 'Wi-Fi, Bluetooth, app control, and local on-device playback' },
+  connectivity: { label: 'Connectivity', value: 'Wi-Fi and Bluetooth for app control; simulations play locally on device (jammer-resilient)' },
   privacy: { label: 'Privacy', value: 'No camera. No microphone. No listening. No third-party sharing.' },
   storage: { label: 'Simulation library', value: '70+ hours of activities and sounds stored locally on the device' },
   placement: { label: 'Best placement', value: 'Near a visible window, with a wall or ceiling for shadows' }
@@ -257,7 +393,7 @@ en.home.specs.rows = {
 en.spec_row = {
   dimensions_label: 'Size', dimensions_value: 'Approx. 21.2 × 10.2 × 9.2 cm',
   power_label: 'Power', power_value: 'Mains powered with 3 m cable; typical use around 9 W',
-  connectivity_label: 'Connectivity', connectivity_value: 'Wi-Fi, Bluetooth, app control, and local on-device playback',
+  connectivity_label: 'Connectivity', connectivity_value: 'Wi-Fi and Bluetooth for app control; simulations play locally on device (jammer-resilient)',
   privacy_label: 'Privacy', privacy_value: 'No camera. No microphone. No listening. No third-party sharing.',
   storage_label: 'Simulation library', storage_value: '70+ hours of activities and sounds stored locally on the device',
   placement_label: 'Best placement', placement_value: 'Near a visible window, with a wall or ceiling for shadows'
@@ -409,20 +545,15 @@ const nlHome = {
       'Kevin is eenvoudig te plaatsen, privacy-first ontworpen en het meest overtuigend vanuit het perspectief dat telt: buiten het huis.'
   },
   pricing: {
-    overline: 'Prijzen',
-    heading: 'Kies je beveiligingslaag.',
+    overline: 'Own Kevin®',
+    heading: 'One-time purchase. Lifetime updates included.',
     subheading:
-      'Koop Kevin direct of neem een maandabonnement. Beide bieden privacy-first aanwezigheidssimulatie om af te schrikken voordat een alarm nodig is.',
-    buy_label: 'Eenmalige aankoop',
-    buy_tagline: 'Voor altijd van jou.',
-    buy_cta: 'Nu kopen',
-    sub_label: 'Maandabonnement',
-    sub_tagline: 'Apparaat inbegrepen. Altijd opzegbaar.',
-    sub_cta: 'Nu abonneren',
+      'Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.',
+    buy_label: 'Own Kevin®',
+    buy_tagline: 'Buy one-time. All updates included.',
+    buy_cta: 'Buy Now',
     buy_features:
-      'Volledig eigendom|70+ uur ingebouwde simulaties|Weekschema’s en geo-activering|Eigen huishoudelijke geluiden uploaden|Flexibele plaatsing met 3 m stroomkabel|Gratis bezorging|3 jaar garantie',
-    sub_features:
-      'Apparaat gratis inbegrepen|Premium simulatiebibliotheek|Regelmatige software-updates|Prioritaire support|Hardwarevervanging|Flexibel voor meerdere kamers of woningen|Gratis bezorging'
+      'Volledig eigendom|70+ uur ingebouwde simulaties|Weekschema’s en geo-activering|Eigen huishoudelijke geluiden uploaden|Flexibele plaatsing met 3 m stroomkabel|Gratis bezorging|3 jaar garantie'
   },
 
   specs: {
@@ -466,7 +597,7 @@ en.cart.empty_configure_cta = 'Configure your Kevin';
 en.cart.free_delivery_checkout = 'Free delivery selected at checkout';
 en.cart.drawer_delivery = 'Free delivery selected at checkout · 30-day returns';
 en.cart.secure_shopify = 'Secure Shopify checkout';
-en.products.product.shipping_note = 'Ships free · 60-second setup · 3-year warranty';
+en.products.product.shipping_note = 'Free delivery · Plug & play · 3-year Swiss warranty';
 en.errors.back_home = 'Back to home';
 en.customers = customersEn;
 
@@ -577,16 +708,13 @@ nl.configure = {
   step_checkout: 'Afrekenen',
   header_eyebrow: 'Veilig afrekenen',
   title: 'Kies je Kevin.',
-  lede: 'Kies je kleur en plan—je bent één stap verwijderd van een huis dat nooit leeg lijkt.',
+  lede: 'Kies je kleur—je bent één stap verwijderd van een huis dat nooit leeg lijkt.',
   color_label: 'Kleur voorkant',
   color_prefix: 'Kleur:',
   plan_label: 'Kies je plan',
   plan_buy: 'Kopen',
   plan_buy_sub: 'Eenmalige aankoop',
   plan_badge_popular: 'Meest gekozen',
-  plan_sub: 'Kevin+',
-  plan_sub_sub: 'Maandabonnement',
-  plan_sub_badge: 'Flexibel',
   billing: 'Facturatie',
   quantity: 'Aantal',
   qty_hint: 'Aanbevolen: 2 apparaten voor woningen met meerdere verdiepingen',
@@ -606,10 +734,7 @@ nl.configure = {
   secure: 'Veilig afrekenen via Shopify',
   buy_features:
     'Direct eigendom|70+ uur geloofwaardige AI-aanwezigheid|Alles via de Kevin-app|Gratis bezorging in Europa|3 jaar Zwitserse garantie|Levenslange software-updates',
-  sub_features:
-    'Apparaat inbegrepen—niets vooraf|Premium AI-bibliotheek|Nieuwe simulaties bij dreigingen|Hardwarevervanging bij defect|Altijd opzegbaar|Gratis bezorging en retour',
   summary_plan_buy: 'Eenmalige aankoop',
-  summary_plan_sub: 'Kevin+ maandelijks',
   per_device: ' per apparaat',
   error_products: 'Wijs producten toe in Thema-instellingen → Producten.',
   error_checkout: 'Online afrekenen is bijna klaar. Mail hello@lurafi.ai om te bestellen, of probeer het binnenkort opnieuw.',
@@ -640,7 +765,6 @@ nl.sitemap = {
   primary: 'Hoofdpagina’s',
   homepage: 'Startpagina',
   configure_buy: 'Kevin configureren / kopen',
-  configure_sub: 'Kevin+-abonnement',
   cart: 'Winkelwagen',
   ai_files: 'AI- en LLM-bestanden',
   short_llm: 'Korte LLM-samenvatting',
@@ -674,8 +798,6 @@ nl.llms_page = {
   what_we_sell: 'Wat we verkopen',
   buy_bullet:
     '**Kevin (Kopen)**: Eenmalige aankoop. Apparaat met 70+ uur geloofwaardige AI-aanwezigheid, Kevin-app, gratis bezorging in Europa, 3 jaar Zwitserse garantie.',
-  sub_bullet:
-    '**Kevin+ (Abonnement)**: Maandplan met apparaat inbegrepen, premium AI-bibliotheek, hardwarevervanging, altijd opzegbaar.',
   how_heading: 'Hoe het werkt',
   how_1: 'Aansluiten bij een raam.',
   how_2: 'Stel een schema in of laat Kevin activeren wanneer je vertrekt.',
@@ -702,7 +824,7 @@ nl.faq = {
   q3: "Gebruikt Kevin camera's of microfoons?",
   a3: 'Nee. Kevin simuleert alleen aanwezigheid met licht, schaduw en geluid. Geen camera’s en geen microfoons. Simulaties staan lokaal op het apparaat, niet in de cloud of bij derden.',
   q4: 'Hoe koop ik Kevin?',
-  a4: 'Kies je kleur en plan op de configureerpagina en ga verder naar veilig Shopify-afrekenen met gratis bezorging in Europa en 3 jaar Zwitserse garantie.'
+  a4: 'Kies je kleur op de configureerpagina en ga verder naar veilig Shopify-afrekenen met gratis bezorging in Europa en 3 jaar Zwitserse garantie.'
 };
 
 
@@ -747,7 +869,6 @@ nl.configure.device_in = 'Kevin in {{ color }}';
 nl.header.support = 'Klantenservice';
 nl.footer.support = 'Klantenservice';
 nl.header.setup_and_app = 'Installatie en app';
-nl.home.pricing.sub_features = 'Apparaat gratis inbegrepen|Premium simulatiebibliotheek|Regelmatige software-updates|Prioritaire klantenservice|Hardwarevervanging|Flexibel voor meerdere kamers of woningen|Gratis bezorging';
 
 nl.errors = {
   not_found_title: 'Pagina niet gevonden',

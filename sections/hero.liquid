@@ -1,6 +1,4 @@
 {%- liquid
-  assign hero_image = section.settings.image
-  assign hero_image_url = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
   capture configure_url
     render 'configure-url', plan: 'buy'
   endcapture
@@ -10,48 +8,107 @@
     assign cta_primary_url = configure_url
   endif
 
-  assign away_eyebrow = section.settings.away_eyebrow
-  if away_eyebrow == blank
-    assign away_eyebrow = 'hero.away_eyebrow' | t
+  assign cta_secondary_url = section.settings.cta_secondary_url | default: '#how-it-works'
+  assign cta_primary_label = section.settings.cta_primary_label
+  if cta_primary_label == blank
+    assign cta_primary_label = 'home.hero.cta_primary_label' | t
   endif
-  assign away_title = section.settings.away_title
-  if away_title == blank
-    assign away_title = 'hero.away_title' | t
-  endif
-  assign away_body = section.settings.away_body
-  if away_body == blank
-    assign away_body = 'hero.away_body' | t
+  assign cta_secondary_label = section.settings.cta_secondary_label
+  if cta_secondary_label == blank
+    assign cta_secondary_label = 'home.hero.cta_secondary_label' | t
   endif
 
-  assign privacy_eyebrow = section.settings.privacy_eyebrow
-  if privacy_eyebrow == blank
-    assign privacy_eyebrow = 'hero.privacy_eyebrow' | t
-  endif
-  assign privacy_title = section.settings.privacy_title
-  if privacy_title == blank
-    assign privacy_title = 'hero.privacy_title' | t
-  endif
-  assign privacy_body = section.settings.privacy_body
-  if privacy_body == blank
-    assign privacy_body = 'hero.privacy_body' | t
+  assign callouts_aria_label = section.settings.callouts_aria_label
+  if callouts_aria_label == blank
+    assign callouts_aria_label = 'hero.callouts_aria_label' | t
   endif
 
-  assign checkout_eyebrow = section.settings.checkout_eyebrow
-  if checkout_eyebrow == blank
-    assign checkout_eyebrow = 'hero.checkout_eyebrow' | t
-  endif
-  assign checkout_title = section.settings.checkout_title
-  if checkout_title == blank
-    assign checkout_title = 'hero.checkout_title' | t
-  endif
-  assign checkout_body = section.settings.checkout_body
-  if checkout_body == blank
-    assign checkout_body = 'hero.checkout_body' | t
+  assign hero_eyebrow = section.settings.eyebrow
+  if hero_eyebrow == blank
+    assign hero_eyebrow = 'hero.slide_1.eyebrow' | t
   endif
 
-  assign hero_image_alt = section.settings.image_alt
-  if hero_image_alt == blank
-    assign hero_image_alt = 'home.hero.image_alt' | t
+  assign hero_headline = section.settings.headline
+  if hero_headline == blank
+    assign hero_headline = 'home.hero.headline' | t
+  endif
+
+  assign hero_lede = section.settings.lede
+  if hero_lede == blank
+    assign hero_lede = 'home.hero.lede' | t
+  endif
+  if hero_lede == blank
+    assign hero_lede = 'hero.slide_1.lede' | t
+  endif
+
+  assign image_alt = section.settings.image_alt
+  if image_alt == blank
+    assign image_alt = 'hero.slide_1.image_alt' | t
+  endif
+
+  assign callout_1_eyebrow = section.settings.callout_1_eyebrow
+  if callout_1_eyebrow == blank
+    assign callout_1_eyebrow = 'hero.slide_1.callout_1_eyebrow' | t
+  endif
+  assign callout_1_title = section.settings.callout_1_title
+  if callout_1_title == blank
+    assign callout_1_title = 'hero.slide_1.callout_1_title' | t
+  endif
+  assign callout_1_body = section.settings.callout_1_body
+  if callout_1_body == blank
+    assign callout_1_body = 'hero.slide_1.callout_1_body' | t
+  endif
+
+  assign callout_2_eyebrow = section.settings.callout_2_eyebrow
+  if callout_2_eyebrow == blank
+    assign callout_2_eyebrow = 'hero.slide_1.callout_2_eyebrow' | t
+  endif
+  assign callout_2_title = section.settings.callout_2_title
+  if callout_2_title == blank
+    assign callout_2_title = 'hero.slide_1.callout_2_title' | t
+  endif
+  assign callout_2_body = section.settings.callout_2_body
+  if callout_2_body == blank
+    assign callout_2_body = 'hero.slide_1.callout_2_body' | t
+  endif
+
+  assign callout_3_eyebrow = section.settings.callout_3_eyebrow
+  if callout_3_eyebrow == blank
+    assign callout_3_eyebrow = 'hero.slide_1.callout_3_eyebrow' | t
+  endif
+  assign callout_3_title = section.settings.callout_3_title
+  if callout_3_title == blank
+    assign callout_3_title = 'hero.slide_1.callout_3_title' | t
+  endif
+  assign callout_3_body = section.settings.callout_3_body
+  if callout_3_body == blank
+    assign callout_3_body = 'hero.slide_1.callout_3_body' | t
+  endif
+
+  assign callout_4_eyebrow = section.settings.callout_4_eyebrow
+  if callout_4_eyebrow == blank
+    assign callout_4_eyebrow = 'hero.slide_1.callout_4_eyebrow' | t
+  endif
+  assign callout_4_title = section.settings.callout_4_title
+  if callout_4_title == blank
+    assign callout_4_title = 'hero.slide_1.callout_4_title' | t
+  endif
+  assign callout_4_body = section.settings.callout_4_body
+  if callout_4_body == blank
+    assign callout_4_body = 'hero.slide_1.callout_4_body' | t
+  endif
+
+  assign trust_1 = section.settings.trust_1
+  if trust_1 == blank
+    assign trust_1 = 'home.hero.trust_1' | t
+  endif
+  assign trust_2 = section.settings.trust_2
+  if trust_2 == blank
+    assign trust_2 = 'home.hero.trust_2' | t
+  endif
+  assign trust_3 = section.settings.trust_3
+  if trust_3 == blank
+    assign trust_3 = 'home.hero.trust_3' | t
   endif
 -%}
 
@@ -60,68 +117,41 @@
   <div class="hero-apple__grain" aria-hidden="true"></div>
 
   <div class="hero-apple__content">
-    <div class="hero-apple__text">
-      <p class="overline-blue-dark">{%- if section.settings.eyebrow != blank -%}{{ section.settings.eyebrow }}{%- else -%}{{ 'home.hero.eyebrow' | t }}{%- endif -%}</p>
-
-      <h1 class="headline-hero hero-apple__headline" id="HeroHeading">
-        {%- if section.settings.headline != blank -%}{{ section.settings.headline | escape }}{%- else -%}{{ 'home.hero.headline' | t | escape }}{%- endif -%}
-      </h1>
-
-      <p class="body-elevated hero-apple__sub">{%- if section.settings.lede != blank -%}{{ section.settings.lede }}{%- else -%}{{ 'home.hero.lede' | t }}{%- endif -%}</p>
-
-      <div class="hero-apple__ctas">
-        <a href="{{ cta_primary_url }}" class="btn-apple-blue">
-          {%- if section.settings.cta_primary_label != blank -%}{{ section.settings.cta_primary_label }}{%- else -%}{{ 'home.hero.cta_primary_label' | t }}{%- endif -%}
-        </a>
-        <a href="{{ section.settings.cta_secondary_url | default: '#how-it-works' }}" class="link-apple-blue">
-          {%- if section.settings.cta_secondary_label != blank -%}{{ section.settings.cta_secondary_label }}{%- else -%}{{ 'home.hero.cta_secondary_label' | t }}{%- endif -%}
-          <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true">
-            <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+    <div class="hero-apple__frame">
+      <div class="hero-apple__stage">
+        {% render 'hero-banner',
+          section: section,
+          hero_eyebrow: hero_eyebrow,
+          hero_headline: hero_headline,
+          hero_lede: hero_lede,
+          cta_primary_url: cta_primary_url,
+          cta_primary_label: cta_primary_label,
+          cta_secondary_url: cta_secondary_url,
+          cta_secondary_label: cta_secondary_label,
+          image: section.settings.image,
+          image_alt: image_alt,
+          callouts_aria_label: callouts_aria_label,
+          callout_1_eyebrow: callout_1_eyebrow,
+          callout_1_title: callout_1_title,
+          callout_1_body: callout_1_body,
+          callout_2_eyebrow: callout_2_eyebrow,
+          callout_2_title: callout_2_title,
+          callout_2_body: callout_2_body,
+          callout_3_eyebrow: callout_3_eyebrow,
+          callout_3_title: callout_3_title,
+          callout_3_body: callout_3_body,
+          callout_4_eyebrow: callout_4_eyebrow,
+          callout_4_title: callout_4_title,
+          callout_4_body: callout_4_body,
+          trust_1: trust_1,
+          trust_2: trust_2,
+          trust_3: trust_3,
+          banner_id: section.id
+        %}
       </div>
     </div>
-
-    <div class="hero-apple__product">
-      {%- if hero_image -%}
-        <img
-          src="{{ hero_image | image_url: width: 1200 }}"
-          alt="{{ hero_image.alt | default: hero_image_alt | escape }}"
-          width="{{ hero_image.width }}"
-          height="{{ hero_image.height }}"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- else -%}
-        <img
-          src="{{ hero_image_url }}"
-          alt="{%- if section.settings.image_alt != blank -%}{{ section.settings.image_alt | escape }}{%- else -%}{{ 'home.hero.image_alt' | t | escape }}{%- endif -%}"
-          loading="eager"
-          fetchpriority="high"
-          width="800"
-          height="1000"
-        >
-      {%- endif -%}
-      <div class="hero-context-cards" aria-label="{%- if section.settings.callouts_aria_label != blank -%}{{ section.settings.callouts_aria_label | escape }}{%- else -%}{{ 'hero.callouts_aria_label' | t | escape }}{%- endif -%}">
-        <div class="hero-context-card hero-context-card--primary">
-          <span class="hero-context-card__eyebrow">{{ away_eyebrow | escape }}</span>
-          <strong>{{ away_title | escape }}</strong>
-          <span>{{ away_body | escape }}</span>
-        </div>
-        <div class="hero-context-card hero-context-card--privacy">
-          <span class="hero-context-card__eyebrow">{{ privacy_eyebrow | escape }}</span>
-          <strong>{{ privacy_title | escape }}</strong>
-          <span>{{ privacy_body | escape }}</span>
-        </div>
-        <div class="hero-context-card hero-context-card--delivery">
-          <span class="hero-context-card__eyebrow">{{ checkout_eyebrow | escape }}</span>
-          <strong>{{ checkout_title | escape }}</strong>
-          <span>{{ checkout_body | escape }}</span>
-        </div>
-      </div>
-    </div>
-
     <a href="#problem" class="hero-apple__scroll" aria-label="{{ 'accessibility.scroll_to_content' | t }}">
+      <span class="hero-apple__scroll-label">{{ 'accessibility.scroll_to_content' | t }}</span>
       <span class="hero-apple__scroll-icon" aria-hidden="true">
         <span class="hero-apple__scroll-dot"></span>
       </span>
@@ -140,19 +170,16 @@
   "name": "Hero",
   "settings": [
     {
-      "type": "paragraph",
-      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language."
-    },
-    {
       "type": "header",
       "content": "Headline"
     },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow tag" },
     { "type": "text", "id": "headline", "label": "Headline" },
     {
       "type": "textarea",
       "id": "lede",
-      "label": "Subheadline"
+      "label": "USP / subhead",
+      "info": "Short value proposition under the headline."
     },
     { "type": "text", "id": "cta_primary_label", "label": "Primary button" },
     { "type": "url", "id": "cta_primary_url", "label": "Primary link" },
@@ -162,15 +189,11 @@
       "type": "header",
       "content": "Product image"
     },
-    { "type": "image_picker", "id": "image", "label": "Product image", "info": "Leave empty for the default hero device image." },
-    {
-      "type": "text",
-      "id": "image_alt",
-      "label": "Product image alt text"
-    },
+    { "type": "image_picker", "id": "image", "label": "Product image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text" },
     {
       "type": "header",
-      "content": "Feature callouts"
+      "content": "Callouts"
     },
     {
       "type": "text",
@@ -178,50 +201,28 @@
       "label": "Callouts region label (accessibility)"
     },
     {
-      "type": "text",
-      "id": "away_eyebrow",
-      "label": "Callout 1 — category (top-left)"
+      "type": "paragraph",
+      "content": "Add up to four callout blocks below. Legacy callout settings are used only when no blocks are present."
     },
+    { "type": "text", "id": "callout_1_eyebrow", "label": "Callout 1 eyebrow" },
+    { "type": "text", "id": "callout_1_title", "label": "Callout 1 title (top-left)" },
+    { "type": "textarea", "id": "callout_1_body", "label": "Callout 1 body" },
+    { "type": "text", "id": "callout_2_eyebrow", "label": "Callout 2 eyebrow" },
+    { "type": "text", "id": "callout_2_title", "label": "Callout 2 title (top-right)" },
+    { "type": "textarea", "id": "callout_2_body", "label": "Callout 2 body" },
+    { "type": "text", "id": "callout_3_eyebrow", "label": "Callout 3 eyebrow" },
+    { "type": "text", "id": "callout_3_title", "label": "Callout 3 title (bottom-left)" },
+    { "type": "textarea", "id": "callout_3_body", "label": "Callout 3 body" },
+    { "type": "text", "id": "callout_4_eyebrow", "label": "Callout 4 eyebrow" },
+    { "type": "text", "id": "callout_4_title", "label": "Callout 4 title (bottom-right)" },
+    { "type": "textarea", "id": "callout_4_body", "label": "Callout 4 body" },
     {
-      "type": "text",
-      "id": "away_title",
-      "label": "Callout 1 — title"
+      "type": "header",
+      "content": "Trust strip"
     },
-    {
-      "type": "textarea",
-      "id": "away_body",
-      "label": "Callout 1 — subtext"
-    },
-    {
-      "type": "text",
-      "id": "privacy_eyebrow",
-      "label": "Callout 2 — category (right)"
-    },
-    {
-      "type": "text",
-      "id": "privacy_title",
-      "label": "Callout 2 — title"
-    },
-    {
-      "type": "textarea",
-      "id": "privacy_body",
-      "label": "Callout 2 — subtext"
-    },
-    {
-      "type": "text",
-      "id": "checkout_eyebrow",
-      "label": "Callout 3 — category (bottom)"
-    },
-    {
-      "type": "text",
-      "id": "checkout_title",
-      "label": "Callout 3 — title"
-    },
-    {
-      "type": "textarea",
-      "id": "checkout_body",
-      "label": "Callout 3 — subtext"
-    },
+    { "type": "text", "id": "trust_1", "label": "Trust item 1" },
+    { "type": "text", "id": "trust_2", "label": "Trust item 2" },
+    { "type": "text", "id": "trust_3", "label": "Trust item 3" },
     {
       "type": "header",
       "content": "Sticky mobile CTA"
@@ -244,6 +245,72 @@
       "info": "Leave blank to use Configure (buy) page."
     }
   ],
-  "presets": [{ "name": "Hero" }]
+  "blocks": [
+    {
+      "type": "callout",
+      "name": "Product callout",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "default": "primary",
+          "options": [
+            { "value": "primary", "label": "Top left" },
+            { "value": "privacy", "label": "Top right" },
+            { "value": "delivery", "label": "Bottom left" },
+            { "value": "feature", "label": "Bottom right" }
+          ]
+        },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "blocks": [
+        {
+          "type": "callout",
+          "settings": {
+            "position": "primary",
+            "eyebrow": "Plug and play",
+            "title": "9 watts",
+            "body": "Connect power and place near a window—typical use around 9 W. No installation or wiring."
+          }
+        },
+        {
+          "type": "callout",
+          "settings": {
+            "position": "privacy",
+            "eyebrow": "100% privacy",
+            "title": "No cameras. No mics.",
+            "body": "Simulations run locally on the device. Nothing uploaded to the cloud or shared with third parties."
+          }
+        },
+        {
+          "type": "callout",
+          "settings": {
+            "position": "delivery",
+            "eyebrow": "Jammer-proof",
+            "title": "Local storage",
+            "body": "70+ hours of light, shadow, and sound keep playing—even when burglars jam Wi-Fi cameras and alarms."
+          }
+        },
+        {
+          "type": "callout",
+          "settings": {
+            "position": "feature",
+            "eyebrow": "Checkout",
+            "title": "Free delivery",
+            "body": "Secure checkout with free delivery across Europe."
+          }
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

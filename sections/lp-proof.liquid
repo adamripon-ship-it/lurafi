@@ -1,14 +1,17 @@
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.proof.heading' | t
+  endif
+-%}
+
 <section id="proof" class="section-apple bg-gray">
   <div class="apple-container">
-    <h2 class="headline-section text-center proof-section__heading">
-      {%- if section.settings.heading != blank -%}
-        {{ section.settings.heading }}
-      {%- else -%}
-        {{ 'home.proof.heading' | t }}
-      {%- endif -%}
-    </h2>
-    <div class="tile-grid-3 proof-quote-grid">
+    <h2 class="headline-section text-center section-intro__heading proof-section__heading">{{ heading | escape }}</h2>
+
+    <div class="proof-featured">
       {%- if section.blocks.size > 0 -%}
+        {%- assign featured_rendered = false -%}
         {%- for block in section.blocks -%}
           {%- if block.type == 'quote' -%}
             {%- liquid
@@ -24,8 +27,19 @@
               if quote_location == blank
                 assign quote_location = 'home.proof.author_1_location' | t
               endif
+              assign card_class = 'proof-quote-card tile tile--white'
+              unless featured_rendered
+                assign card_class = card_class | append: ' proof-quote-card--featured'
+                assign featured_rendered = true
+              endunless
             -%}
-            {% render 'proof-quote-card', quote: quote_text, author_name: quote_author, author_location: quote_location, block_attributes: block.shopify_attributes %}
+            {% render 'proof-quote-card',
+              quote: quote_text,
+              author_name: quote_author,
+              author_location: quote_location,
+              card_class: card_class,
+              block_attributes: block.shopify_attributes
+            %}
           {%- endif -%}
         {%- endfor -%}
       {%- else -%}
@@ -69,11 +83,12 @@
             assign author_3_location = 'home.proof.author_3_location' | t
           endif
         -%}
-        {% render 'proof-quote-card', quote: quote_1, author_name: author_1_name, author_location: author_1_location %}
-        {% render 'proof-quote-card', quote: quote_2, author_name: author_2_name, author_location: author_2_location %}
-        {% render 'proof-quote-card', quote: quote_3, author_name: author_3_name, author_location: author_3_location %}
+        {% render 'proof-quote-card', quote: quote_1, author_name: author_1_name, author_location: author_1_location, card_class: 'proof-quote-card tile tile--white proof-quote-card--featured' %}
+        {% render 'proof-quote-card', quote: quote_2, author_name: author_2_name, author_location: author_2_location, card_class: 'proof-quote-card tile tile--white' %}
+        {% render 'proof-quote-card', quote: quote_3, author_name: author_3_name, author_location: author_3_location, card_class: 'proof-quote-card tile tile--white' %}
       {%- endif -%}
     </div>
+
     <div class="proof-summary-card">
       <p class="proof-summary-card__eyebrow">
         {%- if section.settings.summary_eyebrow != blank -%}

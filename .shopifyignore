@@ -6,6 +6,7 @@ config/brandscript.json
 config/copy-matrix.json
 config/home-en.json
 config/languages.json
+config/live-theme.json
 tests/
 playwright.config.js
 node_modules/
@@ -20,3 +21,9 @@ SECURITY.md
 CONTRIBUTING.md
 AGENTS.md
 .editorconfig
+
+# Local reference photos (gitignored; never upload)
+assets/reference/**
+
+# Oversized legacy hero JPGs (theme uses PNG cutouts; avoid HTTP 413 on push)
+assets/kevin-hero-*.jpg

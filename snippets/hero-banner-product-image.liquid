@@ -1,0 +1,52 @@
+{%- comment -%}
+  LCP hero product image — responsive srcset when using theme editor image;
+  WebP + PNG picture fallback for default Kevin asset.
+  Pass: image, image_alt
+{%- endcomment -%}
+{%- liquid
+  assign alt_text = image_alt
+  if alt_text == blank
+    assign alt_text = 'home.hero.image_alt' | t
+  endif
+-%}
+
+{%- if image != blank -%}
+  {%- liquid
+    assign src_default = image | image_url: width: 1200
+    assign src_640 = image | image_url: width: 640
+    assign src_960 = image | image_url: width: 960
+    assign src_1200 = image | image_url: width: 1200
+    assign src_1600 = image | image_url: width: 1600
+    assign img_width = image.width | default: 1200
+    assign img_height = image.height | default: 803
+  -%}
+  <img
+    class="hero-banner__product-image"
+    src="{{ src_default }}"
+    srcset="{{ src_640 }} 640w, {{ src_960 }} 960w, {{ src_1200 }} 1200w, {{ src_1600 }} 1600w"
+    sizes="(min-width: 1024px) min(64vw, 900px), (min-width: 768px) min(72vw, 860px), min(94vw, 640px)"
+    alt="{{ alt_text | escape }}"
+    width="{{ img_width }}"
+    height="{{ img_height }}"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  >
+{%- else -%}
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ 'kevin-hero-product-front.webp' | asset_url }}"
+    >
+    <img
+      class="hero-banner__product-image"
+      src="{{ 'kevin-hero-product-front.png' | asset_url }}"
+      alt="{{ alt_text | escape }}"
+      width="1200"
+      height="803"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    >
+  </picture>
+{%- endif -%}

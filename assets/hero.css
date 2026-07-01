@@ -1,0 +1,548 @@
+/* ---- Hero (static product banner) — sections/hero.liquid ---- */
+
+.hero-apple {
+  position: relative;
+  z-index: 0;
+  min-height: min(92dvh, 900px);
+  height: auto;
+  background: linear-gradient(165deg, #0a0c10 0%, #050608 100%);
+  padding-top: calc(var(--header-offset) + clamp(8px, 1.5vh, 16px));
+  padding-bottom: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.hero-apple__glow {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 62%, rgba(100, 160, 230, 0.1) 0%, transparent 70%);
+}
+
+.hero-apple__grain {
+  display: none;
+}
+
+.hero-apple__content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 0;
+  padding-bottom: clamp(12px, 2vh, 20px);
+}
+
+.hero-apple__frame {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.hero-apple__stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+/* Banner — copy → product → spec chips (single hierarchy) */
+.hero-banner {
+  --hero-product-max-w: min(92vw, 720px);
+  --hero-product-max-h: min(34dvh, 420px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: clamp(12px, 2vh, 20px);
+}
+
+/* Copy block — in document flow, not overlaid on product */
+.hero-banner__copy {
+  position: relative;
+  z-index: 4;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: min(var(--apple-container), 100%);
+  margin-inline: auto;
+  padding: clamp(4px, 1vh, 12px) max(var(--pad-inline), 16px) 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hero-banner__eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(10px, 1.5vh, 14px);
+  padding: 6px 14px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-banner__headline {
+  display: block;
+  color: rgba(255, 255, 255, 0.96);
+  margin: 0 0 clamp(10px, 1.6vh, 16px);
+  font-size: clamp(26px, 5.5vw, 52px);
+  line-height: 1.06;
+  text-wrap: balance;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.75),
+    0 6px 28px rgba(0, 0, 0, 0.55);
+}
+
+.hero-banner__lede {
+  color: var(--apple-text-on-dark-muted);
+  max-width: 480px;
+  margin: 0 auto clamp(12px, 1.8vh, 18px);
+  padding-inline: var(--space-sm);
+  font-size: clamp(15px, 2.2vw, 17px);
+  line-height: 1.4;
+  text-wrap: pretty;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+.hero-banner__actions,
+.hero-banner__actions a {
+  pointer-events: auto;
+}
+
+.hero-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.hero-banner__actions .link-apple-blue {
+  min-height: var(--touch-min);
+  padding: 12px 16px;
+  border-radius: 999px;
+}
+
+.hero-banner__actions .link-apple-blue:focus-visible,
+.hero-banner__actions .btn-apple-blue:focus-visible {
+  outline: 2px solid var(--apple-blue-dark);
+  outline-offset: 3px;
+}
+
+.hero-banner__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  margin: clamp(10px, 1.6vh, 14px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-banner__trust-item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.hero-banner__trust-item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: rgba(130, 204, 255, 0.9);
+  flex-shrink: 0;
+}
+
+/* Product — sole focal point */
+.hero-banner__product-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-inline: max(var(--pad-inline), 16px);
+  pointer-events: none;
+}
+
+.hero-banner__product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--hero-product-max-w);
+  margin: 0;
+  padding: 0;
+}
+
+.hero-banner__product-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: var(--hero-product-max-h);
+  object-fit: contain;
+  object-position: center center;
+  aspect-ratio: 2400 / 1603;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.42));
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Spec chips — quiet tertiary layer below product */
+.hero-banner__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: min(var(--apple-container), 100%);
+  margin: 0;
+  padding: 0 max(var(--pad-inline), 16px) clamp(4px, 1vh, 8px);
+  list-style: none;
+  pointer-events: auto;
+}
+
+.hero-spec-chip {
+  flex: 1 1 calc(50% - 8px);
+  min-width: min(100%, 140px);
+  max-width: 220px;
+}
+
+.hero-spec-chip__details {
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-spec-chip__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  list-style: none;
+  cursor: default;
+  text-align: left;
+}
+
+.hero-spec-chip__summary::-webkit-details-marker {
+  display: none;
+}
+
+.hero-spec-chip__eyebrow {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(130, 204, 255, 0.9);
+}
+
+.hero-spec-chip__title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.hero-spec-chip__body {
+  margin: 0;
+  padding: 0 12px 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-banner .hero-spec-chip {
+  opacity: 0;
+  animation: heroChipEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-banner .hero-spec-chip:nth-child(1) { animation-delay: 0.42s; }
+.hero-banner .hero-spec-chip:nth-child(2) { animation-delay: 0.5s; }
+.hero-banner .hero-spec-chip:nth-child(3) { animation-delay: 0.58s; }
+.hero-banner .hero-spec-chip:nth-child(4) { animation-delay: 0.66s; }
+
+@keyframes heroChipEnter {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Legacy wave/callout grid — removed from markup; hide if cached HTML */
+.hero-banner__media,
+.hero-banner__visual,
+.hero-banner__product-stage,
+.hero-banner__callouts,
+.hero-context-card,
+.hero-banner .hero-product-waves {
+  display: none !important;
+}
+
+/* Scroll cue */
+.hero-apple__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: calc(max(4px, var(--safe-bottom)) + 4px);
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  margin: 0;
+  padding: 8px 12px;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  transition: opacity 0.2s var(--ease-out);
+}
+
+.hero-apple__scroll-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--apple-text-muted-dark);
+}
+
+.hero-apple__scroll:hover {
+  opacity: 0.88;
+}
+
+.hero-apple__scroll:focus-visible {
+  outline: 2px solid var(--apple-blue-dark);
+  outline-offset: 4px;
+}
+
+.hero-apple__scroll-icon {
+  width: 30px;
+  height: 50px;
+  border: 2px solid #424245;
+  border-radius: 999px;
+  margin-inline: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.hero-apple__scroll-dot {
+  width: 4px;
+  height: 8px;
+  background: var(--apple-text-on-dark-muted);
+  border-radius: 50%;
+  animation: heroScrollBounce 2s var(--ease-out) infinite;
+}
+
+@keyframes heroScrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* Load sequence */
+.motion-ready .hero-banner__copy > * {
+  opacity: 0;
+}
+
+.motion-ready .hero-apple__frame {
+  opacity: 0;
+}
+
+.motion-ready .hero-apple__scroll {
+  opacity: 0;
+}
+
+.hero-apple--animate .hero-banner__copy > * {
+  animation: lurafiFadeUp 0.85s var(--ease-out) both;
+}
+
+.hero-apple--animate .hero-banner__copy > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-apple--animate .hero-banner__copy > *:nth-child(2) { animation-delay: 0.14s; }
+.hero-apple--animate .hero-banner__copy > *:nth-child(3) { animation-delay: 0.23s; }
+.hero-apple--animate .hero-banner__copy > *:nth-child(4) { animation-delay: 0.32s; }
+
+.hero-apple--animate .hero-apple__frame {
+  animation: lurafiScaleIn 1s var(--ease-out) 0.38s both;
+}
+
+.hero-apple--animate .hero-apple__scroll {
+  animation: lurafiFadeIn 0.6s var(--ease-out) 0.72s both;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-banner {
+    --hero-product-max-w: min(68vw, 780px);
+    --hero-product-max-h: min(38dvh, 480px);
+  }
+
+  .hero-banner__chips {
+    gap: 10px;
+    padding-bottom: 0;
+  }
+
+  .hero-spec-chip {
+    flex: 0 1 auto;
+    min-width: 120px;
+    max-width: 168px;
+  }
+
+  .hero-spec-chip__title {
+    font-size: 14px;
+  }
+
+  /* Desktop: title-only chips — body in DOM for SR, hidden visually */
+  .hero-spec-chip__body {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .hero-spec-chip__details[open] .hero-spec-chip__body {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    overflow: visible;
+  }
+
+  .hero-apple__scroll-label {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-apple {
+    min-height: min(90dvh, 880px);
+  }
+
+  .hero-banner {
+    --hero-product-max-w: min(58vw, 820px);
+    --hero-product-max-h: min(40dvh, 500px);
+  }
+
+  .hero-banner__headline {
+    font-size: clamp(32px, 4.2vw, 56px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-apple {
+    min-height: auto;
+  }
+
+  .hero-banner {
+    --hero-product-max-w: min(94vw, 560px);
+    --hero-product-max-h: min(32dvh, 340px);
+  }
+
+  .hero-banner__headline {
+    font-size: clamp(26px, 7.2vw, 36px);
+    margin-bottom: 8px;
+  }
+
+  .hero-banner__lede {
+    font-size: clamp(14px, 3.8vw, 16px);
+  }
+
+  .hero-banner__chips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .hero-spec-chip {
+    flex: none;
+    min-width: 0;
+    max-width: none;
+  }
+
+  /* Mobile: tap chip to expand body */
+  .hero-spec-chip__summary {
+    cursor: pointer;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .hero-spec-chip__details:not([open]) .hero-spec-chip__body {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner .hero-spec-chip {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.motion-reduced .hero-banner__copy > *,
+.motion-reduced .hero-apple__frame,
+.motion-reduced .hero-apple__scroll,
+.motion-reduced .hero-spec-chip {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+html.no-js .hero-banner__copy > *,
+html.no-js .hero-apple__frame,
+html.no-js .hero-apple__scroll {
+  opacity: 1;
+  transform: none;
+}

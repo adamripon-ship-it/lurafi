@@ -100,7 +100,6 @@ function buildShort(loc) {
   const intro = localeIntros[code] || genericIntro(loc);
   const home = buildHomeUrl(domain, code);
   const buy = buildConfigureUrl(domain, code, 'buy');
-  const sub = buildConfigureUrl(domain, code, 'subscribe');
   const fullUrl = buildThemeAssetUrl(llmsFullFilename(code), domain);
 
   return `# ${intro.title}
@@ -122,7 +121,6 @@ Key facts:
 Important URLs:
 - Homepage: ${home}
 - Configure / buy: ${buy}
-- Subscribe: ${sub}
 
 Contact:
 - Email: hello@lurafi.com

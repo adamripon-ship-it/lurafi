@@ -1,35 +1,42 @@
 {%- liquid
   assign buy_product = settings.product_buy
-  assign sub_product = settings.product_subscribe
-  capture configure_buy_url
-    render 'configure-url', plan: 'buy'
-  endcapture
-  capture configure_sub_url
-    render 'configure-url', plan: 'subscribe'
-  endcapture
-  assign configure_buy_url = configure_buy_url | strip
-  assign configure_sub_url = configure_sub_url | strip
   assign buy_features_raw = section.settings.buy_features | strip
-  assign sub_features_raw = section.settings.sub_features | strip
   if buy_features_raw != blank
     assign buy_features = buy_features_raw | split: '|'
   else
     assign buy_features = 'home.pricing.buy_features' | t | split: '|'
   endif
-  if sub_features_raw != blank
-    assign sub_features = sub_features_raw | split: '|'
-  else
-    assign sub_features = 'home.pricing.sub_features' | t | split: '|'
-  endif
+  capture configure_buy_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_buy_url = configure_buy_url | strip
 -%}
 
 <section id="pricing" class="section-apple bg-white">
   <div class="apple-container">
-    <p class="overline-blue">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.pricing.overline' | t }}{%- endif -%}</p>
-    <h2 class="headline-section text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.pricing.heading' | t }}{%- endif -%}</h2>
-    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 56px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.pricing.subheading' | t }}{%- endif -%}</p>
+    {%- liquid
+      assign pricing_overline = section.settings.overline
+      if pricing_overline == blank
+        assign pricing_overline = 'home.pricing.overline' | t
+      endif
+      assign pricing_heading = section.settings.heading
+      if pricing_heading == blank
+        assign pricing_heading = 'home.pricing.heading' | t
+      endif
+      assign pricing_subheading = section.settings.subheading
+      if pricing_subheading == blank
+        assign pricing_subheading = 'home.pricing.subheading' | t
+      endif
+    -%}
+    {% render 'section-intro',
+      overline: pricing_overline,
+      heading: pricing_heading,
+      subheading: pricing_subheading,
+      theme: 'light',
+      subhead_narrow: true
+    %}
 
-    <div class="tile-grid-2 pricing-plans" data-countup-duration="1000">
+    <div class="pricing-plans pricing-plans--single">
       <div class="tile tile--gray plan-card plan-card--featured">
         <span class="plan-card__badge">{{ 'configure.plan_badge_popular' | t }}</span>
         <p class="plan-label plan-label--blue">{%- if section.settings.buy_label != blank -%}{{ section.settings.buy_label }}{%- else -%}{{ 'home.pricing.buy_label' | t }}{%- endif -%}</p>
@@ -47,23 +54,6 @@
           {%- endfor -%}
         </ul>
         <a href="{{ configure_buy_url }}" class="btn-apple-primary btn-block">{%- if section.settings.buy_cta != blank -%}{{ section.settings.buy_cta }}{%- else -%}{{ 'home.pricing.buy_cta' | t }}{%- endif -%}</a>
-      </div>
-      <div class="tile plan-dark plan-card">
-        <p class="plan-label plan-label--light">{%- if section.settings.sub_label != blank -%}{{ section.settings.sub_label }}{%- else -%}{{ 'home.pricing.sub_label' | t }}{%- endif -%}</p>
-        <h3 class="plan-card__title text-white">{{ sub_product.title | default: 'Kevin+' }}</h3>
-        <p class="plan-card__tagline text-muted">{%- if section.settings.sub_tagline != blank -%}{{ section.settings.sub_tagline }}{%- else -%}{{ 'home.pricing.sub_tagline' | t }}{%- endif -%}</p>
-        <p class="plan-price text-white">
-          {% render 'price-display', product: sub_product, fallback: '12.90 EUR/mo' %}
-        </p>
-        <ul class="plan-features">
-          {%- for feature in sub_features -%}
-            <li>
-              {% render 'plan-feature-icon' %}
-              <span>{{ feature | strip }}</span>
-            </li>
-          {%- endfor -%}
-        </ul>
-        <a href="{{ configure_sub_url }}" class="btn-apple-blue btn-block">{%- if section.settings.sub_cta != blank -%}{{ section.settings.sub_cta }}{%- else -%}{{ 'home.pricing.sub_cta' | t }}{%- endif -%}</a>
       </div>
     </div>
   </div>
@@ -85,12 +75,7 @@
     { "type": "text", "id": "buy_label", "label": "Plan label" },
     { "type": "text", "id": "buy_tagline", "label": "Tagline" },
     { "type": "text", "id": "buy_cta", "label": "Button label" },
-    { "type": "textarea", "id": "buy_features", "label": "Feature list (pipe-separated)", "info": "Example: Feature one|Feature two|Feature three" },
-    { "type": "header", "content": "Subscribe plan (Kevin+)" },
-    { "type": "text", "id": "sub_label", "label": "Plan label" },
-    { "type": "text", "id": "sub_tagline", "label": "Tagline" },
-    { "type": "text", "id": "sub_cta", "label": "Button label" },
-    { "type": "textarea", "id": "sub_features", "label": "Feature list (pipe-separated)", "info": "Example: Device included|Premium library|Free delivery" }
+    { "type": "textarea", "id": "buy_features", "label": "Feature list (pipe-separated)", "info": "Example: Feature one|Feature two|Feature three" }
   ],
   "presets": [{ "name": "Pricing" }]
 }

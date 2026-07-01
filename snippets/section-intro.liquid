@@ -1,0 +1,14 @@
+{%- comment -%}
+  Section intro: overline, heading, subheading. Pass: overline, heading, subheading, theme (light|dark), compact (bool), subhead_narrow (bool)
+{%- endcomment -%}
+<header class="section-intro{% if theme == 'dark' %} section-intro--dark{% endif %}{% if compact %} section-intro--compact{% endif %}">
+  {%- if overline != blank -%}
+    <p class="{% if theme == 'dark' %}overline-blue-dark{% else %}overline-blue{% endif %}">{{ overline | escape }}</p>
+  {%- endif -%}
+  {%- if heading != blank -%}
+    <h2 class="headline-section section-intro__heading{% if theme == 'dark' %} text-white{% endif %}">{{ heading | escape }}</h2>
+  {%- endif -%}
+  {%- if subheading != blank -%}
+    <p class="body-elevated section-intro__subhead{% if subhead_narrow %} section-intro__subhead--narrow{% endif %}{% if theme == 'dark' %} text-muted-dark{% else %} text-muted{% endif %}">{{ subheading | escape }}</p>
+  {%- endif -%}
+</header>

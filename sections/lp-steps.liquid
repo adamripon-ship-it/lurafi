@@ -1,6 +1,19 @@
 {%- liquid
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.steps.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.steps.heading' | t
+  endif
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'home.steps.subheading' | t
+  endif
+
   assign steps_image = section.settings.image
-  assign steps_image_fallback = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+  assign steps_image_fallback = 'kevin-hero-product-side.webp' | asset_url
   assign steps_image_alt = section.settings.image_alt
   if steps_image_alt == blank
     assign steps_image_alt = 'home.steps.image_alt' | t
@@ -9,50 +22,79 @@
 
 <section id="product" class="section-apple bg-gray">
   <div class="apple-container">
-    <p class="overline-blue">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.steps.overline' | t }}{%- endif -%}</p>
-    <h2 class="headline-section text-center" style="margin-bottom:16px">{%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.steps.heading' | t }}{%- endif -%}</h2>
-    <p class="body-elevated text-muted text-center" style="max-width:580px;margin:0 auto 64px">{%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.steps.subheading' | t }}{%- endif -%}</p>
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading,
+      theme: 'light'
+    %}
 
-    <div class="tile-grid-3" style="margin-bottom:56px">
-      <div class="tile tile--white text-center">
-        <p class="step-num" data-countup>1</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.step_1_title != blank -%}{{ section.settings.step_1_title }}{%- else -%}{{ 'home.steps.step_1_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted">{%- if section.settings.step_1_body != blank -%}{{ section.settings.step_1_body }}{%- else -%}{{ 'home.steps.step_1_body' | t }}{%- endif -%}</p>
+    <div class="steps-layout">
+      <div class="steps-layout__media">
+        <figure class="steps-layout__figure">
+          {%- if steps_image -%}
+            <img
+              src="{{ steps_image | image_url: width: 800 }}"
+              srcset="
+                {{ steps_image | image_url: width: 400 }} 400w,
+                {{ steps_image | image_url: width: 600 }} 600w,
+                {{ steps_image | image_url: width: 800 }} 800w
+              "
+              sizes="(min-width: 1024px) 360px, 72vw"
+              alt="{{ steps_image.alt | default: steps_image_alt | escape }}"
+              width="{{ steps_image.width | default: 400 }}"
+              height="{{ steps_image.height | default: 320 }}"
+              loading="lazy"
+              decoding="async"
+            >
+          {%- else -%}
+            <img
+              src="{{ steps_image_fallback }}"
+              alt="{{ steps_image_alt | escape }}"
+              width="400"
+              height="320"
+              loading="lazy"
+              decoding="async"
+            >
+          {%- endif -%}
+        </figure>
       </div>
-      <div class="tile tile--white text-center">
-        <p class="step-num" data-countup>2</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.step_2_title != blank -%}{{ section.settings.step_2_title }}{%- else -%}{{ 'home.steps.step_2_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted">{%- if section.settings.step_2_body != blank -%}{{ section.settings.step_2_body }}{%- else -%}{{ 'home.steps.step_2_body' | t }}{%- endif -%}</p>
-      </div>
-      <div class="tile tile--white text-center">
-        <p class="step-num" data-countup>3</p>
-        <h3 style="font-size:21px;font-weight:600;margin-bottom:12px">{%- if section.settings.step_3_title != blank -%}{{ section.settings.step_3_title }}{%- else -%}{{ 'home.steps.step_3_title' | t }}{%- endif -%}</h3>
-        <p class="body-standard text-muted">{%- if section.settings.step_3_body != blank -%}{{ section.settings.step_3_body }}{%- else -%}{{ 'home.steps.step_3_body' | t }}{%- endif -%}</p>
-      </div>
-    </div>
 
-    <div class="steps-section__image">
-      <div class="steps-section__image-frame">
-        {%- if steps_image -%}
-          <img
-            src="{{ steps_image | image_url: width: 800 }}"
-            alt="{{ steps_image.alt | default: steps_image_alt | escape }}"
-            width="{{ steps_image.width | default: 400 }}"
-            height="{{ steps_image.height | default: 320 }}"
-            loading="lazy"
-            decoding="async"
-          >
-        {%- else -%}
-          <img
-            src="{{ steps_image_fallback }}"
-            alt="{{ steps_image_alt | escape }}"
-            width="400"
-            height="320"
-            loading="lazy"
-            decoding="async"
-          >
-        {%- endif -%}
-      </div>
+      <ol class="steps-timeline" aria-label="{{ heading | escape }}">
+        <li class="steps-timeline__item">
+          <span class="steps-timeline__num" aria-hidden="true">1</span>
+          <div class="steps-timeline__content tile tile--white">
+            <h3 class="steps-timeline__title headline-tile">
+              {%- if section.settings.step_1_title != blank -%}{{ section.settings.step_1_title }}{%- else -%}{{ 'home.steps.step_1_title' | t }}{%- endif -%}
+            </h3>
+            <p class="body-standard text-muted">
+              {%- if section.settings.step_1_body != blank -%}{{ section.settings.step_1_body }}{%- else -%}{{ 'home.steps.step_1_body' | t }}{%- endif -%}
+            </p>
+          </div>
+        </li>
+        <li class="steps-timeline__item">
+          <span class="steps-timeline__num" aria-hidden="true">2</span>
+          <div class="steps-timeline__content tile tile--white">
+            <h3 class="steps-timeline__title headline-tile">
+              {%- if section.settings.step_2_title != blank -%}{{ section.settings.step_2_title }}{%- else -%}{{ 'home.steps.step_2_title' | t }}{%- endif -%}
+            </h3>
+            <p class="body-standard text-muted">
+              {%- if section.settings.step_2_body != blank -%}{{ section.settings.step_2_body }}{%- else -%}{{ 'home.steps.step_2_body' | t }}{%- endif -%}
+            </p>
+          </div>
+        </li>
+        <li class="steps-timeline__item">
+          <span class="steps-timeline__num" aria-hidden="true">3</span>
+          <div class="steps-timeline__content tile tile--white">
+            <h3 class="steps-timeline__title headline-tile">
+              {%- if section.settings.step_3_title != blank -%}{{ section.settings.step_3_title }}{%- else -%}{{ 'home.steps.step_3_title' | t }}{%- endif -%}
+            </h3>
+            <p class="body-standard text-muted">
+              {%- if section.settings.step_3_body != blank -%}{{ section.settings.step_3_body }}{%- else -%}{{ 'home.steps.step_3_body' | t }}{%- endif -%}
+            </p>
+          </div>
+        </li>
+      </ol>
     </div>
 
     <div class="stats-row" data-countup-duration="1100">
@@ -74,39 +116,19 @@
     },
     { "type": "text", "id": "overline", "label": "Overline" },
     { "type": "text", "id": "heading", "label": "Heading" },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading"
-    },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
     { "type": "text", "id": "step_1_title", "label": "Step 1 title" },
-    {
-      "type": "textarea",
-      "id": "step_1_body",
-      "label": "Step 1 body"
-    },
+    { "type": "textarea", "id": "step_1_body", "label": "Step 1 body" },
     { "type": "text", "id": "step_2_title", "label": "Step 2 title" },
-    {
-      "type": "textarea",
-      "id": "step_2_body",
-      "label": "Step 2 body"
-    },
+    { "type": "textarea", "id": "step_2_body", "label": "Step 2 body" },
     { "type": "text", "id": "step_3_title", "label": "Step 3 title" },
-    {
-      "type": "textarea",
-      "id": "step_3_body",
-      "label": "Step 3 body"
-    },
+    { "type": "textarea", "id": "step_3_body", "label": "Step 3 body" },
     {
       "type": "header",
       "content": "Section image"
     },
-    { "type": "image_picker", "id": "image", "label": "Kevin device image", "info": "Leave empty for the default device angle image." },
-    {
-      "type": "text",
-      "id": "image_alt",
-      "label": "Image alt text"
-    },
+    { "type": "image_picker", "id": "image", "label": "Kevin device image", "info": "Default: kevin-hero-product-side.webp" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text" },
     { "type": "text", "id": "stat_1_value", "label": "Stat 1 value" },
     { "type": "text", "id": "stat_1_label", "label": "Stat 1 label" },
     { "type": "text", "id": "stat_2_value", "label": "Stat 2 value" },

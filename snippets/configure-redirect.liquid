@@ -3,7 +3,7 @@
 {%- endcomment -%}
 {%- if request.path contains '/pages/configure' and template.suffix != 'configure' -%}
   {%- liquid
-    assign redirect_plan = request.params.plan | default: 'buy'
+    assign redirect_plan = 'buy'
     capture configure_dest
       render 'configure-url', plan: redirect_plan
     endcapture

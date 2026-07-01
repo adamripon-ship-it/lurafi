@@ -1,5 +1,5 @@
 // Critical-path E2E smoke test for the lurafi storefront.
-// Covers: configure (buy + subscribe) -> Shopify checkout, and PDP -> cart -> checkout.
+// Covers: configure (buy) -> Shopify checkout, and PDP -> cart -> checkout.
 //
 // Run:  LURAFI_URL=https://mitipi.eu npx playwright test
 // CI :  npm run test:e2e
@@ -9,32 +9,28 @@ const BASE = (process.env.LURAFI_URL || 'https://mitipi.eu').replace(/\/$/, '');
 const CHECKOUT = /\/checkouts\//;
 
 test.describe('Critical purchase path', () => {
-  // PRIMARY flow: configurator -> checkout (the main money path on this theme)
-  for (const plan of ['buy', 'subscribe']) {
-    test(`configure (${plan}) reaches Shopify checkout`, async ({ page }) => {
-      await page.goto(`${BASE}/pages/configure?plan=${plan}`, { waitUntil: 'domcontentloaded' });
+  test('configure (buy) reaches Shopify checkout', async ({ page }) => {
+    await page.goto(`${BASE}/pages/configure?plan=buy`, { waitUntil: 'domcontentloaded' });
 
-      await expect(page.locator('[data-configure]')).toBeVisible();
+    await expect(page.locator('[data-configure]')).toBeVisible();
+    await expect(page.locator('[data-plan="subscribe"]')).toHaveCount(0);
 
-      if (plan === 'subscribe') {
-        const subCard = page.locator('[data-plan="subscribe"]');
-        await expect(subCard).toBeEnabled(); // needs Kevin+ + selling plan assigned
-        await subCard.click();
-      }
+    const cta = page.locator('[data-configure-checkout]').first();
+    await expect(cta).toBeVisible();
 
-      const cta = page.locator('[data-configure-checkout]').first();
-      await expect(cta).toBeVisible();
+    await cta.click();
+    await page.waitForURL(CHECKOUT, { timeout: 60000 });
 
-      await cta.click();
-      await page.waitForURL(CHECKOUT, { timeout: 60000 });
+    await expect(page).toHaveURL(CHECKOUT);
+    await expect(page.locator('body')).not.toContainText(/almost ready|sold out|unavailable/i);
+  });
 
-      await expect(page).toHaveURL(CHECKOUT);
-      if (plan === 'subscribe') {
-        await expect(page).toHaveURL(/selling_plan=/);
-      }
-      await expect(page.locator('body')).not.toContainText(/almost ready|sold out|unavailable/i);
-    });
-  }
+  test('configure ignores legacy subscribe plan param', async ({ page }) => {
+    await page.goto(`${BASE}/pages/configure?plan=subscribe`, { waitUntil: 'domcontentloaded' });
+
+    await expect(page.locator('[data-configure]')).toBeVisible();
+    await expect(page.locator('[data-plan="subscribe"]')).toHaveCount(0);
+  });
 
   // SECONDARY flow: product detail -> add to cart -> checkout
   test('product detail -> add to cart -> checkout', async ({ page }) => {

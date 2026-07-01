@@ -15,7 +15,7 @@ Production storefront: [lurafi.ai](https://lurafi.ai/). This repo is the **theme
    ```
 
 3. Open a PR → **Theme Check** must pass on GitHub.
-4. Merge to `main` → deploy with `npm run theme:push:live` or the manual **Deploy theme** Action.
+4. Merge to `main` → deploy with `npm run theme:deploy:live` or the manual **Deploy theme** Action.
 
 Do **not** push untested changes directly to live without CI green.
 

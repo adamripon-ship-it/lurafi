@@ -1,0 +1,106 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "Company",
+        "heading": "Build the future of prevention-first security.",
+        "lede": "Mitipi is a Swiss company rethinking home security around privacy, believable presence simulation, and AI—without cameras or microphones.",
+        "theme": "white",
+        "image_asset": "kevin-hero-burglary-prevention.png",
+        "image_alt": "Kevin® — Swiss-engineered security innovation",
+        "cta_heading": "Introduce yourself.",
+        "cta_subheading": "Tell us what you build and why Kevin matters to you.",
+        "cta_primary": "Email careers",
+        "cta_primary_url": "mailto:hello@lurafi.com?subject=Careers",
+        "cta_secondary": "About Kevin",
+        "cta_secondary_url": "/pages/about-kevin"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Our values",
+            "heading": "Growth. Security. Innovation. Integrity.",
+            "body": "We bring joy and security to customers worldwide. We think beyond the obvious—and we empower young talents and people with disabilities to grow with us.",
+            "variant": "default"
+          }
+        },
+        "block_2": {
+          "type": "pillar",
+          "settings": {
+            "icon": "↗",
+            "title": "Growth",
+            "body": "We believe in a bright future for all of us. We strive to grow and develop a better future for everyone."
+          }
+        },
+        "block_3": {
+          "type": "pillar",
+          "settings": {
+            "icon": "🛡",
+            "title": "Security",
+            "body": "We are bringing joy and security to the world and to our customers—prevention-first, privacy-respecting protection."
+          }
+        },
+        "block_4": {
+          "type": "pillar",
+          "settings": {
+            "icon": "💡",
+            "title": "Innovation",
+            "body": "We think beyond the obvious and come up with solutions nobody thought of before—from shadow simulation to AI household sounds."
+          }
+        },
+        "block_5": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "The team",
+            "heading": "Small team. Global mission.",
+            "body": "Under CEO Patrick Cotting, more than 30 people work on Kevin across Switzerland, California, Germany, and partner locations worldwide.",
+            "variant": "default"
+          }
+        },
+        "block_6": {
+          "type": "media_split",
+          "settings": {
+            "image_asset": "kevin-hero-luxury-dutch-villa.jpg",
+            "image_alt": "Kevin® protecting a home while residents are away",
+            "title": "What we work on",
+            "body": "Hardware, mobile apps, AI sound generation, brand storytelling, and global expansion. If you care about physical security without surveillance, we would like to hear from you.",
+            "reverse": false
+          }
+        },
+        "block_7": {
+          "type": "richtext",
+          "settings": {
+            "title": "Open roles",
+            "body": "<p>There are no public job listings on kevinswiss.com at this time. Send your CV and a short note about what you would like to work on—we keep promising profiles on file for future openings.</p>"
+          }
+        },
+        "block_8": {
+          "type": "contact_row",
+          "settings": {
+            "contact_1_label": "Careers",
+            "contact_1_value": "hello@lurafi.com",
+            "contact_1_link": "mailto:hello@lurafi.com?subject=Careers%20at%20Mitipi",
+            "contact_2_label": "Office",
+            "contact_2_value": "Mitipi AG · Bluefactory · Fribourg, Switzerland",
+            "contact_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -22,7 +22,6 @@ function fail(msg, detail) {
 const ROUTES = [
   { path: '/', name: 'Home' },
   { path: '/?view=configure&plan=buy', name: 'Configure Buy' },
-  { path: '/?view=configure&plan=subscribe', name: 'Configure Subscribe' },
   { path: '/pages/configure?plan=buy', name: 'Legacy Configure' },
   { path: '/cart', name: 'Cart' },
   { path: '/collections/all', name: 'All Products' },

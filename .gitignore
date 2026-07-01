@@ -9,10 +9,17 @@ node_modules/
 
 # QA artifacts
 scripts/qa-screenshots/
+test-results/
+.tmp-*/
 scripts/i18n-qa-report.json
 scripts/audit-report.json
 scripts/qa-full-report.json
 scripts/qa-mitipi-report.json
+
+# Product reference photos (local only — see assets/reference/README.md)
+assets/reference/**
+!assets/reference/README.md
+!assets/reference/INVENTORY.txt
 
 # Secrets
 .env
