@@ -5,10 +5,11 @@
   "storefront_url": "https://mitipi.eu",
   "storefront_markers": [
     "lp-layout.css",
-    "hero-banner__chips",
-    "hero-spec-chip",
+    "data-hero-layout=\"focus-v4\"",
+    "hero-banner__product-stage",
+    "hero-banner__cta--primary",
     "solution-split"
   ],
-  "deploy_head_marker": "lurafi-head-v18",
+  "deploy_head_marker": "lurafi-head-v20",
   "_comment": "Single source of truth for live deploys. Update theme_id if the published theme changes in Admin."
 }

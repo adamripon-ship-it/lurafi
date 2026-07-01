@@ -1,12 +1,7 @@
 {%- comment -%}
-  Hero copy block: eyebrow, headline, USP, CTAs, trust strip.
-  Pass: eyebrow, headline, lede, cta_*, trust_1, trust_2, trust_3
+  Hero copy: headline, lede, two CTA buttons (no eyebrow, no trust strip).
 {%- endcomment -%}
 <div class="hero-banner__copy">
-  {%- if eyebrow != blank -%}
-    <p class="hero-banner__eyebrow">{{ eyebrow | escape }}</p>
-  {%- endif -%}
-
   <h1 class="hero-banner__headline headline-hero" id="HeroHeading">
     {{ headline | escape }}
   </h1>
@@ -16,16 +11,11 @@
   {%- endif -%}
 
   <div class="hero-banner__actions">
-    <a href="{{ cta_primary_url }}" class="btn-apple-blue">
+    <a href="{{ cta_primary_url }}" class="hero-banner__cta hero-banner__cta--primary">
       {{ cta_primary_label | escape }}
     </a>
-    <a href="{{ cta_secondary_url }}" class="link-apple-blue">
+    <a href="{{ cta_secondary_url }}" class="hero-banner__cta hero-banner__cta--secondary">
       {{ cta_secondary_label | escape }}
-      <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true" focusable="false">
-        <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
     </a>
   </div>
-
-  {% render 'hero-banner-trust', trust_1: trust_1, trust_2: trust_2, trust_3: trust_3 %}
 </div>

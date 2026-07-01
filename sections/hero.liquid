@@ -18,16 +18,6 @@
     assign cta_secondary_label = 'home.hero.cta_secondary_label' | t
   endif
 
-  assign callouts_aria_label = section.settings.callouts_aria_label
-  if callouts_aria_label == blank
-    assign callouts_aria_label = 'hero.callouts_aria_label' | t
-  endif
-
-  assign hero_eyebrow = section.settings.eyebrow
-  if hero_eyebrow == blank
-    assign hero_eyebrow = 'hero.slide_1.eyebrow' | t
-  endif
-
   assign hero_headline = section.settings.headline
   if hero_headline == blank
     assign hero_headline = 'home.hero.headline' | t
@@ -45,83 +35,17 @@
   if image_alt == blank
     assign image_alt = 'hero.slide_1.image_alt' | t
   endif
-
-  assign callout_1_eyebrow = section.settings.callout_1_eyebrow
-  if callout_1_eyebrow == blank
-    assign callout_1_eyebrow = 'hero.slide_1.callout_1_eyebrow' | t
-  endif
-  assign callout_1_title = section.settings.callout_1_title
-  if callout_1_title == blank
-    assign callout_1_title = 'hero.slide_1.callout_1_title' | t
-  endif
-  assign callout_1_body = section.settings.callout_1_body
-  if callout_1_body == blank
-    assign callout_1_body = 'hero.slide_1.callout_1_body' | t
-  endif
-
-  assign callout_2_eyebrow = section.settings.callout_2_eyebrow
-  if callout_2_eyebrow == blank
-    assign callout_2_eyebrow = 'hero.slide_1.callout_2_eyebrow' | t
-  endif
-  assign callout_2_title = section.settings.callout_2_title
-  if callout_2_title == blank
-    assign callout_2_title = 'hero.slide_1.callout_2_title' | t
-  endif
-  assign callout_2_body = section.settings.callout_2_body
-  if callout_2_body == blank
-    assign callout_2_body = 'hero.slide_1.callout_2_body' | t
-  endif
-
-  assign callout_3_eyebrow = section.settings.callout_3_eyebrow
-  if callout_3_eyebrow == blank
-    assign callout_3_eyebrow = 'hero.slide_1.callout_3_eyebrow' | t
-  endif
-  assign callout_3_title = section.settings.callout_3_title
-  if callout_3_title == blank
-    assign callout_3_title = 'hero.slide_1.callout_3_title' | t
-  endif
-  assign callout_3_body = section.settings.callout_3_body
-  if callout_3_body == blank
-    assign callout_3_body = 'hero.slide_1.callout_3_body' | t
-  endif
-
-  assign callout_4_eyebrow = section.settings.callout_4_eyebrow
-  if callout_4_eyebrow == blank
-    assign callout_4_eyebrow = 'hero.slide_1.callout_4_eyebrow' | t
-  endif
-  assign callout_4_title = section.settings.callout_4_title
-  if callout_4_title == blank
-    assign callout_4_title = 'hero.slide_1.callout_4_title' | t
-  endif
-  assign callout_4_body = section.settings.callout_4_body
-  if callout_4_body == blank
-    assign callout_4_body = 'hero.slide_1.callout_4_body' | t
-  endif
-
-  assign trust_1 = section.settings.trust_1
-  if trust_1 == blank
-    assign trust_1 = 'home.hero.trust_1' | t
-  endif
-  assign trust_2 = section.settings.trust_2
-  if trust_2 == blank
-    assign trust_2 = 'home.hero.trust_2' | t
-  endif
-  assign trust_3 = section.settings.trust_3
-  if trust_3 == blank
-    assign trust_3 = 'home.hero.trust_3' | t
-  endif
 -%}
 
 <section class="hero-apple" aria-labelledby="HeroHeading">
-  <div class="hero-apple__glow" aria-hidden="true"></div>
-  <div class="hero-apple__grain" aria-hidden="true"></div>
+  {%- if section.settings.deploy_cache_bust != blank -%}
+    <!-- hero-cache: {{ section.settings.deploy_cache_bust }} -->
+  {%- endif -%}
 
   <div class="hero-apple__content">
     <div class="hero-apple__frame">
       <div class="hero-apple__stage">
         {% render 'hero-banner',
-          section: section,
-          hero_eyebrow: hero_eyebrow,
           hero_headline: hero_headline,
           hero_lede: hero_lede,
           cta_primary_url: cta_primary_url,
@@ -129,24 +53,7 @@
           cta_secondary_url: cta_secondary_url,
           cta_secondary_label: cta_secondary_label,
           image: section.settings.image,
-          image_alt: image_alt,
-          callouts_aria_label: callouts_aria_label,
-          callout_1_eyebrow: callout_1_eyebrow,
-          callout_1_title: callout_1_title,
-          callout_1_body: callout_1_body,
-          callout_2_eyebrow: callout_2_eyebrow,
-          callout_2_title: callout_2_title,
-          callout_2_body: callout_2_body,
-          callout_3_eyebrow: callout_3_eyebrow,
-          callout_3_title: callout_3_title,
-          callout_3_body: callout_3_body,
-          callout_4_eyebrow: callout_4_eyebrow,
-          callout_4_title: callout_4_title,
-          callout_4_body: callout_4_body,
-          trust_1: trust_1,
-          trust_2: trust_2,
-          trust_3: trust_3,
-          banner_id: section.id
+          image_alt: image_alt
         %}
       </div>
     </div>
@@ -173,7 +80,6 @@
       "type": "header",
       "content": "Headline"
     },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow tag" },
     { "type": "text", "id": "headline", "label": "Headline" },
     {
       "type": "textarea",
@@ -183,7 +89,7 @@
     },
     { "type": "text", "id": "cta_primary_label", "label": "Primary button" },
     { "type": "url", "id": "cta_primary_url", "label": "Primary link" },
-    { "type": "text", "id": "cta_secondary_label", "label": "Secondary link" },
+    { "type": "text", "id": "cta_secondary_label", "label": "Secondary button" },
     { "type": "text", "id": "cta_secondary_url", "label": "Secondary link (anchor OK)", "default": "#how-it-works" },
     {
       "type": "header",
@@ -191,38 +97,6 @@
     },
     { "type": "image_picker", "id": "image", "label": "Product image" },
     { "type": "text", "id": "image_alt", "label": "Image alt text" },
-    {
-      "type": "header",
-      "content": "Callouts"
-    },
-    {
-      "type": "text",
-      "id": "callouts_aria_label",
-      "label": "Callouts region label (accessibility)"
-    },
-    {
-      "type": "paragraph",
-      "content": "Add up to four callout blocks below. Legacy callout settings are used only when no blocks are present."
-    },
-    { "type": "text", "id": "callout_1_eyebrow", "label": "Callout 1 eyebrow" },
-    { "type": "text", "id": "callout_1_title", "label": "Callout 1 title (top-left)" },
-    { "type": "textarea", "id": "callout_1_body", "label": "Callout 1 body" },
-    { "type": "text", "id": "callout_2_eyebrow", "label": "Callout 2 eyebrow" },
-    { "type": "text", "id": "callout_2_title", "label": "Callout 2 title (top-right)" },
-    { "type": "textarea", "id": "callout_2_body", "label": "Callout 2 body" },
-    { "type": "text", "id": "callout_3_eyebrow", "label": "Callout 3 eyebrow" },
-    { "type": "text", "id": "callout_3_title", "label": "Callout 3 title (bottom-left)" },
-    { "type": "textarea", "id": "callout_3_body", "label": "Callout 3 body" },
-    { "type": "text", "id": "callout_4_eyebrow", "label": "Callout 4 eyebrow" },
-    { "type": "text", "id": "callout_4_title", "label": "Callout 4 title (bottom-right)" },
-    { "type": "textarea", "id": "callout_4_body", "label": "Callout 4 body" },
-    {
-      "type": "header",
-      "content": "Trust strip"
-    },
-    { "type": "text", "id": "trust_1", "label": "Trust item 1" },
-    { "type": "text", "id": "trust_2", "label": "Trust item 2" },
-    { "type": "text", "id": "trust_3", "label": "Trust item 3" },
     {
       "type": "header",
       "content": "Sticky mobile CTA"
@@ -251,71 +125,9 @@
       "info": "Updated automatically by deploy scripts. Do not edit manually."
     }
   ],
-  "blocks": [
-    {
-      "type": "callout",
-      "name": "Product callout",
-      "limit": 4,
-      "settings": [
-        {
-          "type": "select",
-          "id": "position",
-          "label": "Position",
-          "default": "primary",
-          "options": [
-            { "value": "primary", "label": "Top left" },
-            { "value": "privacy", "label": "Top right" },
-            { "value": "delivery", "label": "Bottom left" },
-            { "value": "feature", "label": "Bottom right" }
-          ]
-        },
-        { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
-        { "type": "text", "id": "title", "label": "Title" },
-        { "type": "textarea", "id": "body", "label": "Body" }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "Hero",
-      "blocks": [
-        {
-          "type": "callout",
-          "settings": {
-            "position": "primary",
-            "eyebrow": "Plug and play",
-            "title": "9 watts",
-            "body": "Connect power and place near a window—typical use around 9 W. No installation or wiring."
-          }
-        },
-        {
-          "type": "callout",
-          "settings": {
-            "position": "privacy",
-            "eyebrow": "100% privacy",
-            "title": "No cameras. No mics.",
-            "body": "Simulations run locally on the device. Nothing uploaded to the cloud or shared with third parties."
-          }
-        },
-        {
-          "type": "callout",
-          "settings": {
-            "position": "delivery",
-            "eyebrow": "Jammer-proof",
-            "title": "Local storage",
-            "body": "70+ hours of light, shadow, and sound keep playing—even when burglars jam Wi-Fi cameras and alarms."
-          }
-        },
-        {
-          "type": "callout",
-          "settings": {
-            "position": "feature",
-            "eyebrow": "Checkout",
-            "title": "Free delivery",
-            "body": "Secure checkout with free delivery across Europe."
-          }
-        }
-      ]
+      "name": "Hero"
     }
   ]
 }

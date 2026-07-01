@@ -1,83 +1,25 @@
 {%- comment -%}
-  Static product hero — copy → product → spec chips (P0 layout v2).
+  Static hero — headline, lede, dual CTAs, product centerpiece (focus v4).
 {%- endcomment -%}
 
-<div class="hero-banner" data-hero-layout="chips-v2">
+<div class="hero-banner" data-hero-layout="focus-v4">
   {% render 'hero-banner-copy',
-    eyebrow: hero_eyebrow,
     headline: hero_headline,
     lede: hero_lede,
     cta_primary_url: cta_primary_url,
     cta_primary_label: cta_primary_label,
     cta_secondary_url: cta_secondary_url,
-    cta_secondary_label: cta_secondary_label,
-    trust_1: trust_1,
-    trust_2: trust_2,
-    trust_3: trust_3
+    cta_secondary_label: cta_secondary_label
   %}
 
-  <div class="hero-banner__product-wrap">
+  <div class="hero-banner__product-stage">
+    <div class="hero-banner__product-glow" aria-hidden="true">
+      <span class="hero-banner__glow-layer hero-banner__glow-layer--purple"></span>
+      <span class="hero-banner__glow-layer hero-banner__glow-layer--magenta"></span>
+      <span class="hero-banner__glow-layer hero-banner__glow-layer--pink"></span>
+    </div>
     <figure class="hero-banner__product">
       {% render 'hero-banner-product-image', image: image, image_alt: image_alt %}
     </figure>
   </div>
-
-  <ul class="hero-banner__chips" role="list" aria-label="{{ callouts_aria_label | escape }}">
-    {%- if section.blocks.size > 0 -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'callout' -%}
-          {%- liquid
-            assign c_eyebrow = block.settings.eyebrow
-            assign c_title = block.settings.title
-            assign c_body = block.settings.body
-            assign c_modifier = block.settings.position | default: 'primary'
-          -%}
-          {%- if c_eyebrow != blank or c_title != blank or c_body != blank -%}
-            <li class="hero-spec-chip hero-spec-chip--{{ c_modifier }}"{{ block.shopify_attributes }}>
-              <details class="hero-spec-chip__details">
-                <summary class="hero-spec-chip__summary">
-                  {%- if c_eyebrow != blank -%}<span class="hero-spec-chip__eyebrow">{{ c_eyebrow | escape }}</span>{%- endif -%}
-                  {%- if c_title != blank -%}<strong class="hero-spec-chip__title">{{ c_title | escape }}</strong>{%- endif -%}
-                </summary>
-                {%- if c_body != blank -%}<p class="hero-spec-chip__body">{{ c_body | escape }}</p>{%- endif -%}
-              </details>
-            </li>
-          {%- endif -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- else -%}
-      {%- assign chip_modifiers = 'primary,privacy,delivery,feature' | split: ',' -%}
-      {%- for mod in chip_modifiers -%}
-        {%- case mod -%}
-          {%- when 'primary' -%}
-            {%- assign c_eyebrow = callout_1_eyebrow -%}
-            {%- assign c_title = callout_1_title -%}
-            {%- assign c_body = callout_1_body -%}
-          {%- when 'privacy' -%}
-            {%- assign c_eyebrow = callout_2_eyebrow -%}
-            {%- assign c_title = callout_2_title -%}
-            {%- assign c_body = callout_2_body -%}
-          {%- when 'delivery' -%}
-            {%- assign c_eyebrow = callout_3_eyebrow -%}
-            {%- assign c_title = callout_3_title -%}
-            {%- assign c_body = callout_3_body -%}
-          {%- when 'feature' -%}
-            {%- assign c_eyebrow = callout_4_eyebrow -%}
-            {%- assign c_title = callout_4_title -%}
-            {%- assign c_body = callout_4_body -%}
-        {%- endcase -%}
-        {%- if c_title != blank or c_body != blank -%}
-          <li class="hero-spec-chip hero-spec-chip--{{ mod }}">
-            <details class="hero-spec-chip__details">
-              <summary class="hero-spec-chip__summary">
-                {%- if c_eyebrow != blank -%}<span class="hero-spec-chip__eyebrow">{{ c_eyebrow | escape }}</span>{%- endif -%}
-                {%- if c_title != blank -%}<strong class="hero-spec-chip__title">{{ c_title | escape }}</strong>{%- endif -%}
-              </summary>
-              {%- if c_body != blank -%}<p class="hero-spec-chip__body">{{ c_body | escape }}</p>{%- endif -%}
-            </details>
-          </li>
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-  </ul>
 </div>

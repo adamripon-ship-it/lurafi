@@ -2,52 +2,7 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "blocks": {
-        "callout_primary": {
-          "type": "callout",
-          "settings": {
-            "position": "primary",
-            "eyebrow": "Plug and play",
-            "title": "9 watts",
-            "body": "Connect power and place near a window—typical use around 9 W. No installation or wiring."
-          }
-        },
-        "callout_privacy": {
-          "type": "callout",
-          "settings": {
-            "position": "privacy",
-            "eyebrow": "100% privacy",
-            "title": "No cameras. No mics.",
-            "body": "Simulations run locally on the device. Nothing uploaded to the cloud or shared with third parties."
-          }
-        },
-        "callout_delivery": {
-          "type": "callout",
-          "settings": {
-            "position": "delivery",
-            "eyebrow": "Jammer-proof",
-            "title": "Local storage",
-            "body": "70+ hours of light, shadow, and sound keep playing—even when burglars jam Wi-Fi cameras and alarms."
-          }
-        },
-        "callout_feature": {
-          "type": "callout",
-          "settings": {
-            "position": "feature",
-            "eyebrow": "Checkout",
-            "title": "Free delivery",
-            "body": "Secure checkout with free delivery across Europe."
-          }
-        }
-      },
-      "block_order": [
-        "callout_primary",
-        "callout_privacy",
-        "callout_delivery",
-        "callout_feature"
-      ],
       "settings": {
-        "eyebrow": "For every home",
         "headline": "Deter burglaries before they happen.",
         "lede": "Light, shadow, and sound simulate presence—no cameras, no microphones.",
         "cta_primary_label": "Get Kevin",
@@ -55,10 +10,6 @@
         "cta_secondary_label": "How it works",
         "cta_secondary_url": "#how-it-works",
         "image_alt": "",
-        "callouts_aria_label": "Kevin benefits",
-        "trust_1": "Swiss engineered",
-        "trust_2": "No cameras or mics",
-        "trust_3": "Free delivery in Europe",
         "sticky_cta_label": "Get Kevin",
         "sticky_cta_enabled": true,
         "sticky_cta_url": "",

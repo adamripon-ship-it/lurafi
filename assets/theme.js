@@ -8,6 +8,44 @@
   }
 })();
 
+/** Replace hero when Shopify homepage page_cache serves stale section HTML. */
+(function heroCacheRefresh() {
+  'use strict';
+
+  window.lurafiRefreshStaleHero = function lurafiRefreshStaleHero() {
+    var isHome =
+      window.location.pathname === '/' ||
+      /^\/(en|nl|fr|de|cs)\/?$/.test(window.location.pathname);
+    if (!isHome) return Promise.resolve(false);
+
+    var heroSection = document.getElementById('shopify-section-hero');
+    if (!heroSection) return Promise.resolve(false);
+    if (heroSection.querySelector('[data-hero-layout="focus-v4"]')) return Promise.resolve(false);
+
+    var url =
+      window.location.pathname +
+      (window.location.search ? window.location.search + '&' : '?') +
+      'section_id=hero&_hero_refresh=' +
+      Date.now();
+
+    return fetch(url, { credentials: 'same-origin' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('hero section fetch failed');
+        return res.text();
+      })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var fresh = doc.getElementById('shopify-section-hero');
+        if (!fresh || !fresh.querySelector('[data-hero-layout="focus-v4"]')) return false;
+        heroSection.replaceWith(fresh);
+        return true;
+      })
+      .catch(function () {
+        return false;
+      });
+  };
+})();
+
 (function initPageMotion() {
   'use strict';
 
@@ -178,11 +216,26 @@
   function init() {
     setViewportClass();
     root.classList.add('motion-ready');
-    runHeroEntrance();
-    runConfigureEntrance();
-    observeSections();
-    runGenericPageEntrance();
-    initStickyCta();
+
+    var startUi = function () {
+      runHeroEntrance();
+      runConfigureEntrance();
+      observeSections();
+      runGenericPageEntrance();
+      initStickyCta();
+    };
+
+    var refreshHero = window.lurafiRefreshStaleHero;
+    if (typeof refreshHero === 'function') {
+      var refreshTimeout = window.setTimeout(startUi, 1200);
+      refreshHero().then(function (refreshed) {
+        window.clearTimeout(refreshTimeout);
+        if (refreshed) initStickyCta();
+        startUi();
+      });
+    } else {
+      startUi();
+    }
 
     var resizeTimer;
     window.addEventListener(

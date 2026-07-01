@@ -72,7 +72,8 @@ async function publishTheme(store, themeId) {
 }
 
 async function main() {
-  const { store, theme_id: themeId, theme_name: themeName } = getLiveThemeConfig();
+  const { store, theme_id: themeId, theme_name: themeName, deploy_head_marker: headMarker } =
+    getLiveThemeConfig();
   const bustAt = new Date().toISOString();
 
   console.log(`\n=== Bust homepage page cache ===`);
@@ -87,11 +88,25 @@ async function main() {
   }
   hero.settings.deploy_cache_bust = bustAt;
 
+  const stats = index.sections?.stats;
+  if (stats) {
+    delete stats.disabled;
+  }
+
   let themeLiquid = readFileSync(join(ROOT, 'layout/theme.liquid'), 'utf8');
   themeLiquid = themeLiquid.replace(
     /<!-- lurafi-head-v\d+[^>]*-->/,
-    `<!-- lurafi-head-v18 hero-chips-v2 cache-bust=${bustAt} -->`,
+    `<!-- ${headMarker} cache-bust=${bustAt} -->`,
   );
+
+  const homepageFiles = [
+    'templates/index.json',
+    'layout/theme.liquid',
+    'sections/hero.liquid',
+    'snippets/hero-banner.liquid',
+    'snippets/hero-banner-copy.liquid',
+    'assets/hero.css',
+  ];
 
   const upserted = await upsertThemeFiles(store, themeId, [
     {
@@ -99,6 +114,10 @@ async function main() {
       value: `${JSON.stringify(index, null, 2)}\n`,
     },
     { filename: 'layout/theme.liquid', value: themeLiquid },
+    ...homepageFiles.slice(2).map((filename) => ({
+      filename,
+      value: readFileSync(join(ROOT, filename), 'utf8'),
+    })),
   ]);
 
   console.log(`  ✓ themeFilesUpsert: ${upserted.join(', ')}`);

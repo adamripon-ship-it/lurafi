@@ -37,6 +37,14 @@ function parseThemeFromServerTiming(header) {
   return match ? match[1] : null;
 }
 
+async function fetchSectionHtml(sectionId) {
+  const res = await fetch(`${url}/?section_id=${sectionId}&_verify=${Date.now()}`, {
+    redirect: 'follow',
+  });
+  if (!res.ok) return '';
+  return res.text();
+}
+
 async function main() {
   console.log(`\n=== Live storefront verify: ${url} ===\n`);
   console.log(`  Expected theme ID: ${expectedThemeId}\n`);
@@ -66,12 +74,30 @@ async function main() {
   }
 
   const html = await fetchHtml();
+  const heroMarkers = [
+    'data-hero-layout="focus-v4"',
+    'hero-banner__product-stage',
+    'hero-banner__cta--primary',
+  ];
+  const heroMarkersOnPage = heroMarkers.filter((m) => html.includes(m));
+  const pageCacheStale =
+    html &&
+    headMarker &&
+    !html.includes(headMarker) &&
+    heroMarkersOnPage.length < heroMarkers.length;
+
   if (html) {
     if (headMarker && !html.includes(headMarker)) {
-      fail.push(
-        `HTML still on old theme build (missing “${headMarker}”). Shopify homepage page cache is stale. ` +
-          'Open Theme Editor → Save once, or wait a few minutes, then run: npm run theme:verify:live',
-      );
+      if (pageCacheStale) {
+        warn.push(
+          `Homepage page_cache stale (missing “${headMarker}”). Theme files may still be current — checking section API…`,
+        );
+      } else {
+        fail.push(
+          `HTML still on old theme build (missing “${headMarker}”). Shopify homepage page cache is stale. ` +
+            'Open Theme Editor → Save once, or wait a few minutes, then run: npm run theme:verify:live',
+        );
+      }
     } else if (headMarker) {
       pass(`HTML contains deploy marker “${headMarker}”`);
     }
@@ -79,6 +105,8 @@ async function main() {
     for (const marker of markers) {
       if (html.includes(marker)) {
         pass(`HTML contains “${marker}”`);
+      } else if (pageCacheStale && heroMarkers.includes(marker)) {
+        /* checked via section API below */
       } else {
         fail.push(
           `HTML missing “${marker}” — deploy may not have propagated or page cache is stale. ` +
@@ -92,6 +120,21 @@ async function main() {
     }
   }
 
+  if (pageCacheStale) {
+    const heroSection = await fetchSectionHtml('hero');
+    const sectionFresh = heroMarkers.every((m) => heroSection.includes(m));
+    if (sectionFresh) {
+      pass('Hero section API serves focus-v4 (theme files deployed; page_cache will lag)');
+      if (html.includes('lurafiRefreshStaleHero') || html.includes('assets/theme.js')) {
+        pass('theme.js loaded (stale-hero refresh active in browser when page_cache lags)');
+      } else {
+        warn.push('theme.js not detected in homepage HTML — push assets/theme.js');
+      }
+    } else {
+      fail.push('Hero section API still stale — theme push did not update hero files');
+    }
+  }
+
   for (const w of warn) console.log(`  ⚠ ${w}`);
   for (const f of fail) console.log(`  ✗ ${f}`);
 
@@ -100,7 +143,11 @@ async function main() {
     console.log(`Failed (${fail.length}). Fix deploy target or republish, then re-run.\n`);
     process.exit(1);
   }
-  console.log('Storefront verify passed.\n');
+  if (warn.length) {
+    console.log(`Passed with ${warn.length} warning(s). Open Theme Editor → Save to clear page_cache.\n`);
+  } else {
+    console.log('Storefront verify passed.\n');
+  }
 }
 
 main().catch((err) => {
