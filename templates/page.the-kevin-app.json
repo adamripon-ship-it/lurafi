@@ -1,0 +1,127 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "Kevin App",
+        "heading": "Protection that runs while you live your life.",
+        "lede": "Activate instantly, schedule in advance, or let geo-fencing turn Kevin on when you leave. Manage multiple devices and properties from one app.",
+        "theme": "white",
+        "image_asset": "lurafi-product-closeup.jpg",
+        "image_alt": "Kevin® device close-up — fabric panel and controls",
+        "cta_heading": "Pair the app with your Kevin.",
+        "cta_subheading": "Download the Kevin app after purchase to schedule, geo-fence, and personalize simulations.",
+        "cta_primary": "Buy Kevin",
+        "cta_primary_url": "/pages/configure?plan=buy",
+        "cta_secondary": "Setup guide",
+        "cta_secondary_url": "/pages/setup-guide"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Control from anywhere",
+            "heading": "Set it and forget it—or take full control.",
+            "body": "The Kevin app puts scheduling, geo-fencing, and personalization in your pocket. No monitoring panel. No third-party access to your home.",
+            "variant": "default"
+          }
+        },
+        "block_2": {
+          "type": "image_pillar",
+          "settings": {
+            "image_asset": "kevin-feature-schedules.jpg",
+            "image_alt": "Kevin app weekly schedule screen",
+            "title": "Set it and forget it",
+            "body": "Schedule simulations for weekends, holidays, or daily routines—protection that fits around your lifestyle."
+          }
+        },
+        "block_3": {
+          "type": "image_pillar",
+          "settings": {
+            "image_asset": "kevin-feature-geo.jpg",
+            "image_alt": "Kevin app geo-fencing activation",
+            "title": "Geo-fencing",
+            "body": "Kevin knows when you leave and starts protecting your space—no taps, no texts, just smart automation."
+          }
+        },
+        "block_4": {
+          "type": "image_pillar",
+          "settings": {
+            "image_asset": "kevin-feature-multi-device.jpg",
+            "image_alt": "Manage multiple Kevin devices in the app",
+            "title": "Multiple properties",
+            "body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app."
+          }
+        },
+        "block_5": {
+          "type": "media_split",
+          "settings": {
+            "image_asset": "kevin-device-angle.jpg",
+            "image_alt": "Kevin® device with personalized sound settings",
+            "title": "Make it personal",
+            "body": "Record or upload familiar home sounds. Kevin uses them—and AI-generated household audio—to create a more believable presence that adapts over time to your routine.",
+            "reverse": false
+          }
+        },
+        "block_6": {
+          "type": "media_split",
+          "settings": {
+            "image_asset": "lurafi-product-studio.jpg",
+            "image_alt": "Kevin® AI-generated household sounds",
+            "title": "Smarter sounds with AI",
+            "body": "Kevin can generate natural household sounds intelligently, adapting over time to your routine and home environment—without cameras or microphones.",
+            "reverse": true
+          }
+        },
+        "block_7": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Getting started",
+            "heading": "Pair the app after unboxing.",
+            "body": "Download the Kevin app, connect over Wi-Fi or Bluetooth, and confirm firmware is up to date.",
+            "variant": "default"
+          }
+        },
+        "block_8": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "Download the Kevin app",
+            "body": "Available for iOS and Android. Search for Kevin by Mitipi in your app store after purchase."
+          }
+        },
+        "block_9": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "Pair your device",
+            "body": "Follow the in-app guide to connect Kevin over Wi-Fi or Bluetooth. Rename your device if you like."
+          }
+        },
+        "block_10": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "Choose your routine",
+            "body": "Activate instantly, schedule by day and hour, or enable geo-fencing so Kevin starts when you leave."
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8",
+        "block_9",
+        "block_10"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

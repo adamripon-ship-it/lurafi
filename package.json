@@ -33,7 +33,9 @@
     "qa:i18n": "node scripts/i18n-browser-qa.mjs",
     "qa:language": "LURAFI_URL=https://mitipi.eu node scripts/qa-language-selector.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:live": "LURAFI_URL=https://mitipi.eu playwright test"
+    "test:e2e:live": "LURAFI_URL=https://mitipi.eu playwright test",
+    "cms:footer-templates": "node scripts/build-footer-page-templates.mjs",
+    "cms:footer-pages": "node scripts/sync-footer-pages.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",

@@ -1,0 +1,148 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "Support",
+        "heading": "Plug in. Schedule. Leave with peace of mind.",
+        "lede": "Kevin setup takes about 60 seconds: connect power, place near a window, and configure in the Kevin app. No installation, no wiring, no monitoring panel.",
+        "theme": "white",
+        "image_asset": "lurafi-product-studio.jpg",
+        "image_alt": "Kevin® device — studio product photo",
+        "cta_heading": "Need help?",
+        "cta_subheading": "Our team can walk you through placement and app setup.",
+        "cta_primary": "Contact support",
+        "cta_primary_url": "/pages/contact",
+        "cta_secondary": "Buy Kevin",
+        "cta_secondary_url": "/pages/configure?plan=buy"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Quick start",
+            "heading": "Four steps to believable presence.",
+            "body": "Most customers complete setup in under a minute. Follow these steps for the best results.",
+            "variant": "default"
+          }
+        },
+        "block_2": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "Unbox and place",
+            "body": "Set Kevin near a visible window with a wall or ceiling for shadows. Connect the included power cable (approx. 3 m). Typical use is around 9 watts."
+          }
+        },
+        "block_3": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "Download the Kevin app",
+            "body": "Pair your device over Wi-Fi or Bluetooth, rename it if you like, and confirm firmware is up to date."
+          }
+        },
+        "block_4": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "Choose your routine",
+            "body": "Activate instantly, schedule by day and hour, or enable geo-fencing so Kevin starts when you leave."
+          }
+        },
+        "block_5": {
+          "type": "step",
+          "settings": {
+            "number": "4",
+            "title": "Test from outside",
+            "body": "Step outside after dark and check what neighbours see—warm light, movement, and believable sound through the window."
+          }
+        },
+        "block_6": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Placement tips",
+            "heading": "Where Kevin works best.",
+            "body": "Kevin needs a visible window and a surface for shadows. Living rooms, ground-floor windows, and holiday-home facades are ideal.",
+            "variant": "default"
+          }
+        },
+        "block_7": {
+          "type": "media_split",
+          "settings": {
+            "image_asset": "kevin-hero-shadow-mom-toddler.webp",
+            "image_alt": "Kevin shadow simulation visible through a window at night",
+            "title": "Window visibility matters",
+            "body": "Burglars look for dark, silent homes. Position Kevin so light and shadow are visible through curtains from the street or hallway outside.",
+            "reverse": false
+          }
+        },
+        "block_8": {
+          "type": "media_split",
+          "settings": {
+            "image_asset": "kevin-feature-geo.jpg",
+            "image_alt": "Kevin app geo-fencing settings",
+            "title": "Try geo-fencing first",
+            "body": "Geo-fencing is the easiest daily routine: Kevin activates when you leave and you never have to remember to tap the app.",
+            "reverse": true
+          }
+        },
+        "block_9": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Help",
+            "heading": "Setup FAQ",
+            "body": "Answers to common first-day questions.",
+            "variant": "default"
+          }
+        },
+        "block_10": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Kevin need Wi-Fi to simulate presence?",
+            "answer": "<p>Kevin stores simulations locally and plays them from the device. Wi-Fi or Bluetooth is used for app setup and updates—but core protection continues even when the network is unavailable.</p>"
+          }
+        },
+        "block_11": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I upload my own sounds?",
+            "answer": "<p>Yes. Record or upload familiar household sounds in the Kevin app. Kevin also uses AI-generated household audio to keep simulations believable and less repetitive.</p>"
+          }
+        },
+        "block_12": {
+          "type": "faq",
+          "settings": {
+            "question": "What if something goes wrong?",
+            "answer": "<p>Kevin includes a 3-year Swiss warranty and 30-day returns. Note the serial number on the bottom of the unit and contact hello@lurafi.com with your order details.</p>"
+          }
+        },
+        "block_13": {
+          "type": "richtext",
+          "settings": {
+            "title": "Warranty & service",
+            "body": "<p>Kevin includes a 3-year Swiss warranty and 30-day returns. If your device stops working, note the serial number on the bottom of the unit and contact support with your order details.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8",
+        "block_9",
+        "block_10",
+        "block_11",
+        "block_12",
+        "block_13"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

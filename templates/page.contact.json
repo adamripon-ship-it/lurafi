@@ -1,0 +1,104 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "Support",
+        "heading": "We are here to help.",
+        "lede": "Questions about Kevin®, your order, setup, or warranty? Reach Mitipi using the details below.",
+        "theme": "white",
+        "image_asset": "",
+        "image_alt": "",
+        "cta_heading": "Ready to buy?",
+        "cta_subheading": "Configure your color and continue to checkout.",
+        "cta_primary": "Configure Kevin",
+        "cta_primary_url": "/pages/configure?plan=buy",
+        "cta_secondary": "Setup guide",
+        "cta_secondary_url": "/pages/setup-guide"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "contact_row",
+          "settings": {
+            "contact_1_label": "Customer support",
+            "contact_1_value": "hello@lurafi.com",
+            "contact_1_link": "mailto:hello@lurafi.com?subject=Support",
+            "contact_2_label": "Press",
+            "contact_2_value": "press@lurafi.com",
+            "contact_2_link": "mailto:press@lurafi.com?subject=Press%20inquiry",
+            "contact_3_label": "Office",
+            "contact_3_value": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Switzerland",
+            "contact_3_link": "",
+            "contact_4_label": "Company register",
+            "contact_4_value": "CHE-356.372.981",
+            "contact_4_link": ""
+          }
+        },
+        "block_2": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Common topics",
+            "heading": "How can we help?",
+            "body": "Quick answers for orders, setup, and warranty.",
+            "variant": "default"
+          }
+        },
+        "block_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I order Kevin?",
+            "answer": "<p>Configure your color at mitipi.eu/pages/configure and complete purchase through secure Shopify checkout. Free delivery across Europe on qualifying orders.</p>"
+          }
+        },
+        "block_4": {
+          "type": "faq",
+          "settings": {
+            "question": "I need help with setup.",
+            "answer": "<p>See our setup guide at mitipi.eu/pages/setup-guide. For hands-on help, email hello@lurafi.com with your device serial number and a short description of the issue.</p>"
+          }
+        },
+        "block_5": {
+          "type": "faq",
+          "settings": {
+            "question": "My Kevin stopped working.",
+            "answer": "<p>Kevin includes a 3-year Swiss warranty. Contact us with your serial number (on the bottom of the device) and order reference. We will guide you through repair or replacement.</p>"
+          }
+        },
+        "block_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Press or partnership inquiry?",
+            "answer": "<p>Email press@lurafi.com for media requests, product photos, and spokesperson availability. For B2B partnerships, include your company name and region in your message.</p>"
+          }
+        },
+        "block_7": {
+          "type": "richtext",
+          "settings": {
+            "title": "Orders & checkout",
+            "body": "<p>Configure your Kevin and complete purchase through secure Shopify checkout on mitipi.eu. Free delivery across Europe on qualifying orders. Taxes calculated at checkout.</p>"
+          }
+        },
+        "block_8": {
+          "type": "richtext",
+          "settings": {
+            "title": "Warranty repairs",
+            "body": "<p>If Kevin no longer works, contact us with your serial number (on the bottom of the device) and order reference. We will guide you through repair or replacement under the 3-year Swiss warranty.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

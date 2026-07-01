@@ -1,0 +1,118 @@
+{
+  "sections": {
+    "editorial": {
+      "type": "main-editorial-page",
+      "settings": {
+        "overline": "Media",
+        "heading": "Kevin® in the press.",
+        "lede": "Media coverage and interviews about Mitipi, Kevin®, and prevention-first home security. For press kits and spokesperson requests, contact us below.",
+        "theme": "white",
+        "image_asset": "kevin-hero-product-front.webp",
+        "image_alt": "Kevin® device — press product photo",
+        "cta_heading": "Request the Kevin® press kit.",
+        "cta_subheading": "Product photos, fact sheet, and spokesperson availability on request.",
+        "cta_primary": "Email press team",
+        "cta_primary_url": "mailto:press@lurafi.com?subject=Press%20kit%20request",
+        "cta_secondary": "About Kevin",
+        "cta_secondary_url": "/pages/about-kevin"
+      },
+      "blocks": {
+        "block_1": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Coverage",
+            "heading": "What they are saying about Kevin®.",
+            "body": "Selected quotes from international media and product reviews.",
+            "variant": "default"
+          }
+        },
+        "block_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "The home security industry has a trust problem: most solutions rely on surveillance, forcing people to give up privacy in order to feel protected.",
+            "source": "Safety Detectives — interview with Dr. Patrick Cotting, CEO, Mitipi AG"
+          }
+        },
+        "block_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "This speaker with light and sound effects is supposed to scare off burglars, just like in the original Home Alone films. Kevin.3 is a step forward.",
+            "source": "TechRadar — Kevin.3 review"
+          }
+        },
+        "block_4": {
+          "type": "quote",
+          "settings": {
+            "quote": "Mitipi Ltd. announces the global launch of KEVIN®.3, the newest version of its home invasion deterrent device—improved simulation based on artificial intelligence and lower energy consumption.",
+            "source": "Mitipi — product launch announcement"
+          }
+        },
+        "block_5": {
+          "type": "quote",
+          "settings": {
+            "quote": "Basée à Fribourg, la société Mitipi collabore avec le Swiss AI Center pour doter Kevin de fonctionnalités IA capables de s'adapter aux habitudes des utilisateurs.",
+            "source": "Le Temps — Mitipi & Swiss AI Center"
+          }
+        },
+        "block_6": {
+          "type": "quote",
+          "settings": {
+            "quote": "Who doesn't know the classic 90s movie 'Home Alone'? An absolutely fitting name for KEVIN®, the smart security companion by Mitipi.",
+            "source": "IoT Now — KEVIN® feature"
+          }
+        },
+        "block_7": {
+          "type": "section_intro",
+          "settings": {
+            "overline": "Awards",
+            "heading": "Award-winning innovation worldwide.",
+            "body": "Kevin has been recognized for design, functionality, and burglary prevention innovation across Europe and the US.",
+            "variant": "dark"
+          }
+        },
+        "block_8": {
+          "type": "stat_row",
+          "settings": {
+            "stat_1_value": "2024",
+            "stat_1_label": "European Security Award",
+            "stat_2_value": "2021",
+            "stat_2_label": "Plus X Award (Germany)",
+            "stat_3_value": "2019",
+            "stat_3_label": "Global DIA Award"
+          }
+        },
+        "block_9": {
+          "type": "contact_row",
+          "settings": {
+            "contact_1_label": "Press inquiries",
+            "contact_1_value": "press@lurafi.com",
+            "contact_1_link": "mailto:press@lurafi.com?subject=Press%20inquiry",
+            "contact_2_label": "General contact",
+            "contact_2_value": "hello@lurafi.com",
+            "contact_2_link": "mailto:hello@lurafi.com",
+            "contact_3_label": "Press kit",
+            "contact_3_value": "Product photos & fact sheet on request",
+            "contact_3_link": "mailto:press@lurafi.com?subject=Press%20kit%20request",
+            "contact_4_label": "Company",
+            "contact_4_value": "Mitipi AG, Fribourg, Switzerland",
+            "contact_4_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4",
+        "block_5",
+        "block_6",
+        "block_7",
+        "block_8",
+        "block_9"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

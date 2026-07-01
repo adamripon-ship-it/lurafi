@@ -1,0 +1,13 @@
+{%- comment -%}
+  Footer link to a dedicated Shopify Page (/pages/*), locale-aware.
+  @param handle {String} page handle
+  @param label_key {String} locale key for link text, e.g. footer.features
+{%- endcomment -%}
+{%- liquid
+  assign page_handle = handle | strip
+  assign page_obj = pages[page_handle]
+  assign link_label = label_key | t
+-%}
+{%- if page_obj -%}
+  <li><a href="{{ page_obj.url }}">{{ link_label }}</a></li>
+{%- endif -%}

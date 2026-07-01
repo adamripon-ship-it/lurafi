@@ -2,17 +2,12 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
-    "footer": {
+    "footer_pages": {
       "type": "footer",
-      "settings": {
-        "menu_product": "footer-product",
-        "menu_company": "footer-company",
-        "menu_support": "footer-support",
-        "menu_shop": "footer-shop"
-      }
+      "settings": {}
     }
   },
   "order": [
-    "footer"
+    "footer_pages"
   ]
 }
