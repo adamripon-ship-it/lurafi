@@ -310,10 +310,7 @@ const en = {
   },
   home: {},
   stats: {
-    swiss_engineered: 'Swiss engineered & designed',
-    badge_1: 'Police-recommended in Europe & US',
-    badge_3: 'Jammer-resilient local playback',
-    badge_4: 'Award-winning innovation'
+    swiss_engineered: 'Swiss engineered & designed'
   },
   sitemap: {
     overline: 'SEO sitemap',
@@ -488,8 +485,7 @@ const nlHome = {
       'Keukengeluiden|Tv-avond|Hondengeblaf|Douche loopt|Stofzuigen|Telefoongesprek|Huiswerk|Etentje|Avondlezen|Ochtendroutine',
     badge_1: 'Geen monitoringabonnement',
     badge_2: 'Zwitsers ontworpen en ontwikkeld',
-    badge_3: 'Storingsbestendige lokale weergave',
-    badge_4: 'Bekroonde innovatie'
+    badge_3: 'Storingsbestendige lokale weergave'
   },
   jammer: {
     overline: 'Als wifi wegvalt',
@@ -603,9 +599,6 @@ en.products.product.shipping_note = 'Free delivery · Plug & play · 3-year Swis
 en.errors.back_home = 'Back to home';
 en.customers = customersEn;
 
-en.stats.badge_1 = 'European Security Award 2024';
-en.stats.badge_3 = 'No monitoring subscription';
-en.stats.badge_4 = 'On-device simulation';
 
 const nl = JSON.parse(JSON.stringify(en));
 if (nl.home.app) {
@@ -855,9 +848,6 @@ nl.cart.secure_shopify = 'Veilig Shopify-afrekenen';
 nl.products.product.shipping_note = 'Gratis verzending · Setup in 60 seconden · 3 jaar garantie';
 nl.errors.back_home = 'Terug naar home';
 
-nl.stats.badge_1 = 'European Security Award 2024';
-nl.stats.badge_3 = 'Geen monitoringabonnement';
-nl.stats.badge_4 = 'Simulatie op apparaat';
 
 
 nl.spec_row = {

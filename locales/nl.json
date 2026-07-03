@@ -372,7 +372,6 @@
       "badge_1": "Geen monitoringabonnement",
       "badge_2": "Zwitsers ontworpen en ontwikkeld",
       "badge_3": "Storingsbestendige lokale weergave",
-      "badge_4": "Bekroonde innovatie",
       "ticker_items": "Keukengeluiden|Tv-avond|Hondengeblaf|Douche loopt|Stofzuigen|Telefoongesprek|Huiswerk|Etentje|Avondlezen|Ochtendroutine"
     },
     "jammer": {
@@ -470,10 +469,7 @@
     }
   },
   "stats": {
-    "swiss_engineered": "Zwitsers ontworpen",
-    "badge_1": "European Security Award 2024",
-    "badge_3": "Geen monitoringabonnement",
-    "badge_4": "Simulatie op apparaat"
+    "swiss_engineered": "Zwitsers ontworpen"
   },
   "sitemap": {
     "overline": "SEO-sitemap",
