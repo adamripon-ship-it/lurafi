@@ -431,16 +431,29 @@
       "col_2_status": "Continue de jouer"
     },
     "authority": {
-      "overline": "Pourquoi faire confiance à Kevin",
-      "heading": "Né chez un assureur suisse.",
-      "subheading": "Mitipi a été fondée en 2018 comme spin-off de Helvetia Assurances—la prévention des cambriolages, conçue par ceux qui en évaluent le risque.",
-      "trust_1": "Spin-off de Helvetia · 2018",
+      "overline": "Pourquoi Kevin",
+      "heading": "Trois missions. Un appareil discret.",
+      "subheading": "KEVIN 3.0 existe pour les moments où une maison est le plus honnêtement vide.",
+      "trust_1": "La prévention, pas la réaction",
       "trust_2": "Conçu en Suisse",
       "trust_3": "Simule personnes et chiens",
       "quote": "Une solution tout-en-un inégalée, simple à utiliser, qui offre un spectacle véritablement spectaculaire.",
       "quote_author": "Galaxus",
       "quote_source": "Test Kevin.3, janvier 2026",
-      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
+      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109",
+      "reason_1_title": "Empêcher le cambriolage",
+      "reason_1_body": "Les cambrioleurs choisissent des cibles faciles et vides. Une maison qui s’éclaire, bouge et parle est ignorée.",
+      "reason_2_title": "Veiller sur les résidences secondaires",
+      "reason_2_body": "Chalets, appartements de vacances et bateaux restent habités de façon crédible entre vos passages.",
+      "reason_3_title": "Jamais « seul à la maison »",
+      "reason_3_body": "Kevin simule d’autres habitants—voix, mouvement, un chien—rassurant pour tous ceux qui vivent seuls."
+    },
+    "audience": {
+      "overline": "Pour qui",
+      "heading": "Toute maison est parfois vide.",
+      "subheading": "Kevin emménage là où la vie s’absente—pour un soir, une saison ou un semestre.",
+      "chips": "Familles en vacances|Grands voyageurs|Expatriés|Personnes vivant seules|Premier studio dans une nouvelle ville|Mères célibataires|Retraités & veuves|Résidences secondaires & chalets|Bateaux & yachts|Bureaux, commerces & ambassades",
+      "story": "Son premier studio, une nouvelle ville, à 400 km de chez elle. Kevin le remplit de voix, de lumière et d’un chien qui entend la sonnette—pour que jamais il ne semble, ni ne s’entende, qu’elle vit seule."
     }
   },
   "stats": {

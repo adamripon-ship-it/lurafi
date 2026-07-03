@@ -36,7 +36,38 @@
         <div class="nf-window" aria-hidden="true">
           <span class="nf-window__sky"></span>
           <span class="nf-window__glow"></span>
-          <span class="nf-window__silhouette"></span>
+
+          {%- comment -%}
+            Shadow story, scroll-driven: she reads by the window; a second
+            silhouette walks in and stays — the home is not occupied by one
+            lamp, but by people. Hand-drawn SVG silhouettes, blurred to read
+            as shadows through a curtain.
+          {%- endcomment -%}
+          <svg class="nf-window__figure nf-window__figure--reader" viewBox="0 0 150 160" xmlns="http://www.w3.org/2000/svg">
+            <g fill="currentColor">
+              <circle cx="64" cy="30" r="15"/>
+              <path d="M76 20 C88 24 90 44 84 58 L74 52 C79 44 80 32 74 24 Z"/>
+              <path d="M50 46 L78 46 C82 60 84 80 82 106 L48 106 C44 84 44 62 50 46 Z"/>
+              <path d="M52 54 C42 58 34 64 26 70 L32 82 C40 73 48 66 56 62 Z"/>
+              <path d="M6 58 L21 52 L25 76 L10 84 Z"/>
+              <path d="M24 51 L39 47 L43 70 L28 75 Z"/>
+              <path d="M48 104 L16 110 L16 124 L50 120 Z"/>
+              <path d="M18 122 L16 154 L30 154 L32 124 Z"/>
+              <path d="M82 58 C98 64 102 92 98 118 L76 118 L82 106 Z"/>
+            </g>
+          </svg>
+
+          <svg class="nf-window__figure nf-window__figure--partner" viewBox="0 0 90 175" xmlns="http://www.w3.org/2000/svg">
+            <g fill="currentColor">
+              <circle cx="44" cy="19" r="14"/>
+              <path d="M26 40 C32 33 56 33 62 40 L58 102 C56 108 32 108 30 102 Z"/>
+              <path d="M27 46 C20 62 17 78 19 92 L27 94 C27 78 29 62 33 50 Z"/>
+              <path d="M61 46 C68 62 71 78 69 92 L61 94 C61 78 59 62 55 50 Z"/>
+              <path d="M31 106 L27 168 L40 168 L43 110 Z"/>
+              <path d="M57 106 L63 168 L50 168 L47 110 Z"/>
+            </g>
+          </svg>
+
           <span class="nf-window__frame"></span>
           <span class="nf-window__sill"></span>
           <div class="nf-soundbars">

@@ -90,16 +90,29 @@
     "ui_row_4": "Away mode — starts when you leave"
   },
   "authority": {
-    "overline": "Why trust Kevin",
-    "heading": "Born inside a Swiss insurer.",
-    "subheading": "Mitipi was founded in 2018 as a spin-off of Helvetia Insurance—burglary prevention engineered by people who price its risk.",
-    "trust_1": "Helvetia Insurance spin-off · 2018",
+    "overline": "Why Kevin",
+    "heading": "Three jobs. One quiet device.",
+    "subheading": "KEVIN 3.0 exists for the moments a home is most honestly empty.",
+    "reason_1_title": "Prevent the break-in",
+    "reason_1_body": "Burglars pick easy, empty targets. A home that glows, moves, and speaks gets skipped.",
+    "reason_2_title": "Watch over second homes",
+    "reason_2_body": "Cabins, holiday flats, and boats stay believably lived-in between your visits.",
+    "reason_3_title": "Never “home alone”",
+    "reason_3_body": "Kevin simulates more people living with you—voices, movement, a dog—reassurance for anyone on their own.",
+    "trust_1": "Prevention, not reaction",
     "trust_2": "Engineered in Switzerland",
     "trust_3": "Simulates people and dogs",
     "quote": "An unrivalled, easy-to-use all-in-one solution that delivers a truly spectacular show.",
     "quote_author": "Galaxus",
     "quote_source": "Kevin.3 review, January 2026",
     "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
+  },
+  "audience": {
+    "overline": "Who it's for",
+    "heading": "Every home is sometimes empty.",
+    "subheading": "Kevin moves in wherever life moves out—for an evening, a season, or a semester.",
+    "chips": "Families on holiday|Frequent business travellers|Expats abroad|Living alone|First flat in a new city|Single mothers|Retired couples & widows|Second homes & cabins|Boats & yachts|Offices, shops & embassies",
+    "story": "Her first studio, a new city, 400 km from home. Kevin fills it with voices, light, and a dog that hears the doorbell—so it never feels, or sounds, like she lives alone."
   },
   "pricing": {
     "overline": "Own Kevin®",

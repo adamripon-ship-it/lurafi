@@ -94,6 +94,7 @@
     '.plan-card',
     '.nf-phone',
     '.nf-quote',
+    '.nf-chip-wall > *',
     '.faq-item'
   ];
 

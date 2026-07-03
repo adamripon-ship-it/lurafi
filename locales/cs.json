@@ -431,16 +431,29 @@
       "col_2_status": "Hraje dál"
     },
     "authority": {
-      "overline": "Proč věřit Kevinovi",
-      "heading": "Zrozen u švýcarské pojišťovny.",
-      "subheading": "Mitipi vznikla v roce 2018 jako spin-off pojišťovny Helvetia—prevence vloupání od lidí, kteří toto riziko oceňují.",
-      "trust_1": "Spin-off Helvetia · 2018",
+      "overline": "Proč Kevin",
+      "heading": "Tři úkoly. Jedno tiché zařízení.",
+      "subheading": "KEVIN 3.0 existuje pro chvíle, kdy je domov nejupřímněji prázdný.",
+      "trust_1": "Prevence, ne reakce",
       "trust_2": "Vyvinuto ve Švýcarsku",
       "trust_3": "Simuluje lidi i psy",
       "quote": "Bezkonkurenční, snadno použitelné řešení vše v jednom, které předvádí skutečně velkolepou show.",
       "quote_author": "Galaxus",
       "quote_source": "Recenze Kevin.3, leden 2026",
-      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
+      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109",
+      "reason_1_title": "Zabránit vloupání",
+      "reason_1_body": "Zloději si vybírají snadné, prázdné cíle. Domov, který svítí, hýbe se a mluví, přeskočí.",
+      "reason_2_title": "Dohled nad druhým domovem",
+      "reason_2_body": "Chaty, rekreační byty a lodě působí mezi návštěvami věrohodně obydleně.",
+      "reason_3_title": "Nikdy „sám doma“",
+      "reason_3_body": "Kevin simuluje další obyvatele—hlasy, pohyb, psa—jistota pro každého, kdo žije sám."
+    },
+    "audience": {
+      "overline": "Pro koho",
+      "heading": "Každý domov je někdy prázdný.",
+      "subheading": "Kevin se nastěhuje tam, odkud se život na chvíli odstěhoval—na večer, sezónu nebo semestr.",
+      "chips": "Rodiny na dovolené|Časté služební cesty|Expati|Lidé žijící sami|První byt v novém městě|Matky samoživitelky|Senioři & vdovy|Druhé domovy & chaty|Lodě & jachty|Kanceláře, obchody & ambasády",
+      "story": "Její první garsonka, nové město, 400 km od domova. Kevin ji naplní hlasy, světlem a psem, který slyší zvonek—aby nikdy nepůsobila, ani nezněla, jako by žila sama."
     }
   },
   "stats": {

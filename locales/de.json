@@ -431,16 +431,29 @@
       "col_2_status": "Spielt weiter"
     },
     "authority": {
-      "overline": "Warum Kevin vertrauen",
-      "heading": "Geboren bei einem Schweizer Versicherer.",
-      "subheading": "Mitipi wurde 2018 als Spin-off der Helvetia Versicherung gegründet—Einbruchprävention, entwickelt von Menschen, die dieses Risiko beziffern.",
-      "trust_1": "Helvetia-Spin-off · 2018",
+      "overline": "Warum Kevin",
+      "heading": "Drei Aufgaben. Ein leises Gerät.",
+      "subheading": "KEVIN 3.0 ist für die Momente gemacht, in denen ein Zuhause am ehrlichsten leer ist.",
+      "trust_1": "Prävention statt Reaktion",
       "trust_2": "Entwickelt in der Schweiz",
       "trust_3": "Simuliert Menschen und Hunde",
       "quote": "Eine unerreichte, einfach zu bedienende All-in-One-Lösung, die eine wahrhaft spektakuläre Show liefert.",
       "quote_author": "Galaxus",
       "quote_source": "Kevin.3-Test, Januar 2026",
-      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
+      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109",
+      "reason_1_title": "Den Einbruch verhindern",
+      "reason_1_body": "Einbrecher wählen leichte, leere Ziele. Ein Zuhause, das leuchtet, sich bewegt und spricht, wird übersprungen.",
+      "reason_2_title": "Zweitwohnsitze im Blick",
+      "reason_2_body": "Chalets, Ferienwohnungen und Boote wirken zwischen Ihren Besuchen glaubhaft bewohnt.",
+      "reason_3_title": "Nie „allein zu Haus“",
+      "reason_3_body": "Kevin simuliert Mitbewohner—Stimmen, Bewegung, einen Hund—Beruhigung für alle, die allein leben."
+    },
+    "audience": {
+      "overline": "Für wen",
+      "heading": "Jedes Zuhause ist manchmal leer.",
+      "subheading": "Kevin zieht ein, wo das Leben kurz auszieht—für einen Abend, eine Saison oder ein Semester.",
+      "chips": "Familien im Urlaub|Vielreisende|Expats|Alleinlebende|Erste Wohnung in neuer Stadt|Alleinerziehende Mütter|Rentner & Witwen|Zweitwohnsitze & Hütten|Boote & Yachten|Büros, Läden & Botschaften",
+      "story": "Ihre erste Wohnung, eine neue Stadt, 400 km von zu Hause. Kevin füllt sie mit Stimmen, Licht und einem Hund, der die Türklingel hört—damit es sich nie anfühlt oder anhört, als lebte sie allein."
     }
   },
   "stats": {

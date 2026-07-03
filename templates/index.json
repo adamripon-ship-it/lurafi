@@ -109,7 +109,23 @@
         "quote": "",
         "quote_author": "",
         "quote_source": "",
-        "quote_url": ""
+        "quote_url": "",
+        "reason_1_title": "",
+        "reason_1_body": "",
+        "reason_2_title": "",
+        "reason_2_body": "",
+        "reason_3_title": "",
+        "reason_3_body": ""
+      }
+    },
+    "audience": {
+      "type": "lp-audience",
+      "settings": {
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "chips": "",
+        "story": ""
       }
     },
     "pricing": {
@@ -210,6 +226,7 @@
     "jammer",
     "app",
     "authority",
+    "audience",
     "pricing",
     "specs",
     "faq",
