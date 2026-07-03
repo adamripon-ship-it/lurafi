@@ -472,6 +472,10 @@
       "primary_cta": "Kevin kaufen",
       "secondary_cta": "So funktioniert's",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Fragen und Antworten."
     }
   },
   "stats": {

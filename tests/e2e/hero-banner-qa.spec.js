@@ -68,6 +68,8 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('.steps-timeline__item')).toHaveCount(3);
     await expect(page.locator('.proof-featured')).toHaveCount(1);
     await expect(page.locator('.lp-specs-split')).toHaveCount(1);
+    await expect(page.locator('#faq')).toHaveCount(1);
+    expect(await page.locator('.faq-item').count()).toBeGreaterThanOrEqual(4);
   });
 
   test('homepage title and OG title carry product keywords', async ({ page }) => {

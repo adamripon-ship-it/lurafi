@@ -472,6 +472,10 @@
       "primary_cta": "Koupit Kevina",
       "secondary_cta": "Jak to funguje",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Otázky a odpovědi."
     }
   },
   "stats": {

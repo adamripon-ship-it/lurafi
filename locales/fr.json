@@ -472,6 +472,10 @@
       "primary_cta": "Acheter Kevin",
       "secondary_cta": "Comment ça marche",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Vos questions, nos réponses."
     }
   },
   "stats": {

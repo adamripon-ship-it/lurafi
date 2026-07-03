@@ -415,7 +415,7 @@
 /* Responsive */
 @media (min-width: 768px) {
   .hero-apple {
-    --hero-product-max-h: min(56dvh, 620px);
+    --hero-product-max-h: min(58dvh, 660px);
     min-height: min(90dvh, 880px);
   }
 
@@ -442,7 +442,7 @@
 @media (min-width: 1024px) {
   .hero-apple {
     --hero-product-max-w: min(78vw, 980px);
-    --hero-product-max-h: min(58dvh, 680px);
+    --hero-product-max-h: min(62dvh, 720px);
   }
 
   .hero-banner__headline {

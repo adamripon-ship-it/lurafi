@@ -263,6 +263,13 @@
         "primary_cta_url": "",
         "secondary_cta_url": "#how-it-works"
       }
+    },
+    "faq": {
+      "type": "lp-faq",
+      "settings": {
+        "overline": "",
+        "heading": ""
+      }
     }
   },
   "order": [
@@ -276,6 +283,7 @@
     "proof",
     "pricing",
     "specs",
+    "faq",
     "cta"
   ]
 }

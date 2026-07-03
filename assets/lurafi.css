@@ -3921,3 +3921,56 @@ html.no-js .section-apple .reveal-item {
 html.no-js .solution-split__visual::after {
   display: none;
 }
+
+/* FAQ accordion — native details/summary, no JS */
+.faq-list {
+  max-width: 46rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+.faq-item {
+  padding: 4px 22px;
+}
+.faq-item__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding: 14px 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-item__q::-webkit-details-marker {
+  display: none;
+}
+.faq-item__icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apple-text-muted);
+  border: 1px solid var(--apple-border);
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item__icon::before {
+  content: '+';
+}
+.faq-item[open] .faq-item__icon {
+  transform: rotate(45deg);
+}
+.faq-item__a {
+  padding: 0 0 18px;
+  max-width: 60ch;
+}
+.motion-reduced .faq-item__icon {
+  transition: none;
+}

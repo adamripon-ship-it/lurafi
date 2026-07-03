@@ -579,6 +579,11 @@ const nlHome = {
     }
   },
 
+  faq: {
+    overline: 'FAQ',
+    heading: 'Vragen en antwoorden.'
+  },
+
   cta: {
     heading: 'Vertrek zonder het te verkondigen.',
     subheading:

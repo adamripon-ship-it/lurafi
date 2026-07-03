@@ -497,6 +497,10 @@
       "primary_cta": "Koop Kevin",
       "secondary_cta": "Hoe het werkt",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Vragen en antwoorden."
     }
   },
   "stats": {

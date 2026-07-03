@@ -481,6 +481,10 @@
       "primary_cta": "Get Kevin",
       "secondary_cta": "How it works",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Questions, answered."
     }
   },
   "stats": {
