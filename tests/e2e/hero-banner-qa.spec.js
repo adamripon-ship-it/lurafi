@@ -72,6 +72,22 @@ test.describe('mitipi.eu hero banner QA', () => {
     expect(await page.locator('.faq-item').count()).toBeGreaterThanOrEqual(4);
   });
 
+  test('nightfall dark theme scoped to homepage only', async ({ page }) => {
+    await page.goto('/?qa=hero', { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await expect(page.locator('body')).toHaveClass(/nightfall/);
+    await expect(page.locator('link[href*="nightfall.css"]')).toHaveCount(1);
+
+    // Header must stay dark after scrolling past the hero on nightfall pages.
+    await page.evaluate(() => window.scrollTo(0, window.innerHeight * 2));
+    await page.waitForTimeout(400);
+    await expect(page.locator('.site-header')).toHaveAttribute('data-theme', 'dark');
+
+    // Configure view on the index template must NOT be nightfall.
+    await page.goto('/?view=configure', { waitUntil: 'domcontentloaded', timeout: 60000 });
+    const bodyClass = await page.locator('body').getAttribute('class');
+    expect(bodyClass).not.toMatch(/nightfall/);
+  });
+
   test('homepage title and OG title carry product keywords', async ({ page }) => {
     await page.goto('/?qa=hero', { waitUntil: 'domcontentloaded', timeout: 60000 });
 

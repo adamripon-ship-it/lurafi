@@ -68,6 +68,9 @@
     {{ 'lurafi.css' | asset_url | stylesheet_tag }}
     {{ 'hero.css' | asset_url | stylesheet_tag }}
     {{ 'lp-layout.css' | asset_url | stylesheet_tag }}
+    {%- if request.page_type == 'index' and show_configure == false -%}
+      {{ 'nightfall.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
     <script>
       window.themeMoneyFormat = {{ shop.money_format | json }};
       window.themeTranslations = {
@@ -111,6 +114,7 @@
     <script src="{{ 'countup.js' | asset_url }}" defer></script>
     {%- if request.page_type == 'index' and show_configure == false -%}
       <script src="{{ 'ambient-video.js' | asset_url }}" defer></script>
+      <script src="{{ 'scroll-fx.js' | asset_url }}" defer></script>
     {%- endif -%}
     {%- if request.page_type == 'product' and show_configure == false -%}
       <script src="{{ 'product-form.js' | asset_url }}" defer></script>
@@ -120,7 +124,7 @@
     {%- endif -%}
   </head>
 
-  <body class="template-{{ request.page_type | handle }}{% if show_configure %} template-configure{% if template.name == 'index' %} template-index-configure{% endif %}{% endif %}">
+  <body class="template-{{ request.page_type | handle }}{% if show_configure %} template-configure{% if template.name == 'index' %} template-index-configure{% endif %}{% endif %}{% if request.page_type == 'index' and show_configure == false %} nightfall{% endif %}">
     <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t }}</a>
 
     {% unless show_configure %}

@@ -1,0 +1,240 @@
+/* ============================================================
+   NIGHTFALL — homepage dark theme, scoped remap layer.
+   Loaded only on the index page (theme.liquid) and every rule is
+   prefixed body.nightfall, so no other template can inherit it.
+   Strategy: redefine the --apple-* tokens inside the scope so the
+   existing light system flips itself; explicit overrides only for
+   hardcoded hex values. The hero already lives on this stage —
+   these tokens extend its language (kevin glow palette) down the page.
+   ============================================================ */
+
+body.nightfall {
+  /* Kevin glow palette (mirrors assets/hero.css .hero-apple scope) */
+  --kevin-purple: #440099;
+  --kevin-magenta: #9e007e;
+  --kevin-pink: #e31c79;
+  /* Text-safe accent variants — raw palette is for glows, not type */
+  --kevin-pink-text: #ff6ba8;
+  --nf-stage-top: #07080c;
+  --nf-stage-bottom: #030304;
+  --nf-panel: rgba(255, 255, 255, 0.045);
+  --nf-panel-strong: #14151b;
+  --nf-border: rgba(255, 255, 255, 0.12);
+  --nf-glow-shadow:
+    0 0 0 1px rgba(158, 0, 126, 0.10),
+    0 24px 60px -30px rgba(68, 0, 153, 0.45);
+
+  /* Token flips — everything consuming these re-themes automatically */
+  --apple-bg: var(--nf-stage-top);
+  --apple-bg-gray: var(--nf-panel);
+  --apple-bg-card-dark: var(--nf-panel-strong);
+  --apple-text: #f5f5f7;
+  --apple-text-muted: #a6a6ad;
+  --apple-text-muted-dark: #8e8e96;
+  --apple-border: var(--nf-border);
+
+  background: linear-gradient(180deg, var(--nf-stage-top) 0%, var(--nf-stage-bottom) 100%);
+  background-attachment: fixed;
+  color: var(--apple-text);
+}
+
+/* ---- Section backgrounds dissolve into the stage ---- */
+body.nightfall .bg-white,
+body.nightfall .bg-gray,
+body.nightfall .bg-black {
+  background: transparent;
+  color: inherit;
+}
+
+/* ---- Tiles become glow-edge panels ---- */
+body.nightfall .tile--gray,
+body.nightfall .tile--white {
+  background: var(--nf-panel);
+  border: 1px solid var(--nf-border);
+  box-shadow: var(--nf-glow-shadow);
+}
+
+body.nightfall .tile--dark {
+  background: var(--nf-panel-strong);
+  border: 1px solid var(--nf-border);
+}
+
+@media (hover: hover) {
+  .motion-ready body.nightfall .tile--gray:hover,
+  .motion-ready body.nightfall .tile--white:hover {
+    border-color: rgba(227, 28, 121, 0.35);
+    box-shadow:
+      0 0 0 1px rgba(227, 28, 121, 0.18),
+      0 28px 70px -28px rgba(158, 0, 126, 0.55);
+  }
+}
+
+/* ---- Typography accents ---- */
+body.nightfall .overline-blue {
+  color: var(--apple-blue-dark);
+}
+
+body.nightfall .stat-item__value {
+  color: #fff;
+  text-shadow: 0 0 32px rgba(158, 0, 126, 0.35);
+}
+
+body.nightfall .text-white {
+  color: #fff;
+}
+
+/* Quote mark + persona quote accents keep brand blue on dark */
+body.nightfall .proof-quote-card__mark {
+  color: var(--apple-blue-dark);
+}
+
+/* ---- Pricing card: featured plan gets the kevin edge ---- */
+body.nightfall .plan-card {
+  background: var(--nf-panel);
+  border: 1px solid var(--nf-border);
+}
+
+body.nightfall .plan-card--featured {
+  border-color: rgba(227, 28, 121, 0.30);
+  box-shadow:
+    0 0 0 1px rgba(227, 28, 121, 0.14),
+    0 32px 80px -30px rgba(68, 0, 153, 0.55);
+}
+
+body.nightfall .plan-label--blue {
+  color: var(--kevin-pink-text);
+}
+
+/* ---- Proof / summary cards ---- */
+body.nightfall .proof-summary-card {
+  background: var(--nf-panel);
+  border: 1px solid var(--nf-border);
+}
+
+/* ---- Specs split figure well ---- */
+body.nightfall .lp-specs-split__media,
+body.nightfall .lp-specs__card {
+  background: var(--nf-panel);
+  border: 1px solid var(--nf-border);
+}
+
+/* ---- FAQ items already .tile--white (covered); icon ring ---- */
+body.nightfall .faq-item__icon {
+  color: var(--apple-text-muted);
+  border-color: var(--nf-border);
+}
+
+/* ---- Footer: dark panel, readable links ---- */
+body.nightfall .site-footer-apple {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid var(--nf-border);
+}
+
+body.nightfall .site-footer-apple a {
+  color: var(--apple-text-muted);
+}
+
+body.nightfall .site-footer-apple a:hover {
+  color: #fff;
+}
+
+/* ---- Sticky mobile CTA: dark gradient scrim ---- */
+body.nightfall .sticky-cta {
+  background: linear-gradient(
+    180deg,
+    rgba(3, 3, 4, 0) 0%,
+    rgba(3, 3, 4, 0.92) 24%,
+    #030304 100%
+  );
+}
+
+/* ---- Focus visibility on dark ---- */
+body.nightfall :focus-visible {
+  outline: 2px solid var(--apple-blue-dark);
+  outline-offset: 3px;
+}
+
+/* ---- Section rhythm: subtle glow separators between acts ---- */
+body.nightfall .section-apple {
+  position: relative;
+}
+
+body.nightfall .section-apple + .section-apple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, 70vw);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(68, 0, 153, 0.5) 30%,
+    rgba(227, 28, 121, 0.5) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   Scroll FX — hero product drift.
+   Modern driver: CSS scroll-driven animation. Fallback driver:
+   scroll-fx.js writes --nf-progress; keyframes run paused with a
+   negative delay. Initial keyframe state == resting state, so the
+   page is complete even if neither driver runs.
+   ============================================================ */
+
+@keyframes nfHeroDrift {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-6%) scale(1.04);
+  }
+}
+
+@keyframes nfHeroGlowLift {
+  0% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Modern: scrub against document scroll over the first viewport height */
+@supports (animation-timeline: scroll()) {
+  .motion-ready body.nightfall .hero-banner__product-image {
+    animation: nfHeroDrift linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+    will-change: transform;
+  }
+
+  .motion-ready body.nightfall .hero-banner__glow-layer {
+    animation-name: heroGlowPulse, nfHeroGlowLift;
+    animation-duration: 8s, 1s;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: infinite, 1;
+    animation-fill-mode: none, both;
+    animation-timeline: auto, scroll(root);
+    animation-range: normal, 0 100vh;
+  }
+}
+
+/* Fallback: identical keyframes, scrubbed via --nf-progress from scroll-fx.js */
+@supports not (animation-timeline: scroll()) {
+  .motion-ready body.nightfall [data-nf-hero-drift] .hero-banner__product-image {
+    animation: nfHeroDrift 1s linear paused both;
+    animation-delay: calc(var(--nf-progress, 0) * -1s);
+    will-change: transform;
+  }
+}
+
+/* Reduced motion: no drift, no scrub — resting state is the design */
+.motion-reduced body.nightfall .hero-banner__product-image,
+html.no-js body.nightfall .hero-banner__product-image {
+  animation: none !important;
+  transform: none !important;
+}
