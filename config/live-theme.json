@@ -8,7 +8,8 @@
     "data-hero-layout=\"focus-v4\"",
     "hero-banner__product-stage",
     "hero-banner__cta--primary",
-    "solution-split"
+    "nightfall.css",
+    "nf-mech"
   ],
   "deploy_head_marker": "lurafi-head-v20",
   "_comment": "Single source of truth for live deploys. Update theme_id if the published theme changes in Admin."
