@@ -19,7 +19,7 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('[data-hero-slider]')).toHaveCount(0);
     await expect(page.locator('.hero-banner[data-hero-layout="focus-v4"]')).toHaveCount(1);
     await expect(page.locator('#HeroHeading')).toBeVisible();
-    await expect(page.locator('.hero-banner__lede')).toContainText(/no cameras/i);
+    await expect(page.locator('.hero-banner__lede')).toContainText(/predators/i);
     await expect(page.locator('.hero-banner__eyebrow')).toHaveCount(0);
     await expect(page.locator('.hero-banner__trust')).toHaveCount(1);
     await expect(page.locator('.hero-banner__trust-item')).toHaveCount(3);
