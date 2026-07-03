@@ -437,8 +437,8 @@ const nlHome = {
     cta_primary_label: 'Koop Kevin',
     cta_secondary_label: 'Hoe het werkt',
     trust_1: 'Zwitsers ontworpen',
-    trust_2: '9 W plug & play',
-    trust_3: 'Geen camera’s. Geen microfoons.',
+    trust_2: 'Laag energieverbruik',
+    trust_3: 'Jammerbestendig',
     sticky_cta_label: 'Koop Kevin'
   },
   problem: {
