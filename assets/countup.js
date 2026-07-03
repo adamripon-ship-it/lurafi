@@ -64,6 +64,7 @@
   function animateEl(el, parsed, durationMs, delayMs, finalText) {
     window.setTimeout(function () {
       var start = null;
+      el.textContent = formatFrame(parsed, 0);
       function frame(now) {
         if (start === null) start = now;
         var t = Math.min(1, (now - start) / durationMs);
@@ -95,8 +96,6 @@
     var finalText = el.textContent.trim();
     var parsed = parseTarget(finalText);
     if (!parsed) return;
-
-    el.textContent = formatFrame(parsed, 0);
 
     var duration = getDuration(el);
     var stagger =

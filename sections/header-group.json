@@ -5,8 +5,8 @@
     "header": {
       "type": "header",
       "settings": {
-        "cta_label": "Buy Now",
-        "cta_label_mobile": "Buy",
+        "cta_label": "",
+        "cta_label_mobile": "",
         "main_menu": "main-menu"
       }
     }

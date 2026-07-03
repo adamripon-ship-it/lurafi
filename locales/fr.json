@@ -41,8 +41,8 @@
     "how_it_works": "Comment ça marche",
     "app": "Application",
     "pricing": "Tarifs",
-    "buy": "Acheter",
-    "buy_now": "Acheter",
+    "buy": "Acheter Kevin",
+    "buy_now": "Acheter Kevin",
     "menu": "Menu",
     "explore": "Découvrir",
     "buy_group": "Acheter",
@@ -76,11 +76,12 @@
   },
   "seo": {
     "home": {
-      "description": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son—votre maison reste visiblement habitée et les cambrioleurs passent leur chemin."
+      "description": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son—votre maison reste visiblement habitée et les cambrioleurs passent leur chemin.",
+      "title": "Kevin® — Simulation de présence IA suisse anti-cambriolage | Mitipi"
     },
     "org_description": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son, afin que votre maison reste visiblement habitée et les cambrioleurs passent leur chemin.",
     "sitemap": {
-      "title": "Sitemap — Lurafi & Kevin",
+      "title": "Sitemap — Mitipi & Kevin",
       "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
     },
     "llms": {
@@ -326,21 +327,21 @@
     },
     "hero": {
       "eyebrow": "Simulation de présence suisse",
-      "headline": "Donnez vie à votre maison.",
-      "lede": "Kevin utilise la lumière, l'ombre et les sons du quotidien, conçus en Suisse, pour que votre maison paraisse habitée—avant que quiconque ne s'approche de la porte.",
+      "headline": "Partez l'esprit tranquille—votre maison paraît toujours habitée.",
+      "lede": "Kevin® simule une présence humaine grâce à l'IA suisse—lumière, ombre et sons du quotidien. Sans caméra. Sans micro. Prêt à brancher.",
       "cta_primary_label": "Acheter Kevin",
       "cta_primary_url": "",
       "cta_secondary_label": "Comment ça marche",
       "cta_secondary_url": "#how-it-works",
       "image_alt": "Kevin presence simulation device",
-      "sticky_cta_label": "Get Kevin",
+      "sticky_cta_label": "Acheter Kevin",
       "callout_1_title": "9 watts",
       "callout_2_title": "No cameras. No mics.",
       "callout_3_title": "Local storage",
       "callout_4_title": "Free delivery",
-      "trust_1": "Swiss engineered",
-      "trust_2": "No cameras or mics",
-      "trust_3": "Free delivery in Europe"
+      "trust_1": "Conçu en Suisse",
+      "trust_2": "9 W prêt à brancher",
+      "trust_3": "Sans caméra. Sans micro."
     },
     "problem": {
       "overline": "Le problème",
@@ -429,15 +430,15 @@
     },
     "stats": {
       "heading": "Conçu pour une dissuasion crédible.",
-      "stat_1_value": "97%",
-      "stat_1_label": "Réduction du risque selon Mitipi",
+      "stat_1_value": "3 ans",
+      "stat_1_label": "Garantie suisse sur chaque Kevin",
       "stat_2_value": "70h+",
       "stat_2_label": "Simulations intégrées",
       "stat_3_value": "9W",
       "stat_3_label": "Consommation typique",
       "stat_4_value": "0",
       "stat_4_label": "Caméras ou micros",
-      "badge_1": "European Security Award 2024",
+      "badge_1": "Résiste au brouillage — lecture locale",
       "badge_2": "Swiss Engineered",
       "badge_3": "Sans abonnement de surveillance",
       "badge_4": "Simulation sur l'appareil"
@@ -462,14 +463,14 @@
       "subheading": "Achetez Kevin® en une fois avec adhésion gratuite à vie, mises à jour logicielles, garantie suisse 3 ans et livraison gratuite en Europe.",
       "buy_label": "Possédez Kevin®",
       "buy_tagline": "Achat unique. Toutes les mises à jour incluses.",
-      "buy_cta": "Acheter",
+      "buy_cta": "Acheter Kevin",
       "buy_features": "Propriété totale de l'appareil|70+ heures de simulations intégrées|Plannings hebdomadaires et activation géolocalisée|Importez vos propres sons domestiques|Placement flexible avec câble d'alimentation 3 m|Livraison gratuite|Garantie 3 ans"
     },
     "cta": {
       "heading": "Partez sans le faire savoir.",
       "subheading": "Kevin rend votre maison active visuellement et auditivement grâce à la simulation de présence suisse. Livraison gratuite. Installation en 60 secondes. Pas de caméras ni de microphones.",
       "primary_cta": "Acheter Kevin",
-      "secondary_cta": "En savoir plus",
+      "secondary_cta": "Comment ça marche",
       "secondary_cta_url": "#how-it-works"
     }
   },

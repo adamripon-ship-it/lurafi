@@ -6,6 +6,10 @@
   assign llms_page_url = pages.llms.url
   assign lurafi_meta_title = page_title
 
+  if request.page_type == 'index'
+    assign lurafi_meta_title = 'seo.home.title' | t | default: page_title
+  endif
+
   if lurafi_meta_description == blank and request.page_type == 'index'
     assign lurafi_meta_description = 'seo.home.description' | t
   endif

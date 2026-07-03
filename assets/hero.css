@@ -246,9 +246,38 @@
   pointer-events: none;
 }
 
+/* Trust chip row under CTAs */
+.hero-banner__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 10px;
+  width: 100%;
+  max-width: 34rem;
+  margin: clamp(14px, 2vh, 20px) auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-banner__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 /* Legacy markup — hide if cached */
 .hero-banner__eyebrow,
-.hero-banner__trust,
 .hero-banner__chips,
 .hero-banner__media,
 .hero-banner__visual,
@@ -331,6 +360,7 @@
 .motion-ready .hero-banner__headline,
 .motion-ready .hero-banner__lede,
 .motion-ready .hero-banner__actions,
+.motion-ready .hero-banner__trust,
 .motion-ready .hero-banner__product-stage {
   opacity: 0;
 }
@@ -353,6 +383,10 @@
 
 .hero-apple--animate .hero-banner__cta--secondary {
   animation: heroCtaEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+
+.hero-apple--animate .hero-banner__trust {
+  animation: heroCopyEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .hero-apple--animate .hero-banner__product-stage {
@@ -459,6 +493,7 @@
 .motion-reduced .hero-banner__headline,
 .motion-reduced .hero-banner__lede,
 .motion-reduced .hero-banner__cta,
+.motion-reduced .hero-banner__trust,
 .motion-reduced .hero-banner__product-stage,
 .motion-reduced .hero-apple__scroll {
   opacity: 1 !important;
@@ -469,6 +504,7 @@
 html.no-js .hero-banner__headline,
 html.no-js .hero-banner__lede,
 html.no-js .hero-banner__actions,
+html.no-js .hero-banner__trust,
 html.no-js .hero-banner__product-stage,
 html.no-js .hero-apple__scroll {
   opacity: 1;

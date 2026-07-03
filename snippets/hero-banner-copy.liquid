@@ -1,5 +1,5 @@
 {%- comment -%}
-  Hero copy: headline, lede, two CTA buttons (no eyebrow, no trust strip).
+  Hero copy: headline, lede, two CTA buttons, trust chip row (no eyebrow).
 {%- endcomment -%}
 <div class="hero-banner__copy">
   <h1 class="hero-banner__headline headline-hero" id="HeroHeading">
@@ -18,4 +18,6 @@
       {{ cta_secondary_label | escape }}
     </a>
   </div>
+
+  {% render 'hero-banner-trust' %}
 </div>

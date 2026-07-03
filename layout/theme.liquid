@@ -40,6 +40,9 @@
 
     {%- liquid
       assign seo_document_title = page_title
+      if request.page_type == 'index'
+        assign seo_document_title = 'seo.home.title' | t | default: page_title
+      endif
       if request.page_type == 'page'
         case page.handle
           when 'sitemap'
@@ -51,7 +54,7 @@
     -%}
     <title>
       {{ seo_document_title }}
-      {%- unless seo_document_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- unless request.page_type == 'index' or seo_document_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
     <!-- lurafi-head-v20 hero-focus-v4 -->

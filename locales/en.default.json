@@ -44,8 +44,8 @@
     "how_it_works": "How it works",
     "app": "App",
     "pricing": "Pricing",
-    "buy": "Buy",
-    "buy_now": "Buy Now",
+    "buy": "Get Kevin",
+    "buy_now": "Get Kevin",
     "menu": "Menu",
     "explore": "Explore",
     "buy_group": "Buy",
@@ -79,11 +79,12 @@
   },
   "seo": {
     "home": {
+      "title": "Kevin® — Swiss AI Presence Simulator That Deters Burglars | Mitipi",
       "description": "Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play."
     },
     "org_description": "Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play.",
     "sitemap": {
-      "title": "Sitemap — Lurafi & Kevin",
+      "title": "Sitemap — Mitipi & Kevin",
       "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
     },
     "llms": {
@@ -323,9 +324,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "For every home",
-      "headline": "Deter burglaries before they happen.",
-      "lede": "Light, shadow, and sound simulate presence—no cameras, no microphones.",
+      "eyebrow": "Smart. Secure. Swiss.",
+      "headline": "Leave home knowing it still looks lived-in.",
+      "lede": "Kevin® simulates human presence with Swiss AI—light, shadow, and everyday sound. No cameras. No microphones. Plug and play.",
       "cta_primary_label": "Get Kevin",
       "cta_primary_url": "",
       "cta_secondary_label": "How it works",
@@ -342,8 +343,8 @@
       "checkout_title": "Free delivery",
       "checkout_body": "Secure Shopify checkout.",
       "trust_1": "Swiss engineered",
-      "trust_2": "No cameras or mics",
-      "trust_3": "Free delivery in Europe",
+      "trust_2": "9 W plug & play",
+      "trust_3": "No cameras. No mics.",
       "sticky_cta_label": "Get Kevin"
     },
     "problem": {
@@ -433,15 +434,15 @@
     },
     "stats": {
       "heading": "Authority you can trust.",
-      "stat_1_value": "97%",
-      "stat_1_label": "Burglary probability reduced (Mitipi research)",
+      "stat_1_value": "3-year",
+      "stat_1_label": "Swiss warranty on every Kevin",
       "stat_2_value": "70+",
       "stat_2_label": "Hours of built-in simulations",
       "stat_3_value": "9W",
       "stat_3_label": "Typical energy use",
       "stat_4_value": "70%",
       "stat_4_label": "Of burglaries happen in daytime",
-      "badge_1": "Police-recommended in Europe and the US",
+      "badge_1": "No monitoring subscription",
       "badge_2": "Swiss engineered and designed",
       "badge_3": "Jammer-proof local playback",
       "badge_4": "Award-winning innovation"
@@ -457,7 +458,7 @@
       "quote_3": "\"The shadow effects are the part people notice. From the stairwell, the apartment does not feel empty.\"",
       "author_3_name": "Thomas K.",
       "author_3_location": "Munich, Germany",
-      "summary_eyebrow": "Tested among real burglars",
+      "summary_eyebrow": "Designed around how burglars pick targets",
       "summary_body": "Kevin is simple to place, private by design, and most convincing from the exact perspective that matters: outside the home."
     },
     "pricing": {
@@ -466,7 +467,7 @@
       "subheading": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
       "buy_label": "Own Kevin®",
       "buy_tagline": "Buy one-time. All updates included.",
-      "buy_cta": "Buy Now",
+      "buy_cta": "Get Kevin",
       "buy_features": "Full device ownership|70+ hours of built-in simulations|Weekly schedules and geo-fencing|Upload your own household sounds|Bluetooth speaker and lamp at home|Flexible placement with 3 m power cable|Free delivery|3-year Swiss warranty"
     },
     "specs": {
@@ -478,7 +479,7 @@
       "heading": "Do not leave your home looking empty.",
       "subheading": "Let Kevin® become your virtual roommate—making your home feel alive while you are away. Free delivery across Europe. Plug and play. 9 watts. No cameras or microphones.",
       "primary_cta": "Get Kevin",
-      "secondary_cta": "Learn more",
+      "secondary_cta": "How it works",
       "secondary_cta_url": "#how-it-works"
     }
   },

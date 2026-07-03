@@ -3,14 +3,14 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "headline": "Deter burglaries before they happen.",
-        "lede": "Light, shadow, and sound simulate presence—no cameras, no microphones.",
-        "cta_primary_label": "Get Kevin",
+        "headline": "",
+        "lede": "",
+        "cta_primary_label": "",
         "cta_primary_url": "",
-        "cta_secondary_label": "How it works",
+        "cta_secondary_label": "",
         "cta_secondary_url": "#how-it-works",
         "image_alt": "",
-        "sticky_cta_label": "Get Kevin",
+        "sticky_cta_label": "",
         "sticky_cta_enabled": true,
         "sticky_cta_url": "",
         "deploy_cache_bust": ""
@@ -119,15 +119,15 @@
       "type": "lp-stats",
       "settings": {
         "heading": "Authority you can trust.",
-        "stat_1_value": "97%",
-        "stat_1_label": "Burglary probability reduced (Mitipi research)",
+        "stat_1_value": "",
+        "stat_1_label": "",
         "stat_2_value": "70+",
         "stat_2_label": "Hours of built-in simulations",
         "stat_3_value": "9W",
         "stat_3_label": "Typical energy use",
         "stat_4_value": "70%",
         "stat_4_label": "Of burglaries happen in daytime",
-        "badge_1": "Police-recommended in Europe and the US",
+        "badge_1": "",
         "badge_2": "Swiss engineered and designed",
         "badge_3": "Jammer-proof local playback",
         "badge_4": "Award-winning innovation"
@@ -146,7 +146,7 @@
         "quote_3": "\"The shadow effects are the part people notice. From the stairwell, the apartment does not feel empty.\"",
         "author_3_name": "Thomas K.",
         "author_3_location": "Munich, Germany",
-        "summary_eyebrow": "Tested among real burglars",
+        "summary_eyebrow": "",
         "summary_body": "Kevin is simple to place, private by design, and most convincing from the exact perspective that matters: outside the home."
       },
       "blocks": {
@@ -189,7 +189,7 @@
         "subheading": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
         "buy_label": "Own Kevin®",
         "buy_tagline": "Buy one-time. All updates included.",
-        "buy_cta": "Buy Now",
+        "buy_cta": "",
         "buy_features": "Full device ownership|70+ hours of built-in simulations|Weekly schedules and geo-fencing|Upload your own household sounds|Bluetooth speaker and lamp at home|Flexible placement with 3 m power cable|Free delivery|3-year Swiss warranty"
       }
     },
@@ -258,8 +258,8 @@
       "settings": {
         "heading": "Do not leave your home looking empty.",
         "subheading": "Let Kevin® become your virtual roommate—making your home feel alive while you are away. Free delivery across Europe. Plug and play. 9 watts. No cameras or microphones.",
-        "primary_cta": "Get Kevin",
-        "secondary_cta": "Learn more",
+        "primary_cta": "",
+        "secondary_cta": "",
         "primary_cta_url": "",
         "secondary_cta_url": "#how-it-works"
       }
