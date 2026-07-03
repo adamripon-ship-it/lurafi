@@ -323,7 +323,7 @@
     "specs": {
       "eyebrow": "En bref",
       "heading": "Conçu pour être simple, privé et portable.",
-      "image_alt": "Close-up of Kevin fabric front panel and top controls on marble"
+      "image_alt": "Kevin® device — fabric front panel and top controls, studio product photo"
     },
     "hero": {
       "eyebrow": "Simulation de présence suisse",
@@ -354,40 +354,6 @@
       "tile_3_title": "Les minuteries ne trompent personne",
       "tile_3_body": "La même lampe à la même heure chaque soir : de l'automatisation, pas de la vie."
     },
-    "solution": {
-      "overline": "La méthode Kevin",
-      "heading": "Une dissuasion qui paraît humaine.",
-      "subheading": "Placez Kevin près d'un mur ou d'un plafond qui servira de scène. De l'extérieur, lumière, mouvement et son coordonnés font vivre la pièce—pas simplement l'automatiser.",
-      "pillar_1_title": "Lumière chaude",
-      "pillar_1_body": "Des scènes lumineuses et chaleureuses rendent une pièce habitée plutôt que simplement éclairée. Kevin varie le rythme pour les matins, les soirées et les nuits.",
-      "pillar_2_title": "Ombres en mouvement",
-      "pillar_2_body": "Silhouettes projetées et lumière changeante suggèrent des personnes traversant l'espace—sans caméras ni microphones.",
-      "pillar_3_title": "Sons du quotidien",
-      "pillar_3_body": "Bruits de cuisine, ambiance télé, pas, voix et vos propres enregistrements rendent la simulation plus personnelle et moins répétitive.",
-      "image_alt": "Kevin presence simulation at night",
-      "outside_image_alt": "European home at night — warm window light and moving shadow visible from the street",
-      "outside_caption": "What passers-by see: warm light and believable movement—not a dark, empty home."
-    },
-    "steps": {
-      "overline": "Le plan",
-      "heading": "Branchez. Programmez. Partez sereinement.",
-      "subheading": "Pas d'installation, pas de câblage, pas de panneau de surveillance mensuel. Kevin démarre avec une configuration simple et gagne en utilité grâce aux plannings, à la géolocalisation et aux mises à jour.",
-      "step_1_title": "Placez Kevin",
-      "step_1_body": "Installez-le près d'une fenêtre visible, avec un mur ou un plafond pour les ombres. Branchez l'alimentation et laissez la pièce devenir la scène.",
-      "step_2_title": "Définissez votre routine",
-      "step_2_body": "Utilisez l'app pour des plannings hebdomadaires, le mode vacances ou une activation géolocalisée quand vous quittez la zone.",
-      "step_3_title": "Restez crédible",
-      "step_3_body": "Kevin diffuse des scénarios lumineux et sonores variés depuis le stockage local, pour que vos routines ne transitent pas par le cloud ni ne soient partagées avec des tiers.",
-      "stat_1_value": "60s",
-      "stat_1_label": "Temps d'installation",
-      "stat_2_value": "1",
-      "stat_2_label": "Câble nécessaire",
-      "stat_3_value": "100%",
-      "stat_3_label": "Confidentialité",
-      "stat_4_value": "24/7",
-      "stat_4_label": "Protection",
-      "image_alt": "Kevin device"
-    },
     "app": {
       "overline": "App Kevin",
       "heading": "Réglez. Oubliez.",
@@ -400,38 +366,12 @@
       "tile_3_body": "Importez des enregistrements et étiquetez-les par pièce ou activité pour que la simulation ressemble davantage à votre foyer.",
       "tile_4_title": "Plusieurs lieux",
       "tile_4_body": "Utilisez plusieurs Kevin pour appartements, étages supplémentaires, bureaux ou résidences secondaires qui ne doivent pas paraître abandonnées.",
-      "phone_image_1_alt": "Kevin app protected status screen",
-      "phone_1_caption": "Protected — arm and disarm from anywhere",
-      "phone_image_2_alt": "Kevin app weekly schedule grid",
-      "phone_2_caption": "Schedule — set protection by day and hour",
-      "carousel_label": "App screenshots",
-      "phone_image_3_alt": "Kevin app edit device screen",
-      "phone_3_caption": "Device — rename, customize, and manage firmware",
-      "phone_image_4_alt": "Kevin app enable auto-activation screen",
-      "phone_4_caption": "Auto-activation — enable location when you leave",
-      "phone_image_5_alt": "Kevin app location picker screen",
-      "phone_5_caption": "Location — set where Kevin activates automatically",
-      "phone_image_6_alt": "Kevin app device home screen",
-      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
       "ui_status": "Maison · Protégée",
       "ui_row_1": "18:30 — Sons de cuisine",
       "ui_row_2": "19:45 — Soirée télé",
       "ui_row_3": "21:10 — Aboiement à la sonnette",
-      "ui_row_4": "Mode absence — démarre quand vous partez"
-    },
-    "personas": {
-      "overline": "Fait pour vous",
-      "heading": "Une couche plus intelligente pour la vraie vie.",
-      "subheading": "Que vous voyagiez, fassiez la navette, gériez un petit bureau ou possédiez déjà une alarme, Kevin ajoute le signal manquant : quelqu'un semble être là.",
-      "persona_1_title": "Voyagez souvent",
-      "persona_1_body": "Week-end ou longues vacances, Kevin maintient la pièce active avec des scènes variées plutôt qu'une minuterie fixe.",
-      "persona_1_quote": "« Je voulais que la maison paraisse habitée, pas seulement éclairée. Kevin me l'offre. »",
-      "persona_2_title": "Vous avez déjà une alarme ?",
-      "persona_2_body": "Gardez-la. Kevin complète la détection par la dissuasion, pour que votre maison paraisse habitée avant que quiconque n'envisage d'entrer.",
-      "persona_2_quote": "« Notre alarme nous prévient si quelque chose se passe. Kevin aide à faire de la maison une mauvaise cible. »",
-      "persona_3_title": "Plusieurs pièces ou biens",
-      "persona_3_body": "Un appareil protège une scène visible. Ajoutez d'autres Kevin pour les étages, bureaux ou résidences secondaires.",
-      "persona_3_quote": "« Nous utilisons Kevin là où la rue voit la pièce. Cela change toute la perception de l'extérieur. »"
+      "ui_row_4": "Mode absence — démarre quand vous partez",
+      "carousel_label": "App screenshots"
     },
     "stats": {
       "heading": "Crédible pendant des semaines, pas des minutes.",
@@ -446,22 +386,7 @@
       "badge_1": "Résiste au brouillage — lecture locale",
       "badge_2": "Swiss Engineered",
       "badge_3": "Sans abonnement de surveillance",
-      "badge_4": "Simulation sur l'appareil",
       "ticker_items": "Sons de cuisine|Soirée télé|Aboiement|Douche|Aspirateur|Appel téléphonique|Devoirs|Dîner|Lecture du soir|Routine du matin"
-    },
-    "proof": {
-      "heading": "Réaliste là où ça compte : de l'extérieur.",
-      "quote_1": "« Depuis le trottoir, la lumière et le mouvement rendent la pièce habitée. Exactement ce que je voulais. »",
-      "author_1_name": "Sarah M.",
-      "author_1_location": "Zurich, Suisse",
-      "quote_2": "« Un ami a cru que quelqu'un était à l'intérieur et a sonné. Kevin a fait son travail avant que quiconque n'atteigne la porte. »",
-      "author_2_name": "Marc D.",
-      "author_2_location": "Lyon, France",
-      "quote_3": "« Les effets d'ombre sont ce que les gens remarquent. Depuis la cage d'escalier, l'appartement ne paraît pas vide. »",
-      "author_3_name": "Thomas K.",
-      "author_3_location": "Munich, Allemagne",
-      "summary_eyebrow": "Pourquoi le doute se transforme en confiance",
-      "summary_body": "Kevin est simple à installer, conçu pour la confidentialité, et le plus convaincant du point de vue qui compte : depuis l'extérieur."
     },
     "pricing": {
       "overline": "Possédez Kevin®",
@@ -519,10 +444,7 @@
     }
   },
   "stats": {
-    "swiss_engineered": "Swiss Engineered",
-    "badge_1": "European Security Award 2024",
-    "badge_3": "Sans abonnement de surveillance",
-    "badge_4": "Simulation sur l'appareil"
+    "swiss_engineered": "Swiss Engineered"
   },
   "sitemap": {
     "overline": "Plan du site SEO",
