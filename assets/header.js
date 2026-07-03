@@ -15,6 +15,11 @@
       // Solidify the header the instant the page moves, so hero content can't
       // bleed through the fixed bar and collide with the nav (transparent only at rest).
       header.setAttribute('data-scrolled', window.scrollY > 8 ? 'true' : 'false');
+      if (document.body.classList.contains('nightfall')) {
+        // Nightfall homepage: every section is dark — never flip to the light bar.
+        header.setAttribute('data-theme', 'dark');
+        return;
+      }
       if (!hero) {
         header.setAttribute('data-theme', 'light');
         return;
