@@ -31,6 +31,15 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('.hero-banner__cta--secondary')).toHaveCount(1);
     await expect(page.locator('.hero-banner__product-stage')).toHaveCount(1);
 
+    // Revived wave animation: ECG + carrier SVG behind the product, beams present
+    await expect(page.locator('.hero-banner__product-stage .hero-product-waves')).toHaveCount(1);
+    await expect(page.locator('.hero-product-wave-beam--left')).toHaveCount(1);
+    await expect(page.locator('.hero-product-wave-beam--right')).toHaveCount(1);
+    const wavePathLength = await page
+      .locator('.hero-product-waves svg defs path[pathLength]')
+      .count();
+    expect(wavePathLength, 'pathLength must live on the defs path, not <use>').toBe(1);
+
     const productImg = page.locator('.hero-banner__product-image');
     const productBox = await productImg.boundingBox();
     expect(productBox).toBeTruthy();

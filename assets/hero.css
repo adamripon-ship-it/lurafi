@@ -286,8 +286,7 @@
 .hero-context-card,
 .hero-spec-chip,
 .hero-apple__glow,
-.hero-apple__grain,
-.hero-banner .hero-product-waves {
+.hero-apple__grain {
   display: none !important;
 }
 
@@ -509,4 +508,118 @@ html.no-js .hero-banner__product-stage,
 html.no-js .hero-apple__scroll {
   opacity: 1;
   transform: none;
+}
+
+
+/* ---- Product waves: ECG pulse + light beams emitting from the product ---- */
+.hero-product-waves {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 54%;
+  transform: translateY(-50%);
+  height: clamp(70px, 14vh, 130px);
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+}
+
+.hero-product-waves__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.hero-product-wave-baseline {
+  fill: none;
+  stroke: rgba(245, 245, 247, 0.16);
+  stroke-width: 1.5;
+}
+
+.hero-product-wave-carrier {
+  fill: none;
+  stroke: rgba(199, 44, 161, 0.5);
+  stroke-width: 2;
+}
+
+.motion-ready .hero-product-wave-carrier {
+  animation: heroWaveCarrierBreathe 7s ease-in-out infinite;
+}
+
+@keyframes heroWaveCarrierBreathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Traveling beam: pathLength=1 lets dashoffset scrub a bright segment
+   from the product's center outward along the ECG line. */
+.hero-product-wave-beam {
+  fill: none;
+  stroke: #ff6ba8;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 0.10 0.90;
+  stroke-dashoffset: 1.05;
+  opacity: 0;
+}
+
+.hero-product-wave-spark {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-dasharray: 0.025 0.975;
+  stroke-dashoffset: 1.02;
+  opacity: 0;
+}
+
+.motion-ready .hero-product-wave-beam {
+  animation: heroWaveBeamTravel 4.6s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+}
+
+.motion-ready .hero-product-wave-spark {
+  animation: heroWaveSparkTravel 4.6s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+  animation-delay: 0.12s;
+}
+
+.motion-ready .hero-product-wave-beam--right,
+.motion-ready .hero-product-wave-spark--right {
+  animation-delay: 0.35s;
+}
+
+@keyframes heroWaveBeamTravel {
+  0% { stroke-dashoffset: 1.05; opacity: 0; }
+  6% { opacity: 1; }
+  58% { stroke-dashoffset: -0.12; opacity: 1; }
+  64%, 100% { stroke-dashoffset: -0.12; opacity: 0; }
+}
+
+@keyframes heroWaveSparkTravel {
+  0% { stroke-dashoffset: 1.02; opacity: 0; }
+  8% { opacity: 0.9; }
+  56% { stroke-dashoffset: -0.06; opacity: 0.9; }
+  62%, 100% { stroke-dashoffset: -0.06; opacity: 0; }
+}
+
+/* Reduced motion / no-JS: calm static waves, no beams */
+.motion-reduced .hero-product-wave-beam,
+.motion-reduced .hero-product-wave-spark,
+html.no-js .hero-product-wave-beam,
+html.no-js .hero-product-wave-spark {
+  animation: none !important;
+  opacity: 0 !important;
+}
+
+.motion-reduced .hero-product-wave-carrier,
+html.no-js .hero-product-wave-carrier {
+  animation: none !important;
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .hero-product-waves {
+    height: clamp(50px, 9vh, 80px);
+  }
 }

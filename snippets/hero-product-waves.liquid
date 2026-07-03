@@ -44,7 +44,8 @@ M 0 0
     focusable="false"
   >
     <defs>
-      <path id="hero-ecg-path-{{ wave_uid }}" d="{{ ecg_path | strip }}"/>
+      {%- comment -%} pathLength lives on the defs: browsers ignore it on <use> {%- endcomment -%}
+      <path id="hero-ecg-path-{{ wave_uid }}" pathLength="1" d="{{ ecg_path | strip }}"/>
       <path id="hero-wave-carrier-{{ wave_uid }}" d="{{ wave_carrier | strip }}"/>
       <filter id="hero-ecg-soft-{{ wave_uid }}" x="-40%" y="-400%" width="180%" height="900%" color-interpolation-filters="sRGB">
         <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
@@ -75,6 +76,7 @@ M 0 0
       <use
         href="#hero-wave-carrier-{{ wave_uid }}"
         class="hero-product-wave-carrier hero-product-wave-carrier--left"
+        filter="url(#hero-ecg-soft-{{ wave_uid }})"
       />
       <use
         href="#hero-ecg-path-{{ wave_uid }}"
@@ -82,13 +84,11 @@ M 0 0
       />
       <use
         href="#hero-ecg-path-{{ wave_uid }}"
-        pathLength="1"
         class="hero-product-wave-spark hero-product-wave-spark--left"
         filter="url(#hero-ecg-spark-{{ wave_uid }})"
       />
       <use
         href="#hero-ecg-path-{{ wave_uid }}"
-        pathLength="1"
         class="hero-product-wave-beam hero-product-wave-beam--left"
         filter="url(#hero-ecg-beam-{{ wave_uid }})"
       />
@@ -97,6 +97,7 @@ M 0 0
         <use
           href="#hero-wave-carrier-{{ wave_uid }}"
           class="hero-product-wave-carrier hero-product-wave-carrier--right"
+          filter="url(#hero-ecg-soft-{{ wave_uid }})"
         />
         <use
           href="#hero-ecg-path-{{ wave_uid }}"
@@ -104,13 +105,11 @@ M 0 0
         />
         <use
           href="#hero-ecg-path-{{ wave_uid }}"
-          pathLength="1"
           class="hero-product-wave-spark hero-product-wave-spark--right"
           filter="url(#hero-ecg-spark-{{ wave_uid }})"
         />
         <use
           href="#hero-ecg-path-{{ wave_uid }}"
-          pathLength="1"
           class="hero-product-wave-beam hero-product-wave-beam--right"
           filter="url(#hero-ecg-beam-{{ wave_uid }})"
         />
