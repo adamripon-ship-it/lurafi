@@ -19,15 +19,15 @@
     "problem": {
       "type": "lp-problem",
       "settings": {
-        "overline": "The problem",
-        "heading": "When your home looks empty, you become a target.",
-        "subheading": "Burglars look for easy marks—dark windows, silent halls, predictable timers. 70% strike in daytime. They need five minutes. Wi-Fi jammers defeat cameras and alarms. Kevin® helps your home, flat, office, or shop look occupied from the outside—before anyone tests the door.",
-        "tile_1_title": "Five minutes is all it takes",
-        "tile_1_body": "Burglars can break in and out in minutes—often before sirens or monitoring respond. Kevin adds believable presence before anyone reaches the handle.",
-        "tile_2_title": "Wi-Fi jamming disables cameras",
-        "tile_2_body": "Burglars use jamming devices to disable Wi-Fi cameras and alarm systems. Kevin keeps simulating from local storage—even when the network goes down.",
-        "tile_3_title": "70% happen in daytime",
-        "tile_3_body": "Statistics show most burglaries happen during the day when homes look empty. Kevin varies light, shadow, and sound so your space reads as lived-in."
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "tile_1_title": "",
+        "tile_1_body": "",
+        "tile_2_title": "",
+        "tile_2_body": "",
+        "tile_3_title": "",
+        "tile_3_body": ""
       }
     },
     "mechanism": {

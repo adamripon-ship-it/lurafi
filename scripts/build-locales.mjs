@@ -443,9 +443,9 @@ const nlHome = {
   },
   problem: {
     overline: 'Het probleem',
-    heading: 'Inbrekers kiezen in seconden.',
+    heading: 'Als dierbaren alleen wonen of een huis leeg oogt, worden ze een doelwit.',
     subheading:
-      'Vanaf de straat verraadt een leeg huis zichzelf—donkere ramen, stilte, licht dat als een klok herhaalt. Kevin haalt die signalen weg.',
+      'Aanranders, gewelddadige indringers en inbrekers zoeken gemakkelijke doelen—alleenstaande vrouwen, je dochter die voor het eerst op kamers gaat om te studeren, of gepensioneerde en oudere weduwen en echtparen. KEVIN 3.0® simuleert anderen die bij je in huis wonen, zodat je nooit alleen lijkt—en helpt zo inbraak effectief te voorkomen.',
     tile_1_title: 'Donker betekent weg',
     tile_1_body:
       'Onverlichte kamers in de vroege avond zijn het luidste signaal dat een huis kan geven.',
