@@ -35,7 +35,31 @@
 
     <div class="solution-split">
       <figure class="solution-split__visual">
-        {%- if outside_image -%}
+        {%- if section.settings.demo_video != blank and section.settings.demo_video.sources.size > 0 -%}
+          {%- liquid
+            if outside_image
+              assign demo_poster = outside_image | image_url: width: 960
+            else
+              assign demo_poster = outside_fallback
+            endif
+          -%}
+          <video
+            class="solution-split__image"
+            data-ambient-video
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            poster="{{ demo_poster }}"
+            width="960"
+            height="1280"
+            aria-label="{{ outside_alt | escape }}"
+          >
+            {%- for source in section.settings.demo_video.sources -%}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}">
+            {%- endfor -%}
+          </video>
+        {%- elsif outside_image -%}
           <img
             class="solution-split__image"
             src="{{ outside_image | image_url: width: 960 }}"
@@ -120,6 +144,12 @@
       "id": "outside_image",
       "label": "Street / window image",
       "info": "Default: kevin-hero-shadow-widow-89.webp — warm light visible from outside."
+    },
+    {
+      "type": "video",
+      "id": "demo_video",
+      "label": "Street demo video (optional)",
+      "info": "8–10s muted loop of the view from the street. Shown instead of the image; the image stays as poster and is used when reduced motion or data saving is on."
     },
     { "type": "text", "id": "outside_image_alt", "label": "Outside image alt text" },
     { "type": "text", "id": "outside_caption", "label": "Outside image caption" },

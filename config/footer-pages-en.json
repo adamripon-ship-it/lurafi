@@ -92,7 +92,7 @@
     "heading": "Kevin® simulates people at home—so you can leave calmly.",
     "lede": "Swiss-engineered presence simulation: light scenarios, moving shadows, and everyday sounds. Plug in near a visible window, set schedules or geo-fencing in the app, and let believable occupancy run from local storage.",
     "theme": "black",
-    "image_asset": "kevin-hero-product-side.png",
+    "image_asset": "kevin-hero-product-side.webp",
     "image_alt": "Kevin® device — side profile product photo",
     "blocks": [
       {
@@ -265,7 +265,7 @@
     "heading": "One-time purchase. Lifetime updates included.",
     "lede": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
     "theme": "white",
-    "image_asset": "kevin-hero-product-top.png",
+    "image_asset": "kevin-hero-product-top.webp",
     "image_alt": "Kevin® device — top view product photo",
     "blocks": [
       {
@@ -333,7 +333,7 @@
     "heading": "Swiss innovation for prevention-first home security.",
     "lede": "Mitipi AG develops Kevin®, a presence simulation device that helps homes, flats, offices, and holiday properties look occupied when people are away—without cameras or microphones.",
     "theme": "black",
-    "image_asset": "kevin-hero-burglary-prevention.png",
+    "image_asset": "kevin-hero-burglary-prevention.jpg",
     "image_alt": "Kevin® presence simulation — editorial product visual",
     "blocks": [
       {
@@ -491,7 +491,7 @@
     "heading": "Build the future of prevention-first security.",
     "lede": "Mitipi is a Swiss company rethinking home security around privacy, believable presence simulation, and AI—without cameras or microphones.",
     "theme": "white",
-    "image_asset": "kevin-hero-burglary-prevention.png",
+    "image_asset": "kevin-hero-burglary-prevention.jpg",
     "image_alt": "Kevin® — Swiss-engineered security innovation",
     "blocks": [
       {

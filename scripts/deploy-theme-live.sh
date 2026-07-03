@@ -7,6 +7,20 @@
 #
 # Config: config/live-theme.json (single source of truth for theme ID / storefront URL)
 set -euo pipefail
+
+# Safety: pushing to the LIVE theme requires explicit consent. Use the
+# preview flow for day-to-day work (docs/CMS-BACKEND-PLAN.md §6).
+ALLOW_LIVE=0
+for arg in "$@"; do
+  [[ "$arg" == "--yes-live" ]] && ALLOW_LIVE=1
+done
+[[ "${LURAFI_ALLOW_LIVE:-}" == "1" ]] && ALLOW_LIVE=1
+if [[ "$ALLOW_LIVE" != "1" ]]; then
+  echo "REFUSED: this deploys to the LIVE theme. Re-run with --yes-live" >&2
+  echo "(or LURAFI_ALLOW_LIVE=1). For staging, push to a preview theme:" >&2
+  echo "  shopify theme push --theme <preview-theme-id>" >&2
+  exit 2
+fi
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 LURAFI_ROOT="${ROOT}"
 # shellcheck source=scripts/lib/shopify-env.sh

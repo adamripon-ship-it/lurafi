@@ -33,5 +33,8 @@ jobs:
       - name: Sync missing locale keys
         run: npm run locales:sync
 
+      - name: Asset audit (orphans + size budget)
+        run: node scripts/audit-assets.mjs --ci
+
       - name: Shopify Theme Check
         run: npm run theme:check

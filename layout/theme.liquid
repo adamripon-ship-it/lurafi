@@ -109,6 +109,9 @@
     <script src="{{ 'header.js' | asset_url }}" defer></script>
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'countup.js' | asset_url }}" defer></script>
+    {%- if request.page_type == 'index' and show_configure == false -%}
+      <script src="{{ 'ambient-video.js' | asset_url }}" defer></script>
+    {%- endif -%}
     {%- if request.page_type == 'product' and show_configure == false -%}
       <script src="{{ 'product-form.js' | asset_url }}" defer></script>
     {%- endif -%}

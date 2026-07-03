@@ -1,6 +1,6 @@
 {%- liquid
   assign specs_image = section.settings.image
-  assign specs_image_fallback = 'kevin-hero-product-top.png' | asset_url
+  assign specs_image_fallback = 'kevin-hero-product-top.webp' | asset_url
   assign specs_image_alt = section.settings.image_alt
   if specs_image_alt == blank
     assign specs_image_alt = 'home.specs.image_alt' | t

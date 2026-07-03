@@ -3869,3 +3869,55 @@ html.no-js .section-apple .reveal-item {
     --apple-container: 1440px;
   }
 }
+
+/* ============================================================
+   Motion pack v1 — additive, rides on the existing reveal system.
+   Every effect is gated by .motion-ready and disabled under
+   .motion-reduced / prefers-reduced-motion.
+   ============================================================ */
+
+/* Problem tiles: lift on hover (pointer devices only) */
+@media (hover: hover) {
+  .motion-ready .problem-bento .tile {
+    transition:
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.3s ease;
+  }
+  .motion-ready .problem-bento .tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.09);
+  }
+}
+
+/* Solution split: one-shot warm light sweep when the section reveals —
+   the page performs the product's job (window light turning on). */
+.solution-split__visual {
+  position: relative;
+  overflow: hidden;
+}
+.solution-split__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 32%,
+    rgba(255, 190, 110, 0.14) 45%,
+    rgba(255, 196, 120, 0.28) 50%,
+    rgba(255, 190, 110, 0.14) 55%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.motion-ready #how-it-works.section-apple--visible .solution-split__visual::after {
+  animation: solutionLightSweep 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+@keyframes solutionLightSweep {
+  to { transform: translateX(130%); }
+}
+.motion-reduced .solution-split__visual::after,
+html.no-js .solution-split__visual::after {
+  display: none;
+}

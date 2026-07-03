@@ -16,7 +16,7 @@
     "locales:translate": "node scripts/translate-locales.mjs",
     "locales:translate:claude": "node scripts/translate-locales.mjs --provider=claude --include-nl",
     "locales:translate:customers": "node scripts/translate-locales.mjs --prefix=customers.,header.",
-    "predeploy": "npm run locales:build && npm run locales:sync && npm run theme:check",
+    "predeploy": "npm run locales:build && npm run locales:sync && npm run assets:audit:ci && npm run theme:check",
     "geo:generate": "node scripts/generate-sitemap-ai.mjs && node scripts/generate-llms-assets.mjs",
     "cms:seed": "node scripts/seed-theme-content.mjs --write --include-blocks",
     "cms:seed:dry": "node scripts/seed-theme-content.mjs",
@@ -39,7 +39,12 @@
     "qa:i18n": "node scripts/i18n-browser-qa.mjs",
     "qa:language": "LURAFI_URL=https://mitipi.eu node scripts/qa-language-selector.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:live": "LURAFI_URL=https://mitipi.eu playwright test"
+    "test:e2e:live": "LURAFI_URL=https://mitipi.eu playwright test",
+    "assets:audit": "node scripts/audit-assets.mjs",
+    "assets:audit:ci": "node scripts/audit-assets.mjs --ci",
+    "cms:metaobjects": "node scripts/setup-metaobjects.mjs",
+    "cms:upload-assets": "node scripts/upload-assets.mjs",
+    "i18n:audit": "node scripts/audit-translations.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
