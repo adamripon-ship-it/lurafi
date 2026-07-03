@@ -17,9 +17,9 @@ body.nightfall {
   --kevin-pink-text: #ff6ba8;
   --nf-stage-top: #07080c;
   --nf-stage-bottom: #030304;
-  --nf-panel: rgba(255, 255, 255, 0.045);
+  --nf-panel: rgba(255, 255, 255, 0.06);
   --nf-panel-strong: #14151b;
-  --nf-border: rgba(255, 255, 255, 0.12);
+  --nf-border: rgba(255, 255, 255, 0.16);
   --nf-glow-shadow:
     0 0 0 1px rgba(158, 0, 126, 0.10),
     0 24px 60px -30px rgba(68, 0, 153, 0.45);
@@ -29,8 +29,8 @@ body.nightfall {
   --apple-bg-gray: var(--nf-panel);
   --apple-bg-card-dark: var(--nf-panel-strong);
   --apple-text: #f5f5f7;
-  --apple-text-muted: #a6a6ad;
-  --apple-text-muted-dark: #8e8e96;
+  --apple-text-muted: #b8b8c0;
+  --apple-text-muted-dark: #a7a7b0;
   --apple-border: var(--nf-border);
 
   background: linear-gradient(180deg, var(--nf-stage-top) 0%, var(--nf-stage-bottom) 100%);
@@ -358,15 +358,15 @@ body.nightfall .nf-window {
   width: min(100%, 420px);
   border-radius: 18px;
   overflow: hidden;
-  background: #0a0c12;
-  border: 1px solid var(--nf-border);
+  background: #10141f;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: var(--nf-glow-shadow);
 }
 
 body.nightfall .nf-window__sky {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #10131d 0%, #090a10 100%);
+  background: linear-gradient(180deg, #1a2030 0%, #10131d 100%);
 }
 
 body.nightfall .nf-window__glow {
@@ -374,25 +374,60 @@ body.nightfall .nf-window__glow {
   inset: 0;
   background:
     radial-gradient(85% 70% at 50% 62%, rgba(255, 180, 92, 0.85) 0%, rgba(255, 150, 60, 0.35) 55%, transparent 80%);
-  opacity: 0;
+  opacity: 0.3;
   animation: nfWindowWarm 1s linear paused both;
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
 
-body.nightfall .nf-window__silhouette {
+/* Shadow figures — she reads; a second silhouette arrives and stays */
+body.nightfall .nf-window__figure {
   position: absolute;
-  bottom: 8%;
-  left: 0;
-  width: 34%;
-  height: 62%;
-  background: radial-gradient(50% 38% at 50% 12%, rgba(10, 8, 14, 0.95) 0%, rgba(10, 8, 14, 0.9) 60%, transparent 100%),
-    linear-gradient(180deg, rgba(10, 8, 14, 0.92) 22%, rgba(10, 8, 14, 0.85) 100%);
-  border-radius: 45% 45% 0 0;
-  filter: blur(6px);
+  bottom: 4%;
+  color: rgba(11, 8, 15, 0.94);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+body.nightfall .nf-window__figure--reader {
+  left: 8%;
+  width: 44%;
+  height: auto;
   opacity: 0;
-  transform: translateX(-80%);
-  animation: nfSilhouetteCross 1s linear paused both;
+  transform-origin: 50% 100%;
+  animation: nfReaderIn 1s linear paused both;
   animation-delay: calc(var(--nf-progress, 0) * -1s);
+}
+
+body.nightfall .nf-window__figure--partner {
+  right: 9%;
+  width: 27%;
+  height: auto;
+  opacity: 0;
+  transform: translateX(220%);
+  animation: nfPartnerWalk 1s linear paused both;
+  animation-delay: calc(var(--nf-progress, 0) * -1s);
+}
+
+/* Gentle reading sway once visible (time-based, motion-ready only) */
+.motion-ready body.nightfall .nf-window__figure--reader g {
+  transform-origin: 40% 90%;
+  animation: nfReaderSway 6s ease-in-out infinite;
+}
+@keyframes nfReaderSway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1.6deg); }
+}
+
+/* Scrub keyframes: reader appears with the warm light; partner walks in
+   during phase 2 and STAYS — the home is lived in by more than one person. */
+@keyframes nfReaderIn {
+  0%, 8% { opacity: 0; transform: translateY(4%); }
+  24%, 100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes nfPartnerWalk {
+  0%, 32% { opacity: 0; transform: translateX(220%); }
+  40% { opacity: 1; }
+  58%, 100% { opacity: 1; transform: translateX(0); }
 }
 
 body.nightfall .nf-window__frame {
@@ -436,7 +471,7 @@ body.nightfall .nf-window__sill {
 /* Sound bars inside the window (bottom-right) */
 body.nightfall .nf-soundbars {
   position: absolute;
-  right: 14%;
+  left: 47%;
   bottom: 12%;
   display: flex;
   align-items: flex-end;
@@ -467,22 +502,16 @@ body.nightfall .nf-soundbars span {
 
 /* Scrub keyframes — one 0..1 timeline, segments inside the keyframes */
 @keyframes nfWindowWarm {
-  0% { opacity: 0; }
+  0% { opacity: 0.3; }
   38% { opacity: 1; }
   100% { opacity: 1; }
 }
-@keyframes nfSilhouetteCross {
-  0%, 30% { opacity: 0; transform: translateX(-80%); }
-  42% { opacity: 1; }
-  62% { opacity: 1; transform: translateX(210%); }
-  70%, 100% { opacity: 0; transform: translateX(240%); }
-}
 @keyframes nfSoundAppear {
-  0%, 58% { opacity: 0; }
+  0%, 58% { opacity: 0.25; }
   75%, 100% { opacity: 1; }
 }
 @keyframes nfPhaseIn {
-  0% { opacity: 0.25; transform: translateY(10px); }
+  0% { opacity: 0.7; transform: translateY(6px); }
   12% { opacity: 1; transform: translateY(0); }
   100% { opacity: 1; transform: translateY(0); }
 }
@@ -493,12 +522,14 @@ body.nightfall .nf-soundbars span {
     view-timeline: --nf-mech block;
   }
   body.nightfall .nf-window__glow,
-  body.nightfall .nf-window__silhouette,
+  body.nightfall .nf-window__figure--reader,
+  body.nightfall .nf-window__figure--partner,
   body.nightfall .nf-soundbars,
   body.nightfall .nf-mech__phase {
     animation-timeline: --nf-mech;
     animation-range: contain 0% contain 100%;
     animation-delay: 0s;
+    animation-play-state: running;
   }
 }
 
@@ -513,7 +544,7 @@ body.nightfall .nf-mech__phases {
 
 body.nightfall .nf-mech__phase {
   padding-left: 18px;
-  border-left: 2px solid rgba(255, 255, 255, 0.14);
+  border-left: 2px solid rgba(255, 255, 255, 0.28);
   animation: nfPhaseIn 1s linear paused both;
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
@@ -523,12 +554,12 @@ body.nightfall .nf-mech__phase--3 { border-left-color: rgba(227, 28, 121, 0.85);
 
 /* Stagger phase reveals along the timeline */
 @keyframes nfPhaseIn2 {
-  0%, 30% { opacity: 0.25; transform: translateY(10px); }
+  0%, 30% { opacity: 0.7; transform: translateY(6px); }
   42% { opacity: 1; transform: translateY(0); }
   100% { opacity: 1; transform: translateY(0); }
 }
 @keyframes nfPhaseIn3 {
-  0%, 58% { opacity: 0.25; transform: translateY(10px); }
+  0%, 58% { opacity: 0.7; transform: translateY(6px); }
   72% { opacity: 1; transform: translateY(0); }
   100% { opacity: 1; transform: translateY(0); }
 }
@@ -557,10 +588,14 @@ html.no-js body.nightfall .nf-mech__phase {
   opacity: 1 !important;
   transform: none !important;
 }
-.motion-reduced body.nightfall .nf-window__silhouette,
-html.no-js body.nightfall .nf-window__silhouette {
+.motion-reduced body.nightfall .nf-window__figure,
+html.no-js body.nightfall .nf-window__figure {
   animation: none !important;
-  opacity: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.motion-reduced body.nightfall .nf-window__figure--reader g {
+  animation: none !important;
 }
 .motion-reduced body.nightfall .nf-soundbars span {
   animation: none !important;
@@ -824,4 +859,79 @@ body.nightfall .nf-quote__source a {
 }
 body.nightfall .nf-quote__source a:hover {
   text-decoration: underline;
+}
+
+/* ---- Why Kevin: numbered reason cards ---- */
+body.nightfall .nf-authority__reasons {
+  margin-bottom: clamp(32px, 5vh, 52px);
+}
+
+body.nightfall .nf-reason {
+  position: relative;
+}
+
+body.nightfall .nf-reason__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--kevin-pink) 0%, var(--kevin-magenta) 60%, var(--kevin-purple) 100%);
+  box-shadow: 0 8px 22px rgba(227, 28, 121, 0.35);
+}
+
+body.nightfall .nf-reason__title {
+  font-size: clamp(19px, 2.4vw, 24px);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* ---- Audience: chip wall + micro-story ---- */
+body.nightfall .nf-chip-wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 52rem;
+  margin: 0 auto clamp(28px, 5vh, 44px);
+  padding: 0;
+  list-style: none;
+}
+
+body.nightfall .nf-chip {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--nf-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  max-width: 100%;
+  text-align: center;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+  .motion-ready body.nightfall .nf-chip:hover {
+    border-color: rgba(227, 28, 121, 0.45);
+    box-shadow: 0 6px 24px -8px rgba(158, 0, 126, 0.5);
+  }
+}
+
+body.nightfall .nf-audience__story {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(17px, 2.2vw, 21px);
+  line-height: 1.5;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.82);
+  border-top: 1px solid var(--nf-border);
+  padding-top: clamp(22px, 4vh, 34px);
 }

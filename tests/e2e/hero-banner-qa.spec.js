@@ -56,7 +56,7 @@ test.describe('mitipi.eu hero banner QA', () => {
     await page.locator('.nf-mech').waitFor({ state: 'attached', timeout: 15000 });
 
     await expect(page.locator('.nf-window')).toHaveCount(1);
-    await expect(page.locator('.nf-window__silhouette')).toHaveCount(1);
+    await expect(page.locator('.nf-window__figure')).toHaveCount(2);
     await expect(page.locator('.nf-mech .nf-soundbars')).toHaveCount(1);
     await expect(page.locator('.nf-mech__phase')).toHaveCount(3);
   });
@@ -71,7 +71,10 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('.nf-jammer__col')).toHaveCount(2);
     await expect(page.locator('.nf-phone')).toHaveCount(1);
     await expect(page.locator('#proof .trust-badges')).toHaveCount(1);
+    await expect(page.locator('.nf-reason')).toHaveCount(3);
     await expect(page.locator('.nf-quote')).toHaveCount(1);
+    await expect(page.locator('#personas .nf-chip-wall')).toHaveCount(1);
+    expect(await page.locator('.nf-chip').count()).toBeGreaterThanOrEqual(8);
     await expect(page.locator('.lp-specs-full')).toHaveCount(1);
     await expect(page.locator('#faq')).toHaveCount(1);
     expect(await page.locator('.faq-item').count()).toBeGreaterThanOrEqual(5);
