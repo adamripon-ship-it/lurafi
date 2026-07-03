@@ -11,7 +11,7 @@
     assign buy_product = all_products.kevin
   endif
 
-  assign default_image = 'kevin-front-cover-grey-v2.png' | asset_url
+  assign default_image = 'kevin-front-cover-grey-v2.webp' | asset_url
   assign buy_features = 'configure.buy_features' | t | split: '|'
 
   assign configure_back = section.settings.back_label
@@ -235,14 +235,14 @@
     "blue": "#1557a7"
   },
   "colorImages": {
-    "grey": {{ 'kevin-front-cover-grey-v2.png' | asset_url | json }},
-    "white": {{ 'kevin-front-cover-white-v2.png' | asset_url | json }},
-    "burgundy": {{ 'kevin-front-cover-red-v2.png' | asset_url | json }},
-    "red": {{ 'kevin-front-cover-red-v2.png' | asset_url | json }},
-    "espresso": {{ 'kevin-front-cover-brown-v2.png' | asset_url | json }},
-    "brown": {{ 'kevin-front-cover-brown-v2.png' | asset_url | json }},
-    "navy": {{ 'kevin-front-cover-blue-v2.png' | asset_url | json }},
-    "blue": {{ 'kevin-front-cover-blue-v2.png' | asset_url | json }}
+    "grey": {{ 'kevin-front-cover-grey-v2.webp' | asset_url | json }},
+    "white": {{ 'kevin-front-cover-white-v2.webp' | asset_url | json }},
+    "burgundy": {{ 'kevin-front-cover-red-v2.webp' | asset_url | json }},
+    "red": {{ 'kevin-front-cover-red-v2.webp' | asset_url | json }},
+    "espresso": {{ 'kevin-front-cover-brown-v2.webp' | asset_url | json }},
+    "brown": {{ 'kevin-front-cover-brown-v2.webp' | asset_url | json }},
+    "navy": {{ 'kevin-front-cover-blue-v2.webp' | asset_url | json }},
+    "blue": {{ 'kevin-front-cover-blue-v2.webp' | asset_url | json }}
   },
   "buy": {
     "features": {{ buy_features | json }},

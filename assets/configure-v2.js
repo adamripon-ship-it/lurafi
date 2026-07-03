@@ -91,14 +91,14 @@
 
   function getForcedColorImage(key) {
     var forcedImages = {
-      grey: 'kevin-front-cover-grey-v2.png',
-      white: 'kevin-front-cover-white-v2.png',
-      burgundy: 'kevin-front-cover-red-v2.png',
-      red: 'kevin-front-cover-red-v2.png',
-      espresso: 'kevin-front-cover-brown-v2.png',
-      brown: 'kevin-front-cover-brown-v2.png',
-      navy: 'kevin-front-cover-blue-v2.png',
-      blue: 'kevin-front-cover-blue-v2.png'
+      grey: 'kevin-front-cover-grey-v2.webp',
+      white: 'kevin-front-cover-white-v2.webp',
+      burgundy: 'kevin-front-cover-red-v2.webp',
+      red: 'kevin-front-cover-red-v2.webp',
+      espresso: 'kevin-front-cover-brown-v2.webp',
+      brown: 'kevin-front-cover-brown-v2.webp',
+      navy: 'kevin-front-cover-blue-v2.webp',
+      blue: 'kevin-front-cover-blue-v2.webp'
     };
     return forcedImages[key] ? buildAssetUrl(forcedImages[key]) : null;
   }

@@ -21,7 +21,8 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('#HeroHeading')).toBeVisible();
     await expect(page.locator('.hero-banner__lede')).toContainText(/no cameras/i);
     await expect(page.locator('.hero-banner__eyebrow')).toHaveCount(0);
-    await expect(page.locator('.hero-banner__trust')).toHaveCount(0);
+    await expect(page.locator('.hero-banner__trust')).toHaveCount(1);
+    await expect(page.locator('.hero-banner__trust-item')).toHaveCount(3);
     await expect(page.locator('.hero-banner__chips')).toHaveCount(0);
     await expect(page.locator('.hero-spec-chip')).toHaveCount(0);
     await expect(page.locator('.hero-context-card')).toHaveCount(0);
@@ -67,5 +68,32 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('.steps-timeline__item')).toHaveCount(3);
     await expect(page.locator('.proof-featured')).toHaveCount(1);
     await expect(page.locator('.lp-specs-split')).toHaveCount(1);
+    await expect(page.locator('#faq')).toHaveCount(1);
+    expect(await page.locator('.faq-item').count()).toBeGreaterThanOrEqual(4);
+  });
+
+  test('homepage title and OG title carry product keywords', async ({ page }) => {
+    await page.goto('/?qa=hero', { waitUntil: 'domcontentloaded', timeout: 60000 });
+
+    await expect(page).toHaveTitle(/Kevin/);
+    const title = await page.title();
+    expect(title.trim()).not.toMatch(/^Mitipi GmbH$/);
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', /Kevin/);
+    await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute('content', /Kevin/);
+  });
+
+  test('stats keep server-rendered values before scroll (no zero flash)', async ({ page }) => {
+    await page.goto('/?qa=hero', { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await page.waitForFunction(
+      () => document.documentElement.classList.contains('motion-ready') || document.documentElement.classList.contains('motion-reduced'),
+      { timeout: 20000 }
+    );
+
+    // Below-fold count-up stats must keep their real values until they enter the viewport.
+    const stats = page.locator('.stats-grid-4 [data-countup]');
+    expect(await stats.count()).toBeGreaterThan(0);
+    for (const value of await stats.allTextContents()) {
+      expect(value.trim()).not.toMatch(/^0\D*$/);
+    }
   });
 });

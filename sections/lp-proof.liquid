@@ -9,8 +9,31 @@
   <div class="apple-container">
     <h2 class="headline-section text-center section-intro__heading proof-section__heading">{{ heading | escape }}</h2>
 
+    {%- liquid
+      comment
+        CMS v2: testimonial metaobject entries take over when present (Admin →
+        Content → Metaobjects → Testimonial; fields: quote, author, location).
+        Falls back to blocks / section settings / locale copy below.
+      endcomment
+      assign testimonial_entries = shop.metaobjects.testimonial.values
+    -%}
     <div class="proof-featured">
-      {%- if section.blocks.size > 0 -%}
+      {%- if testimonial_entries and testimonial_entries.size > 0 -%}
+        {%- for entry in testimonial_entries -%}
+          {%- liquid
+            assign card_class = 'proof-quote-card tile tile--white'
+            if forloop.first
+              assign card_class = card_class | append: ' proof-quote-card--featured'
+            endif
+          -%}
+          {% render 'proof-quote-card',
+            quote: entry.quote.value,
+            author_name: entry.author.value,
+            author_location: entry.location.value,
+            card_class: card_class
+          %}
+        {%- endfor -%}
+      {%- elsif section.blocks.size > 0 -%}
         {%- assign featured_rendered = false -%}
         {%- for block in section.blocks -%}
           {%- if block.type == 'quote' -%}

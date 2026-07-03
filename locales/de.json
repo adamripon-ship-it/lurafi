@@ -41,8 +41,8 @@
     "how_it_works": "So funktioniert's",
     "app": "App",
     "pricing": "Preise",
-    "buy": "Kaufen",
-    "buy_now": "Jetzt kaufen",
+    "buy": "Kevin kaufen",
+    "buy_now": "Kevin kaufen",
     "menu": "Menü",
     "explore": "Entdecken",
     "buy_group": "Kaufen",
@@ -76,11 +76,12 @@
   },
   "seo": {
     "home": {
-      "description": "Wenn Sie unterwegs sind, nutzt Kevin Schweizer KI, um echte menschliche Anwesenheit mit Licht, Schatten und Ton zu simulieren—damit Ihr Zuhause sichtbar bewohnt wirkt und Einbrecher weiterziehen."
+      "description": "Wenn Sie unterwegs sind, nutzt Kevin Schweizer KI, um echte menschliche Anwesenheit mit Licht, Schatten und Ton zu simulieren—damit Ihr Zuhause sichtbar bewohnt wirkt und Einbrecher weiterziehen.",
+      "title": "Kevin® — Schweizer KI-Anwesenheitssimulation gegen Einbruch | Mitipi"
     },
     "org_description": "Wenn Sie unterwegs sind, nutzt Kevin Schweizer KI, um echte menschliche Anwesenheit mit Licht, Schatten und Ton zu simulieren, damit Ihr Zuhause sichtbar bewohnt wirkt und Einbrecher weiterziehen.",
     "sitemap": {
-      "title": "Sitemap — Lurafi & Kevin",
+      "title": "Sitemap — Mitipi & Kevin",
       "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
     },
     "llms": {
@@ -326,21 +327,21 @@
     },
     "hero": {
       "eyebrow": "Schweizer Anwesenheitssimulation",
-      "headline": "Ihr Zuhause wirkt lebendig.",
-      "lede": "Kevin nutzt in der Schweiz entwickeltes Licht, Schatten und Alltagsgeräusche, damit Ihr Zuhause bewohnt wirkt—bevor jemand an der Tür klingelt.",
+      "headline": "Gehen Sie beruhigt—Ihr Zuhause wirkt weiter bewohnt.",
+      "lede": "Kevin® simuliert menschliche Anwesenheit mit Schweizer KI—Licht, Schatten und Alltagsgeräusche. Keine Kameras. Keine Mikrofone. Plug and play.",
       "cta_primary_label": "Kevin kaufen",
       "cta_primary_url": "",
       "cta_secondary_label": "So funktioniert's",
       "cta_secondary_url": "#how-it-works",
       "image_alt": "Kevin presence simulation device",
-      "sticky_cta_label": "Get Kevin",
+      "sticky_cta_label": "Kevin kaufen",
       "callout_1_title": "9 watts",
       "callout_2_title": "No cameras. No mics.",
       "callout_3_title": "Local storage",
       "callout_4_title": "Free delivery",
-      "trust_1": "Swiss engineered",
-      "trust_2": "No cameras or mics",
-      "trust_3": "Free delivery in Europe"
+      "trust_1": "Schweizer Technik",
+      "trust_2": "9 W Plug & Play",
+      "trust_3": "Keine Kameras. Keine Mikrofone."
     },
     "problem": {
       "overline": "Das Problem",
@@ -429,15 +430,15 @@
     },
     "stats": {
       "heading": "Für glaubwürdige Abschreckung gebaut.",
-      "stat_1_value": "97%",
-      "stat_1_label": "Risikoreduktion laut Mitipi",
+      "stat_1_value": "3 Jahre",
+      "stat_1_label": "Schweizer Garantie auf jeden Kevin",
       "stat_2_value": "70h+",
       "stat_2_label": "Integrierte Simulationen",
       "stat_3_value": "9W",
       "stat_3_label": "Typischer Energieverbrauch",
       "stat_4_value": "0",
       "stat_4_label": "Kameras oder Mikrofone",
-      "badge_1": "European Security Award 2024",
+      "badge_1": "Störsender-resistent — lokale Wiedergabe",
       "badge_2": "Swiss Engineered",
       "badge_3": "Kein Überwachungsabo",
       "badge_4": "Simulation auf dem Gerät"
@@ -462,15 +463,19 @@
       "subheading": "Kaufen Sie Kevin® einmalig mit kostenloser lebenslanger Mitgliedschaft, Software-Updates, 3-jähriger Schweizer Garantie und kostenloser Lieferung in Europa.",
       "buy_label": "Kevin® besitzen",
       "buy_tagline": "Einmalkauf. Alle Updates inklusive.",
-      "buy_cta": "Jetzt kaufen",
+      "buy_cta": "Kevin kaufen",
       "buy_features": "Volles Geräteeigentum|70+ Stunden integrierte Simulationen|Wochenpläne und geo-basierte Aktivierung|Eigene Haushaltsgeräusche hochladen|Flexible Platzierung mit 3 m Stromkabel|Kostenlose Lieferung|3 Jahre Garantie"
     },
     "cta": {
       "heading": "Gehen, ohne es zu verraten.",
       "subheading": "Kevin lässt Ihr Zuhause aktiv wirken und klingen—mit in der Schweiz entwickelter Anwesenheitssimulation. Kostenlose Lieferung. 60 Sekunden Einrichtung. Keine Kameras oder Mikrofone.",
       "primary_cta": "Kevin kaufen",
-      "secondary_cta": "Mehr erfahren",
+      "secondary_cta": "So funktioniert's",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Fragen und Antworten."
     }
   },
   "stats": {

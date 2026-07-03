@@ -53,7 +53,8 @@
           cta_secondary_url: cta_secondary_url,
           cta_secondary_label: cta_secondary_label,
           image: section.settings.image,
-          image_alt: image_alt
+          image_alt: image_alt,
+          ambient_video: section.settings.ambient_video
         %}
       </div>
     </div>
@@ -97,6 +98,12 @@
     },
     { "type": "image_picker", "id": "image", "label": "Product image" },
     { "type": "text", "id": "image_alt", "label": "Image alt text" },
+    {
+      "type": "video",
+      "id": "ambient_video",
+      "label": "Ambient loop video (optional)",
+      "info": "6–8s seamless muted loop shown in place of the product image. The product image stays as poster and is always used when reduced motion or data saving is on."
+    },
     {
       "type": "header",
       "content": "Sticky mobile CTA"

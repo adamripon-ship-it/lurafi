@@ -47,8 +47,8 @@ const en = {
     how_it_works: 'How it works',
     app: 'App',
     pricing: 'Pricing',
-    buy: 'Buy',
-    buy_now: 'Buy Now',
+    buy: 'Get Kevin',
+    buy_now: 'Get Kevin',
     menu: 'Menu',
     explore: 'Explore',
     buy_group: 'Buy',
@@ -82,13 +82,14 @@ const en = {
   },
   seo: {
     home: {
+      title: 'Kevin® — Swiss AI Presence Simulator That Deters Burglars | Mitipi',
       description:
         'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play.'
     },
     org_description:
       'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play.',
     sitemap: {
-      title: 'Sitemap — Lurafi & Kevin',
+      title: 'Sitemap — Mitipi & Kevin',
       description:
         'Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers.'
     },
@@ -432,10 +433,14 @@ en.accessibility.next = 'Next';
 const nlHome = {
   hero: {
     eyebrow: 'Zwitserse aanwezigheidssimulatie',
-    headline: 'Laat je huis levend lijken.',
-    lede: 'Kevin gebruikt Zwitsers ontworpen licht, schaduw en alledaags geluid zodat je huis bewoond aanvoelt voordat iemand de deur test.',
+    headline: 'Vertrek gerust—je huis blijft bewoond lijken.',
+    lede: 'Kevin® simuleert menselijke aanwezigheid met Zwitserse AI—licht, schaduw en alledaags geluid. Geen camera’s. Geen microfoons. Plug and play.',
     cta_primary_label: 'Koop Kevin',
-    cta_secondary_label: 'Hoe het werkt'
+    cta_secondary_label: 'Hoe het werkt',
+    trust_1: 'Zwitsers ontworpen',
+    trust_2: '9 W plug & play',
+    trust_3: 'Geen camera’s. Geen microfoons.',
+    sticky_cta_label: 'Koop Kevin'
   },
   problem: {
     overline: 'Het probleem',
@@ -481,10 +486,10 @@ const nlHome = {
     step_3_title: 'Blijf geloofwaardig',
     step_3_body:
       'Kevin speelt gevarieerde licht- en geluidsscenario’s vanaf lokale opslag, zodat je routines niet uit de cloud worden gestreamd of met derden worden gedeeld.',
-    stat_1_label: 'Installatietijd',
-    stat_2_label: 'Kabels nodig',
+    stat_1_label: 'Typisch stroomverbruik',
+    stat_2_label: 'Uur aan simulaties',
     stat_3_label: 'Privacy',
-    stat_4_label: 'Bescherming'
+    stat_4_label: 'Installatietijd'
   },
   app: {
     overline: 'Kevin-app',
@@ -524,10 +529,15 @@ const nlHome = {
   },
   stats: {
     heading: 'Gebouwd voor geloofwaardige afschrikking.',
-    stat_1_label: 'Risicovermindering volgens Mitipi',
-    stat_2_label: 'Ingebouwde simulaties',
+    stat_1_value: '3 jaar',
+    stat_1_label: 'Zwitserse garantie op elke Kevin',
+    stat_2_label: 'Uur ingebouwde simulaties',
     stat_3_label: 'Typisch energieverbruik',
-    stat_4_label: "Camera's of microfoons"
+    stat_4_label: 'Van de inbraken gebeurt overdag',
+    badge_1: 'Geen monitoringabonnement',
+    badge_2: 'Zwitsers ontworpen en ontwikkeld',
+    badge_3: 'Storingsbestendige lokale weergave',
+    badge_4: 'Bekroonde innovatie'
   },
   proof: {
     heading: 'Realistisch waar het telt: van buitenaf.',
@@ -545,13 +555,13 @@ const nlHome = {
       'Kevin is eenvoudig te plaatsen, privacy-first ontworpen en het meest overtuigend vanuit het perspectief dat telt: buiten het huis.'
   },
   pricing: {
-    overline: 'Own Kevin®',
-    heading: 'One-time purchase. Lifetime updates included.',
+    overline: 'Koop Kevin®',
+    heading: 'Eenmalige aankoop. Levenslange updates inbegrepen.',
     subheading:
-      'Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.',
-    buy_label: 'Own Kevin®',
-    buy_tagline: 'Buy one-time. All updates included.',
-    buy_cta: 'Buy Now',
+      'Koop Kevin® eenmalig met gratis levenslang lidmaatschap, software-updates, 3 jaar Zwitserse garantie en gratis bezorging in heel Europa.',
+    buy_label: 'Kevin® kopen',
+    buy_tagline: 'Eenmalig kopen. Alle updates inbegrepen.',
+    buy_cta: 'Koop Kevin',
     buy_features:
       'Volledig eigendom|70+ uur ingebouwde simulaties|Weekschema’s en geo-activering|Eigen huishoudelijke geluiden uploaden|Flexibele plaatsing met 3 m stroomkabel|Gratis bezorging|3 jaar garantie'
   },
@@ -569,12 +579,17 @@ const nlHome = {
     }
   },
 
+  faq: {
+    overline: 'FAQ',
+    heading: 'Vragen en antwoorden.'
+  },
+
   cta: {
     heading: 'Vertrek zonder het te verkondigen.',
     subheading:
       'Kevin laat je huis actief lijken en klinken met Zwitsers ontworpen aanwezigheidssimulatie. Gratis bezorging. 60 seconden setup. Geen camera’s of microfoons.',
     primary_cta: 'Koop Kevin',
-    secondary_cta: 'Meer informatie'
+    secondary_cta: 'Hoe het werkt'
   }
 };
 
@@ -640,8 +655,8 @@ nl.header = {
   how_it_works: 'Hoe het werkt',
   app: 'App',
   pricing: 'Prijzen',
-  buy: 'Kopen',
-  buy_now: 'Nu kopen',
+  buy: 'Koop Kevin',
+  buy_now: 'Koop Kevin',
   menu: 'Menu',
   explore: 'Ontdekken',
   buy_group: 'Kopen',
@@ -676,6 +691,7 @@ nl.footer = {
 };
 nl.seo = {
   home: {
+    title: 'Kevin® — Zwitserse AI-aanwezigheidssimulatie tegen inbraak | Mitipi',
     description:
       'Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid—zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan.'
   },
@@ -755,7 +771,7 @@ nl.hero = {
 };
 nl.home = {};
 for (const [id, sec] of Object.entries(index.sections)) {
-  nl.home[id] = { ...nonBlankSectionSettings(sec), ...(nlHome[id] || {}) };
+  nl.home[id] = { ...(en.home[id] || {}), ...nonBlankSectionSettings(sec), ...(nlHome[id] || {}) };
 }
 nl.stats = { swiss_engineered: 'Zwitsers ontworpen' };
 nl.sitemap = {
@@ -780,7 +796,7 @@ nl.sitemap = {
   llms_points_to_full: 'verwijst naar volledige samenvatting'
 };
 nl.seo.sitemap = {
-  title: 'Sitemap — Lurafi & Kevin',
+  title: 'Sitemap — Mitipi & Kevin',
   description:
     'Sitemap met alle talen, Shopify sitemap.xml, AI-sitemap, llms.txt korte samenvattingen en llms-full.txt volledige gidsen voor zoekmachines en LLM-crawlers.'
 };

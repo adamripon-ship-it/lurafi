@@ -1,7 +1,10 @@
 {%- comment -%}
   LCP hero product image — responsive srcset when using theme editor image;
   WebP + PNG picture fallback for default Kevin asset.
-  Pass: image, image_alt
+  Optional ambient_video (video setting) renders instead, with the image as
+  poster; playback is gated by ambient-video.js (viewport, reduced motion,
+  save-data), so the poster is the guaranteed baseline everywhere.
+  Pass: image, image_alt, ambient_video
 {%- endcomment -%}
 {%- liquid
   assign alt_text = image_alt
@@ -10,7 +13,33 @@
   endif
 -%}
 
-{%- if image != blank -%}
+{%- if ambient_video != blank and ambient_video.sources.size > 0 -%}
+  {%- liquid
+    if image != blank
+      assign poster_url = image | image_url: width: 1200
+    else
+      assign poster_url = 'kevin-hero-product-front.webp' | asset_url
+    endif
+    assign video_source = ambient_video.sources | first
+  -%}
+  <video
+    class="hero-banner__product-image"
+    data-ambient-video
+    loop
+    muted
+    playsinline
+    preload="metadata"
+    poster="{{ poster_url }}"
+    width="{{ video_source.width | default: 1200 }}"
+    height="{{ video_source.height | default: 803 }}"
+    aria-hidden="true"
+    tabindex="-1"
+  >
+    {%- for source in ambient_video.sources -%}
+      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+    {%- endfor -%}
+  </video>
+{%- elsif image != blank -%}
   {%- liquid
     assign src_default = image | image_url: width: 1200
     assign src_640 = image | image_url: width: 640

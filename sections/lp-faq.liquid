@@ -1,0 +1,100 @@
+{%- liquid
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.faq.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.faq.heading' | t
+  endif
+
+  comment
+    CMS v2: faq_item metaobject entries take over when present (Admin →
+    Content → Metaobjects → FAQ item; fields: question, answer). Falls back
+    to the built-in translated FAQ (locale keys faq.q1–q5 / faq.a1–a5).
+  endcomment
+  assign faq_entries = shop.metaobjects.faq_item.values
+-%}
+
+<section id="faq" class="section-apple bg-gray">
+  <div class="apple-container">
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      theme: 'light'
+    %}
+
+    <div class="faq-list">
+      {%- if faq_entries and faq_entries.size > 0 -%}
+        {%- for entry in faq_entries -%}
+          <details class="faq-item tile tile--white">
+            <summary class="faq-item__q">{{ entry.question.value }}<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <div class="faq-item__a body-standard text-muted">{{ entry.answer.value | newline_to_br }}</div>
+          </details>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..5) -%}
+          {%- liquid
+            assign q_key = 'faq.q' | append: i
+            assign a_key = 'faq.a' | append: i
+            assign q_text = q_key | t
+            assign a_text = a_key | t
+          -%}
+          {%- if q_text != blank and a_text != blank -%}
+            <details class="faq-item tile tile--white">
+              <summary class="faq-item__q">{{ q_text }}<span class="faq-item__icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__a body-standard text-muted">{{ a_text }}</div>
+            </details>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {%- if faq_entries and faq_entries.size > 0 -%}
+            {%- for entry in faq_entries -%}
+              {
+                "@type": "Question",
+                "name": {{ entry.question.value | json }},
+                "acceptedAnswer": { "@type": "Answer", "text": {{ entry.answer.value | json }} }
+              }{% unless forloop.last %},{% endunless %}
+            {%- endfor -%}
+          {%- else -%}
+            {%- for i in (1..5) -%}
+              {%- liquid
+                assign q_key = 'faq.q' | append: i
+                assign a_key = 'faq.a' | append: i
+                assign q_text = q_key | t
+                assign a_text = a_key | t
+              -%}
+              {
+                "@type": "Question",
+                "name": {{ q_text | json }},
+                "acceptedAnswer": { "@type": "Answer", "text": {{ a_text | json }} }
+              }{% unless forloop.last %},{% endunless %}
+            {%- endfor -%}
+          {%- endif -%}
+        ]
+      }
+    </script>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language. Add FAQ item metaobjects (Content → Metaobjects) to manage questions without code."
+    },
+    { "type": "text", "id": "overline", "label": "Overline" },
+    { "type": "text", "id": "heading", "label": "Heading" }
+  ],
+  "presets": [{ "name": "FAQ" }]
+}
+{% endschema %}

@@ -41,8 +41,8 @@
     "how_it_works": "Jak to funguje",
     "app": "Aplikace",
     "pricing": "Ceník",
-    "buy": "Koupit",
-    "buy_now": "Koupit hned",
+    "buy": "Koupit Kevina",
+    "buy_now": "Koupit Kevina",
     "menu": "Menu",
     "explore": "Prozkoumat",
     "buy_group": "Koupit",
@@ -76,11 +76,12 @@
   },
   "seo": {
     "home": {
-      "description": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem – váš domov zůstane viditelně obydlený a zloději půjdou dál."
+      "description": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem – váš domov zůstane viditelně obydlený a zloději půjdou dál.",
+      "title": "Kevin® — Švýcarská AI simulace přítomnosti proti vloupání | Mitipi"
     },
     "org_description": "Když jste pryč, Kevin se švýcarskou AI simuluje skutečnou lidskou přítomnost světlem, stínem a zvukem, aby váš domov zůstal viditelně obydlený a zloději šli dál.",
     "sitemap": {
-      "title": "Sitemap — Lurafi & Kevin",
+      "title": "Sitemap — Mitipi & Kevin",
       "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
     },
     "llms": {
@@ -326,21 +327,21 @@
     },
     "hero": {
       "eyebrow": "Švýcarská simulace přítomnosti",
-      "headline": "Ať domov vypadá živě.",
-      "lede": "Kevin využívá švýcarsky navržené světlo, stín a každodenní zvuky, aby váš domov působil obydleně – dřív, než někdo zkusí dveře.",
-      "cta_primary_label": "Koupit Kevin",
+      "headline": "Odejděte s klidem—váš domov vypadá stále obydleně.",
+      "lede": "Kevin® simuluje lidskou přítomnost pomocí švýcarské AI—světlem, stínem a každodenními zvuky. Žádné kamery. Žádné mikrofony. Stačí zapojit.",
+      "cta_primary_label": "Koupit Kevina",
       "cta_primary_url": "",
       "cta_secondary_label": "Jak to funguje",
       "cta_secondary_url": "#how-it-works",
       "image_alt": "Kevin presence simulation device",
-      "sticky_cta_label": "Get Kevin",
+      "sticky_cta_label": "Koupit Kevina",
       "callout_1_title": "9 watts",
       "callout_2_title": "No cameras. No mics.",
       "callout_3_title": "Local storage",
       "callout_4_title": "Free delivery",
-      "trust_1": "Swiss engineered",
-      "trust_2": "No cameras or mics",
-      "trust_3": "Free delivery in Europe"
+      "trust_1": "Švýcarská technika",
+      "trust_2": "9 W plug & play",
+      "trust_3": "Žádné kamery. Žádné mikrofony."
     },
     "problem": {
       "overline": "Problém",
@@ -429,15 +430,15 @@
     },
     "stats": {
       "heading": "Vytvořeno pro věrohodné odstrašení.",
-      "stat_1_value": "97%",
-      "stat_1_label": "Snížení rizika podle Mitipi",
+      "stat_1_value": "3 roky",
+      "stat_1_label": "Švýcarská záruka na každého Kevina",
       "stat_2_value": "70h+",
       "stat_2_label": "Vestavěné simulace",
       "stat_3_value": "9W",
       "stat_3_label": "Typická spotřeba",
       "stat_4_value": "0",
       "stat_4_label": "Kamer nebo mikrofonů",
-      "badge_1": "European Security Award 2024",
+      "badge_1": "Odolné proti rušičkám — lokální přehrávání",
       "badge_2": "Swiss Engineered",
       "badge_3": "Bez monitorovacího předplatného",
       "badge_4": "Simulace na zařízení"
@@ -462,15 +463,19 @@
       "subheading": "Kupte Kevin® jednorázově s bezplatným doživotním členstvím, aktualizacemi softwaru, 3letou švýcarskou zárukou a dopravou zdarma po Evropě.",
       "buy_label": "Vlastněte Kevin®",
       "buy_tagline": "Jednorázový nákup. Všechny aktualizace v ceně.",
-      "buy_cta": "Koupit",
+      "buy_cta": "Koupit Kevina",
       "buy_features": "Plné vlastnictví zařízení|Více než 70 hodin vestavěných simulací|Týdenní plány a aktivace podle polohy|Nahrajte vlastní domácí zvuky|Flexibilní umístění s 3m napájecím kabelem|Doprava zdarma|3letá záruka"
     },
     "cta": {
       "heading": "Odjeďte, aniž byste to oznamovali.",
       "subheading": "Kevin nechá váš domov vypadat a znít aktivně díky švýcarské simulaci přítomnosti. Doprava zdarma. Nastavení za 60 sekund. Žádné kamery ani mikrofony.",
-      "primary_cta": "Koupit Kevin",
-      "secondary_cta": "Zjistit více",
+      "primary_cta": "Koupit Kevina",
+      "secondary_cta": "Jak to funguje",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Otázky a odpovědi."
     }
   },
   "stats": {

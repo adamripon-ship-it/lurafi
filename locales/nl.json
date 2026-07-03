@@ -44,8 +44,8 @@
     "how_it_works": "Hoe het werkt",
     "app": "App",
     "pricing": "Prijzen",
-    "buy": "Kopen",
-    "buy_now": "Nu kopen",
+    "buy": "Koop Kevin",
+    "buy_now": "Koop Kevin",
     "menu": "Menu",
     "explore": "Ontdekken",
     "buy_group": "Kopen",
@@ -79,11 +79,12 @@
   },
   "seo": {
     "home": {
+      "title": "Kevin® — Zwitserse AI-aanwezigheidssimulatie tegen inbraak | Mitipi",
       "description": "Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid—zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan."
     },
     "org_description": "Als je weg bent, simuleert Kevin met Zwitserse AI echte menselijke aanwezigheid met licht, schaduw en geluid zodat je huis zichtbaar bewoond blijft en inbrekers verder gaan.",
     "sitemap": {
-      "title": "Sitemap — Lurafi & Kevin",
+      "title": "Sitemap — Mitipi & Kevin",
       "description": "Sitemap met alle talen, Shopify sitemap.xml, AI-sitemap, llms.txt korte samenvattingen en llms-full.txt volledige gidsen voor zoekmachines en LLM-crawlers."
     },
     "llms": {
@@ -324,15 +325,17 @@
   "home": {
     "hero": {
       "eyebrow": "Zwitserse aanwezigheidssimulatie",
-      "headline": "Laat je huis levend lijken.",
-      "lede": "Kevin gebruikt Zwitsers ontworpen licht, schaduw en alledaags geluid zodat je huis bewoond aanvoelt voordat iemand de deur test.",
+      "headline": "Vertrek gerust—je huis blijft bewoond lijken.",
+      "lede": "Kevin® simuleert menselijke aanwezigheid met Zwitserse AI—licht, schaduw en alledaags geluid. Geen camera’s. Geen microfoons. Plug and play.",
       "cta_primary_label": "Koop Kevin",
+      "cta_primary_url": "",
       "cta_secondary_label": "Hoe het werkt",
       "cta_secondary_url": "#how-it-works",
-      "trust_1": "Swiss engineered",
-      "trust_2": "No cameras or mics",
-      "trust_3": "Free delivery in Europe",
-      "sticky_cta_label": "Get Kevin"
+      "image_alt": "Kevin® presence simulator — Swiss-engineered device",
+      "trust_1": "Zwitsers ontworpen",
+      "trust_2": "9 W plug & play",
+      "trust_3": "Geen camera’s. Geen microfoons.",
+      "sticky_cta_label": "Koop Kevin"
     },
     "problem": {
       "overline": "Het probleem",
@@ -355,6 +358,8 @@
       "pillar_2_body": "Geprojecteerde silhouetten en verschuivend licht suggereren mensen in de ruimte, zonder camera’s of microfoons.",
       "pillar_3_title": "Alledaags geluid",
       "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief.",
+      "outside_image_alt": "European home at night — warm window light and moving shadow visible from the street",
+      "outside_caption": "What passers-by see: warm light and believable movement—not a dark, empty home.",
       "image_alt": "Kevin® presence simulator — Swiss-engineered Kevin 3, studio product photo"
     },
     "steps": {
@@ -368,23 +373,31 @@
       "step_3_title": "Blijf geloofwaardig",
       "step_3_body": "Kevin speelt gevarieerde licht- en geluidsscenario’s vanaf lokale opslag, zodat je routines niet uit de cloud worden gestreamd of met derden worden gedeeld.",
       "stat_1_value": "9W",
-      "stat_1_label": "Installatietijd",
+      "stat_1_label": "Typisch stroomverbruik",
       "stat_2_value": "70+",
-      "stat_2_label": "Kabels nodig",
+      "stat_2_label": "Uur aan simulaties",
       "stat_3_value": "100%",
       "stat_3_label": "Privacy",
       "stat_4_value": "60s",
-      "stat_4_label": "Bescherming",
+      "stat_4_label": "Installatietijd",
       "image_alt": "Kevin® device — side profile product photo"
     },
     "app": {
       "overline": "Kevin-app",
       "heading": "Aanwezigheid op jouw schema.",
       "subheading": "Zet Kevin aan, plan weekroutines en beheer meerdere apparaten vanuit één eenvoudige app voor gemoedsrust.",
+      "phone_image_6_alt": "Kevin app device home screen",
+      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
       "phone_image_1_alt": "Kevin app simulation settings screen",
       "phone_1_caption": "Simulation — tune volume, night mode, and characteristics",
       "phone_image_2_alt": "Kevin app scheduled simulation screen",
       "phone_2_caption": "Schedule — set protection by day and hour",
+      "phone_image_3_alt": "Kevin app edit device screen",
+      "phone_3_caption": "Device — rename, customize, and manage firmware",
+      "phone_image_4_alt": "Kevin app enable auto-activation screen",
+      "phone_4_caption": "Geo-fencing — Kevin activates when you leave",
+      "phone_image_5_alt": "Kevin app location picker screen",
+      "phone_5_caption": "Location — set where Kevin activates automatically",
       "tile_1_title": "Weekschema’s",
       "tile_1_body": "Plan ochtend, avond, nacht, weekenden en vakanties zodat je huis een geloofwaardig ritme volgt terwijl je weg bent.",
       "tile_2_title": "Geo-activering",
@@ -393,14 +406,6 @@
       "tile_3_body": "Upload opnames en label ze per kamer of activiteit zodat de simulatie meer op jouw huishouden klinkt.",
       "tile_4_title": "Meerdere locaties",
       "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken.",
-      "phone_image_6_alt": "Kevin app device home screen",
-      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
-      "phone_image_3_alt": "Kevin app edit device screen",
-      "phone_3_caption": "Device — rename, customize, and manage firmware",
-      "phone_image_4_alt": "Kevin app enable auto-activation screen",
-      "phone_4_caption": "Geo-fencing — Kevin activates when you leave",
-      "phone_image_5_alt": "Kevin app location picker screen",
-      "phone_5_caption": "Location — set where Kevin activates automatically",
       "carousel_label": "App screenshots"
     },
     "personas": {
@@ -419,18 +424,18 @@
     },
     "stats": {
       "heading": "Gebouwd voor geloofwaardige afschrikking.",
-      "stat_1_value": "97%",
-      "stat_1_label": "Risicovermindering volgens Mitipi",
+      "stat_1_value": "3 jaar",
+      "stat_1_label": "Zwitserse garantie op elke Kevin",
       "stat_2_value": "70+",
-      "stat_2_label": "Ingebouwde simulaties",
+      "stat_2_label": "Uur ingebouwde simulaties",
       "stat_3_value": "9W",
       "stat_3_label": "Typisch energieverbruik",
       "stat_4_value": "70%",
-      "stat_4_label": "Camera's of microfoons",
-      "badge_1": "Police-recommended in Europe and the US",
-      "badge_2": "Swiss engineered and designed",
-      "badge_3": "Jammer-proof local playback",
-      "badge_4": "Award-winning innovation"
+      "stat_4_label": "Van de inbraken gebeurt overdag",
+      "badge_1": "Geen monitoringabonnement",
+      "badge_2": "Zwitsers ontworpen en ontwikkeld",
+      "badge_3": "Storingsbestendige lokale weergave",
+      "badge_4": "Bekroonde innovatie"
     },
     "proof": {
       "heading": "Realistisch waar het telt: van buitenaf.",
@@ -447,12 +452,12 @@
       "summary_body": "Kevin is eenvoudig te plaatsen, privacy-first ontworpen en het meest overtuigend vanuit het perspectief dat telt: buiten het huis."
     },
     "pricing": {
-      "overline": "Own Kevin®",
-      "heading": "One-time purchase. Lifetime updates included.",
-      "subheading": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
-      "buy_label": "Own Kevin®",
-      "buy_tagline": "Buy one-time. All updates included.",
-      "buy_cta": "Buy Now",
+      "overline": "Koop Kevin®",
+      "heading": "Eenmalige aankoop. Levenslange updates inbegrepen.",
+      "subheading": "Koop Kevin® eenmalig met gratis levenslang lidmaatschap, software-updates, 3 jaar Zwitserse garantie en gratis bezorging in heel Europa.",
+      "buy_label": "Kevin® kopen",
+      "buy_tagline": "Eenmalig kopen. Alle updates inbegrepen.",
+      "buy_cta": "Koop Kevin",
       "buy_features": "Volledig eigendom|70+ uur ingebouwde simulaties|Weekschema’s en geo-activering|Eigen huishoudelijke geluiden uploaden|Flexibele plaatsing met 3 m stroomkabel|Gratis bezorging|3 jaar garantie"
     },
     "specs": {
@@ -490,8 +495,12 @@
       "heading": "Vertrek zonder het te verkondigen.",
       "subheading": "Kevin laat je huis actief lijken en klinken met Zwitsers ontworpen aanwezigheidssimulatie. Gratis bezorging. 60 seconden setup. Geen camera’s of microfoons.",
       "primary_cta": "Koop Kevin",
-      "secondary_cta": "Meer informatie",
+      "secondary_cta": "Hoe het werkt",
       "secondary_cta_url": "#how-it-works"
+    },
+    "faq": {
+      "overline": "FAQ",
+      "heading": "Vragen en antwoorden."
     }
   },
   "stats": {
