@@ -372,7 +372,9 @@ const en = {
     q4: 'How do I buy Kevin?',
     a4: 'Choose your color on the configure page, then continue to secure Shopify checkout with free delivery across Europe and a 3-year Swiss warranty.',
     q5: 'Does Kevin work if Wi-Fi is jammed?',
-    a5: 'Yes. Core simulations play from local storage on the device. Kevin keeps projecting light, shadow, and sound even when burglars use jamming devices to disable Wi-Fi cameras and alarm systems.'
+    a5: 'Yes. Core simulations play from local storage on the device. Kevin keeps projecting light, shadow, and sound even when burglars use jamming devices to disable Wi-Fi cameras and alarm systems.',
+    q6: 'Is the simulation really convincing?',
+    a6: 'Independent reviewer Galaxus called Kevin.3 “an unrivalled, easy-to-use all-in-one solution that delivers a truly spectacular show.” The effect is strongest where it matters: from outside, through curtains, at dusk.'
   },
   errors: {
     not_found_title: 'Page not found',
@@ -444,58 +446,75 @@ const nlHome = {
   },
   problem: {
     overline: 'Het probleem',
-    heading: 'Leeg nodigt uit.',
+    heading: 'Inbrekers kiezen in seconden.',
     subheading:
-      'De meeste beveiligingsproducten reageren pas als het risico al begonnen is. Kevin is gemaakt voor het moment ervoor: wanneer een huis, flat of kantoor van buitenaf bewoond moet lijken.',
-    tile_1_title: 'Alarmen reageren',
+      'Vanaf de straat verraadt een leeg huis zichzelf—donkere ramen, stilte, licht dat als een klok herhaalt. Kevin haalt die signalen weg.',
+    tile_1_title: 'Donker betekent weg',
     tile_1_body:
-      'Een sirene gaat af na binnenkomst. Kevin voegt zichtbare aanwezigheid toe van tevoren, zodat je woning het moeilijkere doelwit lijkt.',
-    tile_2_title: "Camera's registreren",
+      'Onverlichte kamers in de vroege avond zijn het luidste signaal dat een huis kan geven.',
+    tile_2_title: 'Stilte bevestigt het',
     tile_2_body:
-      'Beelden kunnen later helpen, maar maken een stille kamer niet bewoond. Inbrekers rekenen nog steeds op snelheid en afstand.',
-    tile_3_title: 'Licht is voorspelbaar',
+      'Geen stemmen, geen keuken, geen tv—zo gecheckt vanaf de stoep.',
+    tile_3_title: 'Timers houden niemand voor de gek',
     tile_3_body:
-      'Timers zetten lampen aan en uit. Kevin creëert veranderende schaduwen, tv-achtig flikkerlicht en huishoudelijke geluiden die natuurlijker aanvoelen.'
+      'Dezelfde lamp op dezelfde tijd, elke avond: dat leest als automatisering, niet als leven.'
   },
-  solution: {
-    overline: 'De Kevin-methode',
-    heading: 'Afschrikking die menselijk aanvoelt.',
+  mechanism: {
+    overline: 'Zo werkt het',
+    heading: 'Licht. Schaduw. Geluid.',
     subheading:
-      'Plaats Kevin bij een muur of plafond die als podium kan dienen. Van buitenaf maken gecoördineerd licht, beweging en geluid de kamer actief, niet geautomatiseerd.',
-    pillar_1_title: 'Warm licht',
-    pillar_1_body:
-      'Heldere, warme scènes laten een kamer bewoond lijken in plaats van alleen verlicht. Kevin varieert het ritme voor ochtend, avond en nacht.',
-    pillar_2_title: 'Bewegende schaduwen',
-    pillar_2_body:
-      'Geprojecteerde silhouetten en verschuivend licht suggereren mensen in de ruimte, zonder camera’s of microfoons.',
-    pillar_3_title: 'Alledaags geluid',
-    pillar_3_body:
-      'Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief.'
+      'Kevin speelt een bewoonde avond—gepatenteerde lichtscènes, bewegende silhouetten en echt huisgeluid—precies waar voorbijgangers kijken.',
+    phase_1_title: 'Het raam wordt warm',
+    phase_1_body:
+      'Warm, wisselend licht vervangt de dode gloed van een timer—kamers ogen gebruikt, niet alleen verlicht.',
+    phase_2_title: 'Iemand loopt door de kamer',
+    phase_2_body:
+      'Geprojecteerde silhouetten bewegen zoals mensen bewegen, zichtbaar door gordijnen waar inbrekers het eerst kijken.',
+    phase_3_title: 'Het huis spreekt',
+    phase_3_body:
+      'Koken, gesprekken, een hond die de deurbel hoort—geluid maakt het verhaal af, vanaf lokale opslag.'
   },
-  steps: {
-    overline: 'Het plan',
-    heading: 'Aansluiten. Routines instellen. Rustig vertrekken.',
+  stats: {
+    heading: 'Weken geloofwaardig, geen minuten.',
+    stat_1_value: '4+',
+    stat_1_label: 'Weken simulatie zonder herhaling',
+    stat_2_value: '9W',
+    stat_2_label: 'Typisch stroomverbruik',
+    stat_3_value: '60s',
+    stat_3_label: 'Van doos naar bescherming',
+    stat_4_value: '0',
+    stat_4_label: "Camera's of microfoons",
+    ticker_items:
+      'Keukengeluiden|Tv-avond|Hondengeblaf|Douche loopt|Stofzuigen|Telefoongesprek|Huiswerk|Etentje|Avondlezen|Ochtendroutine',
+    badge_1: 'Geen monitoringabonnement',
+    badge_2: 'Zwitsers ontworpen en ontwikkeld',
+    badge_3: 'Storingsbestendige lokale weergave',
+    badge_4: 'Bekroonde innovatie'
+  },
+  jammer: {
+    overline: 'Als wifi wegvalt',
+    heading: "Jammers verblinden camera's. Kevin speelt door.",
     subheading:
-      'Geen installatie, geen bekabeling, geen maandelijks monitoringpaneel. Kevin start met een eenvoudige setup en wordt nuttiger via schema’s, geofencing en updates.',
-    step_1_title: 'Plaats Kevin',
-    step_1_body:
-      'Zet hem bij een zichtbaar raam met een muur of plafond voor schaduwen. Sluit stroom aan en laat de kamer het podium worden.',
-    step_2_title: 'Stel je routine in',
-    step_2_body:
-      'Gebruik de app voor weekschema’s, vakantiemodus of geo-activering wanneer je het gebied verlaat.',
-    step_3_title: 'Blijf geloofwaardig',
-    step_3_body:
-      'Kevin speelt gevarieerde licht- en geluidsscenario’s vanaf lokale opslag, zodat je routines niet uit de cloud worden gestreamd of met derden worden gedeeld.',
-    stat_1_label: 'Typisch stroomverbruik',
-    stat_2_label: 'Uur aan simulaties',
-    stat_3_label: 'Privacy',
-    stat_4_label: 'Installatietijd'
+      "Goedkope jammers halen camera's en app-alarmen van het netwerk. Kevins simulaties spelen vanaf opslag op het apparaat—geen cloud, geen signaal, geen gat.",
+    col_1_title: 'De camera',
+    col_1_body:
+      'Streams stoppen, meldingen komen nooit aan. Een gestoorde camera beschermt niemand—hij neemt alleen niets op.',
+    col_1_status: 'Signaal weg',
+    col_2_title: 'Kevin',
+    col_2_body:
+      'Licht, schaduw en geluid gaan door vanaf lokale opslag—het huis mist geen tel.',
+    col_2_status: 'Speelt door'
   },
   app: {
     overline: 'Kevin-app',
-    heading: 'Aanwezigheid op jouw schema.',
+    heading: 'Instellen. Vergeten.',
     subheading:
-      'Zet Kevin aan, plan weekroutines en beheer meerdere apparaten vanuit één eenvoudige app voor gemoedsrust.',
+      "Schema's, geo-fencing en meerdere panden—aanwezigheid die zichzelf regelt vanuit één app.",
+    ui_status: 'Thuis · Beschermd',
+    ui_row_1: '18:30 — Keukengeluiden',
+    ui_row_2: '19:45 — Tv-avond',
+    ui_row_3: '21:10 — Hondengeblaf bij deurbel',
+    ui_row_4: 'Weg-modus — start als je vertrekt',
     tile_1_title: 'Weekschema’s',
     tile_1_body:
       'Plan ochtend, avond, nacht, weekenden en vakanties zodat je huis een geloofwaardig ritme volgt terwijl je weg bent.',
@@ -509,50 +528,18 @@ const nlHome = {
     tile_4_body:
       'Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken.'
   },
-  personas: {
-    overline: 'Gemaakt voor jou',
-    heading: 'Een slimmere laag voor het echte leven.',
+  authority: {
+    overline: 'Waarom Kevin vertrouwen',
+    heading: 'Geboren bij een Zwitserse verzekeraar.',
     subheading:
-      'Of je nu reist, pendelt, een klein kantoor runt of al een alarm hebt: Kevin voegt het ontbrekende signaal toe—iemand lijkt er te zijn.',
-    persona_1_title: 'Vaak op reis',
-    persona_1_body:
-      'Weekend weg of lange vakantie: Kevin houdt de kamer actief met gevarieerde scènes in plaats van een vaste lichttimer.',
-    persona_1_quote: '"Ik wilde dat het huis bewoond aanvoelde, niet alleen verlicht. Kevin geeft me dat."',
-    persona_2_title: 'Al een alarm?',
-    persona_2_body:
-      'Houd het. Kevin vult detectie aan met afschrikking, zodat je huis bewoond lijkt voordat iemand binnenkomst overweegt.',
-    persona_2_quote: '"Ons alarm vertelt ons als er iets gebeurt. Kevin helpt het huis het verkeerde doelwit te laten lijken."',
-    persona_3_title: 'Meerdere kamers of woningen',
-    persona_3_body:
-      'Eén apparaat beschermt één zichtbaar podium. Voeg meer Kevin’s toe voor extra verdiepingen, kantoren of tweede woningen.',
-    persona_3_quote: '"We gebruiken Kevin waar de straat de kamer kan zien. Het verandert het gevoel van buitenaf."'
-  },
-  stats: {
-    heading: 'Gebouwd voor geloofwaardige afschrikking.',
-    stat_1_value: '3 jaar',
-    stat_1_label: 'Zwitserse garantie op elke Kevin',
-    stat_2_label: 'Uur ingebouwde simulaties',
-    stat_3_label: 'Typisch energieverbruik',
-    stat_4_label: 'Van de inbraken gebeurt overdag',
-    badge_1: 'Geen monitoringabonnement',
-    badge_2: 'Zwitsers ontworpen en ontwikkeld',
-    badge_3: 'Storingsbestendige lokale weergave',
-    badge_4: 'Bekroonde innovatie'
-  },
-  proof: {
-    heading: 'Realistisch waar het telt: van buitenaf.',
-    quote_1:
-      '"Vanaf de stoep laten licht en beweging de kamer bewoond lijken. Precies wat ik wilde."',
-    author_1_location: 'Zürich, Zwitserland',
-    quote_2:
-      '"Een vriend dacht dat er iemand binnen was en belde aan. Kevin deed zijn werk voordat iemand de deur bereikte."',
-    author_2_location: 'Lyon, Frankrijk',
-    quote_3:
-      '"De schaduweffecten vallen op. Vanuit het trappenhuis voelt het appartement niet leeg."',
-    author_3_location: 'München, Duitsland',
-    summary_eyebrow: 'Waarom twijfel verandert in vertrouwen',
-    summary_body:
-      'Kevin is eenvoudig te plaatsen, privacy-first ontworpen en het meest overtuigend vanuit het perspectief dat telt: buiten het huis.'
+      'Mitipi is in 2018 opgericht als spin-off van Helvetia Verzekeringen—inbraakpreventie, ontwikkeld door mensen die het risico beprijzen.',
+    trust_1: 'Spin-off van Helvetia · 2018',
+    trust_2: 'Ontwikkeld in Zwitserland',
+    trust_3: 'Simuleert mensen én honden',
+    quote:
+      'Een ongeëvenaarde, gebruiksvriendelijke alles-in-één-oplossing die een werkelijk spectaculaire show neerzet.',
+    quote_author: 'Galaxus',
+    quote_source: 'Kevin.3-review, januari 2026'
   },
   pricing: {
     overline: 'Koop Kevin®',
@@ -840,7 +827,11 @@ nl.faq = {
   q3: "Gebruikt Kevin camera's of microfoons?",
   a3: 'Nee. Kevin simuleert alleen aanwezigheid met licht, schaduw en geluid. Geen camera’s en geen microfoons. Simulaties staan lokaal op het apparaat, niet in de cloud of bij derden.',
   q4: 'Hoe koop ik Kevin?',
-  a4: 'Kies je kleur op de configureerpagina en ga verder naar veilig Shopify-afrekenen met gratis bezorging in Europa en 3 jaar Zwitserse garantie.'
+  a4: 'Kies je kleur op de configureerpagina en ga verder naar veilig Shopify-afrekenen met gratis bezorging in Europa en 3 jaar Zwitserse garantie.',
+  q5: 'Werkt Kevin als de wifi wordt gestoord?',
+  a5: 'Ja. De kernsimulaties spelen vanaf lokale opslag op het apparaat. Kevin blijft licht, schaduw en geluid afspelen, ook wanneer inbrekers wifi-camera\u2019s en alarmen met een jammer uitschakelen.',
+  q6: 'Is de simulatie echt overtuigend?',
+  a6: 'Onafhankelijke reviewer Galaxus noemde Kevin.3 “een ongeëvenaarde, gebruiksvriendelijke alles-in-één-oplossing die een werkelijk spectaculaire show neerzet.” Het effect is het sterkst waar het telt: van buiten, door gordijnen, in de schemering.'
 };
 
 

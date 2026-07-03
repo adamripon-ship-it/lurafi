@@ -1,10 +1,4 @@
 {%- liquid
-  assign specs_image = section.settings.image
-  assign specs_image_fallback = 'kevin-hero-product-top.webp' | asset_url
-  assign specs_image_alt = section.settings.image_alt
-  if specs_image_alt == blank
-    assign specs_image_alt = 'home.specs.image_alt' | t
-  endif
 
   assign specs_eyebrow = section.settings.eyebrow
   if specs_eyebrow == blank
@@ -25,34 +19,7 @@
       theme: 'light'
     %}
 
-    <div class="lp-specs-split">
-      <div class="lp-specs-split__media lp-specs__media">
-        {%- if specs_image -%}
-          <img
-            src="{{ specs_image | image_url: width: 1200 }}"
-            srcset="
-              {{ specs_image | image_url: width: 640 }} 640w,
-              {{ specs_image | image_url: width: 980 }} 980w,
-              {{ specs_image | image_url: width: 1200 }} 1200w
-            "
-            sizes="(min-width: 1024px) 360px, 92vw"
-            alt="{{ specs_image.alt | default: specs_image_alt | escape }}"
-            width="{{ specs_image.width | default: 1024 }}"
-            height="{{ specs_image.height | default: 682 }}"
-            loading="lazy"
-            decoding="async"
-          >
-        {%- else -%}
-          <img
-            src="{{ specs_image_fallback }}"
-            alt="{{ specs_image_alt | escape }}"
-            width="1024"
-            height="682"
-            loading="lazy"
-            decoding="async"
-          >
-        {%- endif -%}
-      </div>
+    <div class="lp-specs-full">
 
       <div class="lp-specs-split__rows lp-specs__card">
         <table class="lp-specs__table">
@@ -116,7 +83,6 @@
       "type": "header",
       "content": "Product image"
     },
-    { "type": "image_picker", "id": "image", "label": "Product close-up", "info": "Default theme asset: lurafi-product-closeup.jpg" },
     {
       "type": "text",
       "id": "image_alt",

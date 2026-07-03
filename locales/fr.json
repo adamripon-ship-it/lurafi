@@ -345,14 +345,14 @@
     },
     "problem": {
       "overline": "Le problème",
-      "heading": "Le vide, c'est une invitation.",
-      "subheading": "La plupart des systèmes de sécurité réagissent une fois le risque déjà engagé. Kevin est conçu pour l'instant d'avant : quand une maison, un appartement ou un bureau doit paraître habité de l'extérieur.",
-      "tile_1_title": "Les alarmes réagissent",
-      "tile_1_body": "La sirène se déclenche après l'intrusion. Kevin ajoute une présence visible en amont, pour que votre logement paraisse la cible la moins facile.",
-      "tile_2_title": "Les caméras enregistrent",
-      "tile_2_body": "Les images peuvent servir plus tard, mais elles ne rendent pas une pièce silencieuse habitée. Les cambrioleurs comptent toujours sur la rapidité et la distance.",
-      "tile_3_title": "Les lumières sont prévisibles",
-      "tile_3_body": "Les minuteries allument et éteignent les lampes. Kevin crée des ombres changeantes, un scintillement type télévision et des bruits domestiques plus naturels."
+      "heading": "Les cambrioleurs choisissent en quelques secondes.",
+      "subheading": "Depuis la rue, une maison vide se trahit—fenêtres sombres, silence, lumière réglée comme une horloge. Kevin efface ces signaux.",
+      "tile_1_title": "Sombre veut dire absent",
+      "tile_1_body": "Des pièces éteintes en début de soirée : le signal le plus fort qu'une maison puisse envoyer.",
+      "tile_2_title": "Le silence confirme",
+      "tile_2_body": "Pas de voix, pas de cuisine, pas de télé—vérifié en un instant depuis le trottoir.",
+      "tile_3_title": "Les minuteries ne trompent personne",
+      "tile_3_body": "La même lampe à la même heure chaque soir : de l'automatisation, pas de la vie."
     },
     "solution": {
       "overline": "La méthode Kevin",
@@ -389,9 +389,9 @@
       "image_alt": "Kevin device"
     },
     "app": {
-      "overline": "Kevin App",
-      "heading": "La présence, à votre rythme.",
-      "subheading": "Activez Kevin, planifiez vos routines hebdomadaires et gérez plusieurs appareils depuis une app simple, pensée pour votre tranquillité d'esprit.",
+      "overline": "App Kevin",
+      "heading": "Réglez. Oubliez.",
+      "subheading": "Horaires, géorepérage et plusieurs logements—une présence qui se gère seule, depuis une app.",
       "tile_1_title": "Plannings hebdomadaires",
       "tile_1_body": "Programmez matins, soirées, nuits, week-ends et vacances pour que votre maison suive un rythme crédible pendant votre absence.",
       "tile_2_title": "Activation géolocalisée",
@@ -412,7 +412,12 @@
       "phone_image_5_alt": "Kevin app location picker screen",
       "phone_5_caption": "Location — set where Kevin activates automatically",
       "phone_image_6_alt": "Kevin app device home screen",
-      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls"
+      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
+      "ui_status": "Maison · Protégée",
+      "ui_row_1": "18:30 — Sons de cuisine",
+      "ui_row_2": "19:45 — Soirée télé",
+      "ui_row_3": "21:10 — Aboiement à la sonnette",
+      "ui_row_4": "Mode absence — démarre quand vous partez"
     },
     "personas": {
       "overline": "Fait pour vous",
@@ -429,19 +434,20 @@
       "persona_3_quote": "« Nous utilisons Kevin là où la rue voit la pièce. Cela change toute la perception de l'extérieur. »"
     },
     "stats": {
-      "heading": "Conçu pour une dissuasion crédible.",
-      "stat_1_value": "3 ans",
-      "stat_1_label": "Garantie suisse sur chaque Kevin",
-      "stat_2_value": "70h+",
-      "stat_2_label": "Simulations intégrées",
-      "stat_3_value": "9W",
-      "stat_3_label": "Consommation typique",
+      "heading": "Crédible pendant des semaines, pas des minutes.",
+      "stat_1_value": "4+",
+      "stat_1_label": "Semaines de simulation sans répétition",
+      "stat_2_value": "9W",
+      "stat_2_label": "Consommation typique",
+      "stat_3_value": "60s",
+      "stat_3_label": "Du carton à la protection",
       "stat_4_value": "0",
       "stat_4_label": "Caméras ou micros",
       "badge_1": "Résiste au brouillage — lecture locale",
       "badge_2": "Swiss Engineered",
       "badge_3": "Sans abonnement de surveillance",
-      "badge_4": "Simulation sur l'appareil"
+      "badge_4": "Simulation sur l'appareil",
+      "ticker_items": "Sons de cuisine|Soirée télé|Aboiement|Douche|Aspirateur|Appel téléphonique|Devoirs|Dîner|Lecture du soir|Routine du matin"
     },
     "proof": {
       "heading": "Réaliste là où ça compte : de l'extérieur.",
@@ -476,6 +482,40 @@
     "faq": {
       "overline": "FAQ",
       "heading": "Vos questions, nos réponses."
+    },
+    "mechanism": {
+      "overline": "Comment ça marche",
+      "heading": "Lumière. Ombre. Son.",
+      "subheading": "Kevin joue une soirée habitée—scènes lumineuses brevetées, silhouettes en mouvement et vrais sons du quotidien—exactement là où regardent les passants.",
+      "phase_1_title": "La fenêtre se réchauffe",
+      "phase_1_body": "Une lumière chaude et changeante remplace la lueur morte d'une minuterie—les pièces semblent vécues, pas seulement éclairées.",
+      "phase_2_title": "Quelqu'un traverse la pièce",
+      "phase_2_body": "Des silhouettes projetées bougent comme des personnes, visibles à travers les rideaux, là où les cambrioleurs regardent en premier.",
+      "phase_3_title": "La maison parle",
+      "phase_3_body": "Cuisine, conversations, un chien qui entend la sonnette—le son complète l'histoire, depuis la mémoire locale."
+    },
+    "jammer": {
+      "overline": "Quand le Wi-Fi tombe",
+      "heading": "Les brouilleurs aveuglent les caméras. Kevin continue.",
+      "subheading": "Des brouilleurs bon marché coupent caméras et alarmes du réseau. Les simulations de Kevin tournent depuis la mémoire de l'appareil—pas de cloud, pas de signal, pas de faille.",
+      "col_1_title": "La caméra",
+      "col_1_body": "Les flux s'arrêtent, les alertes ne partent jamais. Une caméra brouillée ne protège personne—elle n'enregistre plus rien.",
+      "col_1_status": "Signal perdu",
+      "col_2_title": "Kevin",
+      "col_2_body": "Lumière, ombre et son continuent depuis la mémoire locale—la maison ne rate pas une mesure.",
+      "col_2_status": "Continue de jouer"
+    },
+    "authority": {
+      "overline": "Pourquoi faire confiance à Kevin",
+      "heading": "Né chez un assureur suisse.",
+      "subheading": "Mitipi a été fondée en 2018 comme spin-off de Helvetia Assurances—la prévention des cambriolages, conçue par ceux qui en évaluent le risque.",
+      "trust_1": "Spin-off de Helvetia · 2018",
+      "trust_2": "Conçu en Suisse",
+      "trust_3": "Simule personnes et chiens",
+      "quote": "Une solution tout-en-un inégalée, simple à utiliser, qui offre un spectacle véritablement spectaculaire.",
+      "quote_author": "Galaxus",
+      "quote_source": "Test Kevin.3, janvier 2026",
+      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
     }
   },
   "stats": {
@@ -538,7 +578,9 @@
     "q4": "Comment acheter Kevin ?",
     "a4": "Choisissez votre couleur sur la page de configuration, puis continuez vers le paiement Shopify sécurisé avec livraison gratuite en Europe et garantie suisse 3 ans.",
     "q5": "Kevin fonctionne-t-il si le Wi-Fi est brouillé ?",
-    "a5": "Oui. Les simulations essentielles sont lues depuis le stockage local de l'appareil. Kevin continue de projeter lumière, ombre et son, même lorsque des brouilleurs désactivent les caméras Wi-Fi et les alarmes."
+    "a5": "Oui. Les simulations essentielles sont lues depuis le stockage local de l'appareil. Kevin continue de projeter lumière, ombre et son, même lorsque des brouilleurs désactivent les caméras Wi-Fi et les alarmes.",
+    "q6": "La simulation est-elle vraiment convaincante ?",
+    "a6": "Le testeur indépendant Galaxus a qualifié Kevin.3 de « solution tout-en-un inégalée, simple à utiliser, qui offre un spectacle véritablement spectaculaire ». L'effet est le plus fort là où ça compte : de l'extérieur, à travers les rideaux, au crépuscule."
   },
   "errors": {
     "not_found_title": "Page introuvable",

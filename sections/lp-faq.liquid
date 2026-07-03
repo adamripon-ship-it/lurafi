@@ -33,7 +33,7 @@
           </details>
         {%- endfor -%}
       {%- else -%}
-        {%- for i in (1..5) -%}
+        {%- for i in (1..6) -%}
           {%- liquid
             assign q_key = 'faq.q' | append: i
             assign a_key = 'faq.a' | append: i
@@ -64,7 +64,7 @@
               }{% unless forloop.last %},{% endunless %}
             {%- endfor -%}
           {%- else -%}
-            {%- for i in (1..5) -%}
+            {%- for i in (1..6) -%}
               {%- liquid
                 assign q_key = 'faq.q' | append: i
                 assign a_key = 'faq.a' | append: i

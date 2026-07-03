@@ -1,156 +1,61 @@
 {%- liquid
-  assign phone_1 = section.settings.phone_image_1
-  assign phone_2 = section.settings.phone_image_2
-  assign phone_3 = section.settings.phone_image_3
-  assign phone_4 = section.settings.phone_image_4
-  assign phone_5 = section.settings.phone_image_5
-  assign phone_6 = section.settings.phone_image_6
-  assign phone_1_fallback = 'lurafi-app-simulation.jpg' | asset_url
-  assign phone_2_fallback = 'lurafi-app-schedule.jpg' | asset_url
-  assign phone_3_fallback = 'lurafi-app-edit-device.jpg' | asset_url
-  assign phone_4_fallback = 'lurafi-app-auto-activation.jpg' | asset_url
-  assign phone_5_fallback = 'lurafi-app-location.jpg' | asset_url
-  assign phone_6_fallback = 'lurafi-app-kevin-home.jpg' | asset_url
-  assign phone_1_alt = section.settings.phone_image_1_alt
-  if phone_1_alt == blank
-    assign phone_1_alt = 'home.app.phone_image_1_alt' | t
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.app.overline' | t
   endif
-  assign phone_2_alt = section.settings.phone_image_2_alt
-  if phone_2_alt == blank
-    assign phone_2_alt = 'home.app.phone_image_2_alt' | t
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.app.heading' | t
   endif
-  assign phone_3_alt = section.settings.phone_image_3_alt
-  if phone_3_alt == blank
-    assign phone_3_alt = 'home.app.phone_image_3_alt' | t
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'home.app.subheading' | t
   endif
-  assign phone_4_alt = section.settings.phone_image_4_alt
-  if phone_4_alt == blank
-    assign phone_4_alt = 'home.app.phone_image_4_alt' | t
+  assign ui_status = section.settings.ui_status
+  if ui_status == blank
+    assign ui_status = 'home.app.ui_status' | t
   endif
-  assign phone_5_alt = section.settings.phone_image_5_alt
-  if phone_5_alt == blank
-    assign phone_5_alt = 'home.app.phone_image_5_alt' | t
-  endif
-  assign phone_6_alt = section.settings.phone_image_6_alt
-  if phone_6_alt == blank
-    assign phone_6_alt = 'home.app.phone_image_6_alt' | t
-  endif
-  assign phone_1_caption = section.settings.phone_1_caption
-  if phone_1_caption == blank
-    assign phone_1_caption = 'home.app.phone_1_caption' | t
-  endif
-  assign phone_2_caption = section.settings.phone_2_caption
-  if phone_2_caption == blank
-    assign phone_2_caption = 'home.app.phone_2_caption' | t
-  endif
-  assign phone_3_caption = section.settings.phone_3_caption
-  if phone_3_caption == blank
-    assign phone_3_caption = 'home.app.phone_3_caption' | t
-  endif
-  assign phone_4_caption = section.settings.phone_4_caption
-  if phone_4_caption == blank
-    assign phone_4_caption = 'home.app.phone_4_caption' | t
-  endif
-  assign phone_5_caption = section.settings.phone_5_caption
-  if phone_5_caption == blank
-    assign phone_5_caption = 'home.app.phone_5_caption' | t
-  endif
-  assign phone_6_caption = section.settings.phone_6_caption
-  if phone_6_caption == blank
-    assign phone_6_caption = 'home.app.phone_6_caption' | t
-  endif
-  assign carousel_label = 'home.app.carousel_label' | t
-  assign animate = section.settings.enable_animations
 -%}
 
-<section
-  id="app"
-  class="section-apple lp-app bg-gray"
-  data-lp-app
-  {% if animate %}data-lp-app-animate{% endif %}
->
+<section id="app" class="section-apple lp-app bg-gray">
   <div class="lp-app__atmosphere" aria-hidden="true"></div>
   <div class="apple-container">
-    <header class="lp-app__header">
-      <p class="overline-blue">{%- if section.settings.overline != blank -%}{{ section.settings.overline }}{%- else -%}{{ 'home.app.overline' | t }}{%- endif -%}</p>
-      <h2 class="headline-section text-center lp-app__heading">
-        {%- if section.settings.heading != blank -%}{{ section.settings.heading }}{%- else -%}{{ 'home.app.heading' | t }}{%- endif -%}
-      </h2>
-      <p class="body-elevated text-muted text-center lp-app__subheading section-intro__subhead section-intro__subhead--narrow">
-        {%- if section.settings.subheading != blank -%}{{ section.settings.subheading }}{%- else -%}{{ 'home.app.subheading' | t }}{%- endif -%}
-      </p>
-    </header>
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading,
+      theme: 'dark',
+      subhead_narrow: true
+    %}
 
-    <div class="lp-app__showcase app-showcase">
-      <div
-        class="app-showcase__track app-showcase__track--multi"
-        data-lp-app-track
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="{{ carousel_label | escape }}"
-      >
-        {% render 'app-showcase-phone',
-          image: phone_6,
-          fallback_url: phone_6_fallback,
-          alt: phone_6_alt,
-          caption: phone_6_caption,
-          tilt_class: 'app-showcase__phone--left'
-        %}
-        {% render 'app-showcase-phone',
-          image: phone_1,
-          fallback_url: phone_1_fallback,
-          alt: phone_1_alt,
-          caption: phone_1_caption,
-          tilt_class: 'app-showcase__phone--center'
-        %}
-        {% render 'app-showcase-phone',
-          image: phone_2,
-          fallback_url: phone_2_fallback,
-          alt: phone_2_alt,
-          caption: phone_2_caption,
-          tilt_class: 'app-showcase__phone--center'
-        %}
-        {% render 'app-showcase-phone',
-          image: phone_3,
-          fallback_url: phone_3_fallback,
-          alt: phone_3_alt,
-          caption: phone_3_caption,
-          tilt_class: 'app-showcase__phone--center'
-        %}
-        {% render 'app-showcase-phone',
-          image: phone_4,
-          fallback_url: phone_4_fallback,
-          alt: phone_4_alt,
-          caption: phone_4_caption,
-          tilt_class: 'app-showcase__phone--center'
-        %}
-        {% render 'app-showcase-phone',
-          image: phone_5,
-          fallback_url: phone_5_fallback,
-          alt: phone_5_alt,
-          caption: phone_5_caption,
-          tilt_class: 'app-showcase__phone--center'
-        %}
-      </div>
-
-      <div class="app-showcase__controls" data-lp-app-controls hidden>
-        <button
-          type="button"
-          class="app-showcase__nav app-showcase__nav--prev"
-          data-lp-app-prev
-          aria-label="{{ 'accessibility.previous' | t | default: 'Previous' }}"
-        >
-          <span aria-hidden="true">‹</span>
-        </button>
-        <div class="app-showcase__dots" data-lp-app-dots role="tablist" aria-label="{{ carousel_label | escape }}"></div>
-        <button
-          type="button"
-          class="app-showcase__nav app-showcase__nav--next"
-          data-lp-app-next
-          aria-label="{{ 'accessibility.next' | t | default: 'Next' }}"
-        >
-          <span aria-hidden="true">›</span>
-        </button>
+    {%- comment -%}
+      Pure-CSS phone: typographic app UI, no screenshots. Rows are real,
+      translatable text; the frame and toggles are decoration.
+    {%- endcomment -%}
+    <div class="nf-phone-wrap">
+      <div class="nf-phone">
+        <span class="nf-phone__notch" aria-hidden="true"></span>
+        <div class="nf-phone__screen">
+          <p class="nf-phone__status">{{ ui_status | escape }}</p>
+          <ul class="nf-phone__rows" role="list">
+            {%- for i in (1..4) -%}
+              {%- liquid
+                assign row_key = 'ui_row_' | append: i
+                assign row_text = section.settings[row_key]
+                if row_text == blank
+                  assign row_locale_key = 'home.app.ui_row_' | append: i
+                  assign row_text = row_locale_key | t
+                endif
+              -%}
+              {%- if row_text != blank -%}
+                <li class="nf-phone__row">
+                  <span class="nf-phone__row-label">{{ row_text | escape }}</span>
+                  <span class="nf-phone__toggle{% if i < 4 %} nf-phone__toggle--on{% endif %}" aria-hidden="true"></span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -175,11 +80,9 @@
   </div>
 </section>
 
-<script src="{{ 'lp-app.js' | asset_url }}" defer></script>
-
 {% schema %}
 {
-  "name": "App showcase",
+  "name": "Kevin App",
   "settings": [
     {
       "type": "paragraph",
@@ -187,72 +90,29 @@
     },
     { "type": "text", "id": "overline", "label": "Overline" },
     { "type": "text", "id": "heading", "label": "Heading" },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading"
-    },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
     {
       "type": "header",
-      "content": "Motion"
+      "content": "Phone UI (typographic mockup)"
     },
-    {
-      "type": "checkbox",
-      "id": "enable_animations",
-      "label": "Enable scroll and float animations",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Phone mockups"
-    },
-    { "type": "image_picker", "id": "phone_image_1", "label": "Phone mockup 1", "info": "Default: lurafi-app-simulation.jpg" },
-    { "type": "text", "id": "phone_image_1_alt", "label": "Phone 1 alt text" },
-    { "type": "text", "id": "phone_1_caption", "label": "Phone 1 caption" },
-    { "type": "image_picker", "id": "phone_image_2", "label": "Phone mockup 2", "info": "Default: lurafi-app-schedule.jpg" },
-    { "type": "text", "id": "phone_image_2_alt", "label": "Phone 2 alt text" },
-    { "type": "text", "id": "phone_2_caption", "label": "Phone 2 caption" },
-    { "type": "image_picker", "id": "phone_image_3", "label": "Phone mockup 3", "info": "Default: lurafi-app-edit-device.jpg" },
-    { "type": "text", "id": "phone_image_3_alt", "label": "Phone 3 alt text" },
-    { "type": "text", "id": "phone_3_caption", "label": "Phone 3 caption" },
-    { "type": "image_picker", "id": "phone_image_4", "label": "Phone mockup 4", "info": "Default: lurafi-app-auto-activation.jpg" },
-    { "type": "text", "id": "phone_image_4_alt", "label": "Phone 4 alt text" },
-    { "type": "text", "id": "phone_4_caption", "label": "Phone 4 caption" },
-    { "type": "image_picker", "id": "phone_image_5", "label": "Phone mockup 5", "info": "Default: lurafi-app-location.jpg" },
-    { "type": "text", "id": "phone_image_5_alt", "label": "Phone 5 alt text" },
-    { "type": "text", "id": "phone_5_caption", "label": "Phone 5 caption" },
-    { "type": "image_picker", "id": "phone_image_6", "label": "Phone mockup 6", "info": "Default: lurafi-app-kevin-home.jpg" },
-    { "type": "text", "id": "phone_image_6_alt", "label": "Phone 6 alt text" },
-    { "type": "text", "id": "phone_6_caption", "label": "Phone 6 caption" },
+    { "type": "text", "id": "ui_status", "label": "Status line" },
+    { "type": "text", "id": "ui_row_1", "label": "UI row 1" },
+    { "type": "text", "id": "ui_row_2", "label": "UI row 2" },
+    { "type": "text", "id": "ui_row_3", "label": "UI row 3" },
+    { "type": "text", "id": "ui_row_4", "label": "UI row 4" },
     {
       "type": "header",
       "content": "Feature tiles"
     },
     { "type": "text", "id": "tile_1_title", "label": "Tile 1 title" },
-    {
-      "type": "textarea",
-      "id": "tile_1_body",
-      "label": "Tile 1 body"
-    },
+    { "type": "textarea", "id": "tile_1_body", "label": "Tile 1 body" },
     { "type": "text", "id": "tile_2_title", "label": "Tile 2 title" },
-    {
-      "type": "textarea",
-      "id": "tile_2_body",
-      "label": "Tile 2 body"
-    },
+    { "type": "textarea", "id": "tile_2_body", "label": "Tile 2 body" },
     { "type": "text", "id": "tile_3_title", "label": "Tile 3 title" },
-    {
-      "type": "textarea",
-      "id": "tile_3_body",
-      "label": "Tile 3 body"
-    },
+    { "type": "textarea", "id": "tile_3_body", "label": "Tile 3 body" },
     { "type": "text", "id": "tile_4_title", "label": "Tile 4 title" },
-    {
-      "type": "textarea",
-      "id": "tile_4_body",
-      "label": "Tile 4 body"
-    }
+    { "type": "textarea", "id": "tile_4_body", "label": "Tile 4 body" }
   ],
-  "presets": [{ "name": "App showcase" }]
+  "presets": [{ "name": "Kevin App" }]
 }
 {% endschema %}

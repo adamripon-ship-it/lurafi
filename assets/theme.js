@@ -91,7 +91,10 @@
     '.trust-badges > span',
     '.proof-summary-card',
     '.cta-row > *',
-    '.plan-card'
+    '.plan-card',
+    '.nf-phone',
+    '.nf-quote',
+    '.faq-item'
   ];
 
   function prepareSection(section) {

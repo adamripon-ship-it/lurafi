@@ -345,14 +345,14 @@
     },
     "problem": {
       "overline": "Problém",
-      "heading": "Prázdný dům láká.",
-      "subheading": "Většina bezpečnostních produktů reaguje až poté, co riziko začne. Kevin je stvořen pro okamžik předtím: kdy dům, byt nebo kancelář musí zvenku působit obydleně.",
-      "tile_1_title": "Alarmy reagují",
-      "tile_1_body": "Siréna se spustí až po vniknutí. Kevin přidá viditelnou přítomnost předem, takže vaše místo vypadá jako těžší cíl.",
-      "tile_2_title": "Kamery nahrávají",
-      "tile_2_body": "Záznam může pomoci později, ale tichou místnost neobydlí. Zloději stále počítají s rychlostí a vzdáleností.",
-      "tile_3_title": "Světla jsou předvídatelná",
-      "tile_3_body": "Časovače jen zapínají a vypínají lampy. Kevin vytváří proměnlivé stíny, televizní blikání a domácí zvuky, které působí přirozeněji."
+      "heading": "Zloději se rozhodují během vteřin.",
+      "subheading": "Z ulice se prázdný domov prozradí sám—tmavá okna, ticho, světlo jako podle hodinek. Kevin tyto signály odstraní.",
+      "tile_1_title": "Tma znamená pryč",
+      "tile_1_body": "Neosvětlené pokoje podvečer jsou nejhlasitější signál, jaký dům může vyslat.",
+      "tile_2_title": "Ticho to potvrdí",
+      "tile_2_body": "Žádné hlasy, žádná kuchyně, žádná televize—z chodníku snadno ověřitelné.",
+      "tile_3_title": "Časovače nikoho neoklamou",
+      "tile_3_body": "Stejná lampa ve stejný čas každý večer působí jako automat, ne jako život."
     },
     "solution": {
       "overline": "Metoda Kevin",
@@ -389,9 +389,9 @@
       "image_alt": "Kevin device"
     },
     "app": {
-      "overline": "Kevin App",
-      "heading": "Přítomnost podle vašeho plánu.",
-      "subheading": "Zapněte Kevin, naplánujte týdenní rutiny a spravujte více zařízení z jedné jednoduché aplikace pro klid na duši.",
+      "overline": "Aplikace Kevin",
+      "heading": "Nastavte. Zapomeňte.",
+      "subheading": "Rozvrhy, geofencing a více nemovitostí—přítomnost, která se řídí sama, z jedné aplikace.",
       "tile_1_title": "Týdenní plány",
       "tile_1_body": "Naplánujte rána, večery, noci, víkendy a svátky, aby váš domov držel věrohodný rytmus, když jste pryč.",
       "tile_2_title": "Aktivace podle polohy",
@@ -412,7 +412,12 @@
       "phone_image_5_alt": "Kevin app location picker screen",
       "phone_5_caption": "Location — set where Kevin activates automatically",
       "phone_image_6_alt": "Kevin app device home screen",
-      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls"
+      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
+      "ui_status": "Doma · Chráněno",
+      "ui_row_1": "18:30 — Zvuky kuchyně",
+      "ui_row_2": "19:45 — Televizní večer",
+      "ui_row_3": "21:10 — Štěkot při zvonku",
+      "ui_row_4": "Režim pryč — spustí se, když odejdete"
     },
     "personas": {
       "overline": "Pro vás",
@@ -429,19 +434,20 @@
       "persona_3_quote": "\"Kevin používáme tam, kde z ulice vidíte do místnosti. Zvenku to úplně mění dojem.\""
     },
     "stats": {
-      "heading": "Vytvořeno pro věrohodné odstrašení.",
-      "stat_1_value": "3 roky",
-      "stat_1_label": "Švýcarská záruka na každého Kevina",
-      "stat_2_value": "70h+",
-      "stat_2_label": "Vestavěné simulace",
-      "stat_3_value": "9W",
-      "stat_3_label": "Typická spotřeba",
+      "heading": "Uvěřitelné týdny, ne minuty.",
+      "stat_1_value": "4+",
+      "stat_1_label": "Týdnů simulace bez opakování",
+      "stat_2_value": "9W",
+      "stat_2_label": "Typická spotřeba energie",
+      "stat_3_value": "60s",
+      "stat_3_label": "Z krabice k ochraně",
       "stat_4_value": "0",
       "stat_4_label": "Kamer nebo mikrofonů",
       "badge_1": "Odolné proti rušičkám — lokální přehrávání",
       "badge_2": "Swiss Engineered",
       "badge_3": "Bez monitorovacího předplatného",
-      "badge_4": "Simulace na zařízení"
+      "badge_4": "Simulace na zařízení",
+      "ticker_items": "Zvuky kuchyně|Televizní večer|Štěkot psa|Sprcha|Vysávání|Telefonát|Domácí úkoly|Večeře|Večerní čtení|Ranní rutina"
     },
     "proof": {
       "heading": "Realistické tam, kde na tom záleží: zvenku.",
@@ -476,6 +482,40 @@
     "faq": {
       "overline": "FAQ",
       "heading": "Otázky a odpovědi."
+    },
+    "mechanism": {
+      "overline": "Jak to funguje",
+      "heading": "Světlo. Stín. Zvuk.",
+      "subheading": "Kevin přehrává obydlený večer—patentované světelné scény, pohybující se siluety a skutečné zvuky domácnosti—přesně tam, kam se kolemjdoucí dívají.",
+      "phase_1_title": "Okno se rozsvítí",
+      "phase_1_body": "Teplé, proměnlivé světlo nahradí mrtvý svit časovače—pokoje působí obývané, ne jen osvětlené.",
+      "phase_2_title": "Někdo projde pokojem",
+      "phase_2_body": "Promítané siluety se pohybují jako lidé—viditelné přes záclony, kam se zloději dívají nejdřív.",
+      "phase_3_title": "Domov promluví",
+      "phase_3_body": "Vaření, rozhovory, pes, který slyší zvonek—zvuk příběh dokončí, z lokálního úložiště."
+    },
+    "jammer": {
+      "overline": "Když vypadne Wi-Fi",
+      "heading": "Rušičky oslepí kamery. Kevin hraje dál.",
+      "subheading": "Levné rušičky odpojí kamery a aplikační alarmy od sítě. Kevinovy simulace běží z úložiště v zařízení—žádný cloud, žádný signál, žádná mezera.",
+      "col_1_title": "Kamera",
+      "col_1_body": "Streamy se zastaví, upozornění nikdy nedorazí. Rušená kamera nikoho nechrání—jen nic nenahrává.",
+      "col_1_status": "Signál ztracen",
+      "col_2_title": "Kevin",
+      "col_2_body": "Světlo, stín a zvuk pokračují z lokálního úložiště—domov nevynechá jediný takt.",
+      "col_2_status": "Hraje dál"
+    },
+    "authority": {
+      "overline": "Proč věřit Kevinovi",
+      "heading": "Zrozen u švýcarské pojišťovny.",
+      "subheading": "Mitipi vznikla v roce 2018 jako spin-off pojišťovny Helvetia—prevence vloupání od lidí, kteří toto riziko oceňují.",
+      "trust_1": "Spin-off Helvetia · 2018",
+      "trust_2": "Vyvinuto ve Švýcarsku",
+      "trust_3": "Simuluje lidi i psy",
+      "quote": "Bezkonkurenční, snadno použitelné řešení vše v jednom, které předvádí skutečně velkolepou show.",
+      "quote_author": "Galaxus",
+      "quote_source": "Recenze Kevin.3, leden 2026",
+      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
     }
   },
   "stats": {
@@ -538,7 +578,9 @@
     "q4": "Jak si koupím Kevin?",
     "a4": "Vyberte barvu na stránce konfigurace a pokračujte k bezpečné Shopify platbě s dopravou zdarma po Evropě a 3letou švýcarskou zárukou.",
     "q5": "Funguje Kevin, když je Wi-Fi rušeno?",
-    "a5": "Ano. Základní simulace běží z lokálního úložiště v zařízení. Kevin dál promítá světlo, stín a zvuk, i když zloději ruší Wi-Fi kamery a alarmy."
+    "a5": "Ano. Základní simulace běží z lokálního úložiště v zařízení. Kevin dál promítá světlo, stín a zvuk, i když zloději ruší Wi-Fi kamery a alarmy.",
+    "q6": "Je simulace opravdu přesvědčivá?",
+    "a6": "Nezávislý recenzent Galaxus označil Kevin.3 za „bezkonkurenční, snadno použitelné řešení vše v jednom, které předvádí skutečně velkolepou show.“ Efekt je nejsilnější tam, kde na tom záleží: zvenku, přes záclony, za soumraku."
   },
   "errors": {
     "not_found_title": "Stránka nenalezena",
