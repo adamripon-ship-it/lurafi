@@ -1,0 +1,79 @@
+{%- liquid
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.jammer.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.jammer.heading' | t
+  endif
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'home.jammer.subheading' | t
+  endif
+-%}
+
+<section class="section-apple nf-jammer">
+  <div class="apple-container">
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading,
+      theme: 'dark'
+    %}
+
+    <div class="tile-grid-2">
+      <div class="tile tile--dark nf-jammer__col nf-jammer__col--dead">
+        <div class="nf-signal" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h3 class="nf-jammer__title text-white">
+          {%- if section.settings.col_1_title != blank -%}{{ section.settings.col_1_title }}{%- else -%}{{ 'home.jammer.col_1_title' | t }}{%- endif -%}
+        </h3>
+        <p class="body-standard text-muted-dark">
+          {%- if section.settings.col_1_body != blank -%}{{ section.settings.col_1_body }}{%- else -%}{{ 'home.jammer.col_1_body' | t }}{%- endif -%}
+        </p>
+        <p class="nf-jammer__status nf-jammer__status--dead">
+          {%- if section.settings.col_1_status != blank -%}{{ section.settings.col_1_status }}{%- else -%}{{ 'home.jammer.col_1_status' | t }}{%- endif -%}
+        </p>
+      </div>
+
+      <div class="tile tile--dark nf-jammer__col nf-jammer__col--alive">
+        <div class="nf-soundbars nf-soundbars--inline" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h3 class="nf-jammer__title text-white">
+          {%- if section.settings.col_2_title != blank -%}{{ section.settings.col_2_title }}{%- else -%}{{ 'home.jammer.col_2_title' | t }}{%- endif -%}
+        </h3>
+        <p class="body-standard text-muted-dark">
+          {%- if section.settings.col_2_body != blank -%}{{ section.settings.col_2_body }}{%- else -%}{{ 'home.jammer.col_2_body' | t }}{%- endif -%}
+        </p>
+        <p class="nf-jammer__status nf-jammer__status--alive">
+          {%- if section.settings.col_2_status != blank -%}{{ section.settings.col_2_status }}{%- else -%}{{ 'home.jammer.col_2_status' | t }}{%- endif -%}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Jammer story",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language."
+    },
+    { "type": "text", "id": "overline", "label": "Overline" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    { "type": "text", "id": "col_1_title", "label": "Column 1 title (camera)" },
+    { "type": "textarea", "id": "col_1_body", "label": "Column 1 body" },
+    { "type": "text", "id": "col_1_status", "label": "Column 1 status label" },
+    { "type": "text", "id": "col_2_title", "label": "Column 2 title (Kevin)" },
+    { "type": "textarea", "id": "col_2_body", "label": "Column 2 body" },
+    { "type": "text", "id": "col_2_status", "label": "Column 2 status label" }
+  ],
+  "presets": [{ "name": "Jammer story" }]
+}
+{% endschema %}

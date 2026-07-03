@@ -1,4 +1,4 @@
-<section class="stats-section section-apple bg-white">
+<section id="product" class="stats-section section-apple bg-white">
   <div class="apple-container">
     {%- liquid
       assign stats_heading = section.settings.heading
@@ -18,6 +18,27 @@
       <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_3_value != blank -%}{{ section.settings.stat_3_value }}{%- else -%}{{ 'home.stats.stat_3_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_3_label != blank -%}{{ section.settings.stat_3_label }}{%- else -%}{{ 'home.stats.stat_3_label' | t }}{%- endif -%}</p></div>
       <div class="text-center"><p class="stat-item__value" data-countup>{%- if section.settings.stat_4_value != blank -%}{{ section.settings.stat_4_value }}{%- else -%}{{ 'home.stats.stat_4_value' | t }}{%- endif -%}</p><p class="stat-item__label">{%- if section.settings.stat_4_label != blank -%}{{ section.settings.stat_4_label }}{%- else -%}{{ 'home.stats.stat_4_label' | t }}{%- endif -%}</p></div>
     </div>
+    
+    <div class="nf-ticker">
+      {%- liquid
+        assign ticker_raw = section.settings.ticker_items
+        if ticker_raw == blank
+          assign ticker_raw = 'home.stats.ticker_items' | t
+        endif
+        assign ticker_items = ticker_raw | split: '|'
+      -%}
+      {%- if ticker_items.size > 0 -%}
+        <div class="nf-ticker__inner" aria-hidden="false">
+          <ul class="nf-ticker__list" role="list">
+            {%- for item in ticker_items -%}<li>{{ item | strip | escape }}</li>{%- endfor -%}
+          </ul>
+          <ul class="nf-ticker__list" aria-hidden="true">
+            {%- for item in ticker_items -%}<li>{{ item | strip | escape }}</li>{%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    </div>
+
     <div class="trust-badges">
       <span class="swiss-made-badge">
         <svg class="swiss-made-badge__icon" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">

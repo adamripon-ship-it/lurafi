@@ -1,0 +1,98 @@
+{%- liquid
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.mechanism.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.mechanism.heading' | t
+  endif
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'home.mechanism.subheading' | t
+  endif
+-%}
+
+<section id="how-it-works" class="section-apple nf-mech">
+  <div class="apple-container">
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading,
+      theme: 'dark'
+    %}
+  </div>
+
+  {%- comment -%}
+    Scroll-scrubbed stage: the CSS window motif performs the product story —
+    window warms, a silhouette crosses, sound bars pulse. One 0..1 timeline
+    drives every child (segments live inside the keyframes), fed either by
+    CSS animation-timeline: view() or by scroll-fx.js via --nf-progress.
+    Reduced motion / mobile get the designed static end-state.
+  {%- endcomment -%}
+  <div class="nf-mech__track" data-nf-scrub>
+    <div class="nf-mech__stage">
+      <div class="nf-mech__inner apple-container">
+        <div class="nf-window" aria-hidden="true">
+          <span class="nf-window__sky"></span>
+          <span class="nf-window__glow"></span>
+          <span class="nf-window__silhouette"></span>
+          <span class="nf-window__frame"></span>
+          <span class="nf-window__sill"></span>
+          <div class="nf-soundbars">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <ol class="nf-mech__phases">
+          <li class="nf-mech__phase nf-mech__phase--1">
+            <h3 class="nf-mech__phase-title text-white">
+              {%- if section.settings.phase_1_title != blank -%}{{ section.settings.phase_1_title }}{%- else -%}{{ 'home.mechanism.phase_1_title' | t }}{%- endif -%}
+            </h3>
+            <p class="body-standard text-muted-dark">
+              {%- if section.settings.phase_1_body != blank -%}{{ section.settings.phase_1_body }}{%- else -%}{{ 'home.mechanism.phase_1_body' | t }}{%- endif -%}
+            </p>
+          </li>
+          <li class="nf-mech__phase nf-mech__phase--2">
+            <h3 class="nf-mech__phase-title text-white">
+              {%- if section.settings.phase_2_title != blank -%}{{ section.settings.phase_2_title }}{%- else -%}{{ 'home.mechanism.phase_2_title' | t }}{%- endif -%}
+            </h3>
+            <p class="body-standard text-muted-dark">
+              {%- if section.settings.phase_2_body != blank -%}{{ section.settings.phase_2_body }}{%- else -%}{{ 'home.mechanism.phase_2_body' | t }}{%- endif -%}
+            </p>
+          </li>
+          <li class="nf-mech__phase nf-mech__phase--3">
+            <h3 class="nf-mech__phase-title text-white">
+              {%- if section.settings.phase_3_title != blank -%}{{ section.settings.phase_3_title }}{%- else -%}{{ 'home.mechanism.phase_3_title' | t }}{%- endif -%}
+            </h3>
+            <p class="body-standard text-muted-dark">
+              {%- if section.settings.phase_3_body != blank -%}{{ section.settings.phase_3_body }}{%- else -%}{{ 'home.mechanism.phase_3_body' | t }}{%- endif -%}
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mechanism",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language."
+    },
+    { "type": "text", "id": "overline", "label": "Overline" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    { "type": "text", "id": "phase_1_title", "label": "Phase 1 title (light)" },
+    { "type": "textarea", "id": "phase_1_body", "label": "Phase 1 body" },
+    { "type": "text", "id": "phase_2_title", "label": "Phase 2 title (shadow)" },
+    { "type": "textarea", "id": "phase_2_body", "label": "Phase 2 body" },
+    { "type": "text", "id": "phase_3_title", "label": "Phase 3 title (sound)" },
+    { "type": "textarea", "id": "phase_3_body", "label": "Phase 3 body" }
+  ],
+  "presets": [{ "name": "Mechanism" }]
+}
+{% endschema %}

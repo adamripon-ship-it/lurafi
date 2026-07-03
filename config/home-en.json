@@ -1,9 +1,4 @@
 {
-  "specs": {
-    "eyebrow": "Form meets function",
-    "heading": "Plug & play. 9 watts. 100% privacy.",
-    "image_alt": "Kevin® device — fabric front panel and top controls, studio product photo"
-  },
   "hero": {
     "eyebrow": "Smart. Secure. Swiss.",
     "headline": "Leave home knowing it still looks lived-in.",
@@ -30,65 +25,57 @@
   },
   "problem": {
     "overline": "The problem",
-    "heading": "When your home looks empty, you become a target.",
-    "subheading": "Burglars look for easy marks—dark windows, silent halls, predictable timers. 70% strike in daytime. They need five minutes. Wi-Fi jammers defeat cameras and alarms. Kevin® helps your home, flat, office, or shop look occupied from the outside—before anyone tests the door.",
-    "tile_1_title": "Five minutes is all it takes",
-    "tile_1_body": "Burglars can break in and out in minutes—often before sirens or monitoring respond. Kevin adds believable presence before anyone reaches the handle.",
-    "tile_2_title": "Wi-Fi jamming disables cameras",
-    "tile_2_body": "Burglars use jamming devices to disable Wi-Fi cameras and alarm systems. Kevin keeps simulating from local storage—even when the network goes down.",
-    "tile_3_title": "70% happen in daytime",
-    "tile_3_body": "Statistics show most burglaries happen during the day when homes look empty. Kevin varies light, shadow, and sound so your space reads as lived-in."
+    "heading": "Burglars choose in seconds.",
+    "subheading": "From the street, an empty home gives itself away—dark windows, silence, light that repeats like clockwork. Kevin removes the tells.",
+    "tile_1_title": "Dark means gone",
+    "tile_1_body": "Unlit rooms in the early evening are the loudest signal a home can send.",
+    "tile_2_title": "Silence confirms it",
+    "tile_2_body": "No voices, no kitchen, no TV—an easy check from the pavement.",
+    "tile_3_title": "Timers fool no one",
+    "tile_3_body": "The same lamp at the same time every night reads as automation, not life."
   },
-  "solution": {
-    "overline": "Your guide",
-    "heading": "Kevin® simulates people at home—so you can leave calmly.",
-    "subheading": "Swiss-engineered presence simulation: light scenarios, moving shadows, and everyday sounds—cleaning, cooking, conversations, playing. No cameras. No microphones. Works in homes, offices, shops, warehouses, and holiday properties.",
-    "pillar_1_title": "Light scenarios",
-    "pillar_1_body": "Warm, changing scenes make rooms look actively used—not simply lit. Kevin adapts rhythm for day and night deterrence.",
-    "pillar_2_title": "Moving shadows",
-    "pillar_2_body": "Projected silhouettes suggest one or more people inside. Visible through curtains—exactly where burglars look first.",
-    "pillar_3_title": "Everyday sounds",
-    "pillar_3_body": "70+ hours of built-in simulations plus your own uploads. AI-generated household sounds adapt to feel personal and less repetitive.",
-    "outside_image_alt": "European home at night — warm window light and moving shadow visible from the street",
-    "outside_caption": "What passers-by see: warm light and believable movement—not a dark, empty home.",
-    "image_alt": "Kevin® presence simulator — Swiss-engineered Kevin 3, studio product photo"
+  "mechanism": {
+    "overline": "How it works",
+    "heading": "Light. Shadow. Sound.",
+    "subheading": "Kevin performs a lived-in evening—patented light scenes, moving silhouettes, and real household sound—exactly where passers-by look.",
+    "phase_1_title": "The window warms",
+    "phase_1_body": "Warm, changing light replaces the dead glow of a timer—rooms read as used, not lit.",
+    "phase_2_title": "Someone crosses the room",
+    "phase_2_body": "Projected silhouettes move the way people do, visible through curtains where burglars check first.",
+    "phase_3_title": "The home speaks",
+    "phase_3_body": "Cooking, conversation, a dog that hears the doorbell—sound completes the story from local storage."
   },
-  "steps": {
-    "overline": "The plan",
-    "heading": "Plug in. Schedule. Leave with peace of mind.",
-    "subheading": "No installation, no wiring, no monitoring panel. Connect Kevin, set weekly schedules or geo-fencing in the app, and let believable presence run from local storage on the device.",
-    "step_1_title": "Plug & play",
-    "step_1_body": "Place Kevin near a visible window with a wall or ceiling for shadows. Connect power—typical use around 9 watts.",
-    "step_2_title": "Schedule or geo-fence",
-    "step_2_body": "Tell Kevin when to simulate presence—or let geo-fencing activate automatically the moment you leave, even for a short walk.",
-    "step_3_title": "Stay believable",
-    "step_3_body": "Light, shadow, and sound play from local storage—not streamed from the cloud. Jammer-resilient protection when Wi-Fi security fails.",
-    "stat_1_value": "9W",
-    "stat_1_label": "Typical power use",
-    "stat_2_value": "70+",
-    "stat_2_label": "Hours of simulations",
-    "stat_3_value": "100%",
-    "stat_3_label": "Privacy",
-    "stat_4_value": "60s",
-    "stat_4_label": "Setup time",
-    "image_alt": "Kevin® device — side profile product photo"
+  "stats": {
+    "heading": "Believable for weeks, not minutes.",
+    "stat_1_value": "4+",
+    "stat_1_label": "Weeks of simulations without repeating",
+    "stat_2_value": "9W",
+    "stat_2_label": "Typical energy use",
+    "stat_3_value": "60s",
+    "stat_3_label": "From box to protecting",
+    "stat_4_value": "0",
+    "stat_4_label": "Cameras or microphones",
+    "badge_1": "No monitoring subscription",
+    "badge_2": "Swiss engineered and designed",
+    "badge_3": "Jammer-proof local playback",
+    "badge_4": "Award-winning innovation",
+    "ticker_items": "Kitchen sounds|TV evening|Dog bark|Shower running|Vacuuming|Phone call|Homework|Dinner party|Night reading|Morning routine"
+  },
+  "jammer": {
+    "overline": "When Wi-Fi dies",
+    "heading": "Jammers blind cameras. Kevin keeps performing.",
+    "subheading": "Cheap jamming devices cut cameras and app alarms off the network. Kevin's simulations play from storage on the device—no cloud, no signal, no gap.",
+    "col_1_title": "The camera",
+    "col_1_body": "Streams stop, alerts never send. A jammed camera protects no one—it just records nothing.",
+    "col_1_status": "Signal lost",
+    "col_2_title": "Kevin",
+    "col_2_body": "Light, shadow, and sound continue from local storage—the house never skips a beat.",
+    "col_2_status": "Still playing"
   },
   "app": {
     "overline": "Kevin App",
-    "heading": "Protection that runs while you live your life.",
-    "subheading": "Activate instantly, schedule in advance, or let geo-fencing turn Kevin on when you leave. Manage multiple devices and properties from one app.",
-    "phone_image_6_alt": "Kevin app device home screen",
-    "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
-    "phone_image_1_alt": "Kevin app simulation settings screen",
-    "phone_1_caption": "Simulation — tune volume, night mode, and characteristics",
-    "phone_image_2_alt": "Kevin app scheduled simulation screen",
-    "phone_2_caption": "Schedule — set protection by day and hour",
-    "phone_image_3_alt": "Kevin app edit device screen",
-    "phone_3_caption": "Device — rename, customize, and manage firmware",
-    "phone_image_4_alt": "Kevin app enable auto-activation screen",
-    "phone_4_caption": "Geo-fencing — Kevin activates when you leave",
-    "phone_image_5_alt": "Kevin app location picker screen",
-    "phone_5_caption": "Location — set where Kevin activates automatically",
+    "heading": "Set it. Forget it.",
+    "subheading": "Schedules, geo-fencing, and multiple properties—presence that runs itself from one app.",
     "tile_1_title": "Set it and forget it",
     "tile_1_body": "Schedule simulations for weekends, holidays, or daily routines—protection that fits around your lifestyle.",
     "tile_2_title": "Geo-fencing",
@@ -97,50 +84,23 @@
     "tile_3_body": "Record or upload familiar home sounds. Kevin uses them—and AI-generated household audio—to create a more believable presence.",
     "tile_4_title": "Multiple properties",
     "tile_4_body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app.",
-    "carousel_label": "App screenshots"
+    "ui_status": "Home · Protected",
+    "ui_row_1": "18:30 — Kitchen sounds",
+    "ui_row_2": "19:45 — TV evening",
+    "ui_row_3": "21:10 — Dog bark on doorbell",
+    "ui_row_4": "Away mode — starts when you leave"
   },
-  "personas": {
-    "overline": "Built for your life",
-    "heading": "Who Kevin® is for.",
-    "subheading": "Whether you commute, walk the dog, head on holiday, manage multiple properties, or already own an alarm—Kevin® fits how you actually live.",
-    "persona_1_title": "Heading to work",
-    "persona_1_body": "Start your day with confidence. On your way to work, activate Kevin® via the app. While you are out, Kevin makes it look like you are still at home—so you can focus on your job, not your doorstep.",
-    "persona_1_quote": "\"I switch Kevin on from the app before I leave. The house feels occupied—not just lit.\"",
-    "persona_2_title": "Already have an alarm?",
-    "persona_2_body": "Alarms detect intrusions—Kevin® helps prevent them. Complement your existing system with realistic presence simulation so burglars think twice before approaching.",
-    "persona_2_quote": "\"Our alarm tells us if something happens. Kevin helps make the house look like the wrong target.\"",
-    "persona_3_title": "Multiple properties",
-    "persona_3_body": "Juggling several homes, a vacation rental, or business sites? Add a Kevin® to each location and manage them all in one app—believable occupancy day and night.",
-    "persona_3_quote": "\"Both flats look lived-in without asking neighbours for favours. One app, full coverage.\""
-  },
-  "stats": {
-    "heading": "Authority you can trust.",
-    "stat_1_value": "3-year",
-    "stat_1_label": "Swiss warranty on every Kevin",
-    "stat_2_value": "70+",
-    "stat_2_label": "Hours of built-in simulations",
-    "stat_3_value": "9W",
-    "stat_3_label": "Typical energy use",
-    "stat_4_value": "70%",
-    "stat_4_label": "Of burglaries happen in daytime",
-    "badge_1": "No monitoring subscription",
-    "badge_2": "Swiss engineered and designed",
-    "badge_3": "Jammer-proof local playback",
-    "badge_4": "Award-winning innovation"
-  },
-  "proof": {
-    "heading": "Success looks like a home that feels alive.",
-    "quote_1": "\"From the pavement, the light and movement make the room feel occupied. That is exactly what I wanted.\"",
-    "author_1_name": "Sarah M.",
-    "author_1_location": "Zurich, Switzerland",
-    "quote_2": "\"A friend thought someone was inside and rang the bell. Kevin did its job before anyone reached the door.\"",
-    "author_2_name": "Marc D.",
-    "author_2_location": "Lyon, France",
-    "quote_3": "\"The shadow effects are the part people notice. From the stairwell, the apartment does not feel empty.\"",
-    "author_3_name": "Thomas K.",
-    "author_3_location": "Munich, Germany",
-    "summary_eyebrow": "Designed around how burglars pick targets",
-    "summary_body": "Kevin is simple to place, private by design, and most convincing from the exact perspective that matters: outside the home."
+  "authority": {
+    "overline": "Why trust Kevin",
+    "heading": "Born inside a Swiss insurer.",
+    "subheading": "Mitipi was founded in 2018 as a spin-off of Helvetia Insurance—burglary prevention engineered by people who price its risk.",
+    "trust_1": "Helvetia Insurance spin-off · 2018",
+    "trust_2": "Engineered in Switzerland",
+    "trust_3": "Simulates people and dogs",
+    "quote": "An unrivalled, easy-to-use all-in-one solution that delivers a truly spectacular show.",
+    "quote_author": "Galaxus",
+    "quote_source": "Kevin.3 review, January 2026",
+    "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
   },
   "pricing": {
     "overline": "Own Kevin®",
@@ -151,14 +111,19 @@
     "buy_cta": "Get Kevin",
     "buy_features": "Full device ownership|70+ hours of built-in simulations|Weekly schedules and geo-fencing|Upload your own household sounds|Bluetooth speaker and lamp at home|Flexible placement with 3 m power cable|Free delivery|3-year Swiss warranty"
   },
+  "specs": {
+    "eyebrow": "Form meets function",
+    "heading": "Plug & play. 9 watts. 100% privacy.",
+    "image_alt": "Kevin® device — fabric front panel and top controls, studio product photo"
+  },
+  "faq": {
+    "overline": "FAQ",
+    "heading": "Questions, answered."
+  },
   "cta": {
     "heading": "Do not leave your home looking empty.",
     "subheading": "Let Kevin® become your virtual roommate—making your home feel alive while you are away. Free delivery across Europe. Plug and play. 9 watts. No cameras or microphones.",
     "primary_cta": "Get Kevin",
     "secondary_cta": "How it works"
-  },
-  "faq": {
-    "overline": "FAQ",
-    "heading": "Questions, answered."
   }
 }

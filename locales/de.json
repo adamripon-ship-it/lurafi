@@ -345,14 +345,14 @@
     },
     "problem": {
       "overline": "Das Problem",
-      "heading": "Leer ist eine Einladung.",
-      "subheading": "Die meisten Sicherheitsprodukte reagieren, wenn das Risiko bereits begonnen hat. Kevin ist für den Moment davor gemacht: wenn Haus, Wohnung oder Büro von außen bewohnt wirken sollen.",
-      "tile_1_title": "Alarme reagieren",
-      "tile_1_body": "Eine Sirene startet nach dem Eindringen. Kevin fügt vorher sichtbare Anwesenheit hinzu, damit Ihr Zuhause das schwierigere Ziel wirkt.",
-      "tile_2_title": "Kameras zeichnen auf",
-      "tile_2_body": "Aufnahmen können später helfen, machen einen stillen Raum aber nicht bewohnt. Einbrecher setzen weiter auf Schnelligkeit und Distanz.",
-      "tile_3_title": "Licht ist vorhersehbar",
-      "tile_3_body": "Timer schalten Lampen an und aus. Kevin erzeugt wechselnde Schatten, TV-ähnliches Flimmern und Haushaltsgeräusche, die natürlicher wirken."
+      "heading": "Einbrecher entscheiden in Sekunden.",
+      "subheading": "Von der Straße aus verrät sich ein leeres Zuhause selbst—dunkle Fenster, Stille, Licht im Uhrwerk-Takt. Kevin nimmt diese Signale weg.",
+      "tile_1_title": "Dunkel heißt weg",
+      "tile_1_body": "Unbeleuchtete Räume am frühen Abend sind das lauteste Signal, das ein Haus senden kann.",
+      "tile_2_title": "Stille bestätigt es",
+      "tile_2_body": "Keine Stimmen, keine Küche, kein Fernseher—vom Gehweg aus schnell geprüft.",
+      "tile_3_title": "Zeitschaltuhren täuschen niemanden",
+      "tile_3_body": "Dieselbe Lampe zur selben Zeit, jeden Abend: Das wirkt wie Automatik, nicht wie Leben."
     },
     "solution": {
       "overline": "Die Kevin-Methode",
@@ -390,8 +390,8 @@
     },
     "app": {
       "overline": "Kevin App",
-      "heading": "Anwesenheit nach Ihrem Zeitplan.",
-      "subheading": "Kevin einschalten, Wochenroutinen planen und mehrere Geräte über eine einfache App verwalten—für Ihre Ruhe und Sicherheit.",
+      "heading": "Einrichten. Vergessen.",
+      "subheading": "Zeitpläne, Geofencing und mehrere Objekte—Anwesenheit, die sich selbst steuert, aus einer App.",
       "tile_1_title": "Wochenpläne",
       "tile_1_body": "Planen Sie Morgen, Abend, Nacht, Wochenenden und Ferien, damit Ihr Zuhause einen glaubwürdigen Rhythmus folgt, während Sie weg sind.",
       "tile_2_title": "Geo-basierte Aktivierung",
@@ -412,7 +412,12 @@
       "phone_image_5_alt": "Kevin app location picker screen",
       "phone_5_caption": "Location — set where Kevin activates automatically",
       "phone_image_6_alt": "Kevin app device home screen",
-      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls"
+      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
+      "ui_status": "Zuhause · Geschützt",
+      "ui_row_1": "18:30 — Küchengeräusche",
+      "ui_row_2": "19:45 — Fernsehabend",
+      "ui_row_3": "21:10 — Hundegebell bei Türklingel",
+      "ui_row_4": "Abwesend-Modus — startet, wenn Sie gehen"
     },
     "personas": {
       "overline": "Für Sie gemacht",
@@ -429,19 +434,20 @@
       "persona_3_quote": "„Wir nutzen Kevin dort, wo die Straße den Raum sehen kann. Das verändert das ganze Gefühl von außen.“"
     },
     "stats": {
-      "heading": "Für glaubwürdige Abschreckung gebaut.",
-      "stat_1_value": "3 Jahre",
-      "stat_1_label": "Schweizer Garantie auf jeden Kevin",
-      "stat_2_value": "70h+",
-      "stat_2_label": "Integrierte Simulationen",
-      "stat_3_value": "9W",
-      "stat_3_label": "Typischer Energieverbrauch",
+      "heading": "Wochenlang glaubwürdig, nicht minutenlang.",
+      "stat_1_value": "4+",
+      "stat_1_label": "Wochen Simulation ohne Wiederholung",
+      "stat_2_value": "9W",
+      "stat_2_label": "Typischer Stromverbrauch",
+      "stat_3_value": "60s",
+      "stat_3_label": "Vom Karton zum Schutz",
       "stat_4_value": "0",
       "stat_4_label": "Kameras oder Mikrofone",
       "badge_1": "Störsender-resistent — lokale Wiedergabe",
       "badge_2": "Swiss Engineered",
       "badge_3": "Kein Überwachungsabo",
-      "badge_4": "Simulation auf dem Gerät"
+      "badge_4": "Simulation auf dem Gerät",
+      "ticker_items": "Küchengeräusche|Fernsehabend|Hundegebell|Dusche läuft|Staubsaugen|Telefonat|Hausaufgaben|Abendessen|Lesen am Abend|Morgenroutine"
     },
     "proof": {
       "heading": "Realistisch, wo es zählt: von außen.",
@@ -476,6 +482,40 @@
     "faq": {
       "overline": "FAQ",
       "heading": "Fragen und Antworten."
+    },
+    "mechanism": {
+      "overline": "So funktioniert es",
+      "heading": "Licht. Schatten. Klang.",
+      "subheading": "Kevin spielt einen bewohnten Abend—patentierte Lichtszenen, wandernde Silhouetten und echte Haushaltsgeräusche—genau dort, wo Passanten hinsehen.",
+      "phase_1_title": "Das Fenster wird warm",
+      "phase_1_body": "Warmes, wechselndes Licht ersetzt das tote Leuchten einer Zeitschaltuhr—Räume wirken genutzt, nicht nur beleuchtet.",
+      "phase_2_title": "Jemand geht durchs Zimmer",
+      "phase_2_body": "Projizierte Silhouetten bewegen sich wie Menschen—sichtbar durch Vorhänge, wo Einbrecher zuerst hinschauen.",
+      "phase_3_title": "Das Zuhause spricht",
+      "phase_3_body": "Kochen, Gespräche, ein Hund, der die Türklingel hört—Klang vervollständigt die Geschichte, direkt vom lokalen Speicher."
+    },
+    "jammer": {
+      "overline": "Wenn WLAN ausfällt",
+      "heading": "Jammer blenden Kameras. Kevin spielt weiter.",
+      "subheading": "Billige Störsender trennen Kameras und App-Alarme vom Netz. Kevins Simulationen laufen vom Speicher auf dem Gerät—keine Cloud, kein Signal, keine Lücke.",
+      "col_1_title": "Die Kamera",
+      "col_1_body": "Streams stoppen, Meldungen kommen nie an. Eine gestörte Kamera schützt niemanden—sie nimmt nur nichts mehr auf.",
+      "col_1_status": "Signal verloren",
+      "col_2_title": "Kevin",
+      "col_2_body": "Licht, Schatten und Klang laufen vom lokalen Speicher weiter—das Zuhause verpasst keinen Takt.",
+      "col_2_status": "Spielt weiter"
+    },
+    "authority": {
+      "overline": "Warum Kevin vertrauen",
+      "heading": "Geboren bei einem Schweizer Versicherer.",
+      "subheading": "Mitipi wurde 2018 als Spin-off der Helvetia Versicherung gegründet—Einbruchprävention, entwickelt von Menschen, die dieses Risiko beziffern.",
+      "trust_1": "Helvetia-Spin-off · 2018",
+      "trust_2": "Entwickelt in der Schweiz",
+      "trust_3": "Simuliert Menschen und Hunde",
+      "quote": "Eine unerreichte, einfach zu bedienende All-in-One-Lösung, die eine wahrhaft spektakuläre Show liefert.",
+      "quote_author": "Galaxus",
+      "quote_source": "Kevin.3-Test, Januar 2026",
+      "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
     }
   },
   "stats": {
@@ -538,7 +578,9 @@
     "q4": "Wie kaufe ich Kevin?",
     "a4": "Wählen Sie Ihre Farbe auf der Konfigurationsseite und fahren Sie mit dem sicheren Shopify-Checkout fort – kostenlose Lieferung in Europa und 3 Jahre Schweizer Garantie.",
     "q5": "Funktioniert Kevin, wenn Wi-Fi gejammt wird?",
-    "a5": "Ja. Kernsimulationen werden lokal auf dem Gerät abgespielt. Kevin projiziert weiterhin Licht, Schatten und Ton—auch wenn Einbrecher Wi-Fi-Kameras und Alarmanlagen stören."
+    "a5": "Ja. Kernsimulationen werden lokal auf dem Gerät abgespielt. Kevin projiziert weiterhin Licht, Schatten und Ton—auch wenn Einbrecher Wi-Fi-Kameras und Alarmanlagen stören.",
+    "q6": "Ist die Simulation wirklich überzeugend?",
+    "a6": "Der unabhängige Tester Galaxus nannte Kevin.3 „eine unerreichte, einfach zu bedienende All-in-One-Lösung, die eine wahrhaft spektakuläre Show liefert.“ Am stärksten wirkt der Effekt dort, wo es zählt: von außen, durch Vorhänge, in der Dämmerung."
   },
   "errors": {
     "not_found_title": "Seite nicht gefunden",

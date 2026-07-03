@@ -24,13 +24,7 @@
 
     <div class="problem-bento">
       <article class="problem-bento__lead tile tile--gray">
-        <div class="feature-tile__media">
-          {%- if section.settings.tile_1_image -%}
-            <img src="{{ section.settings.tile_1_image | image_url: width: 800 }}" alt="" loading="lazy" decoding="async" width="800" height="480">
-          {%- else -%}
-            <img src="{{ 'kevin-feature-problem-alarms.jpg' | asset_url }}" alt="{{ 'home.problem.tile_1_title' | t | escape }}" loading="lazy" decoding="async" width="800" height="480">
-          {%- endif -%}
-        </div>
+        <div class="nf-glyph nf-glyph--window" aria-hidden="true"><span></span></div>
         <h3 class="problem-bento__title headline-tile">
           {%- if section.settings.tile_1_title != blank -%}{{ section.settings.tile_1_title }}{%- else -%}{{ 'home.problem.tile_1_title' | t }}{%- endif -%}
         </h3>
@@ -40,13 +34,7 @@
       </article>
 
       <article class="problem-bento__tile tile tile--gray">
-        <div class="feature-tile__media">
-          {%- if section.settings.tile_2_image -%}
-            <img src="{{ section.settings.tile_2_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
-          {%- else -%}
-            <img src="{{ 'kevin-feature-problem-cameras.jpg' | asset_url }}" alt="{{ 'home.problem.tile_2_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
-          {%- endif -%}
-        </div>
+        <div class="nf-glyph nf-glyph--silence" aria-hidden="true"><span></span></div>
         <h3 class="problem-bento__title headline-tile">
           {%- if section.settings.tile_2_title != blank -%}{{ section.settings.tile_2_title }}{%- else -%}{{ 'home.problem.tile_2_title' | t }}{%- endif -%}
         </h3>
@@ -56,13 +44,7 @@
       </article>
 
       <article class="problem-bento__tile tile tile--gray">
-        <div class="feature-tile__media">
-          {%- if section.settings.tile_3_image -%}
-            <img src="{{ section.settings.tile_3_image | image_url: width: 640 }}" alt="" loading="lazy" decoding="async" width="640" height="480">
-          {%- else -%}
-            <img src="{{ 'kevin-feature-problem-lights.jpg' | asset_url }}" alt="{{ 'home.problem.tile_3_title' | t | escape }}" loading="lazy" decoding="async" width="640" height="480">
-          {%- endif -%}
-        </div>
+        <div class="nf-glyph nf-glyph--timer" aria-hidden="true"><span></span></div>
         <h3 class="problem-bento__title headline-tile">
           {%- if section.settings.tile_3_title != blank -%}{{ section.settings.tile_3_title }}{%- else -%}{{ 'home.problem.tile_3_title' | t }}{%- endif -%}
         </h3>
@@ -87,10 +69,8 @@
     { "type": "textarea", "id": "subheading", "label": "Subheading" },
     { "type": "text", "id": "tile_1_title", "label": "Tile 1 title" },
     { "type": "textarea", "id": "tile_1_body", "label": "Tile 1 body" },
-    { "type": "image_picker", "id": "tile_1_image", "label": "Tile 1 image", "info": "Default: kevin-feature-problem-alarms.jpg" },
     { "type": "text", "id": "tile_2_title", "label": "Tile 2 title" },
     { "type": "textarea", "id": "tile_2_body", "label": "Tile 2 body" },
-    { "type": "image_picker", "id": "tile_2_image", "label": "Tile 2 image", "info": "Default: kevin-feature-problem-cameras.jpg" },
     { "type": "text", "id": "tile_3_title", "label": "Tile 3 title" },
     { "type": "textarea", "id": "tile_3_body", "label": "Tile 3 body" },
     { "type": "image_picker", "id": "tile_3_image", "label": "Tile 3 image", "info": "Default: kevin-feature-problem-lights.jpg" }

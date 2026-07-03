@@ -1,0 +1,123 @@
+{%- liquid
+  assign overline = section.settings.overline
+  if overline == blank
+    assign overline = 'home.authority.overline' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'home.authority.heading' | t
+  endif
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'home.authority.subheading' | t
+  endif
+
+  comment
+    CMS v2: testimonial metaobject entries take over the quote slot when
+    present (Admin → Content → Metaobjects → Testimonial). Built-in
+    fallback is the attributed Galaxus review verdict — sourced quotes
+    only, never invented ratings (editorial policy).
+  endcomment
+  assign testimonial_entries = shop.metaobjects.testimonial.values
+-%}
+
+<section id="proof" class="section-apple nf-authority">
+  <div class="apple-container">
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading,
+      theme: 'dark'
+    %}
+
+    <div class="trust-badges" role="list">
+      <span class="swiss-made-badge" role="listitem">
+        <svg class="swiss-made-badge__icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect width="20" height="20" rx="4" fill="#e11d2e"/>
+          <path d="M8.4 4h3.2v4.4H16v3.2h-4.4V16H8.4v-4.4H4V8.4h4.4z" fill="#fff"/>
+        </svg>
+        {%- if section.settings.trust_2 != blank -%}{{ section.settings.trust_2 }}{%- else -%}{{ 'home.authority.trust_2' | t }}{%- endif -%}
+      </span>
+      <span class="trust-badges__item" role="listitem">
+        {%- if section.settings.trust_1 != blank -%}{{ section.settings.trust_1 }}{%- else -%}{{ 'home.authority.trust_1' | t }}{%- endif -%}
+      </span>
+      <span class="trust-badges__item" role="listitem">
+        {%- if section.settings.trust_3 != blank -%}{{ section.settings.trust_3 }}{%- else -%}{{ 'home.authority.trust_3' | t }}{%- endif -%}
+      </span>
+    </div>
+
+    {%- if testimonial_entries and testimonial_entries.size > 0 -%}
+      <div class="nf-authority__quotes">
+        {%- for entry in testimonial_entries -%}
+          {%- liquid
+            assign card_class = 'proof-quote-card tile tile--white nf-quote'
+            if forloop.first
+              assign card_class = card_class | append: ' proof-quote-card--featured'
+            endif
+          -%}
+          {% render 'proof-quote-card',
+            quote: entry.quote.value,
+            author_name: entry.author.value,
+            author_location: entry.location.value,
+            card_class: card_class
+          %}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      {%- liquid
+        assign quote_text = section.settings.quote
+        if quote_text == blank
+          assign quote_text = 'home.authority.quote' | t
+        endif
+        assign quote_author = section.settings.quote_author
+        if quote_author == blank
+          assign quote_author = 'home.authority.quote_author' | t
+        endif
+        assign quote_source = section.settings.quote_source
+        if quote_source == blank
+          assign quote_source = 'home.authority.quote_source' | t
+        endif
+        assign quote_url = section.settings.quote_url
+      -%}
+      <figure class="nf-quote proof-summary-card">
+        <blockquote class="nf-quote__text">
+          &ldquo;{{ quote_text }}&rdquo;
+        </blockquote>
+        <figcaption class="nf-quote__attribution">
+          <span class="nf-quote__author">{{ quote_author }}</span>
+          {%- if quote_source != blank -%}
+            <span class="nf-quote__source">
+              &middot;
+              {%- if quote_url != blank %} <a href="{{ quote_url }}" rel="noopener" target="_blank">{{ quote_source }}</a>
+              {%- else %} {{ quote_source }}
+              {%- endif -%}
+            </span>
+          {%- endif -%}
+        </figcaption>
+      </figure>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Authority",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Switch language at the top of the editor before editing text. Blank fields keep the built-in translation for that language. Testimonial metaobjects (Content → Metaobjects) replace the built-in quote when present. Editorial policy: sourced quotes only — no invented ratings or badges."
+    },
+    { "type": "text", "id": "overline", "label": "Overline" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    { "type": "text", "id": "trust_1", "label": "Trust item 1 (origin)" },
+    { "type": "text", "id": "trust_2", "label": "Trust item 2 (Swiss badge)" },
+    { "type": "text", "id": "trust_3", "label": "Trust item 3" },
+    { "type": "textarea", "id": "quote", "label": "Quote (fallback when no testimonial metaobjects)" },
+    { "type": "text", "id": "quote_author", "label": "Quote author" },
+    { "type": "text", "id": "quote_source", "label": "Quote source" },
+    { "type": "url", "id": "quote_url", "label": "Quote source URL" }
+  ],
+  "presets": [{ "name": "Authority" }]
+}
+{% endschema %}

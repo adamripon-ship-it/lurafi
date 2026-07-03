@@ -51,25 +51,36 @@ test.describe('mitipi.eu hero banner QA', () => {
     expect(filteredErrors, `console errors: ${filteredErrors.join('; ')}`).toEqual([]);
   });
 
-  test('solution outside-view split layout', async ({ page }) => {
+  test('mechanism scroll-stage renders the window motif', async ({ page }) => {
     await page.goto('/?qa=hero#how-it-works', { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await page.locator('.solution-split').waitFor({ state: 'visible', timeout: 15000 });
+    await page.locator('.nf-mech').waitFor({ state: 'attached', timeout: 15000 });
 
-    await expect(page.locator('.solution-split__visual img')).toBeVisible();
-    await expect(page.locator('.solution-split__caption')).toContainText(/passers-by|warm light/i);
-    await expect(page.locator('.solution-pillar')).toHaveCount(3);
+    await expect(page.locator('.nf-window')).toHaveCount(1);
+    await expect(page.locator('.nf-window__silhouette')).toHaveCount(1);
+    await expect(page.locator('.nf-mech .nf-soundbars')).toHaveCount(1);
+    await expect(page.locator('.nf-mech__phase')).toHaveCount(3);
   });
 
-  test('landing page layout variants render', async ({ page }) => {
+  test('nightfall narrative sections render image-free', async ({ page }) => {
     await page.goto('/?qa=hero', { waitUntil: 'domcontentloaded', timeout: 60000 });
 
+    // Section presence + anchors
     await expect(page.locator('.problem-bento')).toHaveCount(1);
-    await expect(page.locator('.steps-layout')).toHaveCount(1);
-    await expect(page.locator('.steps-timeline__item')).toHaveCount(3);
-    await expect(page.locator('.proof-featured')).toHaveCount(1);
-    await expect(page.locator('.lp-specs-split')).toHaveCount(1);
+    await expect(page.locator('.nf-glyph')).toHaveCount(3);
+    await expect(page.locator('#product .nf-ticker')).toHaveCount(1);
+    await expect(page.locator('.nf-jammer__col')).toHaveCount(2);
+    await expect(page.locator('.nf-phone')).toHaveCount(1);
+    await expect(page.locator('#proof .trust-badges')).toHaveCount(1);
+    await expect(page.locator('.nf-quote')).toHaveCount(1);
+    await expect(page.locator('.lp-specs-full')).toHaveCount(1);
     await expect(page.locator('#faq')).toHaveCount(1);
-    expect(await page.locator('.faq-item').count()).toBeGreaterThanOrEqual(4);
+    expect(await page.locator('.faq-item').count()).toBeGreaterThanOrEqual(5);
+    for (const anchor of ['#problem', '#how-it-works', '#product', '#app', '#pricing']) {
+      await expect(page.locator(anchor)).toHaveCount(1);
+    }
+
+    // The image-free guarantee: the hero product photo is the ONLY image in main content.
+    expect(await page.locator('#MainContent img').count()).toBeLessThanOrEqual(1);
   });
 
   test('nightfall dark theme scoped to homepage only', async ({ page }) => {
