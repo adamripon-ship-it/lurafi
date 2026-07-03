@@ -473,12 +473,12 @@ const nlHome = {
   },
   stats: {
     heading: 'Weken geloofwaardig, geen minuten.',
-    stat_1_value: '4+',
-    stat_1_label: 'Weken simulatie zonder herhaling',
-    stat_2_value: '9W',
-    stat_2_label: 'Typisch stroomverbruik',
-    stat_3_value: '60s',
-    stat_3_label: 'Van doos naar bescherming',
+    stat_1_value: '20%',
+    stat_1_label: 'Lagere woonverzekering bij sommige verzekeraars',
+    stat_2_value: '70+',
+    stat_2_label: 'Uur unieke, afwisselende simulaties',
+    stat_3_value: '9W',
+    stat_3_label: 'Laag energieverbruik',
     stat_4_value: '0',
     stat_4_label: "Camera's of microfoons",
     ticker_items:
