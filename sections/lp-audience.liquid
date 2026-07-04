@@ -15,11 +15,15 @@
   if chips_raw == blank
     assign chips_raw = 'home.audience.chips' | t
   endif
+  # Shopify-stored copy can arrive pre-encoded; decode before the | escape
+  # at render so entities never double-encode into visible &#39; / &amp;.
+  assign chips_raw = chips_raw | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
   assign chips = chips_raw | split: '|'
   assign story = section.settings.story
   if story == blank
     assign story = 'home.audience.story' | t
   endif
+  assign story = story | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
 -%}
 
 <section id="personas" class="section-apple nf-audience">
@@ -38,7 +42,7 @@
     </ul>
 
     {%- if story != blank -%}
-      <p class="nf-audience__story">{{ story }}</p>
+      <p class="nf-audience__story">{{ story | escape }}</p>
     {%- endif -%}
   </div>
 </section>

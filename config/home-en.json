@@ -65,7 +65,7 @@
   "jammer": {
     "overline": "When Wi-Fi dies",
     "heading": "Jammers blind cameras. Kevin keeps performing.",
-    "subheading": "Cheap jamming devices cut cameras and app alarms off the network. Kevin's simulations play from storage on the device—no cloud, no signal, no gap.",
+    "subheading": "Cheap jamming devices cut cameras and app alarms off the network. Kevin plays every simulation from on-device storage—no cloud, no signal, no gap.",
     "col_1_title": "The camera",
     "col_1_body": "Streams stop, alerts never send. A jammed camera protects no one—it just records nothing.",
     "col_1_status": "Signal lost",
@@ -110,10 +110,10 @@
     "quote_url": "https://www.galaxus.ch/en/page/swiss-burglar-deterrent-kevin-third-generation-review-41109"
   },
   "audience": {
-    "overline": "Who it's for",
+    "overline": "Who Kevin protects",
     "heading": "Every home is sometimes empty.",
     "subheading": "Kevin moves in wherever life moves out—for an evening, a season, or a semester.",
-    "chips": "Families on holiday|Frequent business travellers|Expats abroad|Living alone|First flat in a new city|Single mothers|Retired couples & widows|Second homes & cabins|Boats & yachts|Offices, shops & embassies",
+    "chips": "Families on holiday|Frequent business travellers|Expats abroad|Living alone|First flat in a new city|Single mothers|Retired couples and widows|Second homes and cabins|Boats and yachts|Offices, shops and embassies",
     "story": "Her first studio, a new city, 400 km from home. Kevin fills it with voices, light, and a dog that hears the doorbell—so it never feels, or sounds, like she lives alone."
   },
   "pricing": {
@@ -127,7 +127,7 @@
   },
   "specs": {
     "eyebrow": "Form meets function",
-    "heading": "Plug & play. 9 watts. 100% privacy.",
+    "heading": "Plug and play. 9 watts. 100% privacy.",
     "image_alt": "Kevin® device — fabric front panel and top controls, studio product photo"
   },
   "faq": {
