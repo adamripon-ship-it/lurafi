@@ -14,12 +14,12 @@
 -%}
 <ul class="hero-banner__trust" role="list">
   {%- if trust_1 != blank -%}
-    <li class="hero-banner__trust-item">{{ trust_1 | escape }}</li>
+    <li class="hero-banner__trust-item"><span class="hero-banner__trust-label">{{ trust_1 | escape }}</span></li>
   {%- endif -%}
   {%- if trust_2 != blank -%}
-    <li class="hero-banner__trust-item">{{ trust_2 | escape }}</li>
+    <li class="hero-banner__trust-item"><span class="hero-banner__trust-label">{{ trust_2 | escape }}</span></li>
   {%- endif -%}
   {%- if trust_3 != blank -%}
-    <li class="hero-banner__trust-item">{{ trust_3 | escape }}</li>
+    <li class="hero-banner__trust-item"><span class="hero-banner__trust-label">{{ trust_3 | escape }}</span></li>
   {%- endif -%}
 </ul>
