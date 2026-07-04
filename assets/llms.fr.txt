@@ -1,4 +1,4 @@
-# Lurafi / Kevin (FR)
+# Mitipi / Kevin (FR)
 
 > Kevin fait paraître votre maison habitée par la lumière, l'ombre et le son lorsque vous êtes absent.
 
@@ -11,7 +11,7 @@
 - LLM overview page: https://mitipi.eu/fr/pages/apercu-ia
 
 
-Lurafi vend Kevin, un simulateur de présence suisse pour la sécurité domestique.
+Mitipi vend Kevin, un simulateur de présence suisse pour la sécurité domestique.
 
 Key facts:
 - Product: Kevin
@@ -26,4 +26,4 @@ Important URLs:
 - Configure / buy: https://mitipi.eu/fr/pages/configurer-kevin?plan=buy
 
 Contact:
-- Email: hello@lurafi.com
+- Email: hello@mitipi.eu

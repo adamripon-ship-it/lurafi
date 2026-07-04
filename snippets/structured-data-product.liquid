@@ -16,7 +16,7 @@
   "name": {{ p.title | json }},
   "description": {{ p.description | strip_html | truncatewords: 50 | json }},
   "image": [{{ p.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}],
-  "brand": { "@type": "Brand", "name": "Kevin" },
+  "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
   "sku": {{ v.sku | default: p.handle | json }},
   "url": {{ shop.url | append: p.url | json }},
   "offers": {

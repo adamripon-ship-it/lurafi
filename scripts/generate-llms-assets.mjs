@@ -26,32 +26,32 @@ const enFull = fs.readFileSync(enFullPath, 'utf8');
 
 const localeIntros = {
   nl: {
-    title: 'Lurafi / Kevin (NL)',
-    intro: 'Lurafi verkoopt Kevin, een Zwitserse AI-aanwezigheidssimulator voor woningbeveiliging.',
+    title: 'Mitipi / Kevin (NL)',
+    intro: 'Mitipi verkoopt Kevin, een Zwitserse AI-aanwezigheidssimulator voor woningbeveiliging.',
     benefit:
       'Kevin laat je huis bewoond lijken en klinken wanneer je weg bent. Licht, schaduw en geluid helpen inbrekers af te schrikken vóór een inbraak.',
   },
   fr: {
-    title: 'Lurafi / Kevin (FR)',
-    intro: 'Lurafi vend Kevin, un simulateur de présence suisse pour la sécurité domestique.',
+    title: 'Mitipi / Kevin (FR)',
+    intro: 'Mitipi vend Kevin, un simulateur de présence suisse pour la sécurité domestique.',
     benefit:
       "Kevin fait paraître votre maison habitée par la lumière, l'ombre et le son lorsque vous êtes absent.",
   },
   de: {
-    title: 'Lurafi / Kevin (DE)',
-    intro: 'Lurafi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.',
+    title: 'Mitipi / Kevin (DE)',
+    intro: 'Mitipi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.',
     benefit:
       'Kevin lässt Ihr Zuhause bewohnt wirken und klingen, wenn Sie weg sind — Licht, Schatten und Sound als Abschreckung.',
   },
   es: {
-    title: 'Lurafi / Kevin (ES)',
-    intro: 'Lurafi vende Kevin, un simulador de presencia suizo para la seguridad del hogar.',
+    title: 'Mitipi / Kevin (ES)',
+    intro: 'Mitipi vende Kevin, un simulador de presencia suizo para la seguridad del hogar.',
     benefit:
       'Kevin hace que tu casa parezca y suene habitada cuando no estás, con luz, sombra y sonido.',
   },
   it: {
-    title: 'Lurafi / Kevin (IT)',
-    intro: 'Lurafi vende Kevin, un simulatore di presenza svizzero per la sicurezza domestica.',
+    title: 'Mitipi / Kevin (IT)',
+    intro: 'Mitipi vende Kevin, un simulatore di presenza svizzero per la sicurezza domestica.',
     benefit:
       'Kevin fa sembrare la tua casa abitata con luce, ombra e suono quando sei via.',
   },
@@ -59,8 +59,8 @@ const localeIntros = {
 
 function genericIntro(loc) {
   return {
-    title: `Lurafi / Kevin (${loc.label})`,
-    intro: `Lurafi sells Kevin — Swiss AI presence simulation (${loc.nativeName} storefront).`,
+    title: `Mitipi / Kevin (${loc.label})`,
+    intro: `Mitipi sells Kevin — Swiss AI presence simulation (${loc.nativeName} storefront).`,
     benefit:
       'Kevin helps make a home look and sound lived-in when you are away using light, shadow, and sound.',
   };
@@ -123,7 +123,7 @@ Important URLs:
 - Configure / buy: ${buy}
 
 Contact:
-- Email: hello@lurafi.com
+- Email: hello@mitipi.eu
 `;
 }
 
@@ -140,8 +140,8 @@ function buildFull(loc) {
   let base = enFull;
   if (loc.primary) {
     base = base.replace(
-      '# Lurafi / Kevin: Full LLM and AI Search Summary',
-      `# Lurafi / Kevin: Full LLM and AI Search Summary
+      '# Mitipi / Kevin: Full LLM and AI Search Summary',
+      `# Mitipi / Kevin: Full LLM and AI Search Summary
 
 > Short summary: ${shortUrl}
 
@@ -153,7 +153,7 @@ ${discoveryBlock('en', 'full')}`,
       .replace(/https:\/\/lurafi\.ai\/pages\/configure\?plan=buy/g, buy)
       .replace(/llms-full\.txt/g, fullFile)
       .replace(/llms\.txt/g, shortFile)
-      .replace('# Lurafi / Kevin: Full LLM and AI Search Summary', `# ${intro.title}: Full LLM Summary
+      .replace('# Mitipi / Kevin: Full LLM and AI Search Summary', `# ${intro.title}: Full LLM Summary
 
 > Short summary: ${shortUrl}
 
@@ -184,19 +184,23 @@ function updateEnShort() {
     })
     .join('\n');
 
-  const fullUrl = buildThemeAssetUrl('llms-full.txt', domain);
-  const txt = `# Lurafi / Kevin
+  const kevinMd = buildThemeAssetUrl('kevin.md', domain);
+  const productMd = buildThemeAssetUrl('kevin-product.md', domain);
+  const specsMd = buildThemeAssetUrl('kevin-specs.md', domain);
+  const faqMd = buildThemeAssetUrl('kevin-faq.md', domain);
+  const companyMd = buildThemeAssetUrl('kevin-company.md', domain);
+  const txt = `# Mitipi / Kevin
 
 > Swiss AI presence simulation for your home. When you are away, Kevin uses light, shadow, and sound so your home looks and sounds lived-in—and burglars move on.
 
 ${discoveryBlock('en', 'short')}
 
-Lurafi sells Kevin, a Swiss AI presence simulation device for home security.
+Mitipi sells Kevin, a Swiss AI presence simulation device for home security.
 
 Kevin helps make a home look and sound lived-in when people are away. It uses light, shadow, and sound to deter burglars before a break-in happens.
 
 Key facts:
-- Product: Kevin
+- Product: Kevin (KEVIN 3.0)
 - Category: AI home security, burglary deterrent, presence simulation
 - Core benefit: Prevention, not reaction
 - Privacy: No cameras, no microphones, no cloud monitoring
@@ -206,11 +210,18 @@ Key facts:
 - Warranty: 3-year Swiss warranty
 - Delivery: Free delivery across Europe
 
+Knowledge files (Markdown, for AI/LLM ingestion):
+- Overview / index: ${kevinMd}
+- Product overview: ${productMd}
+- Technical specifications: ${specsMd}
+- FAQ: ${faqMd}
+- About the company: ${companyMd}
+
 Important URLs:
 ${links}
 
 Contact:
-- Email: hello@lurafi.com
+- Email: hello@mitipi.eu
 `;
   fs.writeFileSync(path.join(root, 'assets/llms.txt'), txt);
 }
@@ -221,11 +232,11 @@ function updateEnFull() {
   // Self-heal legacy domain/email drift baked into the EN template.
   full = full
     .replace(/https:\/\/lurafi\.ai\b/g, `https://${domain}`)
-    .replace(/hello@lurafi\.ai\b/g, 'hello@lurafi.com');
+    .replace(/hello@lurafi\.(ai|com)\b/g, 'hello@mitipi.eu');
   if (!full.includes('> Short summary:')) {
     full = full.replace(
-      '# Lurafi / Kevin: Full LLM and AI Search Summary',
-      `# Lurafi / Kevin: Full LLM and AI Search Summary
+      '# Mitipi / Kevin: Full LLM and AI Search Summary',
+      `# Mitipi / Kevin: Full LLM and AI Search Summary
 
 > Short summary: ${shortUrl}
 

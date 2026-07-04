@@ -105,7 +105,15 @@
 <link rel="alternate" type="text/plain" href="{{ 'llms-full.txt' | asset_url }}" title="Full LLM summary (llms-full.txt)" hreflang="en">
 <meta name="ai:short-summary" content="{{ 'llms.txt' | asset_url | prepend: 'https:' }}">
 <meta name="ai:full-summary" content="{{ 'llms-full.txt' | asset_url | prepend: 'https:' }}">
-{%- assign llm_locales = 'nl,fr,de,es,it,nb,da,sv,fi,cs,pl' | split: ',' -%}
+{%- comment -%} GEO knowledge files (Markdown) — structured facts for AI/LLM ingestion {%- endcomment -%}
+<link rel="alternate" type="text/markdown" href="{{ 'kevin.md' | asset_url }}" title="Kevin knowledge index (Markdown)">
+<link rel="alternate" type="text/markdown" href="{{ 'kevin-product.md' | asset_url }}" title="Kevin product overview (Markdown)">
+<link rel="alternate" type="text/markdown" href="{{ 'kevin-specs.md' | asset_url }}" title="Kevin specifications (Markdown)">
+<link rel="alternate" type="text/markdown" href="{{ 'kevin-faq.md' | asset_url }}" title="Kevin FAQ (Markdown)">
+<link rel="alternate" type="text/markdown" href="{{ 'kevin-company.md' | asset_url }}" title="About Mitipi (Markdown)">
+<meta name="ai:knowledge-index" content="{{ 'kevin.md' | asset_url | prepend: 'https:' }}">
+{%- comment -%} Localized LLM summaries — only the published storefront locales {%- endcomment -%}
+{%- assign llm_locales = 'nl,fr,de,cs' | split: ',' -%}
 {%- for llm_code in llm_locales -%}
   {%- assign short_asset = 'llms.' | append: llm_code | append: '.txt' -%}
   {%- assign full_asset = 'llms-full.' | append: llm_code | append: '.txt' -%}

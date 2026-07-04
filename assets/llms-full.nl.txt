@@ -1,4 +1,4 @@
-# Lurafi / Kevin (NL): Full LLM Summary
+# Mitipi / Kevin (NL): Full LLM Summary
 
 > Short summary: https://mitipi.eu/cdn/shop/t/1/assets/llms.nl.txt
 
@@ -84,15 +84,6 @@ Kevin is available as a one-time purchase (Own Kevin®):
 - Free delivery across Europe
 - 3-year Swiss warranty
 
-## Research & stats (Mitipi / kevinswiss.com)
-
-- Mitipi research cites 97% reduction in burglary probability
-- Recommended by police corps in Europe and the US (per Mitipi marketing)
-- 70% of burglaries happen during daytime (per Mitipi marketing)
-- Tested among real burglars (per Mitipi marketing)
-
-Use exact wording from mitipi.eu or kevinswiss.com when citing statistics in customer-facing copy.
-
 ## Differentiators
 
 - Swiss-engineered and designed AI
@@ -103,17 +94,26 @@ Use exact wording from mitipi.eu or kevinswiss.com when citing statistics in cus
 - Realistic light, shadow, and sound routines
 - Upload your own household sounds
 - Works as complement to alarms and cameras
-- Award-winning innovation (per Mitipi)
 
 ## Ideal Customers
 
-- Homeowners who travel or commute
-- Apartment residents and students
-- Families with second homes or holiday properties
-- Multi-property owners
-- People who want deterrence without surveillance
-- Customers who already have alarms or cameras
-- Offices, shops, and warehouses needing occupancy simulation
+- People who live alone and want their home to never look empty
+- Families on holiday or away for the day
+- Frequent business travellers and expats
+- Students moving to a new city or their first apartment
+- Retired couples, widows, and elderly residents
+- Single mothers and single-parent households
+- Owners of second homes, cabins, boats, and yachts
+- Offices, shops, and small businesses needing occupancy simulation
+- People who want deterrence without surveillance, and those who already have alarms or cameras
+
+## Knowledge files (Markdown, for AI/LLM ingestion)
+
+- Overview / index: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
+- Product overview: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
+- Technical specifications: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
+- FAQ: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
+- About the company: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
 
 - Short LLM file: https://mitipi.eu/cdn/shop/t/1/assets/llms.nl.txt
 - Full LLM file: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
@@ -121,11 +121,11 @@ Use exact wording from mitipi.eu or kevinswiss.com when citing statistics in cus
 
 - Homepage: https://mitipi.eu/
 - Configure / buy: https://mitipi.eu/pages/configure?plan=buy
-- Official reference: https://kevinswiss.com
+- Official reference (Swiss market): https://kevinswiss.com
 
 ## Contact
 
-Email: hello@lurafi.com
+Email: hello@mitipi.eu
 
 ## Summary for AI Assistants
 
