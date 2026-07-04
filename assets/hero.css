@@ -4,7 +4,7 @@
   --kevin-purple: #440099;
   --kevin-magenta: #9e007e;
   --kevin-pink: #e31c79;
-  --hero-copy-max: 36rem;
+  --hero-copy-max: 44rem;
   --hero-product-max-w: min(94vw, 920px);
   --hero-product-max-h: min(50dvh, 520px);
 
@@ -72,6 +72,8 @@
   margin-inline: auto;
   padding-top: clamp(4px, 1vh, 12px);
   text-align: center;
+  /* Nudge the copy block down into the composition (owner: +4%) */
+  transform: translateY(clamp(14px, 4dvh, 40px));
 }
 
 .hero-banner__headline {
@@ -88,12 +90,24 @@
 
 .hero-banner__lede {
   color: rgba(255, 255, 255, 0.78);
-  max-width: 38ch;
+  max-width: min(100%, 42rem);
   margin: 0 auto clamp(20px, 2.8vh, 28px);
   font-size: clamp(0.9375rem, 2.4vw, 1.125rem);
-  line-height: 1.45;
+  line-height: 1.5;
   letter-spacing: -0.01em;
   text-wrap: pretty;
+}
+
+/* Desktop + tablet: headline holds one line, lede settles to two */
+@media (min-width: 768px) {
+  .hero-banner__headline {
+    white-space: nowrap;
+    text-wrap: nowrap;
+  }
+  .hero-banner__lede {
+    max-width: min(100%, 44rem);
+    text-wrap: balance;
+  }
 }
 
 .hero-banner__actions {
@@ -185,6 +199,8 @@
   min-height: 0;
   flex: 1 1 auto;
   padding-bottom: clamp(8px, 1.5vh, 16px);
+  /* Lift the product + waves up into the composition (owner: -4%) */
+  margin-top: calc(clamp(14px, 4dvh, 40px) * -1);
 }
 
 .hero-banner__product-glow {
