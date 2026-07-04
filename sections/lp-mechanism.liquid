@@ -43,28 +43,48 @@
             lamp, but by people. Hand-drawn SVG silhouettes, blurred to read
             as shadows through a curtain.
           {%- endcomment -%}
+          {%- comment -%}
+            Reader: built from plain primitives (circle head, rounded-rect
+            torso/limbs) instead of freehand curves, so the silhouette can't
+            deform — a book held across the lap reads as a distinct wide
+            shape breaking the torso's outline, arms taper down to it, and a
+            small ponytail keeps the head from reading as perfectly round.
+          {%- endcomment -%}
           <svg class="nf-window__figure nf-window__figure--reader" viewBox="0 0 150 160" xmlns="http://www.w3.org/2000/svg">
             <g fill="currentColor">
-              <circle cx="64" cy="30" r="15"/>
-              <path d="M76 20 C88 24 90 44 84 58 L74 52 C79 44 80 32 74 24 Z"/>
-              <path d="M50 46 L78 46 C82 60 84 80 82 106 L48 106 C44 84 44 62 50 46 Z"/>
-              <path d="M52 54 C42 58 34 64 26 70 L32 82 C40 73 48 66 56 62 Z"/>
-              <path d="M6 58 L21 52 L25 76 L10 84 Z"/>
-              <path d="M24 51 L39 47 L43 70 L28 75 Z"/>
-              <path d="M48 104 L16 110 L16 124 L50 120 Z"/>
-              <path d="M18 122 L16 154 L30 154 L32 124 Z"/>
-              <path d="M82 58 C98 64 102 92 98 118 L76 118 L82 106 Z"/>
+              <rect x="54" y="48" width="36" height="42" rx="16"/>
+              <rect x="50" y="54" width="13" height="36" rx="6.5" transform="rotate(-16 57 54)"/>
+              <rect x="87" y="54" width="13" height="36" rx="6.5" transform="rotate(16 93 54)"/>
+              <rect x="50" y="98" width="18" height="18" rx="9"/>
+              <rect x="52" y="112" width="14" height="46" rx="7"/>
+              <rect x="76" y="98" width="18" height="18" rx="9"/>
+              <rect x="78" y="112" width="14" height="46" rx="7" transform="rotate(7 85 114)"/>
+              <rect x="36" y="82" width="72" height="20" rx="3" transform="rotate(-3 72 92)"/>
+              <path d="M84,22 C94,26 97,42 90,56 C87,61 82,60 81,54 C86,44 85,32 78,24 Z"/>
+              <g transform="rotate(8 72 44)">
+                <rect x="63" y="40" width="18" height="16" rx="6"/>
+                <circle cx="72" cy="28" r="16"/>
+              </g>
             </g>
           </svg>
 
+          {%- comment -%}
+            Partner: same primitive technique — tapered torso, arms and legs
+            mid-stride, so the walk-in reads as an actual person arriving,
+            not a flat cutout sliding across the glass.
+          {%- endcomment -%}
           <svg class="nf-window__figure nf-window__figure--partner" viewBox="0 0 90 175" xmlns="http://www.w3.org/2000/svg">
             <g fill="currentColor">
-              <circle cx="44" cy="19" r="14"/>
-              <path d="M26 40 C32 33 56 33 62 40 L58 102 C56 108 32 108 30 102 Z"/>
-              <path d="M27 46 C20 62 17 78 19 92 L27 94 C27 78 29 62 33 50 Z"/>
-              <path d="M61 46 C68 62 71 78 69 92 L61 94 C61 78 59 62 55 50 Z"/>
-              <path d="M31 106 L27 168 L40 168 L43 110 Z"/>
-              <path d="M57 106 L63 168 L50 168 L47 110 Z"/>
+              <rect x="28" y="38" width="34" height="26" rx="13"/>
+              <rect x="31" y="58" width="28" height="26" rx="13"/>
+              <rect x="19" y="42" width="9" height="34" rx="4.5" transform="rotate(-16 23.5 42)"/>
+              <rect x="62" y="42" width="9" height="34" rx="4.5" transform="rotate(20 66.5 42)"/>
+              <rect x="32" y="80" width="14" height="34" rx="7" transform="rotate(10 39 80)"/>
+              <rect x="35" y="110" width="12" height="38" rx="6" transform="rotate(16 41 112)"/>
+              <rect x="44" y="80" width="14" height="34" rx="7" transform="rotate(-12 51 80)"/>
+              <rect x="40" y="110" width="12" height="40" rx="6" transform="rotate(-6 46 112)"/>
+              <rect x="38" y="28" width="14" height="12" rx="5"/>
+              <circle cx="45" cy="18" r="13"/>
             </g>
           </svg>
 
