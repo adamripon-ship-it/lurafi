@@ -406,230 +406,85 @@ body.nightfall .nf-window {
   box-shadow: var(--nf-glow-shadow);
 }
 
-body.nightfall .nf-window__sky {
+/* ---- Scene photo: lived-in home behind the animated sound wave ---- */
+body.nightfall .nf-window--photo {
+  background: #0b0d15;
+}
+body.nightfall .nf-window__photo {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #1a2030 0%, #10131d 100%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  transform: scale(1.06);
+  transform-origin: 50% 40%;
+  opacity: 0;
+  transition: opacity 1.1s ease;
+  will-change: transform;
+}
+body.nightfall .section-apple--visible .nf-window__photo,
+html.no-js body.nightfall .nf-window__photo {
+  opacity: 1;
+}
+/* Scroll-driven slow zoom (fallback driver: paused + --nf-progress delay) */
+.motion-ready body.nightfall .nf-window__photo {
+  animation: nfPhotoZoom 1s linear paused both;
+  animation-delay: calc(var(--nf-progress, 0) * -1s);
+}
+@keyframes nfPhotoZoom {
+  0%   { transform: scale(1.12) translateY(1.6%); }
+  100% { transform: scale(1.02) translateY(-1.6%); }
 }
 
-body.nightfall .nf-window__glow {
+/* Vignette seats the photo edges and the sound wave into the dark stage */
+body.nightfall .nf-window__vignette {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
-    radial-gradient(85% 70% at 50% 62%, rgba(255, 180, 92, 0.85) 0%, rgba(255, 150, 60, 0.35) 55%, transparent 80%);
-  opacity: 0.3;
-  animation: nfWindowWarm 1s linear paused both;
-  animation-delay: calc(var(--nf-progress, 0) * -1s);
+    radial-gradient(120% 80% at 50% 30%, transparent 42%, rgba(3, 4, 9, 0.5) 100%),
+    linear-gradient(180deg, transparent 46%, rgba(3, 4, 9, 0.74) 100%);
 }
 
-/* Shadow figures — she sways to the music; a second silhouette arrives and stays.
-   blur = curtain diffusion; drop-shadow = soft penumbra copy behind the core
-   shadow, which is what makes a real cast shadow read as "real". */
-body.nightfall .nf-window__figure {
-  position: absolute;
-  bottom: 4%;
-  color: rgba(11, 8, 15, 0.94);
-  filter: blur(3.5px) drop-shadow(0 0 9px rgba(11, 8, 15, 0.55));
-  pointer-events: none;
-}
-
-body.nightfall .nf-window__figure--reader {
-  left: 11%;
-  width: 33%;
-  height: auto;
-  opacity: 0;
-  transform-origin: 50% 100%;
-  animation: nfReaderIn 1s linear paused both;
-  animation-delay: calc(var(--nf-progress, 0) * -1s);
-}
-
-body.nightfall .nf-window__figure--partner {
-  right: 10%;
-  width: 30%;
-  height: auto;
-  opacity: 0;
-  transform: translateX(220%);
-  animation: nfPartnerWalk 1s linear paused both;
-  animation-delay: calc(var(--nf-progress, 0) * -1s);
-}
-
-/* ---- Character rig (motion-design layering, time-based, motion-ready only)
-   Root sways at the feet; a nested layer breathes; head and forearm are
-   independent pivoting layers (secondary motion). Periods are all different
-   and out of phase so the two figures read as two individuals feeling the
-   same song — never mirrored cutouts. All pivots use transform-box:
-   fill-box so origins are relative to each layer's own geometry. ---- */
-
-body.nightfall .nf-window__figure .nf-rig,
-body.nightfall .nf-window__figure .nf-rig__breathe,
-body.nightfall .nf-window__figure .nf-rig__head,
-body.nightfall .nf-window__figure .nf-rig__arm {
-  transform-box: fill-box;
-}
-
-/* Sway: whole body pivots at the feet, like weight shifting foot to foot */
-.motion-ready body.nightfall .nf-window__figure--reader .nf-rig {
-  transform-origin: 50% 97%;
-  animation: nfRigSwayA 5.6s ease-in-out infinite;
-}
-.motion-ready body.nightfall .nf-window__figure--partner .nf-rig {
-  transform-origin: 50% 97%;
-  animation: nfRigSwayB 6.6s ease-in-out infinite;
-  animation-delay: -2.6s;
-}
-@keyframes nfRigSwayA {
-  0%, 100% { transform: rotate(-1.4deg); }
-  50% { transform: rotate(1.5deg); }
-}
-@keyframes nfRigSwayB {
-  0%, 100% { transform: translateX(1.4px) rotate(1deg); }
-  50% { transform: translateX(-1.4px) rotate(-1.1deg); }
-}
-
-/* Breathing: slow chest rise, anchored at the feet */
-.motion-ready body.nightfall .nf-window__figure .nf-rig__breathe {
-  transform-origin: 50% 100%;
-  animation: nfRigBreathe 3.9s ease-in-out infinite;
-}
-.motion-ready body.nightfall .nf-window__figure--partner .nf-rig__breathe {
-  animation-duration: 4.4s;
-  animation-delay: -1.7s;
-}
-@keyframes nfRigBreathe {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(1.012); }
-}
-
-/* Head: independent nod — hers slow and dreamy, his on the beat */
-.motion-ready body.nightfall .nf-window__figure--reader .nf-rig__head {
-  transform-origin: 50% 92%;
-  animation: nfRigNodA 4.6s ease-in-out infinite;
-  animation-delay: -1.2s;
-}
-.motion-ready body.nightfall .nf-window__figure--partner .nf-rig__head {
-  transform-origin: 50% 92%;
-  animation: nfRigNodB 2.2s ease-in-out infinite;
-}
-@keyframes nfRigNodA {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(2.4deg); }
-}
-@keyframes nfRigNodB {
-  0%, 100% { transform: rotate(0.8deg) translateY(0); }
-  50% { transform: rotate(-1.2deg) translateY(0.7px); }
-}
-
-/* Her forearm: parked along the body, lifts in a small gesture every cycle
-   (raise — two beats of movement — lower), pivoting at the elbow */
-.motion-ready body.nightfall .nf-window__figure--reader .nf-rig__arm {
-  transform-origin: 50% 12%;
-  animation: nfRigArm 13s cubic-bezier(0.45, 0, 0.25, 1) infinite;
-}
-@keyframes nfRigArm {
-  0%, 56% { transform: rotate(0deg); }
-  63% { transform: rotate(-116deg); }
-  68% { transform: rotate(-104deg); }
-  73% { transform: rotate(-118deg); }
-  78% { transform: rotate(-107deg); }
-  88%, 100% { transform: rotate(0deg); }
-}
-
-/* Scrub keyframes: reader appears with the warm light; partner walks in
-   during phase 2 and STAYS — the home is lived in by more than one person. */
-@keyframes nfReaderIn {
-  0%, 8% { opacity: 0; transform: translateY(4%); }
-  24%, 100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes nfPartnerWalk {
-  0%, 32% { opacity: 0; transform: translate(220%, 0); }
-  40% { opacity: 1; transform: translate(150%, -4%); }
-  46% { transform: translate(112%, 0); }
-  52% { transform: translate(62%, -4%); }
-  58%, 100% { opacity: 1; transform: translate(0, 0); }
-}
-
-body.nightfall .nf-window__frame {
-  position: absolute;
-  inset: 0;
-  border: 10px solid #05060a;
-  border-radius: 18px;
-  pointer-events: none;
-}
-body.nightfall .nf-window__frame::before,
-body.nightfall .nf-window__frame::after {
-  content: '';
-  position: absolute;
-  background: #05060a;
-}
-body.nightfall .nf-window__frame::before {
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 8px;
-  margin-left: -4px;
-}
-body.nightfall .nf-window__frame::after {
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 8px;
-  margin-top: -4px;
-}
-
-body.nightfall .nf-window__sill {
-  position: absolute;
-  left: -4%;
-  right: -4%;
-  bottom: -2px;
-  height: 14px;
-  background: #05060a;
-  border-radius: 4px;
-}
-
-/* Music playing in the window: equalizer bars between the two figures */
-body.nightfall .nf-soundbars {
+/* ---- Animated sound wave overlay (pure CSS motion design) ---- */
+body.nightfall .nf-soundwave {
   position: absolute;
   left: 50%;
   bottom: 10%;
   transform: translateX(-50%);
   display: flex;
-  align-items: flex-end;
-  gap: 5px;
-  height: 52px;
+  align-items: center;
+  gap: clamp(2px, 1%, 5px);
+  width: 74%;
+  height: 58px;
   opacity: 0;
-  animation: nfSoundAppear 1s linear paused both;
-  animation-delay: calc(var(--nf-progress, 0) * -1s);
+  transition: opacity 1s ease 0.3s;
+  pointer-events: none;
+}
+body.nightfall .section-apple--visible .nf-soundwave,
+html.no-js body.nightfall .nf-soundwave {
+  opacity: 1;
+}
+body.nightfall .nf-soundwave span {
+  flex: 1 1 0;
+  min-width: 2px;
+  height: 14%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ff6ba8 0%, var(--kevin-magenta) 100%);
+  box-shadow:
+    0 0 10px rgba(227, 28, 121, 0.6),
+    0 0 22px rgba(158, 0, 126, 0.35);
+}
+.motion-ready body.nightfall .nf-soundwave span {
+  animation: nfWave 1.25s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.07s);
+}
+@keyframes nfWave {
+  0%, 100% { height: 12%; opacity: 0.6; }
+  50%      { height: 84%; opacity: 1; }
 }
 
-body.nightfall .nf-soundbars span {
-  width: 5px;
-  height: 30%;
-  border-radius: 3px;
-  background: linear-gradient(180deg, var(--kevin-pink) 0%, var(--kevin-magenta) 100%);
-  box-shadow: 0 0 12px rgba(227, 28, 121, 0.55);
-}
-
-.motion-ready body.nightfall .nf-soundbars span {
-  animation: nfSoundPulse 1.1s ease-in-out infinite alternate;
-}
-.motion-ready body.nightfall .nf-soundbars span:nth-child(2n) { animation-delay: -0.35s; }
-.motion-ready body.nightfall .nf-soundbars span:nth-child(3n) { animation-delay: -0.7s; }
-
-@keyframes nfSoundPulse {
-  from { height: 22%; }
-  to { height: 96%; }
-}
-
-/* Scrub keyframes — one 0..1 timeline, segments inside the keyframes */
-@keyframes nfWindowWarm {
-  0% { opacity: 0.3; }
-  38% { opacity: 1; }
-  100% { opacity: 1; }
-}
-@keyframes nfSoundAppear {
-  0%, 58% { opacity: 0.25; }
-  75%, 100% { opacity: 1; }
-}
 @keyframes nfPhaseIn {
   0% { opacity: 0.7; transform: translateY(6px); }
   12% { opacity: 1; transform: translateY(0); }
@@ -641,10 +496,7 @@ body.nightfall .nf-soundbars span {
   body.nightfall .nf-mech__track {
     view-timeline: --nf-mech block;
   }
-  body.nightfall .nf-window__glow,
-  body.nightfall .nf-window__figure--reader,
-  body.nightfall .nf-window__figure--partner,
-  body.nightfall .nf-soundbars,
+  body.nightfall .nf-window__photo,
   body.nightfall .nf-mech__phase {
     animation-timeline: --nf-mech;
     animation-range: contain 0% contain 100%;
@@ -698,29 +550,27 @@ body.nightfall .nf-mech__phase-title {
   body.nightfall .nf-mech__stage { position: static; min-height: 0; }
 }
 
-.motion-reduced body.nightfall .nf-window__glow,
-.motion-reduced body.nightfall .nf-soundbars,
-html.no-js body.nightfall .nf-window__glow,
-html.no-js body.nightfall .nf-soundbars,
+.motion-reduced body.nightfall .nf-window__photo,
+html.no-js body.nightfall .nf-window__photo,
+.motion-reduced body.nightfall .nf-soundwave,
+html.no-js body.nightfall .nf-soundwave,
 .motion-reduced body.nightfall .nf-mech__phase,
 html.no-js body.nightfall .nf-mech__phase {
   animation: none !important;
   opacity: 1 !important;
   transform: none !important;
 }
-.motion-reduced body.nightfall .nf-window__figure,
-html.no-js body.nightfall .nf-window__figure {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
+.motion-reduced body.nightfall .nf-window__photo,
+html.no-js body.nightfall .nf-window__photo {
+  transform: scale(1.04) !important;
 }
-.motion-reduced body.nightfall .nf-window__figure g,
-html.no-js body.nightfall .nf-window__figure g {
-  animation: none !important;
+.motion-reduced body.nightfall .nf-soundwave {
+  transform: translateX(-50%) !important;
 }
-.motion-reduced body.nightfall .nf-soundbars span {
+.motion-reduced body.nightfall .nf-soundwave span,
+html.no-js body.nightfall .nf-soundwave span {
   animation: none !important;
-  height: 60%;
+  height: 46%;
 }
 
 /* ---- Activity ticker ---- */
@@ -818,11 +668,35 @@ body.nightfall .nf-signal span:nth-child(5) { height: 100%; }
   100% { opacity: 1; transform: scaleY(1); }
 }
 
+/* Jammer "Kevin keeps playing" equalizer (self-contained) */
 body.nightfall .nf-soundbars--inline {
-  position: static;
-  opacity: 1;
-  animation: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 34px;
   margin-bottom: 20px;
+  opacity: 1;
+}
+body.nightfall .nf-soundbars--inline span {
+  width: 5px;
+  height: 40%;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--kevin-pink) 0%, var(--kevin-magenta) 100%);
+  box-shadow: 0 0 12px rgba(227, 28, 121, 0.55);
+}
+.motion-ready body.nightfall .nf-soundbars--inline span {
+  animation: nfInlinePulse 1.1s ease-in-out infinite alternate;
+}
+.motion-ready body.nightfall .nf-soundbars--inline span:nth-child(2n) { animation-delay: -0.35s; }
+.motion-ready body.nightfall .nf-soundbars--inline span:nth-child(3n) { animation-delay: -0.7s; }
+@keyframes nfInlinePulse {
+  from { height: 22%; }
+  to { height: 96%; }
+}
+.motion-reduced body.nightfall .nf-soundbars--inline span,
+html.no-js body.nightfall .nf-soundbars--inline span {
+  animation: none !important;
+  height: 60%;
 }
 
 body.nightfall .nf-jammer__status {
