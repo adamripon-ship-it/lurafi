@@ -65,8 +65,10 @@ test.describe('mitipi.eu hero banner QA', () => {
     await page.locator('.nf-mech').waitFor({ state: 'attached', timeout: 15000 });
 
     await expect(page.locator('.nf-window')).toHaveCount(1);
-    await expect(page.locator('.nf-window__figure')).toHaveCount(2);
-    await expect(page.locator('.nf-mech .nf-soundbars')).toHaveCount(1);
+    await expect(page.locator('.nf-window__photo')).toHaveCount(1);
+    await expect(page.locator('.nf-mech .nf-soundwave')).toHaveCount(1);
+    // The animated sound wave is a fixed 32-bar equalizer
+    await expect(page.locator('.nf-soundwave span')).toHaveCount(32);
     await expect(page.locator('.nf-mech__phase')).toHaveCount(3);
   });
 
@@ -91,8 +93,9 @@ test.describe('mitipi.eu hero banner QA', () => {
       await expect(page.locator(anchor)).toHaveCount(1);
     }
 
-    // The image-free guarantee: the hero product photo is the ONLY image in main content.
-    expect(await page.locator('#MainContent img').count()).toBeLessThanOrEqual(1);
+    // Content images are limited to the hero product photo + the one editorial
+    // "lived-in home" scene photo in the mechanism section. Nothing else.
+    expect(await page.locator('#MainContent img').count()).toBeLessThanOrEqual(2);
   });
 
   test('nightfall dark theme scoped to homepage only', async ({ page }) => {

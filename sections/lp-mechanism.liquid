@@ -33,93 +33,31 @@
   <div class="nf-mech__track" data-nf-scrub>
     <div class="nf-mech__stage">
       <div class="nf-mech__inner apple-container">
-        <div class="nf-window" aria-hidden="true">
-          <span class="nf-window__sky"></span>
-          <span class="nf-window__glow"></span>
+        {%- comment -%}
+          Editorial photo of a lived-in home (owner-provided; swap via the
+          "Scene photo" setting). An animated CSS sound-wave overlay plays
+          across it — pure motion-design, no generated media — signalling
+          that Kevin is filling the home with believable sound. The photo
+          reveals and slowly zooms as the section scrolls (scroll effect).
+        {%- endcomment -%}
+        {%- assign scene_img = section.settings.window_image -%}
+        <div class="nf-window nf-window--photo" aria-hidden="true">
+          {%- if scene_img != blank -%}
+            <img class="nf-window__photo"
+                 src="{{ scene_img | image_url: width: 1000 }}"
+                 srcset="{{ scene_img | image_url: width: 600 }} 600w, {{ scene_img | image_url: width: 1000 }} 1000w"
+                 sizes="(max-width: 900px) 90vw, 460px"
+                 alt="" loading="lazy" width="900" height="1206">
+          {%- else -%}
+            <img class="nf-window__photo"
+                 src="{{ 'kevin-cozy-home.webp' | asset_url }}"
+                 alt="" loading="lazy" width="900" height="1206">
+          {%- endif -%}
+          <span class="nf-window__vignette"></span>
 
-          {%- comment -%}
-            Shadow story, scroll-driven: she reads by the window; a second
-            silhouette walks in and stays — the home is not occupied by one
-            lamp, but by people. Hand-drawn SVG silhouettes, blurred to read
-            as shadows through a curtain.
-          {%- endcomment -%}
-          {%- comment -%}
-            Real shadow silhouettes are ONE continuous outline — arms rest
-            against the body and are implied by the outline's bulge, never
-            drawn as separate limbs (separate pieces are what the blur kept
-            fusing into deformed shapes in earlier passes). Both figures use
-            true human proportions (~7.5 head-heights): she stands in an
-            A-line skirt with a low hair bun, he stands at ease in trousers.
-            Verified headless at 420px and 220px with the production blur.
-          {%- endcomment -%}
-          {%- comment -%}
-            Each figure is a layered character rig (motion-design style):
-            .nf-rig      — root, sways at the feet like a standing person
-            .nf-rig__breathe — slow chest rise (scaleY at the feet)
-            .nf-rig__arm — her forearm, pivots at the elbow, lifts in a
-                            gesture cycle; parked inside the body outline
-                            when at rest so the silhouette stays clean
-            .nf-rig__head — nods independently (secondary motion)
-          {%- endcomment -%}
-          <svg class="nf-window__figure nf-window__figure--reader" viewBox="0 0 100 175" xmlns="http://www.w3.org/2000/svg">
-            <g class="nf-rig" fill="currentColor">
-              <g class="nf-rig__breathe">
-                <path d="M45,27 L45,34
-                         C37,36 33,39 32,45
-                         C30,53 33,61 36,67
-                         C33,75 29,85 27,99
-                         C25,111 26,119 29,123
-                         L71,123
-                         C74,119 75,111 73,99
-                         C71,85 67,75 64,67
-                         C67,61 70,53 68,45
-                         C67,39 63,36 55,34
-                         L55,27 Z"/>
-                <rect x="36" y="118" width="9.5" height="44" rx="4.75"/>
-                <rect x="54.5" y="118" width="9.5" height="44" rx="4.75"/>
-                <path d="M36,158 L45.5,158 L46,166 L33,166 Z"/>
-                <path d="M54.5,158 L64,158 L67,166 L54,166 Z"/>
-                <g class="nf-rig__arm">
-                  <rect x="59" y="64" width="9" height="28" rx="4.5"/>
-                </g>
-                <g class="nf-rig__head">
-                  <ellipse cx="50" cy="16" rx="10" ry="11"/>
-                  <ellipse cx="52" cy="13.5" rx="11" ry="10"/>
-                  <circle cx="60.5" cy="23" r="4.5"/>
-                  <path d="M44,24 L56,24 L55,34 L45,34 Z"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-
-          <svg class="nf-window__figure nf-window__figure--partner" viewBox="0 0 90 175" xmlns="http://www.w3.org/2000/svg">
-            <g class="nf-rig" fill="currentColor">
-              <g class="nf-rig__breathe">
-                <path d="M41,26 L41,33
-                         C33,35 27,38 26,45
-                         C24,55 26,65 29,73
-                         C28,81 28,89 30,95
-                         L60,95
-                         C62,89 62,81 61,73
-                         C64,65 66,55 64,45
-                         C63,38 57,35 49,33
-                         L49,26 Z"/>
-                <rect x="30" y="93" width="10.5" height="67" rx="5" transform="rotate(-2 35.25 93)"/>
-                <rect x="49.5" y="93" width="10.5" height="67" rx="5" transform="rotate(2 54.75 93)"/>
-                <path d="M28,156 L38.5,156 L39,164 L24.5,164 Z"/>
-                <path d="M51.5,156 L62,156 L65.5,164 L51,164 Z"/>
-                <g class="nf-rig__head">
-                  <ellipse cx="45" cy="15" rx="9.5" ry="11"/>
-                  <path d="M40,23 L50,23 L49,33 L41,33 Z"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-
-          <span class="nf-window__frame"></span>
-          <span class="nf-window__sill"></span>
-          <div class="nf-soundbars">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          {%- comment -%} Animated sound wave: mirrored equalizer, a travelling pulse. {%- endcomment -%}
+          <div class="nf-soundwave">
+            {%- for i in (1..32) -%}<span style="--i:{{ i }}"></span>{%- endfor -%}
           </div>
         </div>
 
@@ -165,6 +103,8 @@
     { "type": "text", "id": "overline", "label": "Overline" },
     { "type": "text", "id": "heading", "label": "Heading" },
     { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    { "type": "header", "content": "Scene" },
+    { "type": "image_picker", "id": "window_image", "label": "Scene photo", "info": "A lived-in-home photo shown behind the animated sound wave. Defaults to the built-in cozy-home image." },
     { "type": "text", "id": "phase_1_title", "label": "Phase 1 title (light)" },
     { "type": "textarea", "id": "phase_1_body", "label": "Phase 1 body" },
     { "type": "text", "id": "phase_2_title", "label": "Phase 2 title (shadow)" },
