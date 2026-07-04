@@ -77,7 +77,8 @@ test.describe('mitipi.eu hero banner QA', () => {
 
     // Section presence + anchors
     await expect(page.locator('.problem-bento')).toHaveCount(1);
-    await expect(page.locator('.nf-glyph')).toHaveCount(3);
+    await expect(page.locator('.nf-glyph')).toHaveCount(4);
+    await expect(page.locator('.problem-bento__wide')).toHaveCount(1);
     await expect(page.locator('#product .nf-ticker')).toHaveCount(1);
     await expect(page.locator('.nf-jammer__col')).toHaveCount(2);
     await expect(page.locator('.nf-phone')).toHaveCount(1);

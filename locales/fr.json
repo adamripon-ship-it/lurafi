@@ -346,13 +346,15 @@
     "problem": {
       "overline": "Le problème",
       "heading": "Quand un proche vit seul ou qu'un logement paraît vide, il devient une cible.",
-      "subheading": "Prédateurs, intrus violents et cambrioleurs recherchent des cibles faciles—femmes vivant seules, votre fille qui quitte la maison pour la première fois pour étudier à l'université, ou couples et veuves retraités et âgés. KEVIN 3.0® simule la présence d'autres personnes vivant avec vous pour que vous ne sembliez jamais seul—et prévient ainsi efficacement les cambriolages.",
-      "tile_1_title": "Sombre veut dire absent",
-      "tile_1_body": "Des pièces éteintes en début de soirée : le signal le plus fort qu'une maison puisse envoyer.",
-      "tile_2_title": "Le silence confirme",
-      "tile_2_body": "Pas de voix, pas de cuisine, pas de télé—vérifié en un instant depuis le trottoir.",
+      "subheading": "Prédateurs, intrus violents et cambrioleurs choisissent des cibles faciles : femmes vivant seules, une fille dans son premier studio étudiant, couples âgés. KEVIN 3.0® simule des personnes vivant à vos côtés, pour que personne ne semble jamais seul.",
+      "tile_1_title": "De vraies ombres humaines",
+      "tile_1_body": "Effets d'ombres ultra-réalistes d'une personne ou de toute une famille — la rue voit que quelqu'un est là et que personne ne vit seul.",
+      "tile_2_title": "Le son de la vraie vie",
+      "tile_2_body": "Scénarios sonores ultra-réalistes — conversations, chien qui aboie, cuisine, ménage, jeux, télévision — pour une présence réelle et crédible.",
       "tile_3_title": "Les minuteries ne trompent personne",
-      "tile_3_body": "La même lampe à la même heure chaque soir : de l'automatisation, pas de la vie."
+      "tile_3_body": "La même lampe à la même heure chaque soir évoque une minuterie, pas la vie. Kevin varie tout.",
+      "tile_4_title": "La couche qui manque aux alarmes",
+      "tile_4_body": "Une alarme ne fait que détecter l'effraction, et les secours prennent du temps. KEVIN® ne remplace pas votre alarme — il ajoute la couche de prévention manquante et arrête intrus violents, prédateurs et voleurs avant que vos proches ne subissent la violence."
     },
     "app": {
       "overline": "App Kevin",

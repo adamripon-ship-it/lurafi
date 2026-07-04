@@ -59,19 +59,24 @@
 
   .problem-bento__lead {
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    gap: var(--space-md);
-    align-items: center;
     text-align: left;
   }
 
-  .problem-bento__lead .feature-tile__media {
-    margin-bottom: 0;
+  .problem-bento__lead .body-standard {
+    max-width: 62ch;
   }
 
   .problem-bento__tile {
     text-align: left;
+  }
+
+  .problem-bento__wide {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .problem-bento__wide .body-standard {
+    max-width: 62ch;
   }
 }
 
