@@ -1975,8 +1975,12 @@ body.mobile-nav-open { overflow: hidden; }
   justify-content: center;
   min-height: var(--touch-min);
   font-size: 17px;
+  font-weight: 600;
+  /* Background is always white, so the label must always be dark — never the
+     themeable --apple-text token, which nightfall flips to near-white and
+     makes this button's text invisible. */
   background: #fff;
-  color: var(--apple-text);
+  color: #1d1d1f;
   padding: 12px 28px;
   border-radius: 980px;
   transition: opacity 0.3s var(--ease-out), transform 0.2s;
