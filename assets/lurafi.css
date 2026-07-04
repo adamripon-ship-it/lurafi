@@ -3852,21 +3852,41 @@ html.no-js .section-apple .reveal-item {
 }
 
 /* --- Ultra-wide / large-monitor / 4K scaling (added by pre-G2M audit) --- */
-@media (min-width: 1536px) {
+/* Mid-band: start growing the content container earlier than 1536px so wide
+   monitors (1280–1536) no longer sit at the 980px base. Additive, min-width
+   scoped only — smaller screens are untouched. Font-size is intentionally NOT
+   scaled: content typography is px-based (wouldn't grow) while the header's
+   fixed layout uses rem, so bumping root font-size would only risk the header. */
+@media (min-width: 1280px) {
+  :root {
+    --apple-container: 1040px;
+  }
+}
+@media (min-width: 1440px) {
   :root {
     --apple-container: 1120px;
+  }
+}
+@media (min-width: 1536px) {
+  :root {
+    --apple-container: 1160px;
     --pad-inline: clamp(24px, 3vw, 40px);
     --pad-inline-end: clamp(24px, 3vw, 40px);
   }
 }
 @media (min-width: 1920px) {
   :root {
-    --apple-container: 1280px;
+    --apple-container: 1320px;
   }
 }
 @media (min-width: 2560px) {
   :root {
-    --apple-container: 1440px;
+    --apple-container: 1520px;
+  }
+}
+@media (min-width: 3840px) {
+  :root {
+    --apple-container: 1760px;
   }
 }
 

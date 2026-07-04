@@ -1,4 +1,4 @@
-# Lurafi / Kevin (CS)
+# Mitipi / Kevin (CS)
 
 > Kevin helps make a home look and sound lived-in when you are away using light, shadow, and sound.
 
@@ -11,7 +11,7 @@
 - LLM overview page: https://mitipi.eu/cs/pages/ai-prehled
 
 
-Lurafi sells Kevin — Swiss AI presence simulation (Čeština storefront).
+Mitipi sells Kevin — Swiss AI presence simulation (Čeština storefront).
 
 Key facts:
 - Product: Kevin
@@ -26,4 +26,4 @@ Important URLs:
 - Configure / buy: https://mitipi.eu/cs/pages/konfigurovat-kevin?plan=buy
 
 Contact:
-- Email: hello@lurafi.com
+- Email: hello@mitipi.eu

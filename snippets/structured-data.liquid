@@ -1,11 +1,12 @@
 {%- liquid
   if settings.logo != blank
-    assign lurafi_org_logo = settings.logo | image_url: width: 512
+    assign org_logo = settings.logo | image_url: width: 512
   else
-    assign lurafi_org_logo = 'kevin-header-logo.png' | asset_url
+    assign org_logo = 'kevin-header-logo.png' | asset_url | prepend: 'https:'
   endif
-  assign lurafi_hero_image = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
-  assign lurafi_description = 'seo.org_description' | t
+  assign kevin_image = 'kevin-hero-product-front.webp' | asset_url | prepend: 'https:'
+  assign org_description = 'seo.org_description' | t
+  assign org_email = 'hello@mitipi.eu'
   assign org_id = shop.url | append: '/#organization'
   assign site_id = shop.url | append: '/#website'
   assign buy_product = settings.product_buy
@@ -29,6 +30,7 @@
     assign product_sku = buy_product.selected_or_first_available_variant.sku | default: product_sku
   endif
   assign product_id = shop.url | append: '/#product-kevin'
+  assign price_valid_until = 'now' | date: '%Y' | plus: 1 | append: '-12-31'
 -%}
 <script type="application/ld+json">
 {
@@ -37,9 +39,19 @@
   "@id": {{ org_id | json }},
   "name": {{ shop.name | json }},
   "url": {{ shop.url | json }},
-  "logo": {{ lurafi_org_logo | json }},
-  "description": {{ lurafi_description | json }},
-  "email": "hello@lurafi.ai"
+  "logo": {{ org_logo | json }},
+  "description": {{ org_description | json }},
+  "email": {{ org_email | json }},
+  "slogan": "Presence that prevents.",
+  "knowsAbout": ["home security", "burglary prevention", "presence simulation", "Swiss engineering"],
+  "areaServed": [
+    { "@type": "Country", "name": "Switzerland" },
+    { "@type": "Country", "name": "Germany" },
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Ireland" },
+    { "@type": "Country", "name": "Netherlands" },
+    { "@type": "Country", "name": "Czech Republic" }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -49,7 +61,7 @@
   "@id": {{ site_id | json }},
   "url": {{ shop.url | json }},
   "name": {{ shop.name | json }},
-  "description": {{ lurafi_description | json }},
+  "description": {{ org_description | json }},
   "publisher": { "@id": {{ org_id | json }} },
   "inLanguage": {{ request.locale.iso_code | json }}
 }
@@ -60,69 +72,77 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "@id": {{ product_id | json }},
-  "name": "Kevin",
-  "description": {{ lurafi_description | json }},
+  "name": "KEVIN 3.0",
+  "alternateName": "Kevin presence simulator",
+  "category": "Home Security Presence Simulator",
+  "description": {{ org_description | json }},
   "url": {{ product_url | json }},
   "sku": {{ product_sku | json }},
-  "image": {{ lurafi_hero_image | json }},
-  "brand": { "@type": "Brand", "name": "Lurafi" },
-  "manufacturer": { "@type": "Organization", "name": {{ shop.name | json }} },
+  "image": {{ kevin_image | json }},
+  "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
+  "manufacturer": { "@id": {{ org_id | json }} },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Power consumption", "value": "Approximately 9 W (typical)" },
+    { "@type": "PropertyValue", "name": "Dimensions", "value": "Approx. 21.2 x 10.2 x 9.2 cm" },
+    { "@type": "PropertyValue", "name": "Connectivity", "value": "Wi-Fi and Bluetooth" },
+    { "@type": "PropertyValue", "name": "Cameras", "value": "None" },
+    { "@type": "PropertyValue", "name": "Microphones", "value": "None" },
+    { "@type": "PropertyValue", "name": "Simulation library", "value": "70+ hours, stored locally" },
+    { "@type": "PropertyValue", "name": "Jammer resilient", "value": "Yes — simulations play from local storage" },
+    { "@type": "PropertyValue", "name": "Warranty", "value": "3-year Swiss warranty" }
+  ],
   "offers": {
     "@type": "Offer",
-    "url": {{ shop.url | append: configure_buy_url | json }},
+    "url": {{ product_url | json }},
     "priceCurrency": {{ offer_currency | json }},
     "price": {{ offer_price | json }},
+    "priceValidUntil": {{ price_valid_until | json }},
     "availability": {{ offer_availability | json }},
     "itemCondition": "https://schema.org/NewCondition",
-    "seller": { "@id": {{ org_id | json }} }
+    "seller": { "@id": {{ org_id | json }} },
+    "warranty": {
+      "@type": "WarrantyPromise",
+      "durationOfWarranty": { "@type": "QuantitativeValue", "value": 3, "unitCode": "ANN" }
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": 0, "currency": {{ offer_currency | json }} },
+      "shippingDestination": [
+        { "@type": "DefinedRegion", "addressCountry": "CH" },
+        { "@type": "DefinedRegion", "addressCountry": "DE" },
+        { "@type": "DefinedRegion", "addressCountry": "FR" },
+        { "@type": "DefinedRegion", "addressCountry": "IE" },
+        { "@type": "DefinedRegion", "addressCountry": "NL" },
+        { "@type": "DefinedRegion", "addressCountry": "CZ" }
+      ]
+    }
   }
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": {{ 'faq.q1' | t | json }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ 'faq.a1' | t | json }}
-      }
-    },
-    {
-      "@type": "Question",
-      "name": {{ 'faq.q2' | t | json }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ 'faq.a2' | t | json }}
-      }
-    },
-    {
-      "@type": "Question",
-      "name": {{ 'faq.q3' | t | json }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ 'faq.a3' | t | json }}
-      }
-    },
-    {
-      "@type": "Question",
-      "name": {{ 'faq.q4' | t | json }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ 'faq.a4' | t | json }}
-      }
-    },
-    {
-      "@type": "Question",
-      "name": {{ 'faq.q5' | t | json }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ 'faq.a5' | t | json }}
-      }
-    }
+  "@type": "WebPage",
+  "@id": {{ shop.url | append: '/#webpage-home' | json }},
+  "url": {{ shop.url | json }},
+  "name": {{ 'seo.home.title' | t | json }},
+  "description": {{ org_description | json }},
+  "inLanguage": {{ request.locale.iso_code | json }},
+  "isPartOf": { "@id": {{ site_id | json }} },
+  "about": { "@id": {{ product_id | json }} },
+  "primaryImageOfPage": {{ kevin_image | json }},
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["#HeroHeading", ".hero-banner__lede"]
+  },
+  "significantLink": [
+    {{ 'kevin.md' | asset_url | prepend: 'https:' | json }},
+    {{ 'kevin-product.md' | asset_url | prepend: 'https:' | json }},
+    {{ 'kevin-specs.md' | asset_url | prepend: 'https:' | json }},
+    {{ 'kevin-faq.md' | asset_url | prepend: 'https:' | json }},
+    {{ 'kevin-company.md' | asset_url | prepend: 'https:' | json }},
+    {{ 'llms.txt' | asset_url | prepend: 'https:' | json }},
+    {{ 'llms-full.txt' | asset_url | prepend: 'https:' | json }}
   ]
 }
 </script>
@@ -140,13 +160,14 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": {{ page.title | default: shop.name | json }},
-  "description": {{ web_page_description | default: lurafi_description | json }},
+  "description": {{ web_page_description | default: org_description | json }},
   "url": {{ canonical_url | json }},
   "inLanguage": {{ request.locale.iso_code | json }},
   "isPartOf": { "@id": {{ site_id | json }} },
   "significantLink": [
     {{ 'llms.txt' | asset_url | prepend: 'https:' | json }},
     {{ 'llms-full.txt' | asset_url | prepend: 'https:' | json }},
+    {{ 'kevin.md' | asset_url | prepend: 'https:' | json }},
     {{ 'sitemap-ai.xml' | asset_url | prepend: 'https:' | json }},
     {{ shop.url | append: '/sitemap.xml' | json }}
   ]

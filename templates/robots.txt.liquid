@@ -12,6 +12,7 @@ Allow: /cdn/shop/t/*/assets/llms.txt
 Allow: /cdn/shop/t/*/assets/llms-full.txt
 Allow: /cdn/shop/t/*/assets/llms.*.txt
 Allow: /cdn/shop/t/*/assets/llms-full.*.txt
+Allow: /cdn/shop/t/*/assets/kevin*.md
 Allow: /cdn/shop/t/*/assets/sitemap-ai.xml
 
 # Sitemaps (Shopify + AI/AEO/GEO index with llms.txt and llms-full.txt URLs)
@@ -19,6 +20,7 @@ Sitemap: https://{{ shop.domain }}/sitemap.xml
 Sitemap: https:{{ 'sitemap-ai.xml' | asset_url }}
 
 # LLM discovery (short file links to full file in content)
-# Short: https:{{ 'llms.txt' | asset_url }}
-# Full:  https:{{ 'llms-full.txt' | asset_url }}
-# Page:  https://{{ shop.domain }}/pages/llms
+# Short:     https:{{ 'llms.txt' | asset_url }}
+# Full:      https:{{ 'llms-full.txt' | asset_url }}
+# Knowledge: https:{{ 'kevin.md' | asset_url }}
+# Page:      https://{{ shop.domain }}/pages/llms

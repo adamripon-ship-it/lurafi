@@ -1,4 +1,4 @@
-# Lurafi / Kevin (DE)
+# Mitipi / Kevin (DE)
 
 > Kevin lässt Ihr Zuhause bewohnt wirken und klingen, wenn Sie weg sind — Licht, Schatten und Sound als Abschreckung.
 
@@ -11,7 +11,7 @@
 - LLM overview page: https://mitipi.eu/de/pages/ki-uebersicht
 
 
-Lurafi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.
+Mitipi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.
 
 Key facts:
 - Product: Kevin
@@ -26,4 +26,4 @@ Important URLs:
 - Configure / buy: https://mitipi.eu/de/pages/kevin-konfigurieren?plan=buy
 
 Contact:
-- Email: hello@lurafi.com
+- Email: hello@mitipi.eu

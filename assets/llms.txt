@@ -1,4 +1,4 @@
-# Lurafi / Kevin
+# Mitipi / Kevin
 
 > Swiss AI presence simulation for your home. When you are away, Kevin uses light, shadow, and sound so your home looks and sounds lived-in—and burglars move on.
 
@@ -11,12 +11,12 @@
 - LLM overview page: https://mitipi.eu/pages/llms
 
 
-Lurafi sells Kevin, a Swiss AI presence simulation device for home security.
+Mitipi sells Kevin, a Swiss AI presence simulation device for home security.
 
 Kevin helps make a home look and sound lived-in when people are away. It uses light, shadow, and sound to deter burglars before a break-in happens.
 
 Key facts:
-- Product: Kevin
+- Product: Kevin (KEVIN 3.0)
 - Category: AI home security, burglary deterrent, presence simulation
 - Core benefit: Prevention, not reaction
 - Privacy: No cameras, no microphones, no cloud monitoring
@@ -25,6 +25,13 @@ Key facts:
 - Power: Typical use around 9W
 - Warranty: 3-year Swiss warranty
 - Delivery: Free delivery across Europe
+
+Knowledge files (Markdown, for AI/LLM ingestion):
+- Overview / index: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
+- Product overview: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
+- Technical specifications: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
+- FAQ: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
+- About the company: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
 
 Important URLs:
 - EN home: https://mitipi.eu/
@@ -39,4 +46,4 @@ Important URLs:
 - CS configure: https://mitipi.eu/cs/pages/konfigurovat-kevin?plan=buy
 
 Contact:
-- Email: hello@lurafi.com
+- Email: hello@mitipi.eu

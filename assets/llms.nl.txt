@@ -1,4 +1,4 @@
-# Lurafi / Kevin (NL)
+# Mitipi / Kevin (NL)
 
 > Kevin laat je huis bewoond lijken en klinken wanneer je weg bent. Licht, schaduw en geluid helpen inbrekers af te schrikken vóór een inbraak.
 
@@ -11,7 +11,7 @@
 - LLM overview page: https://mitipi.eu/nl/pages/ai-overzicht
 
 
-Lurafi verkoopt Kevin, een Zwitserse AI-aanwezigheidssimulator voor woningbeveiliging.
+Mitipi verkoopt Kevin, een Zwitserse AI-aanwezigheidssimulator voor woningbeveiliging.
 
 Key facts:
 - Product: Kevin
@@ -26,4 +26,4 @@ Important URLs:
 - Configure / buy: https://mitipi.eu/nl/pages/kevin-configureren?plan=buy
 
 Contact:
-- Email: hello@lurafi.com
+- Email: hello@mitipi.eu

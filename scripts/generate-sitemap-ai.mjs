@@ -76,6 +76,10 @@ const assetFiles = new Set([
   cfg.discovery?.llmsFull || 'llms-full.txt',
 ]);
 
+// GEO knowledge files (Markdown) — structured facts for AI/LLM ingestion.
+const knowledgeFiles = ['kevin.md', 'kevin-product.md', 'kevin-specs.md', 'kevin-faq.md', 'kevin-company.md'];
+for (const md of knowledgeFiles) assetFiles.add(md);
+
 for (const loc of getLlmAssetLocales()) {
   if (loc.primary) continue;
   assetFiles.add(llmsShortFilename(loc.code));
@@ -84,7 +88,9 @@ for (const loc of getLlmAssetLocales()) {
 
 for (const file of [...assetFiles].sort()) {
   const locUrl = buildThemeAssetUrl(file, domain);
-  const priority = file.endsWith('.txt') ? '0.85' : '0.75';
+  let priority = '0.75';
+  if (file.endsWith('.md')) priority = '0.9';
+  else if (file.endsWith('.txt')) priority = '0.85';
   urlBlocks.push(urlBlock(locUrl, null, 'weekly', priority));
 }
 
