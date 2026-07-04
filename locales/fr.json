@@ -424,7 +424,7 @@
     "jammer": {
       "overline": "Quand le Wi-Fi tombe",
       "heading": "Les brouilleurs aveuglent les caméras. Kevin continue.",
-      "subheading": "Des brouilleurs bon marché coupent caméras et alarmes du réseau. Les simulations de Kevin tournent depuis la mémoire de l'appareil—pas de cloud, pas de signal, pas de faille.",
+      "subheading": "Des brouilleurs bon marché coupent caméras et alarmes du réseau. Kevin joue chaque simulation depuis la mémoire de l'appareil—pas de cloud, pas de signal, pas de faille.",
       "col_1_title": "La caméra",
       "col_1_body": "Les flux s'arrêtent, les alertes ne partent jamais. Une caméra brouillée ne protège personne—elle n'enregistre plus rien.",
       "col_1_status": "Signal perdu",
@@ -451,10 +451,10 @@
       "reason_3_body": "Kevin simule d’autres habitants—voix, mouvement, un chien—rassurant pour tous ceux qui vivent seuls."
     },
     "audience": {
-      "overline": "Pour qui",
+      "overline": "Qui Kevin protège",
       "heading": "Toute maison est parfois vide.",
       "subheading": "Kevin emménage là où la vie s’absente—pour un soir, une saison ou un semestre.",
-      "chips": "Familles en vacances|Grands voyageurs|Expatriés|Personnes vivant seules|Premier studio dans une nouvelle ville|Mères célibataires|Retraités & veuves|Résidences secondaires & chalets|Bateaux & yachts|Bureaux, commerces & ambassades",
+      "chips": "Familles en vacances|Grands voyageurs|Expatriés|Personnes vivant seules|Premier studio dans une nouvelle ville|Mères célibataires|Retraités et veuves|Résidences secondaires et chalets|Bateaux et yachts|Bureaux, commerces et ambassades",
       "story": "Son premier studio, une nouvelle ville, à 400 km de chez elle. Kevin le remplit de voix, de lumière et d’un chien qui entend la sonnette—pour que jamais il ne semble, ni ne s’entende, qu’elle vit seule."
     }
   },

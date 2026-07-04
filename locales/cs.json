@@ -424,7 +424,7 @@
     "jammer": {
       "overline": "Když vypadne Wi-Fi",
       "heading": "Rušičky oslepí kamery. Kevin hraje dál.",
-      "subheading": "Levné rušičky odpojí kamery a aplikační alarmy od sítě. Kevinovy simulace běží z úložiště v zařízení—žádný cloud, žádný signál, žádná mezera.",
+      "subheading": "Levné rušičky odpojí kamery a aplikační alarmy od sítě. Kevin přehrává každou simulaci z úložiště v zařízení—žádný cloud, žádný signál, žádná mezera.",
       "col_1_title": "Kamera",
       "col_1_body": "Streamy se zastaví, upozornění nikdy nedorazí. Rušená kamera nikoho nechrání—jen nic nenahrává.",
       "col_1_status": "Signál ztracen",
@@ -451,10 +451,10 @@
       "reason_3_body": "Kevin simuluje další obyvatele—hlasy, pohyb, psa—jistota pro každého, kdo žije sám."
     },
     "audience": {
-      "overline": "Pro koho",
+      "overline": "Koho Kevin chrání",
       "heading": "Každý domov je někdy prázdný.",
       "subheading": "Kevin se nastěhuje tam, odkud se život na chvíli odstěhoval—na večer, sezónu nebo semestr.",
-      "chips": "Rodiny na dovolené|Časté služební cesty|Expati|Lidé žijící sami|První byt v novém městě|Matky samoživitelky|Senioři & vdovy|Druhé domovy & chaty|Lodě & jachty|Kanceláře, obchody & ambasády",
+      "chips": "Rodiny na dovolené|Časté služební cesty|Expati|Lidé žijící sami|První byt v novém městě|Matky samoživitelky|Senioři a vdovy|Druhé domovy a chaty|Lodě a jachty|Kanceláře, obchody a ambasády",
       "story": "Její první garsonka, nové město, 400 km od domova. Kevin ji naplní hlasy, světlem a psem, který slyší zvonek—aby nikdy nepůsobila, ani nezněla, jako by žila sama."
     }
   },

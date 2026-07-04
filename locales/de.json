@@ -424,7 +424,7 @@
     "jammer": {
       "overline": "Wenn WLAN ausfällt",
       "heading": "Jammer blenden Kameras. Kevin spielt weiter.",
-      "subheading": "Billige Störsender trennen Kameras und App-Alarme vom Netz. Kevins Simulationen laufen vom Speicher auf dem Gerät—keine Cloud, kein Signal, keine Lücke.",
+      "subheading": "Billige Störsender trennen Kameras und App-Alarme vom Netz. Kevin spielt jede Simulation vom Speicher auf dem Gerät—keine Cloud, kein Signal, keine Lücke.",
       "col_1_title": "Die Kamera",
       "col_1_body": "Streams stoppen, Meldungen kommen nie an. Eine gestörte Kamera schützt niemanden—sie nimmt nur nichts mehr auf.",
       "col_1_status": "Signal verloren",
@@ -451,10 +451,10 @@
       "reason_3_body": "Kevin simuliert Mitbewohner—Stimmen, Bewegung, einen Hund—Beruhigung für alle, die allein leben."
     },
     "audience": {
-      "overline": "Für wen",
+      "overline": "Wen Kevin schützt",
       "heading": "Jedes Zuhause ist manchmal leer.",
       "subheading": "Kevin zieht ein, wo das Leben kurz auszieht—für einen Abend, eine Saison oder ein Semester.",
-      "chips": "Familien im Urlaub|Vielreisende|Expats|Alleinlebende|Erste Wohnung in neuer Stadt|Alleinerziehende Mütter|Rentner & Witwen|Zweitwohnsitze & Hütten|Boote & Yachten|Büros, Läden & Botschaften",
+      "chips": "Familien im Urlaub|Vielreisende|Expats|Alleinlebende|Erste Wohnung in neuer Stadt|Alleinerziehende Mütter|Rentner und Witwen|Zweitwohnsitze und Hütten|Boote und Yachten|Büros, Läden und Botschaften",
       "story": "Ihre erste Wohnung, eine neue Stadt, 400 km von zu Hause. Kevin füllt sie mit Stimmen, Licht und einem Hund, der die Türklingel hört—damit es sich nie anfühlt oder anhört, als lebte sie allein."
     }
   },

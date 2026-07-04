@@ -11,6 +11,38 @@
   if subheading == blank
     assign subheading = 'home.jammer.subheading' | t
   endif
+  # Shopify-stored copy can arrive pre-encoded; decode common entities so the
+  # | escape at render cannot double-encode them into visible &#39; / &amp;.
+  assign col_1_title = section.settings.col_1_title
+  if col_1_title == blank
+    assign col_1_title = 'home.jammer.col_1_title' | t
+  endif
+  assign col_1_title = col_1_title | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign col_1_body = section.settings.col_1_body
+  if col_1_body == blank
+    assign col_1_body = 'home.jammer.col_1_body' | t
+  endif
+  assign col_1_body = col_1_body | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign col_1_status = section.settings.col_1_status
+  if col_1_status == blank
+    assign col_1_status = 'home.jammer.col_1_status' | t
+  endif
+  assign col_1_status = col_1_status | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign col_2_title = section.settings.col_2_title
+  if col_2_title == blank
+    assign col_2_title = 'home.jammer.col_2_title' | t
+  endif
+  assign col_2_title = col_2_title | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign col_2_body = section.settings.col_2_body
+  if col_2_body == blank
+    assign col_2_body = 'home.jammer.col_2_body' | t
+  endif
+  assign col_2_body = col_2_body | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign col_2_status = section.settings.col_2_status
+  if col_2_status == blank
+    assign col_2_status = 'home.jammer.col_2_status' | t
+  endif
+  assign col_2_status = col_2_status | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
 -%}
 
 <section class="section-apple nf-jammer">
@@ -27,30 +59,18 @@
         <div class="nf-signal" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
-        <h3 class="nf-jammer__title text-white">
-          {%- if section.settings.col_1_title != blank -%}{{ section.settings.col_1_title }}{%- else -%}{{ 'home.jammer.col_1_title' | t }}{%- endif -%}
-        </h3>
-        <p class="body-standard text-muted-dark">
-          {%- if section.settings.col_1_body != blank -%}{{ section.settings.col_1_body }}{%- else -%}{{ 'home.jammer.col_1_body' | t }}{%- endif -%}
-        </p>
-        <p class="nf-jammer__status nf-jammer__status--dead">
-          {%- if section.settings.col_1_status != blank -%}{{ section.settings.col_1_status }}{%- else -%}{{ 'home.jammer.col_1_status' | t }}{%- endif -%}
-        </p>
+        <h3 class="nf-jammer__title text-white">{{ col_1_title | escape }}</h3>
+        <p class="body-standard text-muted-dark">{{ col_1_body | escape }}</p>
+        <p class="nf-jammer__status nf-jammer__status--dead">{{ col_1_status | escape }}</p>
       </div>
 
       <div class="tile tile--dark nf-jammer__col nf-jammer__col--alive">
         <div class="nf-soundbars nf-soundbars--inline" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
-        <h3 class="nf-jammer__title text-white">
-          {%- if section.settings.col_2_title != blank -%}{{ section.settings.col_2_title }}{%- else -%}{{ 'home.jammer.col_2_title' | t }}{%- endif -%}
-        </h3>
-        <p class="body-standard text-muted-dark">
-          {%- if section.settings.col_2_body != blank -%}{{ section.settings.col_2_body }}{%- else -%}{{ 'home.jammer.col_2_body' | t }}{%- endif -%}
-        </p>
-        <p class="nf-jammer__status nf-jammer__status--alive">
-          {%- if section.settings.col_2_status != blank -%}{{ section.settings.col_2_status }}{%- else -%}{{ 'home.jammer.col_2_status' | t }}{%- endif -%}
-        </p>
+        <h3 class="nf-jammer__title text-white">{{ col_2_title | escape }}</h3>
+        <p class="body-standard text-muted-dark">{{ col_2_body | escape }}</p>
+        <p class="nf-jammer__status nf-jammer__status--alive">{{ col_2_status | escape }}</p>
       </div>
     </div>
   </div>

@@ -494,7 +494,7 @@ const nlHome = {
     overline: 'Als wifi wegvalt',
     heading: "Jammers verblinden camera's. Kevin speelt door.",
     subheading:
-      "Goedkope jammers halen camera's en app-alarmen van het netwerk. Kevins simulaties spelen vanaf opslag op het apparaat—geen cloud, geen signaal, geen gat.",
+      "Goedkope jammers halen camera's en app-alarmen van het netwerk. Kevin speelt elke simulatie vanaf de opslag op het apparaat—geen cloud, geen signaal, geen gat.",
     col_1_title: 'De camera',
     col_1_body:
       'Streams stoppen, meldingen komen nooit aan. Een gestoorde camera beschermt niemand—hij neemt alleen niets op.',
@@ -550,12 +550,12 @@ const nlHome = {
     quote_source: 'Kevin.3-review, januari 2026'
   },
   audience: {
-    overline: 'Voor wie',
+    overline: 'Wie Kevin beschermt',
     heading: 'Elk huis is soms leeg.',
     subheading:
       'Kevin trekt in waar het leven even uittrekt—voor een avond, een seizoen of een semester.',
     chips:
-      'Gezinnen op vakantie|Zakenreizigers|Expats|Alleenwonenden|Eerste flat in een nieuwe stad|Alleenstaande moeders|Gepensioneerden & weduwen|Tweede huizen & chalets|Boten & jachten|Kantoren, winkels & ambassades',
+      'Gezinnen op vakantie|Zakenreizigers|Expats|Alleenwonenden|Eerste flat in een nieuwe stad|Alleenstaande moeders|Gepensioneerden en weduwen|Tweede huizen en chalets|Boten en jachten|Kantoren, winkels en ambassades',
     story:
       'Haar eerste studio, een nieuwe stad, 400 km van huis. Kevin vult hem met stemmen, licht en een hond die de deurbel hoort—zodat het nooit voelt, of klinkt, alsof ze alleen woont.'
   },
