@@ -422,18 +422,20 @@ body.nightfall .nf-window__glow {
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
 
-/* Shadow figures — she reads; a second silhouette arrives and stays */
+/* Shadow figures — she sways to the music; a second silhouette arrives and stays.
+   blur = curtain diffusion; drop-shadow = soft penumbra copy behind the core
+   shadow, which is what makes a real cast shadow read as "real". */
 body.nightfall .nf-window__figure {
   position: absolute;
   bottom: 4%;
   color: rgba(11, 8, 15, 0.94);
-  filter: blur(4px);
+  filter: blur(3.5px) drop-shadow(0 0 9px rgba(11, 8, 15, 0.55));
   pointer-events: none;
 }
 
 body.nightfall .nf-window__figure--reader {
-  left: 8%;
-  width: 44%;
+  left: 11%;
+  width: 33%;
   height: auto;
   opacity: 0;
   transform-origin: 50% 100%;
@@ -442,8 +444,8 @@ body.nightfall .nf-window__figure--reader {
 }
 
 body.nightfall .nf-window__figure--partner {
-  right: 9%;
-  width: 27%;
+  right: 10%;
+  width: 30%;
   height: auto;
   opacity: 0;
   transform: translateX(220%);
@@ -451,14 +453,25 @@ body.nightfall .nf-window__figure--partner {
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
 
-/* Gentle reading sway once visible (time-based, motion-ready only) */
+/* Both figures sway gently to the music (time-based, motion-ready only) —
+   pivot at the feet like a standing person shifting weight, out of phase
+   with each other so they read as two individuals, not mirrored cutouts. */
 .motion-ready body.nightfall .nf-window__figure--reader g {
-  transform-origin: 40% 90%;
-  animation: nfReaderSway 6s ease-in-out infinite;
+  transform-origin: 50% 96%;
+  animation: nfReaderSway 5.6s ease-in-out infinite;
+}
+.motion-ready body.nightfall .nf-window__figure--partner g {
+  transform-origin: 50% 96%;
+  animation: nfPartnerSway 6.4s ease-in-out infinite;
+  animation-delay: -2.4s;
 }
 @keyframes nfReaderSway {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(1.6deg); }
+  0%, 100% { transform: rotate(-1.4deg); }
+  50% { transform: rotate(1.4deg); }
+}
+@keyframes nfPartnerSway {
+  0%, 100% { transform: rotate(1.1deg); }
+  50% { transform: rotate(-1.1deg); }
 }
 
 /* Scrub keyframes: reader appears with the warm light; partner walks in
@@ -513,25 +526,27 @@ body.nightfall .nf-window__sill {
   border-radius: 4px;
 }
 
-/* Sound bars inside the window (bottom-right) */
+/* Music playing in the window: equalizer bars between the two figures */
 body.nightfall .nf-soundbars {
   position: absolute;
-  left: 47%;
-  bottom: 12%;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 4px;
-  height: 34px;
+  gap: 5px;
+  height: 52px;
   opacity: 0;
   animation: nfSoundAppear 1s linear paused both;
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
 
 body.nightfall .nf-soundbars span {
-  width: 4px;
+  width: 5px;
   height: 30%;
-  border-radius: 2px;
+  border-radius: 3px;
   background: linear-gradient(180deg, var(--kevin-pink) 0%, var(--kevin-magenta) 100%);
+  box-shadow: 0 0 12px rgba(227, 28, 121, 0.55);
 }
 
 .motion-ready body.nightfall .nf-soundbars span {
@@ -639,7 +654,8 @@ html.no-js body.nightfall .nf-window__figure {
   opacity: 1 !important;
   transform: none !important;
 }
-.motion-reduced body.nightfall .nf-window__figure--reader g {
+.motion-reduced body.nightfall .nf-window__figure--reader g,
+.motion-reduced body.nightfall .nf-window__figure--partner g {
   animation: none !important;
 }
 .motion-reduced body.nightfall .nf-soundbars span {
