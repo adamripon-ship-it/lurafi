@@ -350,13 +350,15 @@
     "problem": {
       "overline": "The problem",
       "heading": "When loved ones live alone or a home looks empty, they become a target.",
-      "subheading": "Predators, violent intruders, and burglars look for easy marks—single women, your daughter leaving home for the first time to study at university, or retired and elderly widows and couples. KEVIN 3.0® simulates others living with you in your home so you don't appear alone, and can effectively prevent burglary.",
-      "tile_1_title": "Dark means gone",
-      "tile_1_body": "Unlit rooms in the early evening are the loudest signal a home can send.",
-      "tile_2_title": "Silence confirms it",
-      "tile_2_body": "No voices, no kitchen, no TV—an easy check from the pavement.",
+      "subheading": "Predators, violent intruders, and burglars pick easy marks: women living alone, a daughter in her first student flat, elderly couples. KEVIN 3.0® simulates people living beside you, so no one ever looks alone.",
+      "tile_1_title": "Real human shadows",
+      "tile_1_body": "Ultra-realistic shadow effects of one person or a whole household—showing the street that someone is home and no one lives alone.",
+      "tile_2_title": "The sound of real life",
+      "tile_2_body": "Ultra-realistic sound scenarios—conversations, a barking dog, cooking, cleaning, games, the TV—simulating real, believable presence.",
       "tile_3_title": "Timers fool no one",
-      "tile_3_body": "The same lamp at the same time every night reads as automation, not life."
+      "tile_3_body": "The same lamp at the same time every night reads as automation, not life. Kevin varies everything.",
+      "tile_4_title": "The layer alarms are missing",
+      "tile_4_body": "Alarms only detect a break-in, and help takes time to arrive. KEVIN® does not replace your alarm—it adds the missing layer of prevention, stopping violent intruders, predators, and thieves before your loved ones ever experience violence."
     },
     "mechanism": {
       "overline": "How it works",
@@ -370,15 +372,15 @@
       "phase_3_body": "Cooking, conversation, a dog that hears the doorbell—sound completes the story from local storage."
     },
     "stats": {
-      "heading": "Authority you can trust.",
+      "heading": "Believable for weeks, not minutes.",
       "stat_1_value": "20%",
       "stat_1_label": "Lower home insurance with some providers",
       "stat_2_value": "70+",
-      "stat_2_label": "Hours of built-in simulations",
+      "stat_2_label": "Hours of unique, alternating simulations",
       "stat_3_value": "9W",
-      "stat_3_label": "Typical energy use",
-      "stat_4_value": "70%",
-      "stat_4_label": "Of burglaries happen in daytime",
+      "stat_3_label": "Low energy consumption",
+      "stat_4_value": "0",
+      "stat_4_label": "Cameras or microphones",
       "badge_1": "No monitoring subscription",
       "badge_2": "Swiss engineered and designed",
       "badge_3": "Jammer-proof local playback",

@@ -34,7 +34,7 @@
       </article>
 
       <article class="problem-bento__tile tile tile--gray">
-        <div class="nf-glyph nf-glyph--silence" aria-hidden="true"><span></span></div>
+        <div class="nf-glyph nf-glyph--sound" aria-hidden="true"><span></span></div>
         <h3 class="problem-bento__title headline-tile">
           {%- if section.settings.tile_2_title != blank -%}{{ section.settings.tile_2_title }}{%- else -%}{{ 'home.problem.tile_2_title' | t }}{%- endif -%}
         </h3>
@@ -50,6 +50,16 @@
         </h3>
         <p class="body-standard text-muted">
           {%- if section.settings.tile_3_body != blank -%}{{ section.settings.tile_3_body }}{%- else -%}{{ 'home.problem.tile_3_body' | t }}{%- endif -%}
+        </p>
+      </article>
+
+      <article class="problem-bento__wide tile tile--gray">
+        <div class="nf-glyph nf-glyph--shield" aria-hidden="true"><span></span></div>
+        <h3 class="problem-bento__title headline-tile">
+          {%- if section.settings.tile_4_title != blank -%}{{ section.settings.tile_4_title }}{%- else -%}{{ 'home.problem.tile_4_title' | t }}{%- endif -%}
+        </h3>
+        <p class="body-standard text-muted">
+          {%- if section.settings.tile_4_body != blank -%}{{ section.settings.tile_4_body }}{%- else -%}{{ 'home.problem.tile_4_body' | t }}{%- endif -%}
         </p>
       </article>
     </div>
@@ -73,7 +83,8 @@
     { "type": "textarea", "id": "tile_2_body", "label": "Tile 2 body" },
     { "type": "text", "id": "tile_3_title", "label": "Tile 3 title" },
     { "type": "textarea", "id": "tile_3_body", "label": "Tile 3 body" },
-    { "type": "image_picker", "id": "tile_3_image", "label": "Tile 3 image", "info": "Default: kevin-feature-problem-lights.jpg" }
+    { "type": "text", "id": "tile_4_title", "label": "Tile 4 title (alarm layer)" },
+    { "type": "textarea", "id": "tile_4_body", "label": "Tile 4 body" }
   ],
   "presets": [{ "name": "Problem" }]
 }

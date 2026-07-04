@@ -445,16 +445,19 @@ const nlHome = {
     overline: 'Het probleem',
     heading: 'Als dierbaren alleen wonen of een huis leeg oogt, worden ze een doelwit.',
     subheading:
-      'Aanranders, gewelddadige indringers en inbrekers zoeken gemakkelijke doelen—alleenstaande vrouwen, je dochter die voor het eerst op kamers gaat om te studeren, of gepensioneerde en oudere weduwen en echtparen. KEVIN 3.0® simuleert anderen die bij je in huis wonen, zodat je nooit alleen lijkt—en helpt zo inbraak effectief te voorkomen.',
-    tile_1_title: 'Donker betekent weg',
+      'Aanranders, gewelddadige indringers en inbrekers kiezen makkelijke doelwitten: vrouwen die alleen wonen, een dochter in haar eerste studentenkamer, oudere echtparen. KEVIN 3.0® simuleert mensen die met je samenwonen, zodat niemand ooit alleen lijkt.',
+    tile_1_title: 'Echte menselijke schaduwen',
     tile_1_body:
-      'Onverlichte kamers in de vroege avond zijn het luidste signaal dat een huis kan geven.',
-    tile_2_title: 'Stilte bevestigt het',
+      'Ultrarealistische schaduweffecten van één persoon of een heel gezin—zo ziet de straat dat er iemand thuis is en niemand alleen woont.',
+    tile_2_title: 'Het geluid van echt leven',
     tile_2_body:
-      'Geen stemmen, geen keuken, geen tv—zo gecheckt vanaf de stoep.',
+      'Ultrarealistische geluidsscenario’s—gesprekken, een blaffende hond, koken, schoonmaken, spelletjes, de tv—voor echte, geloofwaardige aanwezigheid.',
     tile_3_title: 'Timers houden niemand voor de gek',
     tile_3_body:
-      'Dezelfde lamp op dezelfde tijd, elke avond: dat leest als automatisering, niet als leven.'
+      'Dezelfde lamp op dezelfde tijd, elke avond: dat leest als automatisering, niet als leven. Kevin varieert alles.',
+    tile_4_title: 'De laag die alarmen missen',
+    tile_4_body:
+      'Een alarm detecteert pas een inbraak, en hulp laat op zich wachten. KEVIN® vervangt je alarm niet—het voegt de ontbrekende preventielaag toe en stopt gewelddadige indringers, aanranders en dieven vóór je dierbaren ooit geweld meemaken.'
   },
   mechanism: {
     overline: 'Zo werkt het',

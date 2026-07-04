@@ -27,7 +27,9 @@
         "tile_2_title": "",
         "tile_2_body": "",
         "tile_3_title": "",
-        "tile_3_body": ""
+        "tile_3_body": "",
+        "tile_4_title": "",
+        "tile_4_body": ""
       }
     },
     "mechanism": {
@@ -47,18 +49,18 @@
     "stats": {
       "type": "lp-stats",
       "settings": {
-        "heading": "Authority you can trust.",
+        "heading": "",
         "stat_1_value": "",
         "stat_1_label": "",
-        "stat_2_value": "70+",
-        "stat_2_label": "Hours of built-in simulations",
-        "stat_3_value": "9W",
-        "stat_3_label": "Typical energy use",
-        "stat_4_value": "70%",
-        "stat_4_label": "Of burglaries happen in daytime",
+        "stat_2_value": "",
+        "stat_2_label": "",
+        "stat_3_value": "",
+        "stat_3_label": "",
+        "stat_4_value": "",
+        "stat_4_label": "",
         "badge_1": "",
-        "badge_2": "Swiss engineered and designed",
-        "badge_3": "Jammer-proof local playback",
+        "badge_2": "",
+        "badge_3": "",
         "ticker_items": ""
       }
     },
