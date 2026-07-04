@@ -422,18 +422,20 @@ body.nightfall .nf-window__glow {
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
 
-/* Shadow figures — she reads; a second silhouette arrives and stays */
+/* Shadow figures — she sways to the music; a second silhouette arrives and stays.
+   blur = curtain diffusion; drop-shadow = soft penumbra copy behind the core
+   shadow, which is what makes a real cast shadow read as "real". */
 body.nightfall .nf-window__figure {
   position: absolute;
   bottom: 4%;
   color: rgba(11, 8, 15, 0.94);
-  filter: blur(4px);
+  filter: blur(3.5px) drop-shadow(0 0 9px rgba(11, 8, 15, 0.55));
   pointer-events: none;
 }
 
 body.nightfall .nf-window__figure--reader {
-  left: 8%;
-  width: 44%;
+  left: 11%;
+  width: 33%;
   height: auto;
   opacity: 0;
   transform-origin: 50% 100%;
@@ -442,8 +444,8 @@ body.nightfall .nf-window__figure--reader {
 }
 
 body.nightfall .nf-window__figure--partner {
-  right: 9%;
-  width: 27%;
+  right: 10%;
+  width: 30%;
   height: auto;
   opacity: 0;
   transform: translateX(220%);
@@ -451,14 +453,85 @@ body.nightfall .nf-window__figure--partner {
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
 
-/* Gentle reading sway once visible (time-based, motion-ready only) */
-.motion-ready body.nightfall .nf-window__figure--reader g {
-  transform-origin: 40% 90%;
-  animation: nfReaderSway 6s ease-in-out infinite;
+/* ---- Character rig (motion-design layering, time-based, motion-ready only)
+   Root sways at the feet; a nested layer breathes; head and forearm are
+   independent pivoting layers (secondary motion). Periods are all different
+   and out of phase so the two figures read as two individuals feeling the
+   same song — never mirrored cutouts. All pivots use transform-box:
+   fill-box so origins are relative to each layer's own geometry. ---- */
+
+body.nightfall .nf-window__figure .nf-rig,
+body.nightfall .nf-window__figure .nf-rig__breathe,
+body.nightfall .nf-window__figure .nf-rig__head,
+body.nightfall .nf-window__figure .nf-rig__arm {
+  transform-box: fill-box;
 }
-@keyframes nfReaderSway {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(1.6deg); }
+
+/* Sway: whole body pivots at the feet, like weight shifting foot to foot */
+.motion-ready body.nightfall .nf-window__figure--reader .nf-rig {
+  transform-origin: 50% 97%;
+  animation: nfRigSwayA 5.6s ease-in-out infinite;
+}
+.motion-ready body.nightfall .nf-window__figure--partner .nf-rig {
+  transform-origin: 50% 97%;
+  animation: nfRigSwayB 6.6s ease-in-out infinite;
+  animation-delay: -2.6s;
+}
+@keyframes nfRigSwayA {
+  0%, 100% { transform: rotate(-1.4deg); }
+  50% { transform: rotate(1.5deg); }
+}
+@keyframes nfRigSwayB {
+  0%, 100% { transform: translateX(1.4px) rotate(1deg); }
+  50% { transform: translateX(-1.4px) rotate(-1.1deg); }
+}
+
+/* Breathing: slow chest rise, anchored at the feet */
+.motion-ready body.nightfall .nf-window__figure .nf-rig__breathe {
+  transform-origin: 50% 100%;
+  animation: nfRigBreathe 3.9s ease-in-out infinite;
+}
+.motion-ready body.nightfall .nf-window__figure--partner .nf-rig__breathe {
+  animation-duration: 4.4s;
+  animation-delay: -1.7s;
+}
+@keyframes nfRigBreathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.012); }
+}
+
+/* Head: independent nod — hers slow and dreamy, his on the beat */
+.motion-ready body.nightfall .nf-window__figure--reader .nf-rig__head {
+  transform-origin: 50% 92%;
+  animation: nfRigNodA 4.6s ease-in-out infinite;
+  animation-delay: -1.2s;
+}
+.motion-ready body.nightfall .nf-window__figure--partner .nf-rig__head {
+  transform-origin: 50% 92%;
+  animation: nfRigNodB 2.2s ease-in-out infinite;
+}
+@keyframes nfRigNodA {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2.4deg); }
+}
+@keyframes nfRigNodB {
+  0%, 100% { transform: rotate(0.8deg) translateY(0); }
+  50% { transform: rotate(-1.2deg) translateY(0.7px); }
+}
+
+/* Her forearm: parked along the body, lifts in a small gesture every cycle
+   (raise — two beats of movement — lower), pivoting at the elbow */
+.motion-ready body.nightfall .nf-window__figure--reader .nf-rig__arm {
+  transform-origin: 50% 12%;
+  animation: nfRigArm 13s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+}
+@keyframes nfRigArm {
+  0%, 56% { transform: rotate(0deg); }
+  63% { transform: rotate(-116deg); }
+  68% { transform: rotate(-104deg); }
+  73% { transform: rotate(-118deg); }
+  78% { transform: rotate(-107deg); }
+  88%, 100% { transform: rotate(0deg); }
 }
 
 /* Scrub keyframes: reader appears with the warm light; partner walks in
@@ -513,25 +586,27 @@ body.nightfall .nf-window__sill {
   border-radius: 4px;
 }
 
-/* Sound bars inside the window (bottom-right) */
+/* Music playing in the window: equalizer bars between the two figures */
 body.nightfall .nf-soundbars {
   position: absolute;
-  left: 47%;
-  bottom: 12%;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
-  gap: 4px;
-  height: 34px;
+  gap: 5px;
+  height: 52px;
   opacity: 0;
   animation: nfSoundAppear 1s linear paused both;
   animation-delay: calc(var(--nf-progress, 0) * -1s);
 }
 
 body.nightfall .nf-soundbars span {
-  width: 4px;
+  width: 5px;
   height: 30%;
-  border-radius: 2px;
+  border-radius: 3px;
   background: linear-gradient(180deg, var(--kevin-pink) 0%, var(--kevin-magenta) 100%);
+  box-shadow: 0 0 12px rgba(227, 28, 121, 0.55);
 }
 
 .motion-ready body.nightfall .nf-soundbars span {
@@ -639,7 +714,8 @@ html.no-js body.nightfall .nf-window__figure {
   opacity: 1 !important;
   transform: none !important;
 }
-.motion-reduced body.nightfall .nf-window__figure--reader g {
+.motion-reduced body.nightfall .nf-window__figure g,
+html.no-js body.nightfall .nf-window__figure g {
   animation: none !important;
 }
 .motion-reduced body.nightfall .nf-soundbars span {
