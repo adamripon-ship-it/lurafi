@@ -413,13 +413,13 @@
     "mechanism": {
       "overline": "Jak to funguje",
       "heading": "Světlo. Stín. Zvuk.",
-      "subheading": "Kevin přehrává obydlený večer—patentované světelné scény, pohybující se siluety a skutečné zvuky domácnosti—přesně tam, kam se kolemjdoucí dívají.",
-      "phase_1_title": "Okno se rozsvítí",
-      "phase_1_body": "Teplé, proměnlivé světlo nahradí mrtvý svit časovače—pokoje působí obývané, ne jen osvětlené.",
-      "phase_2_title": "Někdo projde pokojem",
-      "phase_2_body": "Promítané siluety se pohybují jako lidé—viditelné přes záclony, kam se zloději dívají nejdřív.",
-      "phase_3_title": "Domov promluví",
-      "phase_3_body": "Vaření, rozhovory, pes, který slyší zvonek—zvuk příběh dokončí, z lokálního úložiště."
+      "subheading": "Zloděj posoudí dům během několika sekund—podle světla, pohybu a zvuku. Kevin zajistí všechny tři, takže váš domov působí obydleně od ulice až po práh a zloděj jde za snadnějším cílem.",
+      "phase_1_title": "Světla ožijí",
+      "phase_1_body": "Teplé světlo přechází z pokoje do pokoje jako skutečné lampy a blikající televize—nikdy strnulé blikání, které prozradí levný časovač.",
+      "phase_2_title": "Přes okno přejdou stíny",
+      "phase_2_body": "Pohybující se siluety procházejí za záclonami—přesně ten projev života, který zloděj hledá, než si vybere cíl.",
+      "phase_3_title": "Domov zní obydleně",
+      "phase_3_body": "Hlasy, televize, vaření a pes štěkající u zvonku se ozývají přímo ze zařízení—takže i zblízka je jasné, že je někdo doma."
     },
     "jammer": {
       "overline": "Když vypadne Wi-Fi",

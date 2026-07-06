@@ -463,16 +463,16 @@ const nlHome = {
     overline: 'Zo werkt het',
     heading: 'Licht. Schaduw. Geluid.',
     subheading:
-      'Kevin speelt een bewoonde avond—gepatenteerde lichtscènes, bewegende silhouetten en echt huisgeluid—precies waar voorbijgangers kijken.',
-    phase_1_title: 'Het raam wordt warm',
+      'Een inbreker beoordeelt een huis in seconden—aan het licht, de beweging en het geluid. Kevin levert alle drie, zodat je huis van straat tot voordeur bewoond oogt en de inbreker verdergaat naar een makkelijker doelwit.',
+    phase_1_title: 'De lichten komen tot leven',
     phase_1_body:
-      'Warm, wisselend licht vervangt de dode gloed van een timer—kamers ogen gebruikt, niet alleen verlicht.',
-    phase_2_title: 'Iemand loopt door de kamer',
+      'Warm licht verspringt van kamer tot kamer, als echte lampen en een flikkerende tv—nooit het starre aan-uit-knipperen dat een goedkope timer verraadt.',
+    phase_2_title: 'Schaduwen kruisen het raam',
     phase_2_body:
-      'Geprojecteerde silhouetten bewegen zoals mensen bewegen, zichtbaar door gordijnen waar inbrekers het eerst kijken.',
-    phase_3_title: 'Het huis spreekt',
+      'Bewegende silhouetten trekken langs de gordijnen—precies het teken van leven waar een inbreker naar zoekt voordat hij een doelwit kiest.',
+    phase_3_title: 'Het huis klinkt bewoond',
     phase_3_body:
-      'Koken, gesprekken, een hond die de deurbel hoort—geluid maakt het verhaal af, vanaf lokale opslag.'
+      'Stemmen, een tv, kookgeluiden en een hond die blaft bij de deurbel klinken rechtstreeks vanaf het apparaat—zodat zelfs van dichtbij duidelijk iemand thuis is.'
   },
   stats: {
     heading: 'Weken geloofwaardig, geen minuten.',
