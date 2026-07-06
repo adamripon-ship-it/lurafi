@@ -413,13 +413,13 @@
     "mechanism": {
       "overline": "Comment ça marche",
       "heading": "Lumière. Ombre. Son.",
-      "subheading": "Kevin joue une soirée habitée—scènes lumineuses brevetées, silhouettes en mouvement et vrais sons du quotidien—exactement là où regardent les passants.",
-      "phase_1_title": "La fenêtre se réchauffe",
-      "phase_1_body": "Une lumière chaude et changeante remplace la lueur morte d'une minuterie—les pièces semblent vécues, pas seulement éclairées.",
-      "phase_2_title": "Quelqu'un traverse la pièce",
-      "phase_2_body": "Des silhouettes projetées bougent comme des personnes, visibles à travers les rideaux, là où les cambrioleurs regardent en premier.",
-      "phase_3_title": "La maison parle",
-      "phase_3_body": "Cuisine, conversations, un chien qui entend la sonnette—le son complète l'histoire, depuis la mémoire locale."
+      "subheading": "Un cambrioleur juge une maison en quelques secondes—à sa lumière, à ses mouvements, à ses sons. Kevin produit les trois, si bien que votre logement paraît habité de la rue jusqu'au pas de la porte, et il passe à une cible plus facile.",
+      "phase_1_title": "Les lumières prennent vie",
+      "phase_1_body": "Une lumière chaude passe d'une pièce à l'autre, comme de vraies lampes et un téléviseur qui scintille—jamais le clignotement rigide qui trahit une minuterie bon marché.",
+      "phase_2_title": "Des ombres traversent la fenêtre",
+      "phase_2_body": "Des silhouettes en mouvement passent derrière les rideaux—le signe de vie exact qu'un cambrioleur cherche avant de choisir sa cible.",
+      "phase_3_title": "La maison paraît occupée",
+      "phase_3_body": "Des voix, une télé, des bruits de cuisine et un chien qui aboie à la sonnette sortent directement de l'appareil—si bien que, même de tout près, quelqu'un est clairement chez lui."
     },
     "jammer": {
       "overline": "Quand le Wi-Fi tombe",
