@@ -16,6 +16,15 @@
         "deploy_cache_bust": ""
       }
     },
+    "video_showcase": {
+      "type": "lp-video",
+      "settings": {
+        "overline": "",
+        "heading": "",
+        "subheading": "",
+        "caption": ""
+      }
+    },
     "problem": {
       "type": "lp-problem",
       "settings": {
@@ -222,6 +231,7 @@
   },
   "order": [
     "hero",
+    "video_showcase",
     "problem",
     "mechanism",
     "stats",

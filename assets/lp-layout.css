@@ -80,6 +80,25 @@
   }
 }
 
+/* Video showcase — under the hero */
+.lp-video__frame {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.lp-video__player {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  background: #0a0a0b;
+}
+
+.lp-video__caption {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
 /* Solution — outside view + stacked pillars */
 .solution-split {
   display: grid;
