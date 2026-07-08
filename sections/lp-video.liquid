@@ -1,8 +1,10 @@
 {%- comment -%}
-  Video showcase — sits directly under the Hero. Native "video" setting lets a
-  merchant swap in a Shopify-hosted video (adaptive streaming); left blank, the
-  bundled default video ships instead. Real content video with sound, so it
-  uses standard controls rather than the ambient/autoplay loop pattern.
+  Video showcase — sits directly under the Hero. Merchant selects a video via
+  Shopify's native "video" setting (Admin-hosted, adaptively streamed — keeps
+  large media out of the theme repo). Real content video with sound, so it
+  uses standard controls rather than the ambient/autoplay loop pattern. Renders
+  nothing on the live storefront until a video is chosen; shows a hint in the
+  theme editor instead.
 {%- endcomment -%}
 {%- liquid
   assign overline = section.settings.overline
@@ -11,37 +13,33 @@
   assign caption = section.settings.caption
 -%}
 
-<section class="section-apple lp-video">
-  <div class="apple-container">
-    {% render 'section-intro',
-      overline: overline,
-      heading: heading,
-      subheading: subheading
-    %}
+{%- if section.settings.video != blank -%}
+  <section class="section-apple lp-video">
+    <div class="apple-container">
+      {% render 'section-intro',
+        overline: overline,
+        heading: heading,
+        subheading: subheading
+      %}
 
-    <div class="lp-video__frame">
-      {%- if section.settings.video != blank -%}
+      <div class="lp-video__frame">
         {{ section.settings.video | video_tag: image_size: '1600x', controls: true, preload: 'metadata', class: 'lp-video__player' }}
-      {%- else -%}
-        <video
-          class="lp-video__player"
-          controls
-          playsinline
-          preload="metadata"
-          {%- if section.settings.poster != blank %}
-          poster="{{ section.settings.poster | image_url: width: 1600 }}"
-          {%- endif %}
-        >
-          <source src="{{ 'kevin-video-showcase.mp4' | asset_url }}" type="video/mp4">
-        </video>
-      {%- endif -%}
 
-      {%- if caption != blank -%}
-        <p class="lp-video__caption body-reduced text-muted">{{ caption | escape }}</p>
-      {%- endif -%}
+        {%- if caption != blank -%}
+          <p class="lp-video__caption body-reduced text-muted">{{ caption | escape }}</p>
+        {%- endif -%}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+{%- elsif request.design_mode -%}
+  <section class="section-apple lp-video">
+    <div class="apple-container">
+      <p class="body-standard text-muted" style="text-align: center;">
+        Video showcase: pick a video in the section settings (right panel) to show it here.
+      </p>
+    </div>
+  </section>
+{%- endif -%}
 
 {% schema %}
 {
@@ -62,13 +60,7 @@
       "type": "video",
       "id": "video",
       "label": "Video",
-      "info": "Optional. Upload/select a video here to have Shopify host it with adaptive streaming. Leave blank to use the bundled default video."
-    },
-    {
-      "type": "image_picker",
-      "id": "poster",
-      "label": "Poster image",
-      "info": "Only used with the bundled default video (the Video field above generates its own poster)."
+      "info": "Upload or select a video here — Shopify hosts it and streams adaptive resolutions. The section is hidden on the live storefront until a video is chosen."
     },
     { "type": "text", "id": "caption", "label": "Caption (optional)" }
   ],
