@@ -47,14 +47,20 @@
           slider visibly cross-fades out of the box. Each is overridden by its
           Slide 1/2/3 image picker when the merchant sets one.
         {%- endcomment -%}
-        {%- assign fallback_assets = 'kevin-feature-solution-light.jpg,kevin-hero-shadow-mom-toddler.webp,kevin-cozy-home.webp' | split: ',' -%}
+        {%- comment -%}
+          Built-in slide images (lights -> shadow -> sound) hosted on the store's
+          Shopify Files CDN. Shopify auto-serves WebP via content negotiation and
+          honours the &width= transform, so these load fast on mobile without a
+          repo asset. Each is still overridden by its Slide 1/2/3 image picker.
+        {%- endcomment -%}
+        {%- assign fallback_urls = 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/hf_20260630_133151_4420f4b7-fe60-4105-92c4-dff5116a0277.png?v=1783597497,https://cdn.shopify.com/s/files/1/0943/9841/5226/files/hf_20260630_133152_8b07275d-3a08-4511-a7a4-c63dc8d0023e.png?v=1783597497,https://cdn.shopify.com/s/files/1/0943/9841/5226/files/hf_20260630_133649_48a4d18d-b8b2-48db-9dc5-3189515b6d76.png?v=1783597497' | split: ',' -%}
         <div class="nf-window nf-window--photo" aria-hidden="true">
           <div class="nf-window__slides">
             {%- for n in (1..3) -%}
               {%- liquid
                 assign img_key = 'phase_' | append: n | append: '_image'
                 assign slide_img = section.settings[img_key]
-                assign fallback_asset = fallback_assets[forloop.index0]
+                assign fallback_url = fallback_urls[forloop.index0]
               -%}
               {%- if slide_img != blank -%}
                 <img class="nf-window__photo nf-window__photo--{{ n }}"
@@ -64,7 +70,9 @@
                      alt="" loading="lazy" width="900" height="1206">
               {%- else -%}
                 <img class="nf-window__photo nf-window__photo--{{ n }}"
-                     src="{{ fallback_asset | asset_url }}"
+                     src="{{ fallback_url }}&width=1000"
+                     srcset="{{ fallback_url }}&width=600 600w, {{ fallback_url }}&width=1000 1000w"
+                     sizes="(max-width: 900px) 90vw, 460px"
                      alt="" loading="lazy" width="900" height="1206">
               {%- endif -%}
             {%- endfor -%}
