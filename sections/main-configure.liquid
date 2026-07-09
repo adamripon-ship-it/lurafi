@@ -120,6 +120,27 @@
           <p class="configure-color-text">{{ 'configure.color_prefix' | t }} <strong data-configure-color-name-inline>Grey</strong></p>
         </section>
 
+        {%- comment -%}
+          Optional paid front covers (add-on line items). The device is Grey; a
+          cover clips on top to change the look. Images/names are editable in the
+          Theme Editor; a cover is only purchasable once its Shopify variant id is
+          set (the cover products must exist in Shopify). Covers without an id are
+          shown but marked "soon".
+          Default image mapping (owner-provided): Red=download_24, Brown=download_25,
+          Blue=download_29, White=download_27.
+        {%- endcomment -%}
+        {%- assign cover_price_label = section.settings.cover_price_label | default: 'CHF 29 · EUR 31.50' -%}
+        <section class="configure-section configure-covers" data-configure-covers aria-labelledby="ConfigureCoversHeading">
+          <h2 id="ConfigureCoversHeading" class="configure-label">Optional front covers</h2>
+          <p class="configure-covers__note">{{ cover_price_label }} each{% if section.settings.cover_discount_note != blank %} · {{ section.settings.cover_discount_note }}{% endif %}</p>
+          <div class="configure-covers__grid" role="group" aria-label="Optional front covers">
+            {% render 'configure-cover', cover_name: section.settings.cover_1_name, default_name: 'Red', cover_variant: section.settings.cover_1_variant, cover_image: section.settings.cover_1_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_24.png?v=1783616627', price_label: cover_price_label %}
+            {% render 'configure-cover', cover_name: section.settings.cover_2_name, default_name: 'Brown', cover_variant: section.settings.cover_2_variant, cover_image: section.settings.cover_2_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_25.png?v=1783616628', price_label: cover_price_label %}
+            {% render 'configure-cover', cover_name: section.settings.cover_3_name, default_name: 'Blue', cover_variant: section.settings.cover_3_variant, cover_image: section.settings.cover_3_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_29.png?v=1783616628', price_label: cover_price_label %}
+            {% render 'configure-cover', cover_name: section.settings.cover_4_name, default_name: 'White', cover_variant: section.settings.cover_4_variant, cover_image: section.settings.cover_4_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_27.png?v=1783616628', price_label: cover_price_label %}
+          </div>
+        </section>
+
         <section class="configure-section configure-section--compact" data-configure-qty aria-labelledby="ConfigureQtyHeading">
           <h2 id="ConfigureQtyHeading" class="configure-label">{{ 'configure.quantity' | t }}</h2>
           <div class="configure-qty" role="group" aria-label="{{ 'configure.quantity' | t }}">
@@ -286,6 +307,22 @@
     { "type": "textarea", "id": "lede", "label": "Introduction" },
     { "type": "header", "content": "Product image" },
     { "type": "image_picker", "id": "color_image_grey", "label": "Product photo (Grey)", "info": "Only one unit colour exists. Blank keeps the shipped image." },
+    { "type": "header", "content": "Optional front covers (paid add-ons)" },
+    { "type": "paragraph", "content": "Covers show on the configure page. Each becomes purchasable only when its Shopify variant ID is filled in below (the cover product must exist in Shopify)." },
+    { "type": "text", "id": "cover_price_label", "label": "Cover price label", "default": "CHF 29 · EUR 31.50" },
+    { "type": "text", "id": "cover_discount_note", "label": "Discount note", "default": "Buy 3 Kevins, save 15% — applied at checkout." },
+    { "type": "text", "id": "cover_1_name", "label": "Cover 1 name", "default": "Red" },
+    { "type": "image_picker", "id": "cover_1_image", "label": "Cover 1 image (blank = built-in)" },
+    { "type": "text", "id": "cover_1_variant", "label": "Cover 1 Shopify variant ID" },
+    { "type": "text", "id": "cover_2_name", "label": "Cover 2 name", "default": "Brown" },
+    { "type": "image_picker", "id": "cover_2_image", "label": "Cover 2 image (blank = built-in)" },
+    { "type": "text", "id": "cover_2_variant", "label": "Cover 2 Shopify variant ID" },
+    { "type": "text", "id": "cover_3_name", "label": "Cover 3 name", "default": "Blue" },
+    { "type": "image_picker", "id": "cover_3_image", "label": "Cover 3 image (blank = built-in)" },
+    { "type": "text", "id": "cover_3_variant", "label": "Cover 3 Shopify variant ID" },
+    { "type": "text", "id": "cover_4_name", "label": "Cover 4 name", "default": "White" },
+    { "type": "image_picker", "id": "cover_4_image", "label": "Cover 4 image (blank = built-in)" },
+    { "type": "text", "id": "cover_4_variant", "label": "Cover 4 Shopify variant ID" },
     { "type": "header", "content": "Checkout" },
     { "type": "text", "id": "checkout_cta", "label": "Checkout button label" }
   ],
