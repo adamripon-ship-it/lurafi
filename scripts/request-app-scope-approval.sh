@@ -16,8 +16,11 @@ if [[ -z "${CLIENT_ID}" ]]; then
   exit 1
 fi
 
-# Scopes this repo needs (comma-separated, no spaces)
-SCOPES="read_products,write_products,read_themes,write_themes,read_locales,write_locales,read_translations,write_translations,read_content,write_content,read_online_store_pages,write_online_store_pages,read_markets,write_markets,write_inventory,read_inventory"
+# Scopes this repo needs (comma-separated, no spaces).
+# The metaobjects / files / navigation scopes are required by the CMS
+# provisioning workflow (scripts/provision-cms.mjs) — without them the
+# metaobjects, files, and navigation steps fail with access denied.
+SCOPES="read_products,write_products,read_themes,write_themes,read_locales,write_locales,read_translations,write_translations,read_content,write_content,read_online_store_pages,write_online_store_pages,read_markets,write_markets,write_inventory,read_inventory,read_metaobjects,write_metaobjects,read_metaobject_definitions,write_metaobject_definitions,read_files,write_files,read_online_store_navigation,write_online_store_navigation"
 
 # Must match a redirect URL on the active app version. fullaccess uses example.com — fix in Dev Dashboard when you can.
 REDIRECT_URI="${SHOPIFY_OAUTH_REDIRECT_URI:-https://example.com}"
