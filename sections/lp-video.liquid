@@ -1,0 +1,82 @@
+{%- comment -%}
+  Video showcase — sits directly under the Hero. Plays the bundled default
+  video (assets/kevin-video-showcase.mp4) out of the box, so the section is
+  visible with no merchant setup. A merchant can override it via Shopify's
+  native "video" setting (Admin-hosted, adaptively streamed) — when set, that
+  renders instead of the bundled file.
+{%- endcomment -%}
+{%- liquid
+  assign overline = section.settings.overline
+  assign heading = section.settings.heading
+  assign subheading = section.settings.subheading
+  assign caption = section.settings.caption
+-%}
+
+<section class="section-apple lp-video">
+  <div class="apple-container">
+    {% render 'section-intro',
+      overline: overline,
+      heading: heading,
+      subheading: subheading
+    %}
+
+    <div class="lp-video__frame">
+      {%- if section.settings.video != blank -%}
+        {{ section.settings.video | video_tag: image_size: '1600x', controls: true, preload: 'metadata', class: 'lp-video__player' }}
+      {%- else -%}
+        <video
+          class="lp-video__player"
+          controls
+          playsinline
+          preload="metadata"
+          {%- if section.settings.poster != blank %}
+          poster="{{ section.settings.poster | image_url: width: 1600 }}"
+          {%- endif %}
+        >
+          <source src="{{ 'kevin-video-showcase.mp4' | asset_url }}" type="video/mp4">
+        </video>
+      {%- endif -%}
+
+      {%- if caption != blank -%}
+        <p class="lp-video__caption body-reduced text-muted">{{ caption | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video showcase",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Plays the built-in video by default. Heading fields are optional — leave blank to show only the video."
+    },
+    { "type": "text", "id": "overline", "label": "Overline" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video (override)",
+      "info": "Optional. Select a video here to replace the built-in one — Shopify hosts it and streams adaptive resolutions. Leave blank to use the bundled default video."
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Poster image",
+      "info": "Optional. Shown before the bundled default video plays."
+    },
+    { "type": "text", "id": "caption", "label": "Caption (optional)" }
+  ],
+  "presets": [
+    {
+      "name": "Video showcase"
+    }
+  ]
+}
+{% endschema %}
