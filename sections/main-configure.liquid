@@ -11,7 +11,35 @@
     assign buy_product = all_products.kevin
   endif
 
-  assign default_image = 'kevin-front-cover-grey-v2.webp' | asset_url
+  # Colorway images: Theme Editor pickers override the built-in asset fallbacks
+  # so the content team can swap product photos without a deploy. The colorImages
+  # JSON structure below stays identical — only the source URL changes.
+  if section.settings.color_image_grey != blank
+    assign url_grey = section.settings.color_image_grey | image_url: width: 1200
+  else
+    assign url_grey = 'kevin-front-cover-grey-v2.webp' | asset_url
+  endif
+  if section.settings.color_image_white != blank
+    assign url_white = section.settings.color_image_white | image_url: width: 1200
+  else
+    assign url_white = 'kevin-front-cover-white-v2.webp' | asset_url
+  endif
+  if section.settings.color_image_burgundy != blank
+    assign url_burgundy = section.settings.color_image_burgundy | image_url: width: 1200
+  else
+    assign url_burgundy = 'kevin-front-cover-red-v2.webp' | asset_url
+  endif
+  if section.settings.color_image_espresso != blank
+    assign url_espresso = section.settings.color_image_espresso | image_url: width: 1200
+  else
+    assign url_espresso = 'kevin-front-cover-brown-v2.webp' | asset_url
+  endif
+  if section.settings.color_image_navy != blank
+    assign url_navy = section.settings.color_image_navy | image_url: width: 1200
+  else
+    assign url_navy = 'kevin-front-cover-blue-v2.webp' | asset_url
+  endif
+  assign default_image = url_grey
   assign buy_features = 'configure.buy_features' | t | split: '|'
 
   assign configure_back = section.settings.back_label
@@ -235,14 +263,14 @@
     "blue": "#1557a7"
   },
   "colorImages": {
-    "grey": {{ 'kevin-front-cover-grey-v2.webp' | asset_url | json }},
-    "white": {{ 'kevin-front-cover-white-v2.webp' | asset_url | json }},
-    "burgundy": {{ 'kevin-front-cover-red-v2.webp' | asset_url | json }},
-    "red": {{ 'kevin-front-cover-red-v2.webp' | asset_url | json }},
-    "espresso": {{ 'kevin-front-cover-brown-v2.webp' | asset_url | json }},
-    "brown": {{ 'kevin-front-cover-brown-v2.webp' | asset_url | json }},
-    "navy": {{ 'kevin-front-cover-blue-v2.webp' | asset_url | json }},
-    "blue": {{ 'kevin-front-cover-blue-v2.webp' | asset_url | json }}
+    "grey": {{ url_grey | json }},
+    "white": {{ url_white | json }},
+    "burgundy": {{ url_burgundy | json }},
+    "red": {{ url_burgundy | json }},
+    "espresso": {{ url_espresso | json }},
+    "brown": {{ url_espresso | json }},
+    "navy": {{ url_navy | json }},
+    "blue": {{ url_navy | json }}
   },
   "buy": {
     "features": {{ buy_features | json }},
@@ -286,6 +314,13 @@
     { "type": "text", "id": "header_eyebrow", "label": "Eyebrow" },
     { "type": "text", "id": "title", "label": "Page title" },
     { "type": "textarea", "id": "lede", "label": "Introduction" },
+    { "type": "header", "content": "Colorway images" },
+    { "type": "paragraph", "content": "Optional per-colorway product photos. Blank keeps the shipped image. Upload/pick from Files." },
+    { "type": "image_picker", "id": "color_image_grey", "label": "Grey" },
+    { "type": "image_picker", "id": "color_image_white", "label": "White" },
+    { "type": "image_picker", "id": "color_image_burgundy", "label": "Burgundy / Red" },
+    { "type": "image_picker", "id": "color_image_espresso", "label": "Espresso / Brown" },
+    { "type": "image_picker", "id": "color_image_navy", "label": "Navy / Blue" },
     { "type": "header", "content": "Checkout" },
     { "type": "text", "id": "checkout_cta", "label": "Checkout button label" }
   ],
