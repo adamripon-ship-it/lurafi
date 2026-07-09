@@ -36,8 +36,8 @@
         "block_3": {
           "type": "stat_row",
           "settings": {
-            "stat_1_value": "97%",
-            "stat_1_label": "Burglary probability reduced (Mitipi research)",
+            "stat_1_value": "0",
+            "stat_1_label": "Cameras or microphones",
             "stat_2_value": "Swiss",
             "stat_2_label": "Engineered & designed",
             "stat_3_value": "Award",
