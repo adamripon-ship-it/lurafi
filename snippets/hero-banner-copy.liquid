@@ -1,6 +1,14 @@
 {%- comment -%}
   Hero copy: headline, lede, two CTA buttons, trust chip row (no eyebrow).
+  Decode common entities before | escape so admin-stored pre-encoded copy
+  cannot double-escape into visible &#39; / &amp; (matches section-intro).
 {%- endcomment -%}
+{%- liquid
+  assign headline = headline | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign lede = lede | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign cta_primary_label = cta_primary_label | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign cta_secondary_label = cta_secondary_label | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+-%}
 <div class="hero-banner__copy">
   <h1 class="hero-banner__headline headline-hero" id="HeroHeading">
     {{ headline | escape }}

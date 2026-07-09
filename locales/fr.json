@@ -82,11 +82,11 @@
     "org_description": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son, afin que votre maison reste visiblement habitée et les cambrioleurs passent leur chemin.",
     "sitemap": {
       "title": "Sitemap — Mitipi & Kevin",
-      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+      "description": "Plan du site avec liens vers toutes les langues, le sitemap.xml Shopify, le sitemap IA, les résumés llms.txt et les guides complets llms-full.txt pour les moteurs de recherche et les robots LLM."
     },
     "llms": {
-      "title": "LLM site summary — Kevin presence simulation",
-      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+      "title": "Résumé du site pour LLM — simulation de présence Kevin",
+      "description": "Aperçu en texte brut pour les assistants IA : informations produit, URL et liens vers les fichiers llms.txt et llms-full.txt."
     }
   },
   "products": {
@@ -167,7 +167,7 @@
     "processing": "Traitement…",
     "device_alt": "Appareil Kevin",
     "device_in": "Kevin en {{ color }}",
-    "header_eyebrow": "Secure checkout",
+    "header_eyebrow": "Paiement sécurisé",
     "plan_badge_popular": "Most popular"
   },
   "hero": {
@@ -480,7 +480,7 @@
     "robots": "Fichier de découverte Robots.txt",
     "human_sitemap": "Plan du site lisible",
     "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
-    "llms_points_to_full": "links to full summary"
+    "llms_points_to_full": "liens vers le résumé complet"
   },
   "llms_page": {
     "oneliner": "Quand vous partez, Kevin utilise l'IA suisse pour simuler une vraie présence humaine avec la lumière, l'ombre et le son—votre maison reste visiblement habitée et les cambrioleurs passent leur chemin.",
@@ -502,8 +502,8 @@
     "character": "Cible : Propriétaires en Suisse/Europe qui recherchent la tranquillité d'esprit en leur absence.",
     "guide": "Guide : Simulation de présence IA conçue en Suisse.",
     "lede": "Simulation de présence IA suisse pour votre maison. Quand vous partez, Kevin utilise la lumière, l'ombre et le son pour que votre maison paraisse et sonne habitée—et les cambrioleurs passent leur chemin.",
-    "ai_discovery": "AI / LLM machine-readable files",
-    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context."
+    "ai_discovery": "Fichiers IA / LLM lisibles par machine",
+    "short_points_to_full": "Chaque fichier llms.txt court renvoie au llms-full.txt correspondant pour le contexte complet de la marque et du produit."
   },
   "faq": {
     "q1": "Qu'est-ce que Kevin ?",

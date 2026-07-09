@@ -779,7 +779,7 @@ body.nightfall .nf-jammer__status {
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-body.nightfall .nf-jammer__status--dead { color: rgba(255, 255, 255, 0.4); }
+body.nightfall .nf-jammer__status--dead { color: rgba(255, 255, 255, 0.6); }
 body.nightfall .nf-jammer__status--alive { color: var(--kevin-pink-text); }
 .motion-ready body.nightfall .nf-jammer__status--dead {
   animation: nfStatusBlink 3.5s steps(1) infinite;

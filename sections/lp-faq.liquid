@@ -28,8 +28,8 @@
       {%- if faq_entries and faq_entries.size > 0 -%}
         {%- for entry in faq_entries -%}
           <details class="faq-item tile tile--white">
-            <summary class="faq-item__q">{{ entry.question.value }}<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <div class="faq-item__a body-standard text-muted">{{ entry.answer.value | newline_to_br }}</div>
+            <summary class="faq-item__q">{{ entry.question.value | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"' | escape }}<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <div class="faq-item__a body-standard text-muted">{{ entry.answer.value | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"' | escape | newline_to_br }}</div>
           </details>
         {%- endfor -%}
       {%- else -%}
@@ -64,6 +64,7 @@
               }{% unless forloop.last %},{% endunless %}
             {%- endfor -%}
           {%- else -%}
+            {%- assign faq_emitted = 0 -%}
             {%- for i in (1..6) -%}
               {%- liquid
                 assign q_key = 'faq.q' | append: i
@@ -71,11 +72,15 @@
                 assign q_text = q_key | t
                 assign a_text = a_key | t
               -%}
-              {
-                "@type": "Question",
-                "name": {{ q_text | json }},
-                "acceptedAnswer": { "@type": "Answer", "text": {{ a_text | json }} }
-              }{% unless forloop.last %},{% endunless %}
+              {%- if q_text != blank and a_text != blank -%}
+                {%- if faq_emitted > 0 %},{% endif -%}
+                {
+                  "@type": "Question",
+                  "name": {{ q_text | json }},
+                  "acceptedAnswer": { "@type": "Answer", "text": {{ a_text | json }} }
+                }
+                {%- assign faq_emitted = faq_emitted | plus: 1 -%}
+              {%- endif -%}
             {%- endfor -%}
           {%- endif -%}
         ]
