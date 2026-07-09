@@ -30,7 +30,17 @@
   assign poster_url = ''
   if section.settings.poster != blank
     assign poster_url = section.settings.poster | image_url: width: 1920
+  else
+    assign poster_url = 'kevin-video-showcase-poster.webp' | asset_url
   endif
+  assign poster_alt = caption
+  if poster_alt == blank
+    assign poster_alt = heading
+  endif
+  if poster_alt == blank
+    assign poster_alt = 'Watch the KEVIN® presence simulation film'
+  endif
+  assign poster_alt = poster_alt | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
 -%}
 
 <section class="section-apple lp-video" data-lp-video>
@@ -46,11 +56,25 @@
   {%- endif -%}
 
   <div class="lp-video__stage">
+    {%- comment -%}
+      Fast-loading WebP poster as a real <img> (SEO alt + no CLS). The video
+      itself uses preload="none", so none of the multi-MB file is fetched until
+      the viewer taps play — big mobile/LCP win. The poster hides on .is-playing.
+    {%- endcomment -%}
+    <img
+      class="lp-video__poster"
+      src="{{ poster_url }}"
+      alt="{{ poster_alt | escape }}"
+      loading="lazy"
+      decoding="async"
+      width="1600"
+      height="900"
+    >
     <video
       id="LpVideo-{{ section.id }}"
       class="lp-video__player"
       playsinline
-      preload="metadata"
+      preload="none"
       {%- if poster_url != blank %} poster="{{ poster_url }}"{% endif %}
     >
       {%- if has_shopify_video -%}
