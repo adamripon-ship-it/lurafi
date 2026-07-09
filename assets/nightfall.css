@@ -500,15 +500,8 @@ body.nightfall .section-apple--visible .nf-window__photo,
 html.no-js body.nightfall .nf-window__photo {
   opacity: 1;
 }
-/* Scroll-driven slow zoom (fallback driver: paused + --nf-progress delay) */
-.motion-ready body.nightfall .nf-window__photo {
-  animation: nfPhotoZoom 1s linear paused both;
-  animation-delay: calc(var(--nf-progress, 0) * -1s);
-}
-@keyframes nfPhotoZoom {
-  0%   { transform: scale(1.12) translateY(1.6%); }
-  100% { transform: scale(1.02) translateY(-1.6%); }
-}
+/* (Single-image zoom removed — every photo is now a slider slide with its own
+   scrub animation; see the scene-slider block below.) */
 
 /* Vignette seats the photo edges and the sound wave into the dark stage */
 body.nightfall .nf-window__vignette {
@@ -569,7 +562,6 @@ body.nightfall .nf-soundwave span {
   body.nightfall .nf-mech__track {
     view-timeline: --nf-mech block;
   }
-  body.nightfall .nf-window__photo,
   body.nightfall .nf-mech__phase {
     animation-timeline: --nf-mech;
     animation-range: contain 0% contain 100%;
@@ -651,19 +643,13 @@ body.nightfall .nf-window__slides { position: absolute; inset: 0; }
 body.nightfall .nf-window__slides .nf-window__photo { opacity: 0; }
 body.nightfall .nf-window__slides .nf-window__photo--1 { opacity: 1; } /* baseline before scrub */
 
-/* Fallback scrub driver: paused keyframes read --nf-progress (0..1) from scroll-fx.js */
-.motion-ready body.nightfall .nf-window__photo--1,
-.motion-ready body.nightfall .nf-window__photo--2,
-.motion-ready body.nightfall .nf-window__photo--3 {
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-  animation-fill-mode: both;
-  animation-delay: calc(var(--nf-progress, 0) * -1s);
-}
-.motion-ready body.nightfall .nf-window__photo--1 { animation-name: nfSlide1; }
-.motion-ready body.nightfall .nf-window__photo--2 { animation-name: nfSlide2; }
-.motion-ready body.nightfall .nf-window__photo--3 { animation-name: nfSlide3; }
+/* Base scrub (Safari / fallback): paused keyframes read --nf-progress (0..1) from
+   scroll-fx.js. NOT .motion-ready-scoped, so it shares specificity with the
+   @supports block below and the view-timeline wins on modern browsers — exactly
+   how the phase captions work. Reduced motion is disabled via .motion-reduced. */
+body.nightfall .nf-window__photo--1 { animation: nfSlide1 1s linear paused both; animation-delay: calc(var(--nf-progress, 0) * -1s); }
+body.nightfall .nf-window__photo--2 { animation: nfSlide2 1s linear paused both; animation-delay: calc(var(--nf-progress, 0) * -1s); }
+body.nightfall .nf-window__photo--3 { animation: nfSlide3 1s linear paused both; animation-delay: calc(var(--nf-progress, 0) * -1s); }
 
 /* Modern driver: bind the same keyframes to the mechanism view-timeline */
 @supports (animation-timeline: view()) {
@@ -714,19 +700,9 @@ body.nightfall .nf-window__dot {
   background: rgba(255, 255, 255, 0.32);
 }
 body.nightfall .nf-window__dot--1 { background: rgba(255, 255, 255, 0.85); }
-.motion-ready body.nightfall .nf-window__dot--1,
-.motion-ready body.nightfall .nf-window__dot--2,
-.motion-ready body.nightfall .nf-window__dot--3 {
-  background: rgba(255, 255, 255, 0.32);
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-  animation-fill-mode: both;
-  animation-delay: calc(var(--nf-progress, 0) * -1s);
-}
-.motion-ready body.nightfall .nf-window__dot--1 { animation-name: nfDot1; }
-.motion-ready body.nightfall .nf-window__dot--2 { animation-name: nfDot2; }
-.motion-ready body.nightfall .nf-window__dot--3 { animation-name: nfDot3; }
+body.nightfall .nf-window__dot--1 { animation: nfDot1 1s linear paused both; animation-delay: calc(var(--nf-progress, 0) * -1s); }
+body.nightfall .nf-window__dot--2 { animation: nfDot2 1s linear paused both; animation-delay: calc(var(--nf-progress, 0) * -1s); }
+body.nightfall .nf-window__dot--3 { animation: nfDot3 1s linear paused both; animation-delay: calc(var(--nf-progress, 0) * -1s); }
 @supports (animation-timeline: view()) {
   body.nightfall .nf-window__dot--1,
   body.nightfall .nf-window__dot--2,
