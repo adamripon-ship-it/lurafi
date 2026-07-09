@@ -1,0 +1,23 @@
+{%- comment -%}
+  One optional front-cover add-on button for the configure page.
+  Params: cover_name, default_name, cover_variant (Shopify variant id),
+  cover_image (image_picker or blank), default_img (CDN url), price_label.
+  A cover is purchasable only when cover_variant is set.
+{%- endcomment -%}
+{%- liquid
+  assign _name = cover_name | default: default_name
+  if cover_image != blank
+    assign _img = cover_image | image_url: width: 220
+  else
+    assign _img = default_img | append: '&width=220'
+  endif
+-%}
+<button type="button"
+        class="configure-cover{% if cover_variant == blank %} is-soon{% endif %}"
+        data-cover-id="{{ cover_variant }}"
+        aria-pressed="false"
+        {% if cover_variant == blank %}data-cover-soon="1"{% endif %}>
+  <span class="configure-cover__img"><img src="{{ _img }}" alt="{{ _name | escape }} front cover" loading="lazy" width="80" height="80"></span>
+  <span class="configure-cover__name">{{ _name | escape }}</span>
+  <span class="configure-cover__price">{% if cover_variant == blank %}Soon{% else %}+ {{ price_label }}{% endif %}</span>
+</button>

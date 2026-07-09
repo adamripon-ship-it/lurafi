@@ -310,10 +310,25 @@
     }, { plan: 'buy' });
   }
 
+  // Optional paid front covers: variant ids of the currently selected covers.
+  function selectedCoverIds() {
+    var out = [];
+    var btns = document.querySelectorAll('[data-configure-covers] .configure-cover[aria-pressed="true"]');
+    Array.prototype.forEach.call(btns, function (b) {
+      var id = b.getAttribute('data-cover-id');
+      if (id && Number(id) > 0) out.push(id);
+    });
+    return out;
+  }
+
   function goToCartPermalink(item, variant) {
     trackBeginCheckout(variant, item);
     var quantity = Number(item.quantity) || 1;
-    var url = '/cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity) + '?checkout';
+    var url = '/cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity);
+    selectedCoverIds().forEach(function (cid) {
+      url += ',' + encodeURIComponent(cid) + ':1';
+    });
+    url += '?checkout';
     window.location.href = url;
   }
 
@@ -351,7 +366,9 @@
         quantity: state.quantity
       };
 
-      if (window.LurafiCart && typeof window.LurafiCart.addAndCheckout === 'function') {
+      // With covers selected, use the multi-line permalink (addAndCheckout only
+      // adds the device); otherwise keep the fast add-and-checkout path.
+      if (selectedCoverIds().length === 0 && window.LurafiCart && typeof window.LurafiCart.addAndCheckout === 'function') {
         window.LurafiCart.addAndCheckout(item).catch(function () {
           goToCartPermalink(item, variant);
         });
@@ -361,6 +378,20 @@
       goToCartPermalink(item, variant);
     });
   });
+
+  // Optional front-cover add-ons: toggle selection. Covers without a real
+  // Shopify variant id are shown but not purchasable (data-cover-soon).
+  Array.prototype.forEach.call(
+    document.querySelectorAll('[data-configure-covers] .configure-cover'),
+    function (btn) {
+      if (btn.getAttribute('data-cover-soon') === '1') return;
+      btn.addEventListener('click', function () {
+        var pressed = btn.getAttribute('aria-pressed') === 'true';
+        btn.setAttribute('aria-pressed', String(!pressed));
+        btn.classList.toggle('is-selected', !pressed);
+      });
+    }
+  );
 
   function resetCtaLabels() {
     var t = window.themeTranslations && window.themeTranslations.configure;

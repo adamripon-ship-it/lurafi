@@ -2717,6 +2717,52 @@ body.mobile-nav-open { overflow: hidden; }
   outline: 2px solid var(--apple-blue);
   outline-offset: 3px;
 }
+
+/* Optional paid front covers */
+.configure-covers__note {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--apple-text-muted);
+}
+.configure-covers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .configure-covers__grid { grid-template-columns: repeat(2, 1fr); }
+}
+.configure-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border: 1.5px solid var(--apple-border);
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.configure-cover:hover { transform: translateY(-2px); }
+.configure-cover.is-selected {
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+.configure-cover.is-soon { opacity: 0.55; cursor: default; }
+.configure-cover.is-soon:hover { transform: none; }
+.configure-cover__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--apple-bg-gray, #f5f5f7);
+}
+.configure-cover__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.configure-cover__name { font-size: 13px; font-weight: 600; color: var(--apple-text); }
+.configure-cover__price { font-size: 11px; color: var(--apple-text-muted); }
+.configure-cover:focus-visible { outline: 2px solid var(--apple-blue); outline-offset: 3px; }
 .configure-color-text {
   font-size: 14px;
   color: var(--apple-text-muted);
