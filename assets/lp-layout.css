@@ -80,6 +80,159 @@
   }
 }
 
+/* Video showcase — immersive full-bleed stage under the hero */
+.lp-video {
+  padding-block: clamp(28px, 5vw, 56px);
+  overflow: hidden;
+}
+
+.lp-video__intro {
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+
+/* Full viewport width, edge to edge. Desktop = cinematic 16:9, capped to the
+   viewport height; the video covers the stage so there is never letterboxing. */
+.lp-video__stage {
+  position: relative;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 16 / 9;
+  max-height: 100vh;
+  background: #000;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.lp-video__player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+/* Fast WebP poster sits above the (unloaded) video until playback starts */
+.lp-video__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+  transition: opacity 0.4s ease;
+}
+
+.lp-video__stage.is-playing .lp-video__poster {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Custom play overlay — hidden once playback starts */
+.lp-video__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  cursor: pointer;
+  background:
+    radial-gradient(60% 60% at 50% 50%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.42) 100%);
+  transition: opacity 0.4s ease;
+}
+
+.lp-video__stage.is-playing .lp-video__overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lp-video__play {
+  width: clamp(72px, 8vw, 104px);
+  height: clamp(72px, 8vw, 104px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.lp-video__play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 5px;
+}
+
+@media (hover: hover) {
+  .lp-video__play:hover {
+    transform: scale(1.07);
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.lp-video__play:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.lp-video__play-label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+}
+
+.lp-video__caption {
+  margin: 14px 0 0;
+  text-align: center;
+}
+
+/* Mobile: a distinct experience, not a shrunken banner. The inline stage is a
+   tall portrait poster card; tapping the button opens the native fullscreen
+   landscape player (handled in JS) for proper viewing. */
+@media (max-width: 749px) {
+  .lp-video__stage {
+    aspect-ratio: 4 / 5;
+    max-height: 80vh;
+    border-radius: 18px;
+    /* pull back from full-bleed to a contained, card-like block on phones */
+    width: auto;
+    margin-left: 0;
+    transform: none;
+    margin-inline: var(--pad-inline, 16px);
+  }
+  .lp-video__play {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-video__overlay,
+  .lp-video__play {
+    transition: none;
+  }
+}
+
 /* Solution — outside view + stacked pillars */
 .solution-split {
   display: grid;

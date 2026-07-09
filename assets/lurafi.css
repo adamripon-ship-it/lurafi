@@ -2021,7 +2021,7 @@ body.mobile-nav-open { overflow: hidden; }
   border-bottom: 1px solid var(--apple-border);
 }
 @media (min-width: 640px) { .site-footer-apple__grid { grid-template-columns: repeat(4, 1fr); } }
-.site-footer-apple__grid h4 {
+.site-footer-apple__grid h3 {
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 10px;

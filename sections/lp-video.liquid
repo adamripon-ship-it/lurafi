@@ -1,0 +1,180 @@
+{%- comment -%}
+  Video showcase — immersive, full-bleed stage under the hero.
+
+  Behaviour (progressive, no framework):
+  - Poster frame + a large custom play button; the raw <video> has no browser
+    chrome until the viewer starts it.
+  - Desktop: clicking plays inline in the full-width stage (native controls
+    appear; the native fullscreen button is available from there).
+  - Mobile: tapping opens the phone's native fullscreen landscape player
+    (requestFullscreen / iOS webkitEnterFullscreen) — a real viewing
+    experience instead of a cramped inline letterbox. The inline mobile stage
+    is a tall portrait poster card so it never looks like a shrunken banner.
+
+  Source: bundled assets/kevin-video-showcase.mp4 by default; a Shopify-hosted
+  "video" setting overrides it (its sources are used directly so the custom UI
+  stays consistent).
+{%- endcomment -%}
+{%- liquid
+  assign overline = section.settings.overline
+  assign heading = section.settings.heading
+  assign subheading = section.settings.subheading
+  assign caption = section.settings.caption
+  assign play_label = section.settings.play_label | default: 'Watch'
+
+  assign has_shopify_video = false
+  if section.settings.video != blank and section.settings.video.sources.size > 0
+    assign has_shopify_video = true
+  endif
+
+  assign poster_url = ''
+  if section.settings.poster != blank
+    assign poster_url = section.settings.poster | image_url: width: 1920
+  else
+    assign poster_url = 'kevin-video-showcase-poster.webp' | asset_url
+  endif
+  assign poster_alt = caption
+  if poster_alt == blank
+    assign poster_alt = heading
+  endif
+  if poster_alt == blank
+    assign poster_alt = 'Watch the KEVIN® presence simulation film'
+  endif
+  assign poster_alt = poster_alt | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+-%}
+
+<section class="section-apple lp-video" data-lp-video>
+  {%- if overline != blank or heading != blank or subheading != blank -%}
+    <div class="apple-container lp-video__intro">
+      {% render 'section-intro',
+        overline: overline,
+        heading: heading,
+        subheading: subheading,
+        theme: 'dark'
+      %}
+    </div>
+  {%- endif -%}
+
+  <div class="lp-video__stage">
+    {%- comment -%}
+      Fast-loading WebP poster as a real <img> (SEO alt + no CLS). The video
+      itself uses preload="none", so none of the multi-MB file is fetched until
+      the viewer taps play — big mobile/LCP win. The poster hides on .is-playing.
+    {%- endcomment -%}
+    <img
+      class="lp-video__poster"
+      src="{{ poster_url }}"
+      alt="{{ poster_alt | escape }}"
+      loading="lazy"
+      decoding="async"
+      width="1600"
+      height="900"
+    >
+    <video
+      id="LpVideo-{{ section.id }}"
+      class="lp-video__player"
+      playsinline
+      preload="none"
+      {%- if poster_url != blank %} poster="{{ poster_url }}"{% endif %}
+    >
+      {%- if has_shopify_video -%}
+        {%- for source in section.settings.video.sources -%}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {%- endfor -%}
+      {%- else -%}
+        <source src="{{ 'kevin-video-showcase.mp4' | asset_url }}" type="video/mp4">
+      {%- endif -%}
+    </video>
+
+    <div class="lp-video__overlay" data-lp-video-overlay>
+      <button type="button" class="lp-video__play" aria-label="Play video" data-lp-video-play>
+        <span class="lp-video__play-icon" aria-hidden="true"></span>
+      </button>
+      {%- if play_label != blank -%}
+        <span class="lp-video__play-label">{{ play_label | escape }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if caption != blank -%}
+    <div class="apple-container">
+      <p class="lp-video__caption body-reduced text-muted">{{ caption | escape }}</p>
+    </div>
+  {%- endif -%}
+</section>
+
+<script>
+  (function () {
+    var video = document.getElementById('LpVideo-{{ section.id }}');
+    if (!video) return;
+    var stage = video.closest('.lp-video__stage');
+    var overlay = stage && stage.querySelector('[data-lp-video-overlay]');
+    var btn = stage && stage.querySelector('[data-lp-video-play]');
+    if (!stage || !overlay || !btn) return;
+
+    var mobileQuery = window.matchMedia('(max-width: 749px), (pointer: coarse)');
+
+    function requestFs(el) {
+      var fn = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitEnterFullscreen || el.msRequestFullscreen;
+      if (fn) { try { return fn.call(el); } catch (e) {} }
+    }
+
+    function start() {
+      stage.classList.add('is-playing');
+      video.controls = true;
+      if (mobileQuery.matches) requestFs(video);
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    function reset() {
+      stage.classList.remove('is-playing');
+      video.controls = false;
+    }
+
+    btn.addEventListener('click', start);
+    video.addEventListener('ended', reset);
+    video.addEventListener('pause', function () {
+      // If paused back at the very start (e.g. after exiting fullscreen), restore the poster overlay.
+      if (video.currentTime === 0) reset();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Video showcase",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Full-width video with a custom play button. Plays inline on desktop and opens fullscreen on mobile. Heading fields are optional."
+    },
+    { "type": "text", "id": "overline", "label": "Overline" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video (override)",
+      "info": "Optional. Select a video to replace the built-in one — Shopify hosts and streams it. Leave blank to use the bundled default video."
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Poster image",
+      "info": "Recommended. Shown before playback (a wide landscape image works best). Without one, the video's first frame is used."
+    },
+    { "type": "text", "id": "play_label", "label": "Play button label", "default": "Watch" },
+    { "type": "text", "id": "caption", "label": "Caption (optional)" }
+  ],
+  "presets": [
+    {
+      "name": "Video showcase"
+    }
+  ]
+}
+{% endschema %}

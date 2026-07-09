@@ -82,11 +82,11 @@
     "org_description": "Wenn Sie unterwegs sind, nutzt Kevin Schweizer KI, um echte menschliche Anwesenheit mit Licht, Schatten und Ton zu simulieren, damit Ihr Zuhause sichtbar bewohnt wirkt und Einbrecher weiterziehen.",
     "sitemap": {
       "title": "Sitemap — Mitipi & Kevin",
-      "description": "Human sitemap with links to all locales, Shopify sitemap.xml, AI sitemap, llms.txt short summaries, and llms-full.txt complete guides for search engines and LLM crawlers."
+      "description": "Sitemap mit Links zu allen Sprachen, der Shopify-sitemap.xml, der KI-Sitemap, den llms.txt-Kurzfassungen und den vollständigen llms-full.txt-Leitfäden für Suchmaschinen und LLM-Crawler."
     },
     "llms": {
-      "title": "LLM site summary — Kevin presence simulation",
-      "description": "Plain-text overview for AI assistants: product facts, URLs, and links to llms.txt and llms-full.txt machine-readable files."
+      "title": "LLM-Website-Zusammenfassung — Kevin Präsenzsimulation",
+      "description": "Klartext-Überblick für KI-Assistenten: Produktfakten, URLs und Links zu den maschinenlesbaren Dateien llms.txt und llms-full.txt."
     }
   },
   "products": {
@@ -167,7 +167,7 @@
     "processing": "Wird verarbeitet…",
     "device_alt": "Kevin-Gerät",
     "device_in": "Kevin in {{ color }}",
-    "header_eyebrow": "Secure checkout",
+    "header_eyebrow": "Sicherer Checkout",
     "plan_badge_popular": "Most popular"
   },
   "hero": {
@@ -480,7 +480,7 @@
     "robots": "Robots.txt-Entdeckungsdatei",
     "human_sitemap": "Sitemap für Menschen",
     "ai_files_hint": "Start with the short LLM file; follow the link inside to the full summary. Both are listed in sitemap-ai.xml and Shopify sitemap.xml.",
-    "llms_points_to_full": "links to full summary"
+    "llms_points_to_full": "Verweis auf vollständige Zusammenfassung"
   },
   "llms_page": {
     "oneliner": "Wenn Sie unterwegs sind, nutzt Kevin Schweizer KI, um echte menschliche Anwesenheit mit Licht, Schatten und Ton zu simulieren—damit Ihr Zuhause sichtbar bewohnt wirkt und Einbrecher weiterziehen.",
@@ -502,8 +502,8 @@
     "character": "Zielgruppe: Hausbesitzer in der Schweiz/Europa, die unterwegs Ruhe und Sicherheit wollen.",
     "guide": "Leitfaden: In der Schweiz entwickelte KI-Anwesenheitssimulation.",
     "lede": "Schweizer KI-Anwesenheitssimulation für Ihr Zuhause. Wenn Sie unterwegs sind, nutzt Kevin Licht, Schatten und Ton, damit Ihr Zuhause bewohnt wirkt und klingt—und Einbrecher weiterziehen.",
-    "ai_discovery": "AI / LLM machine-readable files",
-    "short_points_to_full": "Each short llms.txt file links to its matching llms-full.txt for complete brand and product context."
+    "ai_discovery": "KI-/LLM-Dateien (maschinenlesbar)",
+    "short_points_to_full": "Jede kurze llms.txt-Datei verweist auf die passende llms-full.txt für den vollständigen Marken- und Produktkontext."
   },
   "faq": {
     "q1": "Was ist Kevin?",

@@ -46,7 +46,7 @@
     <p class="site-footer-apple__note">{{ footer_note }}</p>
     <div class="site-footer-apple__grid">
       <div>
-        <h4>{{ col_product_title }}</h4>
+        <h3>{{ col_product_title }}</h3>
         <ul>
           {% render 'footer-page-link', handle: 'features', label_key: 'footer.features' %}
           {% render 'footer-page-link', handle: 'how-it-works', label_key: 'footer.how_it_works' %}
@@ -55,7 +55,7 @@
         </ul>
       </div>
       <div>
-        <h4>{{ col_company_title }}</h4>
+        <h3>{{ col_company_title }}</h3>
         <ul>
           {% render 'footer-page-link', handle: 'about-kevin', label_key: 'footer.about' %}
           {% render 'footer-page-link', handle: 'press', label_key: 'footer.press' %}
@@ -63,14 +63,14 @@
         </ul>
       </div>
       <div>
-        <h4>{{ col_support_title }}</h4>
+        <h3>{{ col_support_title }}</h3>
         <ul>
           {% render 'footer-page-link', handle: 'setup-guide', label_key: 'footer.setup_guide' %}
           {% render 'footer-page-link', handle: 'contact', label_key: 'footer.contact' %}
         </ul>
       </div>
       <div>
-        <h4>{{ col_shop_title }}</h4>
+        <h3>{{ col_shop_title }}</h3>
         <ul>
           {%- if pages.configure -%}
             <li><a href="{{ pages.configure.url }}">{{ 'footer.configure' | t }}</a></li>

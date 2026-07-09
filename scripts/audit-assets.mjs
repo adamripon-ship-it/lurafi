@@ -22,6 +22,9 @@ const doDelete = args.includes('--delete');
 const maxKb = Number((args.find((a) => a.startsWith('--max-kb=')) || '').split('=')[1] || 350);
 
 const MEDIA_EXT = /\.(png|jpe?g|webp|avif|gif|svg|mp4|webm|glb)$/i;
+// Video / 3D are inherently large — the size budget targets images. Still
+// orphan-checked, just exempt from the KB cap.
+const SIZE_EXEMPT_EXT = /\.(mp4|webm|mov|m4v|glb)$/i;
 const SEARCH_DIRS = ['sections', 'snippets', 'templates', 'layout', 'config'];
 const SEARCH_ASSET_EXT = /\.(css|js|liquid)$/i;
 
@@ -46,7 +49,7 @@ for (const f of fs.readdirSync(path.join(root, 'assets'))) {
   if (!MEDIA_EXT.test(f)) continue;
   const kb = fs.statSync(path.join(root, 'assets', f)).size / 1024;
   if (!haystack.includes(f)) orphans.push({ f, kb });
-  else if (kb > maxKb) oversized.push({ f, kb });
+  else if (kb > maxKb && !SIZE_EXEMPT_EXT.test(f)) oversized.push({ f, kb });
 }
 
 const fmt = ({ f, kb }) => `  ${kb.toFixed(0).padStart(6)} KB  ${f}`;

@@ -8,6 +8,9 @@
   if specs_heading == blank
     assign specs_heading = 'home.specs.heading' | t
   endif
+  # Decode stored entities before the | escape in the caption below (and in
+  # section-intro) so a pre-encoded value cannot double-escape (matches section-intro).
+  assign specs_heading = specs_heading | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
 -%}
 
 <section class="section-apple bg-white lp-specs" aria-labelledby="SpecsHeading-{{ section.id }}">
