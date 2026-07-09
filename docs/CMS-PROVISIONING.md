@@ -38,11 +38,17 @@ Actions → **Provision CMS backend (manual)** → *Run workflow*:
 2. Re-run with **mode = `apply`** to execute. Optionally set **steps** to a comma list (e.g. `metaobjects,i18n`) to run a subset.
 
 Uses the same production secrets as the deploy workflow. Metaobject/translation/
-file mutations need a token with `write_metaobjects`, `write_translations`,
-`write_files`, `write_publications`, `write_content`, and
-`write_online_store_navigation` scopes — provide `SHOPIFY_CLIENT_ID` /
-`SHOPIFY_CLIENT_SECRET` for a custom app that has them (the admin-gql lib
-exchanges these for a scoped Admin token via `client_credentials`).
+file/navigation mutations need a token with `write_metaobject_definitions`,
+`write_metaobjects`, `write_translations`, `write_files`, `write_content`,
+`write_online_store_pages`, `write_online_store_navigation`, and `write_markets`
+scopes — provide `SHOPIFY_CLIENT_ID` / `SHOPIFY_CLIENT_SECRET` for a custom app
+that has them (the admin-gql lib exchanges these for a scoped Admin token via
+`client_credentials`).
+
+> **Prerequisite — approve the scopes once.** `scripts/request-app-scope-approval.sh`
+> now includes the metaobjects/files/navigation scopes. If the app was approved
+> before this was added, re-run it so the store re-grants with the new scope set,
+> otherwise the metaobjects, files, and navigation steps fail with access denied.
 
 ### Option B — Local CLI
 
