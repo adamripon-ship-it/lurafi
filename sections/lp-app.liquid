@@ -15,6 +15,9 @@
   if ui_status == blank
     assign ui_status = 'home.app.ui_status' | t
   endif
+  # Decode stored entities before the | escape in the phone UI so a pre-encoded
+  # value cannot double-escape (matches section-intro).
+  assign ui_status = ui_status | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
 -%}
 
 <section id="app" class="section-apple lp-app bg-gray">
@@ -46,6 +49,7 @@
                   assign row_locale_key = 'home.app.ui_row_' | append: i
                   assign row_text = row_locale_key | t
                 endif
+                assign row_text = row_text | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
               -%}
               {%- if row_text != blank -%}
                 <li class="nf-phone__row">
