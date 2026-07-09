@@ -1,0 +1,59 @@
+name: Provision CMS backend (manual)
+
+# Provisions the Shopify CMS backend (metaobject definitions, locales +
+# translations, markets, Files uploads, navigation, footer pages) by running
+# the idempotent setup scripts against the store. Safe to re-run.
+#
+# Defaults to a DRY RUN. Choose mode=apply to execute. Uses the same
+# production secrets as deploy-theme.yml. For metaobject/translation/file
+# mutations the resolved token must carry write_metaobjects, write_translations,
+# write_files, write_publications and write_content scopes — provide
+# SHOPIFY_CLIENT_ID/SECRET for a custom app that has them (client_credentials
+# grant), which the admin-gql lib exchanges for a scoped Admin token.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: dry (preflight + plan, no writes) or apply (execute)
+        type: choice
+        options: [dry, apply]
+        default: dry
+      steps:
+        description: "Optional comma list to run only some steps (e.g. metaobjects,i18n). Blank = all."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Provision
+        env:
+          MODE: ${{ inputs.mode }}
+          STEP_FILTER: ${{ inputs.steps }}
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          SHOPIFY_ADMIN_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          FLAG=""
+          [ "${MODE}" = "apply" ] && FLAG="--apply"
+          ONLY=""
+          [ -n "${STEP_FILTER}" ] && ONLY="--only=${STEP_FILTER}"
+          node scripts/provision-cms.mjs ${FLAG} ${ONLY}
