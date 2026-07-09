@@ -646,6 +646,150 @@ html.no-js body.nightfall .nf-soundwave span {
   height: 46%;
 }
 
+/* ---- Scene slider: 3 images cross-fade on scroll (desktop) / swipe (mobile) ---- */
+body.nightfall .nf-window__slides { position: absolute; inset: 0; }
+body.nightfall .nf-window__slides .nf-window__photo { opacity: 0; }
+body.nightfall .nf-window__slides .nf-window__photo--1 { opacity: 1; } /* baseline before scrub */
+
+/* Fallback scrub driver: paused keyframes read --nf-progress (0..1) from scroll-fx.js */
+.motion-ready body.nightfall .nf-window__photo--1,
+.motion-ready body.nightfall .nf-window__photo--2,
+.motion-ready body.nightfall .nf-window__photo--3 {
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  animation-fill-mode: both;
+  animation-delay: calc(var(--nf-progress, 0) * -1s);
+}
+.motion-ready body.nightfall .nf-window__photo--1 { animation-name: nfSlide1; }
+.motion-ready body.nightfall .nf-window__photo--2 { animation-name: nfSlide2; }
+.motion-ready body.nightfall .nf-window__photo--3 { animation-name: nfSlide3; }
+
+/* Modern driver: bind the same keyframes to the mechanism view-timeline */
+@supports (animation-timeline: view()) {
+  body.nightfall .nf-window__photo--1,
+  body.nightfall .nf-window__photo--2,
+  body.nightfall .nf-window__photo--3 {
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-timeline: --nf-mech;
+    animation-range: contain 0% contain 100%;
+    animation-delay: 0s;
+    animation-play-state: running;
+    animation-fill-mode: both;
+  }
+  body.nightfall .nf-window__photo--1 { animation-name: nfSlide1; }
+  body.nightfall .nf-window__photo--2 { animation-name: nfSlide2; }
+  body.nightfall .nf-window__photo--3 { animation-name: nfSlide3; }
+}
+
+@keyframes nfSlide1 {
+  0%   { opacity: 1; transform: scale(1.08); }
+  28%  { opacity: 1; transform: scale(1.03); }
+  40%  { opacity: 0; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1.02); }
+}
+@keyframes nfSlide2 {
+  0%   { opacity: 0; transform: scale(1.08); }
+  28%  { opacity: 0; transform: scale(1.07); }
+  40%  { opacity: 1; transform: scale(1.03); }
+  62%  { opacity: 1; transform: scale(1.02); }
+  74%  { opacity: 0; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1.02); }
+}
+@keyframes nfSlide3 {
+  0%   { opacity: 0; transform: scale(1.08); }
+  62%  { opacity: 0; transform: scale(1.07); }
+  74%  { opacity: 1; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1.0); }
+}
+
+/* Slide dots (desktop: track the active image along the scroll timeline) */
+body.nightfall .nf-window__dots {
+  position: absolute; left: 50%; bottom: 5.5%; transform: translateX(-50%);
+  display: flex; gap: 7px; z-index: 3;
+}
+body.nightfall .nf-window__dot {
+  width: 6px; height: 6px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.32);
+}
+body.nightfall .nf-window__dot--1 { background: rgba(255, 255, 255, 0.85); }
+.motion-ready body.nightfall .nf-window__dot--1,
+.motion-ready body.nightfall .nf-window__dot--2,
+.motion-ready body.nightfall .nf-window__dot--3 {
+  background: rgba(255, 255, 255, 0.32);
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  animation-fill-mode: both;
+  animation-delay: calc(var(--nf-progress, 0) * -1s);
+}
+.motion-ready body.nightfall .nf-window__dot--1 { animation-name: nfDot1; }
+.motion-ready body.nightfall .nf-window__dot--2 { animation-name: nfDot2; }
+.motion-ready body.nightfall .nf-window__dot--3 { animation-name: nfDot3; }
+@supports (animation-timeline: view()) {
+  body.nightfall .nf-window__dot--1,
+  body.nightfall .nf-window__dot--2,
+  body.nightfall .nf-window__dot--3 {
+    background: rgba(255, 255, 255, 0.32);
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-timeline: --nf-mech;
+    animation-range: contain 0% contain 100%;
+    animation-delay: 0s;
+    animation-play-state: running;
+    animation-fill-mode: both;
+  }
+  body.nightfall .nf-window__dot--1 { animation-name: nfDot1; }
+  body.nightfall .nf-window__dot--2 { animation-name: nfDot2; }
+  body.nightfall .nf-window__dot--3 { animation-name: nfDot3; }
+}
+@keyframes nfDot1 {
+  0%, 34% { background: rgba(255, 255, 255, 0.9); }
+  44%, 100% { background: rgba(255, 255, 255, 0.3); }
+}
+@keyframes nfDot2 {
+  0%, 40% { background: rgba(255, 255, 255, 0.3); }
+  50%, 66% { background: rgba(255, 255, 255, 0.9); }
+  76%, 100% { background: rgba(255, 255, 255, 0.3); }
+}
+@keyframes nfDot3 {
+  0%, 68% { background: rgba(255, 255, 255, 0.3); }
+  78%, 100% { background: rgba(255, 255, 255, 0.9); }
+}
+
+/* Mobile: sticky scrub is off, so the slides become a swipeable carousel
+   (90%-width slides leave a peek of the next photo as a swipe affordance). */
+@media (max-width: 899px) {
+  body.nightfall .nf-window__slides {
+    display: flex; gap: 10px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  body.nightfall .nf-window__slides::-webkit-scrollbar { display: none; }
+  body.nightfall .nf-window__slides .nf-window__photo {
+    position: relative; inset: auto;
+    flex: 0 0 90%; width: 90%; height: 100%;
+    border-radius: 14px; scroll-snap-align: center;
+    opacity: 1 !important; transform: none !important; animation: none !important;
+  }
+  body.nightfall .nf-window__dots { display: none; }
+}
+
+/* Reduced motion (desktop): no scrub — same motion-safe swipeable carousel */
+.motion-reduced body.nightfall .nf-window__slides {
+  display: flex; gap: 10px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+}
+.motion-reduced body.nightfall .nf-window__slides::-webkit-scrollbar { display: none; }
+.motion-reduced body.nightfall .nf-window__slides .nf-window__photo {
+  position: relative; inset: auto;
+  flex: 0 0 90%; width: 90%; height: 100%;
+  border-radius: 14px; scroll-snap-align: center;
+  opacity: 1 !important; transform: none !important; animation: none !important;
+}
+.motion-reduced body.nightfall .nf-window__dots { display: none; }
+
 /* ---- Activity ticker ---- */
 body.nightfall .nf-ticker {
   margin-top: clamp(28px, 5vh, 44px);
