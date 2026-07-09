@@ -44,6 +44,8 @@
     "assets:audit:ci": "node scripts/audit-assets.mjs --ci",
     "cms:metaobjects": "node scripts/setup-metaobjects.mjs",
     "cms:upload-assets": "node scripts/upload-assets.mjs",
+    "cms:provision": "node scripts/provision-cms.mjs --apply",
+    "cms:provision:dry": "node scripts/provision-cms.mjs",
     "i18n:audit": "node scripts/audit-translations.mjs"
   },
   "devDependencies": {

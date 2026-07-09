@@ -1,0 +1,45 @@
+{
+  "_comment": "Content images uploaded to Shopify Files (CDN) by scripts/provision-cms.mjs so the content team can pick/swap them in the Theme Editor. These mirror the theme-asset fallbacks already shipped in the sections, so nothing changes visually until someone picks a Files image. Alt text is authored in EN; localize per language in Translate & Adapt (Content → Files). Keep filenames in sync with assets/.",
+  "files": [
+    {
+      "file": "assets/kevin-hero-product-front.webp",
+      "alt": "KEVIN 3.0 presence simulator, front view",
+      "used_by": "hero section (image setting), Product schema, Open Graph"
+    },
+    {
+      "file": "assets/kevin-cozy-home.webp",
+      "alt": "A lived-in home at night, warmly lit through the window",
+      "used_by": "mechanism section scene photo (window_image setting)"
+    },
+    {
+      "file": "assets/kevin-front-cover-grey-v2.webp",
+      "alt": "KEVIN device with grey fabric front panel",
+      "used_by": "configure page colorway (grey)"
+    },
+    {
+      "file": "assets/kevin-front-cover-white-v2.webp",
+      "alt": "KEVIN device with white fabric front panel",
+      "used_by": "configure page colorway (white)"
+    },
+    {
+      "file": "assets/kevin-front-cover-red-v2.webp",
+      "alt": "KEVIN device with burgundy fabric front panel",
+      "used_by": "configure page colorway (burgundy)"
+    },
+    {
+      "file": "assets/kevin-front-cover-brown-v2.webp",
+      "alt": "KEVIN device with espresso fabric front panel",
+      "used_by": "configure page colorway (espresso)"
+    },
+    {
+      "file": "assets/kevin-front-cover-blue-v2.webp",
+      "alt": "KEVIN device with navy fabric front panel",
+      "used_by": "configure page colorway (navy)"
+    },
+    {
+      "file": "assets/kevin-header-logo.png",
+      "alt": "Mitipi — Kevin",
+      "used_by": "header logo, Organization schema"
+    }
+  ]
+}
