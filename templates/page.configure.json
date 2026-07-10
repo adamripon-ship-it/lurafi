@@ -2,7 +2,12 @@
   "sections": {
     "main": {
       "type": "main-configure",
-      "settings": {}
+      "settings": {
+        "cover_1_variant": "57057676558714",
+        "cover_2_variant": "57057676591482",
+        "cover_3_variant": "57057676624250",
+        "cover_4_variant": "57057676657018"
+      }
     }
   },
   "order": ["main"]
