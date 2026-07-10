@@ -1,23 +1,32 @@
 {%- comment -%}
-  One optional front-cover add-on button for the configure page.
+  One optional front-cover add-on with a quantity stepper (any colour, any volume).
   Params: cover_name, default_name, cover_variant (Shopify variant id),
   cover_image (image_picker or blank), default_img (CDN url), price_label.
-  A cover is purchasable only when cover_variant is set.
+  A cover is purchasable only when cover_variant is set; otherwise it shows "Soon".
 {%- endcomment -%}
 {%- liquid
-  assign _name = cover_name | default: default_name
+  assign cover_label = cover_name | default: default_name
   if cover_image != blank
-    assign _img = cover_image | image_url: width: 220
+    assign img_src = cover_image | image_url: width: 220
   else
-    assign _img = default_img | append: '&width=220'
+    assign img_src = default_img | append: '&width=220'
+  endif
+  assign is_soon = false
+  if cover_variant == blank
+    assign is_soon = true
   endif
 -%}
-<button type="button"
-        class="configure-cover{% if cover_variant == blank %} is-soon{% endif %}"
-        data-cover-id="{{ cover_variant }}"
-        aria-pressed="false"
-        {% if cover_variant == blank %}data-cover-soon="1"{% endif %}>
-  <span class="configure-cover__img"><img src="{{ _img }}" alt="{{ _name | escape }} front cover" loading="lazy" width="80" height="80"></span>
-  <span class="configure-cover__name">{{ _name | escape }}</span>
-  <span class="configure-cover__price">{% if cover_variant == blank %}Soon{% else %}+ {{ price_label }}{% endif %}</span>
-</button>
+<div class="configure-cover{% if is_soon %} is-soon{% endif %}" data-cover data-cover-id="{{ cover_variant }}"{% if is_soon %} data-cover-soon="1"{% endif %}>
+  <span class="configure-cover__img"><img src="{{ img_src }}" alt="{{ cover_label | escape }} front cover" loading="lazy" width="80" height="80"></span>
+  <span class="configure-cover__name">{{ cover_label | escape }}</span>
+  {%- if is_soon -%}
+    <span class="configure-cover__price">Soon</span>
+  {%- else -%}
+    <span class="configure-cover__price">{{ price_label }}</span>
+    <div class="configure-cover__qty" role="group" aria-label="{{ cover_label | escape }} cover quantity">
+      <button type="button" class="configure-cover__qty-btn" data-cover-minus aria-label="Remove one {{ cover_label | escape }} cover">&minus;</button>
+      <span class="configure-cover__qty-val" data-cover-qty aria-live="polite">0</span>
+      <button type="button" class="configure-cover__qty-btn" data-cover-plus aria-label="Add one {{ cover_label | escape }} cover">+</button>
+    </div>
+  {%- endif -%}
+</div>

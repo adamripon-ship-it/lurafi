@@ -310,14 +310,19 @@
     }, { plan: 'buy' });
   }
 
-  // Optional paid front covers: variant ids of the currently selected covers.
-  function selectedCoverIds() {
+  // Optional paid front covers: {id, qty} for every cover with quantity > 0
+  // (any colour, any volume).
+  function selectedCovers() {
     var out = [];
-    var btns = document.querySelectorAll('[data-configure-covers] .configure-cover[aria-pressed="true"]');
-    Array.prototype.forEach.call(btns, function (b) {
-      var id = b.getAttribute('data-cover-id');
-      if (id && Number(id) > 0) out.push(id);
-    });
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-configure-covers] .configure-cover[data-cover-id]'),
+      function (card) {
+        var id = card.getAttribute('data-cover-id');
+        var qtyEl = card.querySelector('[data-cover-qty]');
+        var qty = qtyEl ? Number(qtyEl.textContent) || 0 : 0;
+        if (id && Number(id) > 0 && qty > 0) out.push({ id: id, qty: qty });
+      }
+    );
     return out;
   }
 
@@ -325,8 +330,8 @@
     trackBeginCheckout(variant, item);
     var quantity = Number(item.quantity) || 1;
     var url = '/cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity);
-    selectedCoverIds().forEach(function (cid) {
-      url += ',' + encodeURIComponent(cid) + ':1';
+    selectedCovers().forEach(function (c) {
+      url += ',' + encodeURIComponent(c.id) + ':' + encodeURIComponent(c.qty);
     });
     url += '?checkout';
     window.location.href = url;
@@ -368,7 +373,7 @@
 
       // With covers selected, use the multi-line permalink (addAndCheckout only
       // adds the device); otherwise keep the fast add-and-checkout path.
-      if (selectedCoverIds().length === 0 && window.LurafiCart && typeof window.LurafiCart.addAndCheckout === 'function') {
+      if (selectedCovers().length === 0 && window.LurafiCart && typeof window.LurafiCart.addAndCheckout === 'function') {
         window.LurafiCart.addAndCheckout(item).catch(function () {
           goToCartPermalink(item, variant);
         });
@@ -379,17 +384,23 @@
     });
   });
 
-  // Optional front-cover add-ons: toggle selection. Covers without a real
-  // Shopify variant id are shown but not purchasable (data-cover-soon).
+  // Optional front-cover add-ons: per-cover quantity steppers. Covers without a
+  // real Shopify variant id are shown but not purchasable (data-cover-soon).
   Array.prototype.forEach.call(
     document.querySelectorAll('[data-configure-covers] .configure-cover'),
-    function (btn) {
-      if (btn.getAttribute('data-cover-soon') === '1') return;
-      btn.addEventListener('click', function () {
-        var pressed = btn.getAttribute('aria-pressed') === 'true';
-        btn.setAttribute('aria-pressed', String(!pressed));
-        btn.classList.toggle('is-selected', !pressed);
-      });
+    function (card) {
+      if (card.getAttribute('data-cover-soon') === '1') return;
+      var qtyEl = card.querySelector('[data-cover-qty]');
+      var minus = card.querySelector('[data-cover-minus]');
+      var plus = card.querySelector('[data-cover-plus]');
+      if (!qtyEl || !minus || !plus) return;
+      function setQty(n) {
+        n = Math.max(0, Math.min(99, n));
+        qtyEl.textContent = String(n);
+        card.classList.toggle('is-selected', n > 0);
+      }
+      minus.addEventListener('click', function () { setQty((Number(qtyEl.textContent) || 0) - 1); });
+      plus.addEventListener('click', function () { setQty((Number(qtyEl.textContent) || 0) + 1); });
     }
   );
 
