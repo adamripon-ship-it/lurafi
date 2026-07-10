@@ -129,10 +129,10 @@
           Default image mapping (owner-provided): Red=download_24, Brown=download_25,
           Blue=download_29, White=download_27.
         {%- endcomment -%}
-        {%- assign cover_price_label = section.settings.cover_price_label | default: 'CHF 29 · EUR 31.50' -%}
+        {%- assign cover_price_label = section.settings.cover_price_label | default: '29.00 CHF · 31.50 EUR' -%}
         <section class="configure-section configure-covers" data-configure-covers aria-labelledby="ConfigureCoversHeading">
           <h2 id="ConfigureCoversHeading" class="configure-label">Optional front covers</h2>
-          <p class="configure-covers__note">{{ cover_price_label }} each · any colour, any quantity{% if section.settings.cover_discount_note != blank %} · {{ section.settings.cover_discount_note }}{% endif %}</p>
+          <p class="configure-covers__note">{{ cover_price_label }} each · any colour, any quantity</p>
           <p class="configure-covers__note configure-covers__note--sub">Your Kevin includes the Grey cover — add extra colours below.</p>
           <div class="configure-covers__grid" role="group" aria-label="Optional front covers">
             {% render 'configure-cover', cover_name: section.settings.cover_1_name, default_name: 'Red', cover_variant: section.settings.cover_1_variant, cover_image: section.settings.cover_1_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_24.png?v=1783616627', price_label: cover_price_label %}
@@ -310,8 +310,7 @@
     { "type": "image_picker", "id": "color_image_grey", "label": "Product photo (Grey)", "info": "Only one unit colour exists. Blank keeps the shipped image." },
     { "type": "header", "content": "Optional front covers (paid add-ons)" },
     { "type": "paragraph", "content": "Covers show on the configure page. Each becomes purchasable only when its Shopify variant ID is filled in below (the cover product must exist in Shopify)." },
-    { "type": "text", "id": "cover_price_label", "label": "Cover price label", "default": "CHF 29 · EUR 31.50" },
-    { "type": "text", "id": "cover_discount_note", "label": "Discount note", "default": "Buy 3 Kevins, save 15% — applied at checkout." },
+    { "type": "text", "id": "cover_price_label", "label": "Cover price label", "default": "29.00 CHF · 31.50 EUR" },
     { "type": "text", "id": "cover_1_name", "label": "Cover 1 name", "default": "Red" },
     { "type": "image_picker", "id": "cover_1_image", "label": "Cover 1 image (blank = built-in)" },
     { "type": "text", "id": "cover_1_variant", "label": "Cover 1 Shopify variant ID" },
