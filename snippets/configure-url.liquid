@@ -7,14 +7,14 @@
 {%- liquid
   assign buy_product = settings.product_buy
   if buy_product == blank
-    assign buy_product = all_products.kevin
+    assign buy_product = all_products['kevin-plus']
   else
     if buy_product.url == blank
       assign buy_product = all_products[settings.product_buy]
     endif
   endif
   if buy_product == blank
-    assign buy_product = all_products.kevin
+    assign buy_product = all_products['kevin-plus']
   endif
 
   comment
