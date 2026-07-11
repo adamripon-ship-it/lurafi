@@ -1,12 +1,25 @@
-name: Deploy theme (manual)
+name: Deploy theme
 
-# Push to live only when you explicitly run this workflow.
+# Auto-publishes the live theme when theme files land on main, and can still be
+# run manually from the Actions tab. To go back to manual-only, delete the
+# `push:` block below.
 # Secrets (environment: production):
 #   SHOPIFY_FLAG_STORE, SHOPIFY_CLI_THEME_TOKEN
 #   Optional: SHOPIFY_CLIENT_ID + SHOPIFY_CLIENT_SECRET (auto-refresh 24h token each run)
 # Sync: ./scripts/sync-github-deploy-secrets.sh
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - assets/**
+      - blocks/**
+      - config/**
+      - layout/**
+      - locales/**
+      - sections/**
+      - snippets/**
+      - templates/**
   workflow_dispatch:
     inputs:
       theme_id:
@@ -75,7 +88,7 @@ jobs:
           npx shopify theme push \
             --store "${SHOPIFY_FLAG_STORE}" \
             --password "${SHOPIFY_CLI_THEME_TOKEN}" \
-            --theme "${{ github.event.inputs.theme_id }}" \
+            --theme "${{ github.event.inputs.theme_id || '185079038330' }}" \
             --allow-live
 
       - name: Republish theme (bust Shopify page cache)
@@ -86,7 +99,7 @@ jobs:
           npx shopify theme publish \
             --store "${SHOPIFY_FLAG_STORE}" \
             --password "${SHOPIFY_CLI_THEME_TOKEN}" \
-            --theme "${{ github.event.inputs.theme_id }}" \
+            --theme "${{ github.event.inputs.theme_id || '185079038330' }}" \
             --force
 
       - name: Verify live storefront
