@@ -3,6 +3,7 @@
   Params: cover_name, default_name, cover_variant (Shopify variant id),
   cover_image (image_picker or blank), default_img (CDN url), price_label.
   A cover is purchasable only when cover_variant is set; otherwise it shows "Soon".
+  Live cover product: kevin-front-cover (4 Colour variants, 31.50 EUR / 29.00 CHF).
 {%- endcomment -%}
 {%- liquid
   assign cover_label = cover_name | default: default_name
