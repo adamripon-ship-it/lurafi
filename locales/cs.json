@@ -137,7 +137,7 @@
     "step_checkout": "Pokladna",
     "title": "Vyberte si Kevin.",
     "lede": "Vyberte barvu—jste jen krok od domova, který nikdy nevypadá prázdně.",
-    "color_label": "Barva předního panelu",
+    "color_label": "Váš Kevin",
     "color_prefix": "Barva:",
     "plan_label": "Vyberte tarif",
     "plan_buy": "Koupit",
@@ -168,7 +168,15 @@
     "device_alt": "Zařízení Kevin",
     "device_in": "Kevin v barvě {{ color }}",
     "header_eyebrow": "Bezpečná pokladna",
-    "plan_badge_popular": "Most popular"
+    "plan_badge_popular": "Most popular",
+    "covers_heading": "Volitelné přední kryty",
+    "covers_note": "{{ price }} za kus · libovolná barva i množství",
+    "covers_included": "Kevin se dodává s šedým krytem — další barvy přidáte níže.",
+    "cover_soon": "Již brzy",
+    "cover_alt": "Přední kryt {{ name }}",
+    "cover_qty_label": "Počet krytů {{ name }}",
+    "cover_minus_label": "Odebrat jeden kryt {{ name }}",
+    "cover_plus_label": "Přidat jeden kryt {{ name }}"
   },
   "hero": {
     "away_eyebrow": "Away mode",

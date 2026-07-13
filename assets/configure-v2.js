@@ -279,13 +279,6 @@
     });
   }
 
-  if (els.sellingPlanSelect) {
-    els.sellingPlanSelect.addEventListener('change', function () {
-      state.sellingPlanId = els.sellingPlanSelect.value;
-      render();
-    });
-  }
-
   function isValidVariantId(id) {
     var n = Number(id);
     return n > 0 && Number.isFinite(n);
@@ -326,6 +319,8 @@
     return out;
   }
 
+  // Cart permalinks (/cart/{id}:{qty},…) send the customer straight to
+  // checkout by default; only ?storefront=true would divert to the cart page.
   function goToCartPermalink(item, variant) {
     trackBeginCheckout(variant, item);
     var quantity = Number(item.quantity) || 1;
@@ -333,7 +328,6 @@
     selectedCovers().forEach(function (c) {
       url += ',' + encodeURIComponent(c.id) + ':' + encodeURIComponent(c.qty);
     });
-    url += '?checkout';
     window.location.href = url;
   }
 

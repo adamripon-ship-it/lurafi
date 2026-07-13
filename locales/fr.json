@@ -137,7 +137,7 @@
     "step_checkout": "Paiement",
     "title": "Choisissez votre Kevin.",
     "lede": "Sélectionnez votre couleur—plus qu'une étape avant une maison qui ne paraît jamais vide.",
-    "color_label": "Couleur du panneau avant",
+    "color_label": "Votre Kevin",
     "color_prefix": "Couleur :",
     "plan_label": "Choisissez votre formule",
     "plan_buy": "Acheter",
@@ -168,7 +168,15 @@
     "device_alt": "Appareil Kevin",
     "device_in": "Kevin en {{ color }}",
     "header_eyebrow": "Paiement sécurisé",
-    "plan_badge_popular": "Most popular"
+    "plan_badge_popular": "Most popular",
+    "covers_heading": "Façades avant en option",
+    "covers_note": "{{ price }} l'unité · toutes les couleurs, en toute quantité",
+    "covers_included": "Votre Kevin est livré avec la façade grise — ajoutez d’autres couleurs ci-dessous.",
+    "cover_soon": "Bientôt",
+    "cover_alt": "Façade avant {{ name }}",
+    "cover_qty_label": "Quantité de façades {{ name }}",
+    "cover_minus_label": "Retirer une façade {{ name }}",
+    "cover_plus_label": "Ajouter une façade {{ name }}"
   },
   "hero": {
     "away_eyebrow": "Away mode",

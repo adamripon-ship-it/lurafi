@@ -129,12 +129,25 @@
           Default image mapping (owner-provided): Red=download_24, Brown=download_25,
           Blue=download_29, White=download_27.
         {%- endcomment -%}
-        {%- assign cover_price_label = section.settings.cover_price_label | default: '29.00 CHF · 31.50 EUR' -%}
+        {%- comment -%}
+          Cover price shown in the shopper's market currency (EUR base,
+          CHF fixed via the Switzerland price list) when the cover product
+          resolves; the label setting is only a fallback.
+        {%- endcomment -%}
+        {%- liquid
+          assign cover_product = all_products['kevin-front-cover']
+          if cover_product != blank and cover_product.price_min > 0
+            assign cover_price_label = cover_product.price_min | money
+          else
+            assign cover_price_label = section.settings.cover_price_label | default: '29.00 CHF · 31.50 EUR'
+          endif
+          assign covers_heading = 'configure.covers_heading' | t
+        -%}
         <section class="configure-section configure-covers" data-configure-covers aria-labelledby="ConfigureCoversHeading">
-          <h2 id="ConfigureCoversHeading" class="configure-label">Optional front covers</h2>
-          <p class="configure-covers__note">{{ cover_price_label }} each · any colour, any quantity</p>
-          <p class="configure-covers__note configure-covers__note--sub">Your Kevin includes the Grey cover — add extra colours below.</p>
-          <div class="configure-covers__grid" role="group" aria-label="Optional front covers">
+          <h2 id="ConfigureCoversHeading" class="configure-label">{{ covers_heading }}</h2>
+          <p class="configure-covers__note">{{ 'configure.covers_note' | t: price: cover_price_label }}</p>
+          <p class="configure-covers__note configure-covers__note--sub">{{ 'configure.covers_included' | t }}</p>
+          <div class="configure-covers__grid" role="group" aria-label="{{ covers_heading }}">
             {% render 'configure-cover', cover_name: section.settings.cover_1_name, default_name: 'Red', cover_variant: section.settings.cover_1_variant, cover_image: section.settings.cover_1_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_24.png?v=1783616627', price_label: cover_price_label %}
             {% render 'configure-cover', cover_name: section.settings.cover_2_name, default_name: 'Brown', cover_variant: section.settings.cover_2_variant, cover_image: section.settings.cover_2_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_25.png?v=1783616628', price_label: cover_price_label %}
             {% render 'configure-cover', cover_name: section.settings.cover_3_name, default_name: 'Blue', cover_variant: section.settings.cover_3_variant, cover_image: section.settings.cover_3_image, default_img: 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_29.png?v=1783616628', price_label: cover_price_label %}

@@ -127,8 +127,8 @@ const en = {
     header_eyebrow: 'Secure checkout',
     title: 'Choose your Kevin.',
     lede: 'Pick your color—you are one step from a home that never looks empty.',
-    color_label: 'Front Cover Color',
-    color_prefix: 'Color:',
+    color_label: 'Your Kevin',
+    color_prefix: 'Colour:',
     plan_label: 'Choose Your Plan',
     plan_buy: 'Buy',
     plan_buy_sub: 'One-time purchase',
@@ -157,7 +157,15 @@ const en = {
     error_products: 'Please assign products in Theme settings → Products.',
     error_checkout: 'Online checkout is almost ready. Email hello@lurafi.com to order, or try again soon.',
     processing: 'Processing…',
-    device_alt: 'Kevin device'
+    device_alt: 'Kevin device',
+    covers_heading: 'Optional front covers',
+    covers_note: '{{ price }} each · any colour, any quantity',
+    covers_included: 'Your Kevin includes the Grey cover — add extra colours below.',
+    cover_soon: 'Soon',
+    cover_alt: '{{ name }} front cover',
+    cover_qty_label: '{{ name }} cover quantity',
+    cover_minus_label: 'Remove one {{ name }} cover',
+    cover_plus_label: 'Add one {{ name }} cover'
   },
   hero: {
     callouts_aria_label: 'Kevin benefits',
@@ -727,7 +735,7 @@ nl.configure = {
   header_eyebrow: 'Veilig afrekenen',
   title: 'Kies je Kevin.',
   lede: 'Kies je kleur—je bent één stap verwijderd van een huis dat nooit leeg lijkt.',
-  color_label: 'Kleur voorkant',
+  color_label: 'Jouw Kevin',
   color_prefix: 'Kleur:',
   plan_label: 'Kies je plan',
   plan_buy: 'Kopen',
@@ -757,7 +765,15 @@ nl.configure = {
   error_products: 'Wijs producten toe in Thema-instellingen → Producten.',
   error_checkout: 'Online afrekenen is bijna klaar. Mail hello@lurafi.ai om te bestellen, of probeer het binnenkort opnieuw.',
   processing: 'Bezig…',
-  device_alt: 'Kevin-apparaat'
+  device_alt: 'Kevin-apparaat',
+  covers_heading: 'Optionele voorpanelen',
+  covers_note: '{{ price }} per stuk · elke kleur, elk aantal',
+  covers_included: 'Je Kevin wordt geleverd met de grijze cover — voeg hieronder extra kleuren toe.',
+  cover_soon: 'Binnenkort',
+  cover_alt: 'Voorpaneel {{ name }}',
+  cover_qty_label: 'Aantal covers {{ name }}',
+  cover_minus_label: 'Eén cover {{ name }} verwijderen',
+  cover_plus_label: 'Eén cover {{ name }} toevoegen'
 };
 nl.hero = {
   callouts_aria_label: 'Kevin-voordelen',
