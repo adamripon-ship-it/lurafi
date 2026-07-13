@@ -3284,6 +3284,7 @@ body.cart-drawer-open { overflow: hidden; }
 }
 .cart-drawer__line-img img { border-radius: 8px; width: 64px; height: 64px; object-fit: cover; }
 .cart-drawer__line-title { font-size: 14px; font-weight: 600; }
+.cart-drawer__line-qty { font-weight: 400; color: var(--apple-text-muted); }
 .cart-drawer__line-variant,
 .cart-drawer__line-price { font-size: 12px; color: var(--apple-text-muted); }
 

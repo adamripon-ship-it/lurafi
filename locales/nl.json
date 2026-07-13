@@ -171,6 +171,14 @@
     "error_checkout": "Online afrekenen is bijna klaar. Mail hello@lurafi.ai om te bestellen, of probeer het binnenkort opnieuw.",
     "processing": "Bezig…",
     "device_alt": "Kevin-apparaat",
+    "covers_heading": "Optionele voorpanelen",
+    "covers_note": "{{ price }} per stuk · elke kleur, elk aantal",
+    "covers_included": "Je Kevin wordt geleverd met de grijze cover — voeg hieronder extra kleuren toe.",
+    "cover_soon": "Binnenkort",
+    "cover_alt": "Voorpaneel {{ name }}",
+    "cover_qty_label": "Aantal covers {{ name }}",
+    "cover_minus_label": "Eén cover {{ name }} verwijderen",
+    "cover_plus_label": "Eén cover {{ name }} toevoegen",
     "device_in": "Kevin in {{ color }}"
   },
   "hero": {

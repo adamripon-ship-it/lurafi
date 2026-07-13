@@ -125,16 +125,23 @@
       return;
     }
 
+    var escapeHtml = function (s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    };
     body.innerHTML = cart.items.map(function (item) {
       var img = item.image
-        ? '<img src="' + item.image + '" alt="" width="64" height="64" loading="lazy">'
+        ? '<img src="' + escapeHtml(item.image) + '" alt="" width="64" height="64" loading="lazy">'
         : '';
+      var qty = Number(item.quantity) || 1;
       return (
         '<div class="cart-drawer__line">' +
         '<div class="cart-drawer__line-img">' + img + '</div>' +
-        '<div><p class="cart-drawer__line-title">' + item.product_title + '</p>' +
+        '<div><p class="cart-drawer__line-title">' + escapeHtml(item.product_title) +
+        (qty > 1 ? ' <span class="cart-drawer__line-qty">× ' + qty + '</span>' : '') + '</p>' +
         (item.variant_title && item.variant_title !== 'Default Title'
-          ? '<p class="cart-drawer__line-variant">' + item.variant_title + '</p>'
+          ? '<p class="cart-drawer__line-variant">' + escapeHtml(item.variant_title) + '</p>'
           : '') +
         '<p class="cart-drawer__line-price">' + formatMoney(item.final_line_price) + '</p></div>' +
         '</div>'

@@ -168,7 +168,15 @@
     "device_alt": "Kevin-Gerät",
     "device_in": "Kevin in {{ color }}",
     "header_eyebrow": "Sicherer Checkout",
-    "plan_badge_popular": "Most popular"
+    "plan_badge_popular": "Most popular",
+    "covers_heading": "Optionale Frontcover",
+    "covers_note": "{{ price }} pro Stück · jede Farbe, beliebige Anzahl",
+    "covers_included": "Dein Kevin wird mit dem grauen Cover geliefert — füge unten weitere Farben hinzu.",
+    "cover_soon": "Bald",
+    "cover_alt": "Frontcover {{ name }}",
+    "cover_qty_label": "Anzahl Cover {{ name }}",
+    "cover_minus_label": "Ein Cover {{ name }} entfernen",
+    "cover_plus_label": "Ein Cover {{ name }} hinzufügen"
   },
   "hero": {
     "away_eyebrow": "Away mode",
