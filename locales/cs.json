@@ -176,7 +176,9 @@
     "cover_alt": "Přední kryt {{ name }}",
     "cover_qty_label": "Počet krytů {{ name }}",
     "cover_minus_label": "Odebrat jeden kryt {{ name }}",
-    "cover_plus_label": "Přidat jeden kryt {{ name }}"
+    "cover_plus_label": "Přidat jeden kryt {{ name }}",
+    "device_heading": "Váš Kevin",
+    "device_colour_label": "Barva:"
   },
   "hero": {
     "away_eyebrow": "Away mode",

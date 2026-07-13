@@ -176,7 +176,9 @@
     "cover_alt": "Façade avant {{ name }}",
     "cover_qty_label": "Quantité de façades {{ name }}",
     "cover_minus_label": "Retirer une façade {{ name }}",
-    "cover_plus_label": "Ajouter une façade {{ name }}"
+    "cover_plus_label": "Ajouter une façade {{ name }}",
+    "device_heading": "Votre Kevin",
+    "device_colour_label": "Couleur :"
   },
   "hero": {
     "away_eyebrow": "Away mode",

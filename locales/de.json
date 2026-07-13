@@ -176,7 +176,9 @@
     "cover_alt": "Frontcover {{ name }}",
     "cover_qty_label": "Anzahl Cover {{ name }}",
     "cover_minus_label": "Ein Cover {{ name }} entfernen",
-    "cover_plus_label": "Ein Cover {{ name }} hinzufügen"
+    "cover_plus_label": "Ein Cover {{ name }} hinzufügen",
+    "device_heading": "Dein Kevin",
+    "device_colour_label": "Farbe:"
   },
   "hero": {
     "away_eyebrow": "Away mode",

@@ -143,6 +143,8 @@
     "lede": "Pick your color—you are one step from a home that never looks empty.",
     "color_label": "Your Kevin",
     "color_prefix": "Colour:",
+    "device_heading": "Your Kevin",
+    "device_colour_label": "Colour:",
     "plan_label": "Choose Your Plan",
     "plan_buy": "Buy",
     "plan_buy_sub": "One-time purchase",
