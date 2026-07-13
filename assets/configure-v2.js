@@ -199,8 +199,8 @@
 
   function getLinePriceCents() {
     var variant = findVariantById(state.variantId);
-    if (!variant) return 0;
-    return variant.price * state.quantity;
+    var cents = variant ? variant.price * state.quantity : 0;
+    return cents + coversPriceCents();
   }
 
   function renderTotal() {
@@ -324,10 +324,16 @@
         var id = card.getAttribute('data-cover-id');
         var qtyEl = card.querySelector('[data-cover-qty]');
         var qty = qtyEl ? Number(qtyEl.textContent) || 0 : 0;
-        if (id && Number(id) > 0 && qty > 0) out.push({ id: id, qty: qty });
+        var price = Number(card.getAttribute('data-cover-price')) || 0;
+        if (id && Number(id) > 0 && qty > 0) out.push({ id: id, qty: qty, price: price });
       }
     );
     return out;
+  }
+
+  // Cover add-ons contribute to the running total (device price + covers).
+  function coversPriceCents() {
+    return selectedCovers().reduce(function (sum, c) { return sum + c.price * c.qty; }, 0);
   }
 
   // Cart permalinks (/cart/{id}:{qty},…) send the customer straight to
@@ -403,6 +409,7 @@
         n = Math.max(0, Math.min(99, n));
         qtyEl.textContent = String(n);
         card.classList.toggle('is-selected', n > 0);
+        renderTotal();
       }
       minus.addEventListener('click', function () { setQty((Number(qtyEl.textContent) || 0) - 1); });
       plus.addEventListener('click', function () { setQty((Number(qtyEl.textContent) || 0) + 1); });

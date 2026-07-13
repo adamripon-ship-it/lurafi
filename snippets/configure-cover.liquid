@@ -17,7 +17,7 @@
     assign is_soon = true
   endif
 -%}
-<div class="configure-cover{% if is_soon %} is-soon{% endif %}" data-cover data-cover-id="{{ cover_variant }}"{% if is_soon %} data-cover-soon="1"{% endif %}>
+<div class="configure-cover{% if is_soon %} is-soon{% endif %}" data-cover data-cover-id="{{ cover_variant }}" data-cover-price="{{ price_cents | default: 0 }}"{% if is_soon %} data-cover-soon="1"{% endif %}>
   <span class="configure-cover__img"><img src="{{ img_src }}" alt="{{ 'configure.cover_alt' | t: name: cover_label | escape }}" loading="lazy" width="80" height="80"></span>
   <span class="configure-cover__name">{{ cover_label | escape }}</span>
   {%- if is_soon -%}
