@@ -256,10 +256,11 @@
       }
 
       function redirectWithCartPermalink() {
+        // Cart permalinks go straight to checkout by default (no ?checkout needed).
         var quantity = Number(item.quantity) || 1;
-        var url = '/cart/' + encodeURIComponent(vid) + ':' + encodeURIComponent(quantity) + '?checkout';
+        var url = '/cart/' + encodeURIComponent(vid) + ':' + encodeURIComponent(quantity);
         if (item.selling_plan) {
-          url += '&selling_plan=' + encodeURIComponent(item.selling_plan);
+          url += '?selling_plan=' + encodeURIComponent(item.selling_plan);
         }
         window.location.href = url;
       }
