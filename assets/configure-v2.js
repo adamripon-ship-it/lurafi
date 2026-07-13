@@ -158,7 +158,18 @@
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'configure-swatch' + (String(variant.id) === String(state.variantId) ? ' is-selected' : '');
-      btn.style.setProperty('--swatch-color', getHex(variant.color));
+      // Single device colour — show the real product photo, not a flat swatch.
+      var swatchImg = getVariantImage(variant);
+      if (swatchImg) {
+        btn.classList.add('configure-swatch--photo');
+        var im = document.createElement('img');
+        im.src = swatchImg;
+        im.alt = '';
+        im.loading = 'lazy';
+        btn.appendChild(im);
+      } else {
+        btn.style.setProperty('--swatch-color', getHex(variant.color));
+      }
       btn.dataset.colorKey = colorKey(variant.color);
       btn.title = displayColor(variant.color);
       btn.setAttribute('aria-label', displayColor(variant.color));
