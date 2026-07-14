@@ -3153,6 +3153,12 @@ body.mobile-nav-open { overflow: hidden; }
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
 }
+/* Shown on desktop by JS only while the full order summary is scrolled out of
+   view, so the price + checkout are always reachable without a second total. */
+.configure-sticky-checkout.is-visible { display: block; }
+@media (min-width: 768px) {
+  .configure-sticky-checkout__inner { max-width: 1080px; padding-inline: clamp(16px, 4vw, 48px); }
+}
 .configure-sticky-checkout__inner {
   display: flex;
   align-items: center;

@@ -395,6 +395,19 @@
     });
   });
 
+  // Persistent checkout bar (desktop): reveal it whenever the full order
+  // summary is scrolled out of view, so the price + checkout are always
+  // reachable. On mobile the bar is always shown via CSS.
+  (function initStickyBar() {
+    var bar = root.querySelector('[data-configure-sticky-checkout]');
+    var summary = document.getElementById('ConfigureSummary');
+    if (!bar || !summary || typeof IntersectionObserver === 'undefined') return;
+    var io = new IntersectionObserver(function (entries) {
+      bar.classList.toggle('is-visible', !entries[0].isIntersecting);
+    }, { rootMargin: '0px 0px -48px 0px', threshold: 0 });
+    io.observe(summary);
+  })();
+
   // Optional front-cover add-ons: per-cover quantity steppers. Covers without a
   // real Shopify variant id are shown but not purchasable (data-cover-soon).
   Array.prototype.forEach.call(
