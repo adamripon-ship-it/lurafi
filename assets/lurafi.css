@@ -3223,6 +3223,103 @@ body.mobile-nav-open { overflow: hidden; }
   .configure-checkout-panel { padding: 20px 16px; }
 }
 
+/* ================= Dark configure / checkout page =================
+   Colour-only overrides scoped to body.template-configure. The layout is
+   unchanged — only backgrounds, text, borders and controls are re-toned for
+   a black stage with accessible contrast. */
+body.template-configure {
+  background-color: #060709;
+  background-image: radial-gradient(120% 55% at 50% 0%, rgba(48, 54, 82, 0.42) 0%, rgba(48, 54, 82, 0) 60%);
+  background-repeat: no-repeat;
+  color: rgba(255, 255, 255, 0.96);
+}
+body.template-configure .configure-page { background: transparent; }
+body.template-configure .configure-qty {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.template-configure .configure-nav {
+  background: rgba(8, 9, 13, 0.78);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+body.template-configure .configure-nav__back,
+body.template-configure .configure-nav__title,
+body.template-configure .configure-nav__cart { color: rgba(255, 255, 255, 0.9); }
+
+body.template-configure .configure-stepper__label { color: rgba(255, 255, 255, 0.72); }
+body.template-configure .configure-stepper__item:not(.is-active) .configure-stepper__num {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+body.template-configure .configure-stepper__connector { background: rgba(255, 255, 255, 0.16); }
+
+body.template-configure .configure-header__title { color: rgba(255, 255, 255, 0.98); }
+body.template-configure .configure-header__lede { color: rgba(255, 255, 255, 0.62); }
+
+/* Product image sits on a subtle dark card so a white-background photo still reads. */
+body.template-configure .configure-gallery__well {
+  background: linear-gradient(165deg, #171922 0%, #0d0e14 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.template-configure .configure-section,
+body.template-configure .configure-order-card,
+body.template-configure .configure-summary,
+body.template-configure .configure-checkout-panel {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+body.template-configure .configure-section--features {
+  background: rgba(255, 255, 255, 0.025);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+body.template-configure .configure-label { color: rgba(255, 255, 255, 0.55); }
+body.template-configure .configure-color-text { color: rgba(255, 255, 255, 0.62); }
+body.template-configure .configure-color-text strong { color: rgba(255, 255, 255, 0.95); }
+
+body.template-configure .configure-cover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+body.template-configure .configure-cover__name { color: rgba(255, 255, 255, 0.95); }
+body.template-configure .configure-cover__price { color: rgba(255, 255, 255, 0.6); }
+body.template-configure .configure-cover__qty { border-color: rgba(255, 255, 255, 0.16); }
+body.template-configure .configure-cover__qty-btn { background: rgba(255, 255, 255, 0.09); color: rgba(255, 255, 255, 0.92); }
+body.template-configure .configure-cover__qty-btn:hover { background: rgba(255, 255, 255, 0.16); }
+body.template-configure .configure-cover__qty-val { color: rgba(255, 255, 255, 0.96); }
+body.template-configure .configure-covers__note { color: rgba(255, 255, 255, 0.6); }
+
+body.template-configure .configure-qty__btn { background: rgba(255, 255, 255, 0.09); color: rgba(255, 255, 255, 0.92); border-color: rgba(255, 255, 255, 0.16); }
+body.template-configure .configure-qty__value { color: rgba(255, 255, 255, 0.98); }
+body.template-configure .configure-qty__hint { color: rgba(255, 255, 255, 0.5); }
+
+body.template-configure .configure-feature__text { color: rgba(255, 255, 255, 0.86); }
+
+body.template-configure .configure-order-card__list { background: rgba(255, 255, 255, 0.03); }
+body.template-configure .configure-order-card__label { color: rgba(255, 255, 255, 0.55); }
+body.template-configure .configure-order-card__title { color: rgba(255, 255, 255, 0.98); }
+body.template-configure .configure-order-card__list div { border-top-color: rgba(255, 255, 255, 0.08); }
+body.template-configure .configure-order-card__list dt { color: rgba(255, 255, 255, 0.6); }
+body.template-configure .configure-order-card__list dd { color: rgba(255, 255, 255, 0.95); }
+body.template-configure .configure-order-card__highlight { color: #4ade80; }
+body.template-configure .configure-summary__label { color: rgba(255, 255, 255, 0.6); }
+body.template-configure .configure-summary__total { color: rgba(255, 255, 255, 0.98); }
+body.template-configure .configure-summary__total-block { border-top-color: rgba(255, 255, 255, 0.1); }
+body.template-configure .configure-summary__per,
+body.template-configure .checkout-assurance,
+body.template-configure .configure-summary__secure { color: rgba(255, 255, 255, 0.5); }
+
+body.template-configure .configure-sticky-checkout {
+  background: rgba(8, 9, 13, 0.92);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+body.template-configure .configure-sticky-checkout__color,
+body.template-configure .configure-sticky-checkout__label { color: rgba(255, 255, 255, 0.6); }
+body.template-configure .configure-sticky-checkout__price strong { color: rgba(255, 255, 255, 0.98); }
+
 /* ---- Cart drawer ---- */
 .cart-drawer[hidden] { display: none !important; }
 body.cart-drawer-open { overflow: hidden; }
