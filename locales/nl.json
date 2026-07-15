@@ -38,6 +38,15 @@
   "country": {
     "label": "Country / region"
   },
+  "region": {
+    "label": "Land / regio",
+    "ie": "Ierland",
+    "nl": "Nederland",
+    "de": "Duitsland",
+    "fr": "Frankrijk",
+    "ch": "Zwitserland",
+    "cz": "Tsjechië"
+  },
   "header": {
     "why_kevin": "Waarom Kevin",
     "product": "Product",

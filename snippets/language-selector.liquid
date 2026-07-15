@@ -1,5 +1,15 @@
 {%- comment -%}
-  Language switcher via POST /localization.
+  Region (country) switcher via POST /localization.
+
+  Shows the countries we sell to — Ireland, Netherlands, Germany, France,
+  Switzerland, Czech Republic — each mapped to its market currency and language.
+  Switzerland is multilingual: selecting it opens a language submenu (English,
+  Deutsch, Français — no flags). Every choice submits a locale_code + country_code
+  to /localization so the market currency/tax and the language switch together.
+
+  Progressive enhancement: a plain <select> works without JS; language-selector.js
+  upgrades it to the button + menu + Swiss submenu.
+
   @param form_id {String}
   @param selector_id {String}
 {%- endcomment -%}
@@ -34,13 +44,42 @@
   endif
 
   comment
-    Shopify accepts locale switches at the store-root /localization endpoint on all markets.
+    Shopify accepts locale + country switches at the store-root /localization endpoint.
   endcomment
   assign localization_action = '/localization'
+
+  comment
+    Current country → flag + label for the trigger. Defaults to Ireland.
+  endcomment
+  assign cur_country = localization.country.iso_code | default: 'IE' | upcase
+  assign cur_locale = localization.language.iso_code | split: '-' | first | downcase
+  case cur_country
+    when 'IE'
+      assign cur_flag = '🇮🇪'
+      assign cur_label = 'region.ie' | t
+    when 'NL'
+      assign cur_flag = '🇳🇱'
+      assign cur_label = 'region.nl' | t
+    when 'DE'
+      assign cur_flag = '🇩🇪'
+      assign cur_label = 'region.de' | t
+    when 'FR'
+      assign cur_flag = '🇫🇷'
+      assign cur_label = 'region.fr' | t
+    when 'CH'
+      assign cur_flag = '🇨🇭'
+      assign cur_label = 'region.ch' | t
+    when 'CZ'
+      assign cur_flag = '🇨🇿'
+      assign cur_label = 'region.cz' | t
+    else
+      assign cur_flag = '🇮🇪'
+      assign cur_label = 'region.ie' | t
+  endcase
 -%}
 {%- if show_language -%}
-  <!-- lurafi-lang-filter-v7-language-drives-market -->
-  <div class="language-selector" data-language-selector>
+  <!-- lurafi-region-selector-v1 -->
+  <div class="language-selector language-selector--regions" data-language-selector>
     <form
       method="post"
       action="{{ localization_action }}"
@@ -52,72 +91,62 @@
       <input type="hidden" name="form_type" value="localization">
       <input type="hidden" name="utf8" value="✓">
       <input type="hidden" name="_method" value="put">
-      <input
-        type="hidden"
-        name="return_to"
-        value="{{ return_to | escape }}"
-        data-language-return-to
-      >
+      <input type="hidden" name="return_to" value="{{ return_to | escape }}" data-language-return-to>
       {%- comment -%}
-        Language drives the market: the selected language also sets the buyer's
-        country (en→IE, nl→NL, fr→FR, de→DE, cs→CZ) so currency and tax follow.
-        JS overrides this value on change; the default keeps the current country
-        for the no-JS submit path.
+        These carry the chosen locale + country for the enhanced (JS) menu. JS adds
+        their `name` on init so that without JS only the <noscript> select submits
+        (no duplicate locale_code field).
       {%- endcomment -%}
-      <input
-        type="hidden"
-        name="country_code"
-        value="{{ localization.country.iso_code }}"
-        data-language-country
-      >
+      <input type="hidden" value="{{ localization.language.iso_code }}" data-language-locale>
+      <input type="hidden" value="{{ cur_country }}" data-language-country>
 
-      <label class="language-selector__label visually-hidden" for="{{ selector_id }}">
-        {{ 'language.label' | t }}
-      </label>
-      <select
-        id="{{ selector_id }}"
-        name="locale_code"
-        class="language-selector__select language-selector__select--language"
-        aria-label="{{ 'language.label' | t }}"
-        data-language-select
-        autocomplete="language"
-      >
-        {%- for language in localization.available_languages -%}
-          {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
-          {%- assign lang_token = ',' | append: lang_root | append: ',' -%}
-          {%- if lurafi_published_locale_csv contains lang_token -%}
-            {%- assign lang_key = 'language.' | append: lang_root -%}
-            {%- capture lang_display -%}
-              {{ lang_key | t: default: language.endonym_name }}
-            {%- endcapture -%}
-            <option
-              value="{{ language.iso_code }}"
-              lang="{{ language.iso_code }}"
-              data-locale-root="{{ lang_root }}"
-              title="{{ language.endonym_name | escape }}"
-              {% if language.iso_code == localization.language.iso_code %}
-                selected
-              {% endif %}
-            >
-              {{ lang_display | strip }}
-            </option>
-          {%- endif -%}
-        {%- endfor -%}
-      </select>
-
+      {%- comment -%} No-JS fallback: a flat native select of the sellable regions. {%- endcomment -%}
       <noscript>
-        <button type="submit" class="language-selector__noscript-btn">{{ 'language.label' | t }}</button>
+        <label class="language-selector__label visually-hidden" for="{{ selector_id }}-ns">{{ 'region.label' | t }}</label>
+        <select id="{{ selector_id }}-ns" name="locale_code" class="language-selector__select">
+          <option value="en" {% if cur_country == 'IE' %}selected{% endif %}>🇮🇪 {{ 'region.ie' | t }}</option>
+          <option value="nl" {% if cur_country == 'NL' %}selected{% endif %}>🇳🇱 {{ 'region.nl' | t }}</option>
+          <option value="de" {% if cur_country == 'DE' %}selected{% endif %}>🇩🇪 {{ 'region.de' | t }}</option>
+          <option value="fr" {% if cur_country == 'FR' %}selected{% endif %}>🇫🇷 {{ 'region.fr' | t }}</option>
+          <option value="en" {% if cur_country == 'CH' and cur_locale == 'en' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — English</option>
+          <option value="de" {% if cur_country == 'CH' and cur_locale == 'de' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — Deutsch</option>
+          <option value="fr" {% if cur_country == 'CH' and cur_locale == 'fr' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — Français</option>
+          <option value="cs" {% if cur_country == 'CZ' %}selected{% endif %}>🇨🇿 {{ 'region.cz' | t }}</option>
+        </select>
+        <button type="submit" class="language-selector__noscript-btn">{{ 'region.label' | t }}</button>
       </noscript>
     </form>
-    <script>
-      (function () {
-        var form = document.getElementById('{{ form_id }}');
-        if (!form) return;
-        var action = form.getAttribute('action') || '';
-        if (action.indexOf('localization') !== -1 && action !== '/localization') {
-          form.setAttribute('action', '/localization');
-        }
-      })();
-    </script>
+
+    {%- comment -%} Enhanced dropdown (JS). Hidden until JS marks the selector ready. {%- endcomment -%}
+    <button
+      type="button"
+      class="language-selector__trigger"
+      id="{{ selector_id }}"
+      data-region-trigger
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-label="{{ 'region.label' | t }}"
+    >
+      <span class="language-selector__flag" data-region-current-flag aria-hidden="true">{{ cur_flag }}</span>
+      <span class="language-selector__current" data-region-current-label>{{ cur_label }}</span>
+      <svg class="language-selector__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="language-selector__menu" data-region-menu hidden>
+      <ul class="language-selector__list" data-region-list role="menu" aria-label="{{ 'region.label' | t }}">
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt" data-locale="en" data-country="IE"><span class="language-selector__flag" aria-hidden="true">🇮🇪</span><span class="language-selector__opt-label">{{ 'region.ie' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt" data-locale="nl" data-country="NL"><span class="language-selector__flag" aria-hidden="true">🇳🇱</span><span class="language-selector__opt-label">{{ 'region.nl' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt" data-locale="de" data-country="DE"><span class="language-selector__flag" aria-hidden="true">🇩🇪</span><span class="language-selector__opt-label">{{ 'region.de' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt" data-locale="fr" data-country="FR"><span class="language-selector__flag" aria-hidden="true">🇫🇷</span><span class="language-selector__opt-label">{{ 'region.fr' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--parent" data-region-submenu-open="ch" aria-haspopup="true" aria-expanded="false"><span class="language-selector__flag" aria-hidden="true">🇨🇭</span><span class="language-selector__opt-label">{{ 'region.ch' | t }}</span><svg class="language-selector__caret" width="6" height="10" viewBox="0 0 6 10" fill="none" aria-hidden="true"><path d="M1 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt" data-locale="cs" data-country="CZ"><span class="language-selector__flag" aria-hidden="true">🇨🇿</span><span class="language-selector__opt-label">{{ 'region.cz' | t }}</span></button></li>
+      </ul>
+      <ul class="language-selector__list language-selector__submenu" data-region-submenu="ch" role="menu" aria-label="{{ 'region.ch' | t }}" hidden>
+        <li role="none"><button type="button" class="language-selector__opt language-selector__opt--back" data-region-submenu-back><svg class="language-selector__caret language-selector__caret--back" width="6" height="10" viewBox="0 0 6 10" fill="none" aria-hidden="true"><path d="M5 1L1 5l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="language-selector__opt-label">{{ 'region.ch' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="en" data-country="CH"><span class="language-selector__opt-label">English</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="de" data-country="CH"><span class="language-selector__opt-label">Deutsch</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="fr" data-country="CH"><span class="language-selector__opt-label">Français</span></button></li>
+      </ul>
+    </div>
   </div>
 {%- endif -%}

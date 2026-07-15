@@ -35,6 +35,15 @@
     "de": "🇩🇪 DE",
     "cs": "🇨🇿 CS"
   },
+  "region": {
+    "label": "Land / Region",
+    "ie": "Irland",
+    "nl": "Niederlande",
+    "de": "Deutschland",
+    "fr": "Frankreich",
+    "ch": "Schweiz",
+    "cz": "Tschechien"
+  },
   "header": {
     "why_kevin": "Warum Kevin",
     "product": "Produkt",

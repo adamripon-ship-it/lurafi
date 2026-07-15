@@ -38,6 +38,15 @@
   "country": {
     "label": "Country / region"
   },
+  "region": {
+    "label": "Country / region",
+    "ie": "Ireland",
+    "nl": "Netherlands",
+    "de": "Germany",
+    "fr": "France",
+    "ch": "Switzerland",
+    "cz": "Czech Republic"
+  },
   "header": {
     "why_kevin": "Why Kevin",
     "product": "Product",
