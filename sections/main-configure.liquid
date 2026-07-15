@@ -246,21 +246,27 @@
   <aside class="configure-sticky-checkout" aria-label="{{ 'accessibility.checkout_summary' | t }}" data-configure-sticky-checkout>
     <div class="configure-sticky-checkout__inner">
       <div class="configure-sticky-checkout__meta">
-        <span class="configure-sticky-checkout__color" data-configure-sticky-color>Grey</span>
-        <div class="configure-sticky-checkout__price">
+        <span class="configure-sticky-checkout__thumb"><img src="{{ default_image }}" alt="" width="48" height="48" loading="lazy"></span>
+        <span class="configure-sticky-checkout__text">
+          <span class="configure-sticky-checkout__name">{{ 'configure.product_title' | t }}</span>
+          <span class="configure-sticky-checkout__sub" data-configure-sticky-color>Grey</span>
+        </span>
+      </div>
+      <div class="configure-sticky-checkout__right">
+        <span class="configure-sticky-checkout__price">
           <span class="configure-sticky-checkout__label">{{ 'configure.total' | t }}</span>
           <strong>
             <span data-configure-sticky-total>—</span>
             <span data-configure-sticky-total-suffix></span>
           </strong>
-        </div>
+        </span>
+        <button type="button" class="btn-apple-primary configure-sticky-checkout__btn" data-configure-checkout>
+          <span data-configure-cta-label>{{ 'configure.sticky_checkout' | t }}</span>
+          <svg class="configure-cta__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
-      <button type="button" class="btn-apple-primary configure-sticky-checkout__btn" data-configure-checkout>
-        <span data-configure-cta-label>{{ 'configure.sticky_checkout' | t }}</span>
-        <svg class="configure-cta__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
     </div>
   </aside>
 </section>
