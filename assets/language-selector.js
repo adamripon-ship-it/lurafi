@@ -1,25 +1,9 @@
 (function () {
-  var FLAG_BY_LOCALE = {
-    en: '🇮🇪',
-    nl: '🇳🇱',
-    fr: '🇫🇷',
-    de: '🇩🇪',
-    cs: '🇨🇿',
-  };
-
-  // Each published language maps to a single market/country so that switching
-  // language also switches the market currency and tax treatment:
-  //   English → Ireland (EUR), Dutch → Netherlands (EUR),
-  //   French → France (EUR), German → Germany (EUR),
-  //   Czech → Czech Republic (CZK).
-  // The mapped country is submitted as country_code on the /localization form.
-  var COUNTRY_BY_LOCALE = {
-    en: 'IE',
-    nl: 'NL',
-    fr: 'FR',
-    de: 'DE',
-    cs: 'CZ',
-  };
+  // Region (country) switcher. Each menu option carries an explicit locale + a
+  // country so that switching also selects the market (currency + tax):
+  //   Ireland→EUR/en · Netherlands→EUR/nl · Germany→EUR/de · France→EUR/fr ·
+  //   Czech Republic→CZK/cs · Switzerland→CHF with a language submenu (en/de/fr).
+  // The chosen locale_code + country_code are POSTed to /localization.
 
   function getLocaleRoutes() {
     return window.lurafiLocaleRoutes || null;
@@ -81,95 +65,154 @@
     return nextPath + (search || '') + (hash || '');
   }
 
-  function syncCountry(form, select) {
-    if (!form || !select || !select.value) return;
-    var root = select.value.split('-')[0].toLowerCase();
-    var country = COUNTRY_BY_LOCALE[root];
-    if (!country) return;
-    var input = form.querySelector('[data-language-country]');
-    if (!input) {
-      input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = 'country_code';
-      input.setAttribute('data-language-country', '');
-      form.appendChild(input);
+  function submitSelection(root, locale, country) {
+    var form = root.querySelector('.language-selector__form');
+    if (!form || form.dataset.submitting === 'true') return;
+    var localeInput = form.querySelector('[data-language-locale]');
+    var countryInput = form.querySelector('[data-language-country]');
+    var returnInput = form.querySelector('[data-language-return-to]');
+    if (localeInput) localeInput.value = locale;
+    if (countryInput) countryInput.value = country;
+    if (returnInput) {
+      returnInput.value = rewriteReturnTo(
+        window.location.pathname || '/',
+        window.location.search || '',
+        window.location.hash || '',
+        (locale || 'en').split('-')[0].toLowerCase()
+      );
     }
-    input.value = country;
-  }
-
-  function syncReturnTo(form, select) {
-    var input = form.querySelector('[data-language-return-to]');
-    if (!input) return;
-
-    var pathname = window.location.pathname || '/';
-    var search = window.location.search || '';
-    var hash = window.location.hash || '';
-    var targetLocale = 'en';
-
-    if (select && select.value) {
-      targetLocale = select.value.split('-')[0].toLowerCase();
-    }
-
-    input.value = rewriteReturnTo(pathname, search, hash, targetLocale);
-  }
-
-  function decorateSelectOptions(select) {
-    if (!select || select.dataset.flagsDecorated === 'true') return;
-    Array.from(select.options).forEach(function (option) {
-      var root = (option.value || '').split('-')[0].toLowerCase();
-      var flag = FLAG_BY_LOCALE[root];
-      var label = option.textContent.trim();
-      if (flag && label.indexOf(flag) !== 0) {
-        option.textContent = flag + ' ' + label;
-      }
-      if (!option.getAttribute('title') && option.getAttribute('lang')) {
-        option.setAttribute('title', label);
-      }
-    });
-    select.dataset.flagsDecorated = 'true';
-  }
-
-  function normalizeLocalizationForms() {
-    document.querySelectorAll('[data-language-selector] form').forEach(function (form) {
-      var action = form.getAttribute('action') || '';
-      if (action.indexOf('localization') === -1) return;
-      if (action !== '/localization') {
-        form.setAttribute('action', '/localization');
-      }
-    });
-  }
-
-  function initLanguageSelectors() {
-    normalizeLocalizationForms();
-    document.querySelectorAll('[data-language-select]').forEach(decorateSelectOptions);
-  }
-
-  document.addEventListener('change', function (event) {
-    var select = event.target;
-    if (!select.matches || !select.matches('[data-language-select]')) return;
-    var form = select.closest('form');
-    if (!form || form.getAttribute('action')?.indexOf('localization') === -1) return;
-    if (form.dataset.submitting === 'true') return;
-
-    syncCountry(form, select);
-    syncReturnTo(form, select);
     form.dataset.submitting = 'true';
     form.submit();
+  }
+
+  function closeMenu(root) {
+    var trigger = root.querySelector('[data-region-trigger]');
+    var menu = root.querySelector('[data-region-menu]');
+    if (menu) menu.hidden = true;
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    showMainList(root);
+  }
+
+  function openMenu(root) {
+    document.querySelectorAll('[data-language-selector]').forEach(function (other) {
+      if (other !== root) closeMenu(other);
+    });
+    var trigger = root.querySelector('[data-region-trigger]');
+    var menu = root.querySelector('[data-region-menu]');
+    if (menu) menu.hidden = false;
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    showMainList(root);
+  }
+
+  function showSubmenu(root, key) {
+    var list = root.querySelector('[data-region-list]');
+    var sub = root.querySelector('[data-region-submenu="' + key + '"]');
+    var parent = root.querySelector('[data-region-submenu-open="' + key + '"]');
+    if (list) list.hidden = true;
+    if (sub) sub.hidden = false;
+    if (parent) parent.setAttribute('aria-expanded', 'true');
+    var firstLang = sub && sub.querySelector('.language-selector__opt--lang');
+    if (firstLang) firstLang.focus();
+  }
+
+  function showMainList(root) {
+    var list = root.querySelector('[data-region-list]');
+    if (list) list.hidden = false;
+    root.querySelectorAll('[data-region-submenu]').forEach(function (sub) {
+      sub.hidden = true;
+    });
+    root.querySelectorAll('[data-region-submenu-open]').forEach(function (p) {
+      p.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function initSelectors() {
+    document.querySelectorAll('[data-language-selector]').forEach(function (root) {
+      if (root.dataset.regionReady === 'true') return;
+      // Normalise the localization action just in case.
+      var form = root.querySelector('.language-selector__form');
+      if (form) {
+        var action = form.getAttribute('action') || '';
+        if (action.indexOf('localization') !== -1 && action !== '/localization') {
+          form.setAttribute('action', '/localization');
+        }
+        // Activate the hidden fields for the enhanced menu. They ship without a
+        // name so that without JS only the <noscript> select submits.
+        var localeInput = form.querySelector('[data-language-locale]');
+        var countryInput = form.querySelector('[data-language-country]');
+        if (localeInput && !localeInput.name) localeInput.name = 'locale_code';
+        if (countryInput && !countryInput.name) countryInput.name = 'country_code';
+      }
+      root.classList.add('is-ready');
+      root.dataset.regionReady = 'true';
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    var target = event.target;
+    if (!(target instanceof Element)) return;
+
+    var trigger = target.closest('[data-region-trigger]');
+    if (trigger) {
+      var root = trigger.closest('[data-language-selector]');
+      var menu = root && root.querySelector('[data-region-menu]');
+      if (root && menu) {
+        if (menu.hidden) openMenu(root);
+        else closeMenu(root);
+      }
+      event.preventDefault();
+      return;
+    }
+
+    var back = target.closest('[data-region-submenu-back]');
+    if (back) {
+      var rootB = back.closest('[data-language-selector]');
+      if (rootB) {
+        showMainList(rootB);
+        var parent = rootB.querySelector('[data-region-submenu-open]');
+        if (parent) parent.focus();
+      }
+      event.preventDefault();
+      return;
+    }
+
+    var openSub = target.closest('[data-region-submenu-open]');
+    if (openSub) {
+      var rootS = openSub.closest('[data-language-selector]');
+      if (rootS) showSubmenu(rootS, openSub.getAttribute('data-region-submenu-open'));
+      event.preventDefault();
+      return;
+    }
+
+    var opt = target.closest('.language-selector__opt');
+    if (opt && opt.hasAttribute('data-locale') && opt.hasAttribute('data-country')) {
+      var rootO = opt.closest('[data-language-selector]');
+      if (rootO) submitSelection(rootO, opt.getAttribute('data-locale'), opt.getAttribute('data-country'));
+      event.preventDefault();
+      return;
+    }
+
+    // Click outside any selector → close all.
+    if (!target.closest('[data-language-selector]')) {
+      document.querySelectorAll('[data-language-selector]').forEach(closeMenu);
+    }
   });
 
-  document.addEventListener('submit', function (event) {
-    var form = event.target;
-    if (!form.matches || !form.matches('form')) return;
-    if (!form.closest('[data-language-selector]')) return;
-
-    var select = form.querySelector('[data-language-select]');
-    syncCountry(form, select);
-    syncReturnTo(form, select);
+  document.addEventListener('keydown', function (event) {
+    if (event.key !== 'Escape') return;
+    document.querySelectorAll('[data-language-selector]').forEach(function (root) {
+      var menu = root.querySelector('[data-region-menu]');
+      if (menu && !menu.hidden) {
+        closeMenu(root);
+        var trigger = root.querySelector('[data-region-trigger]');
+        if (trigger) trigger.focus();
+      }
+    });
   });
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLanguageSelectors);
+    document.addEventListener('DOMContentLoaded', initSelectors);
   } else {
-    initLanguageSelectors();
+    initSelectors();
   }
 })();

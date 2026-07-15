@@ -859,6 +859,134 @@ select:focus-visible,
   font-size: 11px;
 }
 
+/* ===== Region (country) switcher — trigger + menu + Swiss submenu ===== */
+/* Progressive enhancement: the enhanced button/menu appear only once JS marks
+   the selector ready; without JS the <noscript> native <select> is shown. */
+.language-selector--regions {
+  position: relative;
+  display: inline-flex;
+}
+.language-selector--regions .language-selector__trigger {
+  display: none;
+}
+.language-selector--regions.is-ready .language-selector__trigger {
+  display: inline-flex;
+}
+
+.language-selector__trigger {
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(127, 127, 127, 0.12);
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.language-selector__flag {
+  font-size: 15px;
+  line-height: 1;
+}
+.language-selector__chevron {
+  margin-left: 1px;
+  opacity: 0.65;
+  transition: transform 0.18s ease;
+}
+.language-selector__trigger[aria-expanded='true'] .language-selector__chevron {
+  transform: rotate(180deg);
+}
+
+.language-selector__menu {
+  position: absolute;
+  z-index: 60;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 224px;
+  max-width: min(280px, 82vw);
+  padding: 6px;
+  border-radius: 14px;
+  background: #14161c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+.language-selector__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.language-selector__opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.language-selector__opt:hover,
+.language-selector__opt:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+.language-selector__opt-label {
+  flex: 1 1 auto;
+}
+.language-selector__caret {
+  flex: 0 0 auto;
+  margin-left: auto;
+  opacity: 0.55;
+}
+.language-selector__opt--lang {
+  padding-left: 16px;
+}
+.language-selector__opt--back {
+  color: rgba(255, 255, 255, 0.58);
+  font-weight: 600;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.language-selector__caret--back {
+  margin-left: 0;
+  opacity: 0.7;
+}
+
+/* Configure page (always dark) — match the dark pill treatment. */
+body.template-configure .language-selector__trigger {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Light header — flip the menu to a light surface for contrast. */
+.site-header[data-theme='light'] .language-selector__menu {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+}
+.site-header[data-theme='light'] .language-selector__opt {
+  color: #1d1d1f;
+}
+.site-header[data-theme='light'] .language-selector__opt:hover,
+.site-header[data-theme='light'] .language-selector__opt:focus-visible {
+  background: rgba(0, 0, 0, 0.06);
+}
+.site-header[data-theme='light'] .language-selector__opt--back {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .language-selector__toggle {
   display: inline-flex;
   align-items: center;

@@ -41,6 +41,15 @@ const en = {
   country: {
     label: 'Country / region',
   },
+  region: {
+    label: 'Country / region',
+    ie: 'Ireland',
+    nl: 'Netherlands',
+    de: 'Germany',
+    fr: 'France',
+    ch: 'Switzerland',
+    cz: 'Czech Republic',
+  },
   header: {
     why_kevin: 'Why Kevin',
     product: 'Product',
@@ -661,6 +670,15 @@ nl.accessibility = {
 };
 en.language = { label: 'Language', ...languageLabels };
 nl.language = { label: 'Taal', ...languageLabels };
+nl.region = {
+  label: 'Land / regio',
+  ie: 'Ierland',
+  nl: 'Nederland',
+  de: 'Duitsland',
+  fr: 'Frankrijk',
+  ch: 'Zwitserland',
+  cz: 'Tsjechië',
+};
 nl.header = {
   why_kevin: 'Waarom Kevin',
   product: 'Product',
@@ -945,10 +963,10 @@ const nlOut = unflatten(nlFlat);
 fs.writeFileSync(path.join(root, 'locales/en.default.json'), JSON.stringify(enOut, null, 2) + '\n');
 fs.writeFileSync(path.join(root, 'locales/nl.json'), JSON.stringify(nlOut, null, 2) + '\n');
 
-// The language switcher must not grow a separate, visible country dropdown.
-// A hidden country_code coupled to the chosen language is allowed (and required)
-// so that picking a language also selects its market/currency — that is not a
-// country *selector*, so country_code is intentionally not on this list.
+// The switcher IS a region (country) selector by design: each option couples a
+// locale_code with a country_code so language + market switch together. What is
+// still forbidden is regressing to the old, broken pattern of a SEPARATE second
+// <select name="country_code"> dropdown that desynced from the language one.
 const COUNTRY_SELECTOR_MARKERS = [
   'data-country-select',
   'lurafi_published_country_csv',
@@ -961,7 +979,7 @@ function assertNoCountrySelector(relPath, text) {
   const hits = COUNTRY_SELECTOR_MARKERS.filter((marker) => text.includes(marker));
   if (hits.length) {
     throw new Error(
-      `${relPath} must remain language-only. Remove country selector markers: ${hits.join(', ')}`,
+      `${relPath} must not use a separate country <select>. Remove markers: ${hits.join(', ')}`,
     );
   }
 }
