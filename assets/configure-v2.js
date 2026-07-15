@@ -41,8 +41,6 @@
     totalSuffix: root.querySelector('[data-configure-total-suffix]'),
     summaryColor: root.querySelector('[data-configure-summary-color]'),
     summaryPlan: root.querySelector('[data-configure-summary-plan]'),
-    summaryCovers: root.querySelector('[data-configure-summary-covers]'),
-    summaryCoversRow: root.querySelector('[data-configure-summary-covers-row]'),
     stickyTotal: root.querySelector('[data-configure-sticky-total]'),
     stickyTotalSuffix: root.querySelector('[data-configure-sticky-total-suffix]'),
     perDevice: root.querySelector('[data-configure-per-device]'),
@@ -205,29 +203,7 @@
     return cents + coversPriceCents();
   }
 
-  // Reflect selected covers in the order summary so it matches the total.
-  function renderCoversSummary() {
-    if (!els.summaryCovers || !els.summaryCoversRow) return;
-    var parts = [];
-    Array.prototype.forEach.call(
-      document.querySelectorAll('[data-configure-covers] .configure-cover'),
-      function (card) {
-        var qtyEl = card.querySelector('[data-cover-qty]');
-        var qty = qtyEl ? Number(qtyEl.textContent) || 0 : 0;
-        var nameEl = card.querySelector('.configure-cover__name');
-        if (qty > 0 && nameEl) parts.push(nameEl.textContent.trim() + ' × ' + qty);
-      }
-    );
-    if (parts.length) {
-      els.summaryCoversRow.hidden = false;
-      els.summaryCovers.textContent = parts.join(', ');
-    } else {
-      els.summaryCoversRow.hidden = true;
-    }
-  }
-
   function renderTotal() {
-    renderCoversSummary();
     var variant = findVariantById(state.variantId);
     var cents = getLinePriceCents();
     var formatted = window.LurafiCart ? window.LurafiCart.formatMoney(cents) : (cents / 100).toFixed(2);

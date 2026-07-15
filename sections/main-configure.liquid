@@ -94,35 +94,33 @@
     </header>
 
     <div class="configure-grid">
-      <div class="configure-media">
-        <div class="configure-gallery">
-          <div class="configure-gallery__well">
-            <div class="configure-gallery__glow" aria-hidden="true"></div>
-            <img
-              src="{{ default_image }}"
-              alt="{{ 'configure.device_alt' | t }}"
-              class="configure-gallery__img"
-              data-configure-image
-              width="420"
-              height="420"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            >
-            <p class="configure-gallery__chip">
-              <span class="configure-gallery__chip-dot" data-configure-chip-dot aria-hidden="true"></span>
-              <span data-configure-color-name>Grey</span>
-            </p>
-          </div>
+      <div class="configure-gallery">
+        <div class="configure-gallery__well">
+          <div class="configure-gallery__glow" aria-hidden="true"></div>
+          <img
+            src="{{ default_image }}"
+            alt="{{ 'configure.device_alt' | t }}"
+            class="configure-gallery__img"
+            data-configure-image
+            width="420"
+            height="420"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+          <p class="configure-gallery__chip">
+            <span class="configure-gallery__chip-dot" data-configure-chip-dot aria-hidden="true"></span>
+            <span data-configure-color-name>Grey</span>
+          </p>
         </div>
-        <p class="configure-media__caption"><strong>{{ 'configure.device_heading' | t }}</strong> · {{ 'configure.device_colour_label' | t }} <span data-configure-color-name-inline>Grey</span></p>
-        <section class="configure-section configure-section--features" aria-labelledby="ConfigureIncludedHeading">
-          <h2 id="ConfigureIncludedHeading" class="configure-label">{{ 'configure.included' | t }}</h2>
-          <ul class="configure-features" data-configure-features></ul>
-        </section>
       </div>
 
       <div class="configure-controls">
+        <section class="configure-section" aria-labelledby="ConfigureColorHeading">
+          <h2 id="ConfigureColorHeading" class="configure-label">{{ 'configure.device_heading' | t }}</h2>
+          <div class="configure-swatches" data-configure-swatches role="group" aria-label="{{ 'accessibility.color_swatches' | t }}"></div>
+          <p class="configure-color-text">{{ 'configure.device_colour_label' | t }} <strong data-configure-color-name-inline>Grey</strong></p>
+        </section>
 
         {%- comment -%}
           Optional paid front covers (add-on line items). The device is Grey; a
@@ -175,6 +173,11 @@
           <p class="configure-qty__hint">{{ 'configure.qty_hint' | t }}</p>
         </section>
 
+        <section class="configure-section configure-section--features" aria-labelledby="ConfigureIncludedHeading">
+          <h2 id="ConfigureIncludedHeading" class="configure-label">{{ 'configure.included' | t }}</h2>
+          <ul class="configure-features" data-configure-features></ul>
+        </section>
+
         <aside class="configure-summary configure-checkout-panel" id="ConfigureSummary" aria-label="{{ 'accessibility.checkout_summary' | t }}">
           <div class="configure-order-card" aria-label="{{ 'accessibility.order_summary' | t }}">
             <div class="configure-order-card__head">
@@ -185,10 +188,6 @@
               <div>
                 <dt>{{ 'configure.summary_front' | t }}</dt>
                 <dd data-configure-summary-color>Grey</dd>
-              </div>
-              <div data-configure-summary-covers-row hidden>
-                <dt>{{ 'configure.summary_covers' | t }}</dt>
-                <dd data-configure-summary-covers></dd>
               </div>
               <div>
                 <dt>{{ 'configure.summary_plan' | t }}</dt>
