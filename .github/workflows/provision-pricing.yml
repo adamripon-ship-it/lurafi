@@ -1,0 +1,51 @@
+name: Provision pricing (manual)
+
+# Sets the Kevin device + front-cover prices across markets:
+#   Device  EUR 649.95 · CHF 549.00 · CZK 15745.00
+#   Cover   EUR  31.50 · CHF  29.00
+#
+# Defaults to a DRY RUN (introspect + plan, no writes). Choose mode=apply to
+# execute. Uses the same production secrets as deploy-theme.yml / provision-cms.yml.
+# The pricing mutations need write_products (+ read/write on price lists); provide
+# SHOPIFY_CLIENT_ID/SECRET for a custom app that has them, which the admin-gql lib
+# exchanges for a scoped Admin token (non-expiring, no re-auth).
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: dry (introspect + plan, no writes) or apply (execute)
+        type: choice
+        options: [dry, apply]
+        default: dry
+
+permissions:
+  contents: read
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Provision pricing
+        env:
+          MODE: ${{ inputs.mode }}
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          SHOPIFY_ADMIN_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          FLAG=""
+          [ "${MODE}" != "apply" ] && FLAG="--dry-run"
+          node scripts/provision-pricing.mjs ${FLAG}
