@@ -3320,6 +3320,19 @@ body.template-configure .configure-sticky-checkout__color,
 body.template-configure .configure-sticky-checkout__label { color: rgba(255, 255, 255, 0.6); }
 body.template-configure .configure-sticky-checkout__price strong { color: rgba(255, 255, 255, 0.98); }
 
+/* Native controls (the <select>) render dark instead of a white default. */
+body.template-configure { color-scheme: dark; }
+body.template-configure .language-selector__select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.92);
+}
+/* Trust badges were near-opaque white pills — re-tone to dark glass. */
+body.template-configure .checkout-assurance p {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.62);
+}
+
 /* ---- Cart drawer ---- */
 .cart-drawer[hidden] { display: none !important; }
 body.cart-drawer-open { overflow: hidden; }
