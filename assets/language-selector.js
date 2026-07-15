@@ -1,10 +1,24 @@
 (function () {
   var FLAG_BY_LOCALE = {
-    en: '🇬🇧',
+    en: '🇮🇪',
     nl: '🇳🇱',
     fr: '🇫🇷',
     de: '🇩🇪',
     cs: '🇨🇿',
+  };
+
+  // Each published language maps to a single market/country so that switching
+  // language also switches the market currency and tax treatment:
+  //   English → Ireland (EUR), Dutch → Netherlands (EUR),
+  //   French → France (EUR), German → Germany (EUR),
+  //   Czech → Czech Republic (CZK).
+  // The mapped country is submitted as country_code on the /localization form.
+  var COUNTRY_BY_LOCALE = {
+    en: 'IE',
+    nl: 'NL',
+    fr: 'FR',
+    de: 'DE',
+    cs: 'CZ',
   };
 
   function getLocaleRoutes() {
@@ -67,6 +81,22 @@
     return nextPath + (search || '') + (hash || '');
   }
 
+  function syncCountry(form, select) {
+    if (!form || !select || !select.value) return;
+    var root = select.value.split('-')[0].toLowerCase();
+    var country = COUNTRY_BY_LOCALE[root];
+    if (!country) return;
+    var input = form.querySelector('[data-language-country]');
+    if (!input) {
+      input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'country_code';
+      input.setAttribute('data-language-country', '');
+      form.appendChild(input);
+    }
+    input.value = country;
+  }
+
   function syncReturnTo(form, select) {
     var input = form.querySelector('[data-language-return-to]');
     if (!input) return;
@@ -121,6 +151,7 @@
     if (!form || form.getAttribute('action')?.indexOf('localization') === -1) return;
     if (form.dataset.submitting === 'true') return;
 
+    syncCountry(form, select);
     syncReturnTo(form, select);
     form.dataset.submitting = 'true';
     form.submit();
@@ -132,6 +163,7 @@
     if (!form.closest('[data-language-selector]')) return;
 
     var select = form.querySelector('[data-language-select]');
+    syncCountry(form, select);
     syncReturnTo(form, select);
   });
 

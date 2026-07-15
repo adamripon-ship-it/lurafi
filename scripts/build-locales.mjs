@@ -945,9 +945,12 @@ const nlOut = unflatten(nlFlat);
 fs.writeFileSync(path.join(root, 'locales/en.default.json'), JSON.stringify(enOut, null, 2) + '\n');
 fs.writeFileSync(path.join(root, 'locales/nl.json'), JSON.stringify(nlOut, null, 2) + '\n');
 
+// The language switcher must not grow a separate, visible country dropdown.
+// A hidden country_code coupled to the chosen language is allowed (and required)
+// so that picking a language also selects its market/currency — that is not a
+// country *selector*, so country_code is intentionally not on this list.
 const COUNTRY_SELECTOR_MARKERS = [
   'data-country-select',
-  'country_code',
   'lurafi_published_country_csv',
   'lurafi_country_order_csv',
   'HeaderCountrySelector',

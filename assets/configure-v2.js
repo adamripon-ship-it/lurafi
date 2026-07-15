@@ -18,6 +18,43 @@
     window.themeMoneyFormat = data.moneyFormat;
   }
 
+  // Currency formatting for the client-computed totals. Shopify's option
+  // selection helper (Shopify.formatMoney) is not loaded on this custom page,
+  // so we format with Intl.NumberFormat using the market's presentment
+  // currency (resolved server-side in ConfigureData.currency) and a locale
+  // derived from the active language. This guarantees the currency symbol
+  // always shows and matches the selected market: € for the euro markets
+  // (Ireland/Netherlands/France/Germany) and Kč for the Czech koruna market.
+  var CURRENCY = String(data.currency || 'EUR').toUpperCase();
+  var LOCALE_BY_LANG = {
+    en: 'en-IE', nl: 'nl-NL', fr: 'fr-FR', de: 'de-DE', cs: 'cs-CZ'
+  };
+  function moneyLocale() {
+    var lang = (document.documentElement.lang || 'en').split('-')[0].toLowerCase();
+    return LOCALE_BY_LANG[lang] || 'en-IE';
+  }
+  var moneyFormatter = null;
+  function getMoneyFormatter() {
+    if (moneyFormatter) return moneyFormatter;
+    try {
+      moneyFormatter = new Intl.NumberFormat(moneyLocale(), {
+        style: 'currency', currency: CURRENCY
+      });
+    } catch (e) {
+      moneyFormatter = null;
+    }
+    return moneyFormatter;
+  }
+  function formatCents(cents) {
+    var value = (Number(cents) || 0) / 100;
+    var fmt = getMoneyFormatter();
+    if (fmt) return fmt.format(value);
+    if (window.LurafiCart && window.LurafiCart.formatMoney) {
+      return window.LurafiCart.formatMoney(cents);
+    }
+    return value.toFixed(2);
+  }
+
   var STORAGE_KEY = 'lurafi_configure';
 
   var state = {
@@ -206,7 +243,7 @@
   function renderTotal() {
     var variant = findVariantById(state.variantId);
     var cents = getLinePriceCents();
-    var formatted = window.LurafiCart ? window.LurafiCart.formatMoney(cents) : (cents / 100).toFixed(2);
+    var formatted = formatCents(cents);
     if (els.total) {
       els.total.textContent = formatted;
     }
@@ -223,7 +260,7 @@
       if (state.quantity > 1 && variant) {
         els.perDevice.hidden = false;
         var perSuffix = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.perDevice) || ' per device';
-        els.perDevice.textContent = window.LurafiCart.formatMoney(variant.price) + perSuffix;
+        els.perDevice.textContent = formatCents(variant.price) + perSuffix;
       } else {
         els.perDevice.hidden = true;
       }
@@ -394,19 +431,6 @@
       goToCartPermalink(item, variant);
     });
   });
-
-  // Persistent checkout bar (desktop): reveal it whenever the full order
-  // summary is scrolled out of view, so the price + checkout are always
-  // reachable. On mobile the bar is always shown via CSS.
-  (function initStickyBar() {
-    var bar = root.querySelector('[data-configure-sticky-checkout]');
-    var summary = document.getElementById('ConfigureSummary');
-    if (!bar || !summary || typeof IntersectionObserver === 'undefined') return;
-    var io = new IntersectionObserver(function (entries) {
-      bar.classList.toggle('is-visible', !entries[0].isIntersecting);
-    }, { rootMargin: '0px 0px -48px 0px', threshold: 0 });
-    io.observe(summary);
-  })();
 
   // Optional front-cover add-ons: per-cover quantity steppers. Covers without a
   // real Shopify variant id are shown but not purchasable (data-cover-soon).

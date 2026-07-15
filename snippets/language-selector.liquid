@@ -39,7 +39,7 @@
   assign localization_action = '/localization'
 -%}
 {%- if show_language -%}
-  <!-- lurafi-lang-filter-v6-language-only -->
+  <!-- lurafi-lang-filter-v7-language-drives-market -->
   <div class="language-selector" data-language-selector>
     <form
       method="post"
@@ -57,6 +57,18 @@
         name="return_to"
         value="{{ return_to | escape }}"
         data-language-return-to
+      >
+      {%- comment -%}
+        Language drives the market: the selected language also sets the buyer's
+        country (en→IE, nl→NL, fr→FR, de→DE, cs→CZ) so currency and tax follow.
+        JS overrides this value on change; the default keeps the current country
+        for the no-JS submit path.
+      {%- endcomment -%}
+      <input
+        type="hidden"
+        name="country_code"
+        value="{{ localization.country.iso_code }}"
+        data-language-country
       >
 
       <label class="language-selector__label visually-hidden" for="{{ selector_id }}">
