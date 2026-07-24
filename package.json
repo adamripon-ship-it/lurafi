@@ -51,7 +51,7 @@
     "i18n:audit": "node scripts/audit-translations.mjs"
   },
   "devDependencies": {
-    "@playwright/test": "^1.60.0",
+    "@playwright/test": "^1.61.1",
     "@shopify/cli": "^3.84.0",
     "playwright": "^1.52.0"
   },
