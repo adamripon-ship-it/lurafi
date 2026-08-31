@@ -2404,7 +2404,7 @@ body.mobile-nav-open { overflow: hidden; }
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 113, 227, 0.06), transparent 55%),
     linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
-  padding-bottom: var(--pad-page-bottom);
+  padding-bottom: calc(var(--pad-page-bottom) + 100px);
 }
 .configure-nav {
   position: fixed;
@@ -2661,7 +2661,7 @@ body.mobile-nav-open { overflow: hidden; }
 
 .configure-section {
   margin-bottom: 28px;
-  padding: 22px 20px;
+  padding: 18px 16px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(210, 210, 215, 0.55);
@@ -2879,7 +2879,7 @@ body.mobile-nav-open { overflow: hidden; }
   box-shadow: none;
 }
 .configure-checkout-panel {
-  padding: 24px 22px;
+  padding: 20px 16px;
   border-radius: 24px;
   background: linear-gradient(165deg, #ffffff 0%, #f8f8fa 100%);
   border: 1px solid rgba(210, 210, 215, 0.65);
@@ -3045,13 +3045,17 @@ body.mobile-nav-open { overflow: hidden; }
   right: 0;
   bottom: 0;
   z-index: 95;
-  display: none;
+  display: block;
   padding: 12px var(--pad-inline) calc(12px + var(--safe-bottom));
   background: rgba(251, 251, 253, 0.94);
   border-top: 1px solid rgba(210, 210, 215, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+}
+.configure-sticky-checkout.is-hidden {
+  display: none;
+  pointer-events: none;
 }
 .configure-sticky-checkout__inner {
   display: flex;
@@ -3108,13 +3112,20 @@ body.mobile-nav-open { overflow: hidden; }
   cursor: not-allowed;
   box-shadow: none;
 }
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .configure-page {
-    padding-bottom: calc(var(--pad-page-bottom) + 100px);
+    padding-bottom: var(--pad-page-bottom);
   }
-  .configure-sticky-checkout { display: block; }
-  .configure-section { padding: 18px 16px; }
-  .configure-checkout-panel { padding: 20px 16px; }
+  .configure-section { padding: 22px 20px; }
+  .configure-checkout-panel { padding: 24px 22px; }
+  .configure-cta {
+    position: relative;
+    z-index: 96;
+  }
+  .configure-sticky-checkout {
+    display: none;
+    pointer-events: none;
+  }
 }
 
 /* ---- Cart drawer ---- */

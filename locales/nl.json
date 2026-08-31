@@ -323,13 +323,12 @@
   },
   "home": {
     "hero": {
+      "cta_secondary_url": "#how-it-works",
+      "eyebrow": "Zwitserse aanwezigheidssimulatie",
       "headline": "Laat je huis levend lijken.",
       "lede": "Kevin gebruikt Zwitsers ontworpen licht, schaduw en alledaags geluid zodat je huis bewoond aanvoelt voordat iemand de deur test.",
       "cta_primary_label": "Koop Kevin",
-      "cta_secondary_label": "Hoe het werkt",
-      "cta_secondary_url": "#how-it-works",
-      "sticky_cta_label": "Get Kevin",
-      "eyebrow": "Zwitserse aanwezigheidssimulatie"
+      "cta_secondary_label": "Hoe het werkt"
     },
     "problem": {
       "overline": "Het probleem",
@@ -342,46 +341,17 @@
       "tile_3_title": "Licht is voorspelbaar",
       "tile_3_body": "Timers zetten lampen aan en uit. Kevin creëert veranderende schaduwen, tv-achtig flikkerlicht en huishoudelijke geluiden die natuurlijker aanvoelen."
     },
-    "solution": {
-      "overline": "De Kevin-methode",
-      "heading": "Afschrikking die menselijk aanvoelt.",
-      "subheading": "Plaats Kevin bij een muur of plafond die als podium kan dienen. Van buitenaf maken gecoördineerd licht, beweging en geluid de kamer actief, niet geautomatiseerd.",
-      "pillar_1_title": "Warm licht",
-      "pillar_1_body": "Heldere, warme scènes laten een kamer bewoond lijken in plaats van alleen verlicht. Kevin varieert het ritme voor ochtend, avond en nacht.",
-      "pillar_2_title": "Bewegende schaduwen",
-      "pillar_2_body": "Geprojecteerde silhouetten en verschuivend licht suggereren mensen in de ruimte, zonder camera’s of microfoons.",
-      "pillar_3_title": "Alledaags geluid",
-      "pillar_3_body": "Keukengeluiden, tv-sfeer, voetstappen, stemmen en je eigen opnames maken de simulatie persoonlijker en minder repetitief.",
-      "image_alt": "Kevin® presence simulator — Swiss-engineered Kevin 3, studio product photo"
-    },
-    "steps": {
-      "overline": "Het plan",
-      "heading": "Aansluiten. Routines instellen. Rustig vertrekken.",
-      "subheading": "Geen installatie, geen bekabeling, geen maandelijks monitoringpaneel. Kevin start met een eenvoudige setup en wordt nuttiger via schema’s, geofencing en updates.",
-      "step_1_title": "Plaats Kevin",
-      "step_1_body": "Zet hem bij een zichtbaar raam met een muur of plafond voor schaduwen. Sluit stroom aan en laat de kamer het podium worden.",
-      "step_2_title": "Stel je routine in",
-      "step_2_body": "Gebruik de app voor weekschema’s, vakantiemodus of geo-activering wanneer je het gebied verlaat.",
-      "step_3_title": "Blijf geloofwaardig",
-      "step_3_body": "Kevin speelt gevarieerde licht- en geluidsscenario’s vanaf lokale opslag, zodat je routines niet uit de cloud worden gestreamd of met derden worden gedeeld.",
-      "stat_1_value": "9W",
-      "stat_1_label": "Installatietijd",
-      "stat_2_value": "70+",
-      "stat_2_label": "Kabels nodig",
-      "stat_3_value": "100%",
-      "stat_3_label": "Privacy",
-      "stat_4_value": "60s",
-      "stat_4_label": "Bescherming",
-      "image_alt": "Kevin® device — side profile product photo"
+    "stats": {
+      "heading": "Gebouwd voor geloofwaardige afschrikking.",
+      "stat_1_label": "Risicovermindering volgens Mitipi",
+      "stat_2_label": "Ingebouwde simulaties",
+      "stat_3_label": "Typisch energieverbruik",
+      "stat_4_label": "Camera's of microfoons"
     },
     "app": {
       "overline": "Kevin-app",
       "heading": "Aanwezigheid op jouw schema.",
       "subheading": "Zet Kevin aan, plan weekroutines en beheer meerdere apparaten vanuit één eenvoudige app voor gemoedsrust.",
-      "phone_image_1_alt": "Kevin app simulation settings screen",
-      "phone_1_caption": "Simulation — tune volume, night mode, and characteristics",
-      "phone_image_2_alt": "Kevin app scheduled simulation screen",
-      "phone_2_caption": "Schedule — set protection by day and hour",
       "tile_1_title": "Weekschema’s",
       "tile_1_body": "Plan ochtend, avond, nacht, weekenden en vakanties zodat je huis een geloofwaardig ritme volgt terwijl je weg bent.",
       "tile_2_title": "Geo-activering",
@@ -389,59 +359,7 @@
       "tile_3_title": "Je eigen geluiden",
       "tile_3_body": "Upload opnames en label ze per kamer of activiteit zodat de simulatie meer op jouw huishouden klinkt.",
       "tile_4_title": "Meerdere locaties",
-      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken.",
-      "phone_image_6_alt": "Kevin app device home screen",
-      "phone_6_caption": "Kevin — activation, scheduling, and simulation controls",
-      "phone_image_3_alt": "Kevin app edit device screen",
-      "phone_3_caption": "Device — rename, customize, and manage firmware",
-      "phone_image_4_alt": "Kevin app enable auto-activation screen",
-      "phone_4_caption": "Geo-fencing — Kevin activates when you leave",
-      "phone_image_5_alt": "Kevin app location picker screen",
-      "phone_5_caption": "Location — set where Kevin activates automatically",
-      "carousel_label": "App screenshots"
-    },
-    "personas": {
-      "overline": "Gemaakt voor jou",
-      "heading": "Een slimmere laag voor het echte leven.",
-      "subheading": "Of je nu reist, pendelt, een klein kantoor runt of al een alarm hebt: Kevin voegt het ontbrekende signaal toe—iemand lijkt er te zijn.",
-      "persona_1_title": "Vaak op reis",
-      "persona_1_body": "Weekend weg of lange vakantie: Kevin houdt de kamer actief met gevarieerde scènes in plaats van een vaste lichttimer.",
-      "persona_1_quote": "\"Ik wilde dat het huis bewoond aanvoelde, niet alleen verlicht. Kevin geeft me dat.\"",
-      "persona_2_title": "Al een alarm?",
-      "persona_2_body": "Houd het. Kevin vult detectie aan met afschrikking, zodat je huis bewoond lijkt voordat iemand binnenkomst overweegt.",
-      "persona_2_quote": "\"Ons alarm vertelt ons als er iets gebeurt. Kevin helpt het huis het verkeerde doelwit te laten lijken.\"",
-      "persona_3_title": "Meerdere kamers of woningen",
-      "persona_3_body": "Eén apparaat beschermt één zichtbaar podium. Voeg meer Kevin’s toe voor extra verdiepingen, kantoren of tweede woningen.",
-      "persona_3_quote": "\"We gebruiken Kevin waar de straat de kamer kan zien. Het verandert het gevoel van buitenaf.\""
-    },
-    "stats": {
-      "heading": "Gebouwd voor geloofwaardige afschrikking.",
-      "stat_1_value": "97%",
-      "stat_1_label": "Risicovermindering volgens Mitipi",
-      "stat_2_value": "70+",
-      "stat_2_label": "Ingebouwde simulaties",
-      "stat_3_value": "9W",
-      "stat_3_label": "Typisch energieverbruik",
-      "stat_4_value": "70%",
-      "stat_4_label": "Camera's of microfoons",
-      "badge_1": "Police-recommended in Europe and the US",
-      "badge_2": "Swiss engineered and designed",
-      "badge_3": "Jammer-proof local playback",
-      "badge_4": "Award-winning innovation"
-    },
-    "proof": {
-      "heading": "Realistisch waar het telt: van buitenaf.",
-      "quote_1": "\"Vanaf de stoep laten licht en beweging de kamer bewoond lijken. Precies wat ik wilde.\"",
-      "author_1_name": "Sarah M.",
-      "author_1_location": "Zürich, Zwitserland",
-      "quote_2": "\"Een vriend dacht dat er iemand binnen was en belde aan. Kevin deed zijn werk voordat iemand de deur bereikte.\"",
-      "author_2_name": "Marc D.",
-      "author_2_location": "Lyon, Frankrijk",
-      "quote_3": "\"De schaduweffecten vallen op. Vanuit het trappenhuis voelt het appartement niet leeg.\"",
-      "author_3_name": "Thomas K.",
-      "author_3_location": "München, Duitsland",
-      "summary_eyebrow": "Waarom twijfel verandert in vertrouwen",
-      "summary_body": "Kevin is eenvoudig te plaatsen, privacy-first ontworpen en het meest overtuigend vanuit het perspectief dat telt: buiten het huis."
+      "tile_4_body": "Gebruik meer dan één Kevin voor appartementen, extra verdiepingen, kantoren of tweede woningen die niet verlaten mogen lijken."
     },
     "pricing": {
       "overline": "Own Kevin®",
@@ -449,13 +367,12 @@
       "subheading": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
       "buy_label": "Own Kevin®",
       "buy_tagline": "Buy one-time. All updates included.",
-      "buy_cta": "Buy Now",
-      "buy_features": "Volledig eigendom|70+ uur ingebouwde simulaties|Weekschema’s en geo-activering|Eigen huishoudelijke geluiden uploaden|Flexibele plaatsing met 3 m stroomkabel|Gratis bezorging|3 jaar garantie"
+      "buy_features": "Volledig eigendom|70+ uur ingebouwde simulaties|Weekschema’s en geo-activering|Eigen huishoudelijke geluiden uploaden|Flexibele plaatsing met 3 m stroomkabel|Gratis bezorging|3 jaar garantie",
+      "buy_cta": "Buy Now"
     },
     "specs": {
       "eyebrow": "In het kort",
       "heading": "Ontworpen om eenvoudig, privé en draagbaar te zijn.",
-      "image_alt": "Kevin® device — fabric front panel and top controls, studio product photo",
       "rows": {
         "dimensions": {
           "label": "Afmeting",
@@ -486,9 +403,9 @@
     "cta": {
       "heading": "Vertrek zonder het te verkondigen.",
       "subheading": "Kevin laat je huis actief lijken en klinken met Zwitsers ontworpen aanwezigheidssimulatie. Gratis bezorging. 60 seconden setup. Geen camera’s of microfoons.",
+      "secondary_cta_url": "#how-it-works",
       "primary_cta": "Koop Kevin",
-      "secondary_cta": "Meer informatie",
-      "secondary_cta_url": "#how-it-works"
+      "secondary_cta": "Meer informatie"
     }
   },
   "stats": {

@@ -1,6 +1,16 @@
 {%- comment -%}
   Section intro: overline, heading, subheading. Pass: overline, heading, subheading, theme (light|dark), compact (bool), subhead_narrow (bool)
+
+  Copy stored on Shopify (Translate & Adapt, editor imports, customizer saves)
+  sometimes arrives already HTML-encoded; decode the common entities first so
+  the | escape below cannot double-encode them into visible &#39; / &amp;.
+  Decode &amp; before the numeric entities so double-encoded values also heal.
 {%- endcomment -%}
+{%- liquid
+  assign overline = overline | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign heading = heading | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign subheading = subheading | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+-%}
 <header class="section-intro{% if theme == 'dark' %} section-intro--dark{% endif %}{% if compact %} section-intro--compact{% endif %}">
   {%- if overline != blank -%}
     <p class="{% if theme == 'dark' %}overline-blue-dark{% else %}overline-blue{% endif %}">{{ overline | escape }}</p>

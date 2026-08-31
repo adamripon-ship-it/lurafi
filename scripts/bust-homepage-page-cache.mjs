@@ -103,10 +103,19 @@ async function main() {
     'templates/index.json',
     'layout/theme.liquid',
     'sections/hero.liquid',
+    'sections/lp-video.liquid',
+    'sections/lp-mechanism.liquid',
+    'sections/lp-jammer.liquid',
+    'sections/lp-audience.liquid',
+    'sections/lp-authority.liquid',
+    'sections/lp-faq.liquid',
     'snippets/hero-banner.liquid',
     'snippets/hero-banner-copy.liquid',
     'snippets/hero-banner-wave.liquid',
     'assets/hero.css',
+    'assets/nightfall.css',
+    'assets/scroll-fx.js',
+    'assets/lp-layout.css',
   ];
 
   const upserted = await upsertThemeFiles(store, themeId, [

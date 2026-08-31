@@ -371,9 +371,76 @@
     });
   }
 
+  function bindStickyCheckoutVisibility() {
+    var sticky = root.querySelector('[data-configure-sticky-checkout]');
+    var mainCta = root.querySelector('[data-configure-checkout-main]');
+    if (!sticky || !mainCta) return;
+
+    var desktopQuery = window.matchMedia('(min-width: 768px)');
+    var ctaInView = false;
+
+    function setStickyHidden(hidden) {
+      sticky.classList.toggle('is-hidden', hidden);
+      sticky.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+      if (hidden) {
+        sticky.setAttribute('inert', '');
+      } else {
+        sticky.removeAttribute('inert');
+      }
+    }
+
+    function syncSticky() {
+      setStickyHidden(desktopQuery.matches || ctaInView);
+    }
+
+    function measureCtaInView() {
+      var rect = mainCta.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.height <= 0 || vh <= 0) {
+        ctaInView = false;
+        return;
+      }
+      var overlap = Math.min(rect.bottom, vh) - Math.max(rect.top, 0);
+      ctaInView = overlap >= Math.min(48, rect.height * 0.5);
+    }
+
+    measureCtaInView();
+    syncSticky();
+
+    if (typeof desktopQuery.addEventListener === 'function') {
+      desktopQuery.addEventListener('change', syncSticky);
+    } else if (typeof desktopQuery.addListener === 'function') {
+      desktopQuery.addListener(syncSticky);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      window.addEventListener('scroll', function () {
+        measureCtaInView();
+        syncSticky();
+      }, { passive: true });
+      window.addEventListener('resize', function () {
+        measureCtaInView();
+        syncSticky();
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      var entry = entries[0];
+      if (!entry) return;
+      ctaInView = entry.isIntersecting;
+      syncSticky();
+    }, {
+      threshold: [0, 0.25, 0.5, 1],
+      rootMargin: '0px 0px -12px 0px'
+    });
+    observer.observe(mainCta);
+  }
+
   initPlanFromUrl();
   initVariant();
   render();
   root.classList.add('configure-page--ready');
   resetCtaLabels();
+  bindStickyCheckoutVisibility();
 })();
