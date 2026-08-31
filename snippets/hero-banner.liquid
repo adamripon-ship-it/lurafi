@@ -1,5 +1,5 @@
 {%- comment -%}
-  Static hero — headline, lede, dual CTAs, product centerpiece (focus v4).
+  Static hero — headline, lede, dual CTAs, product centerpiece (focus v4). No shadow layer.
 {%- endcomment -%}
 
 <div class="hero-banner" data-hero-layout="focus-v4">
@@ -13,6 +13,7 @@
   %}
 
   <div class="hero-banner__product-stage">
+    {% render 'hero-banner-wave', wave_uid: 'focus-v4' %}
     <div class="hero-banner__product-glow" aria-hidden="true">
       <span class="hero-banner__glow-layer hero-banner__glow-layer--purple"></span>
       <span class="hero-banner__glow-layer hero-banner__glow-layer--magenta"></span>

@@ -30,6 +30,7 @@
     "shopify:publish:mitipi": "./scripts/publish-lurafi-live.sh",
     "shopify:products:migrate": "node scripts/migrate-products-productSet.mjs",
     "shopify:commerce:setup": "node scripts/setup-mitipi-commerce.mjs",
+    "shopify:checkout:ensure": "node scripts/ensure-checkout-ready.mjs",
     "shopify:approve-scopes": "./scripts/request-app-scope-approval.sh",
     "qa:full": "LURAFI_URL=https://mitipi.eu node scripts/qa-full.mjs",
     "qa:mitipi": "node scripts/qa-mitipi-report.mjs",

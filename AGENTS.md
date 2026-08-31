@@ -19,6 +19,7 @@ Shopify OS 2.0 theme for **mitipi.eu** (Kevin presence simulator, Mitipi GmbH).
 - Admin locales/pages: `./scripts/activate-locales.sh` (not in theme zip).
 - Products: `node scripts/migrate-products-from-lurafi.mjs` (needs `write_products` on lurafi app) or import `scripts/data/products-import.csv` in Admin → Products → Import.
 - **Access checklist (GitHub / Shopify / Cloudflare):** [ACCESS-SETUP.md](./ACCESS-SETUP.md) · `./scripts/verify-access.sh`.
+- **Checkout alignment:** [CHECKOUT-SETUP.md](./docs/CHECKOUT-SETUP.md) · `npm run shopify:checkout:ensure` after migration or broken checkout reports.
 - Migration quick reference: [MIGRATION.md](./MIGRATION.md) · Cloudflare: [CLOUDFLARE-DNS.md](./CLOUDFLARE-DNS.md) · `./scripts/migrate-to-store.sh`.
 - GitHub Actions deploy secrets: `./scripts/sync-github-deploy-secrets.sh` → environment **production** (see `.github/workflows/deploy-theme.yml`).
 - **Shopify MCP (Option A):** docs/schema only — [Marketplace](https://cursor.com/marketplace/shopify) or `.cursor/mcp.json`; see `docs/SHOPIFY-MCP.md`. Call `learn_shopify_api` first; pass `conversationId` on every `shopify-dev-mcp` tool. `OPT_OUT_INSTRUMENTATION=true` is set in repo config.

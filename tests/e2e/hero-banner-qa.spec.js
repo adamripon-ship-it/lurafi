@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('mitipi.eu hero banner QA', () => {
-  test('static product hero — focus layout with dual CTAs', async ({ page }) => {
+  test('static product hero — focus layout with primary CTA', async ({ page }) => {
     test.setTimeout(90000);
     const consoleErrors = [];
     page.on('console', (msg) => {
@@ -19,7 +19,7 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('[data-hero-slider]')).toHaveCount(0);
     await expect(page.locator('.hero-banner[data-hero-layout="focus-v4"]')).toHaveCount(1);
     await expect(page.locator('#HeroHeading')).toBeVisible();
-    await expect(page.locator('.hero-banner__lede')).toContainText(/no cameras/i);
+    await expect(page.locator('.hero-banner__lede')).toContainText(/look lived-in/i);
     await expect(page.locator('.hero-banner__eyebrow')).toHaveCount(0);
     await expect(page.locator('.hero-banner__trust')).toHaveCount(0);
     await expect(page.locator('.hero-banner__chips')).toHaveCount(0);
@@ -27,7 +27,8 @@ test.describe('mitipi.eu hero banner QA', () => {
     await expect(page.locator('.hero-context-card')).toHaveCount(0);
 
     await expect(page.locator('.hero-banner__cta--primary')).toHaveCount(1);
-    await expect(page.locator('.hero-banner__cta--secondary')).toHaveCount(1);
+    await expect(page.locator('.hero-banner__cta--primary')).toContainText(/KEVIN 3\.0/i);
+    await expect(page.locator('.hero-banner__cta--secondary')).toHaveCount(0);
     await expect(page.locator('.hero-banner__product-stage')).toHaveCount(1);
 
     const productImg = page.locator('.hero-banner__product-image');

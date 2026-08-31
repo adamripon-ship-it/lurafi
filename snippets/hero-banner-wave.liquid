@@ -1,0 +1,101 @@
+{%- comment -%}
+  Full-width neon sound wave — SVG gradient glow + pulse dot (animateMotion).
+  Pass: wave_uid (unique id suffix for SVG defs)
+{%- endcomment -%}
+{%- assign wave_uid = wave_uid | default: 'hero' -%}
+{%- capture wave_path -%}
+M -40 52 L 100 52 C 145 52 175 50 210 36 C 245 22 278 10 318 20 C 358 30 388 46 428 38 C 468 30 498 16 542 28 C 586 40 616 54 656 46 C 696 38 726 26 766 34 C 806 42 836 52 876 48 C 916 44 946 42 986 44 C 1026 46 1066 49 1106 50 L 1220 50 L 1480 50
+{%- endcapture -%}
+<div class="hero-banner__wave-field" aria-hidden="true">
+  <svg
+    class="hero-banner__wave-svg"
+    viewBox="0 0 1440 100"
+    preserveAspectRatio="none"
+    focusable="false"
+  >
+    <defs>
+      <linearGradient id="hero-wave-grad-{{ wave_uid }}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
+        <stop offset="0%" stop-color="#00eaff"/>
+        <stop offset="22%" stop-color="#00b8ff"/>
+        <stop offset="48%" stop-color="#440099"/>
+        <stop offset="72%" stop-color="#9e007e"/>
+        <stop offset="100%" stop-color="#e31c79"/>
+      </linearGradient>
+      <filter id="hero-wave-halo-{{ wave_uid }}" x="-12%" y="-400%" width="124%" height="900%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="mid"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="mid"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="hero-wave-core-{{ wave_uid }}" x="-20%" y="-400%" width="140%" height="900%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="hero-wave-pulse-{{ wave_uid }}" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="core"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="core"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <path id="hero-wave-path-{{ wave_uid }}" d="{{ wave_path | strip | replace: '  ', ' ' }}"/>
+    </defs>
+
+    <use
+      href="#hero-wave-path-{{ wave_uid }}"
+      class="hero-banner__wave-halo"
+      filter="url(#hero-wave-halo-{{ wave_uid }})"
+    />
+    <use
+      href="#hero-wave-path-{{ wave_uid }}"
+      class="hero-banner__wave-line"
+      filter="url(#hero-wave-halo-{{ wave_uid }})"
+    />
+    <use
+      href="#hero-wave-path-{{ wave_uid }}"
+      class="hero-banner__wave-core"
+      filter="url(#hero-wave-core-{{ wave_uid }})"
+    />
+
+    <g class="hero-banner__wave-pulse">
+      <circle class="hero-banner__wave-pulse-halo" r="16" cx="0" cy="0" filter="url(#hero-wave-pulse-{{ wave_uid }})">
+        <animateMotion
+          dur="4.2s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          rotate="auto"
+        >
+          <mpath href="#hero-wave-path-{{ wave_uid }}"/>
+        </animateMotion>
+      </circle>
+      <circle class="hero-banner__wave-pulse-dot" r="5" cx="0" cy="0" filter="url(#hero-wave-pulse-{{ wave_uid }})">
+        <animateMotion
+          dur="4.2s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          rotate="auto"
+        >
+          <mpath href="#hero-wave-path-{{ wave_uid }}"/>
+        </animateMotion>
+      </circle>
+      <circle class="hero-banner__wave-pulse-spark" r="2.5" cx="0" cy="0">
+        <animateMotion
+          dur="4.2s"
+          repeatCount="indefinite"
+          calcMode="linear"
+          rotate="auto"
+        >
+          <mpath href="#hero-wave-path-{{ wave_uid }}"/>
+        </animateMotion>
+      </circle>
+    </g>
+  </svg>
+</div>

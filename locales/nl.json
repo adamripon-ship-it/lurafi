@@ -192,7 +192,7 @@
     "slide_1": {
       "label": "Everyone",
       "eyebrow": "For every home",
-      "headline": "Deter burglaries before they happen.",
+      "headline": "Protect your family and loved ones from the unimaginable",
       "lede": "Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play.",
       "image_alt": "Kevin® presence simulator — Swiss-engineered Kevin 3 device",
       "callout_1_eyebrow": "Plug and play",
@@ -323,16 +323,13 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Zwitserse aanwezigheidssimulatie",
       "headline": "Laat je huis levend lijken.",
       "lede": "Kevin gebruikt Zwitsers ontworpen licht, schaduw en alledaags geluid zodat je huis bewoond aanvoelt voordat iemand de deur test.",
       "cta_primary_label": "Koop Kevin",
       "cta_secondary_label": "Hoe het werkt",
       "cta_secondary_url": "#how-it-works",
-      "trust_1": "Swiss engineered",
-      "trust_2": "No cameras or mics",
-      "trust_3": "Free delivery in Europe",
-      "sticky_cta_label": "Get Kevin"
+      "sticky_cta_label": "Get Kevin",
+      "eyebrow": "Zwitserse aanwezigheidssimulatie"
     },
     "problem": {
       "overline": "Het probleem",

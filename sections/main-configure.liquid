@@ -1,12 +1,16 @@
 {%- liquid
-  assign buy_product = settings.product_buy
-  if buy_product == blank
-    assign buy_product = all_products.kevin
-  else
-    if buy_product.variants == blank
-      assign buy_product = all_products[settings.product_buy]
+  assign buy_handle = ''
+  if settings.product_buy != blank
+    if settings.product_buy.handle != blank
+      assign buy_handle = settings.product_buy.handle
+    else
+      assign buy_handle = settings.product_buy
     endif
   endif
+  if buy_handle == blank
+    assign buy_handle = 'kevin'
+  endif
+  assign buy_product = all_products[buy_handle]
   if buy_product == blank
     assign buy_product = all_products.kevin
   endif

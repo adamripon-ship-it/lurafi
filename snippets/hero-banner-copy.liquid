@@ -1,5 +1,5 @@
 {%- comment -%}
-  Hero copy: headline, lede, two CTA buttons (no eyebrow, no trust strip).
+  Hero copy: headline, lede, primary CTA (no eyebrow, no trust strip).
 {%- endcomment -%}
 <div class="hero-banner__copy">
   <h1 class="hero-banner__headline headline-hero" id="HeroHeading">
@@ -10,12 +10,11 @@
     <p class="hero-banner__lede body-elevated">{{ lede | escape }}</p>
   {%- endif -%}
 
-  <div class="hero-banner__actions">
-    <a href="{{ cta_primary_url }}" class="hero-banner__cta hero-banner__cta--primary">
-      {{ cta_primary_label | escape }}
-    </a>
-    <a href="{{ cta_secondary_url }}" class="hero-banner__cta hero-banner__cta--secondary">
-      {{ cta_secondary_label | escape }}
-    </a>
-  </div>
+  {%- if cta_primary_label != blank -%}
+    <div class="hero-banner__actions">
+      <a href="{{ cta_primary_url }}" class="hero-banner__cta hero-banner__cta--primary">
+        {{ cta_primary_label | escape }}
+      </a>
+    </div>
+  {%- endif -%}
 </div>

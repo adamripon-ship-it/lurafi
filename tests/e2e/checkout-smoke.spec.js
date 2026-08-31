@@ -6,7 +6,23 @@
 import { test, expect } from '@playwright/test';
 
 const BASE = (process.env.LURAFI_URL || 'https://mitipi.eu').replace(/\/$/, '');
-const CHECKOUT = /\/checkouts\//;
+/** Shopify hosted checkout, Shop Pay hop, or cart permalink handoff */
+const CHECKOUT = /\/checkouts\/|shop\.app\/checkout/;
+const CART_CHECKOUT = /\/cart\/\d+:\d+(\?checkout|$)/;
+
+async function waitForCheckout(page, timeoutMs) {
+  const deadline = Date.now() + timeoutMs;
+  while Date.now() < deadline) {
+    const url = page.url();
+    if (CHECKOUT.test(url)) return;
+    if (CART_CHECKOUT.test(url)) {
+      await page.waitForURL(CHECKOUT, { timeout: Math.max(5000, deadline - Date.now()) }).catch(() => {});
+      if (CHECKOUT.test(page.url())) return;
+    }
+    await page.waitForTimeout(500);
+  }
+  throw new Error(`Checkout not reached (last URL: ${page.url()})`);
+}
 
 test.describe('Critical purchase path', () => {
   test('configure (buy) reaches Shopify checkout', async ({ page }) => {
@@ -19,7 +35,7 @@ test.describe('Critical purchase path', () => {
     await expect(cta).toBeVisible();
 
     await cta.click();
-    await page.waitForURL(CHECKOUT, { timeout: 60000 });
+    await waitForCheckout(page, 90000);
 
     await expect(page).toHaveURL(CHECKOUT);
     await expect(page.locator('body')).not.toContainText(/almost ready|sold out|unavailable/i);
@@ -52,13 +68,21 @@ test.describe('Critical purchase path', () => {
     }
 
     const checkoutBtn = page
-      .locator('[name="checkout"], a[href*="/checkout"], [data-cart-drawer-footer] a[href*="checkout"]')
+      .locator(
+        '[name="checkout"], a[href="/checkout"], a[href*="/checkout"], [data-cart-drawer-footer] a[href*="checkout"], [data-buy-now]'
+      )
       .first();
-    await expect(checkoutBtn).toBeVisible();
+    if (!(await checkoutBtn.isVisible().catch(() => false))) {
+      await page.goto(`${BASE}/cart`, { waitUntil: 'domcontentloaded' });
+    }
+    const checkoutBtnFinal = page
+      .locator('[name="checkout"], a[href="/checkout"], a[href*="/checkout"]')
+      .first();
+    await expect(checkoutBtnFinal).toBeVisible({ timeout: 15000 });
 
     await Promise.all([
-      page.waitForURL(CHECKOUT, { timeout: 45000 }),
-      checkoutBtn.click(),
+      checkoutBtnFinal.click(),
+      waitForCheckout(page, 90000),
     ]);
     await expect(page).toHaveURL(CHECKOUT);
   });

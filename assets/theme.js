@@ -12,15 +12,33 @@
 (function heroCacheRefresh() {
   'use strict';
 
+  function stripHeroShadowLayers(root) {
+    var scope = root || document;
+    scope.querySelectorAll(
+      '.hero-banner__shadows, .hero-banner__shadow-backdrop, .hero-banner__shadow-figures-layer, .hero-banner__shadow-defs'
+    ).forEach(function (node) {
+      node.remove();
+    });
+  }
+
+  window.lurafiStripHeroShadows = stripHeroShadowLayers;
+
   window.lurafiRefreshStaleHero = function lurafiRefreshStaleHero() {
     var isHome =
       window.location.pathname === '/' ||
       /^\/(en|nl|fr|de|cs)\/?$/.test(window.location.pathname);
     if (!isHome) return Promise.resolve(false);
 
-    var heroSection = document.getElementById('shopify-section-hero');
+    var heroSection =
+      document.querySelector('[id^="shopify-section-"][id$="__hero"]') ||
+      document.getElementById('shopify-section-hero');
     if (!heroSection) return Promise.resolve(false);
-    if (heroSection.querySelector('[data-hero-layout="focus-v4"]')) return Promise.resolve(false);
+
+    var focusHero = heroSection.querySelector('[data-hero-layout="focus-v4"]');
+    var hasShadowMarkup = heroSection.querySelector(
+      '.hero-banner__shadows, .hero-banner__shadow-backdrop, .hero-banner__shadow-figures-layer'
+    );
+    if (focusHero && !hasShadowMarkup) return Promise.resolve(false);
 
     var url =
       window.location.pathname +
@@ -35,8 +53,11 @@
       })
       .then(function (html) {
         var doc = new DOMParser().parseFromString(html, 'text/html');
-        var fresh = doc.getElementById('shopify-section-hero');
+        var fresh =
+          doc.querySelector('[id^="shopify-section-"][id$="__hero"]') ||
+          doc.getElementById('shopify-section-hero');
         if (!fresh || !fresh.querySelector('[data-hero-layout="focus-v4"]')) return false;
+        stripHeroShadowLayers(fresh);
         heroSection.replaceWith(fresh);
         return true;
       })
@@ -225,11 +246,18 @@
       initStickyCta();
     };
 
+    var stripShadows = window.lurafiStripHeroShadows;
     var refreshHero = window.lurafiRefreshStaleHero;
+
+    if (typeof stripShadows === 'function') {
+      stripShadows();
+    }
+
     if (typeof refreshHero === 'function') {
       var refreshTimeout = window.setTimeout(startUi, 1200);
       refreshHero().then(function (refreshed) {
         window.clearTimeout(refreshTimeout);
+        if (typeof stripShadows === 'function') stripShadows();
         if (refreshed) initStickyCta();
         startUi();
       });

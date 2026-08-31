@@ -3,14 +3,14 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "headline": "Deter burglaries before they happen.",
-        "lede": "Light, shadow, and sound simulate presence—no cameras, no microphones.",
-        "cta_primary_label": "Get Kevin",
+        "headline": "Protect your family and loved ones from the unimaginable",
+        "lede": "Helps deter burglars by making your home look lived-in from outside.",
+        "cta_primary_label": "Get KEVIN 3.0",
         "cta_primary_url": "",
-        "cta_secondary_label": "How it works",
-        "cta_secondary_url": "#how-it-works",
+        "cta_secondary_label": "",
+        "cta_secondary_url": "",
         "image_alt": "",
-        "sticky_cta_label": "Get Kevin",
+        "sticky_cta_label": "Get KEVIN 3.0",
         "sticky_cta_enabled": true,
         "sticky_cta_url": "",
         "deploy_cache_bust": ""

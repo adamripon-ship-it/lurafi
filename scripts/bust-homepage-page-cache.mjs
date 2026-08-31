@@ -105,6 +105,7 @@ async function main() {
     'sections/hero.liquid',
     'snippets/hero-banner.liquid',
     'snippets/hero-banner-copy.liquid',
+    'snippets/hero-banner-wave.liquid',
     'assets/hero.css',
   ];
 

@@ -192,7 +192,7 @@
     "slide_1": {
       "label": "Everyone",
       "eyebrow": "For every home",
-      "headline": "Deter burglaries before they happen.",
+      "headline": "Protect your family and loved ones from the unimaginable",
       "lede": "Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play.",
       "image_alt": "Kevin® presence simulator — Swiss-engineered Kevin 3 device",
       "callout_1_eyebrow": "Plug and play",
@@ -323,13 +323,13 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "For every home",
-      "headline": "Deter burglaries before they happen.",
-      "lede": "Light, shadow, and sound simulate presence—no cameras, no microphones.",
-      "cta_primary_label": "Get Kevin",
+      "eyebrow": "Smart. Secure. Swiss.",
+      "headline": "Protect your family and loved ones from the unimaginable",
+      "lede": "Helps deter burglars by making your home look lived-in from outside.",
+      "cta_primary_label": "Get KEVIN 3.0",
       "cta_primary_url": "",
-      "cta_secondary_label": "How it works",
-      "cta_secondary_url": "#how-it-works",
+      "cta_secondary_label": "",
+      "cta_secondary_url": "",
       "image_alt": "Kevin® presence simulator — Swiss-engineered device",
       "callouts_aria_label": "Kevin benefits",
       "away_eyebrow": "Away mode",
@@ -341,10 +341,7 @@
       "checkout_eyebrow": "Checkout",
       "checkout_title": "Free delivery",
       "checkout_body": "Secure Shopify checkout.",
-      "trust_1": "Swiss engineered",
-      "trust_2": "No cameras or mics",
-      "trust_3": "Free delivery in Europe",
-      "sticky_cta_label": "Get Kevin"
+      "sticky_cta_label": "Get KEVIN 3.0"
     },
     "problem": {
       "overline": "The problem",

@@ -178,7 +178,7 @@ const en = {
     slide_1: {
       label: 'Everyone',
       eyebrow: 'For every home',
-      headline: 'Deter burglaries before they happen.',
+      headline: 'Protect your family and loved ones from the unimaginable',
       lede: 'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play.',
       image_alt: 'Kevin® presence simulator — Swiss-engineered Kevin 3 device',
       callout_1_eyebrow: 'Plug and play',
