@@ -1,0 +1,43 @@
+{
+  "offer": "DISCOUNT",
+  "tiers": [
+    {
+      "quantity": 2,
+      "value": 30,
+      "highlight": "NONE",
+      "isDefault": true
+    },
+    {
+      "quantity": 3,
+      "value": 70,
+      "isDefault": false,
+      "highlight": "NONE"
+    },
+    {
+      "quantity": 4,
+      "value": 100,
+      "isDefault": false,
+      "highlight": "NONE"
+    }
+  ],
+  "appliesTo": "ALL",
+  "type": "FIXED_AMOUNT",
+  "applicationStrategy": "ALL",
+  "discountsToSubscriptionProducts": false,
+  "currencyCode": "EUR",
+  "currencyFormat": "€{{amount_with_comma_separator}}",
+  "discountType": "AUTOMATIC_DISCOUNT",
+  "widgetType": "widget#vdcards",
+  "fixedQuantityDiscount": false,
+  "selectorToBuyMinQty": false,
+  "discountsToB2BCustomers": false,
+  "recurringDiscountApplication": "FIRST_PAYMENT",
+  "recurringCycleLimit": 2,
+  "customerSelection": [],
+  "customerSelectionType": "ALL",
+  "discountCategory": "VOLUME_DISCOUNT",
+  "minQtySelectorIsDefault": false,
+  "autoApplyCodeDiscount": true,
+  "enableExclusion": false,
+  "exclusionType": "PRODUCTS"
+}
