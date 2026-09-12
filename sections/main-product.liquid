@@ -89,7 +89,7 @@
           <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-page__qty-input">
         </div>
 
-        <button type="submit" name="add" class="btn-apple-primary btn-block product-page__submit" data-add-to-cart {% unless current_variant.available %}disabled{% endunless %}>
+        <button type="submit" name="add" class="btn-apple-secondary btn-block product-page__submit" data-add-to-cart {% unless current_variant.available %}disabled{% endunless %}>
           {%- if current_variant.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
         </button>
 
