@@ -83,6 +83,9 @@
     "cart": "Winkelwagen",
     "copyright": "Copyright © {{ year }} {{ shop_name }}. Alle rechten voorbehouden.",
     "privacy": "Privacybeleid",
+    "refund": "Retourneren & terugbetaling",
+    "shipping": "Verzending",
+    "legal_notice": "Colofon",
     "terms": "Gebruiksvoorwaarden",
     "llm_summary": "LLM-samenvatting"
   },

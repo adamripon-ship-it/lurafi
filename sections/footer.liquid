@@ -98,6 +98,18 @@
         {%- if shop.terms_of_service -%}
           <a href="{{ shop.terms_of_service.url }}">{{ 'footer.terms' | t }}</a>
         {%- endif -%}
+        {%- if shop.refund_policy -%}
+          <a href="{{ shop.refund_policy.url }}">{{ 'footer.refund' | t }}</a>
+        {%- endif -%}
+        {%- if shop.shipping_policy -%}
+          <a href="{{ shop.shipping_policy.url }}">{{ 'footer.shipping' | t }}</a>
+        {%- endif -%}
+        {%- comment -%} Legal notice (Impressum) is only exposed via shop.policies {%- endcomment -%}
+        {%- for policy in shop.policies -%}
+          {%- if policy.url contains 'legal-notice' -%}
+            <a href="{{ policy.url }}">{{ 'footer.legal_notice' | t }}</a>
+          {%- endif -%}
+        {%- endfor -%}
         {%- if pages.llms -%}
           <a href="{{ pages.llms.url }}">{{ 'footer.llm_summary' | t }}</a>
         {%- endif -%}

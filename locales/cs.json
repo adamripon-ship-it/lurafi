@@ -81,7 +81,10 @@
     "copyright": "Copyright © {{ year }} {{ shop_name }}. Všechna práva vyhrazena.",
     "privacy": "Zásady ochrany osobních údajů",
     "terms": "Podmínky použití",
-    "llm_summary": "LLM shrnutí"
+    "llm_summary": "LLM shrnutí",
+    "refund": "Vrácení a refundace",
+    "shipping": "Doprava",
+    "legal_notice": "Právní informace"
   },
   "seo": {
     "home": {
