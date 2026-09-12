@@ -84,6 +84,9 @@
     "copyright": "Copyright © {{ year }} {{ shop_name }}. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
+    "refund": "Returns & Refunds",
+    "shipping": "Shipping",
+    "legal_notice": "Legal Notice",
     "llm_summary": "LLM summary"
   },
   "seo": {

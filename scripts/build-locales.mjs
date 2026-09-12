@@ -87,6 +87,9 @@ const en = {
     copyright: 'Copyright © {{ year }} {{ shop_name }}. All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
+    refund: 'Returns & Refunds',
+    shipping: 'Shipping',
+    legal_notice: 'Legal Notice',
     llm_summary: 'LLM summary'
   },
   seo: {
@@ -732,6 +735,9 @@ nl.footer = {
   cart: 'Winkelwagen',
   copyright: 'Copyright © {{ year }} {{ shop_name }}. Alle rechten voorbehouden.',
   privacy: 'Privacybeleid',
+  refund: 'Retourneren & terugbetaling',
+  shipping: 'Verzending',
+  legal_notice: 'Colofon',
   terms: 'Gebruiksvoorwaarden',
   llm_summary: 'LLM-samenvatting'
 };

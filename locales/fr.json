@@ -81,7 +81,10 @@
     "copyright": "Copyright © {{ year }} {{ shop_name }}. Tous droits réservés.",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
-    "llm_summary": "Résumé LLM"
+    "llm_summary": "Résumé LLM",
+    "refund": "Retours et remboursements",
+    "shipping": "Livraison",
+    "legal_notice": "Mentions légales"
   },
   "seo": {
     "home": {

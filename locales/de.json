@@ -81,7 +81,10 @@
     "copyright": "Copyright © {{ year }} {{ shop_name }}. Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
-    "llm_summary": "LLM-Zusammenfassung"
+    "llm_summary": "LLM-Zusammenfassung",
+    "refund": "Rückgabe & Erstattung",
+    "shipping": "Versand",
+    "legal_notice": "Impressum"
   },
   "seo": {
     "home": {
