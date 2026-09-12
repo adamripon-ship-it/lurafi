@@ -12,7 +12,7 @@ const CART_CHECKOUT = /\/cart\/\d+:\d+(\?checkout|$)/;
 
 async function waitForCheckout(page, timeoutMs) {
   const deadline = Date.now() + timeoutMs;
-  while Date.now() < deadline) {
+  while (Date.now() < deadline) {
     const url = page.url();
     if (CHECKOUT.test(url)) return;
     if (CART_CHECKOUT.test(url)) {
@@ -26,6 +26,7 @@ async function waitForCheckout(page, timeoutMs) {
 
 test.describe('Critical purchase path', () => {
   test('configure (buy) reaches Shopify checkout', async ({ page }) => {
+    test.setTimeout(120000); // waitForCheckout allows 90s (Shop Pay / Cloudflare hops)
     await page.goto(`${BASE}/pages/configure?plan=buy`, { waitUntil: 'domcontentloaded' });
 
     await expect(page.locator('[data-configure]')).toBeVisible();
@@ -50,6 +51,7 @@ test.describe('Critical purchase path', () => {
 
   // SECONDARY flow: product detail -> add to cart -> checkout
   test('product detail -> add to cart -> checkout', async ({ page }) => {
+    test.setTimeout(120000);
     await page.goto(`${BASE}/products/kevin`, { waitUntil: 'domcontentloaded' });
     await expect(page.locator('#ProductForm')).toBeVisible();
 
