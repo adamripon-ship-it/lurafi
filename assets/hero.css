@@ -4,17 +4,23 @@
   --kevin-purple: #440099;
   --kevin-magenta: #9e007e;
   --kevin-pink: #e31c79;
-  --hero-copy-max: 44rem;
+  --hero-copy-max: 36rem;
   --hero-product-max-w: min(94vw, 920px);
   --hero-product-max-h: min(50dvh, 520px);
+  --hero-stack-gap: clamp(20px, 3vh, 32px);
+  --hero-cta-product-gap: clamp(36px, 6vh, 72px);
+  --hero-copy-top: clamp(32px, 6vh, 72px);
+  --hero-copy-nudge: 7vh;
+  --hero-product-lift: 7%;
+  --hero-stage-lift: var(--hero-product-lift);
 
   position: relative;
   z-index: 0;
-  min-height: min(92dvh, 900px);
+  min-height: min(88dvh, 860px);
   height: auto;
   background: linear-gradient(180deg, #07080c 0%, #030304 100%);
-  padding-top: calc(var(--header-offset) + clamp(12px, 2vh, 20px));
-  padding-bottom: clamp(8px, 1.5vh, 16px);
+  padding-top: calc(var(--header-offset) + clamp(8px, 1.5vh, 16px));
+  padding-bottom: clamp(48px, 7vh, 72px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -49,31 +55,35 @@
   width: 100%;
 }
 
-/* Banner grid: copy → product */
+/* Banner stack: copy → product (tight vertical rhythm, no dead space) */
 .hero-banner {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
   width: 100%;
   flex: 1 1 auto;
-  min-height: min(78dvh, 760px);
-  gap: clamp(16px, 2.5vh, 28px);
+  min-height: 0;
+  gap: var(--hero-stack-gap);
   padding-inline: max(var(--pad-inline), 16px);
+  padding-block: 0;
   box-sizing: border-box;
 }
 
 .hero-banner__copy {
+  position: relative;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  flex: 0 0 auto;
   width: 100%;
   max-width: var(--hero-copy-max);
   margin-inline: auto;
-  padding-top: clamp(4px, 1vh, 12px);
+  padding-top: calc(var(--hero-copy-top) + var(--hero-copy-nudge));
   text-align: center;
-  /* Nudge the copy block down into the composition (owner: +4%) */
-  transform: translateY(clamp(14px, 4dvh, 40px));
 }
 
 .hero-banner__headline {
@@ -90,24 +100,12 @@
 
 .hero-banner__lede {
   color: rgba(255, 255, 255, 0.78);
-  max-width: min(100%, 42rem);
-  margin: 0 auto clamp(20px, 2.8vh, 28px);
+  max-width: 38ch;
+  margin: 0 auto clamp(16px, 2.2vh, 22px);
   font-size: clamp(0.9375rem, 2.4vw, 1.125rem);
-  line-height: 1.5;
+  line-height: 1.45;
   letter-spacing: -0.01em;
   text-wrap: pretty;
-}
-
-/* Desktop + tablet: headline holds one line, lede settles to two */
-@media (min-width: 768px) {
-  .hero-banner__headline {
-    white-space: nowrap;
-    text-wrap: nowrap;
-  }
-  .hero-banner__lede {
-    max-width: min(100%, 44rem);
-    text-wrap: balance;
-  }
 }
 
 .hero-banner__actions {
@@ -119,6 +117,10 @@
   width: 100%;
   max-width: 28rem;
   margin-inline: auto;
+  margin-top: clamp(4px, 0.8vh, 8px);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 5;
 }
 
 .hero-banner__cta {
@@ -144,11 +146,7 @@
 
 .hero-banner__cta--primary {
   color: #fff;
-  /* Solid fallback paints first; the gradient below only replaces it once
-     --kevin-* resolve, so the button never renders as a bare white pill. */
-  background-color: var(--kevin-magenta, #9e007e);
-  background-image: linear-gradient(135deg, var(--kevin-pink) 0%, var(--kevin-magenta) 52%, var(--kevin-purple) 100%);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(135deg, var(--kevin-pink) 0%, var(--kevin-magenta) 52%, var(--kevin-purple) 100%);
   box-shadow:
     0 4px 20px rgba(227, 28, 121, 0.35),
     0 1px 0 rgba(255, 255, 255, 0.12) inset;
@@ -189,24 +187,117 @@
   outline-offset: 3px;
 }
 
-/* Product stage — centerpiece */
+/* Product stage — sits directly below CTAs */
 .hero-banner__product-stage {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 1 auto;
   width: 100%;
   min-height: 0;
-  flex: 1 1 auto;
-  padding-bottom: clamp(8px, 1.5vh, 16px);
-  /* Lift the product + waves up into the composition (owner: -4%) */
-  margin-top: calc(clamp(14px, 4dvh, 40px) * -1);
+  margin-top: var(--hero-cta-product-gap);
+  margin-bottom: 0;
+  padding-bottom: 0;
+  isolation: isolate;
+  transform: translateY(calc(-1 * var(--hero-product-lift)));
+  z-index: 1;
+}
+
+/* Stale-cache guard — shadow experiment removed; hide if old HTML still served */
+.hero-banner__shadows,
+.hero-banner__shadow-backdrop,
+.hero-banner__shadow-figures-layer,
+.hero-banner__shadow-defs,
+.hero-banner__shadow-screen,
+.hero-shadow-scene {
+  display: none !important;
+}
+
+/* Full-width neon waveform — behind product */
+.hero-banner__wave-field {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(8%, 14vh, 22%);
+  z-index: 0;
+  width: 100vw;
+  max-width: none;
+  height: clamp(72px, 11vh, 128px);
+  pointer-events: none;
+  overflow: visible;
+  transform: translateX(-50%);
+  opacity: 0.92;
+}
+
+.hero-banner__wave-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: heroWaveFloat 8s ease-in-out infinite;
+}
+
+.hero-banner__wave-halo {
+  fill: none;
+  stroke: url(#hero-wave-grad-focus-v4);
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.45;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-banner__wave-line {
+  fill: none;
+  stroke: url(#hero-wave-grad-focus-v4);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.95;
+  vector-effect: non-scaling-stroke;
+  animation: heroWavePulse 5s ease-in-out infinite;
+}
+
+.hero-banner__wave-core {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.88);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Pulse dot — SVG animateMotion along wave path (L→R loop) */
+.hero-banner__wave-pulse-halo {
+  fill: #ffffff;
+  opacity: 0.28;
+}
+
+.hero-banner__wave-pulse-dot {
+  fill: #ffffff;
+  opacity: 0.92;
+}
+
+.hero-banner__wave-pulse-spark {
+  fill: #ffffff;
+  opacity: 1;
+}
+
+@keyframes heroWaveFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes heroWavePulse {
+  0%, 100% { opacity: 0.78; }
+  50% { opacity: 1; }
 }
 
 .hero-banner__product-glow {
   position: absolute;
   inset: 8% 5% 0;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
   overflow: visible;
 }
@@ -242,7 +333,7 @@
 
 .hero-banner__product {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,155 +357,9 @@
   pointer-events: none;
 }
 
-/* Trust chip row under CTAs */
-.hero-banner__trust {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px 10px;
-  width: 100%;
-  max-width: 34rem;
-  margin: clamp(14px, 2vh, 20px) auto 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hero-banner__trust-item {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 999px;
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 60%);
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  white-space: nowrap;
-  isolation: isolate;
-  overflow: hidden;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.3),
-    0 6px 18px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-}
-
-/* Glass sheen: soft specular highlight sweeping the upper-left, like light on curved glass */
-.hero-banner__trust-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  background: radial-gradient(120% 120% at 18% -20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 45%);
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
-
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .hero-banner__trust-item {
-    background: rgba(22, 20, 28, 0.82);
-  }
-}
-
-/* ---- Trust chips: brand-color laser beam travels the border + pulse ---- */
-@property --nf-beam-angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-/* Label rides above the beam ring */
-.hero-banner__trust-label {
-  position: relative;
-  z-index: 2;
-}
-
-/* The traveling laser: a conic gradient (purple → blue → pink) masked to a
-   thin border ring; rotating --nf-beam-angle sweeps the bright arc around. */
-.hero-banner__trust-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: inherit;
-  padding: 1.6px;
-  background: conic-gradient(
-    from var(--nf-beam-angle),
-    transparent 0deg 276deg,
-    var(--kevin-purple) 300deg,
-    #2997ff 326deg,
-    var(--kevin-pink) 350deg,
-    transparent 360deg
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-
-.motion-ready .hero-banner__trust-item::after {
-  opacity: 1;
-  animation: nfTrustBeam 3.2s linear infinite;
-}
-@keyframes nfTrustBeam {
-  to { --nf-beam-angle: 360deg; }
-}
-
-/* Pulsing brand glow around the pill, in time with the beam */
-.motion-ready .hero-banner__trust-item {
-  animation: nfTrustPulse 3.2s ease-in-out infinite;
-}
-@keyframes nfTrustPulse {
-  0%, 100% {
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -1px 1px rgba(0, 0, 0, 0.3),
-      0 6px 18px rgba(0, 0, 0, 0.3),
-      0 0 0 0 rgba(68, 0, 153, 0);
-  }
-  50% {
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -1px 1px rgba(0, 0, 0, 0.3),
-      0 6px 18px rgba(0, 0, 0, 0.3),
-      0 0 20px 2px rgba(158, 0, 126, 0.5);
-  }
-}
-
-/* Stagger the three so the beam reads as one loop travelling across the row */
-.motion-ready .hero-banner__trust-item:nth-child(2)::after,
-.motion-ready .hero-banner__trust-item:nth-child(2) { animation-delay: -1.06s; }
-.motion-ready .hero-banner__trust-item:nth-child(3)::after,
-.motion-ready .hero-banner__trust-item:nth-child(3) { animation-delay: -2.13s; }
-
-/* Reduced motion / no-JS: static brand-tinted border, no movement */
-.motion-reduced .hero-banner__trust-item::after,
-html.no-js .hero-banner__trust-item::after {
-  animation: none !important;
-  opacity: 0.6;
-  background: conic-gradient(from 300deg, transparent 0deg 250deg, var(--kevin-purple) 292deg, #2997ff 320deg, var(--kevin-pink) 350deg, transparent 360deg);
-}
-.motion-reduced .hero-banner__trust-item,
-html.no-js .hero-banner__trust-item {
-  animation: none !important;
-}
-
 /* Legacy markup — hide if cached */
 .hero-banner__eyebrow,
+.hero-banner__trust,
 .hero-banner__chips,
 .hero-banner__media,
 .hero-banner__visual,
@@ -423,7 +368,8 @@ html.no-js .hero-banner__trust-item {
 .hero-context-card,
 .hero-spec-chip,
 .hero-apple__glow,
-.hero-apple__grain {
+.hero-apple__grain,
+.hero-product-waves {
   display: none !important;
 }
 
@@ -496,8 +442,8 @@ html.no-js .hero-banner__trust-item {
 .motion-ready .hero-banner__headline,
 .motion-ready .hero-banner__lede,
 .motion-ready .hero-banner__actions,
-.motion-ready .hero-banner__trust,
-.motion-ready .hero-banner__product-stage {
+.motion-ready .hero-banner__product-stage,
+.motion-ready .hero-banner__wave-field {
   opacity: 0;
 }
 
@@ -513,20 +459,16 @@ html.no-js .hero-banner__trust-item {
   animation: heroCopyEnter 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
 }
 
-.hero-apple--animate .hero-banner__cta--primary {
+.hero-apple--animate .hero-banner__actions {
   animation: heroCtaEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
-}
-
-.hero-apple--animate .hero-banner__cta--secondary {
-  animation: heroCtaEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
-}
-
-.hero-apple--animate .hero-banner__trust {
-  animation: heroCopyEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .hero-apple--animate .hero-banner__product-stage {
   animation: heroProductEnter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+.hero-apple--animate .hero-banner__wave-field {
+  animation: heroWaveEnter 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
 }
 
 .hero-apple--animate .hero-apple__scroll {
@@ -544,20 +486,33 @@ html.no-js .hero-banner__trust-item {
 }
 
 @keyframes heroProductEnter {
-  0% { opacity: 0; transform: translateY(20px) scale(0.94); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  0% {
+    opacity: 0;
+    transform: translateY(calc(20px - var(--hero-product-lift))) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(calc(-1 * var(--hero-product-lift))) scale(1);
+  }
+}
+
+@keyframes heroWaveEnter {
+  0% { opacity: 0; transform: translateX(-50%) translateY(12px) scale(0.98); }
+  100% { opacity: 0.92; transform: translateX(-50%) translateY(0) scale(1); }
 }
 
 /* Responsive */
 @media (min-width: 768px) {
   .hero-apple {
-    --hero-product-max-h: min(58dvh, 660px);
-    min-height: min(90dvh, 880px);
+    --hero-product-max-h: min(56dvh, 620px);
+    --hero-stack-gap: clamp(24px, 3.5vh, 36px);
+    --hero-cta-product-gap: clamp(40px, 6.5vh, 80px);
+    --hero-copy-top: clamp(40px, 7vh, 88px);
+    min-height: min(86dvh, 840px);
   }
 
   .hero-banner {
-    min-height: min(82dvh, 820px);
-    gap: clamp(20px, 3vh, 32px);
+    gap: var(--hero-stack-gap);
   }
 
   .hero-banner__actions {
@@ -578,7 +533,9 @@ html.no-js .hero-banner__trust-item {
 @media (min-width: 1024px) {
   .hero-apple {
     --hero-product-max-w: min(78vw, 980px);
-    --hero-product-max-h: min(62dvh, 720px);
+    --hero-product-max-h: min(58dvh, 680px);
+    --hero-stack-gap: clamp(28px, 4vh, 40px);
+    --hero-copy-top: clamp(48px, 8vh, 96px);
   }
 
   .hero-banner__headline {
@@ -597,12 +554,14 @@ html.no-js .hero-banner__trust-item {
 @media (max-width: 767px) {
   .hero-apple {
     min-height: auto;
-    padding-top: calc(var(--header-offset) + 8px);
+    padding-top: calc(var(--header-offset) + clamp(8px, 1.5vh, 12px));
+    padding-bottom: clamp(40px, 8vh, 56px);
+    --hero-stack-gap: clamp(16px, 2.5vh, 24px);
+    --hero-copy-top: clamp(24px, 5vh, 48px);
   }
 
   .hero-banner {
-    min-height: auto;
-    gap: 12px;
+    gap: var(--hero-stack-gap);
   }
 
   .hero-banner__actions {
@@ -621,142 +580,43 @@ html.no-js .hero-banner__trust-item {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-banner__glow-layer {
+  .hero-banner__glow-layer,
+  .hero-banner__wave-svg,
+  .hero-banner__wave-line {
     animation: none;
+  }
+
+  .hero-banner__wave-pulse {
+    display: none;
   }
 }
 
 .motion-reduced .hero-banner__headline,
 .motion-reduced .hero-banner__lede,
 .motion-reduced .hero-banner__cta,
-.motion-reduced .hero-banner__trust,
-.motion-reduced .hero-banner__product-stage,
+.motion-reduced .hero-banner__wave-field,
 .motion-reduced .hero-apple__scroll {
   opacity: 1 !important;
   transform: none !important;
   animation: none !important;
 }
 
+.motion-reduced .hero-banner__product-stage {
+  opacity: 1 !important;
+  transform: translateY(calc(-1 * var(--hero-product-lift))) !important;
+  animation: none !important;
+}
+
 html.no-js .hero-banner__headline,
 html.no-js .hero-banner__lede,
 html.no-js .hero-banner__actions,
-html.no-js .hero-banner__trust,
-html.no-js .hero-banner__product-stage,
+html.no-js .hero-banner__wave-field,
 html.no-js .hero-apple__scroll {
   opacity: 1;
   transform: none;
 }
 
-
-/* ---- Product waves: ECG pulse + light beams emitting from the product ---- */
-.hero-product-waves {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 54%;
-  transform: translateY(-50%);
-  height: clamp(70px, 14vh, 130px);
-  z-index: 0;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
-}
-
-.hero-product-waves__svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: visible;
-}
-
-.hero-product-wave-baseline {
-  fill: none;
-  stroke: rgba(245, 245, 247, 0.16);
-  stroke-width: 1.5;
-}
-
-.hero-product-wave-carrier {
-  fill: none;
-  stroke: rgba(199, 44, 161, 0.5);
-  stroke-width: 2;
-}
-
-.motion-ready .hero-product-wave-carrier {
-  animation: heroWaveCarrierBreathe 7s ease-in-out infinite;
-}
-
-@keyframes heroWaveCarrierBreathe {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-/* Traveling beam: pathLength=1 lets dashoffset scrub a bright segment
-   from the product's center outward along the ECG line. */
-.hero-product-wave-beam {
-  fill: none;
-  stroke: #ff6ba8;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 0.10 0.90;
-  stroke-dashoffset: 1.05;
-  opacity: 0;
-}
-
-.hero-product-wave-spark {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 1.75;
-  stroke-linecap: round;
-  stroke-dasharray: 0.025 0.975;
-  stroke-dashoffset: 1.02;
-  opacity: 0;
-}
-
-.motion-ready .hero-product-wave-beam {
-  animation: heroWaveBeamTravel 4.6s cubic-bezier(0.45, 0, 0.25, 1) infinite;
-}
-
-.motion-ready .hero-product-wave-spark {
-  animation: heroWaveSparkTravel 4.6s cubic-bezier(0.45, 0, 0.25, 1) infinite;
-  animation-delay: 0.12s;
-}
-
-.motion-ready .hero-product-wave-beam--right,
-.motion-ready .hero-product-wave-spark--right {
-  animation-delay: 0.35s;
-}
-
-@keyframes heroWaveBeamTravel {
-  0% { stroke-dashoffset: 1.05; opacity: 0; }
-  6% { opacity: 1; }
-  58% { stroke-dashoffset: -0.12; opacity: 1; }
-  64%, 100% { stroke-dashoffset: -0.12; opacity: 0; }
-}
-
-@keyframes heroWaveSparkTravel {
-  0% { stroke-dashoffset: 1.02; opacity: 0; }
-  8% { opacity: 0.9; }
-  56% { stroke-dashoffset: -0.06; opacity: 0.9; }
-  62%, 100% { stroke-dashoffset: -0.06; opacity: 0; }
-}
-
-/* Reduced motion / no-JS: calm static waves, no beams */
-.motion-reduced .hero-product-wave-beam,
-.motion-reduced .hero-product-wave-spark,
-html.no-js .hero-product-wave-beam,
-html.no-js .hero-product-wave-spark {
-  animation: none !important;
-  opacity: 0 !important;
-}
-
-.motion-reduced .hero-product-wave-carrier,
-html.no-js .hero-product-wave-carrier {
-  animation: none !important;
-  opacity: 0.8;
-}
-
-@media (max-width: 767px) {
-  .hero-product-waves {
-    height: clamp(50px, 9vh, 80px);
-  }
+html.no-js .hero-banner__product-stage {
+  opacity: 1;
+  transform: translateY(calc(-1 * var(--hero-product-lift)));
 }

@@ -364,7 +364,8 @@
       "trust_1": "Swiss Engineered",
       "trust_2": "Low power consumption",
       "trust_3": "Jammer-Proof",
-      "sticky_cta_label": "Get Kevin"
+      "sticky_cta_label": "Get Kevin",
+      "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
     },
     "problem": {
       "overline": "The problem",

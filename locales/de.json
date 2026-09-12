@@ -360,7 +360,8 @@
       "callout_4_title": "Free delivery",
       "trust_1": "Schweizer Technik",
       "trust_2": "Niedriger Energieverbrauch",
-      "trust_3": "Jammersicher"
+      "trust_3": "Jammersicher",
+      "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
     },
     "problem": {
       "overline": "Das Problem",

@@ -360,7 +360,8 @@
       "callout_4_title": "Free delivery",
       "trust_1": "Švýcarská technika",
       "trust_2": "Nízká spotřeba energie",
-      "trust_3": "Odolné vůči rušičkám"
+      "trust_3": "Odolné vůči rušičkám",
+      "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
     },
     "problem": {
       "overline": "Problém",

@@ -1,14 +1,6 @@
 {%- comment -%}
-  Hero copy: headline, lede, two CTA buttons, trust chip row (no eyebrow).
-  Decode common entities before | escape so admin-stored pre-encoded copy
-  cannot double-escape into visible &#39; / &amp; (matches section-intro).
+  Hero copy: headline, lede, primary CTA (no eyebrow, no trust strip).
 {%- endcomment -%}
-{%- liquid
-  assign headline = headline | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
-  assign lede = lede | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
-  assign cta_primary_label = cta_primary_label | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
-  assign cta_secondary_label = cta_secondary_label | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
--%}
 <div class="hero-banner__copy">
   <h1 class="hero-banner__headline headline-hero" id="HeroHeading">
     {{ headline | escape }}
@@ -18,14 +10,11 @@
     <p class="hero-banner__lede body-elevated">{{ lede | escape }}</p>
   {%- endif -%}
 
-  <div class="hero-banner__actions">
-    <a href="{{ cta_primary_url }}" class="hero-banner__cta hero-banner__cta--primary">
-      {{ cta_primary_label | escape }}
-    </a>
-    <a href="{{ cta_secondary_url }}" class="hero-banner__cta hero-banner__cta--secondary">
-      {{ cta_secondary_label | escape }}
-    </a>
-  </div>
-
-  {% render 'hero-banner-trust' %}
+  {%- if cta_primary_label != blank -%}
+    <div class="hero-banner__actions">
+      <a href="{{ cta_primary_url }}" class="hero-banner__cta hero-banner__cta--primary">
+        {{ cta_primary_label | escape }}
+      </a>
+    </div>
+  {%- endif -%}
 </div>
