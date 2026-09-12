@@ -3,7 +3,7 @@
  *
  * Price matrix (owner-set):
  *   Device (kevin-plus)     EUR 649.95  · CHF 549.00 · CZK 15745.00
- *   Front cover (4 colours) EUR  31.50  · CHF  29.00
+ *   Front cover (4 colours) EUR  24.95  · CHF  22.95
  *
  *   - EUR is the base currency → serves the Ireland, Netherlands, France and
  *     Germany markets (all EUR) via the variant price.
@@ -15,24 +15,36 @@
  * mints one from SHOPIFY_CLIENT_ID / SHOPIFY_CLIENT_SECRET. No MCP, no re-auth.
  *
  * Usage:
- *   SHOPIFY_ADMIN_TOKEN=shpat_... SHOPIFY_STORE=mitipi-2.myshopify.com \
- *     node scripts/provision-pricing.mjs [--dry-run]
+ *   SHOPIFY_ADMIN_TOKEN=shpat_... SHOPIFY_STORE=6mzhe1-yf.myshopify.com \
+ *     node scripts/provision-pricing.mjs [--dry-run] [--only device|cover]
+ *
+ *   --only <key>  limit the run to one product row (e.g. `--only cover` to
+ *                 re-price the front covers without touching the device).
  *
  * Idempotent: re-running with the same targets makes no further changes.
  */
 import { adminGql, adminAuthMode } from './lib/shopify-admin-gql.mjs';
 
-const STORE = (process.env.SHOPIFY_STORE || 'mitipi-2.myshopify.com')
+const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com')
   .replace(/^https?:\/\//, '')
   .replace(/\/$/, '');
 const DRY = process.argv.includes('--dry-run') || process.env.DRY_RUN === '1';
+const ONLY = (() => {
+  const i = process.argv.indexOf('--only');
+  return i > -1 ? process.argv[i + 1] : process.env.ONLY_PRODUCT || '';
+})();
 
 // Price matrix. base = EUR (the shop's base currency); the rest are fixed
 // prices keyed by the presentment currency of a market price list.
 const PRODUCTS = [
   { key: 'device', handle: process.env.DEVICE_HANDLE || 'kevin-plus', base: '649.95', fixed: { CHF: '549.00', CZK: '15745.00' } },
-  { key: 'cover', handle: process.env.COVER_HANDLE || 'kevin-front-cover', base: '31.50', fixed: { CHF: '29.00' } },
+  { key: 'cover', handle: process.env.COVER_HANDLE || 'kevin-front-cover', base: '24.95', fixed: { CHF: '22.95' } },
 ];
+const TARGETS = ONLY ? PRODUCTS.filter((p) => p.key === ONLY) : PRODUCTS;
+if (ONLY && !TARGETS.length) {
+  console.error(`--only "${ONLY}" matches no product row (use one of: ${PRODUCTS.map((p) => p.key).join(', ')}).`);
+  process.exit(1);
+}
 
 const log = (...a) => console.log(...a);
 const gql = (query, variables, mutate = false) =>
@@ -96,7 +108,7 @@ async function setFixedPrices(priceListId, listName, currency, product, amount) 
 }
 
 async function main() {
-  log(`Store: ${STORE}  (auth: ${adminAuthMode()})${DRY ? '  [DRY RUN]' : ''}`);
+  log(`Store: ${STORE}  (auth: ${adminAuthMode()})${DRY ? '  [DRY RUN]' : ''}${ONLY ? `  [only: ${ONLY}]` : ''}`);
 
   const shop = await gql(`query Shop { shop { name currencyCode } }`);
   log(`Shop: ${shop.shop.name} — base currency ${shop.shop.currencyCode}`);
@@ -108,7 +120,7 @@ async function main() {
 
   // Resolve products.
   const resolved = [];
-  for (const p of PRODUCTS) {
+  for (const p of TARGETS) {
     const product = await findProduct(p.handle);
     if (!product) {
       log(`! Product not found for handle "${p.handle}" — skipping.`);
