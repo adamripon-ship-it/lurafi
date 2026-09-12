@@ -40,3 +40,6 @@ assets/kevin-hero-travelling-away.png
 assets/kevin-hero-3d.glb
 assets/kevin-hero-shadow-mom-baby-man-night-germany*
 assets/.hero-illust-backup-*/
+
+# Glob form the CLI actually honours for the dot-prefixed backup dir
+assets/.hero-illust-backup-*/**

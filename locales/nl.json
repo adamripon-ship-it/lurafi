@@ -354,7 +354,8 @@
       "trust_1": "Zwitsers ontworpen",
       "trust_2": "Laag energieverbruik",
       "trust_3": "Jammerbestendig",
-      "sticky_cta_label": "Koop Kevin"
+      "sticky_cta_label": "Koop Kevin",
+      "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
     },
     "problem": {
       "overline": "Het probleem",
