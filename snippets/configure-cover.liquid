@@ -1,9 +1,11 @@
 {%- comment -%}
   One optional front-cover add-on with a quantity stepper (any colour, any volume).
   Params: cover_name, default_name, cover_variant (Shopify variant id),
-  cover_image (image_picker or blank), default_img (CDN url), price_label.
-  A cover is purchasable only when cover_variant is set; otherwise it shows "Soon".
-  Live cover product: kevin-front-cover (4 Colour variants, 31.50 EUR / 29.00 CHF).
+  cover_image (image_picker / variant image or blank), default_img (CDN url),
+  price_label, price_cents, cover_available (variant.available; defaults true).
+  A cover is purchasable only when cover_variant is set and the variant is
+  available; otherwise it shows "Soon".
+  Live cover product: kevin-front-cover (4 Colour variants, 24.95 EUR each).
 {%- endcomment -%}
 {%- liquid
   assign cover_label = cover_name | default: default_name
@@ -14,6 +16,9 @@
   endif
   assign is_soon = false
   if cover_variant == blank
+    assign is_soon = true
+  endif
+  if cover_available == false
     assign is_soon = true
   endif
 -%}

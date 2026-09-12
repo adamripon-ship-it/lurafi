@@ -1,6 +1,6 @@
 /**
  * Create the optional Kevin Front Cover product — ONE product with FOUR colour
- * variants (Red / Brown / Blue / White), 29.00 CHF · 31.50 EUR each — then print
+ * variants (Red / Brown / Blue / White), 24.95 EUR · 22.95 CHF each — then print
  * (and optionally wire into the theme) the 4 variant ids the configure page needs.
  *
  * The device (Kevin, Grey, cover included) is a separate product that already
@@ -30,7 +30,7 @@ const HANDLE = 'kevin-front-cover';
 const TITLE = 'Kevin Front Cover';
 // Price per currency. Store base currency decides which is the variant base
 // price; the other is set as a Markets fixed price (best-effort).
-const PRICE = { CHF: '29.00', EUR: '31.50' };
+const PRICE = { CHF: '22.95', EUR: '24.95' };
 
 // The 4 colour variants → configure cover_1..4. Images are the owner-uploaded
 // Shopify Files CDN URLs already used as swatch thumbnails in main-configure.
@@ -117,6 +117,55 @@ async function attachImages(productId) {
   } catch (e) {
     console.log(`  ⚠ image attach skipped: ${e.message}`);
   }
+}
+
+/**
+ * Idempotent: give every colour variant its own image so the cart / checkout
+ * line items show the right cover. Matches product media by alt text
+ * ("<Colour> front cover", as set by attachImages) → variant by Colour option.
+ */
+async function assignVariantImages(productId) {
+  const { product } = await adminGql({
+    store: STORE,
+    query: `query($id: ID!) {
+      product(id: $id) {
+        media(first: 20) { nodes { id alt } }
+        variants(first: 10) { nodes { id selectedOptions { name value } media(first: 1) { nodes { id } } } }
+      }
+    }`,
+    variables: { id: productId },
+  });
+  const mediaByColour = {};
+  for (const m of product.media.nodes) {
+    const match = /^(\w+) front cover$/i.exec(m.alt || '');
+    if (match) mediaByColour[match[1].toLowerCase()] = m.id;
+  }
+  const updates = [];
+  for (const v of product.variants.nodes) {
+    const colour = (v.selectedOptions.find((o) => o.name === 'Colour') || {}).value || '';
+    const mediaId = mediaByColour[colour.toLowerCase()];
+    const current = v.media.nodes[0]?.id;
+    if (mediaId && current !== mediaId) updates.push({ id: v.id, mediaId });
+  }
+  if (!updates.length) {
+    console.log('✓ variant images already assigned');
+    return;
+  }
+  const { productVariantsBulkUpdate } = await adminGql({
+    store: STORE,
+    mutate: true,
+    query: `mutation($productId: ID!, $variants: [ProductVariantsBulkInput!]!) {
+      productVariantsBulkUpdate(productId: $productId, variants: $variants) {
+        productVariants { id media(first: 1) { nodes { id } } }
+        userErrors { field message }
+      }
+    }`,
+    variables: { productId, variants: updates },
+  });
+  if (productVariantsBulkUpdate.userErrors?.length) {
+    throw new Error(productVariantsBulkUpdate.userErrors.map((e) => e.message).join('; '));
+  }
+  console.log(`✓ assigned images to ${updates.length} variant(s)`);
 }
 
 async function publishOnlineStore(productId) {
@@ -206,6 +255,7 @@ async function main() {
     console.log(`✓ created (${product.id})`);
   }
   await publishOnlineStore(product.id);
+  await assignVariantImages(product.id);
 
   const gidByColour = colourMap(product);
   const ids = {};
