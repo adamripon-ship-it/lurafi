@@ -187,7 +187,22 @@
     "cover_minus_label": "Retirer une façade {{ name }}",
     "cover_plus_label": "Ajouter une façade {{ name }}",
     "device_heading": "Votre Kevin",
-    "device_colour_label": "Couleur :"
+    "device_colour_label": "Couleur :",
+    "gallery_label": "Images du produit",
+    "gallery_prev": "Image précédente",
+    "gallery_next": "Image suivante",
+    "gallery_thumbs_label": "Choisir une image",
+    "gallery_thumb": "Afficher l’image {{ n }}",
+    "badge_free_shipping": "Livraison gratuite partout dans l’UE",
+    "usps_label": "Pourquoi Kevin",
+    "usp_1_title": "Lumière, ombre et son",
+    "usp_1_body": "La simulation de présence IA suisse donne à votre maison l’air et le son d’un lieu habité pendant votre absence.",
+    "usp_2_title": "Pas de caméra. Pas de micro.",
+    "usp_2_body": "La simulation s’exécute localement sur l’appareil : rien n’est diffusé ni partagé.",
+    "usp_3_title": "Plus de 70 heures de simulations intégrées",
+    "usp_3_body": "Programmez des horaires hebdomadaires ou une activation géolocalisée depuis l’app Kevin.",
+    "summary_covers": "Façades avant",
+    "summary_covers_none": "Aucune"
   },
   "hero": {
     "away_eyebrow": "Away mode",

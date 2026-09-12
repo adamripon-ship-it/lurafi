@@ -176,7 +176,22 @@ const en = {
     cover_alt: '{{ name }} front cover',
     cover_qty_label: '{{ name }} cover quantity',
     cover_minus_label: 'Remove one {{ name }} cover',
-    cover_plus_label: 'Add one {{ name }} cover'
+    cover_plus_label: 'Add one {{ name }} cover',
+    gallery_label: 'Product images',
+    gallery_prev: 'Previous image',
+    gallery_next: 'Next image',
+    gallery_thumbs_label: 'Choose an image',
+    gallery_thumb: 'Show image {{ n }}',
+    badge_free_shipping: 'Free shipping anywhere in the EU',
+    usps_label: 'Why Kevin',
+    usp_1_title: 'Light, shadow and sound',
+    usp_1_body: 'Swiss AI presence simulation makes your home look and sound lived-in while you are away.',
+    usp_2_title: 'No cameras. No mics.',
+    usp_2_body: 'Simulation runs locally on the device — not streamed, not shared.',
+    usp_3_title: '70+ hours of built-in simulations',
+    usp_3_body: 'Set weekly schedules or geo-aware activation from the Kevin App.',
+    summary_covers: 'Front covers',
+    summary_covers_none: 'None'
   },
   hero: {
     callouts_aria_label: 'Kevin benefits',
@@ -795,7 +810,22 @@ nl.configure = {
   cover_alt: 'Voorpaneel {{ name }}',
   cover_qty_label: 'Aantal covers {{ name }}',
   cover_minus_label: 'Eén cover {{ name }} verwijderen',
-  cover_plus_label: 'Eén cover {{ name }} toevoegen'
+  cover_plus_label: 'Eén cover {{ name }} toevoegen',
+  gallery_label: 'Productafbeeldingen',
+  gallery_prev: 'Vorige afbeelding',
+  gallery_next: 'Volgende afbeelding',
+  gallery_thumbs_label: 'Kies een afbeelding',
+  gallery_thumb: 'Toon afbeelding {{ n }}',
+  badge_free_shipping: 'Gratis verzending in de hele EU',
+  usps_label: 'Waarom Kevin',
+  usp_1_title: 'Licht, schaduw en geluid',
+  usp_1_body: 'Zwitserse AI-aanwezigheidssimulatie laat je huis bewoond lijken en klinken terwijl je weg bent.',
+  usp_2_title: 'Geen camera’s. Geen microfoons.',
+  usp_2_body: 'De simulatie draait lokaal op het apparaat — niets wordt gestreamd of gedeeld.',
+  usp_3_title: '70+ uur ingebouwde simulaties',
+  usp_3_body: 'Stel weekschema’s of locatiegebaseerde activering in via de Kevin-app.',
+  summary_covers: 'Voorpanelen',
+  summary_covers_none: 'Geen'
 };
 nl.hero = {
   callouts_aria_label: 'Kevin-voordelen',

@@ -78,6 +78,8 @@
     totalSuffix: root.querySelector('[data-configure-total-suffix]'),
     summaryColor: root.querySelector('[data-configure-summary-color]'),
     summaryPlan: root.querySelector('[data-configure-summary-plan]'),
+    summaryCoversRow: root.querySelector('[data-configure-summary-covers-row]'),
+    summaryCovers: root.querySelector('[data-configure-summary-covers]'),
     stickyTotal: root.querySelector('[data-configure-sticky-total]'),
     stickyTotalSuffix: root.querySelector('[data-configure-sticky-total-suffix]'),
     perDevice: root.querySelector('[data-configure-per-device]'),
@@ -126,24 +128,11 @@
     return window.location.origin + '/cdn/shop/t/1/assets/' + fileName;
   }
 
-  function getForcedColorImage(key) {
-    var forcedImages = {
-      grey: 'kevin-front-cover-grey-v2.webp',
-      white: 'kevin-front-cover-white-v2.webp',
-      burgundy: 'kevin-front-cover-red-v2.webp',
-      red: 'kevin-front-cover-red-v2.webp',
-      espresso: 'kevin-front-cover-brown-v2.webp',
-      brown: 'kevin-front-cover-brown-v2.webp',
-      navy: 'kevin-front-cover-blue-v2.webp',
-      blue: 'kevin-front-cover-blue-v2.webp'
-    };
-    return forcedImages[key] ? buildAssetUrl(forcedImages[key]) : null;
-  }
-
+  // Only one unit colour exists (Grey). The image for it is the first
+  // gallery slide, resolved server-side (Theme Editor → Shopify product
+  // media → bundled asset) and exposed as ConfigureData.colorImages.grey.
   function getVariantImage(variant) {
     var key = colorKey(variant.color);
-    var forcedImage = getForcedColorImage(key);
-    if (forcedImage) return forcedImage;
     if (data.colorImages && data.colorImages[key]) return data.colorImages[key];
     if (variant.image) return variant.image;
     return data.defaultImage;
@@ -240,10 +229,25 @@
     return cents + coversPriceCents();
   }
 
+  // Order-summary line for the optional covers, e.g. "Red ×1, Blue ×2 · €89.85".
+  function renderCoversSummary() {
+    if (!els.summaryCovers) return;
+    var covers = selectedCovers();
+    if (!covers.length) {
+      els.summaryCovers.textContent = els.summaryCovers.getAttribute('data-none-label') || '—';
+      if (els.summaryCoversRow) els.summaryCoversRow.classList.remove('has-covers');
+      return;
+    }
+    var parts = covers.map(function (c) { return c.name + ' \u00d7' + c.qty; });
+    els.summaryCovers.textContent = parts.join(', ') + ' \u00b7 ' + formatCents(coversPriceCents());
+    if (els.summaryCoversRow) els.summaryCoversRow.classList.add('has-covers');
+  }
+
   function renderTotal() {
     var variant = findVariantById(state.variantId);
     var cents = getLinePriceCents();
     var formatted = formatCents(cents);
+    renderCoversSummary();
     if (els.total) {
       els.total.textContent = formatted;
     }
@@ -362,7 +366,9 @@
         var qtyEl = card.querySelector('[data-cover-qty]');
         var qty = qtyEl ? Number(qtyEl.textContent) || 0 : 0;
         var price = Number(card.getAttribute('data-cover-price')) || 0;
-        if (id && Number(id) > 0 && qty > 0) out.push({ id: id, qty: qty, price: price });
+        var nameEl = card.querySelector('.configure-cover__name');
+        var name = nameEl ? nameEl.textContent.trim() : '';
+        if (id && Number(id) > 0 && qty > 0) out.push({ id: id, qty: qty, price: price, name: name });
       }
     );
     return out;
@@ -452,6 +458,48 @@
       plus.addEventListener('click', function () { setQty((Number(qtyEl.textContent) || 0) + 1); });
     }
   );
+
+  // Product gallery: scroll-snap track (swipe on touch), prev/next arrows,
+  // thumbnail tabs, arrow keys. Thumbs mirror the visible slide on scroll.
+  (function initGallery() {
+    var track = root.querySelector('[data-gallery-track]');
+    if (!track) return;
+    var slides = Array.prototype.slice.call(track.querySelectorAll('[data-gallery-slide]'));
+    var thumbs = Array.prototype.slice.call(root.querySelectorAll('[data-gallery-thumb]'));
+    var prev = root.querySelector('[data-gallery-prev]');
+    var next = root.querySelector('[data-gallery-next]');
+    if (slides.length < 2) return;
+    var index = 0;
+    function setActive(i) {
+      index = (i + slides.length) % slides.length;
+      thumbs.forEach(function (t, n) {
+        var on = n === index;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    }
+    function goTo(i, behavior) {
+      setActive(i);
+      track.scrollTo({ left: slides[index].offsetLeft, behavior: behavior || 'smooth' });
+    }
+    thumbs.forEach(function (t) {
+      t.addEventListener('click', function () { goTo(Number(t.getAttribute('data-index')) || 0); });
+    });
+    if (prev) prev.addEventListener('click', function () { goTo(index - 1); });
+    if (next) next.addEventListener('click', function () { goTo(index + 1); });
+    var raf = 0;
+    track.addEventListener('scroll', function () {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        var i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+        if (i !== index) setActive(i);
+      });
+    }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(index + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(index - 1); }
+    });
+  })();
 
   function resetCtaLabels() {
     var t = window.themeTranslations && window.themeTranslations.configure;

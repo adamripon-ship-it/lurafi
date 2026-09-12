@@ -11,15 +11,40 @@
     assign buy_product = all_products['kevin-plus']
   endif
 
-  # Product image (only one unit colour exists — Grey). Theme Editor picker
-  # overrides the built-in asset fallback.
+  # Product gallery (only one unit colour exists — Grey). Order of precedence:
+  # Theme Editor picker → product media from Shopify (kevin-plus) → bundled
+  # assets. Built as two '|'-joined lists because Liquid has no object arrays.
+  assign device_alt = 'configure.device_alt' | t
+  assign gallery_srcs = ''
+  assign gallery_alts = ''
   if section.settings.color_image_grey != blank
-    assign url_grey = section.settings.color_image_grey | image_url: width: 1200
-  elsif buy_product.featured_image != blank
-    assign url_grey = buy_product.featured_image | image_url: width: 1200
-  else
-    assign url_grey = 'kevin-front-cover-grey-v2.webp' | asset_url
+    assign gallery_srcs = section.settings.color_image_grey | image_url: width: 1200
+    assign gallery_alts = section.settings.color_image_grey.alt | default: device_alt | replace: '|', '/'
   endif
+  for media in buy_product.media
+    if media.media_type == 'image'
+      assign m_src = media | image_url: width: 1200
+      assign m_alt = media.alt | default: device_alt | replace: '|', '/'
+      if gallery_srcs == blank
+        assign gallery_srcs = m_src
+        assign gallery_alts = m_alt
+      else
+        assign gallery_srcs = gallery_srcs | append: '|' | append: m_src
+        assign gallery_alts = gallery_alts | append: '|' | append: m_alt
+      endif
+    endif
+  endfor
+  if gallery_srcs == blank
+    assign a1 = 'kevin-front-cover-grey-v2.webp' | asset_url
+    assign a2 = 'kevin-hero-product-front.webp' | asset_url
+    assign a3 = 'kevin-hero-product-top.webp' | asset_url
+    assign a4 = 'kevin-hero-product-side.webp' | asset_url
+    assign gallery_srcs = a1 | append: '|' | append: a2 | append: '|' | append: a3 | append: '|' | append: a4
+    assign gallery_alts = device_alt | append: '|' | append: device_alt | append: '|' | append: device_alt | append: '|' | append: device_alt
+  endif
+  assign gallery_src_list = gallery_srcs | split: '|'
+  assign gallery_alt_list = gallery_alts | split: '|'
+  assign url_grey = gallery_src_list[0]
   assign default_image = url_grey
   assign buy_features = 'configure.buy_features' | t | split: '|'
 
@@ -94,25 +119,64 @@
     </header>
 
     <div class="configure-grid">
-      <div class="configure-gallery">
+      <div class="configure-gallery" data-configure-gallery>
         <div class="configure-gallery__well">
           <div class="configure-gallery__glow" aria-hidden="true"></div>
-          <img
-            src="{{ default_image }}"
-            alt="{{ 'configure.device_alt' | t }}"
-            class="configure-gallery__img"
-            data-configure-image
-            width="420"
-            height="420"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          >
+          <span class="configure-gallery__badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+            {{ 'configure.badge_free_shipping' | t }}
+          </span>
+          <div class="configure-gallery__track" data-gallery-track tabindex="0" aria-roledescription="carousel" aria-label="{{ 'configure.gallery_label' | t }}">
+            {%- for src in gallery_src_list -%}
+              <div class="configure-gallery__slide" data-gallery-slide role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ forloop.length }}">
+                <img
+                  src="{{ src }}"
+                  alt="{{ gallery_alt_list[forloop.index0] | escape }}"
+                  class="configure-gallery__img"
+                  {% if forloop.first %}data-configure-image loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                  width="420"
+                  height="420"
+                  decoding="async"
+                >
+              </div>
+            {%- endfor -%}
+          </div>
+          {%- if gallery_src_list.size > 1 -%}
+            <button type="button" class="configure-gallery__arrow configure-gallery__arrow--prev" data-gallery-prev aria-label="{{ 'configure.gallery_prev' | t }}">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="configure-gallery__arrow configure-gallery__arrow--next" data-gallery-next aria-label="{{ 'configure.gallery_next' | t }}">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          {%- endif -%}
           <p class="configure-gallery__chip">
             <span class="configure-gallery__chip-dot" data-configure-chip-dot aria-hidden="true"></span>
             <span data-configure-color-name>Grey</span>
           </p>
         </div>
+        {%- if gallery_src_list.size > 1 -%}
+          <div class="configure-gallery__thumbs" data-gallery-thumbs role="tablist" aria-label="{{ 'configure.gallery_thumbs_label' | t }}">
+            {%- for src in gallery_src_list -%}
+              <button type="button" class="configure-gallery__thumb{% if forloop.first %} is-active{% endif %}" data-gallery-thumb data-index="{{ forloop.index0 }}" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ 'configure.gallery_thumb' | t: n: forloop.index }}">
+                <img src="{{ src }}" alt="" loading="lazy" width="72" height="72" decoding="async">
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+        <ul class="configure-usps" aria-label="{{ 'configure.usps_label' | t }}">
+          <li class="configure-usp">
+            <span class="configure-usp__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg></span>
+            <span class="configure-usp__text"><strong>{{ 'configure.usp_1_title' | t }}</strong><span>{{ 'configure.usp_1_body' | t }}</span></span>
+          </li>
+          <li class="configure-usp">
+            <span class="configure-usp__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v6c0 4.5-3.2 7.8-7 8-3.8-.2-7-3.5-7-8V7l7-4z"/><path d="M9.5 12.5l2 2 3.5-4"/></svg></span>
+            <span class="configure-usp__text"><strong>{{ 'configure.usp_2_title' | t }}</strong><span>{{ 'configure.usp_2_body' | t }}</span></span>
+          </li>
+          <li class="configure-usp">
+            <span class="configure-usp__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M10 17h4M12 6h.01"/></svg></span>
+            <span class="configure-usp__text"><strong>{{ 'configure.usp_3_title' | t }}</strong><span>{{ 'configure.usp_3_body' | t }}</span></span>
+          </li>
+        </ul>
       </div>
 
       <div class="configure-controls">
@@ -226,6 +290,10 @@
               <div>
                 <dt>{{ 'configure.summary_front' | t }}</dt>
                 <dd data-configure-summary-color>Grey</dd>
+              </div>
+              <div data-configure-summary-covers-row>
+                <dt>{{ 'configure.summary_covers' | t }}</dt>
+                <dd data-configure-summary-covers data-none-label="{{ 'configure.summary_covers_none' | t | escape }}">{{ 'configure.summary_covers_none' | t }}</dd>
               </div>
               <div>
                 <dt>{{ 'configure.summary_plan' | t }}</dt>
