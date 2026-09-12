@@ -119,16 +119,17 @@
     </header>
 
     <div class="configure-grid">
-      <div class="configure-gallery" data-configure-gallery>
+      <div class="configure-gallery" data-configure-gallery role="region" aria-roledescription="carousel" aria-label="{{ 'configure.gallery_label' | t }}">
+        <p class="visually-hidden" data-gallery-status aria-live="polite" aria-atomic="true"></p>
         <div class="configure-gallery__well">
           <div class="configure-gallery__glow" aria-hidden="true"></div>
           <span class="configure-gallery__badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
             {{ 'configure.badge_free_shipping' | t }}
           </span>
-          <div class="configure-gallery__track" data-gallery-track tabindex="0" aria-roledescription="carousel" aria-label="{{ 'configure.gallery_label' | t }}">
+          <div class="configure-gallery__track" id="ConfigureGalleryTrack" data-gallery-track tabindex="0" aria-label="{{ 'configure.gallery_label' | t }}" data-slide-label="{{ 'configure.gallery_slide_status' | t: n: '__N__', total: gallery_src_list.size | escape }}">
             {%- for src in gallery_src_list -%}
-              <div class="configure-gallery__slide" data-gallery-slide role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ forloop.length }}">
+              <div class="configure-gallery__slide" data-gallery-slide role="group" aria-roledescription="slide" aria-label="{{ 'configure.gallery_slide_status' | t: n: forloop.index, total: forloop.length }}"{% unless forloop.first %} aria-hidden="true"{% endunless %}>
                 <img
                   src="{{ src }}"
                   alt="{{ gallery_alt_list[forloop.index0] | escape }}"
@@ -142,10 +143,10 @@
             {%- endfor -%}
           </div>
           {%- if gallery_src_list.size > 1 -%}
-            <button type="button" class="configure-gallery__arrow configure-gallery__arrow--prev" data-gallery-prev aria-label="{{ 'configure.gallery_prev' | t }}">
+            <button type="button" class="configure-gallery__arrow configure-gallery__arrow--prev" data-gallery-prev aria-controls="ConfigureGalleryTrack" aria-label="{{ 'configure.gallery_prev' | t }}">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
-            <button type="button" class="configure-gallery__arrow configure-gallery__arrow--next" data-gallery-next aria-label="{{ 'configure.gallery_next' | t }}">
+            <button type="button" class="configure-gallery__arrow configure-gallery__arrow--next" data-gallery-next aria-controls="ConfigureGalleryTrack" aria-label="{{ 'configure.gallery_next' | t }}">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           {%- endif -%}
@@ -155,9 +156,9 @@
           </p>
         </div>
         {%- if gallery_src_list.size > 1 -%}
-          <div class="configure-gallery__thumbs" data-gallery-thumbs role="tablist" aria-label="{{ 'configure.gallery_thumbs_label' | t }}">
+          <div class="configure-gallery__thumbs" data-gallery-thumbs role="group" aria-label="{{ 'configure.gallery_thumbs_label' | t }}">
             {%- for src in gallery_src_list -%}
-              <button type="button" class="configure-gallery__thumb{% if forloop.first %} is-active{% endif %}" data-gallery-thumb data-index="{{ forloop.index0 }}" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ 'configure.gallery_thumb' | t: n: forloop.index }}">
+              <button type="button" class="configure-gallery__thumb{% if forloop.first %} is-active{% endif %}" data-gallery-thumb data-index="{{ forloop.index0 }}" aria-controls="ConfigureGalleryTrack" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ 'configure.gallery_thumb' | t: n: forloop.index }}">
                 <img src="{{ src }}" alt="" loading="lazy" width="72" height="72" decoding="async">
               </button>
             {%- endfor -%}

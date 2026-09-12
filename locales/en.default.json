@@ -195,6 +195,7 @@
     "gallery_next": "Next image",
     "gallery_thumbs_label": "Choose an image",
     "gallery_thumb": "Show image {{ n }}",
+    "gallery_slide_status": "Image {{ n }} of {{ total }}",
     "badge_free_shipping": "Free shipping anywhere in the EU",
     "usps_label": "Why Kevin",
     "usp_1_title": "Light, shadow and sound",

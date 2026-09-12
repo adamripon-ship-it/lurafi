@@ -202,7 +202,8 @@
     "usp_3_title": "Plus de 70 heures de simulations intégrées",
     "usp_3_body": "Programmez des horaires hebdomadaires ou une activation géolocalisée depuis l’app Kevin.",
     "summary_covers": "Façades avant",
-    "summary_covers_none": "Aucune"
+    "summary_covers_none": "Aucune",
+    "gallery_slide_status": "Image {{ n }} sur {{ total }}"
   },
   "hero": {
     "away_eyebrow": "Away mode",

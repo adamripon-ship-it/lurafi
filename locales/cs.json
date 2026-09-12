@@ -202,7 +202,8 @@
     "usp_3_title": "70+ hodin vestavěných simulací",
     "usp_3_body": "V aplikaci Kevin nastavte týdenní plány nebo aktivaci podle polohy.",
     "summary_covers": "Přední kryty",
-    "summary_covers_none": "Žádné"
+    "summary_covers_none": "Žádné",
+    "gallery_slide_status": "Obrázek {{ n }} z {{ total }}"
   },
   "hero": {
     "away_eyebrow": "Away mode",
