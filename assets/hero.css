@@ -620,3 +620,8 @@ html.no-js .hero-banner__product-stage {
   opacity: 1;
   transform: translateY(calc(-1 * var(--hero-product-lift)));
 }
+
+/* The mouse-wheel "scroll to content" hint only makes sense with a pointer. */
+@media (hover: none) and (pointer: coarse) {
+  .hero-apple__scroll { display: none; }
+}

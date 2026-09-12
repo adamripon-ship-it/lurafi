@@ -1161,6 +1161,22 @@ body.template-configure .language-selector__trigger {
   .site-header__cta--mobile { display: none; }
   .site-header__cta--desktop { display: inline-flex; }
 }
+/* Very small phones: the header bar only has room for logo, region flag, cart
+   and menu. The Buy CTA lives in the drawer and (on the homepage) in the sticky
+   bar. This must come after the generic .site-header__cta--mobile rule above,
+   otherwise that rule wins and the CTA overlaps the logo. */
+@media (max-width: 479px) {
+  .site-header__cta--mobile { display: none; }
+  .site-header__lang .language-selector__trigger {
+    gap: 3px;
+    padding: 6px 9px;
+    min-width: 44px;
+    justify-content: center;
+  }
+  .site-header__lang .language-selector__current { display: none; }
+  .site-header__lang .language-selector__flag { font-size: 16px; }
+  .site-header__utilities { min-width: 0; }
+}
 @media (min-width: 1440px) {
   .mobile-nav {
     display: none;
@@ -2324,6 +2340,8 @@ body.mobile-nav-open { overflow: hidden; }
 }
 @media (min-width: 900px) {
   .product-page__grid { grid-template-columns: 1.05fr 1fr; align-items: start; gap: 64px; }
+  /* Keep the photos beside the long description instead of leaving a blank column. */
+  .product-page__gallery { position: sticky; top: calc(var(--header-offset, 72px) + 24px); }
 }
 @media (max-width: 899px) {
   .product-page__grid {
