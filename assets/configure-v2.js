@@ -469,18 +469,30 @@
     var prev = root.querySelector('[data-gallery-prev]');
     var next = root.querySelector('[data-gallery-next]');
     if (slides.length < 2) return;
+    var status = root.querySelector('[data-gallery-status]');
+    var slideLabel = track.getAttribute('data-slide-label') || '';
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var index = 0;
-    function setActive(i) {
+    function setActive(i, announce) {
       index = (i + slides.length) % slides.length;
       thumbs.forEach(function (t, n) {
         var on = n === index;
         t.classList.toggle('is-active', on);
-        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
+      slides.forEach(function (s, n) {
+        if (n === index) s.removeAttribute('aria-hidden');
+        else s.setAttribute('aria-hidden', 'true');
+      });
+      if (announce && status && slideLabel) {
+        // Clear then set so repeated announcements fire reliably.
+        status.textContent = '';
+        requestAnimationFrame(function () { status.textContent = slideLabel.replace('__N__', String(index + 1)); });
+      }
     }
     function goTo(i, behavior) {
-      setActive(i);
-      track.scrollTo({ left: slides[index].offsetLeft, behavior: behavior || 'smooth' });
+      setActive(i, true);
+      track.scrollTo({ left: slides[index].offsetLeft, behavior: reduceMotion ? 'auto' : (behavior || 'smooth') });
     }
     thumbs.forEach(function (t) {
       t.addEventListener('click', function () { goTo(Number(t.getAttribute('data-index')) || 0); });
@@ -492,7 +504,7 @@
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(function () {
         var i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
-        if (i !== index) setActive(i);
+        if (i !== index) setActive(i, true);
       });
     }, { passive: true });
     track.addEventListener('keydown', function (e) {

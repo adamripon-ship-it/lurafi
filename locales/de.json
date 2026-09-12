@@ -202,7 +202,8 @@
     "usp_3_title": "70+ Stunden integrierte Simulationen",
     "usp_3_body": "Wochenpläne oder standortbasierte Aktivierung in der Kevin-App einstellen.",
     "summary_covers": "Frontcover",
-    "summary_covers_none": "Keine"
+    "summary_covers_none": "Keine",
+    "gallery_slide_status": "Bild {{ n }} von {{ total }}"
   },
   "hero": {
     "away_eyebrow": "Away mode",

@@ -195,6 +195,7 @@
     "gallery_next": "Volgende afbeelding",
     "gallery_thumbs_label": "Kies een afbeelding",
     "gallery_thumb": "Toon afbeelding {{ n }}",
+    "gallery_slide_status": "Afbeelding {{ n }} van {{ total }}",
     "badge_free_shipping": "Gratis verzending in de hele EU",
     "usps_label": "Waarom Kevin",
     "usp_1_title": "Licht, schaduw en geluid",

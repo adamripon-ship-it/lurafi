@@ -2921,8 +2921,8 @@ body.mobile-nav-open { overflow: hidden; }
   padding: 2px;
 }
 .configure-cover__qty-btn {
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4378,9 +4378,9 @@ html.no-js .solution-split__visual::after {
   position: absolute;
   top: 50%;
   z-index: 3;
-  width: 36px;
-  height: 36px;
-  margin-top: -18px;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4426,8 +4426,8 @@ html.no-js .solution-split__visual::after {
   max-width: 520px;
 }
 .configure-gallery__thumb {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   padding: 4px;
   border: 1.5px solid var(--apple-border);
   border-radius: 12px;
@@ -4487,3 +4487,8 @@ body.template-configure .configure-usp { background: rgba(255, 255, 255, 0.045);
 body.template-configure .configure-usp__icon { background: rgba(0, 113, 227, 0.22); color: #7cb8ff; }
 body.template-configure .configure-usp__text strong { color: rgba(255, 255, 255, 0.95); }
 body.template-configure .configure-usp__text span { color: rgba(255, 255, 255, 0.62); }
+
+@media (prefers-reduced-motion: reduce) {
+  .configure-gallery__track { scroll-behavior: auto; }
+  .configure-gallery__arrow, .configure-gallery__thumb, .configure-cover, .configure-gallery__img { transition: none; }
+}
