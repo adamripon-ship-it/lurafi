@@ -2,13 +2,14 @@
  * Provision Kevin device + front-cover pricing across Shopify markets.
  *
  * Price matrix (owner-set):
- *   Device (kevin-plus)     EUR 649.95  · CHF 549.00 · CZK 15745.00
- *   Front cover (4 colours) EUR  24.95  · CHF  22.95
+ *   Device (kevin-plus)     EUR 579.95  (other markets auto-convert)
+ *   Front cover (4 colours) EUR  29.95  (other markets auto-convert)
  *
  *   - EUR is the base currency → serves the Ireland, Netherlands, France and
  *     Germany markets (all EUR) via the variant price.
- *   - CHF is a fixed price on the Switzerland (CHF) price list.
- *   - CZK is a fixed price on the Czech Republic (CZK) price list, if one exists.
+ *   - A `fixed` entry pins a price on that currency's market price list; when a
+ *     row has no fixed price for a currency, any stale fixed prices on that list
+ *     are removed so the market falls back to Shopify's conversion of the EUR base.
  *
  * Auth is durable and non-interactive: scripts/lib/shopify-admin-gql.mjs reads a
  * custom-app Admin API token from SHOPIFY_ADMIN_TOKEN (which does not expire), or
@@ -37,8 +38,8 @@ const ONLY = (() => {
 // Price matrix. base = EUR (the shop's base currency); the rest are fixed
 // prices keyed by the presentment currency of a market price list.
 const PRODUCTS = [
-  { key: 'device', handle: process.env.DEVICE_HANDLE || 'kevin-plus', base: '649.95', fixed: { CHF: '549.00', CZK: '15745.00' } },
-  { key: 'cover', handle: process.env.COVER_HANDLE || 'kevin-front-cover', base: '24.95', fixed: { CHF: '22.95' } },
+  { key: 'device', handle: process.env.DEVICE_HANDLE || 'kevin-plus', base: '579.95', fixed: {} },
+  { key: 'cover', handle: process.env.COVER_HANDLE || 'kevin-front-cover', base: '29.95', fixed: {} },
 ];
 const TARGETS = ONLY ? PRODUCTS.filter((p) => p.key === ONLY) : PRODUCTS;
 if (ONLY && !TARGETS.length) {
@@ -107,6 +108,33 @@ async function setFixedPrices(priceListId, listName, currency, product, amount) 
   log(`  ✓ ${currency} → ${amount} on "${listName}" for ${r.priceListFixedPricesAdd.prices.length} variant(s).`);
 }
 
+async function clearFixedPrices(priceListId, listName, currency, product) {
+  const ids = new Set(product.variants.nodes.map((v) => v.id));
+  const { priceList } = await gql(
+    `query Fixed($id: ID!) { priceList(id: $id) { prices(first: 250, originType: FIXED) { nodes { variant { id } } } } }`,
+    { id: priceListId },
+  );
+  const stale = priceList.prices.nodes.map((p) => p.variant.id).filter((id) => ids.has(id));
+  if (!stale.length) {
+    log(`  = no fixed ${currency} prices on "${listName}" (auto-converted from EUR).`);
+    return;
+  }
+  if (DRY) {
+    log(`  ~ [dry-run] would remove ${stale.length} fixed ${currency} price(s) from "${listName}".`);
+    return;
+  }
+  const r = await gql(
+    `mutation DelFixed($priceListId: ID!, $variantIds: [ID!]!) {
+       priceListFixedPricesDelete(priceListId: $priceListId, variantIds: $variantIds) {
+         deletedFixedPriceVariantIds userErrors { field message }
+       }
+     }`,
+    { priceListId, variantIds: stale },
+    true,
+  );
+  log(`  ✓ removed ${r.priceListFixedPricesDelete.deletedFixedPriceVariantIds.length} fixed ${currency} price(s) from "${listName}" → auto-converted.`);
+}
+
 async function main() {
   log(`Store: ${STORE}  (auth: ${adminAuthMode()})${DRY ? '  [DRY RUN]' : ''}${ONLY ? `  [only: ${ONLY}]` : ''}`);
 
@@ -165,8 +193,11 @@ async function main() {
     }
     for (const r of resolved) {
       const amount = r.fixed[currency];
-      if (!amount) continue;
       log(`${r.product.title} → ${currency}:`);
+      if (!amount) {
+        await clearFixedPrices(list.id, list.name, currency, r.product);
+        continue;
+      }
       await setFixedPrices(list.id, list.name, currency, r.product, amount);
     }
   }

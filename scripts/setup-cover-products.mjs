@@ -1,6 +1,6 @@
 /**
  * Create the optional Kevin Front Cover product — ONE product with FOUR colour
- * variants (Red / Brown / Blue / White), 24.95 EUR · 22.95 CHF each — then print
+ * variants (Red / Brown / Blue / White), 29.95 EUR each (CHF auto-converted) — then print
  * (and optionally wire into the theme) the 4 variant ids the configure page needs.
  *
  * The device (Kevin, Grey, cover included) is a separate product that already
@@ -30,7 +30,7 @@ const HANDLE = 'kevin-front-cover';
 const TITLE = 'Kevin Front Cover';
 // Price per currency. Store base currency decides which is the variant base
 // price; the other is set as a Markets fixed price (best-effort).
-const PRICE = { CHF: '22.95', EUR: '24.95' };
+const PRICE = { CHF: null, EUR: '29.95' };
 
 // The 4 colour variants → configure cover_1..4. Images are the owner-uploaded
 // Shopify Files CDN URLs already used as swatch thumbnails in main-configure.
@@ -243,7 +243,7 @@ async function main() {
   const currency = await shopCurrency();
   const basePrice = PRICE[currency] || PRICE.CHF;
   const foreign = currency === 'EUR' ? 'CHF' : 'EUR';
-  console.log(`Store currency: ${currency} → base ${basePrice}; ${foreign} fixed ${PRICE[foreign]}\n`);
+  console.log(`Store currency: ${currency} → base ${basePrice}; ${foreign} ${PRICE[foreign] ? 'fixed ' + PRICE[foreign] : 'auto-converted'}\n`);
 
   let product = await findCoverProduct();
   if (product) {
@@ -260,7 +260,7 @@ async function main() {
   const gidByColour = colourMap(product);
   const ids = {};
   for (const v of VARIANTS) ids[v.key] = numericId(gidByColour[v.colour]);
-  await setForeignPrices(gidByColour, foreign, PRICE[foreign]);
+  if (PRICE[foreign]) await setForeignPrices(gidByColour, foreign, PRICE[foreign]);
 
   console.log('\n──────── COVER VARIANT IDS ────────');
   for (const v of VARIANTS) console.log(`  cover_${v.key}_variant  (${v.colour})  = ${ids[v.key]}`);

@@ -187,7 +187,22 @@
     "cover_minus_label": "Odebrat jeden kryt {{ name }}",
     "cover_plus_label": "Přidat jeden kryt {{ name }}",
     "device_heading": "Váš Kevin",
-    "device_colour_label": "Barva:"
+    "device_colour_label": "Barva:",
+    "gallery_label": "Obrázky produktu",
+    "gallery_prev": "Předchozí obrázek",
+    "gallery_next": "Další obrázek",
+    "gallery_thumbs_label": "Vyberte obrázek",
+    "gallery_thumb": "Zobrazit obrázek {{ n }}",
+    "badge_free_shipping": "Doprava zdarma kamkoli v EU",
+    "usps_label": "Proč Kevin",
+    "usp_1_title": "Světlo, stín a zvuk",
+    "usp_1_body": "Švýcarská AI simulace přítomnosti zajistí, že váš domov vypadá a zní obydleně, i když jste pryč.",
+    "usp_2_title": "Žádné kamery. Žádné mikrofony.",
+    "usp_2_body": "Simulace běží lokálně v zařízení – nic se nestreamuje ani nesdílí.",
+    "usp_3_title": "70+ hodin vestavěných simulací",
+    "usp_3_body": "V aplikaci Kevin nastavte týdenní plány nebo aktivaci podle polohy.",
+    "summary_covers": "Přední kryty",
+    "summary_covers_none": "Žádné"
   },
   "hero": {
     "away_eyebrow": "Away mode",

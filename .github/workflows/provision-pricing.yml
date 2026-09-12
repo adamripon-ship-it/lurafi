@@ -1,8 +1,8 @@
 name: Provision pricing (manual)
 
 # Sets the Kevin device + front-cover prices across markets:
-#   Device  EUR 649.95 · CHF 549.00 · CZK 15745.00
-#   Cover   EUR  24.95 · CHF  22.95
+#   Device  EUR 579.95 (other markets auto-convert)
+#   Cover   EUR  29.95 (other markets auto-convert)
 #
 # Defaults to a DRY RUN (introspect + plan, no writes). Choose mode=apply to
 # execute. Uses the same production secrets as deploy-theme.yml / provision-cms.yml.
