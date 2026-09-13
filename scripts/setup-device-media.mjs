@@ -18,7 +18,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const HANDLE = process.env.DEVICE_HANDLE || 'kevin-plus';
 
 const IMAGES = [
-  { file: 'assets/kevin-front-cover-grey-v2.webp', alt: 'KEVIN 3 with Grey front cover' },
+  { file: 'assets/kevin-front-cover-grey-v2-cutout.webp', alt: 'KEVIN 3 with Grey front cover' }, // transparent cut-out (Vision subject mask)
   { file: 'assets/kevin-hero-product-front.webp', alt: 'KEVIN 3 front, angled' },
   { file: 'assets/kevin-hero-product-top.webp', alt: 'KEVIN 3 top view with light array' },
   { file: 'assets/kevin-hero-product-back.webp', alt: 'KEVIN 3 back' },
@@ -38,7 +38,7 @@ async function main() {
 
   // 1) staged uploads
   const { stagedUploadsCreate } = await gql(`mutation($input: [StagedUploadInput!]!) { stagedUploadsCreate(input: $input) { stagedTargets { url resourceUrl parameters { name value } } userErrors { field message } } }`,
-    { input: todo.map((i) => ({ filename: basename(i.file), mimeType: i.file.endsWith('.webp') ? 'image/webp' : 'image/jpeg', httpMethod: 'POST', resource: 'IMAGE', fileSize: String(statSync(join(ROOT, i.file)).size) })) }, true);
+    { input: todo.map((i) => ({ filename: basename(i.file), mimeType: i.file.endsWith('.webp') ? 'image/webp' : i.file.endsWith('.png') ? 'image/png' : 'image/jpeg', httpMethod: 'POST', resource: 'IMAGE', fileSize: String(statSync(join(ROOT, i.file)).size) })) }, true);
   if (stagedUploadsCreate.userErrors.length) throw new Error(JSON.stringify(stagedUploadsCreate.userErrors));
 
   const media = [];
