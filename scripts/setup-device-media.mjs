@@ -22,7 +22,6 @@ const IMAGES = [
   { file: 'assets/kevin-hero-product-front.webp', alt: 'KEVIN 3 front, angled' },
   { file: 'assets/kevin-hero-product-top.webp', alt: 'KEVIN 3 top view with light array' },
   { file: 'assets/kevin-hero-product-back.webp', alt: 'KEVIN 3 back' },
-  { file: 'assets/kevin-hero-product-side.webp', alt: 'KEVIN 3 side profile' },
 ];
 
 const gql = (query, variables, mutate = false) => adminGql({ store: STORE, query, variables, mutate });

@@ -38,9 +38,8 @@
     assign a1 = 'kevin-front-cover-grey-v2-cutout.webp' | asset_url
     assign a2 = 'kevin-hero-product-front.webp' | asset_url
     assign a3 = 'kevin-hero-product-top.webp' | asset_url
-    assign a4 = 'kevin-hero-product-side.webp' | asset_url
-    assign gallery_srcs = a1 | append: '|' | append: a2 | append: '|' | append: a3 | append: '|' | append: a4
-    assign gallery_alts = device_alt | append: '|' | append: device_alt | append: '|' | append: device_alt | append: '|' | append: device_alt
+    assign gallery_srcs = a1 | append: '|' | append: a2 | append: '|' | append: a3
+    assign gallery_alts = device_alt | append: '|' | append: device_alt | append: '|' | append: device_alt
   endif
   assign gallery_src_list = gallery_srcs | split: '|'
   assign gallery_alt_list = gallery_alts | split: '|'
@@ -75,6 +74,10 @@
 -%}
 
 <section class="configure-page" data-configure>
+  <p class="configure-announce" role="status">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+    <span>{{ 'configure.badge_free_shipping' | t }}</span>
+  </p>
   <nav class="configure-nav" aria-label="{{ 'accessibility.configure_navigation' | t }}">
     <div class="configure-nav__inner apple-container">
       <a href="{{ routes.root_url }}" class="configure-nav__back">
@@ -123,10 +126,6 @@
         <p class="visually-hidden" data-gallery-status aria-live="polite" aria-atomic="true"></p>
         <div class="configure-gallery__well">
           <div class="configure-gallery__glow" aria-hidden="true"></div>
-          <span class="configure-gallery__badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
-            {{ 'configure.badge_free_shipping' | t }}
-          </span>
           <div class="configure-gallery__track" id="ConfigureGalleryTrack" data-gallery-track tabindex="0" aria-label="{{ 'configure.gallery_label' | t }}" data-slide-label="{{ 'configure.gallery_slide_status' | t: n: '__N__', total: gallery_src_list.size | escape }}">
             {%- for src in gallery_src_list -%}
               <div class="configure-gallery__slide" data-gallery-slide role="group" aria-roledescription="slide" aria-label="{{ 'configure.gallery_slide_status' | t: n: forloop.index, total: forloop.length }}"{% unless forloop.first %} aria-hidden="true"{% endunless %}>
