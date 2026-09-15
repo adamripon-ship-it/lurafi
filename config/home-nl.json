@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "headline": "Inbrekers slaan huizen over die bewoond lijken. Kevin maakt jouw huis zo’n huis.",
+    "lede": "Voor gezinnen op het werk, reizigers, eigenaren van een tweede huis en iedereen die alleen woont: één Zwitsers apparaat speelt licht, bewegende schaduwen en alledaagse geluiden bij het raam — geen camera, geen microfoon, en het blijft draaien als de wifi wordt gestoord.",
+    "cta_primary_label": "Kevin samenstellen & kopen",
+    "cta_secondary_label": "Bekijk hoe het werkt",
+    "away_body": "Licht, schaduw en geluid wisselen automatisch — nooit twee keer dezelfde avond.",
+    "privacy_body": "Simulaties draaien op het apparaat. Niets wordt gestreamd of gedeeld.",
+    "checkout_title": "Gratis verzending",
+    "checkout_body": "In de hele EU, Zwitserland, Noorwegen en IJsland.",
+    "trust_1": "Ontwikkeld in Zwitserland",
+    "trust_2": "Ongeveer 9 watt",
+    "trust_3": "Bestand tegen jammers",
+    "sticky_cta_label": "Kevin samenstellen & kopen"
+  },
+  "problem": {
+    "overline": "Waarom huizen worden uitgekozen",
+    "heading": "Een leeg ogend huis is het makkelijkste doelwit in de straat.",
+    "subheading": "Donkere ramen, één lamp op een tijdschakelaar, stilte in de gang — dat checkt een gelegenheidsinbreker in seconden, vanaf de stoep. Kevin laat het tegenovergestelde zien: een huis dat bewoond lijkt en klinkt, of je nu op je werk bent, op vakantie, of vanavond als enige thuis.",
+    "tile_1_title": "Schaduwen die bewegen als mensen",
+    "tile_1_body": "Bewegende silhouetten op de muur of het plafond, zichtbaar door de gordijnen — het teken van leven waar een inbreker naar zoekt voordat hij een huis kiest.",
+    "tile_2_title": "Het geluid van een gewone avond",
+    "tile_2_body": "Een gesprek, de tv, koken, een hond die blaft bij de deurbel — afgespeeld vanaf het apparaat, zodat er ook van dichtbij duidelijk iemand thuis is.",
+    "tile_3_title": "Tijdschakelaars houden niemand voor de gek",
+    "tile_3_body": "Dezelfde lamp op hetzelfde moment, elke avond, leest als automatisering. Kevin varieert licht, schaduw en geluid tot vier weken lang zonder herhaling.",
+    "tile_4_title": "De laag die je alarm mist",
+    "tile_4_body": "Een alarm reageert nadat de deur is geprobeerd. Kevin werkt daarvoor: vanaf de straat lijkt het huis bewoond, dus de poging begint niet eens. Houd je alarm — zet preventie ervoor."
+  },
+  "mechanism": {
+    "subheading": "Een inbreker beoordeelt een huis in seconden — op licht, beweging en geluid. Kevin levert alle drie vanuit één apparaat, zodat je huis bewoond lijkt van de straat tot de voordeur en ze doorlopen naar een makkelijker doelwit.",
+    "phase_1_body": "Warm licht wisselt als echte lampen en een flikkerende tv — nooit het strakke aan-uit van een goedkope tijdschakelaar.",
+    "phase_2_body": "Bewegende silhouetten schuiven langs de gordijnen — precies wat een inbreker checkt voordat hij een doelwit kiest.",
+    "phase_3_body": "Stemmen, een tv, koken en een hond bij de deurbel klinken vanaf het apparaat — zodat er ook van dichtbij duidelijk iemand thuis is."
+  },
+  "stats": {
+    "stat_1_value": "32 GB",
+    "stat_1_label": "Aan licht, schaduw en geluid opgeslagen op het apparaat",
+    "stat_2_value": "70+",
+    "stat_2_label": "Uur ingebouwde simulaties — tot vier weken zonder herhaling",
+    "stat_3_value": "9 W",
+    "stat_3_label": "Typisch stroomverbruik",
+    "stat_4_value": "0",
+    "stat_4_label": "Camera’s of microfoons",
+    "badge_1": "Geen monitoringabonnement",
+    "badge_2": "Ontwikkeld en ontworpen in Zwitserland",
+    "badge_3": "Speelt lokaal — bestand tegen jammers"
+  },
+  "jammer": {
+    "heading": "Jammers maken camera’s blind. Kevin speelt door.",
+    "subheading": "Goedkope stoorzenders halen camera’s en app-alarmen van het netwerk. Kevin speelt elke simulatie vanaf zijn eigen geheugen — geen cloud, geen signaal, geen gat.",
+    "col_1_title": "Een camera",
+    "col_1_body": "Streams stoppen, meldingen komen nooit aan. Een gestoorde camera beschermt niemand — hij neemt alleen niets op.",
+    "col_2_body": "Licht, schaduw en geluid gaan door vanaf het lokale geheugen — het huis mist geen tel."
+  },
+  "app": {
+    "heading": "Eén keer instellen. Draait vanzelf.",
+    "subheading": "Weekschema’s, geofencing die Kevin inschakelt zodra je vertrekt, en elk pand in één app — zodat bescherming nooit afhangt van eraan denken.",
+    "tile_1_title": "Schema’s die bij je week passen",
+    "tile_1_body": "Stel weekends, vakanties of je dagelijkse routine één keer in. Kevin volgt het plan terwijl jij verder leeft.",
+    "tile_2_title": "Geofencing",
+    "tile_2_body": "Verlaat het huis en Kevin start vanzelf zodra je telefoon de buurt uit is — geen tikken, geen herinneringen.",
+    "tile_3_title": "Je eigen huisgeluiden",
+    "tile_3_body": "Neem het avondeten, de kinderen of de hond op. Kevin mengt je opnames met zijn eigen scènes, zodat je huis klinkt als jouw huis.",
+    "tile_4_title": "Elk pand in één app",
+    "tile_4_body": "Een tweede huis, een vakantieappartement, het kantoor: zet in elk een Kevin en beheer ze allemaal vanaf je telefoon."
+  },
+  "authority": {
+    "subheading": "Kevin is er voor de uren dat een huis echt leeg is — en voor de nachten dat iemand alleen thuis is.",
+    "reason_1_body": "Inbrekers kiezen makkelijke, lege doelwitten. Een huis dat licht geeft, beweegt en praat wordt overgeslagen.",
+    "reason_2_body": "Chalets, vakantieappartementen en boten blijven geloofwaardig bewoond tussen je bezoeken door.",
+    "reason_3_title": "Nooit “alleen thuis”",
+    "reason_3_body": "Voor een ouder die alleen woont of een dochter in haar eerste flat: stemmen, beweging en een hond — zodat het huis nooit een makkelijk doelwit lijkt.",
+    "quote": "The small Kevin.3 is unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show.",
+    "quote_author": "Michael Restin, Galaxus",
+    "quote_source": "Producttest, 9 januari 2026"
+  },
+  "audience": {
+    "subheading": "Kevin trekt in waar het leven even weg is — voor een avond, een seizoen of een semester."
+  },
+  "pricing": {
+    "heading": "Eén betaling. Geen monitoringkosten. Voor altijd van jou.",
+    "subheading": "Koop Kevin in één keer: 70+ uur simulaties, levenslange software-updates, 3 jaar Zwitserse garantie, 30 dagen retour en gratis verzending in de hele EU.",
+    "buy_tagline": "Eenmalige aankoop. Alle updates inbegrepen.",
+    "buy_cta": "Kevin samenstellen & kopen"
+  },
+  "specs": {
+    "heading": "Plug-and-play. 9 watt. Geen camera, geen microfoon."
+  },
+  "cta": {
+    "heading": "Laat je huis vanavond niet leeg lijken.",
+    "subheading": "Steek Kevin in het stopcontact, zet hem bij het raam en vanaf de straat is er iemand thuis. Gratis verzending in de hele EU, 30 dagen retour, 3 jaar Zwitserse garantie.",
+    "primary_cta": "Kevin samenstellen & kopen",
+    "secondary_cta": "Bekijk hoe het werkt"
+  }
+}

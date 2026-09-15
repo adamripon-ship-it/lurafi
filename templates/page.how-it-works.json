@@ -3,17 +3,17 @@
     "editorial": {
       "type": "main-editorial-page",
       "settings": {
-        "overline": "The method",
-        "heading": "Kevin® simulates people at home—so you can leave calmly.",
-        "lede": "Swiss-engineered presence simulation: light scenarios, moving shadows, and everyday sounds. Plug in near a visible window, set schedules or geo-fencing in the app, and let believable occupancy run from local storage.",
+        "overline": "How it works",
+        "heading": "Plug in by the window, set it once, and your home looks lived-in every time you leave.",
+        "lede": "For commuters, travellers and second-home owners: Kevin runs on a weekly schedule or switches on by itself when your phone leaves the area. Light, shadow and sound play from the device, so it keeps working when Wi-Fi is jammed.",
         "theme": "black",
         "image_asset": "kevin-hero-product-side.webp",
-        "image_alt": "Kevin® device — side profile product photo",
-        "cta_heading": "Ready to configure yours?",
-        "cta_subheading": "Pick your color and continue to secure Shopify checkout.",
-        "cta_primary": "Get Kevin",
+        "image_alt": "Kevin 3 presence simulator, side view",
+        "cta_heading": "Ready to leave without the second thought?",
+        "cta_subheading": "Configure your Kevin and check out securely. Free shipping across the EU, 30-day returns, 3-year Swiss warranty.",
+        "cta_primary": "Configure & buy Kevin",
         "cta_primary_url": "/pages/configure?plan=buy",
-        "cta_secondary": "Setup guide",
+        "cta_secondary": "Read the setup guide",
         "cta_secondary_url": "/pages/setup-guide"
       },
       "blocks": {
@@ -21,8 +21,8 @@
           "type": "section_intro",
           "settings": {
             "overline": "Three steps",
-            "heading": "Plug in. Schedule. Leave with peace of mind.",
-            "body": "Setup takes about 60 seconds. No installation, no wiring, no monitoring panel.",
+            "heading": "Plug in. Choose a routine. Leave.",
+            "body": "No installation, no wiring, no monitoring contract. Kevin needs a power socket, a window that faces the street and a wall or ceiling for shadows.",
             "variant": "default"
           }
         },
@@ -30,43 +30,43 @@
           "type": "step",
           "settings": {
             "number": "1",
-            "title": "Plug & play",
-            "body": "Place Kevin near a visible window with a wall or ceiling for shadows. Connect the included power cable (approx. 3 m)—typical use around 9 watts."
+            "title": "Plug in and place",
+            "body": "Set Kevin near a window that is visible from outside, with a wall or ceiling behind it for shadows. Connect the power adapter. Three buttons on the device start the essentials without the app."
           }
         },
         "block_3": {
           "type": "step",
           "settings": {
             "number": "2",
-            "title": "Schedule or geo-fence",
-            "body": "Tell Kevin when to simulate presence—or let geo-fencing activate automatically the moment you leave, even for a short walk or coffee run."
+            "title": "Set a schedule or use geofencing",
+            "body": "In the Kevin app, set a weekly schedule once, or switch on geofencing so Kevin starts by itself when your phone leaves the area. Leaving in a hurry no longer matters."
           }
         },
         "block_4": {
           "type": "step",
           "settings": {
             "number": "3",
-            "title": "Stay believable",
-            "body": "Light, shadow, and sound play from local storage—not streamed from the cloud. Jammer-resilient protection when Wi-Fi security fails."
+            "title": "Your home looks lived-in",
+            "body": "Warm light, moving silhouettes and everyday sounds play from the 32 GB inside the device, varying for up to four weeks without repeating. Nothing streams from the cloud, so a jammed Wi-Fi changes nothing."
           }
         },
         "block_5": {
           "type": "stat_row",
           "settings": {
-            "stat_1_value": "60s",
-            "stat_1_label": "Typical setup time",
-            "stat_2_value": "9W",
+            "stat_1_value": "3",
+            "stat_1_label": "Buttons on the device, no app needed to start",
+            "stat_2_value": "9 W",
             "stat_2_label": "Typical power use",
-            "stat_3_value": "70+",
-            "stat_3_label": "Hours of simulations"
+            "stat_3_value": "32 GB",
+            "stat_3_label": "Scenes stored on the device"
           }
         },
         "block_6": {
           "type": "section_intro",
           "settings": {
-            "overline": "Real life",
-            "heading": "Built for how you actually leave home.",
-            "body": "Whether you commute, travel, or manage multiple properties—Kevin adapts to your routine.",
+            "overline": "Fits real life",
+            "heading": "Built for the way you actually leave the house.",
+            "body": "A daily commute, a weekend away, a second home you visit once a month: Kevin follows the routine you set.",
             "variant": "default"
           }
         },
@@ -74,43 +74,43 @@
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-persona-work.jpg",
-            "image_alt": "Activate Kevin via the app on your way to work",
-            "title": "Heading to work",
-            "body": "Activate Kevin via the app on your way out. While you focus on your day, Kevin makes it look like you are still at home."
+            "image_alt": "Kevin switches on when you leave for work",
+            "title": "Every working day",
+            "body": "Geofencing starts Kevin when you leave and stops it when you return. The house never has the dark, silent look that says nobody is home."
           }
         },
         "block_8": {
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-persona-travel.jpg",
-            "image_alt": "Schedule Kevin for holidays and weekend trips",
-            "title": "Weekends and holidays",
-            "body": "Schedule simulations in advance for getaways. Your home looks lived-in and cared for—even from thousands of miles away."
+            "image_alt": "Kevin on a holiday schedule",
+            "title": "Holidays and weekends",
+            "body": "Set the holiday schedule before you go. Evening after evening the light comes on, shadows move and the TV mutters, with no lamp on a timer at the same time every night."
           }
         },
         "block_9": {
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-persona-multi-property.jpg",
-            "image_alt": "Manage multiple Kevin devices in one app",
-            "title": "Multiple properties",
-            "body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app."
+            "image_alt": "Several Kevin devices managed in one app",
+            "title": "Second homes and rentals",
+            "body": "Put a Kevin in the chalet, the holiday flat or the office and manage them all from one app. Because scenes play locally, weak Wi-Fi on site is not a problem."
           }
         },
         "block_10": {
           "type": "section_intro",
           "settings": {
-            "overline": "Why it matters",
-            "heading": "Prevention beats reaction.",
-            "body": "Burglars avoid homes that look and sound lived-in. Most break-ins are opportunistic—they target places that appear empty, often in daylight, and take only minutes. A believable presence removes the easy opportunity.",
+            "overline": "Why it works",
+            "heading": "Burglars choose the easy, empty-looking house. Yours is not it.",
+            "body": "Most break-ins are opportunistic. A home that glows, moves and sounds occupied gets skipped for one that does not. Kevin makes that decision for them before the door is ever tested.",
             "variant": "dark"
           }
         },
         "block_11": {
           "type": "richtext",
           "settings": {
-            "title": "Works in homes, offices, and shops",
-            "body": "<p>Kevin simulates presence in apartments, houses, offices, shops, and warehouses. Place near a window or visible area, configure in the Kevin app, and let believable occupancy run from local storage.</p>"
+            "title": "Homes, flats, offices and shops",
+            "body": "<p>Kevin covers one room per device. Place it where the street looks in: the living room, a ground-floor window, a shop front after hours. Larger homes or several facades: add a second unit and manage both in the app.</p>"
           }
         }
       },

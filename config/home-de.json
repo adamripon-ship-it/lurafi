@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "headline": "Einbrecher meiden Häuser, die bewohnt wirken. Kevin macht Ihres zu einem davon.",
+    "lede": "Für Familien bei der Arbeit, Reisende, Zweitwohnungsbesitzer und alle, die allein leben: Ein Schweizer Gerät spielt Licht, bewegte Schatten und Alltagsgeräusche am Fenster – ohne Kamera, ohne Mikrofon, und es läuft weiter, wenn das WLAN gestört wird.",
+    "cta_primary_label": "Kevin konfigurieren & kaufen",
+    "cta_secondary_label": "So funktioniert es",
+    "away_body": "Licht, Schatten und Geräusche wechseln automatisch – nie zweimal derselbe Abend.",
+    "privacy_body": "Die Simulationen laufen auf dem Gerät. Nichts wird gestreamt oder weitergegeben.",
+    "checkout_title": "Kostenloser Versand",
+    "checkout_body": "In der ganzen EU, der Schweiz, Norwegen und Island.",
+    "trust_1": "Entwickelt in der Schweiz",
+    "trust_2": "Rund 9 Watt",
+    "trust_3": "Jammer-resistent",
+    "sticky_cta_label": "Kevin konfigurieren & kaufen"
+  },
+  "problem": {
+    "overline": "Warum Häuser ausgewählt werden",
+    "heading": "Ein leer wirkendes Zuhause ist das leichteste Ziel in der Straße.",
+    "subheading": "Dunkle Fenster, eine Lampe an der Zeitschaltuhr, Stille im Flur – das prüft ein Gelegenheitstäter in Sekunden vom Gehweg aus. Kevin zeigt ihm das Gegenteil: ein Zuhause, das bewohnt aussieht und klingt – ob Sie bei der Arbeit sind, im Urlaub oder heute Abend allein zu Hause.",
+    "tile_1_title": "Schatten, die sich wie Menschen bewegen",
+    "tile_1_body": "Bewegte Silhouetten an Wand oder Decke, sichtbar durch die Vorhänge – das Lebenszeichen, nach dem ein Einbrecher sucht, bevor er ein Haus auswählt.",
+    "tile_2_title": "Der Klang eines normalen Abends",
+    "tile_2_body": "Gespräche, der Fernseher, Kochen, ein Hund, der an der Haustür bellt – abgespielt vom Gerät, sodass auch aus der Nähe eindeutig jemand zu Hause ist.",
+    "tile_3_title": "Zeitschaltuhren täuschen niemanden",
+    "tile_3_body": "Dieselbe Lampe zur selben Zeit, jeden Abend, wirkt wie Automatik. Kevin variiert Licht, Schatten und Geräusche bis zu vier Wochen lang ohne Wiederholung.",
+    "tile_4_title": "Die Ebene, die Ihrer Alarmanlage fehlt",
+    "tile_4_body": "Eine Alarmanlage reagiert, nachdem die Tür geprüft wurde. Kevin wirkt davor: Von der Straße aus sieht das Haus bewohnt aus, der Versuch beginnt gar nicht erst. Behalten Sie Ihre Alarmanlage – setzen Sie Prävention davor."
+  },
+  "mechanism": {
+    "subheading": "Ein Einbrecher beurteilt ein Haus in Sekunden – nach Licht, Bewegung und Geräuschen. Kevin liefert alle drei aus einem Gerät, damit Ihr Zuhause von der Straße bis zur Haustür bewohnt wirkt und Täter zu einem leichteren Ziel weiterziehen.",
+    "phase_1_body": "Warmes Licht wechselt wie echte Lampen und ein flackernder Fernseher – nie das starre An-Aus einer billigen Zeitschaltuhr.",
+    "phase_2_body": "Bewegte Silhouetten ziehen hinter den Vorhängen vorbei – genau das, was ein Einbrecher prüft, bevor er ein Ziel wählt.",
+    "phase_3_body": "Stimmen, ein Fernseher, Kochen und ein Hund an der Tür kommen vom Gerät – sodass auch aus der Nähe eindeutig jemand zu Hause ist."
+  },
+  "stats": {
+    "stat_1_value": "32 GB",
+    "stat_1_label": "Licht, Schatten und Geräusche, gespeichert auf dem Gerät",
+    "stat_2_value": "70+",
+    "stat_2_label": "Stunden integrierte Simulationen – bis zu vier Wochen ohne Wiederholung",
+    "stat_3_value": "9 W",
+    "stat_3_label": "Typischer Stromverbrauch",
+    "stat_4_value": "0",
+    "stat_4_label": "Kameras oder Mikrofone",
+    "badge_1": "Kein Überwachungs-Abo",
+    "badge_2": "Entwickelt und designt in der Schweiz",
+    "badge_3": "Spielt lokal – jammer-resistent"
+  },
+  "jammer": {
+    "heading": "Jammer machen Kameras blind. Kevin spielt weiter.",
+    "subheading": "Billige Störsender trennen Kameras und App-Alarme vom Netz. Kevin spielt jede Simulation aus dem eigenen Speicher – keine Cloud, kein Signal, keine Lücke.",
+    "col_1_title": "Eine Kamera",
+    "col_1_body": "Streams brechen ab, Meldungen kommen nie an. Eine gestörte Kamera schützt niemanden – sie zeichnet nur nichts auf.",
+    "col_2_body": "Licht, Schatten und Geräusche laufen aus dem lokalen Speicher weiter – das Haus lässt keinen Takt aus."
+  },
+  "app": {
+    "heading": "Einmal einrichten. Läuft von selbst.",
+    "subheading": "Wochenpläne, Geofencing, das Kevin beim Verlassen einschaltet, und jede Immobilie in einer App – damit Schutz nie vom Daran-Denken abhängt.",
+    "tile_1_title": "Pläne, die zu Ihrer Woche passen",
+    "tile_1_body": "Wochenenden, Urlaub oder die tägliche Routine einmal festlegen. Kevin folgt dem Plan, während Sie Ihr Leben leben.",
+    "tile_2_title": "Geofencing",
+    "tile_2_body": "Verlassen Sie das Haus, startet Kevin von selbst, sobald Ihr Telefon die Umgebung verlässt – kein Tippen, keine Erinnerung.",
+    "tile_3_title": "Ihre eigenen Haushaltsgeräusche",
+    "tile_3_body": "Nehmen Sie das Abendessen, die Kinder, den Hund auf. Kevin mischt Ihre Aufnahmen mit seinen Szenen, damit Ihr Zuhause wie Ihr Zuhause klingt.",
+    "tile_4_title": "Jede Immobilie in einer App",
+    "tile_4_body": "Zweitwohnung, Ferienwohnung, Büro: Stellen Sie in jede einen Kevin und verwalten Sie alle vom Telefon aus."
+  },
+  "authority": {
+    "subheading": "Kevin ist für die Stunden da, in denen ein Zuhause wirklich leer ist – und für die Nächte, in denen jemand allein zu Hause ist.",
+    "reason_1_body": "Einbrecher wählen leichte, leere Ziele. Ein Haus, das leuchtet, sich bewegt und spricht, wird übersprungen.",
+    "reason_2_body": "Chalets, Ferienwohnungen und Boote wirken zwischen Ihren Besuchen glaubwürdig bewohnt.",
+    "reason_3_title": "Nie „allein zu Haus“",
+    "reason_3_body": "Für einen allein lebenden Elternteil oder die Tochter in ihrer ersten Wohnung: Stimmen, Bewegung und ein Hund – damit das Zuhause nie wie ein leichtes Ziel aussieht.",
+    "quote": "The small Kevin.3 is unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show.",
+    "quote_author": "Michael Restin, Galaxus",
+    "quote_source": "Produkttest, 9. Januar 2026"
+  },
+  "audience": {
+    "subheading": "Kevin zieht dort ein, wo das Leben gerade auszieht – für einen Abend, eine Saison oder ein Semester."
+  },
+  "pricing": {
+    "heading": "Eine Zahlung. Keine Überwachungsgebühr. Für immer Ihres.",
+    "subheading": "Kaufen Sie Kevin einmalig: 70+ Stunden Simulationen, lebenslange Software-Updates, 3 Jahre Schweizer Garantie, 30 Tage Rückgaberecht und kostenloser Versand in der ganzen EU.",
+    "buy_tagline": "Einmaliger Kauf. Alle Updates inklusive.",
+    "buy_cta": "Kevin konfigurieren & kaufen"
+  },
+  "specs": {
+    "heading": "Plug-and-play. 9 Watt. Keine Kamera, kein Mikrofon."
+  },
+  "cta": {
+    "heading": "Lassen Sie Ihr Zuhause heute Abend nicht leer wirken.",
+    "subheading": "Kevin einstecken, ans Fenster stellen – und von der Straße aus ist jemand zu Hause. Kostenloser Versand in der ganzen EU, 30 Tage Rückgaberecht, 3 Jahre Schweizer Garantie.",
+    "primary_cta": "Kevin konfigurieren & kaufen",
+    "secondary_cta": "So funktioniert es"
+  }
+}

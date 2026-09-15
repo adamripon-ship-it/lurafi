@@ -94,9 +94,8 @@ const en = {
   },
   seo: {
     home: {
-      title: 'Kevin® — Swiss AI Presence Simulator That Deters Burglars | Mitipi',
-      description:
-        'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play.'
+      title: 'Kevin® — Swiss presence simulator that makes your home look lived-in | Mitipi',
+      description: 'Kevin® plays light, moving shadows and everyday sounds by the window, so burglars see a lived-in home and move on. No camera, no microphone, keeps working when Wi-Fi is jammed. One-time purchase, free EU shipping.'
     },
     org_description:
       'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in and burglars move on. No cameras. No microphones. Plug and play.',
@@ -217,8 +216,8 @@ const en = {
     slide_1: {
       label: 'Everyone',
       eyebrow: 'For every home',
-      headline: 'Deter burglaries before they happen.',
-      lede: 'Kevin® simulates human presence with Swiss AI—light, shadow, and sound—so your home looks lived-in from outside. No cameras. No microphones. Plug and play.',
+      headline: 'Deter burglaries before they start.',
+      lede: 'Swiss presence simulation — light, shadow and sound — so your home looks lived-in from outside. No cameras. No microphones. Plug and play.',
       image_alt: 'Kevin® presence simulator — Swiss-engineered Kevin 3 device',
       callout_1_eyebrow: 'Plug and play',
       callout_1_title: '9 watts',
@@ -398,18 +397,18 @@ const en = {
       'Kevin® simulates human presence with Swiss AI. Light, shadow, and sound make your home look and sound lived-in—burglars move on. No cameras. No microphones.'
   },
   faq: {
-    q1: 'What is Kevin?',
-    a1: 'Kevin® is a Swiss-engineered AI presence simulator. It uses light, shadow, and sound to make your home look and sound lived-in when you are away—in homes, flats, offices, and holiday properties.',
-    q2: 'How is Kevin different from alarms and cameras?',
-    a2: 'Alarms react after entry. Cameras record evidence and can fail when Wi-Fi is jammed. Kevin focuses on prevention—believable occupancy from outside before anyone tests the door.',
-    q3: 'Does Kevin use cameras or microphones?',
-    a3: 'No. Kevin simulates presence with light, shadow, and sound only. No cameras and no microphones. Simulations are stored locally on the device, not streamed from the cloud or shared with third parties.',
-    q4: 'How do I buy Kevin?',
-    a4: 'Choose your color on the configure page, then continue to secure Shopify checkout with free delivery across Europe and a 3-year Swiss warranty.',
-    q5: 'Does Kevin work if Wi-Fi is jammed?',
-    a5: 'Yes. Core simulations play from local storage on the device. Kevin keeps projecting light, shadow, and sound even when burglars use jamming devices to disable Wi-Fi cameras and alarm systems.',
+    q1: 'What does Kevin actually do?',
+    a1: 'Kevin is a Swiss-engineered presence simulator. Placed by a window, it plays warm light, moving human shadows and everyday sounds from its own storage, so from the street your home looks and sounds lived-in while you are away — in flats, houses, offices and holiday homes.',
+    q2: 'How is it different from an alarm or a camera?',
+    a2: 'An alarm reacts after someone tests the door; a camera records what already happened and stops working when Wi-Fi is jammed. Kevin works before any of that: it makes your home look occupied so the attempt never starts. Keep your alarm — Kevin is the prevention layer in front of it.',
+    q3: 'Does Kevin watch or listen?',
+    a3: 'No. Kevin has no camera and no microphone. It only projects light, shadow and sound. Simulations are stored on the device, not streamed from the cloud or shared with anyone.',
+    q4: 'What is included, and what does it cost to run?',
+    a4: 'One payment for the device, the app, 70+ hours of simulations and lifetime software updates. No monitoring subscription. Free shipping across the EU, Switzerland, Liechtenstein, Norway and Iceland, 30-day returns and a 3-year Swiss warranty.',
+    q5: 'Does it keep working if Wi-Fi is jammed or down?',
+    a5: 'Yes. Wi-Fi and Bluetooth are only used to set Kevin up and to install updates. Every simulation plays from the 32 GB inside the device, so light, shadow and sound continue even when burglars jam cameras and app alarms.',
     q6: 'Is the simulation really convincing?',
-    a6: 'Independent reviewer Galaxus called Kevin.3 “an unrivalled, easy-to-use all-in-one solution that delivers a truly spectacular show.” The effect is strongest where it matters: from outside, through curtains, at dusk.'
+    a6: 'Galaxus tested Kevin.3 in January 2026 and called it “unrivalled in that it\'s an easy-to-use, all-in-one solution that delivers a truly spectacular show.” The effect is strongest where it matters: from outside, through curtains, at dusk. Placement tips are in the setup guide.'
   },
   errors: {
     not_found_title: 'Page not found',
@@ -847,6 +846,11 @@ nl.hero = {
   checkout_title: 'Gratis bezorging',
   checkout_body: 'Veilig afrekenen via Shopify.'
 };
+// Owner-authored NL homepage copy (config/home-nl.json) overrides the inline nlHome defaults.
+try {
+  const nlHomeFile = JSON.parse(fs.readFileSync(path.join(root, 'config/home-nl.json'), 'utf8'));
+  for (const [sec, vals] of Object.entries(nlHomeFile)) nlHome[sec] = { ...(nlHome[sec] || {}), ...vals };
+} catch (_) { /* optional */ }
 nl.home = {};
 for (const [id, sec] of Object.entries(index.sections)) {
   nl.home[id] = { ...(en.home[id] || {}), ...nonBlankSectionSettings(sec), ...(nlHome[id] || {}) };
@@ -1070,3 +1074,31 @@ assertNoCountrySelector('snippets/language-selector.liquid', fs.readFileSync(pat
 console.log('Wrote locales:', Object.keys(enFlat).length, 'keys');
 console.log('Published storefront locales:', publishedCodes);
 console.log('Locale route map injected for language switcher');
+
+
+// ---------------------------------------------------------------------------
+// snippets/seo-locale-routes.liquid — generated route table for region-coded
+// hreflang alternates (see docs/messaging/01-url-architecture-hreflang.md).
+// One column per published locale; rows are page keys + product handles.
+// ---------------------------------------------------------------------------
+{
+  const langCfg = JSON.parse(fs.readFileSync(path.join(root, 'config/languages.json'), 'utf8'));
+  const pub = langCfg.locales.filter((l) => l.publish !== false);
+  const pageKeys = Object.keys(langCfg.pages);
+  const productKeys = Array.from(new Set(pub.flatMap((l) => Object.keys(l.products || {})))).filter((k) => k === 'kevin-plus' || k === 'kevin-front-cover');
+  const esc = (v) => String(v).replace(/'/g, "\\'");
+  const lines = ['{%- comment -%}GENERATED by scripts/build-locales.mjs — do not edit. Route table for snippets/seo-hreflang.liquid{%- endcomment -%}', '{%- liquid'];
+  lines.push(`  assign lurafi_route_locales = '${pub.map((l) => l.code).join('|')}' | split: '|'`);
+  lines.push(`  assign lurafi_route_primary = '${langCfg.primary}'`);
+  for (const l of pub) {
+    const pages = pageKeys.map((k) => l.pages?.[k]?.handle || langCfg.pages[k].handle);
+    const products = productKeys.map((k) => l.products?.[k]?.handle || k);
+    lines.push(`  assign lurafi_prefix_${l.code} = '${l.urlPrefix || ''}'`);
+    lines.push(`  assign lurafi_pages_${l.code} = '${esc(pages.join('|'))}' | split: '|'`);
+    lines.push(`  assign lurafi_products_${l.code} = '${esc(products.join('|'))}' | split: '|'`);
+    lines.push(`  assign lurafi_hreflang_${l.code} = '${(l.hreflang || [l.code]).join('|')}' | split: '|'`);
+  }
+  lines.push('-%}', '');
+  fs.writeFileSync(path.join(root, 'snippets/seo-locale-routes.liquid'), lines.join('\n'));
+  console.log('Generated snippets/seo-locale-routes.liquid');
+}

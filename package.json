@@ -16,7 +16,7 @@
     "locales:translate": "node scripts/translate-locales.mjs",
     "locales:translate:claude": "node scripts/translate-locales.mjs --provider=claude --include-nl",
     "locales:translate:customers": "node scripts/translate-locales.mjs --prefix=customers.,header.",
-    "predeploy": "npm run locales:build && npm run locales:sync && npm run geo:generate && npm run assets:audit:ci && npm run theme:check",
+    "predeploy": "npm run locales:build && npm run locales:sync && npm run locales:apply-i18n && npm run geo:generate && npm run assets:audit:ci && npm run theme:check",
     "geo:generate": "node scripts/generate-sitemap-ai.mjs && node scripts/generate-llms-assets.mjs",
     "cms:seed": "node scripts/seed-theme-content.mjs --write --include-blocks",
     "cms:seed:dry": "node scripts/seed-theme-content.mjs",
@@ -48,7 +48,10 @@
     "cms:upload-assets": "node scripts/upload-assets.mjs",
     "cms:provision": "node scripts/provision-cms.mjs --apply",
     "cms:provision:dry": "node scripts/provision-cms.mjs",
-    "i18n:audit": "node scripts/audit-translations.mjs"
+    "i18n:audit": "node scripts/audit-translations.mjs",
+    "locales:apply-i18n": "node scripts/apply-home-i18n.mjs",
+    "cms:page-copy-i18n": "node scripts/sync-page-copy-i18n.mjs",
+    "cms:product-copy": "node scripts/sync-product-copy.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

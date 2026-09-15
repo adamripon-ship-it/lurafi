@@ -1,0 +1,28 @@
+{
+  "faq": {
+    "q1": "Co Kevin vlastně dělá?",
+    "a1": "Kevin je simulátor přítomnosti vyvinutý ve Švýcarsku. Umístěný u okna přehrává z vlastní paměti teplé světlo, pohybující se lidské stíny a běžné zvuky domácnosti, takže váš domov z ulice vypadá i zní obydleně, když jste pryč – v bytech, domech, kancelářích i rekreačních objektech.",
+    "q2": "Čím se liší od alarmu nebo kamery?",
+    "a2": "Alarm reaguje, až když někdo zkusí dveře; kamera nahrává, co se už stalo, a přestane fungovat, když je Wi-Fi rušená. Kevin působí předtím: díky němu vypadá domov obydleně, takže pokus ani nezačne. Alarm si nechte – Kevin je vrstva prevence před ním.",
+    "q3": "Sleduje nebo poslouchá mě Kevin?",
+    "a3": "Ne. Kevin nemá kameru ani mikrofon. Pouze promítá světlo, stín a zvuk. Simulace jsou uložené v zařízení, nestreamují se z cloudu a s nikým se nesdílejí.",
+    "q4": "Co je v ceně a kolik stojí provoz?",
+    "a4": "Jedna platba za zařízení, aplikaci, 70+ hodin simulací a doživotní aktualizace softwaru. Žádné předplatné monitoringu. Doprava zdarma po celé EU, ve Švýcarsku, Lichtenštejnsku, Norsku a na Islandu, vrácení do 30 dnů a 3letá švýcarská záruka.",
+    "q5": "Funguje dál, když je Wi-Fi rušená nebo vypadne?",
+    "a5": "Ano. Wi-Fi a Bluetooth slouží jen k nastavení a aktualizacím. Každá simulace se přehrává z 32 GB v zařízení, takže světlo, stín a zvuk pokračují, i když zloději ruší kamery a aplikační alarmy.",
+    "q6": "Je simulace opravdu přesvědčivá?",
+    "a6": "Galaxus testoval Kevina.3 v lednu 2026 a označil ho za „unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show“. Efekt je nejsilnější tam, kde na tom záleží: zvenku, přes záclony, za soumraku. Tipy na umístění najdete v návodu k instalaci."
+  },
+  "seo": {
+    "home": {
+      "title": "Kevin® — Švýcarský simulátor přítomnosti, díky kterému váš domov vypadá obydleně | Mitipi",
+      "description": "Kevin® přehrává u okna světlo, pohybující se stíny a běžné zvuky domácnosti, takže zloději vidí obydlený dům a jdou dál. Bez kamery a mikrofonu, funguje i při rušené Wi-Fi. Jednorázový nákup, doprava zdarma po EU."
+    }
+  },
+  "hero": {
+    "slide_1": {
+      "headline": "Odraďte zloděje dřív, než začnou.",
+      "lede": "Švýcarská simulace přítomnosti – světlo, stín a zvuk – aby váš domov zvenku vypadal obydleně. Bez kamer. Bez mikrofonů. Zapojit a používat."
+    }
+  }
+}

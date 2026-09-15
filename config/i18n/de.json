@@ -1,0 +1,28 @@
+{
+  "faq": {
+    "q1": "Was macht Kevin genau?",
+    "a1": "Kevin ist ein in der Schweiz entwickelter Anwesenheitssimulator. Am Fenster platziert, spielt er warmes Licht, bewegte menschliche Schatten und Alltagsgeräusche aus dem eigenen Speicher – so wirkt Ihr Zuhause von der Straße aus bewohnt, während Sie weg sind: in Wohnungen, Häusern, Büros und Ferienhäusern.",
+    "q2": "Was unterscheidet ihn von einer Alarmanlage oder Kamera?",
+    "a2": "Eine Alarmanlage reagiert, nachdem jemand die Tür geprüft hat; eine Kamera zeichnet auf, was bereits passiert ist, und fällt aus, wenn das WLAN gestört wird. Kevin wirkt davor: Er lässt Ihr Zuhause bewohnt aussehen, damit der Versuch gar nicht erst beginnt. Behalten Sie Ihre Alarmanlage – Kevin ist die Präventionsebene davor.",
+    "q3": "Beobachtet oder belauscht Kevin mich?",
+    "a3": "Nein. Kevin hat keine Kamera und kein Mikrofon. Er projiziert nur Licht, Schatten und Geräusche. Die Simulationen sind auf dem Gerät gespeichert, werden nicht aus der Cloud gestreamt und mit niemandem geteilt.",
+    "q4": "Was ist enthalten und was kostet der Betrieb?",
+    "a4": "Eine Zahlung für Gerät, App, 70+ Stunden Simulationen und lebenslange Software-Updates. Kein Überwachungs-Abo. Kostenloser Versand in der ganzen EU, der Schweiz, Liechtenstein, Norwegen und Island, 30 Tage Rückgaberecht und 3 Jahre Schweizer Garantie.",
+    "q5": "Funktioniert er weiter, wenn das WLAN gestört ist oder ausfällt?",
+    "a5": "Ja. WLAN und Bluetooth dienen nur der Einrichtung und für Updates. Jede Simulation läuft aus den 32 GB im Gerät, sodass Licht, Schatten und Geräusche weiterlaufen – auch wenn Einbrecher Kameras und App-Alarme stören.",
+    "q6": "Ist die Simulation wirklich überzeugend?",
+    "a6": "Galaxus hat Kevin.3 im Januar 2026 getestet und nannte ihn „unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show“. Am stärksten wirkt der Effekt dort, wo es zählt: von außen, durch die Vorhänge, in der Dämmerung. Tipps zur Platzierung finden Sie in der Einrichtungsanleitung."
+  },
+  "seo": {
+    "home": {
+      "title": "Kevin® — Schweizer Anwesenheitssimulator, der Ihr Zuhause bewohnt wirken lässt | Mitipi",
+      "description": "Kevin® spielt Licht, bewegte Schatten und Alltagsgeräusche am Fenster, damit Einbrecher ein bewohntes Zuhause sehen und weiterziehen. Keine Kamera, kein Mikrofon, läuft auch bei gestörtem WLAN. Einmaliger Kauf, kostenloser Versand in der EU."
+    }
+  },
+  "hero": {
+    "slide_1": {
+      "headline": "Einbrüche verhindern, bevor sie beginnen.",
+      "lede": "Schweizer Anwesenheitssimulation – Licht, Schatten und Geräusche – damit Ihr Zuhause von außen bewohnt wirkt. Keine Kameras. Keine Mikrofone. Plug-and-play."
+    }
+  }
+}

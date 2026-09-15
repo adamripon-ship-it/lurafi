@@ -1,50 +1,127 @@
 {%- comment -%}
-  hreflang alternates for published storefront languages.
-  Pairs with canonical in layout/theme.liquid.
+  Region-coded hreflang cluster for every published storefront language.
+  Resolves the current page/product to its translated handle per locale using the
+  generated route table (snippets/seo-locale-routes.liquid), so each alternate URL
+  matches that locale's canonical exactly (bidirectional, ISO 639-1 + ISO 3166-1,
+  x-default = primary language). Fallback: same path under each locale prefix.
 {%- endcomment -%}
+{%- render 'seo-locale-routes' -%}
 {%- liquid
   assign lurafi_seo_origin = request.origin
-  assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
-  assign path_suffix = request.path
+  assign current_code = request.locale.iso_code | split: '-' | first | downcase
+  assign suffix = request.path
   assign locale_root = request.locale.root_url
-  if locale_root != '/' and path_suffix contains locale_root
-    assign path_suffix = path_suffix | remove_first: locale_root
+  if locale_root != '/' and suffix contains locale_root
+    assign suffix = suffix | remove_first: locale_root
   endif
-  if path_suffix == blank
-    assign path_suffix = '/'
+  if suffix == blank
+    assign suffix = '/'
   endif
-  unless path_suffix contains '/'
-    assign path_suffix = '/' | append: path_suffix
+  unless suffix contains '/'
+    assign suffix = '/' | append: suffix
   endunless
 
-  assign x_default_href = lurafi_seo_origin | append: path_suffix
-  assign published_hreflang_count = 0
-  for language in localization.available_languages
-    assign lang_root = language.iso_code | split: '-' | first | downcase
-    assign lang_token = ',' | append: lang_root | append: ','
-    unless lurafi_published_locale_csv contains lang_token
-      continue
-    endunless
-    assign published_hreflang_count = published_hreflang_count | plus: 1
-    if language.primary
-      assign x_default_href = lurafi_seo_origin | append: language.root_url | append: path_suffix
+  assign route_kind = ''
+  assign route_index = -1
+  assign parts = suffix | split: '/'
+  if parts.size >= 3
+    assign seg_type = parts[1]
+    assign seg_handle = parts[2]
+    if seg_type == 'pages' or seg_type == 'products'
+      assign route_kind = seg_type
+      for code in lurafi_route_locales
+        if code != current_code
+          continue
+        endif
+        if seg_type == 'pages'
+          case code
+            when 'en'
+              assign list = lurafi_pages_en
+            when 'nl'
+              assign list = lurafi_pages_nl
+            when 'fr'
+              assign list = lurafi_pages_fr
+            when 'de'
+              assign list = lurafi_pages_de
+            when 'cs'
+              assign list = lurafi_pages_cs
+          endcase
+        else
+          case code
+            when 'en'
+              assign list = lurafi_products_en
+            when 'nl'
+              assign list = lurafi_products_nl
+            when 'fr'
+              assign list = lurafi_products_fr
+            when 'de'
+              assign list = lurafi_products_de
+            when 'cs'
+              assign list = lurafi_products_cs
+          endcase
+        endif
+        for h in list
+          if h == seg_handle
+            assign route_index = forloop.index0
+            break
+          endif
+        endfor
+      endfor
     endif
-  endfor
+  endif
+  if route_index < 0
+    assign route_kind = ''
+  endif
 -%}
-{%- if published_hreflang_count > 1 -%}
-  {%- for language in localization.available_languages -%}
-    {%- assign lang_root = language.iso_code | split: '-' | first | downcase -%}
-    {%- assign lang_token = ',' | append: lang_root | append: ',' -%}
-    {%- if lurafi_published_locale_csv contains lang_token -%}
-    {%- assign lang_href = lurafi_seo_origin | append: language.root_url | append: path_suffix -%}
-    {%- if request.search != blank -%}
-      {%- assign lang_href = lang_href | append: request.search -%}
-    {%- endif -%}
-    <link rel="alternate" hreflang="{{ language.iso_code }}" href="{{ lang_href }}">
-    {%- endif -%}
+{%- for code in lurafi_route_locales -%}
+  {%- liquid
+    case code
+      when 'en'
+        assign prefix = lurafi_prefix_en
+        assign pages_list = lurafi_pages_en
+        assign products_list = lurafi_products_en
+        assign codes = lurafi_hreflang_en
+      when 'nl'
+        assign prefix = lurafi_prefix_nl
+        assign pages_list = lurafi_pages_nl
+        assign products_list = lurafi_products_nl
+        assign codes = lurafi_hreflang_nl
+      when 'fr'
+        assign prefix = lurafi_prefix_fr
+        assign pages_list = lurafi_pages_fr
+        assign products_list = lurafi_products_fr
+        assign codes = lurafi_hreflang_fr
+      when 'de'
+        assign prefix = lurafi_prefix_de
+        assign pages_list = lurafi_pages_de
+        assign products_list = lurafi_products_de
+        assign codes = lurafi_hreflang_de
+      when 'cs'
+        assign prefix = lurafi_prefix_cs
+        assign pages_list = lurafi_pages_cs
+        assign products_list = lurafi_products_cs
+        assign codes = lurafi_hreflang_cs
+    endcase
+    if route_kind == 'pages'
+      assign alt_path = '/pages/' | append: pages_list[route_index]
+    elsif route_kind == 'products'
+      assign alt_path = '/products/' | append: products_list[route_index]
+    else
+      assign alt_path = suffix
+    endif
+    if alt_path == '/' and prefix != ''
+      assign alt_path = ''
+    endif
+    assign alt_href = lurafi_seo_origin | append: prefix | append: alt_path
+    if request.search != blank
+      assign alt_href = alt_href | append: request.search
+    endif
+    if code == lurafi_route_primary
+      assign x_default_href = alt_href
+    endif
+  -%}
+  {%- for hl in codes -%}
+    <link rel="alternate" hreflang="{{ hl }}" href="{{ alt_href }}">
   {%- endfor -%}
-  {%- if request.search != blank -%}
-    {%- assign x_default_href = x_default_href | append: request.search -%}
-  {%- endif -%}
-  <link rel="alternate" hreflang="x-default" href="{{ x_default_href }}">
-{%- endif -%}
+{%- endfor -%}
+<link rel="alternate" hreflang="x-default" href="{{ x_default_href }}">

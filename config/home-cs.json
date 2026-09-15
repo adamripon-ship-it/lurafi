@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "headline": "Zloději se vyhýbají domům, které vypadají obydleně. Kevin z toho vašeho udělá jeden z nich.",
+    "lede": "Pro rodiny v práci, cestovatele, majitele druhého bydlení i všechny, kdo žijí sami: jedno švýcarské zařízení u okna přehrává světlo, pohybující se stíny a běžné zvuky domácnosti – bez kamery, bez mikrofonu, a běží dál, i když je Wi-Fi rušená.",
+    "cta_primary_label": "Sestavit a koupit Kevina",
+    "cta_secondary_label": "Jak to funguje",
+    "away_body": "Světlo, stín a zvuk se mění automaticky – nikdy dvakrát stejný večer.",
+    "privacy_body": "Simulace běží v zařízení. Nic se nestreamuje ani nesdílí.",
+    "checkout_title": "Doprava zdarma",
+    "checkout_body": "Po celé EU, ve Švýcarsku, Norsku a na Islandu.",
+    "trust_1": "Vyvinuto ve Švýcarsku",
+    "trust_2": "Přibližně 9 W",
+    "trust_3": "Odolný vůči rušičkám",
+    "sticky_cta_label": "Sestavit a koupit Kevina"
+  },
+  "problem": {
+    "overline": "Proč si zloději vybírají",
+    "heading": "Dům, který vypadá prázdně, je nejsnadnější cíl v ulici.",
+    "subheading": "Tmavá okna, jedna lampa na časovači, ticho na chodbě – to si příležitostný zloděj ověří během pár sekund z chodníku. Kevin mu ukáže opak: domov, který vypadá i zní obydleně, ať jste v práci, na dovolené, nebo dnes večer doma sami.",
+    "tile_1_title": "Stíny, které se pohybují jako lidé",
+    "tile_1_body": "Pohybující se siluety na stěně nebo stropě, viditelné přes záclony – známka života, kterou zloděj hledá, než si vybere dům.",
+    "tile_2_title": "Zvuk obyčejného večera",
+    "tile_2_body": "Rozhovor, televize, vaření, pes, který štěká na zvonek – přehráváno ze zařízení, takže i zblízka je jasné, že je někdo doma.",
+    "tile_3_title": "Časovače nikoho neoklamou",
+    "tile_3_body": "Stejná lampa ve stejnou dobu každý večer působí jako automat. Kevin mění světlo, stín a zvuk až čtyři týdny bez opakování.",
+    "tile_4_title": "Vrstva, která vašemu alarmu chybí",
+    "tile_4_body": "Alarm reaguje, až když někdo zkusí dveře. Kevin působí předtím: z ulice dům vypadá obydleně, takže pokus ani nezačne. Alarm si nechte – dejte před něj prevenci."
+  },
+  "mechanism": {
+    "subheading": "Zloděj posoudí dům během sekund – podle světla, pohybu a zvuku. Kevin dodá všechny tři z jednoho zařízení, takže váš domov vypadá obydleně od ulice až ke dveřím a zloděj jde k snazšímu cíli.",
+    "phase_1_body": "Teplé světlo se mění jako skutečné lampy a blikající televize – nikdy strohé zapnuto-vypnuto levného časovače.",
+    "phase_2_body": "Pohybující se siluety procházejí za záclonami – přesně to, co zloděj kontroluje, než si vybere cíl.",
+    "phase_3_body": "Hlasy, televize, vaření a pes u dveří zní ze zařízení – takže i zblízka je jasné, že je někdo doma."
+  },
+  "stats": {
+    "stat_1_value": "32 GB",
+    "stat_1_label": "Světla, stínů a zvuků uložených v zařízení",
+    "stat_2_value": "70+",
+    "stat_2_label": "Hodin vestavěných simulací – až čtyři týdny bez opakování",
+    "stat_3_value": "9 W",
+    "stat_3_label": "Typická spotřeba",
+    "stat_4_value": "0",
+    "stat_4_label": "Kamer nebo mikrofonů",
+    "badge_1": "Žádné předplatné monitoringu",
+    "badge_2": "Vyvinuto a navrženo ve Švýcarsku",
+    "badge_3": "Přehrává lokálně – odolný vůči rušičkám"
+  },
+  "jammer": {
+    "heading": "Rušičky oslepí kamery. Kevin hraje dál.",
+    "subheading": "Levné rušičky odpojí kamery a aplikační alarmy od sítě. Kevin přehrává každou simulaci z vlastní paměti – žádný cloud, žádný signál, žádná mezera.",
+    "col_1_title": "Kamera",
+    "col_1_body": "Stream se zastaví, upozornění nikdy nedorazí. Rušená kamera nikoho nechrání – jen nic nenahrává.",
+    "col_2_body": "Světlo, stín a zvuk pokračují z lokální paměti – dům nevynechá ani vteřinu."
+  },
+  "app": {
+    "heading": "Nastavte jednou. Běží sám.",
+    "subheading": "Týdenní plány, geofencing, který Kevina zapne, když odejdete, a všechny nemovitosti v jedné aplikaci – ochrana nikdy nezávisí na tom, jestli si vzpomenete.",
+    "tile_1_title": "Plány podle vašeho týdne",
+    "tile_1_body": "Nastavte jednou víkendy, dovolenou nebo denní rutinu. Kevin se drží plánu, zatímco vy žijete svůj život.",
+    "tile_2_title": "Geofencing",
+    "tile_2_body": "Odejděte z domu a Kevin se spustí sám, jakmile váš telefon opustí okolí – žádné klepání, žádné připomínky.",
+    "tile_3_title": "Vaše vlastní zvuky domácnosti",
+    "tile_3_body": "Nahrajte večeři, děti, psa. Kevin smíchá vaše nahrávky se svými scénami, aby váš domov zněl jako váš domov.",
+    "tile_4_title": "Každá nemovitost v jedné aplikaci",
+    "tile_4_body": "Druhé bydlení, rekreační byt, kancelář: do každého dejte Kevina a spravujte je všechny z telefonu."
+  },
+  "authority": {
+    "subheading": "Kevin je tu pro hodiny, kdy je domov opravdu prázdný – a pro noci, kdy je někdo doma sám.",
+    "reason_1_body": "Zloději si vybírají snadné, prázdné cíle. Dům, který svítí, hýbe se a mluví, přeskočí.",
+    "reason_2_body": "Chaty, rekreační byty a lodě zůstávají mezi vašimi návštěvami věrohodně obydlené.",
+    "reason_3_title": "Nikdy „sám doma“",
+    "reason_3_body": "Pro rodiče, který žije sám, nebo dceru v prvním bytě: hlasy, pohyb a pes – aby domov nikdy nevypadal jako snadný cíl.",
+    "quote": "The small Kevin.3 is unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show.",
+    "quote_author": "Michael Restin, Galaxus",
+    "quote_source": "Test produktu, 9. ledna 2026"
+  },
+  "audience": {
+    "subheading": "Kevin se nastěhuje tam, odkud se život na chvíli odstěhoval – na večer, sezónu nebo semestr."
+  },
+  "pricing": {
+    "heading": "Jedna platba. Žádné poplatky za monitoring. Navždy váš.",
+    "subheading": "Kupte Kevina najednou: 70+ hodin simulací, doživotní aktualizace softwaru, 3letá švýcarská záruka, vrácení do 30 dnů a doprava zdarma po celé EU.",
+    "buy_tagline": "Jednorázový nákup. Všechny aktualizace v ceně.",
+    "buy_cta": "Sestavit a koupit Kevina"
+  },
+  "specs": {
+    "heading": "Zapojit a používat. 9 W. Bez kamery a mikrofonu."
+  },
+  "cta": {
+    "heading": "Nenechte svůj domov dnes večer vypadat prázdně.",
+    "subheading": "Zapojte Kevina, postavte ho k oknu a z ulice je někdo doma. Doprava zdarma po celé EU, vrácení do 30 dnů, 3letá švýcarská záruka.",
+    "primary_cta": "Sestavit a koupit Kevina",
+    "secondary_cta": "Jak to funguje"
+  }
+}

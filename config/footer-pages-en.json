@@ -2,430 +2,495 @@
   "features": {
     "handle": "features",
     "title": "Features",
-    "overline": "Product",
-    "heading": "Light, shadow, and sound—believable presence without surveillance.",
-    "lede": "Kevin® simulates human activity the way burglars actually look for it: warm light through curtains, moving shadows, and everyday household sounds. No cameras. No microphones. Everything plays from local storage on the device.",
+    "overline": "What Kevin does",
+    "heading": "Light, moving shadows and everyday sounds — so from the street, someone is home.",
+    "lede": "For anyone whose home sits empty during the day, on holiday or between visits: Kevin plays the three signs of life a burglar checks for, from one plug-in device. No camera, no microphone, and it keeps running when Wi-Fi is jammed.",
     "theme": "white",
     "image_asset": "kevin-hero-product-front.png",
-    "image_alt": "Kevin® device — front view, studio product photo",
+    "image_alt": "Kevin 3 presence simulator, front view",
+    "seo": {
+      "title": "Kevin features: light, moving shadows and sound from one device | Mitipi",
+      "description": "What Kevin does: warm light scenes, patented moving shadows and 70+ hours of household sounds from 32 GB on-device storage. No camera, no microphone, jammer-resilient. Swiss-engineered, 9 W."
+    },
     "blocks": [
       {
         "type": "section_intro",
-        "overline": "How Kevin works",
-        "heading": "Three layers of believable presence.",
-        "body": "Kevin® simulates people at home using AI-driven light, shadow, and sound—visible and audible from outside, exactly where burglars look first."
+        "overline": "Three signs of life",
+        "heading": "Burglars check for light, movement and sound. Kevin gives them all three.",
+        "body": "Every scene plays from the device itself and is visible and audible where it counts: from the pavement, through the curtains, at the front door."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-feature-solution-light.jpg",
-        "image_alt": "Kevin® light scenarios projected through a window",
-        "title": "Light scenarios",
-        "body": "Warm, changing scenes make rooms look actively used—not simply lit. Kevin adapts rhythm for day and night deterrence."
+        "image_alt": "Kevin light scene visible through a window",
+        "title": "Light that behaves like people",
+        "body": "Warm light shifts the way real lamps and a flickering TV do. Not one lamp on a timer at the same time every night, but a room that looks in use."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-feature-solution-shadows.jpg",
-        "image_alt": "Kevin® moving shadow simulation visible through curtains",
-        "title": "Moving shadows",
-        "body": "Projected silhouettes suggest one or more people inside. Visible through curtains—exactly where burglars look first."
+        "image_alt": "Moving shadow silhouette projected on a wall behind curtains",
+        "title": "Shadows that move",
+        "body": "Patented moving silhouettes cross the wall or ceiling behind your curtains. From outside it reads as one or more people walking through the room."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-feature-problem-lights.jpg",
-        "image_alt": "Kevin® everyday household sound simulation",
-        "title": "Everyday sounds",
-        "body": "70+ hours of built-in simulations plus your own uploads. AI-generated household sounds adapt to feel personal and less repetitive."
+        "image_alt": "Kevin plays everyday household sounds",
+        "title": "The sounds of a normal evening",
+        "body": "Conversation, the TV, cooking, a dog that barks when the doorbell rings. 70+ hours of built-in scenes, up to four weeks without repeating, plus your own recordings. Built-in voices are in English, German and Swiss German."
       },
       {
         "type": "stat_row",
         "stats": [
-          { "value": "70+", "label": "Hours of built-in simulations" },
-          { "value": "9W", "label": "Typical power use" },
-          { "value": "100%", "label": "Privacy — no cameras or mics" }
+          {
+            "value": "70+",
+            "label": "Hours of built-in simulations"
+          },
+          {
+            "value": "9 W",
+            "label": "Typical power use"
+          },
+          {
+            "value": "0",
+            "label": "Cameras or microphones"
+          }
         ]
       },
       {
         "type": "section_intro",
-        "overline": "Prevention-first",
-        "heading": "Deterrence before break-in.",
-        "body": "Alarms react after entry. Cameras record evidence and can fail when Wi-Fi is jammed. Kevin focuses on believable occupancy from outside—before anyone tests the door.",
-        "variant": "dark"
+        "variant": "dark",
+        "overline": "Before, not after",
+        "heading": "An alarm reacts once the door is tested. Kevin works before anyone tries.",
+        "body": "Cameras record what already happened and can go dark when Wi-Fi is jammed. Kevin makes the house look occupied from outside, so the attempt never starts. Keep your alarm; put prevention in front of it."
       },
       {
         "type": "media_split",
         "image_asset": "kevin-feature-problem-cameras.jpg",
-        "image_alt": "Wi-Fi jamming disables cameras — Kevin keeps simulating locally",
-        "title": "Jammer-resilient by design",
-        "body": "Even when burglars use jamming devices to disable Wi-Fi cameras and alarm systems, Kevin keeps projecting believable presence. Simulations are stored locally on the device—not streamed from the cloud."
+        "image_alt": "Jammed Wi-Fi cameras go dark while Kevin keeps playing from local storage",
+        "title": "Keeps playing when Wi-Fi is jammed",
+        "body": "Cheap jamming devices cut cameras and app alarms off the network. Kevin stores every scene on 32 GB inside the device and only uses Wi-Fi or Bluetooth for setup and updates. Light, shadow and sound continue without a signal."
       },
       {
         "type": "media_split",
+        "reverse": true,
         "image_asset": "kevin-persona-alarm-complement.jpg",
-        "image_alt": "Kevin® complements an existing alarm system",
-        "title": "Complements alarms and cameras",
-        "body": "Alarms detect intrusions—Kevin helps prevent them. It adds realistic presence simulation so burglars think twice before approaching. An extra layer that works alongside what you already have.",
-        "reverse": true
+        "image_alt": "Kevin next to an existing alarm panel",
+        "title": "Works alongside your alarm",
+        "body": "Alarms and cameras detect. Kevin deters. It is honest about its limits: it will not call anyone or record anything. It makes an empty home look and sound lived-in, which is the layer most security setups are missing."
       },
       {
         "type": "section_intro",
-        "overline": "Swiss engineering",
-        "heading": "Privacy-first. Plug and play.",
-        "body": "Engineered and designed in Switzerland. Typical use around 9 watts. No installation, no wiring, no monitoring panel."
+        "overline": "Made in Switzerland, made for privacy",
+        "heading": "No camera. No microphone. Nothing streamed.",
+        "body": "Engineered and designed in Switzerland. Kevin projects light, shadow and sound; it never watches or listens. Plug it in near a window with a wall or ceiling for shadows, pair once, and it is ready. Typical use around 9 watts."
       },
       {
         "type": "richtext",
-        "title": "At home, Kevin is more than security",
-        "body": "When you are not away, Kevin doubles as a Bluetooth speaker and lamp—so the device earns its place in your living room every day."
+        "title": "Useful when you are home, too",
+        "body": "Between trips, Kevin works as a Bluetooth speaker and a lamp, so it earns its place by the window all year. Three buttons on the device start the essentials without the app."
       }
     ],
-    "cta_heading": "See Kevin in your home.",
-    "cta_subheading": "Choose your color and buy outright with free delivery across Europe and a 3-year Swiss warranty.",
-    "cta_primary": "Configure Kevin",
+    "cta_heading": "See what your street sees.",
+    "cta_subheading": "Buy Kevin outright: free shipping across the EU, 30-day returns, 3-year Swiss warranty.",
+    "cta_primary": "Configure & buy Kevin",
     "cta_primary_url": "/pages/configure?plan=buy",
-    "cta_secondary": "How it works",
+    "cta_secondary": "See how it works",
     "cta_secondary_url": "/pages/how-it-works"
   },
   "how-it-works": {
     "handle": "how-it-works",
     "title": "How it works",
-    "overline": "The method",
-    "heading": "Kevin® simulates people at home—so you can leave calmly.",
-    "lede": "Swiss-engineered presence simulation: light scenarios, moving shadows, and everyday sounds. Plug in near a visible window, set schedules or geo-fencing in the app, and let believable occupancy run from local storage.",
+    "overline": "How it works",
+    "heading": "Plug in by the window, set it once, and your home looks lived-in every time you leave.",
+    "lede": "For commuters, travellers and second-home owners: Kevin runs on a weekly schedule or switches on by itself when your phone leaves the area. Light, shadow and sound play from the device, so it keeps working when Wi-Fi is jammed.",
     "theme": "black",
     "image_asset": "kevin-hero-product-side.webp",
-    "image_alt": "Kevin® device — side profile product photo",
+    "image_alt": "Kevin 3 presence simulator, side view",
+    "seo": {
+      "title": "How Kevin works: plug in, schedule, leave | Mitipi",
+      "description": "Three steps: place Kevin by a window, set a weekly schedule or geofencing in the app, and light, moving shadows and sound play from local storage while you are away. No camera, no microphone."
+    },
     "blocks": [
       {
         "type": "section_intro",
         "overline": "Three steps",
-        "heading": "Plug in. Schedule. Leave with peace of mind.",
-        "body": "Setup takes about 60 seconds. No installation, no wiring, no monitoring panel."
+        "heading": "Plug in. Choose a routine. Leave.",
+        "body": "No installation, no wiring, no monitoring contract. Kevin needs a power socket, a window that faces the street and a wall or ceiling for shadows."
       },
       {
         "type": "step",
         "number": "1",
-        "title": "Plug & play",
-        "body": "Place Kevin near a visible window with a wall or ceiling for shadows. Connect the included power cable (approx. 3 m)—typical use around 9 watts."
+        "title": "Plug in and place",
+        "body": "Set Kevin near a window that is visible from outside, with a wall or ceiling behind it for shadows. Connect the power adapter. Three buttons on the device start the essentials without the app."
       },
       {
         "type": "step",
         "number": "2",
-        "title": "Schedule or geo-fence",
-        "body": "Tell Kevin when to simulate presence—or let geo-fencing activate automatically the moment you leave, even for a short walk or coffee run."
+        "title": "Set a schedule or use geofencing",
+        "body": "In the Kevin app, set a weekly schedule once, or switch on geofencing so Kevin starts by itself when your phone leaves the area. Leaving in a hurry no longer matters."
       },
       {
         "type": "step",
         "number": "3",
-        "title": "Stay believable",
-        "body": "Light, shadow, and sound play from local storage—not streamed from the cloud. Jammer-resilient protection when Wi-Fi security fails."
+        "title": "Your home looks lived-in",
+        "body": "Warm light, moving silhouettes and everyday sounds play from the 32 GB inside the device, varying for up to four weeks without repeating. Nothing streams from the cloud, so a jammed Wi-Fi changes nothing."
       },
       {
         "type": "stat_row",
         "stats": [
-          { "value": "60s", "label": "Typical setup time" },
-          { "value": "9W", "label": "Typical power use" },
-          { "value": "70+", "label": "Hours of simulations" }
+          {
+            "value": "3",
+            "label": "Buttons on the device, no app needed to start"
+          },
+          {
+            "value": "9 W",
+            "label": "Typical power use"
+          },
+          {
+            "value": "32 GB",
+            "label": "Scenes stored on the device"
+          }
         ]
       },
       {
         "type": "section_intro",
-        "overline": "Real life",
-        "heading": "Built for how you actually leave home.",
-        "body": "Whether you commute, travel, or manage multiple properties—Kevin adapts to your routine."
+        "overline": "Fits real life",
+        "heading": "Built for the way you actually leave the house.",
+        "body": "A daily commute, a weekend away, a second home you visit once a month: Kevin follows the routine you set."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-persona-work.jpg",
-        "image_alt": "Activate Kevin via the app on your way to work",
-        "title": "Heading to work",
-        "body": "Activate Kevin via the app on your way out. While you focus on your day, Kevin makes it look like you are still at home."
+        "image_alt": "Kevin switches on when you leave for work",
+        "title": "Every working day",
+        "body": "Geofencing starts Kevin when you leave and stops it when you return. The house never has the dark, silent look that says nobody is home."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-persona-travel.jpg",
-        "image_alt": "Schedule Kevin for holidays and weekend trips",
-        "title": "Weekends and holidays",
-        "body": "Schedule simulations in advance for getaways. Your home looks lived-in and cared for—even from thousands of miles away."
+        "image_alt": "Kevin on a holiday schedule",
+        "title": "Holidays and weekends",
+        "body": "Set the holiday schedule before you go. Evening after evening the light comes on, shadows move and the TV mutters, with no lamp on a timer at the same time every night."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-persona-multi-property.jpg",
-        "image_alt": "Manage multiple Kevin devices in one app",
-        "title": "Multiple properties",
-        "body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app."
+        "image_alt": "Several Kevin devices managed in one app",
+        "title": "Second homes and rentals",
+        "body": "Put a Kevin in the chalet, the holiday flat or the office and manage them all from one app. Because scenes play locally, weak Wi-Fi on site is not a problem."
       },
       {
         "type": "section_intro",
-        "overline": "Why it matters",
-        "heading": "Prevention beats reaction.",
-        "body": "Burglars avoid homes that look and sound lived-in. Most break-ins are opportunistic—they target places that appear empty, often in daylight, and take only minutes. A believable presence removes the easy opportunity.",
-        "variant": "dark"
+        "variant": "dark",
+        "overline": "Why it works",
+        "heading": "Burglars choose the easy, empty-looking house. Yours is not it.",
+        "body": "Most break-ins are opportunistic. A home that glows, moves and sounds occupied gets skipped for one that does not. Kevin makes that decision for them before the door is ever tested."
       },
       {
         "type": "richtext",
-        "title": "Works in homes, offices, and shops",
-        "body": "Kevin simulates presence in apartments, houses, offices, shops, and warehouses. Place near a window or visible area, configure in the Kevin app, and let believable occupancy run from local storage."
+        "title": "Homes, flats, offices and shops",
+        "body": "Kevin covers one room per device. Place it where the street looks in: the living room, a ground-floor window, a shop front after hours. Larger homes or several facades: add a second unit and manage both in the app."
       }
     ],
-    "cta_heading": "Ready to configure yours?",
-    "cta_subheading": "Pick your color and continue to secure Shopify checkout.",
-    "cta_primary": "Get Kevin",
+    "cta_heading": "Ready to leave without the second thought?",
+    "cta_subheading": "Configure your Kevin and check out securely. Free shipping across the EU, 30-day returns, 3-year Swiss warranty.",
+    "cta_primary": "Configure & buy Kevin",
     "cta_primary_url": "/pages/configure?plan=buy",
-    "cta_secondary": "Setup guide",
+    "cta_secondary": "Read the setup guide",
     "cta_secondary_url": "/pages/setup-guide"
   },
   "the-kevin-app": {
     "handle": "the-kevin-app",
-    "title": "The Kevin App",
-    "overline": "Kevin App",
-    "heading": "Protection that runs while you live your life.",
-    "lede": "Activate instantly, schedule in advance, or let geo-fencing turn Kevin on when you leave. Manage multiple devices and properties from one app.",
+    "title": "The Kevin app",
+    "overline": "The Kevin app",
+    "heading": "Protection that switches itself on, so you never have to remember it.",
+    "lede": "For busy households and anyone managing a parent’s or a second home from afar: schedules, geofencing and every device in one free app. No monitoring subscription, and nothing to renew.",
     "theme": "white",
     "image_asset": "lurafi-product-closeup.jpg",
-    "image_alt": "Kevin® device close-up — fabric panel and controls",
+    "image_alt": "Close-up of the Kevin 3 fabric front and controls",
+    "seo": {
+      "title": "The Kevin app: schedules, geofencing, every home in one place | Mitipi",
+      "description": "The free Kevin app sets weekly schedules, starts Kevin by geofencing when you leave, lets you record your own household sounds and manages several devices. Available in English, German, French and Dutch."
+    },
     "blocks": [
       {
         "type": "section_intro",
-        "overline": "Control from anywhere",
-        "heading": "Set it and forget it—or take full control.",
-        "body": "The Kevin app puts scheduling, geo-fencing, and personalization in your pocket. No monitoring panel. No third-party access to your home."
+        "overline": "Set once, runs itself",
+        "heading": "Decide once how your home should behave. Kevin takes it from there.",
+        "body": "The app is where you set the routine. After that, Kevin runs without taps, reminders or a monthly fee."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-feature-schedules.jpg",
-        "image_alt": "Kevin app weekly schedule screen",
-        "title": "Set it and forget it",
-        "body": "Schedule simulations for weekends, holidays, or daily routines—protection that fits around your lifestyle."
+        "image_alt": "Weekly schedule screen in the Kevin app",
+        "title": "Weekly schedules",
+        "body": "Set weekdays, weekends and holidays once. Kevin follows the plan so the house looks lived-in at the hours that matter, whether you remember or not."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-feature-geo.jpg",
-        "image_alt": "Kevin app geo-fencing activation",
-        "title": "Geo-fencing",
-        "body": "Kevin knows when you leave and starts protecting your space—no taps, no texts, just smart automation."
+        "image_alt": "Geofencing setting in the Kevin app",
+        "title": "Geofencing",
+        "body": "Kevin starts when your phone leaves the area around your home and stops when you come back. The daily leave-and-forget routine without touching anything."
       },
       {
         "type": "image_pillar",
         "image_asset": "kevin-feature-multi-device.jpg",
-        "image_alt": "Manage multiple Kevin devices in the app",
-        "title": "Multiple properties",
-        "body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app."
+        "image_alt": "Several Kevin devices listed in the app",
+        "title": "Every home in one app",
+        "body": "Your own home, a parent’s flat, the holiday house, the office: add a Kevin to each and check or adjust any of them from wherever you are."
       },
       {
         "type": "media_split",
         "image_asset": "kevin-device-angle.jpg",
-        "image_alt": "Kevin® device with personalized sound settings",
-        "title": "Make it personal",
-        "body": "Record or upload familiar home sounds. Kevin uses them—and AI-generated household audio—to create a more believable presence that adapts over time to your routine."
+        "image_alt": "Kevin 3 with personalised sound settings",
+        "title": "Your household, your sounds",
+        "body": "Record dinner, the kids or the dog in the app. Kevin mixes your recordings with its 70+ hours of built-in scenes, so your home sounds like your home. Built-in voices come in English, German and Swiss German."
       },
       {
         "type": "media_split",
+        "reverse": true,
         "image_asset": "lurafi-product-studio.jpg",
-        "image_alt": "Kevin® AI-generated household sounds",
-        "title": "Smarter sounds with AI",
-        "body": "Kevin can generate natural household sounds intelligently, adapting over time to your routine and home environment—without cameras or microphones.",
-        "reverse": true
+        "image_alt": "Kevin 3 studio photo",
+        "title": "Nothing is watched or streamed",
+        "body": "The app sends settings to Kevin. Kevin has no camera and no microphone, and every scene plays from its own 32 GB storage. There is no video feed, no cloud recording and nothing for anyone else to see."
       },
       {
         "type": "section_intro",
         "overline": "Getting started",
-        "heading": "Pair the app after unboxing.",
-        "body": "Download the Kevin app, connect over Wi-Fi or Bluetooth, and confirm firmware is up to date."
+        "heading": "Pair once after unboxing.",
+        "body": "Download the app, connect Kevin over Wi-Fi or Bluetooth and choose a routine. The app is available in English, German, French and Dutch."
       },
       {
         "type": "step",
         "number": "1",
         "title": "Download the Kevin app",
-        "body": "Available for iOS and Android. Search for Kevin by Mitipi in your app store after purchase."
+        "body": "For iOS and Android. Search for Kevin by Mitipi in your app store."
       },
       {
         "type": "step",
         "number": "2",
         "title": "Pair your device",
-        "body": "Follow the in-app guide to connect Kevin over Wi-Fi or Bluetooth. Rename your device if you like."
+        "body": "Follow the in-app guide to connect Kevin over Wi-Fi or Bluetooth. Give it a name such as “Living room” or “Mum’s flat”."
       },
       {
         "type": "step",
         "number": "3",
-        "title": "Choose your routine",
-        "body": "Activate instantly, schedule by day and hour, or enable geo-fencing so Kevin starts when you leave."
+        "title": "Choose a routine",
+        "body": "Start a simulation now, set the weekly schedule, or switch on geofencing. Change it any time from wherever you are."
       }
     ],
-    "cta_heading": "Pair the app with your Kevin.",
-    "cta_subheading": "Download the Kevin app after purchase to schedule, geo-fence, and personalize simulations.",
-    "cta_primary": "Buy Kevin",
+    "cta_heading": "One device, one app, no subscription.",
+    "cta_subheading": "Buy Kevin outright with free shipping across the EU, 30-day returns and a 3-year Swiss warranty.",
+    "cta_primary": "Configure & buy Kevin",
     "cta_primary_url": "/pages/configure?plan=buy",
-    "cta_secondary": "Setup guide",
+    "cta_secondary": "Read the setup guide",
     "cta_secondary_url": "/pages/setup-guide"
   },
   "pricing": {
     "handle": "pricing",
     "title": "Pricing",
-    "overline": "Own Kevin®",
-    "heading": "One-time purchase. Lifetime updates included.",
-    "lede": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
+    "overline": "Pricing",
+    "heading": "One payment of €579.95. No monitoring fee, ever.",
+    "lede": "For homeowners who would rather own their security than rent it: Kevin, the app, 70+ hours of simulations and lifetime software updates in one purchase. Free shipping across the EU, 30-day returns, 3-year Swiss warranty.",
     "theme": "white",
     "image_asset": "kevin-hero-product-top.webp",
-    "image_alt": "Kevin® device — top view product photo",
+    "image_alt": "Kevin 3 presence simulator, top view",
+    "seo": {
+      "title": "Kevin price: €579.95 one-time, no subscription | Mitipi",
+      "description": "Kevin 3 costs €579.95 once. Included: the app, 70+ hours of simulations, lifetime updates, 3-year Swiss warranty, 30-day returns and free shipping across the EU, Switzerland, Norway and Iceland. Colour front covers €29.95."
+    },
     "blocks": [
       {
         "type": "section_intro",
-        "overline": "What's included",
-        "heading": "Everything you need to deter burglaries.",
-        "body": "One transparent price. No hidden monitoring fees. Device ownership with software updates for life."
+        "overline": "What you get",
+        "heading": "Everything needed to make an empty home look lived-in.",
+        "body": "One transparent price. No hidden fees, no monitoring contract, no app subscription."
       },
       {
         "type": "richtext",
-        "title": "Your Kevin purchase includes",
-        "body": "Kevin® device with your chosen front cover color · Kevin App control · 70+ hours of built-in simulations · Weekly schedules and geo-fencing · Upload your own household sounds · AI-generated household audio · Bluetooth speaker and lamp at home · Flexible placement with approx. 3 m power cable · Free delivery across Europe · 3-year Swiss warranty · Lifetime software updates · 30-day returns"
+        "title": "Included with Kevin",
+        "body": "Kevin 3 with the Grey front cover · power adapter · the Kevin app for iOS and Android · 70+ hours of light, shadow and sound scenes · lifetime software updates · 3-year Swiss warranty · 30-day returns · free shipping across the EU, Switzerland, Liechtenstein, Norway and Iceland.\n\nOptional: colour front covers in Red, Brown, Blue or White, €29.95 each."
       },
       {
         "type": "stat_row",
         "stats": [
-          { "value": "3 yr", "label": "Swiss warranty" },
-          { "value": "Free", "label": "Delivery across Europe" },
-          { "value": "30", "label": "Day returns" }
+          {
+            "value": "3 yr",
+            "label": "Swiss warranty"
+          },
+          {
+            "value": "30",
+            "label": "Day returns"
+          },
+          {
+            "value": "€0",
+            "label": "Monthly fees"
+          }
         ]
       },
       {
         "type": "section_intro",
-        "overline": "Questions",
+        "overline": "Questions before you buy",
         "heading": "Pricing FAQ",
-        "body": "Common questions about buying Kevin on mitipi.eu."
+        "body": "The questions we hear most from people comparing Kevin with alarms, cameras and timers."
       },
       {
         "type": "faq",
-        "question": "Is Kevin a subscription?",
-        "answer": "On mitipi.eu you buy Kevin outright with a one-time payment. Lifetime software updates are included. There are no mandatory monthly monitoring fees."
+        "question": "Is there a subscription?",
+        "answer": "No. You pay once. Software updates, the app and all built-in scenes are included for the life of the device. There is no monitoring plan because Kevin does not monitor: it deters."
       },
       {
         "type": "faq",
-        "question": "What does free delivery cover?",
-        "answer": "Free delivery across Europe on qualifying orders through mitipi.eu. Taxes are calculated at checkout based on your country."
+        "question": "How does it compare with a monitored alarm?",
+        "answer": "A monitored alarm reacts after someone tests the door and charges every month. Kevin costs €579.95 once and works before the attempt, by making the home look occupied. Many owners run both: alarm for detection, Kevin for prevention."
       },
       {
         "type": "faq",
-        "question": "What if Kevin stops working?",
-        "answer": "Kevin includes a 3-year Swiss warranty. Contact support with your serial number (on the bottom of the device) and order reference for repair or replacement guidance."
+        "question": "Where is shipping free?",
+        "answer": "Across the EU, Switzerland, Liechtenstein, Norway and Iceland. Prices and taxes are shown for your country at checkout."
       },
       {
         "type": "faq",
-        "question": "Can I return Kevin?",
-        "answer": "Yes—30-day returns apply as stated at checkout. Configure your color, try Kevin at home, and contact support if you need help with a return."
+        "question": "What if I change my mind?",
+        "answer": "Return Kevin within 30 days. Try it at home, step outside after dark and look at your own window. If it is not for you, send it back."
       },
       {
         "type": "richtext",
-        "title": "Transparent checkout",
-        "body": "Configure your color on the secure Shopify checkout flow at mitipi.eu. Taxes calculated at checkout. Kevin is prevention-first protection you own outright—no surveillance subscriptions."
+        "title": "Secure checkout",
+        "body": "Choose your cover, pay by card or your preferred method through Shopify checkout. You receive an order confirmation and a tracking number as soon as Kevin ships."
       }
     ],
-    "cta_heading": "Configure and buy Kevin.",
-    "cta_subheading": "Choose your front cover color and continue to secure checkout.",
-    "cta_primary": "Buy Now",
+    "cta_heading": "Own it. No renewals, no reminders.",
+    "cta_subheading": "Choose a front cover and continue to secure checkout.",
+    "cta_primary": "Configure & buy Kevin",
     "cta_primary_url": "/pages/configure?plan=buy",
-    "cta_secondary": "Features",
+    "cta_secondary": "See the features",
     "cta_secondary_url": "/pages/features"
   },
   "about-kevin": {
     "handle": "about-kevin",
-    "title": "About Kevin",
-    "overline": "Company",
-    "heading": "Swiss innovation for prevention-first home security.",
-    "lede": "Mitipi AG develops Kevin®, a presence simulation device that helps homes, flats, offices, and holiday properties look occupied when people are away—without cameras or microphones.",
+    "title": "About",
+    "overline": "About Mitipi",
+    "heading": "We build prevention, not surveillance. Swiss engineering for homes that look lived-in.",
+    "lede": "Mitipi AG in Fribourg develops Kevin, the presence simulator that makes homes, flats, offices and holiday properties look occupied from the street. Since 2018, one idea: stop the break-in before it starts, without a camera watching your family.",
     "theme": "black",
     "image_asset": "kevin-hero-burglary-prevention.jpg",
-    "image_alt": "Kevin® presence simulation — editorial product visual",
+    "image_alt": "Kevin presence simulation in a living room at night",
+    "seo": {
+      "title": "About Mitipi: the Swiss company behind Kevin | Mitipi",
+      "description": "Mitipi AG, Fribourg, Switzerland, develops Kevin, a presence simulator that deters burglary with light, moving shadows and sound. Founded 2018. No cameras, no microphones, engineered in Switzerland."
+    },
     "blocks": [
       {
         "type": "section_intro",
-        "overline": "Our vision",
-        "heading": "Everyone deserves to feel safe.",
-        "body": "Burglars choose easy targets—dark windows, silent halls, predictable timers. Kevin adds believable light, shadow, and sound so your home reads as lived-in from the street."
+        "overline": "Why we exist",
+        "heading": "Everyone deserves to leave home without the second thought.",
+        "body": "After a break-in, most people never feel quite safe at home again. We started Mitipi to change how burglary is prevented: not by recording it, but by making sure it is never attempted."
       },
       {
         "type": "richtext",
         "title": "Prevention, not surveillance",
-        "body": "We believe deterrence should not require cameras or microphones. Kevin stores simulations locally on the device, uses typical power around 9 watts, and complements alarms and cameras rather than replacing them."
+        "body": "Deterrence should not cost your privacy. Kevin has no camera and no microphone. Every scene is stored on the device and plays locally, so nothing about your home is streamed, shared or lost when Wi-Fi is jammed."
       },
       {
         "type": "stat_row",
         "stats": [
-          { "value": "0", "label": "Cameras or microphones" },
-          { "value": "Swiss", "label": "Engineered & designed" },
-          { "value": "Award", "label": "Winning innovation" }
+          {
+            "value": "0",
+            "label": "Cameras or microphones"
+          },
+          {
+            "value": "CH",
+            "label": "Engineered and designed in Switzerland"
+          },
+          {
+            "value": "2018",
+            "label": "Mitipi founded"
+          }
         ]
       },
       {
         "type": "section_intro",
         "overline": "Our story",
-        "heading": "From Zurich idea to global protection.",
-        "body": "Kevin was conceived in Zurich. Mitipi was founded in 2018 and has since launched Kevin across Switzerland, Europe, and the United States."
+        "heading": "From an idea in Zurich to homes across Europe.",
+        "body": "Kevin was conceived in Zurich. Mitipi was founded in 2018 and is now based at Bluefactory in Fribourg, developing each generation of Kevin with Swiss partners."
       },
       {
         "type": "step",
         "number": "2017",
-        "title": "Kevin idea born in Zurich",
-        "body": "Development begins on a device that simulates human presence through light, shadow, and sound."
+        "title": "The idea",
+        "body": "Work begins on a device that makes a home look lived-in with light, moving shadows and sound, instead of watching it with a camera."
       },
       {
         "type": "step",
         "number": "2019",
-        "title": "Launch in Switzerland",
-        "body": "Kevin launches in Switzerland. Mitipi wins the Global Digital Insurance Agenda Award (DIA) in Amsterdam."
+        "title": "Kevin launches in Switzerland",
+        "body": "The first Kevin ships to Swiss households. Mitipi wins the Global Digital Insurance Agenda (DIA) award for innovation."
       },
       {
         "type": "step",
         "number": "2021",
-        "title": "Kevin.2 and Bluefactory",
-        "body": "Kevin.2 adds own recording and geo-fencing. Mitipi moves to Bluefactory in Fribourg and wins the Plus X Award in Germany."
+        "title": "Kevin.2",
+        "body": "Own recordings and geofencing arrive. Mitipi moves to Bluefactory in Fribourg and receives the Plus X Award in Germany."
       },
       {
         "type": "step",
         "number": "2023",
-        "title": "Kevin.3 launch",
-        "body": "Kevin.3 launches with upgraded hardware, personalizable features, and extended simulation. European and US patents granted."
+        "title": "Kevin.3",
+        "body": "New hardware, 32 GB of on-device storage, more scenes and personalisation. The generation sold on this site."
       },
       {
         "type": "step",
         "number": "2024",
         "title": "European Security Award",
-        "body": "Mitipi wins the European Security Award for the most innovative burglary protection in Europe."
+        "body": "Mitipi receives the European Security Award for the most innovative burglary prevention in Europe."
       },
       {
         "type": "media_split",
         "image_asset": "kevin-hero-3d-poster.webp",
-        "image_alt": "Kevin® award-winning Swiss security device",
-        "title": "Award-winning innovation",
-        "body": "Kevin is an award-winning anti-intrusion device, engineered in Switzerland, with worldwide patents on technology to simulate the presence of people."
+        "image_alt": "Kevin 3 presence simulator",
+        "title": "Tested, not just claimed",
+        "body": "In January 2026 Galaxus tested Kevin.3 and called it “unrivalled in that it’s an easy-to-use, all-in-one solution that delivers a truly spectacular show.” We publish the limits too: one room per device, placement matters, and Kevin deters rather than raises an alarm."
       },
       {
         "type": "richtext",
         "title": "Mitipi AG",
-        "body": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Switzerland · CHE-356.372.981. Kevin® is developed by Mitipi and sold in Europe through mitipi.eu."
+        "body": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Switzerland · CHE-356.372.981"
       }
     ],
-    "cta_heading": "Join the movement for safer homes.",
-    "cta_subheading": "Smart. Secure. Swiss.",
-    "cta_primary": "Get Kevin",
+    "cta_heading": "Put prevention in front of your alarm.",
+    "cta_subheading": "Free shipping across the EU, 30-day returns, 3-year Swiss warranty.",
+    "cta_primary": "Configure & buy Kevin",
     "cta_primary_url": "/pages/configure?plan=buy",
-    "cta_secondary": "Press",
+    "cta_secondary": "Press & media",
     "cta_secondary_url": "/pages/press"
   },
   "press": {
     "handle": "press",
     "title": "Press",
-    "overline": "Media",
-    "heading": "Kevin® in the press.",
-    "lede": "Media coverage and interviews about Mitipi, Kevin®, and prevention-first home security. For press kits and spokesperson requests, contact us below.",
+    "overline": "Press & media",
+    "heading": "Kevin in the press: the Swiss answer to burglary that does not need a camera.",
+    "lede": "Coverage, reviews and interviews about Mitipi and Kevin. Journalists can request product photos, a fact sheet and interviews with the Mitipi team.",
     "theme": "white",
     "image_asset": "kevin-hero-product-front.webp",
-    "image_alt": "Kevin® device — press product photo",
+    "image_alt": "Kevin 3 presence simulator, press photo",
+    "seo": {
+      "title": "Kevin press & media: reviews, coverage, press kit | Mitipi",
+      "description": "What the press says about Kevin, the Swiss presence simulator: Galaxus product test, TechRadar, Le Temps, Safety Detectives and more. Press kit and interviews on request."
+    },
     "blocks": [
       {
         "type": "section_intro",
         "overline": "Coverage",
-        "heading": "What they are saying about Kevin®.",
-        "body": "Selected quotes from international media and product reviews."
+        "heading": "What reviewers found when they tested Kevin.",
+        "body": "Selected quotes from product tests and interviews. Dated where the source is dated."
+      },
+      {
+        "type": "quote",
+        "quote": "The small Kevin.3 is unrivalled in that it’s an easy-to-use, all-in-one solution that delivers a truly spectacular show.",
+        "source": "Galaxus — Kevin.3 product test, 9 January 2026"
       },
       {
         "type": "quote",
@@ -454,93 +519,130 @@
       },
       {
         "type": "section_intro",
+        "variant": "dark",
         "overline": "Awards",
-        "heading": "Award-winning innovation worldwide.",
-        "body": "Kevin has been recognized for design, functionality, and burglary prevention innovation across Europe and the US.",
-        "variant": "dark"
+        "heading": "Recognised for prevention-first innovation.",
+        "body": "Awards received by Mitipi for Kevin’s design and burglary-prevention approach."
       },
       {
         "type": "stat_row",
         "stats": [
-          { "value": "2024", "label": "European Security Award" },
-          { "value": "2021", "label": "Plus X Award (Germany)" },
-          { "value": "2019", "label": "Global DIA Award" }
+          {
+            "value": "2024",
+            "label": "European Security Award"
+          },
+          {
+            "value": "2021",
+            "label": "Plus X Award (Germany)"
+          },
+          {
+            "value": "2019",
+            "label": "Global DIA Award"
+          }
         ]
       },
       {
         "type": "contact_row",
         "contacts": [
-          { "label": "Press inquiries", "value": "press@lurafi.com", "link": "mailto:press@lurafi.com?subject=Press%20inquiry" },
-          { "label": "General contact", "value": "hello@lurafi.com", "link": "mailto:hello@lurafi.com" },
-          { "label": "Press kit", "value": "Product photos & fact sheet on request", "link": "mailto:press@lurafi.com?subject=Press%20kit%20request" },
-          { "label": "Company", "value": "Mitipi AG, Fribourg, Switzerland", "link": "" }
+          {
+            "label": "Press inquiries",
+            "value": "press@lurafi.com",
+            "link": "mailto:press@lurafi.com?subject=Press%20inquiry"
+          },
+          {
+            "label": "General contact",
+            "value": "hello@lurafi.com",
+            "link": "mailto:hello@lurafi.com"
+          },
+          {
+            "label": "Press kit",
+            "value": "Product photos & fact sheet on request",
+            "link": "mailto:press@lurafi.com?subject=Press%20kit%20request"
+          },
+          {
+            "label": "Company",
+            "value": "Mitipi AG, Fribourg, Switzerland",
+            "link": ""
+          }
         ]
       }
     ],
-    "cta_heading": "Request the Kevin® press kit.",
-    "cta_subheading": "Product photos, fact sheet, and spokesperson availability on request.",
-    "cta_primary": "Email press team",
+    "cta_heading": "Writing about home security?",
+    "cta_subheading": "Product photos, fact sheet and interview availability on request.",
+    "cta_primary": "Request the press kit",
     "cta_primary_url": "mailto:press@lurafi.com?subject=Press%20kit%20request",
-    "cta_secondary": "About Kevin",
+    "cta_secondary": "About Mitipi",
     "cta_secondary_url": "/pages/about-kevin"
   },
   "careers": {
     "handle": "careers",
     "title": "Careers",
-    "overline": "Company",
-    "heading": "Build the future of prevention-first security.",
-    "lede": "Mitipi is a Swiss company rethinking home security around privacy, believable presence simulation, and AI—without cameras or microphones.",
+    "overline": "Careers",
+    "heading": "Help more families leave home without worrying about it.",
+    "lede": "Mitipi is a small Swiss team building Kevin, the presence simulator that prevents burglary without cameras. If you build hardware, apps, sound or stories, we would like to hear from you.",
     "theme": "white",
     "image_asset": "kevin-hero-burglary-prevention.jpg",
-    "image_alt": "Kevin® — Swiss-engineered security innovation",
+    "image_alt": "Kevin presence simulation at home",
+    "seo": {
+      "title": "Careers at Mitipi, Fribourg | Mitipi",
+      "description": "Work on Kevin, the Swiss presence simulator that prevents burglary without cameras. Hardware, mobile apps, sound design and marketing roles at Mitipi AG in Fribourg. Send an open application."
+    },
     "blocks": [
       {
         "type": "section_intro",
-        "overline": "Our values",
-        "heading": "Growth. Security. Innovation. Integrity.",
-        "body": "We bring joy and security to customers worldwide. We think beyond the obvious—and we empower young talents and people with disabilities to grow with us."
+        "overline": "What we care about",
+        "heading": "Safety without surveillance.",
+        "body": "We think prevention beats reaction, and privacy is not the price of security. That shapes what we build and how we work."
       },
       {
         "type": "pillar",
         "icon": "↗",
         "title": "Growth",
-        "body": "We believe in a bright future for all of us. We strive to grow and develop a better future for everyone."
+        "body": "We are a small company with customers across Europe. Everyone here sees their work reach real homes quickly."
       },
       {
         "type": "pillar",
         "icon": "🛡",
         "title": "Security",
-        "body": "We are bringing joy and security to the world and to our customers—prevention-first, privacy-respecting protection."
+        "body": "We bring reassurance to households: prevention first, privacy always. No camera, no microphone, no data trade."
       },
       {
         "type": "pillar",
         "icon": "💡",
-        "title": "Innovation",
-        "body": "We think beyond the obvious and come up with solutions nobody thought of before—from shadow simulation to AI household sounds."
+        "title": "Ideas",
+        "body": "Moving shadows, household sounds and a device that survives a jammed network came from thinking past the obvious. We keep doing that."
       },
       {
         "type": "section_intro",
         "overline": "The team",
-        "heading": "Small team. Global mission.",
-        "body": "Under CEO Patrick Cotting, more than 30 people work on Kevin across Switzerland, California, Germany, and partner locations worldwide."
+        "heading": "Small team, one product, real homes.",
+        "body": "Under CEO Patrick Cotting, the Mitipi team works on Kevin from Fribourg, Switzerland, with partners in Europe and beyond."
       },
       {
         "type": "media_split",
         "image_asset": "kevin-hero-luxury-dutch-villa.jpg",
-        "image_alt": "Kevin® protecting a home while residents are away",
+        "image_alt": "Kevin protecting a home while the family is away",
         "title": "What we work on",
-        "body": "Hardware, mobile apps, AI sound generation, brand storytelling, and global expansion. If you care about physical security without surveillance, we would like to hear from you."
+        "body": "Hardware, the iOS and Android app, sound scenes, brand and storytelling, and expansion across Europe. If you have built any of these and want your work to make someone feel safe, write to us."
       },
       {
         "type": "richtext",
         "title": "Open roles",
-        "body": "There are no public job listings on kevinswiss.com at this time. Send your CV and a short note about what you would like to work on—we keep promising profiles on file for future openings."
+        "body": "There are no public listings at the moment. Send a CV and a few lines on what you would build for Kevin, and we will reply."
       },
       {
         "type": "contact_row",
         "contacts": [
-          { "label": "Careers", "value": "hello@lurafi.com", "link": "mailto:hello@lurafi.com?subject=Careers%20at%20Mitipi" },
-          { "label": "Office", "value": "Mitipi AG · Bluefactory · Fribourg, Switzerland", "link": "" }
+          {
+            "label": "Careers",
+            "value": "hello@lurafi.com",
+            "link": "mailto:hello@lurafi.com?subject=Careers%20at%20Mitipi"
+          },
+          {
+            "label": "Office",
+            "value": "Mitipi AG · Bluefactory · Fribourg, Switzerland",
+            "link": ""
+          }
         ]
       }
     ],
@@ -548,163 +650,189 @@
     "cta_subheading": "Tell us what you build and why Kevin matters to you.",
     "cta_primary": "Email careers",
     "cta_primary_url": "mailto:hello@lurafi.com?subject=Careers",
-    "cta_secondary": "About Kevin",
+    "cta_secondary": "About Mitipi",
     "cta_secondary_url": "/pages/about-kevin"
   },
   "setup-guide": {
     "handle": "setup-guide",
     "title": "Setup guide",
-    "overline": "Support",
-    "heading": "Plug in. Schedule. Leave with peace of mind.",
-    "lede": "Kevin setup takes about 60 seconds: connect power, place near a window, and configure in the Kevin app. No installation, no wiring, no monitoring panel.",
+    "overline": "Setup guide",
+    "heading": "Set up Kevin in four steps and check the result from your own pavement.",
+    "lede": "For new owners: where to place Kevin, how to pair the app once, and how to see what a passer-by sees after dark. No tools, no wiring.",
     "theme": "white",
     "image_asset": "lurafi-product-studio.jpg",
-    "image_alt": "Kevin® device — studio product photo",
+    "image_alt": "Kevin 3 presence simulator, studio photo",
+    "seo": {
+      "title": "Kevin setup guide: placement, pairing, first test | Mitipi",
+      "description": "Set up Kevin in four steps: place it by a street-facing window with a wall for shadows, pair the app over Wi-Fi or Bluetooth, choose a schedule or geofencing, then test from outside after dark."
+    },
     "blocks": [
       {
         "type": "section_intro",
         "overline": "Quick start",
-        "heading": "Four steps to believable presence.",
-        "body": "Most customers complete setup in under a minute. Follow these steps for the best results."
+        "heading": "Four steps to a home that looks lived-in.",
+        "body": "Placement makes the biggest difference. Take a minute to get the window right before you pair the app."
       },
       {
         "type": "step",
         "number": "1",
         "title": "Unbox and place",
-        "body": "Set Kevin near a visible window with a wall or ceiling for shadows. Connect the included power cable (approx. 3 m). Typical use is around 9 watts."
+        "body": "Put Kevin near a window that can be seen from the street, with a wall or ceiling behind it for the shadows. Connect the power adapter."
       },
       {
         "type": "step",
         "number": "2",
-        "title": "Download the Kevin app",
-        "body": "Pair your device over Wi-Fi or Bluetooth, rename it if you like, and confirm firmware is up to date."
+        "title": "Pair the app",
+        "body": "Download the Kevin app for iOS or Android and connect over Wi-Fi or Bluetooth. Name your device and let it install the latest update."
       },
       {
         "type": "step",
         "number": "3",
-        "title": "Choose your routine",
-        "body": "Activate instantly, schedule by day and hour, or enable geo-fencing so Kevin starts when you leave."
+        "title": "Choose a routine",
+        "body": "Start a simulation right away, set a weekly schedule, or switch on geofencing so Kevin starts when you leave. The three buttons on the device also start a scene without the app."
       },
       {
         "type": "step",
         "number": "4",
         "title": "Test from outside",
-        "body": "Step outside after dark and check what neighbours see—warm light, movement, and believable sound through the window."
+        "body": "After dark, step onto the pavement and look at your window. You should see warm, changing light and moving shadows, and hear the room when you get close to the door."
       },
       {
         "type": "section_intro",
-        "overline": "Placement tips",
+        "overline": "Placement",
         "heading": "Where Kevin works best.",
-        "body": "Kevin needs a visible window and a surface for shadows. Living rooms, ground-floor windows, and holiday-home facades are ideal."
+        "body": "Kevin covers one room. Choose the window a burglar would check first: the living room, the ground floor, the side facing the street."
       },
       {
         "type": "media_split",
         "image_asset": "kevin-hero-shadow-mom-toddler.webp",
-        "image_alt": "Kevin shadow simulation visible through a window at night",
-        "title": "Window visibility matters",
-        "body": "Burglars look for dark, silent homes. Position Kevin so light and shadow are visible through curtains from the street or hallway outside."
+        "image_alt": "Kevin shadow scene visible through a window at night",
+        "title": "Give the shadows a surface",
+        "body": "Shadows need a wall or ceiling to land on and curtains or blinds to show through. Sheer curtains work best; heavy blackout curtains hide the effect."
       },
       {
         "type": "media_split",
+        "reverse": true,
         "image_asset": "kevin-feature-geo.jpg",
-        "image_alt": "Kevin app geo-fencing settings",
-        "title": "Try geo-fencing first",
-        "body": "Geo-fencing is the easiest daily routine: Kevin activates when you leave and you never have to remember to tap the app.",
-        "reverse": true
+        "image_alt": "Geofencing settings in the Kevin app",
+        "title": "Start with geofencing",
+        "body": "For daily use, geofencing is the routine that needs no remembering: Kevin starts when your phone leaves the area and stops when you are back. Use schedules for holidays and for a home you manage from afar."
       },
       {
         "type": "section_intro",
-        "overline": "Help",
+        "overline": "First-day questions",
         "heading": "Setup FAQ",
-        "body": "Answers to common first-day questions."
+        "body": "Answers to what new owners ask most."
       },
       {
         "type": "faq",
-        "question": "Does Kevin need Wi-Fi to simulate presence?",
-        "answer": "Kevin stores simulations locally and plays them from the device. Wi-Fi or Bluetooth is used for app setup and updates—but core protection continues even when the network is unavailable."
+        "question": "Does Kevin need Wi-Fi to run?",
+        "answer": "No. Wi-Fi or Bluetooth is only used to set up Kevin and install updates. Scenes play from the 32 GB inside the device, so Kevin keeps working when the network is down or jammed."
       },
       {
         "type": "faq",
-        "question": "Can I upload my own sounds?",
-        "answer": "Yes. Record or upload familiar household sounds in the Kevin app. Kevin also uses AI-generated household audio to keep simulations believable and less repetitive."
+        "question": "Can I add my own sounds?",
+        "answer": "Yes. Record familiar household sounds in the app and Kevin mixes them into its scenes. Built-in voices are in English, German and Swiss German."
       },
       {
         "type": "faq",
-        "question": "What if something goes wrong?",
-        "answer": "Kevin includes a 3-year Swiss warranty and 30-day returns. Note the serial number on the bottom of the unit and contact hello@lurafi.com with your order details."
+        "question": "Something is not working. What now?",
+        "answer": "Note the serial number on the bottom of the device and email us. Kevin comes with a 3-year Swiss warranty and 30-day returns."
       },
       {
         "type": "richtext",
-        "title": "Warranty & service",
-        "body": "Kevin includes a 3-year Swiss warranty and 30-day returns. If your device stops working, note the serial number on the bottom of the unit and contact support with your order details."
+        "title": "Warranty and service",
+        "body": "Kevin includes a 3-year Swiss warranty and 30-day returns. If your device stops working, contact us with the serial number and a short description, and we will arrange repair or replacement."
       }
     ],
-    "cta_heading": "Need help?",
-    "cta_subheading": "Our team can walk you through placement and app setup.",
+    "cta_heading": "Need a hand with placement?",
+    "cta_subheading": "Send us a photo of the room and we will tell you where Kevin works best.",
     "cta_primary": "Contact support",
     "cta_primary_url": "/pages/contact",
-    "cta_secondary": "Buy Kevin",
+    "cta_secondary": "Configure & buy Kevin",
     "cta_secondary_url": "/pages/configure?plan=buy"
   },
   "contact": {
     "handle": "contact",
     "title": "Contact",
-    "overline": "Support",
-    "heading": "We are here to help.",
-    "lede": "Questions about Kevin®, your order, setup, or warranty? Reach Mitipi using the details below.",
+    "overline": "Contact",
+    "heading": "Talk to the people who build Kevin.",
+    "lede": "Questions about your order, placement, the app or the warranty? Email us and a member of the Mitipi team in Fribourg replies.",
     "theme": "white",
+    "image_asset": "",
+    "image_alt": "",
+    "seo": {
+      "title": "Contact Mitipi: support, orders, press | Mitipi",
+      "description": "Contact the Mitipi team in Fribourg, Switzerland, about Kevin orders, setup, warranty and press requests. Company register CHE-356.372.981."
+    },
     "blocks": [
       {
         "type": "contact_row",
         "contacts": [
-          { "label": "Customer support", "value": "hello@lurafi.com", "link": "mailto:hello@lurafi.com?subject=Support" },
-          { "label": "Press", "value": "press@lurafi.com", "link": "mailto:press@lurafi.com?subject=Press%20inquiry" },
-          { "label": "Office", "value": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Switzerland", "link": "" },
-          { "label": "Company register", "value": "CHE-356.372.981", "link": "" }
+          {
+            "label": "Customer support",
+            "value": "hello@lurafi.com",
+            "link": "mailto:hello@lurafi.com?subject=Support"
+          },
+          {
+            "label": "Press",
+            "value": "press@lurafi.com",
+            "link": "mailto:press@lurafi.com?subject=Press%20inquiry"
+          },
+          {
+            "label": "Office",
+            "value": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Switzerland",
+            "link": ""
+          },
+          {
+            "label": "Company register",
+            "value": "CHE-356.372.981",
+            "link": ""
+          }
         ]
       },
       {
         "type": "section_intro",
-        "overline": "Common topics",
-        "heading": "How can we help?",
-        "body": "Quick answers for orders, setup, and warranty."
+        "overline": "Common questions",
+        "heading": "Quick answers before you write.",
+        "body": "Orders, setup and warranty in a few lines."
       },
       {
         "type": "faq",
         "question": "How do I order Kevin?",
-        "answer": "Configure your color at mitipi.eu/pages/configure and complete purchase through secure Shopify checkout. Free delivery across Europe on qualifying orders."
+        "answer": "Choose a front cover on the configure page and pay through secure Shopify checkout. Shipping is free across the EU, Switzerland, Liechtenstein, Norway and Iceland."
       },
       {
         "type": "faq",
-        "question": "I need help with setup.",
-        "answer": "See our setup guide at mitipi.eu/pages/setup-guide. For hands-on help, email hello@lurafi.com with your device serial number and a short description of the issue."
+        "question": "I need help with placement or the app.",
+        "answer": "Read the setup guide first. If you are still unsure, email us a photo of the room and the window and we will tell you where Kevin works best."
       },
       {
         "type": "faq",
         "question": "My Kevin stopped working.",
-        "answer": "Kevin includes a 3-year Swiss warranty. Contact us with your serial number (on the bottom of the device) and order reference. We will guide you through repair or replacement."
+        "answer": "Kevin has a 3-year Swiss warranty. Email us the serial number on the bottom of the device and a short description, and we will arrange repair or replacement."
       },
       {
         "type": "faq",
-        "question": "Press or partnership inquiry?",
-        "answer": "Email press@lurafi.com for media requests, product photos, and spokesperson availability. For B2B partnerships, include your company name and region in your message."
+        "question": "Press or partnership request?",
+        "answer": "Email the press address for product photos, a fact sheet and interview availability."
       },
       {
         "type": "richtext",
-        "title": "Orders & checkout",
-        "body": "Configure your Kevin and complete purchase through secure Shopify checkout on mitipi.eu. Free delivery across Europe on qualifying orders. Taxes calculated at checkout."
+        "title": "Orders and checkout",
+        "body": "Order confirmations and tracking numbers are sent by email as soon as Kevin ships. Returns are accepted within 30 days."
       },
       {
         "type": "richtext",
         "title": "Warranty repairs",
-        "body": "If Kevin no longer works, contact us with your serial number (on the bottom of the device) and order reference. We will guide you through repair or replacement under the 3-year Swiss warranty."
+        "body": "Send the serial number and a short description of the fault. We reply with the next step, usually a repair or a replacement unit."
       }
     ],
     "cta_heading": "Ready to buy?",
-    "cta_subheading": "Configure your color and continue to checkout.",
-    "cta_primary": "Configure Kevin",
+    "cta_subheading": "Choose a front cover and continue to secure checkout.",
+    "cta_primary": "Configure & buy Kevin",
     "cta_primary_url": "/pages/configure?plan=buy",
-    "cta_secondary": "Setup guide",
+    "cta_secondary": "Read the setup guide",
     "cta_secondary_url": "/pages/setup-guide"
   }
 }

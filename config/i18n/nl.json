@@ -1,0 +1,28 @@
+{
+  "faq": {
+    "q1": "Wat doet Kevin precies?",
+    "a1": "Kevin is een Zwitserse aanwezigheidssimulator. Bij een raam speelt hij warm licht, bewegende menselijke schaduwen en alledaagse geluiden vanaf zijn eigen geheugen, zodat je huis vanaf de straat bewoond lijkt en klinkt terwijl je weg bent — in appartementen, huizen, kantoren en vakantiewoningen.",
+    "q2": "Wat is het verschil met een alarm of een camera?",
+    "a2": "Een alarm reageert nadat iemand de deur probeert; een camera legt vast wat al gebeurd is en stopt als de wifi wordt gestoord. Kevin werkt daarvóór: hij laat je huis bewoond lijken, zodat de poging niet eens begint. Houd je alarm — Kevin is de preventielaag ervoor.",
+    "q3": "Kijkt of luistert Kevin mee?",
+    "a3": "Nee. Kevin heeft geen camera en geen microfoon. Hij projecteert alleen licht, schaduw en geluid. Simulaties staan op het apparaat, worden niet gestreamd vanuit de cloud en met niemand gedeeld.",
+    "q4": "Wat zit erbij en wat kost het in gebruik?",
+    "a4": "Eén betaling voor het apparaat, de app, 70+ uur simulaties en levenslange software-updates. Geen monitoringabonnement. Gratis verzending in de hele EU, Zwitserland, Liechtenstein, Noorwegen en IJsland, 30 dagen retour en 3 jaar Zwitserse garantie.",
+    "q5": "Blijft het werken als de wifi wordt gestoord of uitvalt?",
+    "a5": "Ja. Wifi en bluetooth worden alleen gebruikt om Kevin in te stellen en updates te installeren. Elke simulatie speelt vanaf de 32 GB in het apparaat, dus licht, schaduw en geluid gaan door — ook als inbrekers camera’s en app-alarmen storen.",
+    "q6": "Is de simulatie echt overtuigend?",
+    "a6": "Galaxus testte Kevin.3 in januari 2026 en noemde hem “unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show.” Het effect is het sterkst waar het telt: van buiten, door de gordijnen, in de schemering. Plaatsingstips staan in de installatiegids."
+  },
+  "seo": {
+    "home": {
+      "title": "Kevin® — Zwitserse aanwezigheidssimulator die je huis bewoond laat lijken | Mitipi",
+      "description": "Kevin® speelt licht, bewegende schaduwen en alledaagse geluiden bij het raam, zodat inbrekers een bewoond huis zien en doorlopen. Geen camera, geen microfoon, werkt door bij gestoorde wifi. Eenmalige aankoop, gratis verzending in de EU."
+    }
+  },
+  "hero": {
+    "slide_1": {
+      "headline": "Voorkom inbraken voordat ze beginnen.",
+      "lede": "Zwitserse aanwezigheidssimulatie — licht, schaduw en geluid — zodat je huis van buiten bewoond lijkt. Geen camera’s. Geen microfoons. Plug-and-play."
+    }
+  }
+}

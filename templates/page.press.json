@@ -3,17 +3,17 @@
     "editorial": {
       "type": "main-editorial-page",
       "settings": {
-        "overline": "Media",
-        "heading": "Kevin® in the press.",
-        "lede": "Media coverage and interviews about Mitipi, Kevin®, and prevention-first home security. For press kits and spokesperson requests, contact us below.",
+        "overline": "Press & media",
+        "heading": "Kevin in the press: the Swiss answer to burglary that does not need a camera.",
+        "lede": "Coverage, reviews and interviews about Mitipi and Kevin. Journalists can request product photos, a fact sheet and interviews with the Mitipi team.",
         "theme": "white",
         "image_asset": "kevin-hero-product-front.webp",
-        "image_alt": "Kevin® device — press product photo",
-        "cta_heading": "Request the Kevin® press kit.",
-        "cta_subheading": "Product photos, fact sheet, and spokesperson availability on request.",
-        "cta_primary": "Email press team",
+        "image_alt": "Kevin 3 presence simulator, press photo",
+        "cta_heading": "Writing about home security?",
+        "cta_subheading": "Product photos, fact sheet and interview availability on request.",
+        "cta_primary": "Request the press kit",
         "cta_primary_url": "mailto:press@lurafi.com?subject=Press%20kit%20request",
-        "cta_secondary": "About Kevin",
+        "cta_secondary": "About Mitipi",
         "cta_secondary_url": "/pages/about-kevin"
       },
       "blocks": {
@@ -21,56 +21,63 @@
           "type": "section_intro",
           "settings": {
             "overline": "Coverage",
-            "heading": "What they are saying about Kevin®.",
-            "body": "Selected quotes from international media and product reviews.",
+            "heading": "What reviewers found when they tested Kevin.",
+            "body": "Selected quotes from product tests and interviews. Dated where the source is dated.",
             "variant": "default"
           }
         },
         "block_2": {
           "type": "quote",
           "settings": {
+            "quote": "The small Kevin.3 is unrivalled in that it’s an easy-to-use, all-in-one solution that delivers a truly spectacular show.",
+            "source": "Galaxus — Kevin.3 product test, 9 January 2026"
+          }
+        },
+        "block_3": {
+          "type": "quote",
+          "settings": {
             "quote": "The home security industry has a trust problem: most solutions rely on surveillance, forcing people to give up privacy in order to feel protected.",
             "source": "Safety Detectives — interview with Dr. Patrick Cotting, CEO, Mitipi AG"
           }
         },
-        "block_3": {
+        "block_4": {
           "type": "quote",
           "settings": {
             "quote": "This speaker with light and sound effects is supposed to scare off burglars, just like in the original Home Alone films. Kevin.3 is a step forward.",
             "source": "TechRadar — Kevin.3 review"
           }
         },
-        "block_4": {
+        "block_5": {
           "type": "quote",
           "settings": {
             "quote": "Mitipi Ltd. announces the global launch of KEVIN®.3, the newest version of its home invasion deterrent device—improved simulation based on artificial intelligence and lower energy consumption.",
             "source": "Mitipi — product launch announcement"
           }
         },
-        "block_5": {
+        "block_6": {
           "type": "quote",
           "settings": {
             "quote": "Basée à Fribourg, la société Mitipi collabore avec le Swiss AI Center pour doter Kevin de fonctionnalités IA capables de s'adapter aux habitudes des utilisateurs.",
             "source": "Le Temps — Mitipi & Swiss AI Center"
           }
         },
-        "block_6": {
+        "block_7": {
           "type": "quote",
           "settings": {
             "quote": "Who doesn't know the classic 90s movie 'Home Alone'? An absolutely fitting name for KEVIN®, the smart security companion by Mitipi.",
             "source": "IoT Now — KEVIN® feature"
           }
         },
-        "block_7": {
+        "block_8": {
           "type": "section_intro",
           "settings": {
             "overline": "Awards",
-            "heading": "Award-winning innovation worldwide.",
-            "body": "Kevin has been recognized for design, functionality, and burglary prevention innovation across Europe and the US.",
+            "heading": "Recognised for prevention-first innovation.",
+            "body": "Awards received by Mitipi for Kevin’s design and burglary-prevention approach.",
             "variant": "dark"
           }
         },
-        "block_8": {
+        "block_9": {
           "type": "stat_row",
           "settings": {
             "stat_1_value": "2024",
@@ -81,7 +88,7 @@
             "stat_3_label": "Global DIA Award"
           }
         },
-        "block_9": {
+        "block_10": {
           "type": "contact_row",
           "settings": {
             "contact_1_label": "Press inquiries",
@@ -108,7 +115,8 @@
         "block_6",
         "block_7",
         "block_8",
-        "block_9"
+        "block_9",
+        "block_10"
       ]
     }
   },
