@@ -3,26 +3,26 @@
     "editorial": {
       "type": "main-editorial-page",
       "settings": {
-        "overline": "Company",
-        "heading": "Build the future of prevention-first security.",
-        "lede": "Mitipi is a Swiss company rethinking home security around privacy, believable presence simulation, and AI—without cameras or microphones.",
+        "overline": "Careers",
+        "heading": "Help more families leave home without worrying about it.",
+        "lede": "Mitipi is a small Swiss team building Kevin, the presence simulator that prevents burglary without cameras. If you build hardware, apps, sound or stories, we would like to hear from you.",
         "theme": "white",
         "image_asset": "kevin-hero-burglary-prevention.jpg",
-        "image_alt": "Kevin® — Swiss-engineered security innovation",
+        "image_alt": "Kevin presence simulation at home",
         "cta_heading": "Introduce yourself.",
         "cta_subheading": "Tell us what you build and why Kevin matters to you.",
         "cta_primary": "Email careers",
         "cta_primary_url": "mailto:hello@lurafi.com?subject=Careers",
-        "cta_secondary": "About Kevin",
+        "cta_secondary": "About Mitipi",
         "cta_secondary_url": "/pages/about-kevin"
       },
       "blocks": {
         "block_1": {
           "type": "section_intro",
           "settings": {
-            "overline": "Our values",
-            "heading": "Growth. Security. Innovation. Integrity.",
-            "body": "We bring joy and security to customers worldwide. We think beyond the obvious—and we empower young talents and people with disabilities to grow with us.",
+            "overline": "What we care about",
+            "heading": "Safety without surveillance.",
+            "body": "We think prevention beats reaction, and privacy is not the price of security. That shapes what we build and how we work.",
             "variant": "default"
           }
         },
@@ -31,7 +31,7 @@
           "settings": {
             "icon": "↗",
             "title": "Growth",
-            "body": "We believe in a bright future for all of us. We strive to grow and develop a better future for everyone."
+            "body": "We are a small company with customers across Europe. Everyone here sees their work reach real homes quickly."
           }
         },
         "block_3": {
@@ -39,23 +39,23 @@
           "settings": {
             "icon": "🛡",
             "title": "Security",
-            "body": "We are bringing joy and security to the world and to our customers—prevention-first, privacy-respecting protection."
+            "body": "We bring reassurance to households: prevention first, privacy always. No camera, no microphone, no data trade."
           }
         },
         "block_4": {
           "type": "pillar",
           "settings": {
             "icon": "💡",
-            "title": "Innovation",
-            "body": "We think beyond the obvious and come up with solutions nobody thought of before—from shadow simulation to AI household sounds."
+            "title": "Ideas",
+            "body": "Moving shadows, household sounds and a device that survives a jammed network came from thinking past the obvious. We keep doing that."
           }
         },
         "block_5": {
           "type": "section_intro",
           "settings": {
             "overline": "The team",
-            "heading": "Small team. Global mission.",
-            "body": "Under CEO Patrick Cotting, more than 30 people work on Kevin across Switzerland, California, Germany, and partner locations worldwide.",
+            "heading": "Small team, one product, real homes.",
+            "body": "Under CEO Patrick Cotting, the Mitipi team works on Kevin from Fribourg, Switzerland, with partners in Europe and beyond.",
             "variant": "default"
           }
         },
@@ -63,9 +63,9 @@
           "type": "media_split",
           "settings": {
             "image_asset": "kevin-hero-luxury-dutch-villa.jpg",
-            "image_alt": "Kevin® protecting a home while residents are away",
+            "image_alt": "Kevin protecting a home while the family is away",
             "title": "What we work on",
-            "body": "Hardware, mobile apps, AI sound generation, brand storytelling, and global expansion. If you care about physical security without surveillance, we would like to hear from you.",
+            "body": "Hardware, the iOS and Android app, sound scenes, brand and storytelling, and expansion across Europe. If you have built any of these and want your work to make someone feel safe, write to us.",
             "reverse": false
           }
         },
@@ -73,7 +73,7 @@
           "type": "richtext",
           "settings": {
             "title": "Open roles",
-            "body": "<p>There are no public job listings on kevinswiss.com at this time. Send your CV and a short note about what you would like to work on—we keep promising profiles on file for future openings.</p>"
+            "body": "<p>There are no public listings at the moment. Send a CV and a few lines on what you would build for Kevin, and we will reply.</p>"
           }
         },
         "block_8": {

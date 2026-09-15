@@ -3,17 +3,17 @@
     "editorial": {
       "type": "main-editorial-page",
       "settings": {
-        "overline": "Support",
-        "heading": "Plug in. Schedule. Leave with peace of mind.",
-        "lede": "Kevin setup takes about 60 seconds: connect power, place near a window, and configure in the Kevin app. No installation, no wiring, no monitoring panel.",
+        "overline": "Setup guide",
+        "heading": "Set up Kevin in four steps and check the result from your own pavement.",
+        "lede": "For new owners: where to place Kevin, how to pair the app once, and how to see what a passer-by sees after dark. No tools, no wiring.",
         "theme": "white",
         "image_asset": "lurafi-product-studio.jpg",
-        "image_alt": "Kevin® device — studio product photo",
-        "cta_heading": "Need help?",
-        "cta_subheading": "Our team can walk you through placement and app setup.",
+        "image_alt": "Kevin 3 presence simulator, studio photo",
+        "cta_heading": "Need a hand with placement?",
+        "cta_subheading": "Send us a photo of the room and we will tell you where Kevin works best.",
         "cta_primary": "Contact support",
         "cta_primary_url": "/pages/contact",
-        "cta_secondary": "Buy Kevin",
+        "cta_secondary": "Configure & buy Kevin",
         "cta_secondary_url": "/pages/configure?plan=buy"
       },
       "blocks": {
@@ -21,8 +21,8 @@
           "type": "section_intro",
           "settings": {
             "overline": "Quick start",
-            "heading": "Four steps to believable presence.",
-            "body": "Most customers complete setup in under a minute. Follow these steps for the best results.",
+            "heading": "Four steps to a home that looks lived-in.",
+            "body": "Placement makes the biggest difference. Take a minute to get the window right before you pair the app.",
             "variant": "default"
           }
         },
@@ -31,23 +31,23 @@
           "settings": {
             "number": "1",
             "title": "Unbox and place",
-            "body": "Set Kevin near a visible window with a wall or ceiling for shadows. Connect the included power cable (approx. 3 m). Typical use is around 9 watts."
+            "body": "Put Kevin near a window that can be seen from the street, with a wall or ceiling behind it for the shadows. Connect the power adapter."
           }
         },
         "block_3": {
           "type": "step",
           "settings": {
             "number": "2",
-            "title": "Download the Kevin app",
-            "body": "Pair your device over Wi-Fi or Bluetooth, rename it if you like, and confirm firmware is up to date."
+            "title": "Pair the app",
+            "body": "Download the Kevin app for iOS or Android and connect over Wi-Fi or Bluetooth. Name your device and let it install the latest update."
           }
         },
         "block_4": {
           "type": "step",
           "settings": {
             "number": "3",
-            "title": "Choose your routine",
-            "body": "Activate instantly, schedule by day and hour, or enable geo-fencing so Kevin starts when you leave."
+            "title": "Choose a routine",
+            "body": "Start a simulation right away, set a weekly schedule, or switch on geofencing so Kevin starts when you leave. The three buttons on the device also start a scene without the app."
           }
         },
         "block_5": {
@@ -55,15 +55,15 @@
           "settings": {
             "number": "4",
             "title": "Test from outside",
-            "body": "Step outside after dark and check what neighbours see—warm light, movement, and believable sound through the window."
+            "body": "After dark, step onto the pavement and look at your window. You should see warm, changing light and moving shadows, and hear the room when you get close to the door."
           }
         },
         "block_6": {
           "type": "section_intro",
           "settings": {
-            "overline": "Placement tips",
+            "overline": "Placement",
             "heading": "Where Kevin works best.",
-            "body": "Kevin needs a visible window and a surface for shadows. Living rooms, ground-floor windows, and holiday-home facades are ideal.",
+            "body": "Kevin covers one room. Choose the window a burglar would check first: the living room, the ground floor, the side facing the street.",
             "variant": "default"
           }
         },
@@ -71,9 +71,9 @@
           "type": "media_split",
           "settings": {
             "image_asset": "kevin-hero-shadow-mom-toddler.webp",
-            "image_alt": "Kevin shadow simulation visible through a window at night",
-            "title": "Window visibility matters",
-            "body": "Burglars look for dark, silent homes. Position Kevin so light and shadow are visible through curtains from the street or hallway outside.",
+            "image_alt": "Kevin shadow scene visible through a window at night",
+            "title": "Give the shadows a surface",
+            "body": "Shadows need a wall or ceiling to land on and curtains or blinds to show through. Sheer curtains work best; heavy blackout curtains hide the effect.",
             "reverse": false
           }
         },
@@ -81,47 +81,47 @@
           "type": "media_split",
           "settings": {
             "image_asset": "kevin-feature-geo.jpg",
-            "image_alt": "Kevin app geo-fencing settings",
-            "title": "Try geo-fencing first",
-            "body": "Geo-fencing is the easiest daily routine: Kevin activates when you leave and you never have to remember to tap the app.",
+            "image_alt": "Geofencing settings in the Kevin app",
+            "title": "Start with geofencing",
+            "body": "For daily use, geofencing is the routine that needs no remembering: Kevin starts when your phone leaves the area and stops when you are back. Use schedules for holidays and for a home you manage from afar.",
             "reverse": true
           }
         },
         "block_9": {
           "type": "section_intro",
           "settings": {
-            "overline": "Help",
+            "overline": "First-day questions",
             "heading": "Setup FAQ",
-            "body": "Answers to common first-day questions.",
+            "body": "Answers to what new owners ask most.",
             "variant": "default"
           }
         },
         "block_10": {
           "type": "faq",
           "settings": {
-            "question": "Does Kevin need Wi-Fi to simulate presence?",
-            "answer": "<p>Kevin stores simulations locally and plays them from the device. Wi-Fi or Bluetooth is used for app setup and updates—but core protection continues even when the network is unavailable.</p>"
+            "question": "Does Kevin need Wi-Fi to run?",
+            "answer": "<p>No. Wi-Fi or Bluetooth is only used to set up Kevin and install updates. Scenes play from the 32 GB inside the device, so Kevin keeps working when the network is down or jammed.</p>"
           }
         },
         "block_11": {
           "type": "faq",
           "settings": {
-            "question": "Can I upload my own sounds?",
-            "answer": "<p>Yes. Record or upload familiar household sounds in the Kevin app. Kevin also uses AI-generated household audio to keep simulations believable and less repetitive.</p>"
+            "question": "Can I add my own sounds?",
+            "answer": "<p>Yes. Record familiar household sounds in the app and Kevin mixes them into its scenes. Built-in voices are in English, German and Swiss German.</p>"
           }
         },
         "block_12": {
           "type": "faq",
           "settings": {
-            "question": "What if something goes wrong?",
-            "answer": "<p>Kevin includes a 3-year Swiss warranty and 30-day returns. Note the serial number on the bottom of the unit and contact hello@lurafi.com with your order details.</p>"
+            "question": "Something is not working. What now?",
+            "answer": "<p>Note the serial number on the bottom of the device and email us. Kevin comes with a 3-year Swiss warranty and 30-day returns.</p>"
           }
         },
         "block_13": {
           "type": "richtext",
           "settings": {
-            "title": "Warranty & service",
-            "body": "<p>Kevin includes a 3-year Swiss warranty and 30-day returns. If your device stops working, note the serial number on the bottom of the unit and contact support with your order details.</p>"
+            "title": "Warranty and service",
+            "body": "<p>Kevin includes a 3-year Swiss warranty and 30-day returns. If your device stops working, contact us with the serial number and a short description, and we will arrange repair or replacement.</p>"
           }
         }
       },

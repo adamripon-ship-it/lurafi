@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "headline": "Les cambrioleurs évitent les maisons qui semblent habitées. Kevin fait de la vôtre l’une d’elles.",
+    "lede": "Pour les familles au travail, les voyageurs, les propriétaires de résidence secondaire et tous ceux qui vivent seuls : un seul appareil suisse diffuse lumière, ombres en mouvement et sons du quotidien près de la fenêtre — sans caméra, sans micro, et il continue de fonctionner quand le Wi-Fi est brouillé.",
+    "cta_primary_label": "Configurer et acheter Kevin",
+    "cta_secondary_label": "Voir comment ça marche",
+    "away_body": "Lumière, ombres et sons varient automatiquement — jamais deux soirées identiques.",
+    "privacy_body": "Les simulations tournent sur l’appareil. Rien n’est diffusé ni partagé.",
+    "checkout_title": "Livraison gratuite",
+    "checkout_body": "Dans toute l’UE, en Suisse, en Norvège et en Islande.",
+    "trust_1": "Conçu en Suisse",
+    "trust_2": "Environ 9 watts",
+    "trust_3": "Résiste aux brouilleurs",
+    "sticky_cta_label": "Configurer et acheter Kevin"
+  },
+  "problem": {
+    "overline": "Pourquoi une maison est choisie",
+    "heading": "Une maison qui semble vide est la cible la plus facile de la rue.",
+    "subheading": "Fenêtres sombres, une lampe sur minuterie, silence dans le couloir : voilà ce qu’un opportuniste vérifie en quelques secondes, depuis le trottoir. Kevin lui montre l’inverse : une maison qui semble et sonne habitée, que vous soyez au travail, en vacances ou seul chez vous ce soir.",
+    "tile_1_title": "Des ombres qui bougent comme des personnes",
+    "tile_1_body": "Des silhouettes en mouvement sur le mur ou le plafond, visibles à travers les rideaux — le signe de vie qu’un cambrioleur cherche avant de choisir une maison.",
+    "tile_2_title": "Le son d’une soirée ordinaire",
+    "tile_2_body": "Une conversation, la télé, la cuisine, un chien qui aboie à la sonnette — diffusés depuis l’appareil, pour que même de près quelqu’un soit clairement à la maison.",
+    "tile_3_title": "Les minuteries ne trompent personne",
+    "tile_3_body": "La même lampe à la même heure chaque soir ressemble à un automatisme. Kevin fait varier lumière, ombres et sons pendant jusqu’à quatre semaines sans se répéter.",
+    "tile_4_title": "La couche que votre alarme n’a pas",
+    "tile_4_body": "Une alarme réagit après que la porte a été testée. Kevin agit avant : depuis la rue, la maison semble occupée, la tentative ne commence même pas. Gardez votre alarme — placez la prévention devant."
+  },
+  "mechanism": {
+    "subheading": "Un cambrioleur juge une maison en quelques secondes — à sa lumière, ses mouvements, ses sons. Kevin fournit les trois depuis un seul appareil, pour que votre maison semble habitée de la rue jusqu’au pas de la porte, et qu’il passe à une cible plus facile.",
+    "phase_1_body": "Une lumière chaude qui change comme de vraies lampes et une télé qui scintille — jamais le marche-arrêt rigide d’une minuterie bon marché.",
+    "phase_2_body": "Des silhouettes en mouvement passent derrière les rideaux — exactement ce qu’un cambrioleur vérifie avant de choisir une cible.",
+    "phase_3_body": "Des voix, une télé, la cuisine et un chien à la porte, diffusés depuis l’appareil — pour que même de près, quelqu’un soit clairement là."
+  },
+  "stats": {
+    "stat_1_value": "32 Go",
+    "stat_1_label": "De lumière, d’ombres et de sons stockés sur l’appareil",
+    "stat_2_value": "70+",
+    "stat_2_label": "Heures de simulations intégrées — jusqu’à quatre semaines sans répétition",
+    "stat_3_value": "9 W",
+    "stat_3_label": "Consommation typique",
+    "stat_4_value": "0",
+    "stat_4_label": "Caméra ou micro",
+    "badge_1": "Aucun abonnement de télésurveillance",
+    "badge_2": "Conçu et dessiné en Suisse",
+    "badge_3": "Lecture locale — résiste aux brouilleurs"
+  },
+  "jammer": {
+    "heading": "Les brouilleurs aveuglent les caméras. Kevin continue.",
+    "subheading": "Des brouilleurs bon marché coupent caméras et alarmes connectées du réseau. Kevin lit chaque simulation depuis sa propre mémoire — pas de cloud, pas de signal, pas de trou.",
+    "col_1_title": "Une caméra",
+    "col_1_body": "Le flux s’arrête, les alertes ne partent jamais. Une caméra brouillée ne protège personne — elle n’enregistre simplement rien.",
+    "col_2_body": "Lumière, ombres et sons continuent depuis la mémoire locale — la maison ne manque pas un battement."
+  },
+  "app": {
+    "heading": "Réglez-le une fois. Il tourne tout seul.",
+    "subheading": "Programmes hebdomadaires, géolocalisation qui active Kevin quand vous partez, et tous vos logements dans une seule app — pour que la protection ne dépende jamais d’un oubli.",
+    "tile_1_title": "Des programmes adaptés à votre semaine",
+    "tile_1_body": "Réglez une fois week-ends, vacances ou routine quotidienne. Kevin suit le plan pendant que vous vivez votre vie.",
+    "tile_2_title": "Géolocalisation",
+    "tile_2_body": "Quittez la maison et Kevin démarre seul dès que votre téléphone sort du périmètre — sans appui, sans rappel.",
+    "tile_3_title": "Vos propres sons du quotidien",
+    "tile_3_body": "Enregistrez le dîner, les enfants, le chien. Kevin mélange vos enregistrements à ses scènes, pour que votre maison sonne comme votre maison.",
+    "tile_4_title": "Tous vos logements dans une seule app",
+    "tile_4_body": "Résidence secondaire, appartement de vacances, bureau : placez un Kevin dans chacun et gérez-les tous depuis votre téléphone."
+  },
+  "authority": {
+    "subheading": "Kevin est là pour les heures où une maison est vraiment vide — et pour les nuits où quelqu’un est seul à la maison.",
+    "reason_1_body": "Les cambrioleurs choisissent des cibles faciles et vides. Une maison qui s’éclaire, bouge et parle est ignorée.",
+    "reason_2_body": "Chalets, appartements de vacances et bateaux restent crédiblement habités entre vos visites.",
+    "reason_3_title": "Jamais « seul à la maison »",
+    "reason_3_body": "Pour un parent qui vit seul ou une fille dans son premier appartement : des voix, du mouvement et un chien — pour que le logement ne ressemble jamais à une cible facile.",
+    "quote": "The small Kevin.3 is unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show.",
+    "quote_author": "Michael Restin, Galaxus",
+    "quote_source": "Test produit, 9 janvier 2026"
+  },
+  "audience": {
+    "subheading": "Kevin s’installe là où la vie s’absente — pour une soirée, une saison ou un semestre."
+  },
+  "pricing": {
+    "heading": "Un seul paiement. Aucun abonnement. À vous pour de bon.",
+    "subheading": "Achetez Kevin en une fois : 70+ heures de simulations, mises à jour logicielles à vie, garantie suisse de 3 ans, retours sous 30 jours et livraison gratuite dans toute l’UE.",
+    "buy_tagline": "Achat unique. Toutes les mises à jour incluses.",
+    "buy_cta": "Configurer et acheter Kevin"
+  },
+  "specs": {
+    "heading": "Prêt à l’emploi. 9 watts. Sans caméra ni micro."
+  },
+  "cta": {
+    "heading": "Ne laissez pas votre maison sembler vide ce soir.",
+    "subheading": "Branchez Kevin, placez-le près de la fenêtre, et depuis la rue quelqu’un est là. Livraison gratuite dans toute l’UE, retours sous 30 jours, garantie suisse de 3 ans.",
+    "primary_cta": "Configurer et acheter Kevin",
+    "secondary_cta": "Voir comment ça marche"
+  }
+}

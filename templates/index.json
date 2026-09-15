@@ -19,34 +19,16 @@
     "video_showcase": {
       "type": "lp-video",
       "settings": {
-        "overline": "",
-        "heading": "",
-        "subheading": "",
         "caption": ""
       }
     },
     "problem": {
       "type": "lp-problem",
-      "settings": {
-        "overline": "",
-        "heading": "",
-        "subheading": "",
-        "tile_1_title": "",
-        "tile_1_body": "",
-        "tile_2_title": "",
-        "tile_2_body": "",
-        "tile_3_title": "",
-        "tile_3_body": "",
-        "tile_4_title": "",
-        "tile_4_body": ""
-      }
+      "settings": {}
     },
     "mechanism": {
       "type": "lp-mechanism",
       "settings": {
-        "overline": "",
-        "heading": "",
-        "subheading": "",
         "phase_1_title": "",
         "phase_1_body": "",
         "phase_2_title": "",
@@ -58,7 +40,6 @@
     "stats": {
       "type": "lp-stats",
       "settings": {
-        "heading": "",
         "stat_1_value": "",
         "stat_1_label": "",
         "stat_2_value": "",
@@ -72,9 +53,6 @@
     "jammer": {
       "type": "lp-jammer",
       "settings": {
-        "overline": "",
-        "heading": "",
-        "subheading": "",
         "col_1_title": "",
         "col_1_body": "",
         "col_1_status": "",
@@ -86,30 +64,16 @@
     "app": {
       "type": "lp-app",
       "settings": {
-        "overline": "Kevin App",
-        "heading": "Protection that runs while you live your life.",
-        "subheading": "Activate instantly, schedule in advance, or let geo-fencing turn Kevin on when you leave. Manage multiple devices and properties from one app.",
         "ui_status": "",
         "ui_row_1": "",
         "ui_row_2": "",
         "ui_row_3": "",
-        "ui_row_4": "",
-        "tile_1_title": "Set it and forget it",
-        "tile_1_body": "Schedule simulations for weekends, holidays, or daily routines—protection that fits around your lifestyle.",
-        "tile_2_title": "Geo-fencing",
-        "tile_2_body": "Kevin knows when you leave and starts protecting your space—no taps, no texts, just smart automation.",
-        "tile_3_title": "Make it personal",
-        "tile_3_body": "Record or upload familiar home sounds. Kevin uses them—and AI-generated household audio—to create a more believable presence.",
-        "tile_4_title": "Multiple properties",
-        "tile_4_body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app."
+        "ui_row_4": ""
       }
     },
     "authority": {
       "type": "lp-authority",
       "settings": {
-        "overline": "",
-        "heading": "",
-        "subheading": "",
         "reason_1_title": "",
         "reason_1_body": "",
         "reason_2_title": "",
@@ -128,9 +92,6 @@
     "audience": {
       "type": "lp-audience",
       "settings": {
-        "overline": "",
-        "heading": "",
-        "subheading": "",
         "chips": "",
         "story": ""
       }
@@ -138,13 +99,7 @@
     "pricing": {
       "type": "lp-pricing",
       "settings": {
-        "overline": "Own Kevin®",
-        "heading": "One-time purchase. Lifetime updates included.",
-        "subheading": "Buy Kevin® outright with free lifetime membership, software updates, 3-year Swiss warranty, and free delivery across Europe.",
-        "buy_label": "Own Kevin®",
-        "buy_tagline": "Buy one-time. All updates included.",
-        "buy_cta": "",
-        "buy_features": "Full device ownership|70+ hours of built-in simulations|Weekly schedules and geo-fencing|Upload your own household sounds|Bluetooth speaker and lamp at home|Flexible placement with 3 m power cable|Free delivery|3-year Swiss warranty"
+        "buy_cta": ""
       }
     },
     "specs": {
@@ -201,23 +156,15 @@
         "spec_row_5",
         "spec_row_6"
       ],
-      "settings": {
-        "eyebrow": "Form meets function",
-        "heading": "Plug and play. 9 watts. 100% privacy."
-      }
+      "settings": {}
     },
     "faq": {
       "type": "lp-faq",
-      "settings": {
-        "overline": "",
-        "heading": ""
-      }
+      "settings": {}
     },
     "cta": {
       "type": "lp-cta",
       "settings": {
-        "heading": "Do not leave your home looking empty.",
-        "subheading": "Let Kevin® become your virtual roommate—making your home feel alive while you are away. Free delivery across Europe. Plug and play. 9 watts. No cameras or microphones.",
         "primary_cta": "",
         "primary_cta_url": "",
         "secondary_cta": "",

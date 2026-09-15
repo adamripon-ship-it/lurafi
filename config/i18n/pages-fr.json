@@ -1,0 +1,627 @@
+{
+  "features": {
+    "overline": "Ce que fait Kevin",
+    "heading": "Lumière, ombres en mouvement et sons du quotidien — pour que, depuis la rue, quelqu’un soit à la maison.",
+    "lede": "Pour tous ceux dont la maison reste vide en journée, en vacances ou entre deux visites : Kevin joue les trois signes de vie qu’un cambrioleur vérifie, depuis un seul appareil branché. Sans caméra, sans micro, et il continue de fonctionner quand le Wi-Fi est brouillé.",
+    "image_alt": "Simulateur de présence Kevin 3, vue de face",
+    "seo": {
+      "title": "Fonctionnalités Kevin : lumière, ombres en mouvement et sons depuis un seul appareil | Mitipi",
+      "description": "Ce que fait Kevin : scènes de lumière chaude, ombres en mouvement brevetées et 70+ heures de sons domestiques depuis 32 Go de mémoire embarquée. Sans caméra ni micro, résiste aux brouilleurs. Conçu en Suisse, 9 W."
+    },
+    "blocks": [
+      {
+        "overline": "Trois signes de vie",
+        "heading": "Les cambrioleurs guettent la lumière, le mouvement et le son. Kevin fournit les trois.",
+        "body": "Chaque scène est lue depuis l’appareil lui-même, visible et audible là où ça compte : depuis le trottoir, à travers les rideaux, devant la porte d’entrée."
+      },
+      {
+        "image_alt": "Scène lumineuse Kevin visible à travers une fenêtre",
+        "title": "Une lumière qui se comporte comme des personnes",
+        "body": "Une lumière chaude qui varie comme de vraies lampes et une télé qui scintille. Pas une lampe sur minuterie à la même heure chaque soir, mais une pièce qui semble utilisée."
+      },
+      {
+        "image_alt": "Silhouette en mouvement projetée sur un mur derrière des rideaux",
+        "title": "Des ombres qui bougent",
+        "body": "Des silhouettes en mouvement brevetées traversent le mur ou le plafond derrière vos rideaux. De l’extérieur, on dirait une ou plusieurs personnes qui marchent dans la pièce."
+      },
+      {
+        "image_alt": "Kevin diffuse des sons domestiques du quotidien",
+        "title": "Les sons d’une soirée ordinaire",
+        "body": "Une conversation, la télé, la cuisine, un chien qui aboie quand on sonne. 70+ heures de scènes intégrées, jusqu’à quatre semaines sans répétition, plus vos propres enregistrements. Les voix intégrées existent en anglais, allemand et suisse allemand."
+      },
+      {
+        "stats": [
+          [
+            "70+",
+            "Heures de simulations intégrées"
+          ],
+          [
+            "9 W",
+            "Consommation typique"
+          ],
+          [
+            "0",
+            "Caméra ou micro"
+          ]
+        ]
+      },
+      {
+        "overline": "Avant, pas après",
+        "heading": "Une alarme réagit quand la porte est déjà testée. Kevin agit avant que quelqu’un n’essaie.",
+        "body": "Les caméras enregistrent ce qui s’est déjà produit et tombent quand le Wi-Fi est brouillé. Kevin fait paraître la maison occupée de l’extérieur, pour que la tentative ne commence jamais. Gardez votre alarme ; placez la prévention devant."
+      },
+      {
+        "image_alt": "Les caméras Wi-Fi brouillées s’éteignent tandis que Kevin continue depuis sa mémoire locale",
+        "title": "Continue quand le Wi-Fi est brouillé",
+        "body": "Des brouilleurs bon marché coupent caméras et alarmes connectées du réseau. Kevin stocke chaque scène sur 32 Go dans l’appareil et n’utilise le Wi-Fi ou le Bluetooth que pour la configuration et les mises à jour. Lumière, ombres et sons continuent sans signal."
+      },
+      {
+        "image_alt": "Kevin à côté d’une centrale d’alarme existante",
+        "title": "Fonctionne avec votre alarme",
+        "body": "Les alarmes et les caméras détectent. Kevin dissuade. Il est honnête sur ses limites : il n’appelle personne et n’enregistre rien. Il fait paraître une maison vide habitée, à l’œil et à l’oreille — la couche qui manque à la plupart des installations."
+      },
+      {
+        "overline": "Conçu en Suisse, pensé pour la vie privée",
+        "heading": "Sans caméra. Sans micro. Rien n’est diffusé.",
+        "body": "Conçu et dessiné en Suisse. Kevin projette lumière, ombres et sons ; il ne regarde ni n’écoute jamais. Placez-le près d’une fenêtre avec un mur ou un plafond pour les ombres, associez-le une fois, et il est prêt. Consommation typique d’environ 9 watts."
+      },
+      {
+        "title": "Utile aussi quand vous êtes là",
+        "body": "Entre deux absences, Kevin sert d’enceinte Bluetooth et de lampe, pour mériter sa place près de la fenêtre toute l’année. Trois boutons sur l’appareil lancent l’essentiel sans l’application."
+      }
+    ],
+    "cta_heading": "Voyez ce que votre rue voit.",
+    "cta_subheading": "Achetez Kevin en une fois : livraison gratuite dans toute l’UE, retours sous 30 jours, garantie suisse de 3 ans.",
+    "cta_primary": "Configurer et acheter Kevin",
+    "cta_secondary": "Voir comment ça marche"
+  },
+  "how-it-works": {
+    "overline": "Comment ça marche",
+    "heading": "Branchez-le près de la fenêtre, réglez-le une fois, et votre maison semble habitée à chaque départ.",
+    "lede": "Pour les pendulaires, les voyageurs et les propriétaires de résidence secondaire : Kevin suit un programme hebdomadaire ou s’active seul quand votre téléphone quitte le périmètre. Lumière, ombres et sons sont lus depuis l’appareil, donc il continue même Wi-Fi brouillé.",
+    "image_alt": "Simulateur de présence Kevin 3, vue de profil",
+    "seo": {
+      "title": "Comment fonctionne Kevin : brancher, programmer, partir | Mitipi",
+      "description": "Trois étapes : placez Kevin près d’une fenêtre, réglez un programme hebdomadaire ou la géolocalisation dans l’app, et lumière, ombres en mouvement et sons sont lus depuis la mémoire locale pendant votre absence. Sans caméra ni micro."
+    },
+    "blocks": [
+      {
+        "overline": "Trois étapes",
+        "heading": "Brancher. Choisir une routine. Partir.",
+        "body": "Pas d’installation, pas de câblage, pas de contrat de télésurveillance. Kevin a besoin d’une prise, d’une fenêtre donnant sur la rue et d’un mur ou d’un plafond pour les ombres."
+      },
+      {
+        "title": "Brancher et placer",
+        "body": "Placez Kevin près d’une fenêtre visible de l’extérieur, avec un mur ou un plafond derrière pour les ombres. Branchez l’adaptateur. Trois boutons sur l’appareil lancent l’essentiel sans l’application."
+      },
+      {
+        "title": "Régler un programme ou la géolocalisation",
+        "body": "Dans l’app Kevin, réglez une fois un programme hebdomadaire, ou activez la géolocalisation pour que Kevin démarre seul quand votre téléphone quitte le périmètre. Partir en vitesse n’a plus d’importance."
+      },
+      {
+        "title": "Votre maison semble habitée",
+        "body": "Lumière chaude, silhouettes en mouvement et sons du quotidien sont lus depuis les 32 Go de l’appareil et varient jusqu’à quatre semaines sans répétition. Rien ne vient du cloud, un Wi-Fi brouillé ne change donc rien."
+      },
+      {
+        "stats": [
+          [
+            "3",
+            "Boutons sur l’appareil, pas besoin de l’app pour démarrer"
+          ],
+          [
+            "9 W",
+            "Consommation typique"
+          ],
+          [
+            "32 Go",
+            "Scènes stockées dans l’appareil"
+          ]
+        ]
+      },
+      {
+        "overline": "Adapté à la vraie vie",
+        "heading": "Conçu pour la façon dont vous quittez vraiment la maison.",
+        "body": "Trajet quotidien, week-end à l’extérieur, résidence secondaire visitée une fois par mois : Kevin suit la routine que vous définissez."
+      },
+      {
+        "image_alt": "Kevin s’active quand vous partez travailler",
+        "title": "Chaque jour de travail",
+        "body": "La géolocalisation lance Kevin quand vous partez et l’arrête à votre retour. La maison n’a jamais cet aspect sombre et silencieux qui dit que personne n’est là."
+      },
+      {
+        "image_alt": "Kevin en programme vacances",
+        "title": "Vacances et week-ends",
+        "body": "Réglez le programme vacances avant de partir. Soir après soir, la lumière s’allume, les ombres bougent et la télé murmure, sans lampe sur minuterie à heure fixe."
+      },
+      {
+        "image_alt": "Plusieurs appareils Kevin gérés dans une seule app",
+        "title": "Résidences secondaires et locations",
+        "body": "Placez un Kevin dans le chalet, l’appartement de vacances ou le bureau et gérez-les tous depuis une seule app. Comme les scènes sont lues localement, un Wi-Fi faible sur place n’est pas un problème."
+      },
+      {
+        "overline": "Pourquoi ça marche",
+        "heading": "Les cambrioleurs choisissent la maison facile, qui semble vide. Pas la vôtre.",
+        "body": "La plupart des cambriolages sont opportunistes. Une maison qui s’éclaire, bouge et sonne habitée est ignorée au profit d’une autre. Kevin prend cette décision pour eux avant même que la porte ne soit testée."
+      },
+      {
+        "title": "Maisons, appartements, bureaux et commerces",
+        "body": "Kevin couvre une pièce par appareil. Placez-le là où la rue regarde : le salon, une fenêtre au rez-de-chaussée, une vitrine après la fermeture. Grande maison ou plusieurs façades : ajoutez un second appareil et gérez les deux dans l’app."
+      }
+    ],
+    "cta_heading": "Prêt à partir sans arrière-pensée ?",
+    "cta_subheading": "Configurez votre Kevin et payez en toute sécurité. Livraison gratuite dans toute l’UE, retours sous 30 jours, garantie suisse de 3 ans.",
+    "cta_primary": "Configurer et acheter Kevin",
+    "cta_secondary": "Lire le guide d’installation"
+  },
+  "the-kevin-app": {
+    "overline": "L’app Kevin",
+    "heading": "Une protection qui s’active toute seule, pour que vous n’ayez jamais à y penser.",
+    "lede": "Pour les foyers occupés et tous ceux qui gèrent à distance le logement d’un parent ou une résidence secondaire : programmes, géolocalisation et tous vos appareils dans une seule app gratuite. Aucun abonnement de télésurveillance, rien à renouveler.",
+    "image_alt": "Gros plan sur la façade en tissu et les commandes de Kevin 3",
+    "seo": {
+      "title": "L’app Kevin : programmes, géolocalisation, tous vos logements au même endroit | Mitipi",
+      "description": "L’app Kevin gratuite règle des programmes hebdomadaires, lance Kevin par géolocalisation quand vous partez, enregistre vos propres sons domestiques et gère plusieurs appareils. Disponible en anglais, allemand, français et néerlandais."
+    },
+    "blocks": [
+      {
+        "overline": "Réglé une fois, tourne tout seul",
+        "heading": "Décidez une fois comment votre maison doit se comporter. Kevin s’occupe du reste.",
+        "body": "L’app sert à définir la routine. Ensuite, Kevin fonctionne sans appui, sans rappel et sans frais mensuels."
+      },
+      {
+        "image_alt": "Écran de programme hebdomadaire dans l’app Kevin",
+        "title": "Programmes hebdomadaires",
+        "body": "Réglez une fois les jours de semaine, les week-ends et les vacances. Kevin suit le plan pour que la maison semble habitée aux heures qui comptent, que vous y pensiez ou non."
+      },
+      {
+        "image_alt": "Réglage de la géolocalisation dans l’app Kevin",
+        "title": "Géolocalisation",
+        "body": "Kevin démarre quand votre téléphone quitte le périmètre de votre maison et s’arrête à votre retour. La routine quotidienne « je pars et j’oublie », sans rien toucher."
+      },
+      {
+        "image_alt": "Plusieurs appareils Kevin listés dans l’app",
+        "title": "Tous vos logements dans une seule app",
+        "body": "Votre maison, l’appartement d’un parent, la maison de vacances, le bureau : placez un Kevin dans chacun et vérifiez ou ajustez n’importe lequel, où que vous soyez."
+      },
+      {
+        "image_alt": "Kevin 3 avec réglages sonores personnalisés",
+        "title": "Votre foyer, vos sons",
+        "body": "Enregistrez le dîner, les enfants ou le chien dans l’app. Kevin mélange vos enregistrements à ses 70+ heures de scènes intégrées, pour que votre maison sonne comme votre maison. Les voix intégrées existent en anglais, allemand et suisse allemand."
+      },
+      {
+        "image_alt": "Photo studio de Kevin 3",
+        "title": "Rien n’est observé ni diffusé",
+        "body": "L’app envoie des réglages à Kevin. Kevin n’a ni caméra ni micro, et chaque scène est lue depuis sa propre mémoire de 32 Go. Pas de flux vidéo, pas d’enregistrement dans le cloud, rien que quelqu’un d’autre pourrait voir."
+      },
+      {
+        "overline": "Premiers pas",
+        "heading": "Associez une seule fois après le déballage.",
+        "body": "Téléchargez l’app, connectez Kevin en Wi-Fi ou Bluetooth et choisissez une routine. L’app est disponible en anglais, allemand, français et néerlandais."
+      },
+      {
+        "title": "Téléchargez l’app Kevin",
+        "body": "Pour iOS et Android. Cherchez Kevin by Mitipi dans votre boutique d’applications."
+      },
+      {
+        "title": "Associez votre appareil",
+        "body": "Suivez le guide dans l’app pour connecter Kevin en Wi-Fi ou Bluetooth. Donnez-lui un nom comme « Salon » ou « Appartement de maman »."
+      },
+      {
+        "title": "Choisissez une routine",
+        "body": "Lancez une simulation tout de suite, réglez le programme hebdomadaire ou activez la géolocalisation. Modifiable à tout moment, où que vous soyez."
+      }
+    ],
+    "cta_heading": "Un appareil, une app, aucun abonnement.",
+    "cta_subheading": "Achetez Kevin en une fois avec livraison gratuite dans toute l’UE, retours sous 30 jours et garantie suisse de 3 ans.",
+    "cta_primary": "Configurer et acheter Kevin",
+    "cta_secondary": "Lire le guide d’installation"
+  },
+  "pricing": {
+    "overline": "Tarifs",
+    "heading": "Un seul paiement de 579,95 €. Jamais de frais de télésurveillance.",
+    "lede": "Pour les propriétaires qui préfèrent posséder leur sécurité plutôt que la louer : Kevin, l’app, 70+ heures de simulations et les mises à jour logicielles à vie en un seul achat. Livraison gratuite dans toute l’UE, retours sous 30 jours, garantie suisse de 3 ans.",
+    "image_alt": "Simulateur de présence Kevin 3, vue de dessus",
+    "seo": {
+      "title": "Prix de Kevin : 579,95 € en une fois, sans abonnement | Mitipi",
+      "description": "Kevin 3 coûte 579,95 € une seule fois. Inclus : l’app, 70+ heures de simulations, mises à jour à vie, garantie suisse de 3 ans, retours sous 30 jours et livraison gratuite dans toute l’UE, en Suisse, en Norvège et en Islande. Façades colorées 29,95 €."
+    },
+    "blocks": [
+      {
+        "overline": "Ce que vous obtenez",
+        "heading": "Tout ce qu’il faut pour qu’une maison vide semble habitée.",
+        "body": "Un prix transparent. Pas de frais cachés, pas de contrat de télésurveillance, pas d’abonnement à l’app."
+      },
+      {
+        "title": "Inclus avec Kevin",
+        "body": "Kevin 3 avec la façade grise · adaptateur secteur · l’app Kevin pour iOS et Android · 70+ heures de scènes de lumière, d’ombres et de sons · mises à jour logicielles à vie · garantie suisse de 3 ans · retours sous 30 jours · livraison gratuite dans toute l’UE, en Suisse, au Liechtenstein, en Norvège et en Islande.\n\nEn option : façades colorées en rouge, brun, bleu ou blanc, 29,95 € pièce."
+      },
+      {
+        "stats": [
+          [
+            "3 ans",
+            "Garantie suisse"
+          ],
+          [
+            "30",
+            "Jours pour retourner"
+          ],
+          [
+            "0 €",
+            "Frais mensuels"
+          ]
+        ]
+      },
+      {
+        "overline": "Questions avant d’acheter",
+        "heading": "FAQ sur le prix",
+        "body": "Les questions que nous entendons le plus de la part de ceux qui comparent Kevin aux alarmes, caméras et minuteries."
+      },
+      {
+        "question": "Y a-t-il un abonnement ?",
+        "answer": "Non. Vous payez une fois. Les mises à jour logicielles, l’app et toutes les scènes intégrées sont incluses pour toute la vie de l’appareil. Il n’y a pas de formule de télésurveillance parce que Kevin ne surveille pas : il dissuade."
+      },
+      {
+        "question": "Comment se compare-t-il à une alarme télésurveillée ?",
+        "answer": "Une alarme télésurveillée réagit après que quelqu’un a testé la porte et coûte chaque mois. Kevin coûte 579,95 € une fois et agit avant la tentative, en faisant paraître la maison occupée. Beaucoup de propriétaires utilisent les deux : l’alarme pour détecter, Kevin pour prévenir."
+      },
+      {
+        "question": "Où la livraison est-elle gratuite ?",
+        "answer": "Dans toute l’UE, en Suisse, au Liechtenstein, en Norvège et en Islande. Les prix et taxes s’affichent pour votre pays au moment du paiement."
+      },
+      {
+        "question": "Et si je change d’avis ?",
+        "answer": "Retournez Kevin sous 30 jours. Essayez-le chez vous, sortez à la nuit tombée et regardez votre propre fenêtre. S’il ne vous convient pas, renvoyez-le."
+      },
+      {
+        "title": "Paiement sécurisé",
+        "body": "Choisissez votre façade, payez par carte ou avec votre moyen préféré via le paiement Shopify. Vous recevez une confirmation de commande et un numéro de suivi dès l’expédition de Kevin."
+      }
+    ],
+    "cta_heading": "Possédez-le. Sans renouvellement, sans rappel.",
+    "cta_subheading": "Choisissez une façade et passez au paiement sécurisé.",
+    "cta_primary": "Configurer et acheter Kevin",
+    "cta_secondary": "Voir les fonctionnalités"
+  },
+  "about-kevin": {
+    "overline": "À propos de Mitipi",
+    "heading": "Nous construisons la prévention, pas la surveillance. De l’ingénierie suisse pour des maisons qui semblent habitées.",
+    "lede": "Mitipi AG, à Fribourg, développe Kevin, le simulateur de présence qui fait paraître maisons, appartements, bureaux et résidences de vacances occupés depuis la rue. Depuis 2018, une seule idée : arrêter le cambriolage avant qu’il ne commence, sans caméra braquée sur votre famille.",
+    "image_alt": "Simulation de présence Kevin dans un salon la nuit",
+    "seo": {
+      "title": "À propos de Mitipi : l’entreprise suisse derrière Kevin | Mitipi",
+      "description": "Mitipi AG, Fribourg, Suisse, développe Kevin, un simulateur de présence qui dissuade les cambriolages par la lumière, des ombres en mouvement et le son. Fondée en 2018. Sans caméra ni micro, conçu en Suisse."
+    },
+    "blocks": [
+      {
+        "overline": "Pourquoi nous existons",
+        "heading": "Tout le monde mérite de quitter sa maison sans arrière-pensée.",
+        "body": "Après un cambriolage, la plupart des gens ne se sentent plus jamais tout à fait en sécurité chez eux. Nous avons créé Mitipi pour changer la façon de prévenir les cambriolages : non pas en les enregistrant, mais en faisant en sorte qu’ils ne soient jamais tentés."
+      },
+      {
+        "title": "La prévention, pas la surveillance",
+        "body": "La dissuasion ne doit pas coûter votre vie privée. Kevin n’a ni caméra ni micro. Chaque scène est stockée sur l’appareil et lue localement : rien de votre maison n’est diffusé, partagé ni perdu quand le Wi-Fi est brouillé."
+      },
+      {
+        "stats": [
+          [
+            "0",
+            "Caméra ou micro"
+          ],
+          [
+            "CH",
+            "Conçu et dessiné en Suisse"
+          ],
+          [
+            "2018",
+            "Fondation de Mitipi"
+          ]
+        ]
+      },
+      {
+        "overline": "Notre histoire",
+        "heading": "D’une idée à Zurich aux maisons de toute l’Europe.",
+        "body": "Kevin est né à Zurich. Mitipi a été fondée en 2018 et est aujourd’hui installée à Bluefactory, à Fribourg, où chaque génération de Kevin est développée avec des partenaires suisses."
+      },
+      {
+        "title": "L’idée",
+        "body": "Le travail commence sur un appareil qui fait paraître une maison habitée grâce à la lumière, des ombres en mouvement et du son, au lieu de la surveiller avec une caméra."
+      },
+      {
+        "title": "Kevin est lancé en Suisse",
+        "body": "Le premier Kevin est livré aux foyers suisses. Mitipi remporte le prix Global Digital Insurance Agenda (DIA) pour l’innovation."
+      },
+      {
+        "title": "Kevin.2",
+        "body": "Arrivée des enregistrements personnels et de la géolocalisation. Mitipi s’installe à Bluefactory, à Fribourg, et reçoit le Plus X Award en Allemagne."
+      },
+      {
+        "title": "Kevin.3",
+        "body": "Nouveau matériel, 32 Go de mémoire embarquée, plus de scènes et de personnalisation. La génération vendue sur ce site."
+      },
+      {
+        "title": "European Security Award",
+        "body": "Mitipi reçoit le European Security Award pour la prévention des cambriolages la plus innovante d’Europe."
+      },
+      {
+        "image_alt": "Simulateur de présence Kevin 3",
+        "title": "Testé, pas seulement affirmé",
+        "body": "En janvier 2026, Galaxus a testé Kevin.3 et l’a qualifié de « unrivalled in that it’s an easy-to-use, all-in-one solution that delivers a truly spectacular show ». Nous publions aussi les limites : une pièce par appareil, le placement compte, et Kevin dissuade plutôt qu’il ne déclenche une alarme."
+      },
+      {
+        "title": "Mitipi AG",
+        "body": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Suisse · CHE-356.372.981"
+      }
+    ],
+    "cta_heading": "Placez la prévention devant votre alarme.",
+    "cta_subheading": "Livraison gratuite dans toute l’UE, retours sous 30 jours, garantie suisse de 3 ans.",
+    "cta_primary": "Configurer et acheter Kevin",
+    "cta_secondary": "Presse et médias"
+  },
+  "press": {
+    "overline": "Presse et médias",
+    "heading": "Kevin dans la presse : la réponse suisse au cambriolage qui n’a pas besoin de caméra.",
+    "lede": "Articles, tests et interviews sur Mitipi et Kevin. Les journalistes peuvent demander des photos produit, une fiche technique et des interviews avec l’équipe Mitipi.",
+    "image_alt": "Simulateur de présence Kevin 3, photo de presse",
+    "seo": {
+      "title": "Kevin presse et médias : tests, articles, dossier de presse | Mitipi",
+      "description": "Ce que dit la presse de Kevin, le simulateur de présence suisse : test produit Galaxus, TechRadar, Le Temps, Safety Detectives et plus. Dossier de presse et interviews sur demande."
+    },
+    "blocks": [
+      {
+        "overline": "Articles",
+        "heading": "Ce que les testeurs ont constaté en essayant Kevin.",
+        "body": "Citations choisies issues de tests produit et d’interviews. Datées quand la source l’est."
+      },
+      {
+        "source": "Galaxus — test produit Kevin.3, 9 janvier 2026"
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "overline": "Récompenses",
+        "heading": "Récompensé pour une innovation qui met la prévention en premier.",
+        "body": "Prix reçus par Mitipi pour le design de Kevin et son approche de la prévention des cambriolages."
+      },
+      {
+        "stats": [
+          [
+            "2024",
+            "European Security Award"
+          ],
+          [
+            "2021",
+            "Plus X Award (Allemagne)"
+          ],
+          [
+            "2019",
+            "Global DIA Award"
+          ]
+        ]
+      },
+      {
+        "contacts": [
+          [
+            "Demandes presse",
+            null
+          ],
+          [
+            "Contact général",
+            null
+          ],
+          [
+            "Dossier de presse",
+            "Photos produit et fiche technique sur demande"
+          ],
+          [
+            "Entreprise",
+            "Mitipi AG, Fribourg, Suisse"
+          ]
+        ]
+      }
+    ],
+    "cta_heading": "Vous écrivez sur la sécurité du domicile ?",
+    "cta_subheading": "Photos produit, fiche technique et disponibilités pour interview sur demande.",
+    "cta_primary": "Demander le dossier de presse",
+    "cta_secondary": "À propos de Mitipi"
+  },
+  "careers": {
+    "overline": "Carrières",
+    "heading": "Aidez plus de familles à quitter leur maison sans s’inquiéter.",
+    "lede": "Mitipi est une petite équipe suisse qui construit Kevin, le simulateur de présence qui prévient les cambriolages sans caméra. Si vous construisez du matériel, des apps, du son ou des histoires, nous aimerions vous lire.",
+    "image_alt": "Simulation de présence Kevin à la maison",
+    "seo": {
+      "title": "Carrières chez Mitipi, Fribourg | Mitipi",
+      "description": "Travaillez sur Kevin, le simulateur de présence suisse qui prévient les cambriolages sans caméra. Matériel, applications mobiles, design sonore et marketing chez Mitipi AG à Fribourg. Envoyez une candidature spontanée."
+    },
+    "blocks": [
+      {
+        "overline": "Ce qui compte pour nous",
+        "heading": "La sécurité sans surveillance.",
+        "body": "Nous pensons que la prévention vaut mieux que la réaction, et que la vie privée n’est pas le prix de la sécurité. Cela façonne ce que nous construisons et notre façon de travailler."
+      },
+      {
+        "title": "Croissance",
+        "body": "Nous sommes une petite entreprise avec des clients dans toute l’Europe. Chacun ici voit son travail arriver rapidement dans de vraies maisons."
+      },
+      {
+        "title": "Sécurité",
+        "body": "Nous apportons de la sérénité aux foyers : la prévention d’abord, la vie privée toujours. Sans caméra, sans micro, sans commerce de données."
+      },
+      {
+        "title": "Idées",
+        "body": "Les ombres en mouvement, les sons domestiques et un appareil qui survit à un réseau brouillé sont nés d’une pensée au-delà de l’évidence. Nous continuons ainsi."
+      },
+      {
+        "overline": "L’équipe",
+        "heading": "Petite équipe, un produit, de vraies maisons.",
+        "body": "Sous la direction du CEO Patrick Cotting, l’équipe Mitipi travaille sur Kevin depuis Fribourg, en Suisse, avec des partenaires en Europe et au-delà."
+      },
+      {
+        "image_alt": "Kevin protège une maison pendant que la famille est absente",
+        "title": "Sur quoi nous travaillons",
+        "body": "Le matériel, l’app iOS et Android, les scènes sonores, la marque et le storytelling, et l’expansion en Europe. Si vous avez construit l’un de ces éléments et voulez que votre travail rassure quelqu’un, écrivez-nous."
+      },
+      {
+        "title": "Postes ouverts",
+        "body": "Aucune annonce publique pour le moment. Envoyez un CV et quelques lignes sur ce que vous construiriez pour Kevin, et nous vous répondrons."
+      },
+      {
+        "contacts": [
+          [
+            "Carrières",
+            null
+          ],
+          [
+            "Bureau",
+            "Mitipi AG · Bluefactory · Fribourg, Suisse"
+          ]
+        ]
+      }
+    ],
+    "cta_heading": "Présentez-vous.",
+    "cta_subheading": "Dites-nous ce que vous construisez et pourquoi Kevin compte pour vous.",
+    "cta_primary": "Écrire à carrières",
+    "cta_secondary": "À propos de Mitipi"
+  },
+  "setup-guide": {
+    "overline": "Guide d’installation",
+    "heading": "Installez Kevin en quatre étapes et vérifiez le résultat depuis votre propre trottoir.",
+    "lede": "Pour les nouveaux propriétaires : où placer Kevin, comment associer l’app une seule fois, et comment voir à la nuit tombée ce qu’un passant voit. Sans outil, sans câblage.",
+    "image_alt": "Simulateur de présence Kevin 3, photo studio",
+    "seo": {
+      "title": "Guide d’installation Kevin : placement, association, premier test | Mitipi",
+      "description": "Installez Kevin en quatre étapes : placez-le près d’une fenêtre côté rue avec un mur pour les ombres, associez l’app en Wi-Fi ou Bluetooth, choisissez un programme ou la géolocalisation, puis testez de l’extérieur à la nuit tombée."
+    },
+    "blocks": [
+      {
+        "overline": "Démarrage rapide",
+        "heading": "Quatre étapes vers une maison qui semble habitée.",
+        "body": "Le placement fait la plus grande différence. Prenez une minute pour choisir la bonne fenêtre avant d’associer l’app."
+      },
+      {
+        "title": "Déballer et placer",
+        "body": "Placez Kevin près d’une fenêtre visible depuis la rue, avec un mur ou un plafond derrière pour les ombres. Branchez l’adaptateur."
+      },
+      {
+        "title": "Associer l’app",
+        "body": "Téléchargez l’app Kevin pour iOS ou Android et connectez-vous en Wi-Fi ou Bluetooth. Nommez votre appareil et laissez-le installer la dernière mise à jour."
+      },
+      {
+        "title": "Choisir une routine",
+        "body": "Lancez une simulation tout de suite, réglez un programme hebdomadaire, ou activez la géolocalisation pour que Kevin démarre quand vous partez. Les trois boutons sur l’appareil lancent aussi une scène sans l’app."
+      },
+      {
+        "title": "Tester de l’extérieur",
+        "body": "À la nuit tombée, allez sur le trottoir et regardez votre fenêtre. Vous devriez voir une lumière chaude et changeante, des ombres en mouvement, et entendre la pièce en vous approchant de la porte."
+      },
+      {
+        "overline": "Placement",
+        "heading": "Là où Kevin fonctionne le mieux.",
+        "body": "Kevin couvre une pièce. Choisissez la fenêtre qu’un cambrioleur vérifierait en premier : le salon, le rez-de-chaussée, le côté rue."
+      },
+      {
+        "image_alt": "Scène d’ombres Kevin visible à travers une fenêtre la nuit",
+        "title": "Donnez une surface aux ombres",
+        "body": "Les ombres ont besoin d’un mur ou d’un plafond pour se poser et de rideaux ou de stores pour transparaître. Les voilages fonctionnent le mieux ; les rideaux occultants épais cachent l’effet."
+      },
+      {
+        "image_alt": "Réglages de géolocalisation dans l’app Kevin",
+        "title": "Commencez par la géolocalisation",
+        "body": "Au quotidien, la géolocalisation est la routine qui ne demande aucune mémoire : Kevin démarre quand votre téléphone quitte le périmètre et s’arrête à votre retour. Utilisez les programmes pour les vacances et pour un logement géré à distance."
+      },
+      {
+        "overline": "Questions du premier jour",
+        "heading": "FAQ installation",
+        "body": "Réponses aux questions les plus fréquentes des nouveaux propriétaires."
+      },
+      {
+        "question": "Kevin a-t-il besoin du Wi-Fi pour fonctionner ?",
+        "answer": "Non. Le Wi-Fi ou le Bluetooth ne servent qu’à configurer Kevin et à installer les mises à jour. Les scènes sont lues depuis les 32 Go de l’appareil, donc Kevin continue de fonctionner quand le réseau est coupé ou brouillé."
+      },
+      {
+        "question": "Puis-je ajouter mes propres sons ?",
+        "answer": "Oui. Enregistrez des sons familiers de la maison dans l’app et Kevin les mélange à ses scènes. Les voix intégrées existent en anglais, allemand et suisse allemand."
+      },
+      {
+        "question": "Quelque chose ne fonctionne pas. Que faire ?",
+        "answer": "Notez le numéro de série sous l’appareil et écrivez-nous. Kevin est livré avec une garantie suisse de 3 ans et des retours sous 30 jours."
+      },
+      {
+        "title": "Garantie et service",
+        "body": "Kevin bénéficie d’une garantie suisse de 3 ans et de retours sous 30 jours. Si votre appareil cesse de fonctionner, contactez-nous avec le numéro de série et une courte description, et nous organiserons la réparation ou le remplacement."
+      }
+    ],
+    "cta_heading": "Besoin d’aide pour le placement ?",
+    "cta_subheading": "Envoyez-nous une photo de la pièce et nous vous dirons où Kevin fonctionne le mieux.",
+    "cta_primary": "Contacter le support",
+    "cta_secondary": "Configurer et acheter Kevin"
+  },
+  "contact": {
+    "overline": "Contact",
+    "heading": "Parlez aux personnes qui construisent Kevin.",
+    "lede": "Une question sur votre commande, le placement, l’app ou la garantie ? Écrivez-nous et un membre de l’équipe Mitipi à Fribourg vous répond.",
+    "image_alt": "",
+    "seo": {
+      "title": "Contacter Mitipi : support, commandes, presse | Mitipi",
+      "description": "Contactez l’équipe Mitipi à Fribourg, en Suisse, pour les commandes Kevin, l’installation, la garantie et les demandes presse. Registre du commerce CHE-356.372.981."
+    },
+    "blocks": [
+      {
+        "contacts": [
+          [
+            "Service client",
+            null
+          ],
+          [
+            "Presse",
+            null
+          ],
+          [
+            "Bureau",
+            "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Suisse"
+          ],
+          [
+            "Registre du commerce",
+            null
+          ]
+        ]
+      },
+      {
+        "overline": "Questions fréquentes",
+        "heading": "Réponses rapides avant d’écrire.",
+        "body": "Commandes, installation et garantie en quelques lignes."
+      },
+      {
+        "question": "Comment commander Kevin ?",
+        "answer": "Choisissez une façade sur la page de configuration et payez via le paiement sécurisé Shopify. La livraison est gratuite dans toute l’UE, en Suisse, au Liechtenstein, en Norvège et en Islande."
+      },
+      {
+        "question": "J’ai besoin d’aide pour le placement ou l’app.",
+        "answer": "Lisez d’abord le guide d’installation. Si vous hésitez encore, envoyez-nous une photo de la pièce et de la fenêtre et nous vous dirons où Kevin fonctionne le mieux."
+      },
+      {
+        "question": "Mon Kevin ne fonctionne plus.",
+        "answer": "Kevin a une garantie suisse de 3 ans. Envoyez-nous le numéro de série situé sous l’appareil et une courte description, et nous organiserons la réparation ou le remplacement."
+      },
+      {
+        "question": "Demande presse ou partenariat ?",
+        "answer": "Écrivez à l’adresse presse pour des photos produit, une fiche technique et des disponibilités pour interview."
+      },
+      {
+        "title": "Commandes et paiement",
+        "body": "Les confirmations de commande et numéros de suivi sont envoyés par e-mail dès l’expédition de Kevin. Les retours sont acceptés sous 30 jours."
+      },
+      {
+        "title": "Réparations sous garantie",
+        "body": "Envoyez le numéro de série et une courte description de la panne. Nous répondons avec l’étape suivante, généralement une réparation ou un appareil de remplacement."
+      }
+    ],
+    "cta_heading": "Prêt à acheter ?",
+    "cta_subheading": "Choisissez une façade et passez au paiement sécurisé.",
+    "cta_primary": "Configurer et acheter Kevin",
+    "cta_secondary": "Lire le guide d’installation"
+  }
+}

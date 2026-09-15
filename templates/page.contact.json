@@ -3,17 +3,17 @@
     "editorial": {
       "type": "main-editorial-page",
       "settings": {
-        "overline": "Support",
-        "heading": "We are here to help.",
-        "lede": "Questions about Kevin®, your order, setup, or warranty? Reach Mitipi using the details below.",
+        "overline": "Contact",
+        "heading": "Talk to the people who build Kevin.",
+        "lede": "Questions about your order, placement, the app or the warranty? Email us and a member of the Mitipi team in Fribourg replies.",
         "theme": "white",
         "image_asset": "",
         "image_alt": "",
         "cta_heading": "Ready to buy?",
-        "cta_subheading": "Configure your color and continue to checkout.",
-        "cta_primary": "Configure Kevin",
+        "cta_subheading": "Choose a front cover and continue to secure checkout.",
+        "cta_primary": "Configure & buy Kevin",
         "cta_primary_url": "/pages/configure?plan=buy",
-        "cta_secondary": "Setup guide",
+        "cta_secondary": "Read the setup guide",
         "cta_secondary_url": "/pages/setup-guide"
       },
       "blocks": {
@@ -37,9 +37,9 @@
         "block_2": {
           "type": "section_intro",
           "settings": {
-            "overline": "Common topics",
-            "heading": "How can we help?",
-            "body": "Quick answers for orders, setup, and warranty.",
+            "overline": "Common questions",
+            "heading": "Quick answers before you write.",
+            "body": "Orders, setup and warranty in a few lines.",
             "variant": "default"
           }
         },
@@ -47,42 +47,42 @@
           "type": "faq",
           "settings": {
             "question": "How do I order Kevin?",
-            "answer": "<p>Configure your color at mitipi.eu/pages/configure and complete purchase through secure Shopify checkout. Free delivery across Europe on qualifying orders.</p>"
+            "answer": "<p>Choose a front cover on the configure page and pay through secure Shopify checkout. Shipping is free across the EU, Switzerland, Liechtenstein, Norway and Iceland.</p>"
           }
         },
         "block_4": {
           "type": "faq",
           "settings": {
-            "question": "I need help with setup.",
-            "answer": "<p>See our setup guide at mitipi.eu/pages/setup-guide. For hands-on help, email hello@lurafi.com with your device serial number and a short description of the issue.</p>"
+            "question": "I need help with placement or the app.",
+            "answer": "<p>Read the setup guide first. If you are still unsure, email us a photo of the room and the window and we will tell you where Kevin works best.</p>"
           }
         },
         "block_5": {
           "type": "faq",
           "settings": {
             "question": "My Kevin stopped working.",
-            "answer": "<p>Kevin includes a 3-year Swiss warranty. Contact us with your serial number (on the bottom of the device) and order reference. We will guide you through repair or replacement.</p>"
+            "answer": "<p>Kevin has a 3-year Swiss warranty. Email us the serial number on the bottom of the device and a short description, and we will arrange repair or replacement.</p>"
           }
         },
         "block_6": {
           "type": "faq",
           "settings": {
-            "question": "Press or partnership inquiry?",
-            "answer": "<p>Email press@lurafi.com for media requests, product photos, and spokesperson availability. For B2B partnerships, include your company name and region in your message.</p>"
+            "question": "Press or partnership request?",
+            "answer": "<p>Email the press address for product photos, a fact sheet and interview availability.</p>"
           }
         },
         "block_7": {
           "type": "richtext",
           "settings": {
-            "title": "Orders & checkout",
-            "body": "<p>Configure your Kevin and complete purchase through secure Shopify checkout on mitipi.eu. Free delivery across Europe on qualifying orders. Taxes calculated at checkout.</p>"
+            "title": "Orders and checkout",
+            "body": "<p>Order confirmations and tracking numbers are sent by email as soon as Kevin ships. Returns are accepted within 30 days.</p>"
           }
         },
         "block_8": {
           "type": "richtext",
           "settings": {
             "title": "Warranty repairs",
-            "body": "<p>If Kevin no longer works, contact us with your serial number (on the bottom of the device) and order reference. We will guide you through repair or replacement under the 3-year Swiss warranty.</p>"
+            "body": "<p>Send the serial number and a short description of the fault. We reply with the next step, usually a repair or a replacement unit.</p>"
           }
         }
       },

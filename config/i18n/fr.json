@@ -1,0 +1,28 @@
+{
+  "faq": {
+    "q1": "Que fait Kevin exactement ?",
+    "a1": "Kevin est un simulateur de présence conçu en Suisse. Placé près d’une fenêtre, il diffuse une lumière chaude, des ombres humaines en mouvement et des sons du quotidien depuis sa propre mémoire, pour que votre maison semble et sonne habitée depuis la rue pendant votre absence — appartements, maisons, bureaux et résidences de vacances.",
+    "q2": "Quelle différence avec une alarme ou une caméra ?",
+    "a2": "Une alarme réagit après que quelqu’un a testé la porte ; une caméra enregistre ce qui s’est déjà produit et cesse de fonctionner quand le Wi-Fi est brouillé. Kevin agit avant : il fait paraître votre maison occupée pour que la tentative ne commence jamais. Gardez votre alarme — Kevin est la couche de prévention placée devant.",
+    "q3": "Kevin regarde-t-il ou écoute-t-il ?",
+    "a3": "Non. Kevin n’a ni caméra ni micro. Il ne projette que lumière, ombres et sons. Les simulations sont stockées sur l’appareil, ni diffusées depuis le cloud ni partagées avec qui que ce soit.",
+    "q4": "Qu’est-ce qui est inclus, et combien coûte l’utilisation ?",
+    "a4": "Un seul paiement pour l’appareil, l’application, 70+ heures de simulations et les mises à jour logicielles à vie. Aucun abonnement de télésurveillance. Livraison gratuite dans toute l’UE, en Suisse, au Liechtenstein, en Norvège et en Islande, retours sous 30 jours et garantie suisse de 3 ans.",
+    "q5": "Continue-t-il de fonctionner si le Wi-Fi est brouillé ou coupé ?",
+    "a5": "Oui. Le Wi-Fi et le Bluetooth ne servent qu’à la configuration et aux mises à jour. Chaque simulation est lue depuis les 32 Go de l’appareil : lumière, ombres et sons continuent même quand des cambrioleurs brouillent caméras et alarmes connectées.",
+    "q6": "La simulation est-elle vraiment convaincante ?",
+    "a6": "Galaxus a testé Kevin.3 en janvier 2026 et l’a qualifié de « unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show ». L’effet est le plus fort là où ça compte : de l’extérieur, à travers les rideaux, à la tombée du jour. Les conseils de placement sont dans le guide d’installation."
+  },
+  "seo": {
+    "home": {
+      "title": "Kevin® — Simulateur de présence suisse qui fait paraître votre maison habitée | Mitipi",
+      "description": "Kevin® diffuse lumière, ombres en mouvement et sons du quotidien près de la fenêtre : les cambrioleurs voient une maison habitée et passent leur chemin. Sans caméra ni micro, fonctionne même Wi-Fi brouillé. Achat unique, livraison gratuite dans l’UE."
+    }
+  },
+  "hero": {
+    "slide_1": {
+      "headline": "Dissuadez les cambriolages avant qu’ils ne commencent.",
+      "lede": "Simulation de présence suisse — lumière, ombres et sons — pour que votre maison semble habitée de l’extérieur. Sans caméra. Sans micro. Prêt à l’emploi."
+    }
+  }
+}

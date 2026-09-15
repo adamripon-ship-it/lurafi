@@ -37,13 +37,13 @@ Important URLs:
 - EN home: https://mitipi.eu/
 - EN configure: https://mitipi.eu/pages/configure?plan=buy
 - NL home: https://mitipi.eu/nl
-- NL configure: https://mitipi.eu/nl/pages/kevin-configureren?plan=buy
+- NL configure: https://mitipi.eu/nl/pages/configureren?plan=buy
 - FR home: https://mitipi.eu/fr
-- FR configure: https://mitipi.eu/fr/pages/configurer-kevin?plan=buy
+- FR configure: https://mitipi.eu/fr/pages/configurer?plan=buy
 - DE home: https://mitipi.eu/de
-- DE configure: https://mitipi.eu/de/pages/kevin-konfigurieren?plan=buy
+- DE configure: https://mitipi.eu/de/pages/konfigurieren?plan=buy
 - CS home: https://mitipi.eu/cs
-- CS configure: https://mitipi.eu/cs/pages/konfigurovat-kevin?plan=buy
+- CS configure: https://mitipi.eu/cs/pages/konfigurace?plan=buy
 
 Contact:
 - Email: hello@mitipi.eu

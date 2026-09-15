@@ -23,7 +23,7 @@ Key facts:
 
 Important URLs:
 - Homepage: https://mitipi.eu/de
-- Configure / buy: https://mitipi.eu/de/pages/kevin-konfigurieren?plan=buy
+- Configure / buy: https://mitipi.eu/de/pages/konfigurieren?plan=buy
 
 Contact:
 - Email: hello@mitipi.eu

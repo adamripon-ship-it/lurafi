@@ -3,26 +3,26 @@
     "editorial": {
       "type": "main-editorial-page",
       "settings": {
-        "overline": "Product",
-        "heading": "Light, shadow, and sound—believable presence without surveillance.",
-        "lede": "Kevin® simulates human activity the way burglars actually look for it: warm light through curtains, moving shadows, and everyday household sounds. No cameras. No microphones. Everything plays from local storage on the device.",
+        "overline": "What Kevin does",
+        "heading": "Light, moving shadows and everyday sounds — so from the street, someone is home.",
+        "lede": "For anyone whose home sits empty during the day, on holiday or between visits: Kevin plays the three signs of life a burglar checks for, from one plug-in device. No camera, no microphone, and it keeps running when Wi-Fi is jammed.",
         "theme": "white",
-        "image_asset": "kevin-hero-product-front.webp",
-        "image_alt": "Kevin® device — front view, studio product photo",
-        "cta_heading": "See Kevin in your home.",
-        "cta_subheading": "Choose your color and buy outright with free delivery across Europe and a 3-year Swiss warranty.",
-        "cta_primary": "Configure Kevin",
+        "image_asset": "kevin-hero-product-front.png",
+        "image_alt": "Kevin 3 presence simulator, front view",
+        "cta_heading": "See what your street sees.",
+        "cta_subheading": "Buy Kevin outright: free shipping across the EU, 30-day returns, 3-year Swiss warranty.",
+        "cta_primary": "Configure & buy Kevin",
         "cta_primary_url": "/pages/configure?plan=buy",
-        "cta_secondary": "How it works",
+        "cta_secondary": "See how it works",
         "cta_secondary_url": "/pages/how-it-works"
       },
       "blocks": {
         "block_1": {
           "type": "section_intro",
           "settings": {
-            "overline": "How Kevin works",
-            "heading": "Three layers of believable presence.",
-            "body": "Kevin® simulates people at home using AI-driven light, shadow, and sound—visible and audible from outside, exactly where burglars look first.",
+            "overline": "Three signs of life",
+            "heading": "Burglars check for light, movement and sound. Kevin gives them all three.",
+            "body": "Every scene plays from the device itself and is visible and audible where it counts: from the pavement, through the curtains, at the front door.",
             "variant": "default"
           }
         },
@@ -30,27 +30,27 @@
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-feature-solution-light.jpg",
-            "image_alt": "Kevin® light scenarios projected through a window",
-            "title": "Light scenarios",
-            "body": "Warm, changing scenes make rooms look actively used—not simply lit. Kevin adapts rhythm for day and night deterrence."
+            "image_alt": "Kevin light scene visible through a window",
+            "title": "Light that behaves like people",
+            "body": "Warm light shifts the way real lamps and a flickering TV do. Not one lamp on a timer at the same time every night, but a room that looks in use."
           }
         },
         "block_3": {
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-feature-solution-shadows.jpg",
-            "image_alt": "Kevin® moving shadow simulation visible through curtains",
-            "title": "Moving shadows",
-            "body": "Projected silhouettes suggest one or more people inside. Visible through curtains—exactly where burglars look first."
+            "image_alt": "Moving shadow silhouette projected on a wall behind curtains",
+            "title": "Shadows that move",
+            "body": "Patented moving silhouettes cross the wall or ceiling behind your curtains. From outside it reads as one or more people walking through the room."
           }
         },
         "block_4": {
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-feature-problem-lights.jpg",
-            "image_alt": "Kevin® everyday household sound simulation",
-            "title": "Everyday sounds",
-            "body": "70+ hours of built-in simulations plus your own uploads. AI-generated household sounds adapt to feel personal and less repetitive."
+            "image_alt": "Kevin plays everyday household sounds",
+            "title": "The sounds of a normal evening",
+            "body": "Conversation, the TV, cooking, a dog that barks when the doorbell rings. 70+ hours of built-in scenes, up to four weeks without repeating, plus your own recordings. Built-in voices are in English, German and Swiss German."
           }
         },
         "block_5": {
@@ -58,18 +58,18 @@
           "settings": {
             "stat_1_value": "70+",
             "stat_1_label": "Hours of built-in simulations",
-            "stat_2_value": "9W",
+            "stat_2_value": "9 W",
             "stat_2_label": "Typical power use",
-            "stat_3_value": "100%",
-            "stat_3_label": "Privacy — no cameras or mics"
+            "stat_3_value": "0",
+            "stat_3_label": "Cameras or microphones"
           }
         },
         "block_6": {
           "type": "section_intro",
           "settings": {
-            "overline": "Prevention-first",
-            "heading": "Deterrence before break-in.",
-            "body": "Alarms react after entry. Cameras record evidence and can fail when Wi-Fi is jammed. Kevin focuses on believable occupancy from outside—before anyone tests the door.",
+            "overline": "Before, not after",
+            "heading": "An alarm reacts once the door is tested. Kevin works before anyone tries.",
+            "body": "Cameras record what already happened and can go dark when Wi-Fi is jammed. Kevin makes the house look occupied from outside, so the attempt never starts. Keep your alarm; put prevention in front of it.",
             "variant": "dark"
           }
         },
@@ -77,9 +77,9 @@
           "type": "media_split",
           "settings": {
             "image_asset": "kevin-feature-problem-cameras.jpg",
-            "image_alt": "Wi-Fi jamming disables cameras — Kevin keeps simulating locally",
-            "title": "Jammer-resilient by design",
-            "body": "Even when burglars use jamming devices to disable Wi-Fi cameras and alarm systems, Kevin keeps projecting believable presence. Simulations are stored locally on the device—not streamed from the cloud.",
+            "image_alt": "Jammed Wi-Fi cameras go dark while Kevin keeps playing from local storage",
+            "title": "Keeps playing when Wi-Fi is jammed",
+            "body": "Cheap jamming devices cut cameras and app alarms off the network. Kevin stores every scene on 32 GB inside the device and only uses Wi-Fi or Bluetooth for setup and updates. Light, shadow and sound continue without a signal.",
             "reverse": false
           }
         },
@@ -87,26 +87,26 @@
           "type": "media_split",
           "settings": {
             "image_asset": "kevin-persona-alarm-complement.jpg",
-            "image_alt": "Kevin® complements an existing alarm system",
-            "title": "Complements alarms and cameras",
-            "body": "Alarms detect intrusions—Kevin helps prevent them. It adds realistic presence simulation so burglars think twice before approaching. An extra layer that works alongside what you already have.",
+            "image_alt": "Kevin next to an existing alarm panel",
+            "title": "Works alongside your alarm",
+            "body": "Alarms and cameras detect. Kevin deters. It is honest about its limits: it will not call anyone or record anything. It makes an empty home look and sound lived-in, which is the layer most security setups are missing.",
             "reverse": true
           }
         },
         "block_9": {
           "type": "section_intro",
           "settings": {
-            "overline": "Swiss engineering",
-            "heading": "Privacy-first. Plug and play.",
-            "body": "Engineered and designed in Switzerland. Typical use around 9 watts. No installation, no wiring, no monitoring panel.",
+            "overline": "Made in Switzerland, made for privacy",
+            "heading": "No camera. No microphone. Nothing streamed.",
+            "body": "Engineered and designed in Switzerland. Kevin projects light, shadow and sound; it never watches or listens. Plug it in near a window with a wall or ceiling for shadows, pair once, and it is ready. Typical use around 9 watts.",
             "variant": "default"
           }
         },
         "block_10": {
           "type": "richtext",
           "settings": {
-            "title": "At home, Kevin is more than security",
-            "body": "<p>When you are not away, Kevin doubles as a Bluetooth speaker and lamp—so the device earns its place in your living room every day.</p>"
+            "title": "Useful when you are home, too",
+            "body": "<p>Between trips, Kevin works as a Bluetooth speaker and a lamp, so it earns its place by the window all year. Three buttons on the device start the essentials without the app.</p>"
           }
         }
       },

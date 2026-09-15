@@ -1,0 +1,627 @@
+{
+  "features": {
+    "overline": "Co Kevin umí",
+    "heading": "Světlo, pohybující se stíny a běžné zvuky domácnosti – aby z ulice bylo vidět, že je někdo doma.",
+    "lede": "Pro všechny, jejichž domov je přes den, o dovolené nebo mezi návštěvami prázdný: Kevin přehrává tři známky života, které zloděj kontroluje, z jediného zařízení v zásuvce. Bez kamery, bez mikrofonu, a běží dál, i když je Wi-Fi rušená.",
+    "image_alt": "Simulátor přítomnosti Kevin 3, pohled zepředu",
+    "seo": {
+      "title": "Funkce Kevina: světlo, pohybující se stíny a zvuk z jednoho zařízení | Mitipi",
+      "description": "Co Kevin umí: scény teplého světla, patentované pohybující se stíny a 70+ hodin zvuků domácnosti z 32 GB paměti v zařízení. Bez kamery a mikrofonu, odolný vůči rušičkám. Švýcarský vývoj, 9 W."
+    },
+    "blocks": [
+      {
+        "overline": "Tři známky života",
+        "heading": "Zloději sledují světlo, pohyb a zvuk. Kevin dodá všechny tři.",
+        "body": "Každá scéna se přehrává přímo ze zařízení a je vidět a slyšet tam, kde na tom záleží: z chodníku, přes záclony, u vchodových dveří."
+      },
+      {
+        "image_alt": "Světelná scéna Kevina viditelná oknem",
+        "title": "Světlo, které se chová jako lidé",
+        "body": "Teplé světlo se mění tak, jako skutečné lampy a blikající televize. Ne jedna lampa na časovači ve stejnou dobu každý večer, ale místnost, která vypadá používaně."
+      },
+      {
+        "image_alt": "Pohybující se silueta stínu na stěně za záclonami",
+        "title": "Stíny, které se hýbou",
+        "body": "Patentované pohybující se siluety přecházejí po stěně nebo stropě za vašimi záclonami. Zvenku to vypadá, jako by místností procházel jeden nebo více lidí."
+      },
+      {
+        "image_alt": "Kevin přehrává běžné zvuky domácnosti",
+        "title": "Zvuky obyčejného večera",
+        "body": "Rozhovor, televize, vaření, pes, který štěká, když někdo zazvoní. 70+ hodin vestavěných scén, až čtyři týdny bez opakování, plus vaše vlastní nahrávky. Vestavěné hlasy jsou v angličtině, němčině a švýcarské němčině."
+      },
+      {
+        "stats": [
+          [
+            "70+",
+            "Hodin vestavěných simulací"
+          ],
+          [
+            "9 W",
+            "Typická spotřeba"
+          ],
+          [
+            "0",
+            "Kamer nebo mikrofonů"
+          ]
+        ]
+      },
+      {
+        "overline": "Předtím, ne potom",
+        "heading": "Alarm reaguje, když už někdo zkouší dveře. Kevin působí dřív, než to kdokoli zkusí.",
+        "body": "Kamery nahrávají, co se už stalo, a vypadnou, když je Wi-Fi rušená. Kevin dělá dům zvenku obydleným, takže pokus ani nezačne. Alarm si nechte; dejte před něj prevenci."
+      },
+      {
+        "image_alt": "Rušené Wi-Fi kamery vypadnou, zatímco Kevin hraje dál z lokální paměti",
+        "title": "Hraje dál, i když je Wi-Fi rušená",
+        "body": "Levné rušičky odpojí kamery a aplikační alarmy od sítě. Kevin ukládá každou scénu na 32 GB v zařízení a Wi-Fi nebo Bluetooth používá jen k nastavení a aktualizacím. Světlo, stín a zvuk pokračují bez signálu."
+      },
+      {
+        "image_alt": "Kevin vedle stávajícího alarmu",
+        "title": "Funguje vedle vašeho alarmu",
+        "body": "Alarmy a kamery detekují. Kevin odrazuje. Je upřímný ohledně svých limitů: nikomu nezavolá a nic nenahrává. Dělá z prázdného domova obydlený na pohled i na poslech – vrstva, která většině zabezpečení chybí."
+      },
+      {
+        "overline": "Vyrobeno ve Švýcarsku, navrženo pro soukromí",
+        "heading": "Bez kamery. Bez mikrofonu. Nic se nestreamuje.",
+        "body": "Vyvinuto a navrženo ve Švýcarsku. Kevin promítá světlo, stín a zvuk; nikdy nesleduje ani neposlouchá. Postavte ho k oknu se stěnou nebo stropem pro stíny, jednou spárujte a je připraven. Typická spotřeba kolem 9 W."
+      },
+      {
+        "title": "Užitečný, i když jste doma",
+        "body": "Mezi cestami Kevin funguje jako Bluetooth reproduktor a lampa, takže si své místo u okna zaslouží celý rok. Tři tlačítka na zařízení spustí to podstatné bez aplikace."
+      }
+    ],
+    "cta_heading": "Podívejte se, co vidí vaše ulice.",
+    "cta_subheading": "Kupte Kevina najednou: doprava zdarma po celé EU, vrácení do 30 dnů, 3letá švýcarská záruka.",
+    "cta_primary": "Sestavit a koupit Kevina",
+    "cta_secondary": "Jak to funguje"
+  },
+  "how-it-works": {
+    "overline": "Jak to funguje",
+    "heading": "Zapojte ho u okna, nastavte jednou a váš domov vypadá obydleně pokaždé, když odejdete.",
+    "lede": "Pro dojíždějící, cestovatele a majitele druhého bydlení: Kevin běží podle týdenního plánu nebo se sám zapne, když váš telefon opustí okolí. Světlo, stín a zvuk se přehrávají ze zařízení, takže fungují i při rušené Wi-Fi.",
+    "image_alt": "Simulátor přítomnosti Kevin 3, pohled z boku",
+    "seo": {
+      "title": "Jak Kevin funguje: zapojit, naplánovat, odejít | Mitipi",
+      "description": "Tři kroky: postavte Kevina k oknu, nastavte v aplikaci týdenní plán nebo geofencing a světlo, pohybující se stíny a zvuk se přehrávají z lokální paměti, zatímco jste pryč. Bez kamery a mikrofonu."
+    },
+    "blocks": [
+      {
+        "overline": "Tři kroky",
+        "heading": "Zapojit. Zvolit rutinu. Odejít.",
+        "body": "Žádná instalace, žádná kabeláž, žádná smlouva s monitoringem. Kevin potřebuje zásuvku, okno do ulice a stěnu nebo strop pro stíny."
+      },
+      {
+        "title": "Zapojit a umístit",
+        "body": "Postavte Kevina k oknu viditelnému zvenku, se stěnou nebo stropem za ním pro stíny. Připojte adaptér. Tři tlačítka na zařízení spustí to podstatné bez aplikace."
+      },
+      {
+        "title": "Nastavit plán nebo použít geofencing",
+        "body": "V aplikaci Kevin jednou nastavte týdenní plán, nebo zapněte geofencing, aby se Kevin spustil sám, když váš telefon opustí okolí. Na spěšném odchodu už nezáleží."
+      },
+      {
+        "title": "Váš domov vypadá obydleně",
+        "body": "Teplé světlo, pohybující se siluety a běžné zvuky se přehrávají z 32 GB v zařízení a mění se až čtyři týdny bez opakování. Nic se nestreamuje z cloudu, takže rušená Wi-Fi nic nemění."
+      },
+      {
+        "stats": [
+          [
+            "3",
+            "Tlačítka na zařízení, ke spuštění není třeba aplikace"
+          ],
+          [
+            "9 W",
+            "Typická spotřeba"
+          ],
+          [
+            "32 GB",
+            "Scén uložených v zařízení"
+          ]
+        ]
+      },
+      {
+        "overline": "Sedí do skutečného života",
+        "heading": "Navrženo pro to, jak z domu skutečně odcházíte.",
+        "body": "Denní dojíždění, víkend pryč, druhé bydlení, které navštěvujete jednou měsíčně: Kevin se drží rutiny, kterou nastavíte."
+      },
+      {
+        "image_alt": "Kevin se zapne, když odcházíte do práce",
+        "title": "Každý pracovní den",
+        "body": "Geofencing Kevina spustí, když odejdete, a zastaví, když se vrátíte. Dům nikdy nemá ten tmavý, tichý vzhled, který říká, že nikdo není doma."
+      },
+      {
+        "image_alt": "Kevin v dovolenkovém plánu",
+        "title": "Dovolené a víkendy",
+        "body": "Nastavte dovolenkový plán před odjezdem. Večer co večer se rozsvítí světlo, stíny se hýbou a televize mumlá, bez lampy na časovači ve stejnou dobu."
+      },
+      {
+        "image_alt": "Několik zařízení Kevin spravovaných v jedné aplikaci",
+        "title": "Druhé bydlení a pronájmy",
+        "body": "Dejte Kevina do chaty, rekreačního bytu nebo kanceláře a spravujte je všechny z jedné aplikace. Protože se scény přehrávají lokálně, slabá Wi-Fi na místě není problém."
+      },
+      {
+        "overline": "Proč to funguje",
+        "heading": "Zloději si vybírají snadný dům, který vypadá prázdně. Ten váš to není.",
+        "body": "Většina vloupání je příležitostná. Dům, který svítí, hýbe se a zní obydleně, přeskočí ve prospěch jiného. Kevin za ně to rozhodnutí udělá dřív, než vůbec zkusí dveře."
+      },
+      {
+        "title": "Domy, byty, kanceláře a obchody",
+        "body": "Kevin pokryje jednu místnost na zařízení. Umístěte ho tam, kam ulice vidí: obývací pokoj, okno v přízemí, výloha po zavírací době. Větší domy nebo více fasád: přidejte druhé zařízení a spravujte obě v aplikaci."
+      }
+    ],
+    "cta_heading": "Připraveni odejít bez zaváhání?",
+    "cta_subheading": "Sestavte si Kevina a bezpečně zaplaťte. Doprava zdarma po celé EU, vrácení do 30 dnů, 3letá švýcarská záruka.",
+    "cta_primary": "Sestavit a koupit Kevina",
+    "cta_secondary": "Přečíst návod k instalaci"
+  },
+  "the-kevin-app": {
+    "overline": "Aplikace Kevin",
+    "heading": "Ochrana, která se zapíná sama, abyste na ni nikdy nemuseli myslet.",
+    "lede": "Pro zaneprázdněné domácnosti a všechny, kdo na dálku spravují byt rodiče nebo druhé bydlení: plány, geofencing a každé zařízení v jedné bezplatné aplikaci. Žádné předplatné monitoringu a nic k obnovování.",
+    "image_alt": "Detail látkového čela a ovládání Kevina 3",
+    "seo": {
+      "title": "Aplikace Kevin: plány, geofencing, každý domov na jednom místě | Mitipi",
+      "description": "Bezplatná aplikace Kevin nastavuje týdenní plány, spouští Kevina geofencingem při odchodu, umožňuje nahrát vlastní zvuky domácnosti a spravuje více zařízení. K dispozici v angličtině, němčině, francouzštině a nizozemštině."
+    },
+    "blocks": [
+      {
+        "overline": "Nastavit jednou, běží samo",
+        "heading": "Rozhodněte jednou, jak se má váš domov chovat. Kevin převezme zbytek.",
+        "body": "V aplikaci nastavíte rutinu. Potom Kevin běží bez klepání, připomínek a měsíčních poplatků."
+      },
+      {
+        "image_alt": "Obrazovka týdenního plánu v aplikaci Kevin",
+        "title": "Týdenní plány",
+        "body": "Nastavte jednou všední dny, víkendy a dovolené. Kevin se drží plánu, aby dům vypadal obydleně v hodinách, na kterých záleží, ať si vzpomenete nebo ne."
+      },
+      {
+        "image_alt": "Nastavení geofencingu v aplikaci Kevin",
+        "title": "Geofencing",
+        "body": "Kevin se spustí, když váš telefon opustí okolí vašeho domova, a zastaví se, když se vrátíte. Každodenní rutina „odejít a zapomenout“ bez jediného dotyku."
+      },
+      {
+        "image_alt": "Několik zařízení Kevin v aplikaci",
+        "title": "Každý domov v jedné aplikaci",
+        "body": "Váš domov, byt rodiče, chata, kancelář: do každého dejte Kevina a kterýkoli zkontrolujte nebo upravte, ať jste kdekoli."
+      },
+      {
+        "image_alt": "Kevin 3 s vlastním nastavením zvuků",
+        "title": "Vaše domácnost, vaše zvuky",
+        "body": "Nahrajte v aplikaci večeři, děti nebo psa. Kevin smíchá vaše nahrávky se svými 70+ hodinami vestavěných scén, aby váš domov zněl jako váš domov. Vestavěné hlasy jsou v angličtině, němčině a švýcarské němčině."
+      },
+      {
+        "image_alt": "Studiová fotografie Kevina 3",
+        "title": "Nic se nesleduje ani nestreamuje",
+        "body": "Aplikace posílá Kevinovi nastavení. Kevin nemá kameru ani mikrofon a každá scéna se přehrává z jeho vlastní 32GB paměti. Žádný videopřenos, žádné nahrávání do cloudu a nic, co by mohl vidět kdokoli jiný."
+      },
+      {
+        "overline": "Začínáme",
+        "heading": "Po vybalení spárujte jen jednou.",
+        "body": "Stáhněte aplikaci, připojte Kevina přes Wi-Fi nebo Bluetooth a zvolte rutinu. Aplikace je k dispozici v angličtině, němčině, francouzštině a nizozemštině."
+      },
+      {
+        "title": "Stáhněte aplikaci Kevin",
+        "body": "Pro iOS a Android. Vyhledejte Kevin by Mitipi ve svém obchodě s aplikacemi."
+      },
+      {
+        "title": "Spárujte zařízení",
+        "body": "Podle průvodce v aplikaci připojte Kevina přes Wi-Fi nebo Bluetooth. Pojmenujte ho třeba „Obývák“ nebo „Byt u mámy“."
+      },
+      {
+        "title": "Zvolte rutinu",
+        "body": "Spusťte simulaci hned, nastavte týdenní plán nebo zapněte geofencing. Změníte to kdykoli a odkudkoli."
+      }
+    ],
+    "cta_heading": "Jedno zařízení, jedna aplikace, žádné předplatné.",
+    "cta_subheading": "Kupte Kevina najednou s dopravou zdarma po celé EU, vrácením do 30 dnů a 3letou švýcarskou zárukou.",
+    "cta_primary": "Sestavit a koupit Kevina",
+    "cta_secondary": "Přečíst návod k instalaci"
+  },
+  "pricing": {
+    "overline": "Cena",
+    "heading": "Jedna platba 579,95 €. Nikdy žádný poplatek za monitoring.",
+    "lede": "Pro majitele domů, kteří chtějí své zabezpečení vlastnit, ne si ho pronajímat: Kevin, aplikace, 70+ hodin simulací a doživotní aktualizace softwaru v jednom nákupu. Doprava zdarma po celé EU, vrácení do 30 dnů, 3letá švýcarská záruka.",
+    "image_alt": "Simulátor přítomnosti Kevin 3, pohled shora",
+    "seo": {
+      "title": "Cena Kevina: 579,95 € jednorázově, bez předplatného | Mitipi",
+      "description": "Kevin 3 stojí jednorázově 579,95 €. V ceně: aplikace, 70+ hodin simulací, doživotní aktualizace, 3letá švýcarská záruka, vrácení do 30 dnů a doprava zdarma po celé EU, ve Švýcarsku, Norsku a na Islandu. Barevné přední kryty 29,95 €."
+    },
+    "blocks": [
+      {
+        "overline": "Co dostanete",
+        "heading": "Vše, co je potřeba, aby prázdný domov vypadal obydleně.",
+        "body": "Jedna transparentní cena. Žádné skryté poplatky, žádná smlouva s monitoringem, žádné předplatné aplikace."
+      },
+      {
+        "title": "Součástí Kevina",
+        "body": "Kevin 3 s šedým předním krytem · napájecí adaptér · aplikace Kevin pro iOS a Android · 70+ hodin scén světla, stínů a zvuku · doživotní aktualizace softwaru · 3letá švýcarská záruka · vrácení do 30 dnů · doprava zdarma po celé EU, ve Švýcarsku, Lichtenštejnsku, Norsku a na Islandu.\n\nVolitelně: barevné přední kryty v červené, hnědé, modré nebo bílé, 29,95 € za kus."
+      },
+      {
+        "stats": [
+          [
+            "3 roky",
+            "Švýcarská záruka"
+          ],
+          [
+            "30",
+            "Dnů na vrácení"
+          ],
+          [
+            "0 €",
+            "Měsíční poplatky"
+          ]
+        ]
+      },
+      {
+        "overline": "Otázky před nákupem",
+        "heading": "Časté otázky k ceně",
+        "body": "Otázky, které nejčastěji slýcháme od lidí srovnávajících Kevina s alarmy, kamerami a časovači."
+      },
+      {
+        "question": "Je tu nějaké předplatné?",
+        "answer": "Ne. Platíte jednou. Aktualizace softwaru, aplikace a všechny vestavěné scény jsou v ceně po celou dobu životnosti zařízení. Žádný plán monitoringu neexistuje, protože Kevin nemonitoruje: odrazuje."
+      },
+      {
+        "question": "Jak si stojí proti alarmu s pultem centrální ochrany?",
+        "answer": "Alarm s pultem reaguje, až když někdo zkusí dveře, a platí se každý měsíc. Kevin stojí jednorázově 579,95 € a působí před pokusem tím, že domov vypadá obydleně. Mnoho majitelů používá obojí: alarm pro detekci, Kevina pro prevenci."
+      },
+      {
+        "question": "Kde je doprava zdarma?",
+        "answer": "Po celé EU, ve Švýcarsku, Lichtenštejnsku, Norsku a na Islandu. Ceny a daně se u pokladny zobrazí pro vaši zemi."
+      },
+      {
+        "question": "Co když si to rozmyslím?",
+        "answer": "Vraťte Kevina do 30 dnů. Vyzkoušejte ho doma, po setmění vyjděte ven a podívejte se na vlastní okno. Pokud pro vás není, pošlete ho zpět."
+      },
+      {
+        "title": "Bezpečná pokladna",
+        "body": "Vyberte kryt, zaplaťte kartou nebo preferovanou metodou přes pokladnu Shopify. Potvrzení objednávky a sledovací číslo dostanete, jakmile Kevin odejde."
+      }
+    ],
+    "cta_heading": "Vlastněte ho. Bez obnovování, bez připomínek.",
+    "cta_subheading": "Vyberte přední kryt a pokračujte k bezpečné pokladně.",
+    "cta_primary": "Sestavit a koupit Kevina",
+    "cta_secondary": "Prohlédnout funkce"
+  },
+  "about-kevin": {
+    "overline": "O Mitipi",
+    "heading": "Stavíme prevenci, ne sledování. Švýcarské inženýrství pro domy, které vypadají obydleně.",
+    "lede": "Mitipi AG ve Fribourgu vyvíjí Kevina, simulátor přítomnosti, díky kterému domy, byty, kanceláře a rekreační objekty vypadají z ulice obydleně. Od roku 2018 jedna myšlenka: zastavit vloupání dřív, než začne, bez kamery sledující vaši rodinu.",
+    "image_alt": "Simulace přítomnosti Kevin v obývacím pokoji v noci",
+    "seo": {
+      "title": "O Mitipi: švýcarská firma za Kevinem | Mitipi",
+      "description": "Mitipi AG, Fribourg, Švýcarsko, vyvíjí Kevina, simulátor přítomnosti, který odrazuje zloděje světlem, pohybujícími se stíny a zvukem. Založeno 2018. Bez kamer a mikrofonů, vyvinuto ve Švýcarsku."
+    },
+    "blocks": [
+      {
+        "overline": "Proč existujeme",
+        "heading": "Každý si zaslouží odejít z domu bez zaváhání.",
+        "body": "Po vloupání se většina lidí doma už nikdy necítí úplně bezpečně. Založili jsme Mitipi, abychom změnili, jak se vloupání předchází: ne nahráváním, ale tím, že se o ně nikdo nepokusí."
+      },
+      {
+        "title": "Prevence, ne sledování",
+        "body": "Odstrašení nesmí stát vaše soukromí. Kevin nemá kameru ani mikrofon. Každá scéna je uložená v zařízení a přehrává se lokálně, takže nic o vašem domově se nestreamuje, nesdílí ani neztratí při rušené Wi-Fi."
+      },
+      {
+        "stats": [
+          [
+            "0",
+            "Kamer nebo mikrofonů"
+          ],
+          [
+            "CH",
+            "Vyvinuto a navrženo ve Švýcarsku"
+          ],
+          [
+            "2018",
+            "Založení Mitipi"
+          ]
+        ]
+      },
+      {
+        "overline": "Náš příběh",
+        "heading": "Od nápadu v Curychu do domovů po celé Evropě.",
+        "body": "Kevin vznikl v Curychu. Mitipi bylo založeno v roce 2018 a dnes sídlí v Bluefactory ve Fribourgu, kde každou generaci Kevina vyvíjí se švýcarskými partnery."
+      },
+      {
+        "title": "Nápad",
+        "body": "Začíná práce na zařízení, které dělá domov obydleným světlem, pohybujícími se stíny a zvukem, místo aby ho sledovalo kamerou."
+      },
+      {
+        "title": "Kevin startuje ve Švýcarsku",
+        "body": "První Kevin míří do švýcarských domácností. Mitipi získává cenu Global Digital Insurance Agenda (DIA) za inovaci."
+      },
+      {
+        "title": "Kevin.2",
+        "body": "Přibývají vlastní nahrávky a geofencing. Mitipi se stěhuje do Bluefactory ve Fribourgu a získává Plus X Award v Německu."
+      },
+      {
+        "title": "Kevin.3",
+        "body": "Nový hardware, 32 GB paměti v zařízení, více scén a personalizace. Generace prodávaná na tomto webu."
+      },
+      {
+        "title": "European Security Award",
+        "body": "Mitipi získává European Security Award za nejinovativnější prevenci vloupání v Evropě."
+      },
+      {
+        "image_alt": "Simulátor přítomnosti Kevin 3",
+        "title": "Otestováno, ne jen tvrzeno",
+        "body": "V lednu 2026 Galaxus otestoval Kevina.3 a označil ho za „unrivalled in that it’s an easy-to-use, all-in-one solution that delivers a truly spectacular show“. Zveřejňujeme i limity: jedna místnost na zařízení, na umístění záleží a Kevin odrazuje, nespouští alarm."
+      },
+      {
+        "title": "Mitipi AG",
+        "body": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Švýcarsko · CHE-356.372.981"
+      }
+    ],
+    "cta_heading": "Dejte prevenci před svůj alarm.",
+    "cta_subheading": "Doprava zdarma po celé EU, vrácení do 30 dnů, 3letá švýcarská záruka.",
+    "cta_primary": "Sestavit a koupit Kevina",
+    "cta_secondary": "Tisk a média"
+  },
+  "press": {
+    "overline": "Tisk a média",
+    "heading": "Kevin v tisku: švýcarská odpověď na vloupání, která nepotřebuje kameru.",
+    "lede": "Články, testy a rozhovory o Mitipi a Kevinovi. Novináři si mohou vyžádat produktové fotografie, přehled faktů a rozhovory s týmem Mitipi.",
+    "image_alt": "Simulátor přítomnosti Kevin 3, tisková fotografie",
+    "seo": {
+      "title": "Kevin tisk a média: testy, články, tisková sada | Mitipi",
+      "description": "Co o Kevinovi, švýcarském simulátoru přítomnosti, píše tisk: test Galaxus, TechRadar, Le Temps, Safety Detectives a další. Tisková sada a rozhovory na vyžádání."
+    },
+    "blocks": [
+      {
+        "overline": "Články",
+        "heading": "Co recenzenti zjistili, když Kevina testovali.",
+        "body": "Vybrané citace z testů produktu a rozhovorů. Datováno tam, kde je datován zdroj."
+      },
+      {
+        "source": "Galaxus – test produktu Kevin.3, 9. ledna 2026"
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "overline": "Ocenění",
+        "heading": "Oceněno za inovaci s prevencí na prvním místě.",
+        "body": "Ocenění, která Mitipi získalo za design Kevina a přístup k prevenci vloupání."
+      },
+      {
+        "stats": [
+          [
+            "2024",
+            "European Security Award"
+          ],
+          [
+            "2021",
+            "Plus X Award (Německo)"
+          ],
+          [
+            "2019",
+            "Global DIA Award"
+          ]
+        ]
+      },
+      {
+        "contacts": [
+          [
+            "Dotazy pro tisk",
+            null
+          ],
+          [
+            "Obecný kontakt",
+            null
+          ],
+          [
+            "Tisková sada",
+            "Produktové fotografie a přehled faktů na vyžádání"
+          ],
+          [
+            "Společnost",
+            "Mitipi AG, Fribourg, Švýcarsko"
+          ]
+        ]
+      }
+    ],
+    "cta_heading": "Píšete o zabezpečení domácnosti?",
+    "cta_subheading": "Produktové fotografie, přehled faktů a termíny rozhovorů na vyžádání.",
+    "cta_primary": "Vyžádat tiskovou sadu",
+    "cta_secondary": "O Mitipi"
+  },
+  "careers": {
+    "overline": "Kariéra",
+    "heading": "Pomozte více rodinám odcházet z domu bez obav.",
+    "lede": "Mitipi je malý švýcarský tým, který staví Kevina, simulátor přítomnosti, jenž předchází vloupání bez kamer. Pokud stavíte hardware, aplikace, zvuk nebo příběhy, rádi se vám ozveme.",
+    "image_alt": "Simulace přítomnosti Kevin doma",
+    "seo": {
+      "title": "Kariéra v Mitipi, Fribourg | Mitipi",
+      "description": "Pracujte na Kevinovi, švýcarském simulátoru přítomnosti, který předchází vloupání bez kamer. Hardware, mobilní aplikace, zvukový design a marketing v Mitipi AG ve Fribourgu. Pošlete nevyžádanou přihlášku."
+    },
+    "blocks": [
+      {
+        "overline": "Na čem nám záleží",
+        "heading": "Bezpečí bez sledování.",
+        "body": "Věříme, že prevence je lepší než reakce a že soukromí není cenou za bezpečí. To formuje, co stavíme a jak pracujeme."
+      },
+      {
+        "title": "Růst",
+        "body": "Jsme malá firma se zákazníky po celé Evropě. Každý tu vidí, jak se jeho práce rychle dostává do skutečných domovů."
+      },
+      {
+        "title": "Bezpečí",
+        "body": "Přinášíme domácnostem klid: nejprve prevence, soukromí vždy. Bez kamery, bez mikrofonu, bez obchodu s daty."
+      },
+      {
+        "title": "Nápady",
+        "body": "Pohybující se stíny, zvuky domácnosti a zařízení, které přežije rušenou síť, vznikly z přemýšlení za hranice zřejmého. V tom pokračujeme."
+      },
+      {
+        "overline": "Tým",
+        "heading": "Malý tým, jeden produkt, skutečné domovy.",
+        "body": "Pod vedením CEO Patricka Cottinga pracuje tým Mitipi na Kevinovi z Fribourgu ve Švýcarsku, s partnery v Evropě i mimo ni."
+      },
+      {
+        "image_alt": "Kevin chrání dům, zatímco je rodina pryč",
+        "title": "Na čem pracujeme",
+        "body": "Hardware, aplikace pro iOS a Android, zvukové scény, značka a vyprávění příběhu a expanze po Evropě. Pokud jste něco z toho postavili a chcete, aby se díky vaší práci někdo cítil bezpečně, napište nám."
+      },
+      {
+        "title": "Otevřené pozice",
+        "body": "Momentálně nemáme žádné veřejné inzeráty. Pošlete životopis a pár řádků o tom, co byste pro Kevina postavili, a odpovíme."
+      },
+      {
+        "contacts": [
+          [
+            "Kariéra",
+            null
+          ],
+          [
+            "Kancelář",
+            "Mitipi AG · Bluefactory · Fribourg, Švýcarsko"
+          ]
+        ]
+      }
+    ],
+    "cta_heading": "Představte se.",
+    "cta_subheading": "Řekněte nám, co stavíte a proč je pro vás Kevin důležitý.",
+    "cta_primary": "Napsat na kariéru",
+    "cta_secondary": "O Mitipi"
+  },
+  "setup-guide": {
+    "overline": "Návod k instalaci",
+    "heading": "Nastavte Kevina ve čtyřech krocích a zkontrolujte výsledek z vlastního chodníku.",
+    "lede": "Pro nové majitele: kam Kevina umístit, jak jednou spárovat aplikaci a jak po setmění vidět to, co vidí kolemjdoucí. Bez nářadí, bez kabeláže.",
+    "image_alt": "Simulátor přítomnosti Kevin 3, studiová fotografie",
+    "seo": {
+      "title": "Návod k instalaci Kevina: umístění, párování, první test | Mitipi",
+      "description": "Nastavte Kevina ve čtyřech krocích: postavte ho k oknu do ulice se stěnou pro stíny, spárujte aplikaci přes Wi-Fi nebo Bluetooth, zvolte plán nebo geofencing a po setmění otestujte zvenku."
+    },
+    "blocks": [
+      {
+        "overline": "Rychlý start",
+        "heading": "Čtyři kroky k domovu, který vypadá obydleně.",
+        "body": "Největší rozdíl dělá umístění. Věnujte minutu výběru správného okna, než spárujete aplikaci."
+      },
+      {
+        "title": "Vybalit a umístit",
+        "body": "Postavte Kevina k oknu, které je vidět z ulice, se stěnou nebo stropem za ním pro stíny. Připojte adaptér."
+      },
+      {
+        "title": "Spárovat aplikaci",
+        "body": "Stáhněte aplikaci Kevin pro iOS nebo Android a připojte se přes Wi-Fi nebo Bluetooth. Pojmenujte zařízení a nechte ho nainstalovat nejnovější aktualizaci."
+      },
+      {
+        "title": "Zvolit rutinu",
+        "body": "Spusťte simulaci hned, nastavte týdenní plán nebo zapněte geofencing, aby se Kevin spustil, když odejdete. Tři tlačítka na zařízení spustí scénu i bez aplikace."
+      },
+      {
+        "title": "Otestovat zvenku",
+        "body": "Po setmění vyjděte na chodník a podívejte se na své okno. Měli byste vidět teplé, měnící se světlo a pohybující se stíny a u dveří slyšet místnost."
+      },
+      {
+        "overline": "Umístění",
+        "heading": "Kde Kevin funguje nejlépe.",
+        "body": "Kevin pokryje jednu místnost. Vyberte okno, které by zloděj zkontroloval jako první: obývací pokoj, přízemí, stranu do ulice."
+      },
+      {
+        "image_alt": "Stínová scéna Kevina viditelná oknem v noci",
+        "title": "Dejte stínům plochu",
+        "body": "Stíny potřebují stěnu nebo strop, na které dopadnou, a záclony nebo žaluzie, kterými prosvítají. Nejlépe fungují průsvitné záclony; těžké zatemňovací závěsy efekt skryjí."
+      },
+      {
+        "image_alt": "Nastavení geofencingu v aplikaci Kevin",
+        "title": "Začněte geofencingem",
+        "body": "Pro každodenní použití je geofencing rutina, na kterou nemusíte myslet: Kevin se spustí, když váš telefon opustí okolí, a zastaví, když jste zpět. Plány použijte na dovolenou a pro domov spravovaný na dálku."
+      },
+      {
+        "overline": "Otázky prvního dne",
+        "heading": "Časté otázky k instalaci",
+        "body": "Odpovědi na to, na co se noví majitelé ptají nejčastěji."
+      },
+      {
+        "question": "Potřebuje Kevin k provozu Wi-Fi?",
+        "answer": "Ne. Wi-Fi nebo Bluetooth slouží jen k nastavení Kevina a instalaci aktualizací. Scény se přehrávají z 32 GB v zařízení, takže Kevin funguje dál, i když síť vypadne nebo je rušená."
+      },
+      {
+        "question": "Mohu přidat vlastní zvuky?",
+        "answer": "Ano. Nahrajte v aplikaci známé zvuky domácnosti a Kevin je zamíchá do svých scén. Vestavěné hlasy jsou v angličtině, němčině a švýcarské němčině."
+      },
+      {
+        "question": "Něco nefunguje. Co teď?",
+        "answer": "Poznamenejte si sériové číslo na spodní straně zařízení a napište nám. Kevin má 3letou švýcarskou záruku a vrácení do 30 dnů."
+      },
+      {
+        "title": "Záruka a servis",
+        "body": "Kevin má 3letou švýcarskou záruku a vrácení do 30 dnů. Pokud zařízení přestane fungovat, kontaktujte nás se sériovým číslem a krátkým popisem a zařídíme opravu nebo výměnu."
+      }
+    ],
+    "cta_heading": "Potřebujete poradit s umístěním?",
+    "cta_subheading": "Pošlete nám fotku místnosti a řekneme vám, kde Kevin funguje nejlépe.",
+    "cta_primary": "Kontaktovat podporu",
+    "cta_secondary": "Sestavit a koupit Kevina"
+  },
+  "contact": {
+    "overline": "Kontakt",
+    "heading": "Mluvte s lidmi, kteří Kevina staví.",
+    "lede": "Otázky k objednávce, umístění, aplikaci nebo záruce? Napište nám a odpoví člen týmu Mitipi ve Fribourgu.",
+    "image_alt": "",
+    "seo": {
+      "title": "Kontakt Mitipi: podpora, objednávky, tisk | Mitipi",
+      "description": "Kontaktujte tým Mitipi ve Fribourgu ve Švýcarsku ohledně objednávek Kevina, instalace, záruky a dotazů pro tisk. Obchodní rejstřík CHE-356.372.981."
+    },
+    "blocks": [
+      {
+        "contacts": [
+          [
+            "Zákaznická podpora",
+            null
+          ],
+          [
+            "Tisk",
+            null
+          ],
+          [
+            "Kancelář",
+            "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Švýcarsko"
+          ],
+          [
+            "Obchodní rejstřík",
+            null
+          ]
+        ]
+      },
+      {
+        "overline": "Časté otázky",
+        "heading": "Rychlé odpovědi, než napíšete.",
+        "body": "Objednávky, instalace a záruka v několika řádcích."
+      },
+      {
+        "question": "Jak si Kevina objednám?",
+        "answer": "Na stránce sestavení vyberte přední kryt a zaplaťte přes bezpečnou pokladnu Shopify. Doprava je zdarma po celé EU, ve Švýcarsku, Lichtenštejnsku, Norsku a na Islandu."
+      },
+      {
+        "question": "Potřebuji pomoc s umístěním nebo aplikací.",
+        "answer": "Nejprve si přečtěte návod k instalaci. Pokud si stále nejste jistí, pošlete nám fotku místnosti a okna a řekneme vám, kde Kevin funguje nejlépe."
+      },
+      {
+        "question": "Můj Kevin přestal fungovat.",
+        "answer": "Kevin má 3letou švýcarskou záruku. Pošlete nám sériové číslo ze spodní strany zařízení a krátký popis a zařídíme opravu nebo výměnu."
+      },
+      {
+        "question": "Dotaz pro tisk nebo partnerství?",
+        "answer": "Napište na tiskovou adresu pro produktové fotografie, přehled faktů a termíny rozhovorů."
+      },
+      {
+        "title": "Objednávky a pokladna",
+        "body": "Potvrzení objednávky a sledovací čísla posíláme e-mailem, jakmile Kevin odejde. Vrácení přijímáme do 30 dnů."
+      },
+      {
+        "title": "Záruční opravy",
+        "body": "Pošlete sériové číslo a krátký popis závady. Odpovíme dalším krokem, obvykle opravou nebo náhradním zařízením."
+      }
+    ],
+    "cta_heading": "Připraveni koupit?",
+    "cta_subheading": "Vyberte přední kryt a pokračujte k bezpečné pokladně.",
+    "cta_primary": "Sestavit a koupit Kevina",
+    "cta_secondary": "Přečíst návod k instalaci"
+  }
+}

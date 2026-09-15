@@ -3,26 +3,26 @@
     "editorial": {
       "type": "main-editorial-page",
       "settings": {
-        "overline": "Kevin App",
-        "heading": "Protection that runs while you live your life.",
-        "lede": "Activate instantly, schedule in advance, or let geo-fencing turn Kevin on when you leave. Manage multiple devices and properties from one app.",
+        "overline": "The Kevin app",
+        "heading": "Protection that switches itself on, so you never have to remember it.",
+        "lede": "For busy households and anyone managing a parent’s or a second home from afar: schedules, geofencing and every device in one free app. No monitoring subscription, and nothing to renew.",
         "theme": "white",
         "image_asset": "lurafi-product-closeup.jpg",
-        "image_alt": "Kevin® device close-up — fabric panel and controls",
-        "cta_heading": "Pair the app with your Kevin.",
-        "cta_subheading": "Download the Kevin app after purchase to schedule, geo-fence, and personalize simulations.",
-        "cta_primary": "Buy Kevin",
+        "image_alt": "Close-up of the Kevin 3 fabric front and controls",
+        "cta_heading": "One device, one app, no subscription.",
+        "cta_subheading": "Buy Kevin outright with free shipping across the EU, 30-day returns and a 3-year Swiss warranty.",
+        "cta_primary": "Configure & buy Kevin",
         "cta_primary_url": "/pages/configure?plan=buy",
-        "cta_secondary": "Setup guide",
+        "cta_secondary": "Read the setup guide",
         "cta_secondary_url": "/pages/setup-guide"
       },
       "blocks": {
         "block_1": {
           "type": "section_intro",
           "settings": {
-            "overline": "Control from anywhere",
-            "heading": "Set it and forget it—or take full control.",
-            "body": "The Kevin app puts scheduling, geo-fencing, and personalization in your pocket. No monitoring panel. No third-party access to your home.",
+            "overline": "Set once, runs itself",
+            "heading": "Decide once how your home should behave. Kevin takes it from there.",
+            "body": "The app is where you set the routine. After that, Kevin runs without taps, reminders or a monthly fee.",
             "variant": "default"
           }
         },
@@ -30,36 +30,36 @@
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-feature-schedules.jpg",
-            "image_alt": "Kevin app weekly schedule screen",
-            "title": "Set it and forget it",
-            "body": "Schedule simulations for weekends, holidays, or daily routines—protection that fits around your lifestyle."
+            "image_alt": "Weekly schedule screen in the Kevin app",
+            "title": "Weekly schedules",
+            "body": "Set weekdays, weekends and holidays once. Kevin follows the plan so the house looks lived-in at the hours that matter, whether you remember or not."
           }
         },
         "block_3": {
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-feature-geo.jpg",
-            "image_alt": "Kevin app geo-fencing activation",
-            "title": "Geo-fencing",
-            "body": "Kevin knows when you leave and starts protecting your space—no taps, no texts, just smart automation."
+            "image_alt": "Geofencing setting in the Kevin app",
+            "title": "Geofencing",
+            "body": "Kevin starts when your phone leaves the area around your home and stops when you come back. The daily leave-and-forget routine without touching anything."
           }
         },
         "block_4": {
           "type": "image_pillar",
           "settings": {
             "image_asset": "kevin-feature-multi-device.jpg",
-            "image_alt": "Manage multiple Kevin devices in the app",
-            "title": "Multiple properties",
-            "body": "Own several homes, a vacation rental, or business sites? Add a Kevin to each location and manage them all in one app."
+            "image_alt": "Several Kevin devices listed in the app",
+            "title": "Every home in one app",
+            "body": "Your own home, a parent’s flat, the holiday house, the office: add a Kevin to each and check or adjust any of them from wherever you are."
           }
         },
         "block_5": {
           "type": "media_split",
           "settings": {
             "image_asset": "kevin-device-angle.jpg",
-            "image_alt": "Kevin® device with personalized sound settings",
-            "title": "Make it personal",
-            "body": "Record or upload familiar home sounds. Kevin uses them—and AI-generated household audio—to create a more believable presence that adapts over time to your routine.",
+            "image_alt": "Kevin 3 with personalised sound settings",
+            "title": "Your household, your sounds",
+            "body": "Record dinner, the kids or the dog in the app. Kevin mixes your recordings with its 70+ hours of built-in scenes, so your home sounds like your home. Built-in voices come in English, German and Swiss German.",
             "reverse": false
           }
         },
@@ -67,9 +67,9 @@
           "type": "media_split",
           "settings": {
             "image_asset": "lurafi-product-studio.jpg",
-            "image_alt": "Kevin® AI-generated household sounds",
-            "title": "Smarter sounds with AI",
-            "body": "Kevin can generate natural household sounds intelligently, adapting over time to your routine and home environment—without cameras or microphones.",
+            "image_alt": "Kevin 3 studio photo",
+            "title": "Nothing is watched or streamed",
+            "body": "The app sends settings to Kevin. Kevin has no camera and no microphone, and every scene plays from its own 32 GB storage. There is no video feed, no cloud recording and nothing for anyone else to see.",
             "reverse": true
           }
         },
@@ -77,8 +77,8 @@
           "type": "section_intro",
           "settings": {
             "overline": "Getting started",
-            "heading": "Pair the app after unboxing.",
-            "body": "Download the Kevin app, connect over Wi-Fi or Bluetooth, and confirm firmware is up to date.",
+            "heading": "Pair once after unboxing.",
+            "body": "Download the app, connect Kevin over Wi-Fi or Bluetooth and choose a routine. The app is available in English, German, French and Dutch.",
             "variant": "default"
           }
         },
@@ -87,7 +87,7 @@
           "settings": {
             "number": "1",
             "title": "Download the Kevin app",
-            "body": "Available for iOS and Android. Search for Kevin by Mitipi in your app store after purchase."
+            "body": "For iOS and Android. Search for Kevin by Mitipi in your app store."
           }
         },
         "block_9": {
@@ -95,15 +95,15 @@
           "settings": {
             "number": "2",
             "title": "Pair your device",
-            "body": "Follow the in-app guide to connect Kevin over Wi-Fi or Bluetooth. Rename your device if you like."
+            "body": "Follow the in-app guide to connect Kevin over Wi-Fi or Bluetooth. Give it a name such as “Living room” or “Mum’s flat”."
           }
         },
         "block_10": {
           "type": "step",
           "settings": {
             "number": "3",
-            "title": "Choose your routine",
-            "body": "Activate instantly, schedule by day and hour, or enable geo-fencing so Kevin starts when you leave."
+            "title": "Choose a routine",
+            "body": "Start a simulation now, set the weekly schedule, or switch on geofencing. Change it any time from wherever you are."
           }
         }
       },
