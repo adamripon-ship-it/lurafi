@@ -54,7 +54,7 @@
     -%}
     <title>
       {{ seo_document_title }}
-      {%- unless request.page_type == 'index' or seo_document_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- unless request.page_type == 'index' or seo_document_title contains shop.name or seo_document_title contains 'Mitipi' %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
     <!-- lurafi-head-v20 hero-focus-v4 -->
