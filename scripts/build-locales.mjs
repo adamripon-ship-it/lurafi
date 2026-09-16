@@ -1128,3 +1128,15 @@ console.log('Locale route map injected for language switcher');
   fs.writeFileSync(hreflangPath, src.slice(0, a + START.length) + '\n' + table + '\n' + src.slice(b));
   console.log('Injected locale route table into snippets/seo-hreflang.liquid');
 }
+
+// Preserve the explorer translations when rebuilding the theme locale files.
+{
+  const explorer = JSON.parse(fs.readFileSync(path.join(root, 'scripts/data/kevin-explorer-locales.json'), 'utf8'));
+  for (const file of fs.readdirSync(path.join(root, 'locales'))) {
+    if (!file.endsWith('.json') || file.includes('.schema.')) continue;
+    const target = path.join(root, 'locales', file);
+    const content = JSON.parse(fs.readFileSync(target, 'utf8'));
+    content.explorer = explorer[file.split('.')[0]] || explorer.en;
+    fs.writeFileSync(target, JSON.stringify(content, null, 2) + '\n');
+  }
+}

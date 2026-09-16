@@ -36,6 +36,8 @@ jobs:
     environment: production
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v7
         with:
@@ -80,16 +82,27 @@ jobs:
           echo "::add-mask::${TOKEN}"
           echo "SHOPIFY_CLI_THEME_TOKEN=${TOKEN}" >> "${GITHUB_ENV}"
 
-      - name: Push theme to Shopify
+      - name: Push changed theme files to Shopify
+        if: github.event_name == 'push'
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ env.SHOPIFY_CLI_THEME_TOKEN }}
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          THEME_DEPLOY_BASE: ${{ github.event.before }}
+          THEME_DEPLOY_ID: '185079038330'
+        run: node scripts/push-changed-theme.mjs
+
+      - name: Manual theme push
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ env.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          SHOPIFY_CLI_AGENT_INFO: 'n:Codex|v:CI|p:OpenAI'
+          SHOPIFY_CLI_AGENT_IDS: 'r:${{ github.run_id }}'
         run: |
           npx shopify theme push \
             --store "${SHOPIFY_FLAG_STORE}" \
-            --password "${SHOPIFY_CLI_THEME_TOKEN}" \
             --theme "${{ github.event.inputs.theme_id || '185079038330' }}" \
-            --allow-live
+            --allow-live --nodelete
 
       - name: Republish theme (bust Shopify page cache)
         env:

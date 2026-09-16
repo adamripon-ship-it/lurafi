@@ -394,7 +394,8 @@
   }
 
   els.ctas.forEach(function (cta) {
-    cta.addEventListener('click', function () {
+    cta.addEventListener('click', async function () {
+      if (cta.disabled) return;
       var variant = findVariantById(state.variantId);
       if (!variant) {
         if (els.error) {
@@ -427,16 +428,40 @@
         quantity: state.quantity
       };
 
-      // With covers selected, use the multi-line permalink (addAndCheckout only
-      // adds the device); otherwise keep the fast add-and-checkout path.
-      if (selectedCovers().length === 0 && window.LurafiCart && typeof window.LurafiCart.addAndCheckout === 'function') {
-        window.LurafiCart.addAndCheckout(item).catch(function () {
-          goToCartPermalink(item, variant);
+      var items = [item].concat(selectedCovers().map(function (cover) {
+        return { id: cover.id, quantity: cover.qty };
+      }));
+      var localeRoot = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+      var sent = false;
+      try {
+        sent = true;
+        var response = await fetch(localeRoot + 'cart/add.js', {
+          method: 'POST', credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ items: items })
         });
-        return;
+        if (!response.ok) {
+          if (response.status >= 400 && response.status < 500) sent = false;
+          throw new Error('Cart update failed');
+        }
+        trackBeginCheckout(variant, item);
+        window.location.href = localeRoot + 'checkout';
+      } catch (error) {
+        if (els.error) {
+          els.error.hidden = false;
+          els.error.textContent = sent ? data.explorerCartUnknown : data.explorerCartError;
+          var cartLink = document.createElement('a');
+          cartLink.href = localeRoot + 'cart';
+          cartLink.className = 'ke-checkout-cart';
+          cartLink.textContent = data.explorerViewCart;
+          els.error.appendChild(document.createTextNode(' '));
+          els.error.appendChild(cartLink);
+        }
+        if (!sent) {
+          els.ctas.forEach(function (button) { button.disabled = false; });
+          resetCtaLabels();
+        }
       }
-
-      goToCartPermalink(item, variant);
     });
   });
 

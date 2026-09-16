@@ -1,0 +1,51 @@
+[
+  {
+    "scenario": "home-success",
+    "passed": true,
+    "posts": 1,
+    "cartClearRequests": 0,
+    "result": "Cover added to your cart."
+  },
+  {
+    "scenario": "home-sold-out",
+    "passed": true,
+    "posts": 0,
+    "cartClearRequests": 0,
+    "result": ""
+  },
+  {
+    "scenario": "home-rejected",
+    "passed": true,
+    "posts": 1,
+    "cartClearRequests": 0,
+    "result": "The cover could not be added. Please try again."
+  },
+  {
+    "scenario": "home-unknown",
+    "passed": true,
+    "posts": 1,
+    "cartClearRequests": 0,
+    "result": "We could not confirm the result. Check your cart before trying again."
+  },
+  {
+    "scenario": "configure-success",
+    "passed": true,
+    "posts": 1,
+    "cartClearRequests": 0,
+    "result": ""
+  },
+  {
+    "scenario": "configure-rejected",
+    "passed": true,
+    "posts": 1,
+    "cartClearRequests": 0,
+    "result": "The cover could not be added. Please try again. View cart"
+  },
+  {
+    "scenario": "configure-unknown",
+    "passed": true,
+    "posts": 1,
+    "cartClearRequests": 0,
+    "result": "We could not confirm the result. Check your cart before trying again. View cart"
+  }
+]

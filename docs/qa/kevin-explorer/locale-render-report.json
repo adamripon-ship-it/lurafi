@@ -1,0 +1,26 @@
+[
+  {
+    "locale": "de",
+    "status": 200,
+    "feature": "Mehr Abwechslung. Ein bewohnter Eindruck.",
+    "complete": true
+  },
+  {
+    "locale": "fr",
+    "status": 200,
+    "feature": "Plus de variété. Une maison qui semble habitée.",
+    "complete": true
+  },
+  {
+    "locale": "nl",
+    "status": 200,
+    "feature": "Meer variatie. Een bewoonde indruk.",
+    "complete": true
+  },
+  {
+    "locale": "cs",
+    "status": 200,
+    "feature": "Více proměn. Dojem obydleného domova.",
+    "complete": true
+  }
+]

@@ -1,0 +1,10 @@
+<section id="product" class="ke-home section-apple">
+  <div class="apple-container">
+    <header class="ke-intro"><h2>{{ 'explorer.heading' | t }}</h2><p>{{ 'explorer.intro' | t }}</p></header>
+    {% render 'kevin-explorer', mode: 'home', instance: section.id %}
+    <p class="ke-purchase"><a class="btn-apple-primary" href="{% render 'configure-url', plan: 'buy' %}">{{ 'home.pricing.buy_cta' | t }}</a></p>
+  </div>
+</section>
+{% schema %}
+{"name":"Kevin 3D explorer","settings":[],"presets":[{"name":"Kevin 3D explorer"}]}
+{% endschema %}

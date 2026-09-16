@@ -170,6 +170,10 @@
         "secondary_cta": "",
         "secondary_cta_url": "#how-it-works"
       }
+    },
+    "explorer": {
+      "type": "kevin-explorer",
+      "settings": {}
     }
   },
   "order": [
@@ -177,6 +181,7 @@
     "video_showcase",
     "problem",
     "mechanism",
+    "explorer",
     "stats",
     "jammer",
     "app",
