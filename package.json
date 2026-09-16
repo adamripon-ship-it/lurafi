@@ -51,7 +51,9 @@
     "i18n:audit": "node scripts/audit-translations.mjs",
     "locales:apply-i18n": "node scripts/apply-home-i18n.mjs",
     "cms:page-copy-i18n": "node scripts/sync-page-copy-i18n.mjs",
-    "cms:product-copy": "node scripts/sync-product-copy.mjs"
+    "cms:product-copy": "node scripts/sync-product-copy.mjs",
+    "cms:policies:i18n": "node scripts/sync-policy-translations.mjs",
+    "qa:localization": "node scripts/qa-localization.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

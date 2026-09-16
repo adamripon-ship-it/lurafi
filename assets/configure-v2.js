@@ -384,7 +384,9 @@
   function goToCartPermalink(item, variant) {
     trackBeginCheckout(variant, item);
     var quantity = Number(item.quantity) || 1;
-    var url = '/cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity);
+    var root = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+    if (root.charAt(root.length - 1) !== '/') root += '/';
+    var url = root + 'cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity);
     selectedCovers().forEach(function (c) {
       url += ',' + encodeURIComponent(c.id) + ':' + encodeURIComponent(c.qty);
     });

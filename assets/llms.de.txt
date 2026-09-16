@@ -24,6 +24,16 @@ Key facts:
 Important URLs:
 - Homepage: https://mitipi.eu/de
 - Configure / buy: https://mitipi.eu/de/pages/konfigurieren?plan=buy
+- Features: https://mitipi.eu/de/pages/funktionen
+- How it works: https://mitipi.eu/de/pages/so-funktionierts
+- The Kevin app: https://mitipi.eu/de/pages/app
+- Pricing: https://mitipi.eu/de/pages/preise
+- About Mitipi: https://mitipi.eu/de/pages/ueber-uns
+- Press: https://mitipi.eu/de/pages/presse-medien
+- Careers: https://mitipi.eu/de/pages/karriere
+- Setup guide: https://mitipi.eu/de/pages/einrichtung
+- Contact: https://mitipi.eu/de/pages/kontakt
+- Product page: https://mitipi.eu/de/products/anwesenheitssimulator
 
 Contact:
 - Email: hello@mitipi.eu

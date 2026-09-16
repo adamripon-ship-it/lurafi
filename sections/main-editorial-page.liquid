@@ -12,15 +12,17 @@
   endcapture
   assign configure_url = configure_url | strip
 
+  # CTA URLs: "/pages/<handle>[?query]" is resolved through the page object so the
+  # link carries the locale prefix and the translated handle (e.g. /nl/pages/installatie).
+  # Absolute URLs and mailto: are kept; other relative paths get the locale root.
   assign cta_primary_url = section.settings.cta_primary_url | strip
   if cta_primary_url == blank
     assign cta_primary_url = configure_url
-  elsif cta_primary_url contains '://' or cta_primary_url contains routes.root_url
-    # keep
-  elsif cta_primary_url contains '/'
-    assign cta_primary_url = cta_primary_url
   else
-    assign cta_primary_url = routes.root_url | append: cta_primary_url
+    capture cta_primary_url
+      render 'localize-url', url: cta_primary_url
+    endcapture
+    assign cta_primary_url = cta_primary_url | strip
   endif
 
   assign cta_secondary_url = section.settings.cta_secondary_url | strip
@@ -31,12 +33,11 @@
     else
       assign cta_secondary_url = routes.root_url | append: 'pages/how-it-works'
     endif
-  elsif cta_secondary_url contains '://' or cta_secondary_url contains 'mailto:'
-    # keep
-  elsif cta_secondary_url contains '/'
-    assign cta_secondary_url = cta_secondary_url
   else
-    assign cta_secondary_url = routes.root_url | append: cta_secondary_url
+    capture cta_secondary_url
+      render 'localize-url', url: cta_secondary_url
+    endcapture
+    assign cta_secondary_url = cta_secondary_url | strip
   endif
 
   assign overline = section.settings.overline

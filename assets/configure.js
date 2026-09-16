@@ -313,7 +313,9 @@
 
   function goToCartPermalink(item) {
     var quantity = Number(item.quantity) || 1;
-    var url = '/cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity) + '?checkout';
+    var root = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+    if (root.charAt(root.length - 1) !== '/') root += '/';
+    var url = root + 'cart/' + encodeURIComponent(item.id) + ':' + encodeURIComponent(quantity) + '?checkout';
     if (item.selling_plan) {
       url += '&selling_plan=' + encodeURIComponent(item.selling_plan);
     }

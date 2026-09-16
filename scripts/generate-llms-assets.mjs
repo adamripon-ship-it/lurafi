@@ -88,6 +88,16 @@ function discoveryBlock(code, role = 'short') {
 `;
 }
 
+
+const PAGE_LABELS = { features: 'Features', 'how-it-works': 'How it works', 'the-kevin-app': 'The Kevin app', pricing: 'Pricing', 'about-kevin': 'About Mitipi', press: 'Press', careers: 'Careers', 'setup-guide': 'Setup guide', contact: 'Contact' };
+function localizedPageLines(code) {
+  const loc = getLocales().find((l) => l.code === code);
+  const prefix = loc?.urlPrefix || '';
+  const lines = Object.entries(PAGE_LABELS).filter(([k]) => cfg.pages[k]).map(([k, label]) => `- ${label}: ${pageUrlFor(code, k)}`);
+  lines.push(`- Product page: https://${domain}${prefix}/products/${loc?.products?.['kevin-plus']?.handle || 'kevin-plus'}`);
+  return lines.join('\n') + '\n';
+}
+
 function pageUrlFor(code, pageKey) {
   const loc = getLocales().find((l) => l.code === code);
   const prefix = loc?.urlPrefix || '';
@@ -121,7 +131,7 @@ Key facts:
 Important URLs:
 - Homepage: ${home}
 - Configure / buy: ${buy}
-
+${localizedPageLines(code)}
 Contact:
 - Email: hello@mitipi.eu
 `;

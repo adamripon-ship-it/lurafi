@@ -24,6 +24,16 @@ Key facts:
 Important URLs:
 - Homepage: https://mitipi.eu/cs
 - Configure / buy: https://mitipi.eu/cs/pages/konfigurace?plan=buy
+- Features: https://mitipi.eu/cs/pages/funkce
+- How it works: https://mitipi.eu/cs/pages/jak-to-funguje
+- The Kevin app: https://mitipi.eu/cs/pages/mobilni-aplikace
+- Pricing: https://mitipi.eu/cs/pages/ceny
+- About Mitipi: https://mitipi.eu/cs/pages/o-nas
+- Press: https://mitipi.eu/cs/pages/tisk
+- Careers: https://mitipi.eu/cs/pages/kariera
+- Setup guide: https://mitipi.eu/cs/pages/navod
+- Contact: https://mitipi.eu/cs/pages/kontaktujte-nas
+- Product page: https://mitipi.eu/cs/products/simulator-pritomnosti
 
 Contact:
 - Email: hello@mitipi.eu

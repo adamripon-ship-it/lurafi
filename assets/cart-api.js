@@ -212,20 +212,32 @@
     });
   });
 
+  // Locale-aware root ("/", "/nl/", "/de/" …). Shopify sets window.Shopify.routes.root
+  // on every storefront page; cart and checkout URLs must carry it so the checkout
+  // opens in the language the shopper is browsing in.
+  function localeRoot() {
+    var r = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+    return r.charAt(r.length - 1) === '/' ? r : r + '/';
+  }
+  function localePath(path) {
+    return localeRoot() + String(path).replace(/^\/+/, '');
+  }
+
   window.LurafiCart = {
     formatMoney: formatMoney,
     track: trackEcommerce,
     openDrawer: openDrawer,
     closeDrawer: closeDrawer,
+    localePath: localePath,
 
     get: function () {
-      return request('/cart.js');
+      return request(localePath('cart.js'));
     },
 
     add: function (items, options) {
       options = options || {};
       var body = { items: items };
-      return request('/cart/add.js', {
+      return request(localePath('cart/add.js'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(body)
@@ -242,7 +254,7 @@
     },
 
     clear: function () {
-      return request('/cart/clear.js', { method: 'POST' });
+      return request(localePath('cart/clear.js'), { method: 'POST' });
     },
 
     addAndCheckout: function (item) {
@@ -258,7 +270,7 @@
       function redirectWithCartPermalink() {
         // Cart permalinks go straight to checkout by default (no ?checkout needed).
         var quantity = Number(item.quantity) || 1;
-        var url = '/cart/' + encodeURIComponent(vid) + ':' + encodeURIComponent(quantity);
+        var url = localePath('cart/' + encodeURIComponent(vid) + ':' + encodeURIComponent(quantity));
         if (item.selling_plan) {
           url += '?selling_plan=' + encodeURIComponent(item.selling_plan);
         }
@@ -269,7 +281,7 @@
         return self.add([item]);
       }).then(function (cart) {
         trackEcommerce('begin_checkout', cart);
-        window.location.href = '/checkout';
+        window.location.href = localePath('checkout');
       }).catch(function () {
         trackEcommerce('begin_checkout', { items: [], total_price: 0 });
         redirectWithCartPermalink();

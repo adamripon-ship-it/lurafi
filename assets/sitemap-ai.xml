@@ -221,6 +221,556 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mitipi.eu/pages/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/features"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/functies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/fonctionnalites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/funktionen"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/funkce"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/features"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/functies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/features"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/functies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/fonctionnalites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/funktionen"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/funkce"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/features"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/fonctionnalites</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/features"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/functies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/fonctionnalites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/funktionen"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/funkce"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/features"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/funktionen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/features"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/functies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/fonctionnalites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/funktionen"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/funkce"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/features"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/funkce</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/features"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/functies"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/fonctionnalites"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/funktionen"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/funkce"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/features"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/how-it-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/how-it-works"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/hoe-het-werkt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/comment-ca-marche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/so-funktionierts"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/jak-to-funguje"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/how-it-works"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/hoe-het-werkt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/how-it-works"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/hoe-het-werkt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/comment-ca-marche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/so-funktionierts"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/jak-to-funguje"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/how-it-works"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/comment-ca-marche</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/how-it-works"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/hoe-het-werkt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/comment-ca-marche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/so-funktionierts"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/jak-to-funguje"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/how-it-works"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/so-funktionierts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/how-it-works"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/hoe-het-werkt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/comment-ca-marche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/so-funktionierts"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/jak-to-funguje"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/how-it-works"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/jak-to-funguje</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/how-it-works"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/hoe-het-werkt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/comment-ca-marche"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/so-funktionierts"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/jak-to-funguje"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/how-it-works"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/the-kevin-app</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/mobiele-app"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/application-mobile"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/app"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/mobilni-aplikace"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/mobiele-app</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/mobiele-app"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/application-mobile"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/app"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/mobilni-aplikace"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/application-mobile</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/mobiele-app"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/application-mobile"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/app"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/mobilni-aplikace"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/app</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/mobiele-app"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/application-mobile"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/app"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/mobilni-aplikace"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/mobilni-aplikace</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/mobiele-app"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/application-mobile"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/app"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/mobilni-aplikace"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/the-kevin-app"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/pricing"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/prijzen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/tarifs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/preise"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/ceny"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/pricing"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/prijzen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/pricing"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/prijzen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/tarifs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/preise"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/ceny"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/pricing"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/tarifs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/pricing"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/prijzen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/tarifs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/preise"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/ceny"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/pricing"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/preise</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/pricing"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/prijzen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/tarifs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/preise"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/ceny"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/pricing"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/ceny</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/pricing"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/prijzen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/tarifs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/preise"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/ceny"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/pricing"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/about-kevin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/about-kevin"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/over-ons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/about-kevin"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/over-ons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/about-kevin"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/over-ons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/about-kevin"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/about-kevin"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/over-ons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/about-kevin"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/ueber-uns</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/about-kevin"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/over-ons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/about-kevin"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/about-kevin"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/over-ons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/about-kevin"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/press</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/press"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/pers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/presse"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/presse-medien"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/tisk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/press"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/pers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/press"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/pers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/presse"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/presse-medien"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/tisk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/press"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/presse</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/press"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/pers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/presse"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/presse-medien"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/tisk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/press"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/presse-medien</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/press"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/pers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/presse"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/presse-medien"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/tisk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/press"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/tisk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/press"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/pers"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/presse"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/presse-medien"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/tisk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/press"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/careers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/careers"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/vacatures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/carrieres"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/karriere"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kariera"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/careers"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/vacatures</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/careers"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/vacatures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/carrieres"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/karriere"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kariera"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/careers"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/carrieres</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/careers"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/vacatures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/carrieres"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/karriere"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kariera"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/careers"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/karriere</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/careers"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/vacatures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/carrieres"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/karriere"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kariera"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/careers"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/kariera</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/careers"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/vacatures"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/carrieres"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/karriere"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kariera"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/careers"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/setup-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/setup-guide"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/installatie"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/guide-installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/einrichtung"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/navod"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/setup-guide"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/installatie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/setup-guide"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/installatie"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/guide-installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/einrichtung"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/navod"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/setup-guide"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/guide-installation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/setup-guide"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/installatie"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/guide-installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/einrichtung"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/navod"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/setup-guide"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/einrichtung</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/setup-guide"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/installatie"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/guide-installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/einrichtung"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/navod"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/setup-guide"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/navod</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/setup-guide"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/installatie"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/guide-installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/einrichtung"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/navod"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/setup-guide"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/pages/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/contact-opnemen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kontaktujte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/pages/contact-opnemen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/contact-opnemen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kontaktujte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/pages/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/contact-opnemen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kontaktujte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/pages/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/contact-opnemen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kontaktujte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/pages/kontaktujte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/pages/contact-opnemen"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/pages/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/pages/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/pages/kontaktujte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/pages/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/products/kevin-plus</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/products/kevin-plus"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/products/aanwezigheidssimulator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/products/simulateur-de-presence"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/products/anwesenheitssimulator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/products/simulator-pritomnosti"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/products/kevin-plus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/nl/products/aanwezigheidssimulator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/products/kevin-plus"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/products/aanwezigheidssimulator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/products/simulateur-de-presence"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/products/anwesenheitssimulator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/products/simulator-pritomnosti"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/products/kevin-plus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/fr/products/simulateur-de-presence</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/products/kevin-plus"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/products/aanwezigheidssimulator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/products/simulateur-de-presence"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/products/anwesenheitssimulator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/products/simulator-pritomnosti"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/products/kevin-plus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/de/products/anwesenheitssimulator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/products/kevin-plus"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/products/aanwezigheidssimulator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/products/simulateur-de-presence"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/products/anwesenheitssimulator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/products/simulator-pritomnosti"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/products/kevin-plus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mitipi.eu/cs/products/simulator-pritomnosti</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mitipi.eu/products/kevin-plus"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://mitipi.eu/nl/products/aanwezigheidssimulator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mitipi.eu/fr/products/simulateur-de-presence"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mitipi.eu/de/products/anwesenheitssimulator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mitipi.eu/cs/products/simulator-pritomnosti"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mitipi.eu/products/kevin-plus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md</loc>
 
     <changefreq>weekly</changefreq>

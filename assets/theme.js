@@ -3,7 +3,8 @@
   if (path.indexOf('/pages/configure') !== -1 && !document.querySelector('[data-configure]')) {
     var params = new URLSearchParams(window.location.search);
     var plan = params.get('plan') || 'buy';
-    window.location.replace('/?view=configure&plan=' + encodeURIComponent(plan));
+    var root = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+    window.location.replace(root + '?view=configure&plan=' + encodeURIComponent(plan));
     return;
   }
 })();

@@ -1,0 +1,41 @@
+{%- comment -%}
+  Localise a theme-configured URL for the current storefront language.
+  - "/pages/<handle>[?query]"  → pages[handle].url (locale prefix + translated handle) + query
+  - "/products/<handle>[?query]" → all_products[handle].url + query
+  - "http(s)://…", "mailto:", "tel:", "#…" → unchanged
+  - other relative paths → prefixed with routes.root_url
+  @param url {String}
+{%- endcomment -%}
+{%- liquid
+  assign u = url | strip
+  assign out = u
+  assign query = ''
+  if u contains '?'
+    assign parts = u | split: '?'
+    assign u = parts[0]
+    assign query = '?' | append: parts[1]
+  endif
+  if u contains '://' or u contains 'mailto:' or u contains 'tel:' or u == blank
+    assign out = url | strip
+  elsif u contains '/pages/'
+    assign handle = u | split: '/pages/' | last | split: '/' | first
+    assign pg = pages[handle]
+    if pg != blank and pg.url != blank
+      assign out = pg.url | append: query
+    else
+      assign out = routes.root_url | append: u | append: query | replace: '//', '/'
+    endif
+  elsif u contains '/products/'
+    assign handle = u | split: '/products/' | last | split: '/' | first
+    assign pr = all_products[handle]
+    if pr != blank and pr.url != blank
+      assign out = pr.url | append: query
+    else
+      assign out = routes.root_url | append: u | append: query | replace: '//', '/'
+    endif
+  elsif u contains routes.root_url and routes.root_url != '/'
+    assign out = url | strip
+  else
+    assign out = routes.root_url | append: '/' | append: u | append: query | replace: '//', '/' | replace: '//', '/'
+  endif
+-%}{{ out }}

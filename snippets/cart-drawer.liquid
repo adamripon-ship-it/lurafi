@@ -23,7 +23,7 @@
     <footer class="cart-drawer__footer" data-cart-drawer-footer hidden>
       <p class="cart-drawer__subtotal" data-cart-drawer-subtotal></p>
       <p class="cart-drawer__delivery body-reduced text-muted">{{ 'cart.drawer_delivery' | t }}</p>
-      <a href="/checkout" class="btn-apple-primary btn-block">{{ 'cart.checkout' | t }}</a>
+      <a href="{{ routes.root_url | append: '/checkout' | replace: '//', '/' }}" class="btn-apple-primary btn-block">{{ 'cart.checkout' | t }}</a>
       <button type="button" class="link-apple-blue cart-drawer__continue" data-cart-drawer-close>{{ 'cart.continue_shopping' | t }}</button>
     </footer>
   </aside>

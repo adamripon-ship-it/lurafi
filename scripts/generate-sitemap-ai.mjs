@@ -61,6 +61,17 @@ const htmlRoutes = [
   },
   { name: 'llms', getUrl: (loc) => pageUrl(loc, 'llms'), changefreq: 'monthly', priority: '0.7' },
   { name: 'sitemap', getUrl: (loc) => pageUrl(loc, 'sitemap'), changefreq: 'monthly', priority: '0.7' },
+  // Every editorial page, localised handle per language (config/languages.json).
+  ...['features', 'how-it-works', 'the-kevin-app', 'pricing', 'about-kevin', 'press', 'careers', 'setup-guide', 'contact']
+    .filter((k) => cfg.pages[k])
+    .map((k) => ({ name: k, getUrl: (loc) => pageUrl(loc, k), changefreq: 'monthly', priority: k === 'pricing' || k === 'features' ? '0.8' : '0.6' })),
+  // The product page, localised handle per language.
+  {
+    name: 'product-kevin-plus',
+    getUrl: (loc) => `https://${domain}${loc.urlPrefix || ''}/products/${loc.products?.['kevin-plus']?.handle || 'kevin-plus'}`,
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
 ];
 
 for (const route of htmlRoutes) {

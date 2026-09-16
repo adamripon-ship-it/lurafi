@@ -68,11 +68,11 @@
       if (window.LurafiCart) {
         window.LurafiCart.addAndCheckout({ id: variantId, quantity: qty }).catch(function () {
           buyNowBtn.disabled = false;
-          if (returnTo) returnTo.value = '/checkout';
+          if (returnTo) returnTo.value = ((window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/').replace(/\/?$/, '/') + 'checkout';
           form.submit();
         });
       } else {
-        if (returnTo) returnTo.value = '/checkout';
+        if (returnTo) returnTo.value = ((window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/').replace(/\/?$/, '/') + 'checkout';
         form.submit();
       }
     });
