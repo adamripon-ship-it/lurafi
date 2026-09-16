@@ -3413,10 +3413,13 @@ body.template-configure .configure-header__title { color: rgba(255, 255, 255, 0.
 body.template-configure .configure-header__lede { color: rgba(255, 255, 255, 0.62); }
 
 /* Product image sits on a subtle dark card so a white-background photo still reads. */
+/* Configure gallery: transparent product cut-outs sit directly on the page — no well, glow or thumb fill. */
 body.template-configure .configure-gallery__well {
-  background: linear-gradient(165deg, #171922 0%, #0d0e14 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: none;
+  border: 0;
+  box-shadow: none;
 }
+body.template-configure .configure-gallery__glow { display: none; }
 
 body.template-configure .configure-section,
 body.template-configure .configure-order-card,
@@ -4506,7 +4509,7 @@ html.no-js .solution-split__visual::after {
 }
 [data-configure-summary-covers-row] dd { text-align: right; }
 
-body.template-configure .configure-gallery__thumb { background: linear-gradient(165deg, #171922 0%, #0d0e14 100%); border-color: rgba(255, 255, 255, 0.1); }
+body.template-configure .configure-gallery__thumb { background: none; border-color: transparent; }
 body.template-configure .configure-gallery__thumb.is-active { border-color: var(--apple-blue); }
 body.template-configure .configure-gallery__arrow { background: rgba(255, 255, 255, 0.9); }
 body.template-configure .configure-usp { background: rgba(255, 255, 255, 0.045); border-color: rgba(255, 255, 255, 0.1); }

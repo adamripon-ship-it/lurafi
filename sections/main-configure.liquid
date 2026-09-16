@@ -35,9 +35,9 @@
     endif
   endfor
   if gallery_srcs == blank
-    assign a1 = 'kevin-front-cover-grey-v2-cutout.webp' | asset_url
-    assign a2 = 'kevin-hero-product-front.webp' | asset_url
-    assign a3 = 'kevin-hero-product-top.webp' | asset_url
+    assign a1 = 'kevin3-grey-front.webp' | asset_url
+    assign a2 = 'kevin3-grey-front-angled.webp' | asset_url
+    assign a3 = 'kevin3-grey-back-light-array.webp' | asset_url
     assign gallery_srcs = a1 | append: '|' | append: a2 | append: '|' | append: a3
     assign gallery_alts = device_alt | append: '|' | append: device_alt | append: '|' | append: device_alt
   endif

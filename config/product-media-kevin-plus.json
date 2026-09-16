@@ -1,0 +1,12 @@
+{
+  "handle": "kevin-plus",
+  "_comment": "Gallery order for /pages/configure. Alt text per locale; media alt translations are registered by scripts/setup-device-media.mjs.",
+  "media": [
+    { "file": "assets/kevin3-grey-front.webp", "alt": { "en": "KEVIN 3 with Grey front cover, front view", "nl": "KEVIN 3 met grijze voorkant, vooraanzicht", "de": "KEVIN 3 mit grauem Frontcover, Frontansicht", "fr": "KEVIN 3 avec façade grise, vue de face", "cs": "KEVIN 3 s šedým předním krytem, pohled zepředu" } },
+    { "file": "assets/kevin3-grey-front-angled.webp", "alt": { "en": "KEVIN 3 front, angled", "nl": "KEVIN 3 voorkant, schuin", "de": "KEVIN 3 Front, schräg", "fr": "KEVIN 3 de face, en angle", "cs": "KEVIN 3 zepředu, z úhlu" } },
+    { "file": "assets/kevin3-grey-three-quarter.webp", "alt": { "en": "KEVIN 3 three-quarter view showing fabric front and side", "nl": "KEVIN 3 driekwartaanzicht met stoffen voorkant en zijkant", "de": "KEVIN 3 Dreiviertelansicht mit Stofffront und Seite", "fr": "KEVIN 3 vue trois-quarts montrant la façade en tissu et le côté", "cs": "KEVIN 3 tříčtvrteční pohled s látkovým čelem a bokem" } },
+    { "file": "assets/kevin3-grey-back-light-array.webp", "alt": { "en": "KEVIN 3 back with the light and shadow projector array", "nl": "KEVIN 3 achterkant met de licht- en schaduwprojector", "de": "KEVIN 3 Rückseite mit Licht- und Schattenprojektor", "fr": "KEVIN 3 arrière avec le projecteur de lumière et d’ombres", "cs": "KEVIN 3 zezadu s projektorem světla a stínů" } },
+    { "file": "assets/kevin3-grey-back-angled.webp", "alt": { "en": "KEVIN 3 back, angled", "nl": "KEVIN 3 achterkant, schuin", "de": "KEVIN 3 Rückseite, schräg", "fr": "KEVIN 3 arrière, en angle", "cs": "KEVIN 3 zezadu, z úhlu" } },
+    { "file": "assets/kevin3-grey-side.webp", "alt": { "en": "KEVIN 3 side profile", "nl": "KEVIN 3 zijaanzicht", "de": "KEVIN 3 Seitenprofil", "fr": "KEVIN 3 de profil", "cs": "KEVIN 3 z boku" } }
+  ]
+}

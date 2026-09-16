@@ -1,61 +1,67 @@
+#!/usr/bin/env node
 /**
- * Attach the KEVIN 3 device photos to the device product (kevin-plus) so the
- * configure gallery, cart and checkout all read product media from Shopify.
- *
- * Idempotent: images are keyed by alt text; already-present ones are skipped.
- * Order = gallery order (first image becomes the featured image).
- *
- * Usage: SHOPIFY_ADMIN_TOKEN=shpat_… node scripts/setup-device-media.mjs
+ * Replace the kevin-plus product media with the gallery defined in
+ * config/product-media-kevin-plus.json, then register alt-text translations
+ * (MediaImage `alt` is translatable) so the configure gallery is localised.
+ * Usage: node scripts/setup-device-media.mjs [--keep-existing]
  * Needs write_products + write_files.
  */
-import { readFileSync, existsSync, statSync } from 'node:fs';
-import { basename, join, dirname } from 'node:path';
+import { readFileSync, statSync } from 'node:fs';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { adminGql, adminAuthMode } from './lib/shopify-admin-gql.mjs';
+import { adminGql } from './lib/shopify-admin-gql.mjs';
+import { getAlternateLocales } from './i18n/registry.mjs';
 
-const STORE = (process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com').replace(/^https?:\/\//, '').replace(/\/$/, '');
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const HANDLE = process.env.DEVICE_HANDLE || 'kevin-plus';
-
-const IMAGES = [
-  { file: 'assets/kevin-front-cover-grey-v2-cutout.webp', alt: 'KEVIN 3 with Grey front cover' }, // transparent cut-out (Vision subject mask)
-  { file: 'assets/kevin-hero-product-front.webp', alt: 'KEVIN 3 front, angled' },
-  { file: 'assets/kevin-hero-product-top.webp', alt: 'KEVIN 3 top view with light array' },
-  { file: 'assets/kevin-hero-product-back.webp', alt: 'KEVIN 3 back' },
-];
-
+const STORE = process.env.SHOPIFY_STORE || '6mzhe1-yf.myshopify.com';
+const cfg = JSON.parse(readFileSync(join(ROOT, 'config/product-media-kevin-plus.json'), 'utf8'));
+const KEEP = process.argv.includes('--keep-existing');
 const gql = (query, variables, mutate = false) => adminGql({ store: STORE, query, variables, mutate });
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function main() {
-  console.log(`Auth: ${adminAuthMode()} → ${STORE}`);
-  const { productByHandle: product } = await gql(`query($h: String!) { productByHandle(handle: $h) { id title media(first: 20) { nodes { id alt } } } }`, { h: HANDLE });
-  if (!product) throw new Error(`product ${HANDLE} not found`);
-  const have = new Set(product.media.nodes.map((m) => m.alt));
-  const todo = IMAGES.filter((i) => !have.has(i.alt) && existsSync(join(ROOT, i.file)));
-  console.log(`${product.title}: ${product.media.nodes.length} media present, ${todo.length} to upload`);
-  if (!todo.length) return;
+const { productByHandle: product } = await gql(`query($h: String!) { productByHandle(handle: $h) { id media(first: 50) { nodes { id alt } } } }`, { h: cfg.handle });
+if (!product) throw new Error(`product ${cfg.handle} not found`);
 
-  // 1) staged uploads
-  const { stagedUploadsCreate } = await gql(`mutation($input: [StagedUploadInput!]!) { stagedUploadsCreate(input: $input) { stagedTargets { url resourceUrl parameters { name value } } userErrors { field message } } }`,
-    { input: todo.map((i) => ({ filename: basename(i.file), mimeType: i.file.endsWith('.webp') ? 'image/webp' : i.file.endsWith('.png') ? 'image/png' : 'image/jpeg', httpMethod: 'POST', resource: 'IMAGE', fileSize: String(statSync(join(ROOT, i.file)).size) })) }, true);
-  if (stagedUploadsCreate.userErrors.length) throw new Error(JSON.stringify(stagedUploadsCreate.userErrors));
-
-  const media = [];
-  for (let n = 0; n < todo.length; n++) {
-    const t = stagedUploadsCreate.stagedTargets[n];
-    const form = new FormData();
-    for (const p of t.parameters) form.append(p.name, p.value);
-    form.append('file', new Blob([readFileSync(join(ROOT, todo[n].file))]), basename(todo[n].file));
-    const res = await fetch(t.url, { method: 'POST', body: form });
-    if (!res.ok) throw new Error(`upload ${todo[n].file} failed: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
-    media.push({ originalSource: t.resourceUrl, mediaContentType: 'IMAGE', alt: todo[n].alt });
-    console.log(`  ↑ ${todo[n].file}`);
-  }
-
-  // 2) attach in order
-  const { productCreateMedia } = await gql(`mutation($id: ID!, $media: [CreateMediaInput!]!) { productCreateMedia(productId: $id, media: $media) { media { id alt status } mediaUserErrors { field message } } }`, { id: product.id, media }, true);
-  if (productCreateMedia.mediaUserErrors.length) throw new Error(JSON.stringify(productCreateMedia.mediaUserErrors));
-  console.log(`✓ attached ${productCreateMedia.media.length} image(s):`, productCreateMedia.media.map((m) => `${m.alt} [${m.status}]`).join(', '));
+if (!KEEP && product.media.nodes.length) {
+  const r = await gql(`mutation($id: ID!, $m: [ID!]!) { productDeleteMedia(productId: $id, mediaIds: $m) { deletedMediaIds mediaUserErrors { message } } }`, { id: product.id, m: product.media.nodes.map((n) => n.id) }, true);
+  if (r.productDeleteMedia.mediaUserErrors.length) throw new Error(JSON.stringify(r.productDeleteMedia.mediaUserErrors));
+  console.log(`− removed ${r.productDeleteMedia.deletedMediaIds.length} existing media`);
 }
 
-main().catch((e) => { console.error('setup-device-media failed:', e.message); process.exitCode = 1; });
+const { stagedUploadsCreate } = await gql(`mutation($input: [StagedUploadInput!]!) { stagedUploadsCreate(input: $input) { stagedTargets { url resourceUrl parameters { name value } } userErrors { field message } } }`,
+  { input: cfg.media.map((m) => ({ filename: basename(m.file), mimeType: 'image/webp', httpMethod: 'POST', resource: 'IMAGE', fileSize: String(statSync(join(ROOT, m.file)).size) })) }, true);
+if (stagedUploadsCreate.userErrors.length) throw new Error(JSON.stringify(stagedUploadsCreate.userErrors));
+const media = [];
+for (let n = 0; n < cfg.media.length; n++) {
+  const t = stagedUploadsCreate.stagedTargets[n];
+  const form = new FormData();
+  for (const p of t.parameters) form.append(p.name, p.value);
+  form.append('file', new Blob([readFileSync(join(ROOT, cfg.media[n].file))]), basename(cfg.media[n].file));
+  const res = await fetch(t.url, { method: 'POST', body: form });
+  if (!res.ok) throw new Error(`upload ${cfg.media[n].file} failed: HTTP ${res.status}`);
+  media.push({ originalSource: t.resourceUrl, mediaContentType: 'IMAGE', alt: cfg.media[n].alt.en });
+  console.log(`  ↑ ${cfg.media[n].file}`);
+}
+const { productCreateMedia } = await gql(`mutation($id: ID!, $media: [CreateMediaInput!]!) { productCreateMedia(productId: $id, media: $media) { media { id alt status } mediaUserErrors { field message } } }`, { id: product.id, media }, true);
+if (productCreateMedia.mediaUserErrors.length) throw new Error(JSON.stringify(productCreateMedia.mediaUserErrors));
+console.log(`+ created ${productCreateMedia.media.length} media`);
+
+// Wait until processed, then translate alt per locale.
+let nodes = [];
+for (let i = 0; i < 20; i++) {
+  await sleep(3000);
+  ({ productByHandle: { media: { nodes } } } = await gql(`query($h: String!) { productByHandle(handle: $h) { media(first: 50) { nodes { id alt status } } } }`, { h: cfg.handle }));
+  if (nodes.every((n) => n.status === 'READY')) break;
+}
+console.log(`media status: ${nodes.map((n) => n.status).join(',')}`);
+const locales = getAlternateLocales();
+for (const m of cfg.media) {
+  const node = nodes.find((n) => n.alt === m.alt.en); if (!node) { console.warn(`! no media for "${m.alt.en}"`); continue; }
+  const { translatableResource } = await gql(`query($id: ID!) { translatableResource(resourceId: $id) { translatableContent { key digest } } }`, { id: node.id });
+  const digest = translatableResource?.translatableContent.find((c) => c.key === 'alt')?.digest;
+  if (!digest) { console.warn(`! alt not translatable on ${node.id}`); continue; }
+  const t = locales.filter((l) => m.alt[l.code]).map((l) => ({ locale: l.shopifyLocale || l.code, key: 'alt', value: m.alt[l.code], translatableContentDigest: digest }));
+  const r = await gql(`mutation($id: ID!, $t: [TranslationInput!]!) { translationsRegister(resourceId: $id, translations: $t) { userErrors { message } } }`, { id: node.id, t }, true);
+  if (r.translationsRegister.userErrors.length) throw new Error(JSON.stringify(r.translationsRegister.userErrors));
+  console.log(`  ✓ alt translated: ${m.alt.en}`);
+}
