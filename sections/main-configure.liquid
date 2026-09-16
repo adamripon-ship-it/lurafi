@@ -122,6 +122,11 @@
 
     <div class="configure-grid">
       <div class="configure-gallery" data-configure-gallery role="region" aria-roledescription="carousel" aria-label="{{ 'configure.gallery_label' | t }}">
+        <div class="ke-gallery-switch" role="group" aria-label="{{ 'explorer.model' | t }}">
+          <button type="button" data-ke-photos aria-pressed="true">{{ 'explorer.photos' | t }}</button>
+          <button type="button" data-ke-view aria-pressed="false">{{ 'explorer.model' | t }}</button>
+        </div>
+        <div data-ke-configurator hidden>{% render 'kevin-explorer', mode: 'configure', instance: section.id %}</div>
         <p class="visually-hidden" data-gallery-status aria-live="polite" aria-atomic="true"></p>
         <div class="configure-gallery__well">
           <div class="configure-gallery__glow" aria-hidden="true"></div>
@@ -392,6 +397,9 @@
 
 <script id="ConfigureData" type="application/json">
 {
+  "explorerCartUnknown": {{ 'explorer.cartUnknown' | t | json }},
+  "explorerCartError": {{ 'explorer.cartError' | t | json }},
+  "explorerViewCart": {{ 'explorer.viewCart' | t | json }},
   "defaultImage": {{ default_image | json }},
   "moneyFormat": {{ shop.money_format | json }},
   "currency": {{ cart.currency.iso_code | default: localization.country.currency.iso_code | json }},

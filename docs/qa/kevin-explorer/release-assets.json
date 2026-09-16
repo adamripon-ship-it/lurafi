@@ -1,0 +1,42 @@
+{
+  "kevin-explorer-blue.webp": {
+    "bytes": 34932,
+    "sha256": "76b65575c84b9d2f35153734341d9b9707953c0f2b5159e11391f98caa5acab4"
+  },
+  "kevin-explorer-brown.webp": {
+    "bytes": 28846,
+    "sha256": "f918236cf804e3429de42be92147cf3947ff9f66a95df6314f4e428f1d398670"
+  },
+  "kevin-explorer-desktop.glb": {
+    "bytes": 3796472,
+    "sha256": "7491916d9b672b1f2ba22de3f7e5ee4ee8f2ee455216fbabfd61226635eb1841"
+  },
+  "kevin-explorer-mobile.glb": {
+    "bytes": 2998796,
+    "sha256": "5a418c8cb40c7f205fd7d21e40e115d76ade400241f9976831d0ec56b0d80368"
+  },
+  "kevin-explorer-red.webp": {
+    "bytes": 24148,
+    "sha256": "482732dc3760923d6fa292bb83722315c2dd86074952239d0a1c211872dc30c1"
+  },
+  "kevin-explorer-white.webp": {
+    "bytes": 48638,
+    "sha256": "ef367cf55e584424f43f240c913e1c0389e5982822f3935086d6a6169f334c2d"
+  },
+  "kevin-explorer.css": {
+    "bytes": 18168,
+    "sha256": "b77a912b8b86a7f9c55b1937ba34d0df596df1414e812f27b617bdd9b3d81153"
+  },
+  "kevin-explorer.js": {
+    "bytes": 30720,
+    "sha256": "f7adf583b57342dceb4d718e30a3f2db12675af681ddc391f6eb09f8c36525b9"
+  },
+  "kevin-model-viewer-LICENSE.txt": {
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "kevin-model-viewer.min.js": {
+    "bytes": 955556,
+    "sha256": "774edda21e1be2a0934e460ca5943af1fe3f88da130a9f98bd6a9d611576cacf"
+  }
+}

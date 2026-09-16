@@ -1,0 +1,130 @@
+[
+  {
+    "name": "desktop",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "iphone-small",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "android",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "tablet-portrait",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "tablet-landscape",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "notebook",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "tv-4k",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "phone-landscape",
+    "passed": true,
+    "checks": [
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  }
+]

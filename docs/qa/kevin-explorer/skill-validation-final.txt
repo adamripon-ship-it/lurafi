@@ -1,0 +1,94 @@
+## Validation Summary
+
+**Overall Status:** ✅ VALID
+**Total Files:** 11
+
+## Detailed Results
+
+### File 1
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** layout/theme.liquid passed all checks.
+
+### File 2
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** sections/kevin-explorer.liquid passed all checks.
+
+### File 3
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/kevin-explorer.liquid passed all checks.
+
+### File 4
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/hero-banner-copy.liquid passed all checks.
+
+### File 5
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** sections/main-configure.liquid passed all checks.
+
+### File 6
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/configure-cover.liquid passed all checks.
+
+### File 7
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** sections/lp-stats.liquid passed all checks.
+
+### File 8
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** templates/index.json passed all checks.
+
+### File 9
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/kevin-explorer.js passed all checks.
+
+### File 10
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/kevin-explorer.css passed all checks.
+
+### File 11
+**Artifact ID:** kevin-native-explorer
+**Revision:** 5
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/configure-v2.js passed all checks.

@@ -7,7 +7,6 @@
       comment
         LURAFI_PUBLISHED_LOCALES_START — updated by npm run locales:build
       endcomment
-      assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
       comment
         LURAFI_PUBLISHED_LOCALES_END
       endcomment
@@ -66,6 +65,10 @@
     {% render 'configure-redirect' %}
     {{ content_for_header }}
     {{ 'lurafi.css' | asset_url | stylesheet_tag }}
+    {% if template.name == 'index' or template.suffix == 'configure' %}
+      {{ 'kevin-explorer.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'kevin-explorer.js' | asset_url }}" defer></script>
+    {% endif %}
     {{ 'hero.css' | asset_url | stylesheet_tag }}
     {{ 'lp-layout.css' | asset_url | stylesheet_tag }}
     {%- if request.page_type == 'index' and show_configure == false -%}

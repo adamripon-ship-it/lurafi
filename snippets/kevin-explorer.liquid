@@ -1,0 +1,114 @@
+{% doc %}
+  @param {string} mode - home or configure
+  @param {string} instance - Unique section identifier
+{% enddoc %}
+{%- assign cover_product = all_products['kevin-front-cover'] -%}
+{%- assign device_product = settings.product_buy -%}
+{%- if device_product.variants == blank -%}{%- assign device_product = all_products['kevin-plus'] -%}{%- endif -%}
+{%- assign device_variant = device_product.selected_or_first_available_variant -%}
+<kevin-explorer class="ke-explorer" data-mode="{{ mode }}" data-instance="{{ instance }}">
+  <div class="ke-content">
+    <div class="ke-toolbar">
+      <button type="button" data-ke-expand hidden>{{ 'explorer.expand' | t }}</button>
+      <button type="button" data-ke-motion aria-pressed="true">{{ 'explorer.motion' | t }} <span data-ke-motion-state>{{ 'explorer.on' | t }}</span></button>
+      <button type="button" data-ke-close hidden>{{ 'explorer.close' | t }} ×</button>
+    </div>
+    <div class="ke-layout">
+      <div class="ke-product">
+        <div class="ke-stage">
+          <img data-ke-poster src="{{ 'kevin3-grey-front.webp' | asset_url }}" width="1200" height="800" loading="lazy" alt="{{ 'configure.device_alt' | t | escape }}">
+          <model-viewer data-ke-model alt="{{ 'configure.device_alt' | t | escape }}" camera-controls touch-action="pan-y" interaction-prompt="none" camera-orbit="-25deg 77deg 100%" shadow-intensity="0" exposure="0.72" loading="eager" hidden></model-viewer>
+          <svg class="ke-leaders" aria-hidden="true"></svg>
+          <div class="ke-pins" data-ke-pins></div>
+          <button type="button" class="ke-load" data-ke-load>{{ 'explorer.load' | t }}</button>
+        </div>
+        <p class="ke-hint" data-ke-hint>{{ 'explorer.touch_hint' | t }}</p>
+        <p class="ke-marker-hint" hidden data-ke-marker-hint>{{ 'explorer.tap_marker' | t }}</p>
+        <div class="ke-angles" role="group" aria-label="{{ 'explorer.baselineHint' | t }}" hidden>
+          <button type="button" data-ke-orbit="0deg 90deg 100%">{{ 'explorer.front' | t }}</button>
+          <button type="button" data-ke-orbit="180deg 78deg 100%">{{ 'explorer.rear' | t }}</button>
+          <button type="button" data-ke-orbit="0deg 20deg 100%">{{ 'explorer.top' | t }}</button>
+          <button type="button" data-ke-orbit="0deg 167deg 100%">{{ 'explorer.underside' | t }}</button>
+        </div>
+        <fieldset class="ke-colours">
+          <legend>{{ 'explorer.choose_colour' | t }}</legend>
+          <div class="ke-swatches">
+            {%- assign colours = 'grey,white,blue,brown,red' | split: ',' -%}
+            {%- for colour in colours -%}
+              {%- assign colour_key = 'explorer.' | append: colour -%}
+              <button type="button" data-ke-colour="{{ colour }}" aria-label="{{ colour_key | t | escape }}" aria-pressed="{% if colour == 'grey' %}true{% else %}false{% endif %}"><span aria-hidden="true"></span></button>
+            {%- endfor -%}
+          </div>
+          <p class="ke-selection"><strong data-ke-colour-name>{{ 'explorer.grey' | t }}</strong> · <span data-ke-kind>{{ 'explorer.included' | t }}</span></p>
+          <p class="ke-hint">{{ 'explorer.colourNote' | t }}</p>
+        </fieldset>
+        <div class="ke-commerce">
+          <button type="button" data-ke-add hidden>{% if mode == 'configure' %}{{ 'explorer.add_order' | t }}{% else %}{{ 'explorer.addCover' | t }}{% endif %}</button>
+          <span data-ke-price></span>
+          <a href="{{ routes.cart_url }}" data-ke-cart hidden>{{ 'explorer.viewCart' | t }}</a>
+        </div>
+        {% if mode == 'home' %}
+        <div class="ke-buy">
+          <p class="ke-buy-title">{{ 'explorer.device_included' | t }}</p>
+          <label class="ke-extra" hidden data-ke-extra-label><input type="checkbox" data-ke-extra> <span>{{ 'explorer.include_extra' | t }} · <strong data-ke-extra-price></strong></span></label>
+          <div class="ke-buy-total"><span>{{ 'explorer.total' | t }}</span><strong data-ke-total aria-live="polite">{{ device_variant.price | money }}</strong></div>
+          <button class="ke-buy-button" type="button" data-ke-buy>{{ 'explorer.add_device' | t }}</button>
+        </div>
+        {% endif %}
+        <p class="ke-status" data-ke-status role="status" aria-live="polite"></p>
+      </div>
+      <div class="ke-features">
+        <p class="ke-label">{{ 'explorer.features' | t }}</p>
+        <div class="ke-primary">
+          {%- assign primary_features = 'light,sound,cover' | split: ',' -%}
+          {%- for feature in primary_features -%}
+            {%- assign key = 'explorer.' | append: feature | append: '_label' -%}
+            <button type="button" data-ke-feature="{{ feature }}" aria-pressed="false">{{ key | t }}</button>
+          {%- endfor -%}
+        </div>
+        <details class="ke-more">
+          <summary>{{ 'explorer.all_details' | t }}</summary>
+          <div class="ke-secondary">
+            {%- assign secondary_features = 'controls,bluetooth,lamp,status,clusters,reflectors,vents,feet' | split: ',' -%}
+            {%- for feature in secondary_features -%}
+              {%- assign key = 'explorer.' | append: feature | append: '_label' -%}
+              <button type="button" data-ke-feature="{{ feature }}" aria-pressed="false">{{ key | t }}</button>
+            {%- endfor -%}
+          </div>
+        </details>
+        <article class="ke-detail" data-ke-detail aria-live="polite" hidden>
+          <div class="ke-feature-symbol" aria-hidden="true"></div>
+          <h3 data-ke-title></h3><p data-ke-body></p>
+          <details><summary>{{ 'explorer.how' | t }}</summary><p data-ke-description></p></details>
+        </article>
+        <button type="button" data-ke-placement>{{ 'explorer.startGuide' | t }}</button>
+        <div class="ke-guide" hidden>
+          <p data-ke-step></p>
+          <button type="button" data-ke-prev>{{ 'explorer.previous' | t }}</button>
+          <button type="button" data-ke-next>{{ 'explorer.next' | t }}</button>
+        </div>
+      </div>
+    </div>
+    <aside class="ke-callout" role="dialog" aria-modal="false" aria-labelledby="ke-callout-title-{{ instance }}" hidden data-ke-callout>
+      <header><span data-ke-callout-label></span><button type="button" data-ke-dismiss aria-label="{{ 'explorer.close' | t }}">×</button></header>
+      <div class="ke-visual" aria-hidden="true" data-ke-visual></div>
+      <h3 id="ke-callout-title-{{ instance }}" tabindex="-1" data-ke-callout-title></h3>
+      <p data-ke-callout-body></p>
+      <details><summary>{{ 'explorer.how' | t }}</summary><p data-ke-callout-detail></p><small>{{ 'explorer.illustration' | t }}</small></details>
+    </aside>
+  </div>
+  <dialog class="ke-dialog" aria-label="{{ 'explorer.model' | t }}"></dialog>
+  <script type="application/json" data-ke-data>{
+    "library": {{ 'kevin-model-viewer.min.js' | asset_url | json }},
+    "desktop": {{ 'kevin-explorer-desktop.glb' | asset_url | json }},
+    "mobile": {{ 'kevin-explorer-mobile.glb' | asset_url | json }},
+    "textures": {"white": {{ 'kevin-explorer-white.webp' | asset_url | json }}, "blue": {{ 'kevin-explorer-blue.webp' | asset_url | json }}, "brown": {{ 'kevin-explorer-brown.webp' | asset_url | json }}, "red": {{ 'kevin-explorer-red.webp' | asset_url | json }}},
+    "copy": {
+      {%- assign copy_keys = 'load,loading,failed,retry,texture_error,grey,white,blue,brown,red,included,optional,addCover,adding,added,soldOut,cartUnknown,cartError,add_order,order_added,close,done,next,previous,cover_label,cover_title,cover_body,cover_detail,sound_label,sound_title,sound_body,sound_detail,light_label,light_title,light_body,light_detail,controls_label,controls_title,controls_body,controls_detail,status_label,status_title,status_body,status_detail,vents_label,vents_title,vents_body,vents_detail,feet_label,feet_title,feet_body,feet_detail,placement_0_title,placement_0_body,placement_0_detail,placement_1_title,placement_1_body,placement_1_detail,placement_2_title,placement_2_body,placement_2_detail,markers,tap_marker,add_device,add_bundle,include_extra,device_included,total,bundle_added,motion,illustration,on,off,clusters_label,clusters_title,clusters_body,clusters_detail,reflectors_label,reflectors_title,reflectors_body,reflectors_detail,bluetooth_label,bluetooth_title,bluetooth_body,bluetooth_detail,lamp_label,lamp_title,lamp_body,lamp_detail,power_label,updating_price' | split: ',' -%}
+      {%- for key in copy_keys -%}{%- assign translation_key = 'explorer.' | append: key -%}{{ key | json }}: {{ translation_key | t | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}
+    },
+    "currency": {{ cart.currency.iso_code | default: shop.currency | json }},
+    "device": {"id": {{ device_variant.id | json }}, "available": {{ device_variant.available | json }}, "amount": {{ device_variant.price | default: 0 | json }}},
+    "covers": [{%- for variant in cover_product.variants -%}{"id": {{ variant.id | json }}, "colour": {{ variant.option1 | downcase | json }}, "available": {{ variant.available | json }}, "price": {{ variant.price | money | json }}, "amount": {{ variant.price | json }}}{% unless forloop.last %},{% endunless %}{%- endfor -%}]
+  }</script>
+</kevin-explorer>

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "live price refresh",
+    "device + optional cover single cart request",
+    "no overlapping markers at top/rear/bottom",
+    "instant feature popup",
+    "keyboard arrows",
+    "motion toggle",
+    "browser Back restores focus",
+    "mobile bottom sheet stays in viewport",
+    "200% text no horizontal overflow"
+  ]
+}
