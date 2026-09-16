@@ -168,7 +168,7 @@ const en = {
     warranty: '3-year warranty',
     secure: 'Secure checkout powered by Shopify',
     buy_features:
-      'Own your device outright|70+ hours of built-in simulations|Control from the Kevin App|Bluetooth speaker and lamp at home|Free delivery across Europe|3-year Swiss warranty|Lifetime software updates included',
+      'Yours outright, no monitoring fee|70+ hours of light, shadow and sound scenes|No camera, no microphone|Keeps working when Wi-Fi is jammed|Weekly schedules and geofencing in the free app|Bluetooth speaker and lamp when you are home|3-year Swiss warranty and lifetime software updates',
     summary_plan_buy: 'One-time purchase',
     per_device: ' per device',
     error_products: 'Please assign products in Theme settings → Products.',
@@ -191,6 +191,10 @@ const en = {
     gallery_slide_status: 'Image {{ n }} of {{ total }}',
     badge_free_shipping: 'Free shipping anywhere in the EU',
     usps_label: 'Why Kevin',
+    buybox_price_note: 'One-time purchase · Grey front cover included',
+    trust_swiss: 'Engineered in Switzerland',
+    trust_privacy: 'No camera, no microphone',
+    trust_jammer: 'Keeps working when Wi-Fi is jammed',
     usp_1_title: 'Burglars move on to another house',
     usp_1_body: 'Kevin shifts the lights, casts moving shadows and plays everyday sounds, so from the street someone is clearly home.',
     usp_2_title: 'Nothing watches or listens to you',
@@ -776,6 +780,10 @@ nl.cart = {
   secure: 'Veilig afrekenen'
 };
 nl.configure = {
+  buybox_price_note: 'Eenmalige aankoop · grijze voorkant inbegrepen',
+  trust_swiss: 'Ontwikkeld in Zwitserland',
+  trust_privacy: 'Geen camera, geen microfoon',
+  trust_jammer: 'Blijft werken als de wifi wordt gestoord',
   back: 'Terug',
   nav_title: 'Configureer je Kevin',
   cart: 'Winkelwagen',
@@ -810,7 +818,7 @@ nl.configure = {
   warranty: '3 jaar garantie',
   secure: 'Veilig afrekenen via Shopify',
   buy_features:
-    'Direct eigendom|70+ uur geloofwaardige AI-aanwezigheid|Alles via de Kevin-app|Gratis bezorging in Europa|3 jaar Zwitserse garantie|Levenslange software-updates',
+    'Direct van jou, geen monitoringkosten|70+ uur licht-, schaduw- en geluidsscènes|Geen camera, geen microfoon|Blijft werken als de wifi wordt gestoord|Weekschema’s en geofencing in de gratis app|Bluetoothspeaker en lamp als je thuis bent|3 jaar Zwitserse garantie en levenslange software-updates',
   summary_plan_buy: 'Eenmalige aankoop',
   per_device: ' per apparaat',
   error_products: 'Wijs producten toe in Thema-instellingen → Producten.',

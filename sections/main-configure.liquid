@@ -116,7 +116,6 @@
 
   <div class="apple-container configure-page__inner">
     <header class="configure-header">
-      <p class="configure-header__eyebrow">{{ configure_header_eyebrow }}</p>
       <h1 class="configure-header__title">{{ configure_title }}</h1>
       <p class="configure-header__lede">{{ configure_lede }}</p>
     </header>
@@ -163,7 +162,9 @@
             {%- endfor -%}
           </div>
         {%- endif -%}
-        <ul class="configure-usps" aria-label="{{ 'configure.usps_label' | t }}">
+      </div>
+
+        <ul class="configure-usps configure-grid__usps" aria-label="{{ 'configure.usps_label' | t }}">
           <li class="configure-usp">
             <span class="configure-usp__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg></span>
             <span class="configure-usp__text"><strong>{{ 'configure.usp_1_title' | t }}</strong><span>{{ 'configure.usp_1_body' | t }}</span></span>
@@ -177,13 +178,21 @@
             <span class="configure-usp__text"><strong>{{ 'configure.usp_3_title' | t }}</strong><span>{{ 'configure.usp_3_body' | t }}</span></span>
           </li>
         </ul>
-      </div>
 
       <div class="configure-controls">
-        <section class="configure-section" aria-labelledby="ConfigureColorHeading">
-          <h2 id="ConfigureColorHeading" class="configure-label">{{ 'configure.device_heading' | t }}</h2>
-          <div class="configure-swatches" data-configure-swatches role="group" aria-label="{{ 'accessibility.color_swatches' | t }}"></div>
-          <p class="configure-color-text">{{ 'configure.device_colour_label' | t }} <strong data-configure-color-name-inline>Grey</strong></p>
+        <section class="configure-section configure-buybox" aria-labelledby="ConfigureBuyHeading">
+          <h2 id="ConfigureBuyHeading" class="configure-buybox__title">{{ 'configure.product_title' | t }}</h2>
+          <p class="configure-buybox__price">
+            <span class="configure-buybox__amount">{% if buy_product != blank %}{{ buy_product.price | money }}{% else %}€579,95{% endif %}</span>
+            <span class="configure-buybox__note">{{ 'configure.buybox_price_note' | t }}</span>
+          </p>
+          <ul class="configure-buybox__trust" aria-label="{{ 'configure.usps_label' | t }}">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>{{ 'configure.trust_swiss' | t }}</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>{{ 'configure.trust_privacy' | t }}</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>{{ 'configure.trust_jammer' | t }}</li>
+          </ul>
+          <div class="configure-swatches" data-configure-swatches role="group" aria-label="{{ 'accessibility.color_swatches' | t }}" hidden></div>
+          <p class="configure-color-text" hidden>{{ 'configure.device_colour_label' | t }} <strong data-configure-color-name-inline>Grey</strong></p>
         </section>
 
         {%- comment -%}

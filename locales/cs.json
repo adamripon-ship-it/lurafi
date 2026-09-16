@@ -175,7 +175,7 @@
     "returns": "30denní vrácení",
     "warranty": "3letá záruka",
     "secure": "Bezpečná pokladna Shopify",
-    "buy_features": "Zařízení je vaše|Více než 70 hodin věrohodné AI přítomnosti|Ovládání v aplikaci Kevin App|Doprava zdarma po celé Evropě|3letá švýcarská záruka|Doživotní aktualizace softwaru",
+    "buy_features": "Navždy váš, bez poplatků za monitoring|70+ hodin scén světla, stínů a zvuku|Bez kamery a mikrofonu|Funguje dál, i když je Wi-Fi rušená|Týdenní plány a geofencing v bezplatné aplikaci|Bluetooth reproduktor a lampa, když jste doma|3letá švýcarská záruka a doživotní aktualizace softwaru",
     "summary_plan_buy": "Jednorázový nákup",
     "per_device": " za zařízení",
     "error_products": "Přiřaďte produkty v Nastavení motivu → Produkty.",
@@ -210,7 +210,11 @@
     "usp_3_body": "Nastavte týdenní plány nebo nechte geofencing zapnout Kevina, jakmile odejdete. 70+ hodin simulací, nikdy stejná smyčka dvakrát.",
     "summary_covers": "Přední kryty",
     "summary_covers_none": "Žádné",
-    "gallery_slide_status": "Obrázek {{ n }} z {{ total }}"
+    "gallery_slide_status": "Obrázek {{ n }} z {{ total }}",
+    "buybox_price_note": "Jednorázový nákup · šedý přední kryt v ceně",
+    "trust_swiss": "Vyvinuto ve Švýcarsku",
+    "trust_privacy": "Bez kamery a mikrofonu",
+    "trust_jammer": "Funguje dál, i když je Wi-Fi rušená"
   },
   "hero": {
     "away_eyebrow": "Away mode",

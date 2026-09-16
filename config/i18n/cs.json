@@ -30,5 +30,12 @@
     "lang_en": "Angličtina",
     "lang_de": "Němčina",
     "lang_fr": "Francouzština"
+  },
+  "configure": {
+    "buybox_price_note": "Jednorázový nákup · šedý přední kryt v ceně",
+    "trust_swiss": "Vyvinuto ve Švýcarsku",
+    "trust_privacy": "Bez kamery a mikrofonu",
+    "trust_jammer": "Funguje dál, i když je Wi-Fi rušená",
+    "buy_features": "Navždy váš, bez poplatků za monitoring|70+ hodin scén světla, stínů a zvuku|Bez kamery a mikrofonu|Funguje dál, i když je Wi-Fi rušená|Týdenní plány a geofencing v bezplatné aplikaci|Bluetooth reproduktor a lampa, když jste doma|3letá švýcarská záruka a doživotní aktualizace softwaru"
   }
 }

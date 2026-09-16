@@ -149,6 +149,10 @@
     "secure_shopify": "Veilig Shopify-afrekenen"
   },
   "configure": {
+    "buybox_price_note": "Eenmalige aankoop · grijze voorkant inbegrepen",
+    "trust_swiss": "Ontwikkeld in Zwitserland",
+    "trust_privacy": "Geen camera, geen microfoon",
+    "trust_jammer": "Blijft werken als de wifi wordt gestoord",
     "back": "Terug",
     "nav_title": "Configureer je Kevin",
     "cart": "Winkelwagen",
@@ -182,7 +186,7 @@
     "returns": "30 dagen retour",
     "warranty": "3 jaar garantie",
     "secure": "Veilig afrekenen via Shopify",
-    "buy_features": "Direct eigendom|70+ uur geloofwaardige AI-aanwezigheid|Alles via de Kevin-app|Gratis bezorging in Europa|3 jaar Zwitserse garantie|Levenslange software-updates",
+    "buy_features": "Direct van jou, geen monitoringkosten|70+ uur licht-, schaduw- en geluidsscènes|Geen camera, geen microfoon|Blijft werken als de wifi wordt gestoord|Weekschema’s en geofencing in de gratis app|Bluetoothspeaker en lamp als je thuis bent|3 jaar Zwitserse garantie en levenslange software-updates",
     "summary_plan_buy": "Eenmalige aankoop",
     "per_device": " per apparaat",
     "error_products": "Wijs producten toe in Thema-instellingen → Producten.",

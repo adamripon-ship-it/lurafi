@@ -175,7 +175,7 @@
     "returns": "Retours sous 30 jours",
     "warranty": "Garantie 3 ans",
     "secure": "Paiement sécurisé via Shopify",
-    "buy_features": "Propriété totale de l'appareil|70+ heures de présence IA crédible|Contrôle complet via l'app Kevin|Livraison gratuite en Europe|Garantie suisse 3 ans|Mises à jour logicielles à vie incluses",
+    "buy_features": "À vous pour de bon, sans abonnement|70+ heures de scènes de lumière, d’ombres et de sons|Sans caméra ni micro|Continue quand le Wi-Fi est brouillé|Programmes hebdomadaires et géolocalisation dans l’app gratuite|Enceinte Bluetooth et lampe quand vous êtes là|Garantie suisse de 3 ans et mises à jour à vie",
     "summary_plan_buy": "Achat unique",
     "per_device": " par appareil",
     "error_products": "Veuillez assigner des produits dans Paramètres du thème → Produits.",
@@ -210,7 +210,11 @@
     "usp_3_body": "Programmez des horaires hebdomadaires ou laissez la géolocalisation activer Kevin dès que vous partez. Plus de 70 heures de simulations, jamais deux fois la même boucle.",
     "summary_covers": "Façades avant",
     "summary_covers_none": "Aucune",
-    "gallery_slide_status": "Image {{ n }} sur {{ total }}"
+    "gallery_slide_status": "Image {{ n }} sur {{ total }}",
+    "buybox_price_note": "Achat unique · façade grise incluse",
+    "trust_swiss": "Conçu en Suisse",
+    "trust_privacy": "Sans caméra ni micro",
+    "trust_jammer": "Continue quand le Wi-Fi est brouillé"
   },
   "hero": {
     "away_eyebrow": "Away mode",

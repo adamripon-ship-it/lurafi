@@ -30,5 +30,12 @@
     "lang_en": "Englisch",
     "lang_de": "Deutsch",
     "lang_fr": "Französisch"
+  },
+  "configure": {
+    "buybox_price_note": "Einmaliger Kauf · graues Frontcover inklusive",
+    "trust_swiss": "Entwickelt in der Schweiz",
+    "trust_privacy": "Keine Kamera, kein Mikrofon",
+    "trust_jammer": "Läuft weiter, wenn das WLAN gestört wird",
+    "buy_features": "Gehört Ihnen, keine Überwachungsgebühr|70+ Stunden Licht-, Schatten- und Geräuschszenen|Keine Kamera, kein Mikrofon|Läuft weiter, wenn das WLAN gestört wird|Wochenpläne und Geofencing in der kostenlosen App|Bluetooth-Lautsprecher und Lampe, wenn Sie zu Hause sind|3 Jahre Schweizer Garantie und lebenslange Software-Updates"
   }
 }

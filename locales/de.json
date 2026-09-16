@@ -175,7 +175,7 @@
     "returns": "30 Tage Rückgabe",
     "warranty": "3 Jahre Garantie",
     "secure": "Sicherer Checkout über Shopify",
-    "buy_features": "Volles Eigentum am Gerät|70+ Stunden glaubwürdige KI-Anwesenheit|Alles steuern über die Kevin App|Kostenlose Lieferung in ganz Europa|3 Jahre Schweizer Garantie|Lebenslange Software-Updates inklusive",
+    "buy_features": "Gehört Ihnen, keine Überwachungsgebühr|70+ Stunden Licht-, Schatten- und Geräuschszenen|Keine Kamera, kein Mikrofon|Läuft weiter, wenn das WLAN gestört wird|Wochenpläne und Geofencing in der kostenlosen App|Bluetooth-Lautsprecher und Lampe, wenn Sie zu Hause sind|3 Jahre Schweizer Garantie und lebenslange Software-Updates",
     "summary_plan_buy": "Einmaliger Kauf",
     "per_device": " pro Gerät",
     "error_products": "Bitte weisen Sie Produkte unter Theme-Einstellungen → Produkte zu.",
@@ -210,7 +210,11 @@
     "usp_3_body": "Wochenpläne einstellen oder Kevin per Geofencing einschalten lassen, sobald Sie gehen. 70+ Stunden Simulationen, nie zweimal dieselbe Schleife.",
     "summary_covers": "Frontcover",
     "summary_covers_none": "Keine",
-    "gallery_slide_status": "Bild {{ n }} von {{ total }}"
+    "gallery_slide_status": "Bild {{ n }} von {{ total }}",
+    "buybox_price_note": "Einmaliger Kauf · graues Frontcover inklusive",
+    "trust_swiss": "Entwickelt in der Schweiz",
+    "trust_privacy": "Keine Kamera, kein Mikrofon",
+    "trust_jammer": "Läuft weiter, wenn das WLAN gestört wird"
   },
   "hero": {
     "away_eyebrow": "Away mode",

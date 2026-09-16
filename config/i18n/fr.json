@@ -30,5 +30,12 @@
     "lang_en": "Anglais",
     "lang_de": "Allemand",
     "lang_fr": "Français"
+  },
+  "configure": {
+    "buybox_price_note": "Achat unique · façade grise incluse",
+    "trust_swiss": "Conçu en Suisse",
+    "trust_privacy": "Sans caméra ni micro",
+    "trust_jammer": "Continue quand le Wi-Fi est brouillé",
+    "buy_features": "À vous pour de bon, sans abonnement|70+ heures de scènes de lumière, d’ombres et de sons|Sans caméra ni micro|Continue quand le Wi-Fi est brouillé|Programmes hebdomadaires et géolocalisation dans l’app gratuite|Enceinte Bluetooth et lampe quand vous êtes là|Garantie suisse de 3 ans et mises à jour à vie"
   }
 }

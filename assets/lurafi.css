@@ -4521,3 +4521,107 @@ body.template-configure .configure-usp__text span { color: rgba(255, 255, 255, 0
   .configure-gallery__track { scroll-behavior: auto; }
   .configure-gallery__arrow, .configure-gallery__thumb, .configure-cover, .configure-gallery__img { transition: none; }
 }
+
+/* ==========================================================================
+   Configure page — conversion pass (2026-09-16)
+   Content is visible by default; motion only adds. Buy box first, then
+   configuration, then summary. Scales for phones, tablets, 4K and TV.
+   ========================================================================== */
+
+/* 1. Product register: the page loads into a task. No orchestrated entrance;
+   content is painted on the first frame on every device. */
+.motion-ready .configure-page .configure-header,
+.motion-ready .configure-page .configure-stepper-wrap,
+.motion-ready .configure-page .configure-gallery,
+.motion-ready .configure-page .configure-controls .configure-section,
+.motion-ready .configure-page .configure-summary { opacity: 1; }
+.configure-page--animate .configure-header,
+.configure-page--animate .configure-stepper-wrap,
+.configure-page--animate .configure-gallery,
+.configure-page--animate .configure-controls .configure-section,
+.configure-page--animate .configure-summary { animation: none; }
+
+/* 2. Header: compact, balanced, no orphan lines. */
+.configure-stepper-wrap { padding-top: calc(var(--header-offset) + 10px); }
+.configure-page__inner { padding-top: 12px; }
+.configure-header { margin-bottom: clamp(20px, 3vw, 32px); }
+.configure-header__title {
+  font-size: clamp(24px, 3.2vw, 38px);
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  text-wrap: balance;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+.configure-header__lede {
+  font-size: clamp(15px, 1.6vw, 17px);
+  margin-top: 10px;
+  max-width: 46ch;
+  text-wrap: pretty;
+}
+
+/* 3. Buy box: name, price, trust — the first thing in the controls column. */
+.configure-buybox__title { font-size: 20px; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 6px; }
+.configure-buybox__price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin: 0 0 14px; }
+.configure-buybox__amount { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.configure-buybox__note { font-size: 14px; color: var(--apple-text-muted); }
+.configure-buybox__trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.configure-buybox__trust li { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--apple-text); }
+.configure-buybox__trust svg { color: var(--apple-blue); flex-shrink: 0; }
+body.template-configure .configure-buybox__trust li { color: rgba(255, 255, 255, 0.86); }
+body.template-configure .configure-buybox__trust svg { color: #7cb8ff; }
+body.template-configure .configure-buybox__note { color: rgba(255, 255, 255, 0.62); }
+
+/* 3b. The single-colour swatch hooks stay in the DOM for the script but never render. */
+.configure-buybox [hidden] { display: none !important; }
+
+/* 4. USPs: a plain list, not a stack of cards. Sits under the gallery on
+   desktop, after the configuration on phones. */
+.configure-grid__usps { margin: 0; max-width: none; gap: 14px; }
+.configure-usp,
+body.template-configure .configure-usp { padding: 0; border: 0; background: none; border-radius: 0; }
+.configure-usp__text strong { display: block; margin-bottom: 2px; }
+@media (min-width: 900px) {
+  .configure-grid__usps { grid-column: 1; grid-row: 2; max-width: 520px; margin-inline: auto; margin-top: -8px; }
+  .configure-controls { grid-column: 2; grid-row: 1 / span 2; }
+  .configure-gallery { grid-column: 1; grid-row: 1; align-self: start; }
+}
+
+/* 5. Thumbnails: one row of six on desktop, a scrollable strip on phones. */
+.configure-gallery__thumbs { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.configure-gallery__thumb { padding: 6px; border-radius: 10px; }
+
+/* 6. Phones: gallery children become grid items so the order is
+   image → thumbs → buy box/configuration → summary → USPs. */
+@media (max-width: 899px) {
+  .configure-gallery { display: contents; }
+  .configure-gallery__well { order: 1; width: 100%; max-width: min(100%, 72vw); }
+  .configure-gallery__thumbs { order: 2; gap: 6px; margin: 0 auto; max-width: min(100%, 72vw); }
+  .configure-gallery__thumb { padding: 4px; border-radius: 8px; }
+  .configure-controls { order: 3; }
+  .configure-grid__usps { order: 4; }
+  .configure-grid { gap: 20px; }
+  .configure-header { margin-bottom: 16px; }
+  .configure-header__title { font-size: clamp(22px, 6.4vw, 28px); }
+}
+
+/* 7. Phone nav: one row (back · region · cart); the page title is redundant here. */
+@media (max-width: 640px) {
+  .configure-nav__inner {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'back tools cart';
+    gap: 8px;
+  }
+  .configure-nav__title { display: none; }
+  .configure-nav__tools { justify-self: center; width: auto; }
+}
+
+/* 8. Cover cards: legible price, honest touch targets. */
+.configure-cover__price { font-size: 12px; }
+body.template-configure .configure-cover__price { color: rgba(255, 255, 255, 0.66); }
+
+/* 9. Large monitors and TV: scale the whole flow instead of leaving a
+   1040px island in the middle of a 4K screen. */
+@media (min-width: 1800px) { body.template-configure { zoom: 1.2; } }
+@media (min-width: 2400px) { body.template-configure { zoom: 1.5; } }
+@media (min-width: 3200px) { body.template-configure { zoom: 2; } }
