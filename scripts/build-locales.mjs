@@ -205,6 +205,8 @@ const en = {
     summary_covers_none: 'None'
   },
   hero: {
+    press_label: 'As featured in',
+    press_aria: 'Press coverage',
     callouts_aria_label: 'Kevin benefits',
     carousel_label: 'Who is Kevin for?',
     pause_autoplay: 'Pause slideshow',

@@ -11,10 +11,12 @@
   if header_cta_desktop == blank
     assign header_cta_desktop = 'header.buy_now' | t
   endif
+  assign header_cta_desktop = header_cta_desktop | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
   assign header_cta_mobile = section.settings.cta_label_mobile
   if header_cta_mobile == blank
     assign header_cta_mobile = 'header.buy' | t
   endif
+  assign header_cta_mobile = header_cta_mobile | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
   assign main_menu = section.settings.main_menu
   assign root = routes.root_url
   if cart.item_count == 1

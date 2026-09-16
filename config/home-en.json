@@ -21,7 +21,9 @@
     "trust_1": "Engineered in Switzerland",
     "trust_2": "About 9 watts",
     "trust_3": "Jammer-resilient",
-    "sticky_cta_label": "Configure & buy Kevin"
+    "sticky_cta_label": "Configure & buy Kevin",
+    "press_label": "As featured in",
+    "press_aria": "Press coverage"
   },
   "problem": {
     "overline": "Why homes get picked",

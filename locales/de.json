@@ -363,7 +363,9 @@
       "headline": "Believable scenes between your visits.",
       "lede": "Schedule weekly occupancy for your holiday home or city break—hallway, living room, and kitchen rhythms rotate automatically."
     },
-    "drag_to_rotate": "Drag to rotate Kevin"
+    "drag_to_rotate": "Drag to rotate Kevin",
+    "press_label": "As featured in",
+    "press_aria": "Press coverage"
   },
   "home": {
     "specs": {
@@ -389,6 +391,8 @@
       "trust_2": "Rund 9 Watt",
       "trust_3": "Jammer-resistent",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z",
+      "press_label": "Bekannt aus",
+      "press_aria": "Presseberichte",
       "away_body": "Licht, Schatten und Geräusche wechseln automatisch – nie zweimal derselbe Abend.",
       "privacy_body": "Die Simulationen laufen auf dem Gerät. Nichts wird gestreamt oder weitergegeben.",
       "checkout_title": "Kostenloser Versand",

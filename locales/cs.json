@@ -363,7 +363,9 @@
       "headline": "Believable scenes between your visits.",
       "lede": "Schedule weekly occupancy for your holiday home or city break—hallway, living room, and kitchen rhythms rotate automatically."
     },
-    "drag_to_rotate": "Drag to rotate Kevin"
+    "drag_to_rotate": "Drag to rotate Kevin",
+    "press_label": "As featured in",
+    "press_aria": "Press coverage"
   },
   "home": {
     "specs": {
@@ -389,6 +391,8 @@
       "trust_2": "Přibližně 9 W",
       "trust_3": "Odolný vůči rušičkám",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z",
+      "press_label": "Psali o nás",
+      "press_aria": "Ohlasy v médiích",
       "away_body": "Světlo, stín a zvuk se mění automaticky – nikdy dvakrát stejný večer.",
       "privacy_body": "Simulace běží v zařízení. Nic se nestreamuje ani nesdílí.",
       "checkout_title": "Doprava zdarma",

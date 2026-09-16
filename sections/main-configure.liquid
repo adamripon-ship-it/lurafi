@@ -206,8 +206,8 @@
           always come from Shopify. The Theme Editor "variant ID" fields remain as
           optional overrides. A cover whose variant cannot be resolved is shown
           but marked "soon" (not purchasable).
-          Default image mapping (owner-provided): Red=download_24, Brown=download_25,
-          Blue=download_29, White=download_27.
+          Fallback images: the transparent cut-outs in assets/ (variant images are
+          the same files, uploaded to Shopify by scripts/setup-cover-media.mjs).
         {%- endcomment -%}
         {%- liquid
           assign cover_handle = section.settings.cover_product_handle | default: 'kevin-front-cover'
@@ -221,7 +221,11 @@
           endif
           assign covers_heading = 'configure.covers_heading' | t
           assign cover_names = 'Red,Brown,Blue,White' | split: ','
-          assign cover_default_images = 'https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_24.png?v=1783616627,https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_25.png?v=1783616628,https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_29.png?v=1783616628,https://cdn.shopify.com/s/files/1/0943/9841/5226/files/download_27.png?v=1783616628' | split: ','
+          assign cdi_red = 'kevin-front-cover-red-cutout.webp' | asset_url
+          assign cdi_brown = 'kevin-front-cover-brown-cutout.webp' | asset_url
+          assign cdi_blue = 'kevin-front-cover-blue-cutout.webp' | asset_url
+          assign cdi_white = 'kevin-front-cover-white-cutout.webp' | asset_url
+          assign cover_default_images = cdi_red | append: ',' | append: cdi_brown | append: ',' | append: cdi_blue | append: ',' | append: cdi_white | split: ','
         -%}
         <section class="configure-section configure-covers" data-configure-covers data-cover-product="{{ cover_handle }}" aria-labelledby="ConfigureCoversHeading">
           <h2 id="ConfigureCoversHeading" class="configure-label">{{ covers_heading }}</h2>

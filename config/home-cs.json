@@ -11,7 +11,9 @@
     "trust_1": "Vyvinuto ve Švýcarsku",
     "trust_2": "Přibližně 9 W",
     "trust_3": "Odolný vůči rušičkám",
-    "sticky_cta_label": "Sestavit a koupit Kevina"
+    "sticky_cta_label": "Sestavit a koupit Kevina",
+    "press_label": "Psali o nás",
+    "press_aria": "Ohlasy v médiích"
   },
   "problem": {
     "overline": "Proč si zloději vybírají",

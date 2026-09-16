@@ -230,6 +230,8 @@
     "checkout_eyebrow": "Afrekenen",
     "checkout_title": "Gratis bezorging",
     "checkout_body": "Veilig afrekenen via Shopify.",
+    "press_label": "As featured in",
+    "press_aria": "Press coverage",
     "carousel_label": "Who is Kevin for?",
     "pause_autoplay": "Pause slideshow",
     "play_autoplay": "Play slideshow",
@@ -382,6 +384,8 @@
       "trust_2": "Ongeveer 9 watt",
       "trust_3": "Bestand tegen jammers",
       "sticky_cta_label": "Kevin samenstellen & kopen",
+      "press_label": "Bekend van",
+      "press_aria": "Media-aandacht",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
     },
     "problem": {

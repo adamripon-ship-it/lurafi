@@ -13,8 +13,10 @@
   {%- if cta_primary_label != blank -%}
     <div class="hero-banner__actions">
       <a href="{{ cta_primary_url }}" class="hero-banner__cta hero-banner__cta--primary">
-        {{ cta_primary_label | escape }}
+        {{ cta_primary_label | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"' | escape }}
       </a>
     </div>
   {%- endif -%}
+
+  {% render 'hero-press-logos' %}
 </div>

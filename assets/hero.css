@@ -625,3 +625,41 @@ html.no-js .hero-banner__product-stage {
 @media (hover: none) and (pointer: coarse) {
   .hero-apple__scroll { display: none; }
 }
+
+/* Press strip under the hero CTA: "As featured in" + five equal-height logos.
+   Logos are single-colour (currentColor) so they read as one row; the Dutch
+   GadgetsDaily mark is a white PNG because no vector source is published. */
+.hero-press {
+  margin: clamp(18px, 3vh, 28px) auto 0;
+  max-width: var(--hero-copy-max);
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+.hero-press__label {
+  margin: 0 0 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.58);
+}
+.hero-press__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px clamp(20px, 3.4vw, 40px);
+  color: rgba(255, 255, 255, 0.72);
+}
+.hero-press__item { display: inline-flex; align-items: center; height: var(--hero-press-h, 22px); }
+.hero-press__item svg,
+.hero-press__item img { height: 100%; width: auto; display: block; }
+.hero-press__item img { opacity: 0.72; }
+@media (max-width: 479px) {
+  .hero-press { --hero-press-h: 17px; }
+  .hero-press__list { gap: 12px 18px; }
+}
+@media (min-width: 1800px) { .hero-press { --hero-press-h: 28px; } }

@@ -11,7 +11,9 @@
     "trust_1": "Ontwikkeld in Zwitserland",
     "trust_2": "Ongeveer 9 watt",
     "trust_3": "Bestand tegen jammers",
-    "sticky_cta_label": "Kevin samenstellen & kopen"
+    "sticky_cta_label": "Kevin samenstellen & kopen",
+    "press_label": "Bekend van",
+    "press_aria": "Media-aandacht"
   },
   "problem": {
     "overline": "Waarom huizen worden uitgekozen",

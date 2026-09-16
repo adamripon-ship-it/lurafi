@@ -11,7 +11,9 @@
     "trust_1": "Entwickelt in der Schweiz",
     "trust_2": "Rund 9 Watt",
     "trust_3": "Jammer-resistent",
-    "sticky_cta_label": "Kevin konfigurieren & kaufen"
+    "sticky_cta_label": "Kevin konfigurieren & kaufen",
+    "press_label": "Bekannt aus",
+    "press_aria": "Presseberichte"
   },
   "problem": {
     "overline": "Warum Häuser ausgewählt werden",

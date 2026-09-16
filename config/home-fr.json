@@ -11,7 +11,9 @@
     "trust_1": "Conçu en Suisse",
     "trust_2": "Environ 9 watts",
     "trust_3": "Résiste aux brouilleurs",
-    "sticky_cta_label": "Configurer et acheter Kevin"
+    "sticky_cta_label": "Configurer et acheter Kevin",
+    "press_label": "Vu dans",
+    "press_aria": "Couverture presse"
   },
   "problem": {
     "overline": "Pourquoi une maison est choisie",

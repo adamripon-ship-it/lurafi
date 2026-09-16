@@ -9,6 +9,7 @@
     capture configure_buy_url
       render 'configure-url', plan: 'buy'
     endcapture
+    assign sticky_label = sticky_label | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
     assign sticky_url = sticky_url | strip
     if sticky_url == blank
       assign sticky_url = configure_buy_url | strip

@@ -220,6 +220,8 @@
     "device_in": "Kevin in {{ color }}"
   },
   "hero": {
+    "press_label": "As featured in",
+    "press_aria": "Press coverage",
     "callouts_aria_label": "Kevin benefits",
     "carousel_label": "Who is Kevin for?",
     "pause_autoplay": "Pause slideshow",
@@ -392,6 +394,8 @@
       "trust_2": "About 9 watts",
       "trust_3": "Jammer-resilient",
       "sticky_cta_label": "Configure & buy Kevin",
+      "press_label": "As featured in",
+      "press_aria": "Press coverage",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
     },
     "problem": {
