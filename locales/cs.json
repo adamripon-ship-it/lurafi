@@ -42,7 +42,11 @@
     "de": "Německo",
     "fr": "Francie",
     "ch": "Švýcarsko",
-    "cz": "Česká republika"
+    "cz": "Česká republika",
+    "back": "Zpět",
+    "lang_en": "Angličtina",
+    "lang_de": "Němčina",
+    "lang_fr": "Francouzština"
   },
   "header": {
     "why_kevin": "Proč Kevin",

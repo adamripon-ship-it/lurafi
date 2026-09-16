@@ -45,7 +45,11 @@
     "de": "Germany",
     "fr": "France",
     "ch": "Switzerland",
-    "cz": "Czech Republic"
+    "cz": "Czech Republic",
+    "back": "Back",
+    "lang_en": "English",
+    "lang_de": "German",
+    "lang_fr": "French"
   },
   "header": {
     "why_kevin": "Why Kevin",

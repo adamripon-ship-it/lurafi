@@ -24,5 +24,11 @@
       "headline": "Dissuadez les cambriolages avant qu’ils ne commencent.",
       "lede": "Simulation de présence suisse — lumière, ombres et sons — pour que votre maison semble habitée de l’extérieur. Sans caméra. Sans micro. Prêt à l’emploi."
     }
+  },
+  "region": {
+    "back": "Retour",
+    "lang_en": "Anglais",
+    "lang_de": "Allemand",
+    "lang_fr": "Français"
   }
 }

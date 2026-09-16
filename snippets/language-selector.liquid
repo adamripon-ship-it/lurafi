@@ -108,9 +108,9 @@
           <option value="nl" {% if cur_country == 'NL' %}selected{% endif %}>🇳🇱 {{ 'region.nl' | t }}</option>
           <option value="de" {% if cur_country == 'DE' %}selected{% endif %}>🇩🇪 {{ 'region.de' | t }}</option>
           <option value="fr" {% if cur_country == 'FR' %}selected{% endif %}>🇫🇷 {{ 'region.fr' | t }}</option>
-          <option value="en" {% if cur_country == 'CH' and cur_locale == 'en' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — English</option>
-          <option value="de" {% if cur_country == 'CH' and cur_locale == 'de' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — Deutsch</option>
-          <option value="fr" {% if cur_country == 'CH' and cur_locale == 'fr' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — Français</option>
+          <option value="en" {% if cur_country == 'CH' and cur_locale == 'en' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — {{ 'region.lang_en' | t }}</option>
+          <option value="de" {% if cur_country == 'CH' and cur_locale == 'de' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — {{ 'region.lang_de' | t }}</option>
+          <option value="fr" {% if cur_country == 'CH' and cur_locale == 'fr' %}selected{% endif %}>🇨🇭 {{ 'region.ch' | t }} — {{ 'region.lang_fr' | t }}</option>
           <option value="cs" {% if cur_country == 'CZ' %}selected{% endif %}>🇨🇿 {{ 'region.cz' | t }}</option>
         </select>
         <button type="submit" class="language-selector__noscript-btn">{{ 'region.label' | t }}</button>
@@ -142,10 +142,10 @@
         <li role="none"><button type="button" role="menuitem" class="language-selector__opt" data-locale="cs" data-country="CZ"><span class="language-selector__flag" aria-hidden="true">🇨🇿</span><span class="language-selector__opt-label">{{ 'region.cz' | t }}</span></button></li>
       </ul>
       <ul class="language-selector__list language-selector__submenu" data-region-submenu="ch" role="menu" aria-label="{{ 'region.ch' | t }}" hidden>
-        <li role="none"><button type="button" class="language-selector__opt language-selector__opt--back" data-region-submenu-back><svg class="language-selector__caret language-selector__caret--back" width="6" height="10" viewBox="0 0 6 10" fill="none" aria-hidden="true"><path d="M5 1L1 5l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="language-selector__opt-label">{{ 'region.ch' | t }}</span></button></li>
-        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="en" data-country="CH"><span class="language-selector__opt-label">English</span></button></li>
-        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="de" data-country="CH"><span class="language-selector__opt-label">Deutsch</span></button></li>
-        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="fr" data-country="CH"><span class="language-selector__opt-label">Français</span></button></li>
+        <li role="none"><button type="button" class="language-selector__opt language-selector__opt--back" data-region-submenu-back aria-label="{{ 'region.back' | t }}"><svg class="language-selector__caret language-selector__caret--back" width="6" height="10" viewBox="0 0 6 10" fill="none" aria-hidden="true"><path d="M5 1L1 5l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="language-selector__opt-label">{{ 'region.ch' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="en" data-country="CH"><span class="language-selector__opt-label">{{ 'region.lang_en' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="de" data-country="CH"><span class="language-selector__opt-label">{{ 'region.lang_de' | t }}</span></button></li>
+        <li role="none"><button type="button" role="menuitem" class="language-selector__opt language-selector__opt--lang" data-locale="fr" data-country="CH"><span class="language-selector__opt-label">{{ 'region.lang_fr' | t }}</span></button></li>
       </ul>
     </div>
   </div>

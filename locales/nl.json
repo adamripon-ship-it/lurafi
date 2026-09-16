@@ -45,7 +45,11 @@
     "de": "Duitsland",
     "fr": "Frankrijk",
     "ch": "Zwitserland",
-    "cz": "Tsjechië"
+    "cz": "Tsjechië",
+    "back": "Terug",
+    "lang_en": "Engels",
+    "lang_de": "Duits",
+    "lang_fr": "Frans"
   },
   "header": {
     "why_kevin": "Waarom Kevin",

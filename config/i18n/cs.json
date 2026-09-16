@@ -24,5 +24,11 @@
       "headline": "Odraďte zloděje dřív, než začnou.",
       "lede": "Švýcarská simulace přítomnosti – světlo, stín a zvuk – aby váš domov zvenku vypadal obydleně. Bez kamer. Bez mikrofonů. Zapojit a používat."
     }
+  },
+  "region": {
+    "back": "Zpět",
+    "lang_en": "Angličtina",
+    "lang_de": "Němčina",
+    "lang_fr": "Francouzština"
   }
 }

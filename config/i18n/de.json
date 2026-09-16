@@ -24,5 +24,11 @@
       "headline": "Einbrüche verhindern, bevor sie beginnen.",
       "lede": "Schweizer Anwesenheitssimulation – Licht, Schatten und Geräusche – damit Ihr Zuhause von außen bewohnt wirkt. Keine Kameras. Keine Mikrofone. Plug-and-play."
     }
+  },
+  "region": {
+    "back": "Zurück",
+    "lang_en": "Englisch",
+    "lang_de": "Deutsch",
+    "lang_fr": "Französisch"
   }
 }

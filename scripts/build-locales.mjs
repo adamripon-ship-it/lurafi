@@ -49,6 +49,10 @@ const en = {
     fr: 'France',
     ch: 'Switzerland',
     cz: 'Czech Republic',
+    back: 'Back',
+    lang_en: 'English',
+    lang_de: 'German',
+    lang_fr: 'French',
   },
   header: {
     why_kevin: 'Why Kevin',
@@ -696,6 +700,10 @@ nl.region = {
   fr: 'Frankrijk',
   ch: 'Zwitserland',
   cz: 'Tsjechië',
+  back: 'Terug',
+  lang_en: 'Engels',
+  lang_de: 'Duits',
+  lang_fr: 'Frans',
 };
 nl.header = {
   why_kevin: 'Waarom Kevin',
