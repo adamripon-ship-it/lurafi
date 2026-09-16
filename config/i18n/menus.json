@@ -1,0 +1,116 @@
+{
+  "main-menu": {
+    "Why Kevin": {
+      "nl": "Waarom Kevin",
+      "de": "Warum Kevin",
+      "fr": "Pourquoi Kevin",
+      "cs": "Proč Kevin"
+    },
+    "Product": {
+      "nl": "Product",
+      "de": "Produkt",
+      "fr": "Produit",
+      "cs": "Produkt"
+    },
+    "How it works": {
+      "nl": "Hoe het werkt",
+      "de": "So funktioniert es",
+      "fr": "Comment ça marche",
+      "cs": "Jak to funguje"
+    },
+    "App": {
+      "nl": "App",
+      "de": "App",
+      "fr": "Application",
+      "cs": "Aplikace"
+    },
+    "Pricing": {
+      "nl": "Prijs",
+      "de": "Preis",
+      "fr": "Tarifs",
+      "cs": "Cena"
+    }
+  },
+  "footer-product": {
+    "Features": {
+      "nl": "Functies",
+      "de": "Funktionen",
+      "fr": "Fonctionnalités",
+      "cs": "Funkce"
+    },
+    "How It Works": {
+      "nl": "Hoe het werkt",
+      "de": "So funktioniert es",
+      "fr": "Comment ça marche",
+      "cs": "Jak to funguje"
+    },
+    "The App": {
+      "nl": "De app",
+      "de": "Die App",
+      "fr": "L’application",
+      "cs": "Aplikace"
+    },
+    "Pricing": {
+      "nl": "Prijs",
+      "de": "Preis",
+      "fr": "Tarifs",
+      "cs": "Cena"
+    }
+  },
+  "footer-company": {
+    "About Kevin": {
+      "nl": "Over Mitipi",
+      "de": "Über Mitipi",
+      "fr": "À propos de Mitipi",
+      "cs": "O Mitipi"
+    },
+    "Press": {
+      "nl": "Pers",
+      "de": "Presse",
+      "fr": "Presse",
+      "cs": "Tisk"
+    },
+    "Careers": {
+      "nl": "Werken bij",
+      "de": "Karriere",
+      "fr": "Carrières",
+      "cs": "Kariéra"
+    }
+  },
+  "footer-support": {
+    "Setup Guide": {
+      "nl": "Installatiegids",
+      "de": "Einrichtungsanleitung",
+      "fr": "Guide d’installation",
+      "cs": "Návod k instalaci"
+    },
+    "Contact Us": {
+      "nl": "Contact",
+      "de": "Kontakt",
+      "fr": "Contact",
+      "cs": "Kontakt"
+    }
+  },
+  "footer-shop": {
+    "Configure Kevin": {
+      "nl": "Kevin samenstellen",
+      "de": "Kevin konfigurieren",
+      "fr": "Configurer Kevin",
+      "cs": "Sestavit Kevina"
+    },
+    "Cart": {
+      "nl": "Winkelwagen",
+      "de": "Warenkorb",
+      "fr": "Panier",
+      "cs": "Košík"
+    }
+  },
+  "footer": {
+    "Search": {
+      "nl": "Zoeken",
+      "de": "Suche",
+      "fr": "Recherche",
+      "cs": "Hledat"
+    }
+  }
+}

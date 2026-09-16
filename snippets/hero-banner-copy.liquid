@@ -3,11 +3,11 @@
 {%- endcomment -%}
 <div class="hero-banner__copy">
   <h1 class="hero-banner__headline headline-hero" id="HeroHeading">
-    {{ headline | escape }}
+    {{ headline }}
   </h1>
 
   {%- if lede != blank -%}
-    <p class="hero-banner__lede body-elevated">{{ lede | escape }}</p>
+    <p class="hero-banner__lede body-elevated">{{ lede }}</p>
   {%- endif -%}
 
   {%- if cta_primary_label != blank -%}
