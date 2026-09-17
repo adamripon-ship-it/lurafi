@@ -1,0 +1,32 @@
+[
+  {
+    "lang": "en",
+    "passed": true,
+    "shortPhoneControlsVisible": true,
+    "summaryPopupFits": true
+  },
+  {
+    "lang": "de",
+    "passed": true,
+    "shortPhoneControlsVisible": true,
+    "summaryPopupFits": true
+  },
+  {
+    "lang": "fr",
+    "passed": true,
+    "shortPhoneControlsVisible": true,
+    "summaryPopupFits": true
+  },
+  {
+    "lang": "nl",
+    "passed": true,
+    "shortPhoneControlsVisible": true,
+    "summaryPopupFits": true
+  },
+  {
+    "lang": "cs",
+    "passed": true,
+    "shortPhoneControlsVisible": true,
+    "summaryPopupFits": true
+  }
+]

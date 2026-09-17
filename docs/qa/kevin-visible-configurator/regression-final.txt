@@ -1,0 +1,19 @@
+
+Running 12 tests using 1 worker
+
+(node:47905) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/explorer-regression.spec.js:68:1 › 3D failure retains the photograph and retry; preview never buys (808ms)
+  ✓   2 [chromium] › tests/e2e/explorer-regression.spec.js:94:3 › configure cart success: one append request, no clearing (1.4s)
+  ✓   3 [chromium] › tests/e2e/explorer-regression.spec.js:94:3 › configure cart rejected: one append request, no clearing (924ms)
+  ✓   4 [chromium] › tests/e2e/explorer-regression.spec.js:94:3 › configure cart uncertain: one append request, no clearing (982ms)
+  ✓   5 [chromium] › tests/e2e/explorer-regression.spec.js:137:1 › mixed quantities persist across previews, update prices and reach the cart once (8.4s)
+  ✓   6 [chromium] › tests/e2e/explorer-regression.spec.js:187:1 › homepage selection carries into configure and synchronizes both quantity controls (10.6s)
+  ✓   7 [chromium] › tests/e2e/explorer-regression.spec.js:222:1 › covers-only selection excludes device and an empty selection cannot submit (5.1s)
+  ✓   8 [chromium] › tests/e2e/explorer-regression.spec.js:242:1 › a partial-stock 422 shows cart reconciliation and blocks duplicate resubmission (788ms)
+  ✓   9 [chromium] › tests/e2e/explorer-regression.spec.js:261:1 › 3D cart submission locks the native configure controls until confirmed (3.0s)
+  ✓  10 [chromium] › tests/e2e/explorer-regression.spec.js:285:1 › Shopify discounts replace simple multiplication; stale quotes cannot overwrite a newer selection (2.9s)
+  ✓  11 [chromium] › tests/e2e/explorer-regression.spec.js:323:1 › unavailable price blocks both checkouts and retry recovers without changing the cart (689ms)
+  ✓  12 [chromium] › tests/e2e/explorer-regression.spec.js:353:1 › a price failure during final checkout verification prevents any cart write (756ms)
+
+  12 passed (37.6s)

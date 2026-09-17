@@ -44,8 +44,8 @@
       timer = setTimeout(() => controller.abort(), 20000);
     try {
       return await fetch(url, {
-        ...options,
         credentials: "same-origin",
+        ...options,
         signal: controller.signal,
       });
     } finally {
@@ -72,6 +72,8 @@
       this.content = this.q(".ke-content");
       this.colour = "grey";
       this.materialColour = "grey";
+      this.quantityTarget = "device";
+      this.quantities = { device: 1, white: 0, blue: 0, brown: 0, red: 0 };
       this.originals = new Map();
       this.textures = new Map();
       this.pins = [];
@@ -126,12 +128,74 @@
           this.guide();
         }
       };
-      this.q("[data-ke-add]").onclick = () => this.addCover();
-      if (this.q("[data-ke-buy]")) {
-        this.q("[data-ke-buy]").onclick = () => this.addDevice();
-        this.q("[data-ke-extra]").onchange = () => this.renderSelection();
-      }
+      this.all("[data-ke-quantity-target]").forEach(
+        (select) =>
+          (select.onchange = () => {
+            this.quantityTarget = select.value;
+            this.renderSelection();
+          }),
+      );
+      this.q("[data-ke-view-select]").onchange = (event) => {
+        this.dismissCallout(false);
+        this.view(event.target.value);
+      };
+      this.all("[data-ke-minus],[data-ke-plus]").forEach((button) => {
+        button.onclick = () => {
+          const kind = button.dataset.keMinus || button.dataset.kePlus;
+          const key = kind === "cover" ? this.colour : "device";
+          this.setQuantity(
+            key,
+            (this.quantities[key] || 0) +
+              (button.hasAttribute("data-ke-plus") ? 1 : -1),
+          );
+        };
+      });
+      this.all("[data-ke-quantity]").forEach((input) => {
+        input.oninput = input.onchange = () =>
+          this.setQuantity(
+            input.dataset.keQuantity === "cover" ? this.colour : "device",
+            input.value,
+          );
+        input.onkeydown = (event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            input.blur();
+          }
+        };
+      });
+      this.q("[data-ke-configure]")?.addEventListener("click", (event) => {
+        if (this.pending || this.uncertain || this.externalLocked)
+          event.preventDefault();
+      });
+      this.q("[data-ke-retry-price]").onclick = () =>
+        this.requestQuote(true).catch(() => {});
+      this.q("[data-ke-buy]").onclick = () =>
+        this.addItems(this.orderItems(), "selection_added");
+      this.q("[data-ke-checkout]")?.addEventListener("click", () =>
+        document.querySelector("[data-configure-checkout]")?.click(),
+      );
+      this.onConfiguration = (event) => {
+        if (this.dataset.mode !== "configure") return;
+        const { quantity, device, covers, locked, message } = event.detail;
+        this.quantities.device = quantity;
+        Object.assign(this.config.device, device);
+        this.config.covers.forEach((offer) => {
+          const update = covers.find((v) => String(v.id) === String(offer.id));
+          if (update) {
+            Object.assign(offer, update);
+            this.quantities[offer.colour] = update.quantity;
+          }
+        });
+        this.externalLocked = locked;
+        if (message) {
+          this.q("[data-ke-status]").textContent = message;
+          this.q("[data-ke-cart]").hidden = false;
+        }
+        this.renderSelection();
+      };
+      document.addEventListener("kevin:configuration", this.onConfiguration);
       this.renderSelection();
+      this.refreshPrices(false);
       this.detail("cover");
       this.updateMotion();
       this.q("[data-ke-feature=cover]").setAttribute("aria-pressed", "true");
@@ -141,6 +205,16 @@
         this.toggleAttribute("data-offscreen", !entry.isIntersecting);
       });
       this.visible.observe(this);
+      this.workspaceObserver = new IntersectionObserver(([entry]) => {
+        this.toggleAttribute("data-ke-workspace-visible", entry.isIntersecting);
+        document.body.classList.toggle(
+          "ke-configuring",
+          Boolean(
+            document.querySelector("kevin-explorer[data-ke-workspace-visible]"),
+          ),
+        );
+      });
+      this.workspaceObserver.observe(this.q(".ke-layout"));
       this.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && !this.q("[data-ke-callout]").hidden) {
           event.preventDefault();
@@ -194,8 +268,18 @@
     }
     disconnectedCallback() {
       window.removeEventListener("popstate", this.onPop);
+      document.removeEventListener("kevin:configuration", this.onConfiguration);
       this.resize?.disconnect();
       this.visible?.disconnect();
+      clearTimeout(this.quoteTimer);
+      this.workspaceObserver?.disconnect();
+      this.removeAttribute("data-ke-workspace-visible");
+      document.body.classList.toggle(
+        "ke-configuring",
+        Boolean(
+          document.querySelector("kevin-explorer[data-ke-workspace-visible]"),
+        ),
+      );
       cancelAnimationFrame(this.pinFrame);
       if (this.dialog?.open) this.close(false);
     }
@@ -265,6 +349,9 @@
             if (this.model.loaded) done();
           });
           this.loaded = true;
+          this.revealWorkspace();
+          if (innerWidth < 600 && innerHeight <= 700)
+            this.model.cameraOrbit = "-25deg 77deg 75%";
           this.q("[data-ke-poster]").hidden = true;
           button.hidden = true;
           this.q(".ke-angles").hidden = false;
@@ -308,57 +395,171 @@
       })();
       return this.loading;
     }
-    renderSelection() {
-      this.all("[data-ke-colour]").forEach((b) => {
-        b.setAttribute(
-          "aria-pressed",
-          String(b.dataset.keColour === this.colour),
+    setQuantity(key, value) {
+      if (
+        this.pending ||
+        this.uncertain ||
+        this.externalLocked ||
+        !(key in this.quantities)
+      )
+        return;
+      const number = Number(value);
+      const quantity =
+        Number.isSafeInteger(number) && number >= 0
+          ? number
+          : this.quantities[key];
+      // A number input fires change again on blur. Rebuilding text under the
+      // next finger tap can cancel Safari's click, even when nothing changed.
+      if (quantity === this.quantities[key] && quantity === number) return;
+      if (this.dataset.mode === "configure") {
+        this.dispatchEvent(
+          new CustomEvent("kevin:quantity-change", {
+            bubbles: true,
+            detail: { key, quantity },
+          }),
         );
-        b.disabled = Boolean(this.pending);
+      } else {
+        this.quantities[key] = quantity;
+        this.renderSelection();
+      }
+    }
+    orderItems() {
+      return [
+        { ...this.config.device, quantity: this.quantities.device },
+        ...this.config.covers.map((v) => ({
+          ...v,
+          quantity: this.quantities[v.colour] || 0,
+        })),
+      ].filter((v) => v.quantity > 0);
+    }
+    renderSelection() {
+      this.dataset.quantityTarget = this.quantityTarget;
+      this.all("[data-ke-quantity-target]").forEach((select) => {
+        select.value = this.quantityTarget;
+        select.querySelector("[data-ke-cover-option]").textContent = this.t(
+          this.colour,
+        );
+        select.querySelector("[data-ke-cover-option]").disabled =
+          this.colour === "grey";
+      });
+      const locked = Boolean(
+        this.pending || this.uncertain || this.externalLocked,
+      );
+      this.all("[data-ke-colour]").forEach((b) => {
+        const colour = b.dataset.keColour,
+          quantity = this.quantities[colour] || 0;
+        b.setAttribute("aria-pressed", String(colour === this.colour));
+        b.setAttribute(
+          "aria-label",
+          this.t(colour) + (quantity ? ` · ${quantity}` : ""),
+        );
+        b.disabled = Boolean(this.pending || this.externalLocked);
+        const badge = b.querySelector("[data-ke-count]");
+        badge.hidden = !quantity;
+        badge.textContent = quantity;
       });
       this.q("[data-ke-colour-name]").textContent = this.t(this.colour);
       this.q("[data-ke-kind]").textContent = this.t(
         this.colour === "grey" ? "included" : "optional",
       );
-      const offer = this.config.covers.find((v) => v.colour === this.colour),
-        button = this.q("[data-ke-add]");
-      button.hidden = this.colour === "grey";
-      button.disabled = Boolean(
-        this.pending || this.uncertain || !offer?.available,
+      const offer = this.config.covers.find((v) => v.colour === this.colour);
+      this.q("[data-ke-cover-label]").textContent = this.t(this.colour);
+      this.q("[data-ke-cover-unit]").textContent = offer
+        ? !offer.available
+          ? this.t("soldOut")
+          : `${this.money(offer.amount)} · ${this.t("each")}`
+        : this.t("included");
+      this.q("[data-ke-device-price]").textContent = this.money(
+        this.config.device.amount,
       );
-      button.textContent = this.t(
-        this.pending
-          ? "adding"
-          : !offer?.available && this.colour !== "grey"
-            ? "soldOut"
-            : this.dataset.mode === "configure"
-              ? "add_order"
-              : "addCover",
+      this.q("[data-ke-cover-quantity]").hidden = this.colour === "grey";
+      this.q("[data-ke-grey-note]").hidden = this.colour !== "grey";
+      for (const kind of ["device", "cover"]) {
+        const key = kind === "device" ? "device" : this.colour;
+        const value = this.quantities[key] || 0;
+        const input = this.q(`[data-ke-quantity="${kind}"]`);
+        input.value = value;
+        input.disabled = locked;
+        this.q(`[data-ke-minus="${kind}"]`).disabled = locked || value === 0;
+        this.q(`[data-ke-plus="${kind}"]`).disabled =
+          locked ||
+          (kind === "device"
+            ? !this.config.device.available
+            : !offer?.available);
+      }
+      const items = this.orderItems();
+      const key = this.quoteKey();
+      const currentQuote =
+        this.quoteData?.key === key && this.quoteFailedKey !== key
+          ? this.quoteData
+          : null;
+      this.queueQuote();
+      const total = !items.length ? 0 : currentQuote?.amount;
+      this.q("[data-ke-total]").textContent =
+        total === undefined ? this.t("updating_price") : this.money(total);
+      this.q("[data-ke-total]").setAttribute(
+        "aria-busy",
+        String(total === undefined),
       );
-      this.q("[data-ke-price]").textContent = offer
-        ? this.money(offer.amount)
-        : "";
+      this.q("[data-ke-retry-price]").hidden = this.quoteFailedKey !== key;
+      this.q("[data-ke-total]").toggleAttribute(
+        "data-price-error",
+        this.quoteFailedKey === key,
+      );
+      if (this.quoteFailedKey === key) {
+        this.q("[data-ke-total]").textContent = this.t(
+          this.quoteError || "price_unavailable",
+        );
+        this.q("[data-ke-total]").setAttribute("aria-busy", "false");
+      }
+      const covers = this.config.covers.reduce(
+        (sum, v) => sum + (this.quantities[v.colour] || 0),
+        0,
+      );
+      this.q("[data-ke-order-summary]").textContent =
+        `${this.quantities.device} × KEVIN 3.0 · ${covers} × ${this.t("extra_covers")}`;
+      const lines = this.q("[data-ke-order-lines]");
+      lines.replaceChildren();
+      items.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.quantity} × ${item.colour ? this.t(item.colour) : "KEVIN 3.0"} · ${this.money(currentQuote?.lines.find((line) => String(line.id) === String(item.id))?.amount ?? item.amount * item.quantity)}`;
+        lines.append(li);
+      });
       const buy = this.q("[data-ke-buy]");
-      if (!buy) return;
-      const extra = this.q("[data-ke-extra]");
-      if (this.colour === "grey") extra.checked = false;
-      this.q("[data-ke-extra-label]").hidden = this.colour === "grey";
-      extra.disabled = Boolean(this.pending || !offer?.available);
-      this.q("[data-ke-extra-price]").textContent = offer
-        ? this.money(offer.amount)
-        : "";
-      this.q("[data-ke-total]").textContent = this.money(
-        this.config.device.amount + (extra.checked && offer ? offer.amount : 0),
-      );
-      buy.textContent = this.t(
-        this.pending ? "adding" : extra.checked ? "add_bundle" : "add_device",
-      );
-      buy.disabled = Boolean(
-        this.pending ||
-        this.uncertain ||
-        !this.config.device.available ||
-        (extra.checked && !offer?.available),
-      );
+      buy.textContent = this.t(this.pending ? "adding" : "add_selection");
+      buy.disabled =
+        locked ||
+        !items.length ||
+        !currentQuote ||
+        items.some((v) => !v.available);
+      const checkout = this.q("[data-ke-checkout]");
+      if (checkout) checkout.disabled = buy.disabled;
+      if (this.dataset.mode === "configure")
+        this.dispatchEvent(
+          new CustomEvent("kevin:quote-total", {
+            bubbles: true,
+            detail: {
+              text: this.q("[data-ke-total]").textContent,
+              ready: !buy.disabled,
+              quote: currentQuote,
+              failed: this.quoteFailedKey === key,
+            },
+          }),
+        );
+      const configure = this.q("[data-ke-configure]");
+      if (configure) {
+        configure.setAttribute("aria-disabled", String(locked));
+        configure.tabIndex = locked ? -1 : 0;
+        const url = new URL(configure.href);
+        url.searchParams.set("kevin_qty", this.quantities.device);
+        for (const v of this.config.covers)
+          url.searchParams.set(
+            `cover_${v.colour}`,
+            this.quantities[v.colour] || 0,
+          );
+        url.searchParams.set("preview", this.colour);
+        configure.href = url.href;
+      }
     }
     // Bake a small, evenly focused interior fabric sample into a mirrored tile.
     // This retains the reference weave/colour without projecting a whole perspective photograph.
@@ -391,6 +592,7 @@
       )
         return;
       this.colour = key;
+      this.quantityTarget = key === "grey" ? "device" : "cover";
       this.status("");
       this.renderSelection();
       this.refreshPrices(false);
@@ -440,12 +642,26 @@
         }
       }
     }
+    revealWorkspace() {
+      if (this.dialog.open) return;
+      const header =
+        document.querySelector(".site-header")?.getBoundingClientRect()
+          .height || 0;
+      window.scrollTo({
+        top:
+          this.q(".ke-layout").getBoundingClientRect().top +
+          scrollY -
+          header -
+          8,
+        behavior: "instant",
+      });
+    }
     async view(orbit) {
       if (!(await this.load())) return;
       const stage = this.q(".ke-stage"),
         bounds = stage.getBoundingClientRect();
       if (bounds.bottom < 160 || bounds.top > innerHeight - 160)
-        stage.scrollIntoView({ block: "center", behavior: "instant" });
+        this.revealWorkspace();
       this.model.cameraOrbit = orbit;
       await this.model.updateComplete;
       if (!this.motion || reduced()) this.model.jumpCameraToGoal();
@@ -571,8 +787,9 @@
       });
     }
     layoutPins() {
-      const { width: w, height: h } =
-        this.q(".ke-stage").getBoundingClientRect();
+      const { width: w, height: h } = this.model.getBoundingClientRect();
+      const stageRect = this.q(".ke-stage").getBoundingClientRect();
+      const modelRect = this.model.getBoundingClientRect();
       if (!w || !h) return;
       const orbit = this.model.getCameraOrbit(),
         camera = [
@@ -607,13 +824,13 @@
           continue;
         }
         placed.push(best);
-        p.button.style.left = best.x + "px";
-        p.button.style.top = best.y + "px";
+        p.button.style.left = best.x + modelRect.x - stageRect.x + "px";
+        p.button.style.top = best.y + modelRect.y - stageRect.y + "px";
         for (const [k, v] of Object.entries({
-          x1: ax,
-          y1: ay,
-          x2: best.x,
-          y2: best.y,
+          x1: ax + modelRect.x - stageRect.x,
+          y1: ay + modelRect.y - stageRect.y,
+          x2: best.x + modelRect.x - stageRect.x,
+          y2: best.y + modelRect.y - stageRect.y,
         }))
           p.line.setAttribute(k, String(v));
       }
@@ -675,70 +892,187 @@
       if (back && history.state?.kevinExplorer === this.dataset.instance)
         history.back();
     }
-    async refreshPrices(required = false) {
-      const offer = this.config.covers.find((v) => v.colour === this.colour),
-        items = [this.config.device, offer].filter((v) => v?.id);
-      try {
-        await Promise.all(
-          items.map(async (item) => {
-            const r = await request(rootPath() + `variants/${item.id}.js`);
-            if (!r.ok) throw Error("availability");
-            const v = await r.json();
-            item.available = v.available;
-            if (typeof v.price === "number") item.amount = v.price;
-          }),
-        );
-        this.renderSelection();
-        return true;
-      } catch (error) {
-        if (required) throw error;
-        return false;
-      }
+    quoteKey() {
+      return JSON.stringify([
+        this.config.country,
+        this.orderItems().map((v) => [String(v.id), v.quantity]),
+      ]);
     }
-    async addCover() {
-      const offer = this.config.covers.find((v) => v.colour === this.colour);
+    queueQuote() {
+      const key = this.quoteKey();
       if (
-        this.pending ||
-        this.uncertain ||
-        this.colour === "grey" ||
-        !offer?.available
+        !this.orderItems().length ||
+        this.quoteData?.key === key ||
+        this.quotePendingKey === key ||
+        this.quoteFailedKey === key
       )
         return;
-      if (this.dataset.mode === "configure") {
-        const card = document.querySelector(
-            `[data-cover-colour="${this.colour}"]`,
-          ),
-          plus = card?.querySelector("[data-cover-plus]");
-        if (!plus || card.dataset.coverSoon === "1") {
-          this.status("soldOut");
-          return;
-        }
-        plus.click();
-        this.status("order_added");
-        this.animate(this.q("[data-ke-status]"));
-        return;
-      }
-      await this.addItems([offer], "added");
+      clearTimeout(this.quoteTimer);
+      this.quotePendingKey = key;
+      this.quoteTimer = setTimeout(
+        () => this.requestQuote().catch(() => {}),
+        220,
+      );
     }
-    async addDevice() {
-      const offer = this.config.covers.find((v) => v.colour === this.colour);
-      const items = [this.config.device];
-      if (this.q("[data-ke-extra]").checked && offer) items.push(offer);
-      await this.addItems(items, "bundle_added");
+    async requestQuote(force = false) {
+      clearTimeout(this.quoteTimer);
+      const key = this.quoteKey(),
+        items = this.orderItems();
+      if (!items.length) return { amount: 0, lines: [], key };
+      if (!force && this.quoteData?.key === key) return this.quoteData;
+      if (this.quotePromise && this.quoteRequestKey === key)
+        return this.quotePromise;
+      this.quotePendingKey = this.quoteRequestKey = key;
+      this.quoteFailedKey = null;
+      if (force) this.quoteData = null;
+      this.renderSelection();
+      const version = (this.quoteVersion || 0) + 1;
+      this.quoteVersion = version;
+      this.quotePromise = (async () => {
+        try {
+          const query = `mutation ExplorerQuote($input: CartInput!) {
+            cartCreate(input: $input) {
+              cart { cost { totalAmount { amount currencyCode } subtotalAmount { amount currencyCode } }
+                lines(first: 10) { nodes { quantity merchandise { ... on ProductVariant { id } } cost { totalAmount { amount currencyCode } } } }
+              }
+              userErrors { field message code }
+            }
+          }`;
+          const response = await request("/api/2026-07/graphql.json", {
+            method: "POST",
+            credentials: "omit",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              query,
+              variables: {
+                input: {
+                  buyerIdentity: { countryCode: this.config.country },
+                  lines: items.map((v) => ({
+                    merchandiseId: `gid://shopify/ProductVariant/${v.id}`,
+                    quantity: v.quantity,
+                  })),
+                },
+              },
+            }),
+          });
+          if (!response.ok) throw Error("quote");
+          const json = await response.json(),
+            result = json.data?.cartCreate,
+            cart = result?.cart;
+          if (
+            json.errors?.length ||
+            result?.userErrors?.length ||
+            !cart ||
+            cart.cost.totalAmount.currencyCode !== this.config.currency
+          )
+            throw Error("quote");
+          const lines = cart.lines.nodes.map((v) => ({
+            id: v.merchandise.id.split("/").pop(),
+            quantity: v.quantity,
+            amount: Math.round(Number(v.cost.totalAmount.amount) * 100),
+          }));
+          if (
+            items.some(
+              (item) =>
+                lines.find((v) => v.id === String(item.id))?.quantity !==
+                item.quantity,
+            )
+          )
+            throw Error("stock");
+          const amount = Math.round(Number(cart.cost.totalAmount.amount) * 100);
+          if (!Number.isSafeInteger(amount) || amount < 0) throw Error("quote");
+          const quote = { key, amount, lines };
+          if (version === this.quoteVersion && key === this.quoteKey()) {
+            this.quoteData = quote;
+          }
+          return quote;
+        } catch (error) {
+          if (version === this.quoteVersion && key === this.quoteKey()) {
+            this.quoteFailedKey = key;
+            this.quoteError =
+              error.message === "stock"
+                ? "quantity_unavailable"
+                : "price_unavailable";
+          }
+          throw error;
+        } finally {
+          if (version === this.quoteVersion) {
+            this.quotePendingKey = this.quoteRequestKey = null;
+            this.quotePromise = null;
+            this.renderSelection();
+          }
+        }
+      })();
+      return this.quotePromise;
+    }
+    async refreshPrices(required = false) {
+      if (!required && Date.now() - (this.pricesUpdatedAt || 0) < 60000)
+        return true;
+      if (!this.priceRefresh) {
+        this.priceRefresh = (async () => {
+          const items = [this.config.device, ...this.config.covers].filter(
+            (v) => v?.id,
+          );
+          try {
+            const updates = await Promise.all(
+              items.map(async (item) => {
+                const r = await request(rootPath() + `variants/${item.id}.js`);
+                if (!r.ok) throw Error("availability");
+                const v = await r.json();
+                if (typeof v.price !== "number" || !Number.isFinite(v.price))
+                  throw Error("price");
+                return { item, available: v.available, amount: v.price };
+              }),
+            );
+            updates.forEach(({ item, available, amount }) =>
+              Object.assign(item, { available, amount }),
+            );
+            this.pricesUpdatedAt = Date.now();
+            if (this.dataset.mode === "configure")
+              this.dispatchEvent(
+                new CustomEvent("kevin:price-refresh", {
+                  bubbles: true,
+                  detail: items,
+                }),
+              );
+            this.renderSelection();
+            return true;
+          } catch {
+            return false;
+          } finally {
+            this.priceRefresh = null;
+          }
+        })();
+      }
+      const ok = await this.priceRefresh;
+      if (required && !ok) throw Error("availability");
+      return ok;
     }
     async addItems(items, success) {
       if (
         this.pending ||
         this.uncertain ||
+        this.externalLocked ||
+        !items.length ||
         items.some((i) => !i?.id || !i.available)
       )
         return;
       this.pending = true;
+      if (this.dataset.mode === "configure")
+        this.dispatchEvent(
+          new CustomEvent("kevin:cart-lock", {
+            bubbles: true,
+            detail: { locked: true },
+          }),
+        );
       this.renderSelection();
       this.status("");
-      let sent = false;
+      let sent = false,
+        stockAdjusted = false;
       try {
         await this.refreshPrices(true);
+        await this.requestQuote(true);
+        items = this.orderItems();
         if (items.some((i) => !i.available)) {
           this.status("soldOut");
           return;
@@ -751,11 +1085,12 @@
             Accept: "application/json",
           },
           body: JSON.stringify({
-            items: items.map((i) => ({ id: i.id, quantity: 1 })),
+            items: items.map((i) => ({ id: i.id, quantity: i.quantity })),
           }),
         });
         if (!result.ok) {
-          if (result.status >= 400 && result.status < 500) sent = false;
+          stockAdjusted = result.status === 422;
+          // Shopify may partially add stock even on a 422 response. Never invite a duplicate retry.
           throw Error("cart");
         }
         this.status(success);
@@ -764,10 +1099,28 @@
         this.animate(this.q("[data-ke-status]"));
       } catch (error) {
         this.uncertain = sent;
-        this.status(sent ? "cartUnknown" : "cartError");
+        this.status(
+          sent
+            ? stockAdjusted
+              ? "cart_adjusted"
+              : "cartUnknown"
+            : "cartError",
+        );
         this.q("[data-ke-cart]").hidden = !sent;
       } finally {
         this.pending = false;
+        if (this.dataset.mode === "configure")
+          this.dispatchEvent(
+            new CustomEvent("kevin:cart-lock", {
+              bubbles: true,
+              detail: {
+                locked: Boolean(this.uncertain),
+                message: this.uncertain
+                  ? this.q("[data-ke-status]").textContent
+                  : "",
+              },
+            }),
+          );
         this.renderSelection();
       }
     }
@@ -797,6 +1150,11 @@
       switchView(false);
     };
     view.onclick = () => switchView(true);
+    gallery
+      .closest("[data-configure]")
+      ?.addEventListener("kevin:preview-ready", (event) =>
+        switchView(true, event.detail.colour),
+      );
     document.querySelectorAll("[data-ke-preview]").forEach(
       (button) =>
         (button.onclick = () => {

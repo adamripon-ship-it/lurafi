@@ -393,7 +393,7 @@
       "trust_1": "Engineered in Switzerland",
       "trust_2": "About 9 watts",
       "trust_3": "Jammer-resilient",
-      "sticky_cta_label": "Configure & buy Kevin",
+      "sticky_cta_label": "Configure & buy KEVIN 3.0",
       "press_label": "As featured in",
       "press_aria": "Press coverage",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
@@ -498,7 +498,7 @@
       "subheading": "Buy Kevin outright: 70+ hours of simulations, lifetime software updates, a 3-year Swiss warranty, 30-day returns and free shipping across the EU.",
       "buy_label": "Own Kevin®",
       "buy_tagline": "One-time purchase. All updates included.",
-      "buy_cta": "Configure & buy Kevin",
+      "buy_cta": "Configure & buy KEVIN 3.0",
       "buy_features": "Full device ownership|70+ hours of built-in simulations|Weekly schedules and geo-fencing|Upload your own household sounds|Bluetooth speaker and lamp at home|Flexible placement with 3 m power cable|Free delivery|3-year Swiss warranty"
     },
     "specs": {
@@ -751,7 +751,7 @@
     "shopCover": "Shop this cover",
     "viewCart": "View cart",
     "cartUnknown": "We could not confirm the result. Check your cart before trying again.",
-    "cartError": "The cover could not be added. Please try again.",
+    "cartError": "Your selection could not be added. Please try again.",
     "included": "Included with KEVIN",
     "optional": "Optional cover — sold separately",
     "heading": "Meet Kevin. Find your favourite details.",
@@ -829,6 +829,25 @@
     "lamp_body": "From standby, press the right button to use KEVIN as a lamp.",
     "lamp_detail": "The two right buttons adjust brightness. Press power to leave lamp mode.",
     "power_label": "Power button",
-    "updating_price": "Updating price…"
+    "updating_price": "Updating price…",
+    "each": "each",
+    "device_quantity": "KEVIN 3.0 quantity",
+    "cover_quantity": "Selected cover quantity",
+    "every_unit": "Grey cover with every unit",
+    "selection": "Your selection",
+    "configure_buy": "Configure & buy KEVIN 3.0",
+    "add_selection": "Add to cart",
+    "extra_covers": "extra covers",
+    "selection_added": "Your selection was added to the cart.",
+    "cart_adjusted": "Shopify may have adjusted availability. Check your cart before adding again.",
+    "empty_selection": "Choose a quantity to add.",
+    "units": "Units",
+    "cover_count": "Covers",
+    "view": "View",
+    "quantity_for": "Quantity for",
+    "price_unavailable": "Price unavailable",
+    "quantity_unavailable": "Reduce this quantity and try again.",
+    "selection_price_note": "Price for this selection. Delivery and any cart-wide offers are confirmed in your cart.",
+    "retry_price": "Refresh price"
   }
 }

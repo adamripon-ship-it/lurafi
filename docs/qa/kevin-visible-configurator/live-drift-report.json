@@ -1,0 +1,42 @@
+[
+  {
+    "file": "assets/configure-v2.js",
+    "unchanged": true
+  },
+  {
+    "file": "assets/kevin-explorer.css",
+    "unchanged": true
+  },
+  {
+    "file": "assets/kevin-explorer.js",
+    "unchanged": true
+  },
+  {
+    "file": "locales/cs.json",
+    "unchanged": true
+  },
+  {
+    "file": "locales/de.json",
+    "unchanged": true
+  },
+  {
+    "file": "locales/en.default.json",
+    "unchanged": true
+  },
+  {
+    "file": "locales/fr.json",
+    "unchanged": true
+  },
+  {
+    "file": "locales/nl.json",
+    "unchanged": true
+  },
+  {
+    "file": "sections/kevin-explorer.liquid",
+    "unchanged": true
+  },
+  {
+    "file": "snippets/kevin-explorer.liquid",
+    "unchanged": true
+  }
+]

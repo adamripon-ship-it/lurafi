@@ -1000,3 +1000,559 @@
 .ke-callout {
   overflow-anchor: none;
 }
+
+/* Visible configuration workspace. Existing marker and motion styling stays intact. */
+.ke-layout {
+  grid-template-columns: minmax(0, 1.6fr) minmax(310px, 1fr);
+  gap: 24px;
+}
+.ke-stage {
+  height: clamp(340px, calc(100svh - 260px), 580px);
+}
+.ke-stage model-viewer,
+.ke-stage > img {
+  position: absolute;
+  left: 88px;
+  top: 0;
+  width: calc(100% - 88px);
+  height: 100%;
+}
+.ke-stage .ke-colours {
+  position: absolute;
+  z-index: 4;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  margin: 0;
+}
+.ke-colours legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.ke-colours .ke-swatches {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.ke-swatches button {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  min-height: 52px;
+}
+.ke-swatches b {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  min-width: 20px;
+  padding: 2px 4px;
+  border-radius: 20px;
+  color: #fff;
+  background: #215cbe;
+  border: 1px solid #b3d1ff;
+  font-size: 11px;
+  line-height: 16px;
+}
+.ke-stage .ke-selection {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -6px;
+  width: 72px;
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0;
+}
+.ke-stage .ke-selection [data-ke-kind] {
+  display: none;
+}
+.ke-view-select {
+  display: none;
+  min-width: 48px;
+  min-height: 48px;
+  border: 1px solid #424b5b;
+  border-radius: 12px;
+  color: #f5f6fa;
+  background: #181e29;
+  padding: 8px;
+  font: inherit;
+  font-size: 14px;
+}
+.ke-order {
+  align-self: start;
+  margin-top: 56px;
+  padding: 16px;
+  border: 1px solid #424b5b;
+  border-radius: 20px;
+  background: #121b27;
+  min-width: 0;
+}
+.ke-order-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 60px;
+}
+.ke-order-row + .ke-order-row {
+  margin-top: 12px;
+}
+.ke-order-label {
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.ke-order-label strong,
+.ke-order-label small {
+  display: block;
+}
+.ke-order-label small {
+  font-size: 12px;
+  color: #c2c8d2;
+  margin-top: 4px;
+}
+.ke-quantity {
+  display: grid;
+  grid-template-columns: 48px 48px 48px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.ke-quantity button {
+  padding: 8px;
+  font-size: 22px;
+  min-height: 48px;
+}
+.ke-quantity input {
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  text-align: center;
+  border: 1px solid #617087;
+  border-radius: 10px;
+  background: #0c1017;
+  color: #f5f6fa;
+  font: inherit;
+  font-size: 16px;
+  padding: 0 2px;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.ke-quantity input::-webkit-inner-spin-button,
+.ke-quantity input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ke-quantity input:focus-visible,
+.ke-view-select:focus-visible {
+  outline: 3px solid #a4c8ff;
+  outline-offset: 3px;
+}
+.ke-included-note {
+  max-width: 152px;
+  font-size: 13px;
+  color: #c2c8d2;
+  text-align: right;
+}
+.ke-order-footer {
+  margin-top: 12px;
+  border-top: 1px solid #424b5b;
+}
+.ke-order-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 56px;
+}
+.ke-order-total > strong {
+  font-size: 24px;
+  white-space: nowrap;
+}
+.ke-order-review {
+  position: relative;
+  min-width: 0;
+}
+.ke-order-review summary {
+  font-size: 12px;
+  padding: 8px 0;
+  gap: 6px;
+}
+.ke-order-review summary::before {
+  font-size: 18px;
+  flex: none;
+}
+.ke-order-breakdown {
+  position: absolute;
+  z-index: 6;
+  bottom: 100%;
+  left: 0;
+  width: max-content;
+  max-width: min(360px, 75vw);
+  max-height: min(300px, 60svh);
+  overflow: auto;
+  padding: 16px 16px 16px 28px;
+  border: 1px solid #617087;
+  border-radius: 12px;
+  background: #182333;
+  box-shadow: 0 8px 32px #0006;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.ke-order-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 8px;
+}
+.ke-order-actions > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 52px;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+.ke-order-actions > a {
+  color: #d8e8ff;
+  border: 1px solid #617087;
+  text-decoration: none;
+}
+.ke-order .ke-status {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+.ke-order .ke-status:empty {
+  display: none;
+}
+.ke-order [data-ke-cart]:not([hidden]) {
+  display: flex;
+  align-items: center;
+  color: #a4c8ff;
+  margin-top: 8px;
+}
+.ke-features {
+  margin-top: 24px;
+}
+.ke-features .ke-primary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.ke-features .ke-secondary {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.ke-features .ke-detail {
+  margin-block: 12px;
+}
+.ke-explorer[data-mode="configure"] > .ke-content .ke-order {
+  margin-top: 0;
+}
+.ke-dialog .ke-order {
+  margin-top: 72px;
+}
+@media (max-width: 899px) {
+  .ke-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .ke-product .ke-toolbar {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .ke-product .ke-toolbar > * {
+    flex: 1;
+    min-width: 0;
+    padding: 8px;
+    font-size: 13px;
+    min-height: 48px;
+  }
+  .ke-view-select {
+    display: block;
+  }
+  .ke-stage,
+  .ke-dialog .ke-stage,
+  .ke-explorer[data-mode="configure"] > .ke-content .ke-stage {
+    height: clamp(188px, calc(100svh - 414px), 460px);
+    min-height: 0;
+  }
+  .ke-stage model-viewer,
+  .ke-stage > img {
+    left: 0;
+    width: 100%;
+    height: calc(100% - 84px);
+  }
+  .ke-stage .ke-colours {
+    inset: auto 8px 6px;
+    width: auto;
+    transform: none;
+    height: 74px;
+  }
+  .ke-colours .ke-swatches {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .ke-swatches button {
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
+  }
+  .ke-stage .ke-selection {
+    position: static;
+    width: auto;
+    margin: 4px 0 0;
+    line-height: 16px;
+    font-size: 12px;
+  }
+  .ke-load {
+    bottom: 92px;
+  }
+  .ke-product .ke-angles,
+  .ke-product .ke-hint,
+  .ke-product .ke-marker-hint {
+    display: none;
+  }
+  .ke-order,
+  .ke-dialog .ke-order {
+    margin-top: 0;
+    padding: 10px 12px;
+  }
+  .ke-order-row {
+    min-height: 48px;
+    gap: 8px;
+  }
+  .ke-order-row + .ke-order-row {
+    margin-top: 8px;
+  }
+  .ke-order-footer {
+    margin-top: 8px;
+  }
+  .ke-order-total {
+    min-height: 48px;
+  }
+  .ke-order-total > strong {
+    font-size: 22px;
+  }
+  .ke-order-actions > * {
+    min-height: 48px;
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+  .ke-features {
+    margin-top: 24px;
+  }
+  .ke-home {
+    padding-block: 32px;
+  }
+  .ke-intro {
+    margin-bottom: 20px;
+  }
+  .ke-dialog .ke-toolbar {
+    padding: 0;
+    top: 0;
+  }
+}
+@media (min-width: 600px) and (max-height: 600px) {
+  .ke-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr);
+    gap: 12px;
+  }
+  .ke-stage,
+  .ke-dialog .ke-stage {
+    height: max(200px, calc(100svh - 150px));
+  }
+  .ke-order,
+  .ke-dialog .ke-order {
+    margin-top: 56px;
+  }
+}
+@media (min-width: 1800px) {
+  .ke-order {
+    padding: 24px;
+  }
+  .ke-order-label {
+    font-size: 20px;
+  }
+  .ke-order-label small {
+    font-size: 15px;
+  }
+  .ke-quantity {
+    grid-template-columns: 60px 60px 60px;
+    gap: 8px;
+  }
+  .ke-quantity input {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .ke-order-actions > * {
+    min-height: 60px;
+    font-size: 18px;
+  }
+  .ke-swatches button {
+    width: 60px;
+    height: 60px;
+    min-height: 60px;
+  }
+  .ke-stage .ke-colours {
+    width: 64px;
+  }
+}
+
+body.ke-configuring .sticky-cta,
+body.ke-configuring .configure-sticky-checkout {
+  display: none !important;
+}
+.ke-quantity-target {
+  display: none;
+  height: 48px;
+  appearance: none;
+  min-height: 48px;
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  font-size: 13px;
+  color: #f5f6fa;
+  border: 1px solid #617087;
+  border-radius: 10px;
+  background: #181e29
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%23f5f6fa' stroke-width='2'/%3E%3C/svg%3E")
+    no-repeat right 5px center / 12px;
+  padding: 4px 20px 4px 4px;
+}
+@media (max-width: 599px) and (max-height: 700px) {
+  .ke-explorer[data-quantity-target="device"]
+    .ke-order-row[data-ke-order-row="cover"],
+  .ke-explorer[data-quantity-target="cover"]
+    .ke-order-row[data-ke-order-row="device"] {
+    display: none;
+  }
+  .ke-order-row + .ke-order-row {
+    margin-top: 0;
+  }
+  .ke-order-label > strong {
+    display: none;
+  }
+  .ke-order-label {
+    flex: 1;
+  }
+  .ke-order-label small {
+    font-size: 11px;
+  }
+  .ke-quantity-target {
+    display: block;
+  }
+  .ke-stage,
+  .ke-dialog .ke-stage,
+  .ke-explorer[data-mode="configure"] > .ke-content .ke-stage {
+    height: clamp(188px, calc(100svh - 383px), 330px);
+  }
+  .ke-stage model-viewer,
+  .ke-stage > img {
+    height: calc(100% - 64px);
+  }
+  .ke-stage .ke-colours {
+    height: 52px;
+  }
+  .ke-stage .ke-selection {
+    display: none;
+  }
+  .ke-order-actions > * {
+    font-size: 12px;
+  }
+  .ke-order-total > strong {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 599px) and (max-height: 700px) {
+  .ke-product .ke-toolbar > * {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 600px) and (max-height: 600px) {
+  .ke-stage,
+  .ke-dialog .ke-stage {
+    height: max(180px, calc(100svh - 170px));
+  }
+  .ke-order,
+  .ke-dialog .ke-order {
+    margin-top: 0;
+  }
+}
+
+.ke-order-actions [aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (max-width: 899px) {
+  .ke-explorer .ke-order-actions > button,
+  .ke-explorer .ke-order-actions > a {
+    min-height: 48px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  .ke-order-review {
+    margin: 0;
+  }
+}
+@media (max-width: 599px) and (max-height: 700px) {
+  .ke-order {
+    padding-block: 8px;
+  }
+  .ke-explorer .ke-order-actions > button,
+  .ke-explorer .ke-order-actions > a {
+    font-size: 12px;
+  }
+}
+
+body.ke-configuring .site-header[data-theme][data-scrolled] {
+  background: #080c12;
+}
+
+.ke-order-total > strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.ke-order-total > strong[aria-busy="true"] {
+  flex-shrink: 1;
+  white-space: normal;
+  font-size: 13px;
+  color: #c2c8d2;
+  max-width: 50%;
+}
+
+.ke-order-breakdown ul {
+  padding: 0;
+  margin: 0;
+}
+.ke-order-breakdown p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 8px 0 0;
+  color: #c2c8d2;
+}
+.ke-order-total > strong[data-price-error] {
+  flex-shrink: 1;
+  white-space: normal;
+  font-size: 13px;
+  max-width: 50%;
+}
+
+/* The longer translated purchase label must also fit the existing pricing card. */
+#pricing .plan-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#pricing .plan-card .btn-block {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

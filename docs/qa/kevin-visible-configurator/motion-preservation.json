@@ -1,0 +1,11 @@
+{
+  "methods": {
+    "updateMotion": true,
+    "animate": true,
+    "visual": true,
+    "showCallout": true,
+    "dismissCallout": true
+  },
+  "allAnimationKeyframesUnchanged": true,
+  "modelsAndReferencesUnchanged": true
+}

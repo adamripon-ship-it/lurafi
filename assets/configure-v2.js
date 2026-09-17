@@ -172,7 +172,7 @@
     var saved = loadState();
     if (saved && saved.variantId && findVariantById(saved.variantId)) {
       state.variantId = saved.variantId;
-      if (saved.quantity) state.quantity = saved.quantity;
+      if (Number.isSafeInteger(saved.quantity) && saved.quantity >= 0) state.quantity = saved.quantity;
     }
     if (!state.variantId) state.variantId = variants[0].id;
   }
@@ -269,6 +269,7 @@
         els.perDevice.hidden = true;
       }
     }
+    publishConfiguration();
   }
 
   function renderSummary() {
@@ -320,13 +321,13 @@
 
   if (els.qtyMinus) {
     els.qtyMinus.addEventListener('click', function () {
-      state.quantity = Math.max(1, state.quantity - 1);
+      state.quantity = Math.max(0, state.quantity - 1);
       render();
     });
   }
   if (els.qtyPlus) {
     els.qtyPlus.addEventListener('click', function () {
-      state.quantity = Math.min(5, state.quantity + 1);
+      state.quantity = Math.min(Number.MAX_SAFE_INTEGER, state.quantity + 1);
       render();
     });
   }
@@ -393,6 +394,12 @@
     window.location.href = url;
   }
 
+  function checkoutRequest(url, options) {
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, 20000);
+    return fetch(url, Object.assign({}, options, { signal: controller.signal })).finally(function () { clearTimeout(timer); });
+  }
+
   els.ctas.forEach(function (cta) {
     cta.addEventListener('click', async function () {
       if (cta.disabled) return;
@@ -428,28 +435,44 @@
         quantity: state.quantity
       };
 
-      var items = [item].concat(selectedCovers().map(function (cover) {
+      var items = (item.quantity > 0 ? [item] : []).concat(selectedCovers().map(function (cover) {
         return { id: cover.id, quantity: cover.qty };
       }));
       var localeRoot = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
       var sent = false;
+      state.locked = true;
+      publishConfiguration();
       try {
+        if (!items.length) throw new Error('Empty selection');
+        await Promise.all(items.map(async function (line) {
+          var response = await checkoutRequest(localeRoot + 'variants/' + line.id + '.js', { credentials: 'same-origin' });
+          if (!response.ok) throw new Error('Price unavailable');
+          var offer = await response.json();
+          if (!offer.available) throw new Error('Unavailable');
+          applyPrice(offer.id || line.id, offer.price, offer.available);
+        }));
+        renderTotal();
+        var explorer = root.querySelector('kevin-explorer');
+        if (explorer?.requestQuote) await explorer.requestQuote(true);
         sent = true;
-        var response = await fetch(localeRoot + 'cart/add.js', {
+        var response = await checkoutRequest(localeRoot + 'cart/add.js', {
           method: 'POST', credentials: 'same-origin',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({ items: items })
         });
         if (!response.ok) {
-          if (response.status >= 400 && response.status < 500) sent = false;
+          // Shopify may partially add available stock on an error; check the cart before retrying.
           throw new Error('Cart update failed');
         }
         trackBeginCheckout(variant, item);
         window.location.href = localeRoot + 'checkout';
       } catch (error) {
+        state.locked = sent;
+        state.message = sent ? data.explorerCartUnknown : data.explorerCartError;
+        publishConfiguration();
         if (els.error) {
           els.error.hidden = false;
-          els.error.textContent = sent ? data.explorerCartUnknown : data.explorerCartError;
+          els.error.textContent = state.message;
           var cartLink = document.createElement('a');
           cartLink.href = localeRoot + 'cart';
           cartLink.className = 'ke-checkout-cart';
@@ -458,7 +481,6 @@
           els.error.appendChild(cartLink);
         }
         if (!sent) {
-          els.ctas.forEach(function (button) { button.disabled = false; });
           resetCtaLabels();
         }
       }
@@ -476,7 +498,7 @@
       var plus = card.querySelector('[data-cover-plus]');
       if (!qtyEl || !minus || !plus) return;
       function setQty(n) {
-        n = Math.max(0, Math.min(99, n));
+        n = Math.max(0, Math.min(Number.MAX_SAFE_INTEGER, n));
         qtyEl.textContent = String(n);
         card.classList.toggle('is-selected', n > 0);
         renderTotal();
@@ -549,9 +571,99 @@
     });
   }
 
+
+  // One configuration state drives the photo page, the 3D controls and checkout.
+  function publishConfiguration() {
+    var variant = findVariantById(state.variantId);
+    if (!variant) return;
+    if (els.qtyMinus) els.qtyMinus.disabled = Boolean(state.locked) || state.quantity === 0;
+    if (els.qtyPlus) els.qtyPlus.disabled = Boolean(state.locked);
+    els.ctas.forEach(function (button) { button.disabled = Boolean(state.locked) || (state.quantity === 0 && !selectedCovers().length); });
+    root.querySelectorAll('[data-cover-colour]').forEach(function (card) {
+      var quantity = Number(card.querySelector('[data-cover-qty]')?.textContent) || 0;
+      var minus = card.querySelector('[data-cover-minus]'), plus = card.querySelector('[data-cover-plus]');
+      if (minus) minus.disabled = Boolean(state.locked) || quantity === 0;
+      if (plus) plus.disabled = Boolean(state.locked) || card.dataset.coverSoon === '1';
+    });
+    var covers = Array.from(root.querySelectorAll('[data-cover-colour]')).map(function (card) {
+      return { id: card.dataset.coverId, colour: card.dataset.coverColour, amount: Number(card.dataset.coverPrice) || 0, available: card.dataset.coverSoon !== '1', quantity: Number(card.querySelector('[data-cover-qty]')?.textContent) || 0 };
+    });
+    root.dispatchEvent(new CustomEvent('kevin:configuration', { bubbles: true, detail: { quantity: state.quantity, device: { id: variant.id, amount: variant.price, available: variant.available !== false }, covers: covers, locked: Boolean(state.locked), message: state.message || '' } }));
+  }
+  function applyPrice(id, amount, available) {
+    var variant = findVariantById(id);
+    if (variant && typeof amount === 'number') { variant.price = amount; variant.available = available; }
+    root.querySelectorAll('[data-cover-id]').forEach(function (card) {
+      if (String(card.dataset.coverId) !== String(id)) return;
+      if (typeof amount === 'number') { card.dataset.coverPrice = amount; var label = card.querySelector('.configure-cover__price'); if (label) label.textContent = formatCents(amount); }
+      card.dataset.coverSoon = available ? '0' : '1';
+    });
+  }
+  root.addEventListener('kevin:quote-total', function (event) {
+    var price = event.detail.text;
+    if (els.total) els.total.textContent = price;
+    if (els.stickyTotal) els.stickyTotal.textContent = price;
+    els.ctas.forEach(function (button) { button.disabled = Boolean(state.locked) || !event.detail.ready; });
+    var retry = root.querySelector('[data-configure-price-retry]');
+    if (!retry && els.ctas[0]) {
+      retry = document.createElement('button');
+      retry.type = 'button';
+      retry.className = 'btn-apple-secondary btn-block';
+      retry.dataset.configurePriceRetry = '';
+      retry.textContent = event.target.t('retry_price');
+      retry.addEventListener('click', function () { event.target.requestQuote(true).catch(function () {}); });
+      els.ctas[0].before(retry);
+    }
+    if (retry) retry.hidden = !event.detail.failed;
+  });
+  root.addEventListener('kevin:cart-lock' , function (event) {
+    state.locked = event.detail.locked;
+    state.message = event.detail.message || '';
+    publishConfiguration();
+  });
+  root.addEventListener('kevin:price-refresh', function (event) {
+    event.detail.forEach(function (offer) { applyPrice(offer.id, offer.amount, offer.available); });
+    renderTotal();
+  });
+  root.addEventListener('kevin:quantity-change', function (event) {
+    if (state.locked) return;
+    var key = event.detail.key, quantity = event.detail.quantity;
+    if (!Number.isSafeInteger(quantity) || quantity < 0) return;
+    if (key === 'device') state.quantity = quantity;
+    else root.querySelectorAll('[data-cover-colour]').forEach(function (card) {
+      if (card.dataset.coverColour === key) {
+        var value = card.querySelector('[data-cover-qty]');
+        if (value) value.textContent = quantity;
+        card.classList.toggle('is-selected', quantity > 0);
+      }
+    });
+    renderQty();
+    renderTotal();
+    saveState();
+  });
+  function restoreExplorerSelection() {
+    var params = new URLSearchParams(location.search);
+    if (!params.has('kevin_qty')) return;
+    function quantity(name, fallback) {
+      var raw = params.get(name), n = Number(raw);
+      return raw !== null && /^\d+$/.test(raw) && Number.isSafeInteger(n) ? n : fallback;
+    }
+    state.quantity = quantity('kevin_qty', 1);
+    root.querySelectorAll('[data-cover-colour]').forEach(function (card) {
+      var field = card.querySelector('[data-cover-qty]');
+      if (field) field.textContent = quantity('cover_' + card.dataset.coverColour, 0);
+    });
+    var colour = params.get('preview');
+    if (['grey','white','blue','brown','red'].includes(colour)) root.dataset.explorerPreview = colour;
+    ['kevin_qty','cover_white','cover_blue','cover_brown','cover_red','preview'].forEach(function (key) { params.delete(key); });
+    history.replaceState(history.state, '', location.pathname + (params.size ? '?' + params : '') + location.hash);
+  }
+
   initPlanFromUrl();
   initVariant();
+  restoreExplorerSelection();
   render();
   root.classList.add('configure-page--ready');
+  if (root.dataset.explorerPreview) root.dispatchEvent(new CustomEvent('kevin:preview-ready', { detail: { colour: root.dataset.explorerPreview } }));
   resetCtaLabels();
 })();

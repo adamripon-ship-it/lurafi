@@ -1,0 +1,38 @@
+[
+  {
+    "country": "CH",
+    "currency": "CHF",
+    "amount": "1120.06",
+    "passed": true
+  },
+  {
+    "country": "IE",
+    "currency": "EUR",
+    "amount": "1159.8",
+    "passed": true
+  },
+  {
+    "country": "DE",
+    "currency": "EUR",
+    "amount": "1159.8",
+    "passed": true
+  },
+  {
+    "country": "FR",
+    "currency": "EUR",
+    "amount": "1159.8",
+    "passed": true
+  },
+  {
+    "country": "NL",
+    "currency": "EUR",
+    "amount": "1159.8",
+    "passed": true
+  },
+  {
+    "country": "CZ",
+    "currency": "CZK",
+    "amount": "28771.58",
+    "passed": true
+  }
+]
