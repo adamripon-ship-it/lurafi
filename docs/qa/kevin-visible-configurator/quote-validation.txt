@@ -12,5 +12,3 @@
 
 **Status:** ✅ SUCCESS
 **Details:** Successfully validated GraphQL mutation against schema.
-
-

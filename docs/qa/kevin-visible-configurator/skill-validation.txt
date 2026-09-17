@@ -44,5 +44,3 @@
 
 **Status:** ✅ SUCCESS
 **Details:** assets/configure-v2.js passed all checks.
-
-
