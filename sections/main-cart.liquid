@@ -9,7 +9,7 @@
   endif
 -%}
 
-<section class="cart-page">
+<section class="cart-page" data-cart-section="{{ section.id }}">
   <div class="apple-container">
     <h1 class="headline-section cart-page__title">{{ 'sections.cart.title' | t }}</h1>
 
@@ -21,7 +21,7 @@
       {% form 'cart', cart, id: 'CartForm', class: 'cart-form' %}
         <div class="cart-page__items">
           {%- for item in cart.items -%}
-            <div class="cart-line" data-cart-line>
+            <div class="cart-line" data-cart-line data-line="{{ forloop.index }}">
               <div class="cart-line__image">
                 {%- if item.image -%}
                   <a href="{{ item.url }}">
@@ -38,9 +38,17 @@
                   <p class="cart-line__plan">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                 {%- endif -%}
                 <div class="cart-line__actions">
-                  <label class="visually-hidden" for="Quantity-{{ item.index }}">{{ 'cart.quantity' | t }}</label>
-                  <input id="Quantity-{{ item.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" class="product-page__qty-input" aria-label="{{ 'cart.quantity_for' | t: product: item.product.title }}">
-                  <a href="{{ routes.cart_change_url }}?line={{ item.key }}&amp;quantity=0" class="cart-line__remove">{{ 'cart.remove' | t }}</a>
+                  <div class="cart-qty" role="group" aria-label="{{ 'cart.quantity_for' | t: product: item.product.title }}">
+                    <button type="button" class="cart-qty__btn" data-cart-qty-minus aria-label="{{ 'accessibility.decrease_qty' | t }}"{% if item.quantity <= 1 %} disabled{% endif %}>
+                      <svg width="12" height="2" viewBox="0 0 12 2" fill="none" aria-hidden="true"><path d="M1 1h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                    <label class="visually-hidden" for="Quantity-{{ forloop.index }}">{{ 'cart.quantity' | t }}</label>
+                    <input id="Quantity-{{ forloop.index }}" type="number" inputmode="numeric" name="updates[]" value="{{ item.quantity }}" min="0" class="cart-qty__input" aria-label="{{ 'cart.quantity_for' | t: product: item.product.title }}" data-cart-qty-input>
+                    <button type="button" class="cart-qty__btn" data-cart-qty-plus aria-label="{{ 'accessibility.increase_qty' | t }}">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+                  <a href="{{ routes.cart_change_url }}?line={{ item.key }}&amp;quantity=0" class="cart-line__remove" data-cart-remove>{{ 'cart.remove' | t }}</a>
                 </div>
               </div>
               <p class="cart-line__total">{{ item.final_line_price | money }}</p>
@@ -57,7 +65,7 @@
           </div>
 
           <div class="cart-page__checkout-buttons">
-            <button type="submit" name="checkout" class="btn-apple-primary btn-block cart-page__checkout-btn">{{ 'cart.checkout' | t }}</button>
+            <button type="submit" name="checkout" class="btn-apple-primary btn-block cart-page__checkout-btn" data-cart-sticky-anchor>{{ 'cart.checkout' | t }}</button>
             <div class="cart-page__dynamic-checkout">
               {{ form | payment_button }}
             </div>
@@ -73,6 +81,22 @@
             <span>{{ 'cart.checkout_trust' | t }}</span>
           </div>
         </div>
+
+        {%- comment -%}
+          Mobile/tablet: keeps Checkout reachable while the shopper scrolls the lines.
+          cart-page.js shows this bar only while the in-page Checkout button is still
+          below the viewport, so the two never share the screen and nothing is covered
+          once the summary is in view. Without JS it stays hidden.
+        {%- endcomment -%}
+        <aside class="cart-sticky" aria-label="{{ 'cart.checkout' | t }}" data-cart-sticky hidden>
+          <div class="cart-sticky__inner">
+            <p class="cart-sticky__price">
+              <span class="cart-sticky__label">{{ 'cart.subtotal' | t }}</span>
+              <strong>{{ cart.total_price | money }}</strong>
+            </p>
+            <button type="submit" name="checkout" class="btn-apple-primary cart-sticky__btn">{{ 'cart.checkout' | t }}</button>
+          </div>
+        </aside>
       {% endform %}
     {%- else -%}
       <p class="body-elevated text-muted cart-page__empty-msg">{{ 'cart.empty' | t }}</p>

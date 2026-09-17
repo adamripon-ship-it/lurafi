@@ -2315,6 +2315,12 @@ body.mobile-nav-open { overflow: hidden; }
 .page-content--enter > * {
   animation: lurafiFadeUp 0.75s var(--ease-out) 0.08s both;
 }
+/* The cart section carries a position:fixed checkout bar (.cart-sticky). A
+   transform on the section wrapper would pin that bar to the section instead
+   of the viewport, so the cart page fades in without the translate. */
+.template-cart .page-content--enter > * {
+  animation-name: lurafiFadeIn;
+}
 
 /* Legacy reveal (unused by theme.js; kept for compatibility) */
 .reveal {
@@ -2510,7 +2516,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 @media (min-width: 600px) {
   .cart-line__total {
-    grid-column: auto;
+    grid-column: 3; /* auto + a fixed row gets placed before the image */
     grid-row: 1;
     justify-self: end;
     margin-top: 0;
@@ -3612,6 +3618,87 @@ body.cart-drawer-open { overflow: hidden; }
   font-size: 12px;
   color: var(--apple-text-muted);
   margin-top: 24px;
+}
+
+/* Quantity stepper: the configure-page pill wrapped around the native updates[]
+   input, so "Update cart" and no-JS form submits keep working unchanged. */
+.cart-qty {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid var(--apple-border);
+  border-radius: 999px;
+  background: transparent;
+}
+.cart-qty__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  border-radius: 50%;
+  color: inherit;
+  transition: background 0.2s var(--ease-out);
+}
+@media (hover: hover) {
+  .cart-qty__btn:hover:not(:disabled) { background: var(--apple-bg-gray); }
+}
+.cart-qty__btn:disabled { opacity: 0.35; cursor: default; }
+.cart-qty__input {
+  width: 48px;
+  min-height: var(--touch-min);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 17px; /* 16px+ keeps iOS Safari from zooming into the field */
+  font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.cart-qty__input::-webkit-outer-spin-button,
+.cart-qty__input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.cart-line[aria-busy="true"] .cart-qty,
+.cart-line[aria-busy="true"] .cart-line__remove { opacity: 0.55; pointer-events: none; }
+
+/* Sticky mobile/tablet checkout bar. cart-page.js shows it only while the
+   in-page Checkout button is below the viewport, so nothing is ever covered
+   once the summary is on screen. */
+.cart-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 95;
+  padding: 10px var(--pad-inline) calc(10px + var(--safe-bottom));
+  background: rgba(251, 251, 253, 0.9);
+  border-top: 1px solid rgba(210, 210, 215, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+.cart-sticky[hidden] { display: none; }
+.cart-sticky__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--apple-container);
+  margin-inline: auto;
+}
+.cart-sticky__price {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+.cart-sticky__label { font-size: 12px; color: var(--apple-text-muted); }
+.cart-sticky__price strong { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cart-sticky__btn { flex: 0 0 auto; padding-inline: 28px; }
+@media (min-width: 1024px) {
+  .cart-sticky { display: none !important; }
 }
 .product-page__configure { margin-bottom: 16px; }
 .product-page__buy-now { margin-bottom: 12px; }
