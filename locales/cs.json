@@ -382,7 +382,7 @@
       "cta_secondary_label": "Jak to funguje",
       "cta_secondary_url": "#how-it-works",
       "image_alt": "Kevin presence simulation device",
-      "sticky_cta_label": "Sestavit a koupit Kevina",
+      "sticky_cta_label": "Sestavit a koupit KEVIN 3.0",
       "callout_1_title": "9 watts",
       "callout_2_title": "No cameras. No mics.",
       "callout_3_title": "Local storage",
@@ -451,7 +451,7 @@
       "subheading": "Kupte Kevina najednou: 70+ hodin simulací, doživotní aktualizace softwaru, 3letá švýcarská záruka, vrácení do 30 dnů a doprava zdarma po celé EU.",
       "buy_label": "Vlastněte Kevin®",
       "buy_tagline": "Jednorázový nákup. Všechny aktualizace v ceně.",
-      "buy_cta": "Sestavit a koupit Kevina",
+      "buy_cta": "Sestavit a koupit KEVIN 3.0",
       "buy_features": "Plné vlastnictví zařízení|Více než 70 hodin vestavěných simulací|Týdenní plány a aktivace podle polohy|Nahrajte vlastní domácí zvuky|Flexibilní umístění s 3m napájecím kabelem|Doprava zdarma|3letá záruka"
     },
     "cta": {
@@ -755,7 +755,7 @@
     "shopCover": "Koupit tento kryt",
     "viewCart": "Zobrazit košík",
     "cartUnknown": "Výsledek se nepodařilo potvrdit. Před dalším pokusem zkontrolujte košík.",
-    "cartError": "Kryt se nepodařilo přidat. Zkuste to znovu.",
+    "cartError": "Váš výběr se nepodařilo přidat. Zkuste to znovu.",
     "included": "Součást balení KEVIN",
     "optional": "Volitelný kryt — prodává se samostatně",
     "heading": "Prohlédněte si Kevina zblízka.",
@@ -833,6 +833,25 @@
     "lamp_body": "V pohotovostním režimu stiskněte pravé tlačítko a použijte KEVIN jako lampu.",
     "lamp_detail": "Dvě pravá tlačítka ovládají jas. Tlačítko napájení ukončí režim lampy.",
     "power_label": "Tlačítko napájení",
-    "updating_price": "Aktualizace ceny…"
+    "updating_price": "Aktualizace ceny…",
+    "each": "za kus",
+    "device_quantity": "Počet zařízení KEVIN 3.0",
+    "cover_quantity": "Počet vybraných krytů",
+    "every_unit": "Šedý kryt u každého zařízení",
+    "selection": "Váš výběr",
+    "configure_buy": "Sestavit a koupit KEVIN 3.0",
+    "add_selection": "Do košíku",
+    "extra_covers": "kryty navíc",
+    "selection_added": "Váš výběr byl přidán do košíku.",
+    "cart_adjusted": "Shopify mohl upravit dostupnost. Před dalším přidáním zkontrolujte košík.",
+    "empty_selection": "Zvolte počet kusů.",
+    "units": "Zařízení",
+    "cover_count": "Kryty",
+    "view": "Pohled",
+    "quantity_for": "Počet pro",
+    "price_unavailable": "Cena není k dispozici",
+    "quantity_unavailable": "Snižte počet kusů a zkuste to znovu.",
+    "selection_price_note": "Cena za tento výběr. Doprava a nabídky pro celý košík se potvrdí v košíku.",
+    "retry_price": "Načíst cenu znovu"
   }
 }

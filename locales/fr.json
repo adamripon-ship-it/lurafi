@@ -382,7 +382,7 @@
       "cta_secondary_label": "Voir comment ça marche",
       "cta_secondary_url": "#how-it-works",
       "image_alt": "Kevin presence simulation device",
-      "sticky_cta_label": "Configurer et acheter Kevin",
+      "sticky_cta_label": "Configurer & acheter KEVIN 3.0",
       "callout_1_title": "9 watts",
       "callout_2_title": "No cameras. No mics.",
       "callout_3_title": "Local storage",
@@ -451,7 +451,7 @@
       "subheading": "Achetez Kevin en une fois : 70+ heures de simulations, mises à jour logicielles à vie, garantie suisse de 3 ans, retours sous 30 jours et livraison gratuite dans toute l’UE.",
       "buy_label": "Possédez Kevin®",
       "buy_tagline": "Achat unique. Toutes les mises à jour incluses.",
-      "buy_cta": "Configurer et acheter Kevin",
+      "buy_cta": "Configurer & acheter KEVIN 3.0",
       "buy_features": "Propriété totale de l'appareil|70+ heures de simulations intégrées|Plannings hebdomadaires et activation géolocalisée|Importez vos propres sons domestiques|Placement flexible avec câble d'alimentation 3 m|Livraison gratuite|Garantie 3 ans"
     },
     "cta": {
@@ -755,7 +755,7 @@
     "shopCover": "Acheter cette façade",
     "viewCart": "Voir le panier",
     "cartUnknown": "Le résultat n’a pas pu être confirmé. Vérifiez votre panier avant de réessayer.",
-    "cartError": "La façade n’a pas pu être ajoutée. Veuillez réessayer.",
+    "cartError": "Votre sélection n’a pas pu être ajoutée. Veuillez réessayer.",
     "included": "Inclus avec KEVIN",
     "optional": "Façade en option — vendue séparément",
     "heading": "Découvrez Kevin de plus près.",
@@ -833,6 +833,25 @@
     "lamp_body": "En veille, appuyez sur le bouton de droite pour utiliser KEVIN comme lampe.",
     "lamp_detail": "Les deux boutons de droite règlent la luminosité. Le bouton marche/arrêt quitte le mode lampe.",
     "power_label": "Bouton marche/arrêt",
-    "updating_price": "Actualisation du prix…"
+    "updating_price": "Actualisation du prix…",
+    "each": "pièce",
+    "device_quantity": "Quantité de KEVIN 3.0",
+    "cover_quantity": "Quantité de la façade choisie",
+    "every_unit": "Façade grise avec chaque appareil",
+    "selection": "Votre sélection",
+    "configure_buy": "Configurer & acheter KEVIN 3.0",
+    "add_selection": "Ajouter au panier",
+    "extra_covers": "façades en plus",
+    "selection_added": "Votre sélection a été ajoutée au panier.",
+    "cart_adjusted": "Shopify a peut-être ajusté la disponibilité. Vérifiez votre panier avant tout nouvel ajout.",
+    "empty_selection": "Choisissez une quantité.",
+    "units": "Appareils",
+    "cover_count": "Façades",
+    "view": "Vue",
+    "quantity_for": "Quantité pour",
+    "price_unavailable": "Prix indisponible",
+    "quantity_unavailable": "Réduisez la quantité et réessayez.",
+    "selection_price_note": "Prix de cette sélection. La livraison et les offres sur le panier complet sont confirmées dans votre panier.",
+    "retry_price": "Actualiser le prix"
   }
 }

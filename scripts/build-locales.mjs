@@ -1137,6 +1137,8 @@ console.log('Locale route map injected for language switcher');
     const target = path.join(root, 'locales', file);
     const content = JSON.parse(fs.readFileSync(target, 'utf8'));
     content.explorer = explorer[file.split('.')[0]] || explorer.en;
+    if (content.home?.pricing) content.home.pricing.buy_cta = content.explorer.configure_buy;
+    if (content.home?.hero) content.home.hero.sticky_cta_label = content.explorer.configure_buy;
     fs.writeFileSync(target, JSON.stringify(content, null, 2) + '\n');
   }
 }

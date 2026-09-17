@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "theme": 186299253114,
+  "currency": "CHF",
+  "calculatedAmount": 120706,
+  "actualAmount": 120706,
+  "deviceQuantity": 2,
+  "whiteCoverQuantity": 2,
+  "blueCoverQuantity": 3,
+  "existingBrownCoverPreserved": true,
+  "previewDidNotChangeCart": true,
+  "automaticDiscountIncluded": true,
+  "checkoutSubmitted": false,
+  "userBrowserUntouched": true
+}

@@ -383,7 +383,7 @@
       "trust_1": "Ontwikkeld in Zwitserland",
       "trust_2": "Ongeveer 9 watt",
       "trust_3": "Bestand tegen jammers",
-      "sticky_cta_label": "Kevin samenstellen & kopen",
+      "sticky_cta_label": "KEVIN 3.0 samenstellen & kopen",
       "press_label": "Bekend van",
       "press_aria": "Media-aandacht",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z"
@@ -488,7 +488,7 @@
       "subheading": "Koop Kevin in één keer: 70+ uur simulaties, levenslange software-updates, 3 jaar Zwitserse garantie, 30 dagen retour en gratis verzending in de hele EU.",
       "buy_label": "Kevin® kopen",
       "buy_tagline": "Eenmalige aankoop. Alle updates inbegrepen.",
-      "buy_cta": "Kevin samenstellen & kopen",
+      "buy_cta": "KEVIN 3.0 samenstellen & kopen",
       "buy_features": "Volledig eigendom|70+ uur ingebouwde simulaties|Weekschema’s en geo-activering|Eigen huishoudelijke geluiden uploaden|Flexibele plaatsing met 3 m stroomkabel|Gratis bezorging|3 jaar garantie"
     },
     "specs": {
@@ -767,7 +767,7 @@
     "shopCover": "Koop dit front",
     "viewCart": "Bekijk winkelwagen",
     "cartUnknown": "We konden het resultaat niet bevestigen. Controleer je winkelwagen voordat je het opnieuw probeert.",
-    "cartError": "Het front kon niet worden toegevoegd. Probeer het opnieuw.",
+    "cartError": "Je keuze kon niet worden toegevoegd. Probeer het opnieuw.",
     "included": "Inbegrepen bij KEVIN",
     "optional": "Optioneel front — apart verkrijgbaar",
     "heading": "Ontdek Kevin van dichtbij.",
@@ -845,6 +845,25 @@
     "lamp_body": "Druk in stand-by op de rechterknop om KEVIN als lamp te gebruiken.",
     "lamp_detail": "De twee rechterknoppen regelen de helderheid. De aan-uitknop verlaat de lampmodus.",
     "power_label": "Aan-uitknop",
-    "updating_price": "Prijs bijwerken…"
+    "updating_price": "Prijs bijwerken…",
+    "each": "per stuk",
+    "device_quantity": "Aantal KEVIN 3.0",
+    "cover_quantity": "Aantal gekozen covers",
+    "every_unit": "Grijze cover bij elk apparaat",
+    "selection": "Je keuze",
+    "configure_buy": "KEVIN 3.0 samenstellen & kopen",
+    "add_selection": "In winkelwagen",
+    "extra_covers": "extra covers",
+    "selection_added": "Je keuze is aan de winkelwagen toegevoegd.",
+    "cart_adjusted": "Shopify heeft de beschikbaarheid mogelijk aangepast. Controleer je winkelwagen voordat je opnieuw toevoegt.",
+    "empty_selection": "Kies een aantal.",
+    "units": "Apparaten",
+    "cover_count": "Covers",
+    "view": "Aanzicht",
+    "quantity_for": "Aantal voor",
+    "price_unavailable": "Prijs niet beschikbaar",
+    "quantity_unavailable": "Verlaag het aantal en probeer opnieuw.",
+    "selection_price_note": "Prijs voor deze keuze. Bezorging en aanbiedingen voor de hele winkelwagen worden in je winkelwagen bevestigd.",
+    "retry_price": "Prijs opnieuw laden"
   }
 }

@@ -1,0 +1,40 @@
+[
+  {
+    "name": "desktop",
+    "passed": true,
+    "checks": [
+      "model, colours, quantities and total in one viewport",
+      "duplicate sticky CTA suppressed",
+      "seven units and three covers",
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  },
+  {
+    "name": "iphone-small",
+    "passed": true,
+    "checks": [
+      "model, colours, quantities and total in one viewport",
+      "duplicate sticky CTA suppressed",
+      "seven units and three covers",
+      "lazy 3D",
+      "all five covers",
+      "48px targets",
+      "no overflow",
+      "features and placement",
+      "modal escape and colour preservation",
+      "gallery switch",
+      "preview does not buy",
+      "extra cover updates summary once",
+      "no page errors"
+    ]
+  }
+]

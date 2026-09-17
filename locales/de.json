@@ -382,7 +382,7 @@
       "cta_secondary_label": "So funktioniert es",
       "cta_secondary_url": "#how-it-works",
       "image_alt": "Kevin presence simulation device",
-      "sticky_cta_label": "Kevin konfigurieren & kaufen",
+      "sticky_cta_label": "KEVIN 3.0 konfigurieren & kaufen",
       "callout_1_title": "9 watts",
       "callout_2_title": "No cameras. No mics.",
       "callout_3_title": "Local storage",
@@ -451,7 +451,7 @@
       "subheading": "Kaufen Sie Kevin einmalig: 70+ Stunden Simulationen, lebenslange Software-Updates, 3 Jahre Schweizer Garantie, 30 Tage Rückgaberecht und kostenloser Versand in der ganzen EU.",
       "buy_label": "Kevin® besitzen",
       "buy_tagline": "Einmaliger Kauf. Alle Updates inklusive.",
-      "buy_cta": "Kevin konfigurieren & kaufen",
+      "buy_cta": "KEVIN 3.0 konfigurieren & kaufen",
       "buy_features": "Volles Geräteeigentum|70+ Stunden integrierte Simulationen|Wochenpläne und geo-basierte Aktivierung|Eigene Haushaltsgeräusche hochladen|Flexible Platzierung mit 3 m Stromkabel|Kostenlose Lieferung|3 Jahre Garantie"
     },
     "cta": {
@@ -755,7 +755,7 @@
     "shopCover": "Diese Abdeckung kaufen",
     "viewCart": "Warenkorb ansehen",
     "cartUnknown": "Das Ergebnis konnte nicht bestätigt werden. Prüfe vor einem erneuten Versuch deinen Warenkorb.",
-    "cartError": "Die Abdeckung konnte nicht hinzugefügt werden. Bitte versuche es erneut.",
+    "cartError": "Deine Auswahl konnte nicht hinzugefügt werden. Bitte versuche es erneut.",
     "included": "Bei KEVIN enthalten",
     "optional": "Optionale Abdeckung — separat erhältlich",
     "heading": "Kevin aus der Nähe entdecken.",
@@ -833,6 +833,25 @@
     "lamp_body": "Drücke im Standby die rechte Taste, um KEVIN als Lampe zu nutzen.",
     "lamp_detail": "Die beiden rechten Tasten regeln die Helligkeit. Die Ein/Aus-Taste beendet den Lampenmodus.",
     "power_label": "Ein/Aus-Taste",
-    "updating_price": "Preis wird aktualisiert…"
+    "updating_price": "Preis wird aktualisiert…",
+    "each": "pro Stück",
+    "device_quantity": "Anzahl KEVIN 3.0",
+    "cover_quantity": "Anzahl der gewählten Hülle",
+    "every_unit": "Graue Hülle bei jedem Gerät",
+    "selection": "Deine Auswahl",
+    "configure_buy": "KEVIN 3.0 konfigurieren & kaufen",
+    "add_selection": "In den Warenkorb",
+    "extra_covers": "Zusatzhüllen",
+    "selection_added": "Deine Auswahl wurde dem Warenkorb hinzugefügt.",
+    "cart_adjusted": "Shopify hat die Verfügbarkeit möglicherweise angepasst. Prüfe deinen Warenkorb, bevor du erneut hinzufügst.",
+    "empty_selection": "Wähle eine Anzahl.",
+    "units": "Geräte",
+    "cover_count": "Hüllen",
+    "view": "Ansicht",
+    "quantity_for": "Anzahl für",
+    "price_unavailable": "Preis nicht verfügbar",
+    "quantity_unavailable": "Reduziere die Anzahl und versuche es erneut.",
+    "selection_price_note": "Preis für diese Auswahl. Versand und Angebote für den gesamten Warenkorb werden im Warenkorb bestätigt.",
+    "retry_price": "Preis erneut laden"
   }
 }

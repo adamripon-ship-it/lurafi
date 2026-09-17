@@ -1,0 +1,60 @@
+{
+  "status": 200,
+  "data": {
+    "cartCreate": {
+      "cart": {
+        "cost": {
+          "totalAmount": {
+            "amount": "1207.06",
+            "currencyCode": "CHF"
+          },
+          "subtotalAmount": {
+            "amount": "1207.06",
+            "currencyCode": "CHF"
+          }
+        },
+        "lines": {
+          "nodes": [
+            {
+              "quantity": 3,
+              "merchandise": {
+                "id": "gid://shopify/ProductVariant/57057676624250"
+              },
+              "cost": {
+                "totalAmount": {
+                  "amount": "87.0",
+                  "currencyCode": "CHF"
+                }
+              }
+            },
+            {
+              "quantity": 2,
+              "merchandise": {
+                "id": "gid://shopify/ProductVariant/57057676657018"
+              },
+              "cost": {
+                "totalAmount": {
+                  "amount": "58.0",
+                  "currencyCode": "CHF"
+                }
+              }
+            },
+            {
+              "quantity": 2,
+              "merchandise": {
+                "id": "gid://shopify/ProductVariant/56942565425530"
+              },
+              "cost": {
+                "totalAmount": {
+                  "amount": "1062.06",
+                  "currencyCode": "CHF"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "userErrors": []
+    }
+  }
+}

@@ -1,0 +1,14 @@
+## Validation Summary
+
+**Overall Status:** ✅ VALID
+**Total Code Blocks:** 1
+
+## Detailed Results
+
+### Code Block 1
+**Artifact ID:** kevin-shopify-quote
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** Successfully validated GraphQL mutation against schema.
