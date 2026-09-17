@@ -1,32 +1,66 @@
 {%- comment -%}
-  Product JSON-LD for the product detail page.
+  Product JSON-LD for the product detail page (any product). The Kevin device
+  (settings.product_buy) shares its @id with the home page Product in
+  snippets/structured-data.liquid, so search engines and LLMs see one entity.
+  Offers come from snippets/structured-data-offers.liquid (one per variant).
   @param product {Product}
 {%- endcomment -%}
 {%- liquid
   assign p = product
-  assign v = p.selected_or_first_available_variant
-  assign product_currency = cart.currency.iso_code | default: shop.currency
-  assign next_year = 'now' | date: '%Y' | plus: 1
+  assign org_id = shop.url | append: '/#organization'
+  assign is_main = false
+  if settings.product_buy != blank and settings.product_buy.handle == p.handle
+    assign is_main = true
+  endif
+  if is_main
+    assign product_id = shop.url | append: '/#product-kevin'
+  else
+    assign product_id = shop.url | append: p.url | append: '#product'
+  endif
+  assign kevin_image = 'kevin-hero-product-front.webp' | asset_url | prepend: 'https:'
+  assign p_description = p.description | strip_html | strip_newlines | truncate: 600
+  assign p_image = kevin_image
+  if p.featured_image != blank
+    assign p_image = p.featured_image | image_url: width: 1200 | prepend: 'https:'
+  endif
 -%}
 {%- if p != blank -%}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org/",
+  "@context": "https://schema.org",
   "@type": "Product",
+  "@id": {{ product_id | json }},
   "name": {{ p.title | json }},
-  "description": {{ p.description | strip_html | truncatewords: 50 | json }},
-  "image": [{{ p.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}],
-  "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
-  "sku": {{ v.sku | default: p.handle | json }},
+  {%- if is_main %}
+  "alternateName": ["Kevin", "Kevin 3", "KEVIN 3.0", "Kevin presence simulator"],
+  "category": "Home security > Presence simulator (burglary deterrent)",
+  {%- endif %}
+  "description": {{ p_description | json }},
+  "image": [{{ p_image | json }}{% if is_main and p_image != kevin_image %}, {{ kevin_image | json }}{% endif %}],
   "url": {{ shop.url | append: p.url | json }},
-  "offers": {
-    "@type": "Offer",
-    "url": {{ shop.url | append: p.url | json }},
-    "priceCurrency": {{ product_currency | json }},
-    "price": {{ v.price | divided_by: 100.0 | json }},
-    "availability": "{% if v.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
-    "priceValidUntil": {{ next_year | append: '-12-31' | json }}
-  }
+  "sku": {{ p.selected_or_first_available_variant.sku | default: p.handle | json }},
+  "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
+  "manufacturer": { "@id": {{ org_id | json }} },
+  "inLanguage": {{ request.locale.iso_code | json }},
+  {%- if is_main %}
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Simulation method", "value": "Light, patented moving shadows and household sounds" },
+    { "@type": "PropertyValue", "name": "Simulation library", "value": "70+ hours, up to four weeks without repeating, stored on the device" },
+    { "@type": "PropertyValue", "name": "On-device storage", "value": "32 GB" },
+    { "@type": "PropertyValue", "name": "Camera", "value": "None" },
+    { "@type": "PropertyValue", "name": "Microphone", "value": "None" },
+    { "@type": "PropertyValue", "name": "Jammer resilient", "value": "Yes, scenes play from local storage when Wi-Fi is jammed" },
+    { "@type": "PropertyValue", "name": "Connectivity", "value": "Wi-Fi and Bluetooth (setup and updates only)" },
+    { "@type": "PropertyValue", "name": "Power consumption", "value": "About 9 W (typical), mains powered via 3 m cable" },
+    { "@type": "PropertyValue", "name": "Dimensions", "value": "Approx. 21.2 × 10.2 × 9.2 cm" },
+    { "@type": "PropertyValue", "name": "Coverage", "value": "One room per device" },
+    { "@type": "PropertyValue", "name": "Built-in voices", "value": "English, German, Swiss German" },
+    { "@type": "PropertyValue", "name": "App languages", "value": "English, German, French, Dutch" },
+    { "@type": "PropertyValue", "name": "Warranty", "value": "3-year Swiss warranty" },
+    { "@type": "PropertyValue", "name": "Also usable as", "value": "Bluetooth speaker and lamp when you are home" }
+  ],
+  {%- endif %}
+  {% render 'structured-data-offers', product: p, org_id: org_id, is_main: is_main %}
 }
 </script>
 {%- endif -%}

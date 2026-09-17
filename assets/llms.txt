@@ -1,49 +1,59 @@
-# Mitipi / Kevin
+# Mitipi / KEVIN® 3
 
-> Swiss AI presence simulation for your home. When you are away, Kevin uses light, shadow, and sound so your home looks and sounds lived-in—and burglars move on.
+> KEVIN® 3 is a Swiss presence simulator (burglary deterrent) by Mitipi AG, Fribourg. It makes an empty home look and sound occupied with light, patented moving shadows and 70+ hours of household sounds from 32 GB inside the device. No camera, no microphone, keeps running when Wi-Fi is jammed. €579.95 one-time, no subscription.
 
-## AI / LLM discovery
+Last reviewed: 2026-09-17. Full summary (read for complete context): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt.
+
+## Key facts
+
+- Product: KEVIN® 3 (Kevin 3, KEVIN 3.0), third generation, sold since 2023.
+- Category: presence simulator, burglary deterrent, privacy-first home security.
+- Price: €579.95 one-time; optional colour front covers €29.95 each. No subscription.
+- Included: device with Grey cover, adapter, Kevin app (iOS/Android), 70+ hours of scenes, lifetime updates, 3-year Swiss warranty, 30-day returns, free shipping.
+- Privacy: no camera, no microphone, nothing streamed or shared; scenes stored on the device.
+- Jammer resilient: keeps playing when Wi-Fi is jammed. About 9 W, 3 m cable, 21.2 × 10.2 × 9.2 cm.
+- Setup: place by a window, pair the app, set a weekly schedule or geofencing.
+- Ships to: all 27 EU countries, Switzerland, Liechtenstein, Norway and Iceland (free shipping); prices in local currency at checkout (EUR, CHF, CZK and others).
+
+## Important URLs
+
+- Home: https://mitipi.eu/
+- Configure / buy: https://mitipi.eu/pages/configure?plan=buy
+- Product page: https://mitipi.eu/products/kevin-plus
+- Features: https://mitipi.eu/pages/features
+- How it works: https://mitipi.eu/pages/how-it-works
+- The Kevin app: https://mitipi.eu/pages/the-kevin-app
+- Pricing: https://mitipi.eu/pages/pricing
+- About Mitipi: https://mitipi.eu/pages/about-kevin
+- Press & media: https://mitipi.eu/pages/press
+- Careers: https://mitipi.eu/pages/careers
+- Setup guide: https://mitipi.eu/pages/setup-guide
+- Contact: https://mitipi.eu/pages/contact
+
+## Other languages
+
+- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
+- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.fr.txt
+- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
+- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
+
+## Knowledge files (Markdown)
+
+- kevin.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
+- kevin-product.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
+- kevin-specs.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
+- kevin-faq.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
+- kevin-company.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
+
+## Discovery
+
 - Short summary (this file): https://mitipi.eu/cdn/shop/t/1/assets/llms.txt
-- Full summary (read for complete context): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
+- Full summary: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
 - AI sitemap XML: https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
 - Shopify sitemap XML: https://mitipi.eu/sitemap.xml
 - Human sitemap page: https://mitipi.eu/pages/sitemap
 - LLM overview page: https://mitipi.eu/pages/llms
 
+## Contact
 
-Mitipi sells Kevin, a Swiss AI presence simulation device for home security.
-
-Kevin helps make a home look and sound lived-in when people are away. It uses light, shadow, and sound to deter burglars before a break-in happens.
-
-Key facts:
-- Product: Kevin (KEVIN 3.0)
-- Category: AI home security, burglary deterrent, presence simulation
-- Core benefit: Prevention, not reaction
-- Privacy: No cameras, no microphones, no cloud monitoring
-- Data: Simulations are stored locally on the device and are not shared with third parties
-- Setup: Plug in, place near a window, configure schedules or geofencing in the app
-- Power: Typical use around 9W
-- Warranty: 3-year Swiss warranty
-- Delivery: Free delivery across Europe
-
-Knowledge files (Markdown, for AI/LLM ingestion):
-- Overview / index: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
-- Product overview: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
-- Technical specifications: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
-- FAQ: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
-- About the company: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
-
-Important URLs:
-- EN home: https://mitipi.eu/
-- EN configure: https://mitipi.eu/pages/configure?plan=buy
-- NL home: https://mitipi.eu/nl
-- NL configure: https://mitipi.eu/nl/pages/configureren?plan=buy
-- FR home: https://mitipi.eu/fr
-- FR configure: https://mitipi.eu/fr/pages/configurer?plan=buy
-- DE home: https://mitipi.eu/de
-- DE configure: https://mitipi.eu/de/pages/konfigurieren?plan=buy
-- CS home: https://mitipi.eu/cs
-- CS configure: https://mitipi.eu/cs/pages/konfigurace?plan=buy
-
-Contact:
 - Email: hello@mitipi.eu

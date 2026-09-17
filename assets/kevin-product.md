@@ -2,6 +2,8 @@
 
 > What KEVIN 3.0 is, who it is for, why it is different, and how its light, shadow, and sound simulation works.
 
+Last reviewed: 2026-09-17. Source of truth: https://mitipi.eu (pricing, features and about pages) and config/entity.json in the theme repository.
+
 ## What it is
 
 KEVIN 3.0 ("Kevin") is a home-security **presence simulator** and burglar deterrent made by **Mitipi**, a Swiss company. It makes an empty home look and sound occupied by recreating the natural light, moving shadows, and everyday household sounds of a home with people in it. Rather than watching for or reacting to an intruder, Kevin works to stop a break-in from being attempted in the first place. When you are at home, the same device doubles as a lamp and a Bluetooth speaker.
@@ -28,6 +30,21 @@ Kevin is designed for anyone who wants an empty or unattended property to appear
 - **Unjammable.** Because playback happens locally on the device, Kevin keeps simulating even if Wi-Fi is jammed — a tactic that can disable many cameras and alarms.
 - **Swiss-engineered.** Designed and engineered in Switzerland by Mitipi.
 - **Effortless.** Mains powered and simple to run, with a large library of simulations that alternate automatically so no manual scheduling is required for realistic variety.
+- **Owned, not rented.** €579.95 one-time (no subscription, no monitoring fee), lifetime software updates, 3-year Swiss warranty, 30-day returns and free delivery. Optional colour front covers (Red, Brown, Blue, White) cost €29.95 each.
+- **Third generation.** KEVIN 3.0 (2023) brought new hardware, 32 GB of on-device storage, more scenes and personalisation. Galaxus tested it in January 2026 and called it "unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show."
+
+## Specifications at a glance
+
+| Specification | Value |
+| --- | --- |
+| Simulation library | 70+ hours, up to four weeks without repeating, plus your own recordings |
+| On-device storage | 32 GB |
+| Camera / microphone | None |
+| Power | Mains, 3 m cable, about 9 W |
+| Dimensions | Approx. 21.2 × 10.2 × 9.2 cm |
+| Connectivity | Wi-Fi and Bluetooth (setup and updates only) |
+| Coverage | One room per device |
+| Built-in voices / app languages | English, German, Swiss German / English, German, French, Dutch |
 
 ## How it works
 

@@ -335,7 +335,7 @@
       if (!isValidVariantId(variant.id)) {
         if (els.error) {
           els.error.hidden = false;
-          els.error.textContent = 'Online checkout is almost ready. Email hello@lurafi.ai to order, or try again soon.';
+          els.error.textContent = 'Online checkout is almost ready. Email hello@mitipi.eu to order, or try again soon.';
         }
         return;
       }

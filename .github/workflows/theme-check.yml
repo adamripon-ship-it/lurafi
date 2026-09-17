@@ -36,5 +36,8 @@ jobs:
       - name: Asset audit (orphans + size budget)
         run: node scripts/audit-assets.mjs --ci
 
+      - name: SEO / GEO consistency (entity model, sitemap, llms files, JSON-LD)
+        run: npm run test:unit
+
       - name: Shopify Theme Check
         run: npm run theme:check

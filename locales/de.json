@@ -392,11 +392,7 @@
       "trust_3": "Jammer-resistent",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z",
       "press_label": "Bekannt aus",
-      "press_aria": "Presseberichte",
-      "away_body": "Licht, Schatten und Geräusche wechseln automatisch – nie zweimal derselbe Abend.",
-      "privacy_body": "Die Simulationen laufen auf dem Gerät. Nichts wird gestreamt oder weitergegeben.",
-      "checkout_title": "Kostenloser Versand",
-      "checkout_body": "In der ganzen EU, der Schweiz, Norwegen und Island."
+      "press_aria": "Presseberichte"
     },
     "problem": {
       "overline": "Warum Häuser ausgewählt werden",
@@ -519,7 +515,7 @@
   "sitemap": {
     "overline": "SEO-Sitemap",
     "heading": "Sitemap für Menschen, Suchmaschinen und KI-Assistenten.",
-    "lede": "Wichtige Lurafi- und Kevin-Ressourcen an einem Ort, inklusive KI-lesbarer Zusammenfassungen für AEO- und GEO-Entdeckung.",
+    "lede": "Wichtige Mitipi- und Kevin-Ressourcen an einem Ort, inklusive KI-lesbarer Zusammenfassungen für AEO- und GEO-Entdeckung.",
     "primary": "Hauptseiten",
     "homepage": "Startseite",
     "configure_buy": "Konfigurieren / Kevin kaufen",
@@ -558,7 +554,40 @@
     "guide": "Leitfaden: In der Schweiz entwickelte KI-Anwesenheitssimulation.",
     "lede": "Schweizer KI-Anwesenheitssimulation für Ihr Zuhause. Wenn Sie unterwegs sind, nutzt Kevin Licht, Schatten und Ton, damit Ihr Zuhause bewohnt wirkt und klingt—und Einbrecher weiterziehen.",
     "ai_discovery": "KI-/LLM-Dateien (maschinenlesbar)",
-    "short_points_to_full": "Jede kurze llms.txt-Datei verweist auf die passende llms-full.txt für den vollständigen Marken- und Produktkontext."
+    "short_points_to_full": "Jede kurze llms.txt-Datei verweist auf die passende llms-full.txt für den vollständigen Marken- und Produktkontext.",
+    "updated": "Zuletzt überprüft",
+    "answer_first": "KEVIN® 3 ist ein Schweizer Anwesenheitssimulator (Einbruchschutz) der Mitipi AG aus Fribourg für Häuser, Wohnungen, Büros und Ferienimmobilien, die leer stehen. Er spielt warmes Licht, patentierte bewegte Schatten und über 70 Stunden Alltagsgeräusche vom 32-GB-Speicher im Gerät ab, sodass die Immobilie von der Straße aus bewohnt aussieht und klingt. Keine Kamera, kein Mikrofon, und er läuft weiter, wenn das WLAN gestört wird. Einmaliger Kauf für 579,95 €, kein Abonnement.",
+    "offer_heading": "Preis und Lieferumfang",
+    "offer_price": "Preis",
+    "offer_terms": "Einmaliger Kauf, kein Abonnement, keine Überwachungsgebühr.",
+    "offer_included": "Im Lieferumfang: KEVIN® 3 mit grauer Frontabdeckung, Netzteil, die Kevin-App für iOS und Android, über 70 Stunden Licht-, Schatten- und Tonszenen, lebenslange Software-Updates, 3 Jahre Schweizer Garantie, 30 Tage Rückgaberecht, kostenloser Versand.",
+    "offer_covers": "Optionale farbige Frontabdeckungen in Rot, Braun, Blau oder Weiß: je 29,95 €.",
+    "spec_heading": "Technische Daten",
+    "spec_storage": "Speicher im Gerät",
+    "spec_library": "Simulationsbibliothek",
+    "spec_library_value": "Über 70 Stunden, bis zu vier Wochen ohne Wiederholung",
+    "spec_power": "Typische Leistungsaufnahme",
+    "spec_cable": "Stromkabel",
+    "spec_dimensions": "Abmessungen",
+    "spec_connectivity": "Konnektivität",
+    "spec_connectivity_value": "WLAN und Bluetooth, nur für Einrichtung und Updates",
+    "spec_privacy": "Kamera / Mikrofon",
+    "spec_privacy_value": "Keine; nichts wird aufgezeichnet, gestreamt oder geteilt",
+    "spec_jammer": "Wenn das WLAN gestört wird",
+    "spec_jammer_value": "Szenen laufen weiter aus dem lokalen Speicher",
+    "spec_coverage": "Reichweite",
+    "spec_coverage_value": "Ein Raum pro Gerät",
+    "spec_voices": "Integrierte Stimmen",
+    "spec_voices_value": "Englisch, Deutsch und Schweizerdeutsch",
+    "spec_app": "App-Sprachen",
+    "spec_app_value": "Englisch, Deutsch, Französisch und Niederländisch",
+    "spec_extra": "Wenn Sie zu Hause sind",
+    "spec_extra_value": "Bluetooth-Lautsprecher und Lampe",
+    "pages_heading": "Seiten nach Thema",
+    "product_page": "Produktseite",
+    "faq_heading": "Häufig gestellte Fragen",
+    "knowledge_heading": "Wissensdateien (Markdown, zur Erfassung durch KI)",
+    "company_line": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Schweiz · Handelsregister CHE-356.372.981"
   },
   "faq": {
     "q1": "Was macht Kevin genau?",
@@ -853,5 +882,11 @@
     "quantity_unavailable": "Reduziere die Anzahl und versuche es erneut.",
     "selection_price_note": "Preis für diese Auswahl. Versand und Angebote für den gesamten Warenkorb werden im Warenkorb bestätigt.",
     "retry_price": "Preis erneut laden"
+  },
+  "pages": {
+    "editorial": {
+      "overline": "Kevin",
+      "reviewed_on": "Inhalt geprüft:"
+    }
   }
 }

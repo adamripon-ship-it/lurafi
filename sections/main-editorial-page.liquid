@@ -61,6 +61,10 @@
     {%- if lede != blank -%}
       <p class="body-elevated text-center editorial-page__lede{% if page_theme == 'black' %} text-muted-dark{% else %} text-muted{% endif %}">{{ lede }}</p>
     {%- endif -%}
+    {%- assign reviewed_on = settings.seo_last_reviewed | strip -%}
+    {%- if reviewed_on != blank -%}
+      <p class="editorial-page__reviewed text-center{% if page_theme == 'black' %} text-muted-dark{% else %} text-muted{% endif %}"><time datetime="{{ reviewed_on }}">{{ 'pages.editorial.reviewed_on' | t }} {{ reviewed_on }}</time></p>
+    {%- endif -%}
 
     {%- if hero_image != blank or hero_image_url != blank -%}
       <div class="editorial-page__media">
@@ -324,6 +328,35 @@
     </div>
   {%- endif -%}
 </section>
+
+{%- comment -%} FAQPage schema from this page's FAQ blocks (mirrors the visible <details> items). {%- endcomment -%}
+{%- liquid
+  assign faq_count = 0
+  for block in section.blocks
+    if block.type == 'faq' and block.settings.question != blank and block.settings.answer != blank
+      assign faq_count = faq_count | plus: 1
+    endif
+  endfor
+-%}
+{%- if faq_count > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": {{ request.locale.iso_code | json }},
+  "mainEntity": [
+    {%- assign faq_emitted = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'faq' and block.settings.question != blank and block.settings.answer != blank -%}
+        {%- if faq_emitted > 0 -%},{%- endif -%}
+        { "@type": "Question", "name": {{ block.settings.question | strip_html | json }}, "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | strip_newlines | json }} } }
+        {%- assign faq_emitted = faq_emitted | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}
 
 {% schema %}
 {

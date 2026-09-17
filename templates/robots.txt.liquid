@@ -1,8 +1,30 @@
+{%- comment -%}
+  Custom robots.txt (replaces Shopify's default entirely, so the standard
+  Shopify disallows are restated here). Everything else, including the AI/LLM
+  summary files and knowledge Markdown, is crawlable by every user agent.
+{%- endcomment -%}
 User-agent: *
-Disallow: /checkout
-Disallow: /cart
-Disallow: /account
 Disallow: /admin
+Disallow: /cart
+Disallow: /orders
+Disallow: /checkout
+Disallow: /checkouts/
+Disallow: /account
+Disallow: /carts
+Disallow: /search
+Disallow: /apple-app-site-association
+Disallow: /.well-known/shopify/monorail
+Disallow: /*preview_theme_id*
+Disallow: /*preview_script_id*
+Disallow: /*?*variant=
+Disallow: /collections/*sort_by*
+Disallow: /*/collections/*sort_by*
+Disallow: /collections/*+*
+Disallow: /collections/*%2B*
+Disallow: /collections/*%2b*
+Disallow: /*/collections/*+*
+Disallow: /*/collections/*%2B*
+Disallow: /*/collections/*%2b*
 Disallow: /*?view=configure
 Disallow: /*&view=configure
 Allow: /pages/configure
@@ -15,7 +37,7 @@ Allow: /cdn/shop/t/*/assets/llms-full.*.txt
 Allow: /cdn/shop/t/*/assets/kevin*.md
 Allow: /cdn/shop/t/*/assets/sitemap-ai.xml
 
-# Sitemaps (Shopify + AI/AEO/GEO index with llms.txt and llms-full.txt URLs)
+# Sitemaps (Shopify native, per locale + AI/AEO/GEO index with llms.txt and llms-full.txt URLs)
 Sitemap: https://{{ shop.domain }}/sitemap.xml
 Sitemap: https:{{ 'sitemap-ai.xml' | asset_url }}
 

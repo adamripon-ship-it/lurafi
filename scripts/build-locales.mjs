@@ -359,10 +359,16 @@ const en = {
   stats: {
     swiss_engineered: 'Swiss engineered & designed'
   },
+  pages: {
+    editorial: {
+      overline: 'Kevin',
+      reviewed_on: 'Content reviewed:'
+    }
+  },
   sitemap: {
     overline: 'SEO sitemap',
     heading: 'Sitemap for people, search engines, and AI assistants.',
-    lede: 'Key Lurafi and Kevin resources in one place, including AI-readable summaries for AEO and GEO discovery.',
+    lede: 'Key Mitipi and Kevin resources in one place, including AI-readable summaries for AEO and GEO discovery.',
     primary: 'Primary pages',
     homepage: 'Homepage',
     configure_buy: 'Configure / buy Kevin',
@@ -398,6 +404,41 @@ const en = {
     diff_3: 'Swiss-engineered AI; ~9W power; plug and play',
     diff_4: 'Jammer-resilient local playback when Wi-Fi security fails',
     urls_heading: 'Primary URLs',
+    updated: 'Last reviewed',
+    answer_first:
+      'KEVIN® 3 is a Swiss presence simulator (burglary deterrent) made by Mitipi AG in Fribourg, for homes, flats, offices and holiday properties that sit empty. It plays warm light, patented moving shadows and 70+ hours of household sounds from 32 GB inside the device, so the property looks and sounds occupied from the street. No camera, no microphone, and it keeps running when Wi-Fi is jammed. One-time purchase of €579.95, no subscription.',
+    offer_heading: 'Price and what is included',
+    offer_price: 'Price',
+    offer_terms: 'One-time purchase, no subscription, no monitoring fee.',
+    offer_included:
+      'Included: KEVIN® 3 with the Grey front cover, power adapter, the Kevin app for iOS and Android, 70+ hours of light, shadow and sound scenes, lifetime software updates, 3-year Swiss warranty, 30-day returns, free shipping.',
+    offer_covers: 'Optional colour front covers in Red, Brown, Blue or White: €29.95 each.',
+    spec_heading: 'Specifications',
+    spec_storage: 'On-device storage',
+    spec_library: 'Simulation library',
+    spec_library_value: '70+ hours, up to four weeks without repeating',
+    spec_power: 'Typical power consumption',
+    spec_cable: 'Power cable',
+    spec_dimensions: 'Dimensions',
+    spec_connectivity: 'Connectivity',
+    spec_connectivity_value: 'Wi-Fi and Bluetooth, used for setup and updates only',
+    spec_privacy: 'Camera / microphone',
+    spec_privacy_value: 'None; nothing is recorded, streamed or shared',
+    spec_jammer: 'When Wi-Fi is jammed',
+    spec_jammer_value: 'Scenes keep playing from local storage',
+    spec_coverage: 'Coverage',
+    spec_coverage_value: 'One room per device',
+    spec_voices: 'Built-in voices',
+    spec_voices_value: 'English, German and Swiss German',
+    spec_app: 'App languages',
+    spec_app_value: 'English, German, French and Dutch',
+    spec_extra: 'When you are home',
+    spec_extra_value: 'Bluetooth speaker and lamp',
+    pages_heading: 'Pages by topic',
+    product_page: 'Product page',
+    faq_heading: 'Frequently asked questions',
+    knowledge_heading: 'Knowledge files (Markdown, for AI ingestion)',
+    company_line: 'Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Switzerland · company register CHE-356.372.981',
     contact_heading: 'Contact',
     brand_heading: 'Brand',
     tagline: 'Tagline: Smart. Secure. Swiss.',
@@ -877,7 +918,7 @@ nl.stats = { swiss_engineered: 'Zwitsers ontworpen' };
 nl.sitemap = {
   overline: 'SEO-sitemap',
   heading: 'Sitemap voor mensen, zoekmachines en AI-assistenten.',
-  lede: 'Belangrijke Lurafi- en Kevin-bronnen op één plek, inclusief AI-leesbare samenvattingen voor AEO en GEO.',
+  lede: 'Belangrijke Mitipi- en Kevin-bronnen op één plek, inclusief AI-leesbare samenvattingen voor AEO en GEO.',
   primary: 'Hoofdpagina’s',
   homepage: 'Startpagina',
   configure_buy: 'Kevin configureren / kopen',
@@ -947,6 +988,68 @@ nl.faq = {
   a6: 'Onafhankelijke reviewer Galaxus noemde Kevin.3 “een ongeëvenaarde, gebruiksvriendelijke alles-in-één-oplossing die een werkelijk spectaculaire show neerzet.” Het effect is het sterkst waar het telt: van buiten, door gordijnen, in de schemering.'
 };
 
+
+// LLM page (answer-first block, offer, specs) and editorial freshness line — native NL.
+Object.assign(nl.llms_page, {
+  updated: "Laatst gecontroleerd",
+  answer_first: "KEVIN® 3 is een Zwitserse aanwezigheidssimulator (inbraakpreventie) van Mitipi AG uit Fribourg, bedoeld voor huizen, appartementen, kantoren en vakantiewoningen die leegstaan. Het apparaat speelt warm licht, gepatenteerde bewegende schaduwen en meer dan 70 uur aan huishoudgeluiden af vanaf het interne geheugen van 32 GB, zodat het pand er vanaf de straat bewoond uitziet en klinkt. Geen camera, geen microfoon, en het blijft werken als de wifi wordt gestoord. Eenmalige aankoop van € 579,95, geen abonnement.",
+  offer_heading: "Prijs en wat is inbegrepen",
+  offer_price: "Prijs",
+  offer_terms: "Eenmalige aankoop, geen abonnement, geen monitoringkosten.",
+  offer_included: "Inbegrepen: KEVIN® 3 met grijze voorkant, voedingsadapter, de Kevin-app voor iOS en Android, meer dan 70 uur aan licht-, schaduw- en geluidsscènes, levenslange software-updates, 3 jaar Zwitserse garantie, 30 dagen retourrecht, gratis verzending.",
+  offer_covers: "Optionele gekleurde voorkanten in rood, bruin, blauw of wit: € 29,95 per stuk.",
+  spec_heading: "Specificaties",
+  spec_storage: "Opslag op het apparaat",
+  spec_library: "Simulatiebibliotheek",
+  spec_library_value: "Meer dan 70 uur, tot vier weken zonder herhaling",
+  spec_power: "Typisch stroomverbruik",
+  spec_cable: "Stroomkabel",
+  spec_dimensions: "Afmetingen",
+  spec_connectivity: "Connectiviteit",
+  spec_connectivity_value: "Wifi en Bluetooth, alleen voor installatie en updates",
+  spec_privacy: "Camera / microfoon",
+  spec_privacy_value: "Geen; er wordt niets opgenomen, gestreamd of gedeeld",
+  spec_jammer: "Als de wifi wordt gestoord",
+  spec_jammer_value: "Scènes blijven afspelen vanuit de lokale opslag",
+  spec_coverage: "Bereik",
+  spec_coverage_value: "Eén kamer per apparaat",
+  spec_voices: "Ingebouwde stemmen",
+  spec_voices_value: "Engels, Duits en Zwitserduits",
+  spec_app: "Talen van de app",
+  spec_app_value: "Engels, Duits, Frans en Nederlands",
+  spec_extra: "Als je thuis bent",
+  spec_extra_value: "Bluetooth-speaker en lamp",
+  pages_heading: "Pagina’s per onderwerp",
+  product_page: "Productpagina",
+  faq_heading: "Veelgestelde vragen",
+  knowledge_heading: "Kennisbestanden (Markdown, voor AI-verwerking)",
+  company_line: "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Zwitserland · handelsregister CHE-356.372.981",
+});
+nl.pages = { editorial: { overline: 'Kevin', reviewed_on: "Inhoud gecontroleerd:" } };
+
+// Current NL copy for the FAQ, home SEO and hero slide (kept in the build so rebuilds never regress locales/nl.json).
+Object.assign(nl.faq, {
+  q1: "Wat doet Kevin precies?",
+  a1: "Kevin is een Zwitserse aanwezigheidssimulator. Bij een raam speelt hij warm licht, bewegende menselijke schaduwen en alledaagse geluiden vanaf zijn eigen geheugen, zodat je huis vanaf de straat bewoond lijkt en klinkt terwijl je weg bent — in appartementen, huizen, kantoren en vakantiewoningen.",
+  q2: "Wat is het verschil met een alarm of een camera?",
+  a2: "Een alarm reageert nadat iemand de deur probeert; een camera legt vast wat al gebeurd is en stopt als de wifi wordt gestoord. Kevin werkt daarvóór: hij laat je huis bewoond lijken, zodat de poging niet eens begint. Houd je alarm — Kevin is de preventielaag ervoor.",
+  q3: "Kijkt of luistert Kevin mee?",
+  a3: "Nee. Kevin heeft geen camera en geen microfoon. Hij projecteert alleen licht, schaduw en geluid. Simulaties staan op het apparaat, worden niet gestreamd vanuit de cloud en met niemand gedeeld.",
+  q4: "Wat zit erbij en wat kost het in gebruik?",
+  a4: "Eén betaling voor het apparaat, de app, 70+ uur simulaties en levenslange software-updates. Geen monitoringabonnement. Gratis verzending in de hele EU, Zwitserland, Liechtenstein, Noorwegen en IJsland, 30 dagen retour en 3 jaar Zwitserse garantie.",
+  q5: "Blijft het werken als de wifi wordt gestoord of uitvalt?",
+  a5: "Ja. Wifi en bluetooth worden alleen gebruikt om Kevin in te stellen en updates te installeren. Elke simulatie speelt vanaf de 32 GB in het apparaat, dus licht, schaduw en geluid gaan door — ook als inbrekers camera’s en app-alarmen storen.",
+  q6: "Is de simulatie echt overtuigend?",
+  a6: "Galaxus testte Kevin.3 in januari 2026 en noemde hem “unrivalled in that it's an easy-to-use, all-in-one solution that delivers a truly spectacular show.” Het effect is het sterkst waar het telt: van buiten, door de gordijnen, in de schemering. Plaatsingstips staan in de installatiegids.",
+});
+nl.seo.home = { ...(nl.seo.home || {}), ...{
+  title: "Kevin® — Zwitserse aanwezigheidssimulator die je huis bewoond laat lijken | Mitipi",
+  description: "Kevin® speelt licht, bewegende schaduwen en alledaagse geluiden bij het raam, zodat inbrekers een bewoond huis zien en doorlopen. Geen camera, geen microfoon, werkt door bij gestoorde wifi. Eenmalige aankoop, gratis verzending in de EU.",
+} };
+nl.hero.slide_1 = { ...(nl.hero.slide_1 || {}), ...{
+  headline: "Voorkom inbraken voordat ze beginnen.",
+  lede: "Zwitserse aanwezigheidssimulatie — licht, schaduw en geluid — zodat je huis van buiten bewoond lijkt. Geen camera’s. Geen microfoons. Plug-and-play.",
+} };
 
 nl.cart.drawer_title = 'Je winkelwagen';
 nl.cart.close = 'Winkelwagen sluiten';
@@ -1050,12 +1153,21 @@ const publishedCodes = getPublishedLocales()
 const localeCsv = `,${publishedCodes},`;
 const localeAssign = `assign lurafi_published_locale_csv = '${localeCsv}'`;
 const localeRoutesJson = JSON.stringify(getLocaleRouteMap());
+// Open Graph locale per published language (og:locale / og:locale:alternate), from the registry.
+// Shipping countries (Shopify Markets) for structured data, from config/entity.json.
+const entityModel = JSON.parse(fs.readFileSync(path.join(root, 'config/entity.json'), 'utf8'));
+const shipCountriesAssign = `assign lurafi_ship_countries_csv = '${entityModel.organization.shippingCountries.join(',')}'`;
+const ogLocaleAssign = `assign lurafi_og_locale_map = '${getPublishedLocales()
+  .map((l) => `${l.code}=${l.ogLocale || `${l.code}_${l.code.toUpperCase()}`}`)
+  .join('|')}'`;
 
 for (const rel of [
   'layout/theme.liquid',
   'snippets/language-selector.liquid',
   'snippets/meta-tags.liquid',
   'snippets/seo-hreflang.liquid',
+  'snippets/structured-data.liquid',
+  'snippets/structured-data-offers.liquid',
 ]) {
   const filePath = path.join(root, rel);
   let text = fs.readFileSync(filePath, 'utf8');
@@ -1067,6 +1179,8 @@ for (const rel of [
     /assign lurafi_published_locale_codes = '[^']*' \| split: ','/,
     localeAssign,
   );
+  text = text.replace(/assign lurafi_og_locale_map = '[^']*'/, ogLocaleAssign);
+  text = text.replace(/assign lurafi_ship_countries_csv = '[^']*'/, shipCountriesAssign);
   if (rel === 'snippets/language-selector.liquid') {
     assertNoCountrySelector(rel, text);
   }

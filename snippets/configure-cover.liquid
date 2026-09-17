@@ -5,7 +5,7 @@
   price_label, price_cents, cover_available (variant.available; defaults true).
   A cover is purchasable only when cover_variant is set and the variant is
   available; otherwise it shows "Soon".
-  Live cover product: kevin-front-cover (4 Colour variants, 24.95 EUR each).
+  Live cover product: kevin-front-cover (4 Colour variants; the price shown is the variant price).
 {%- endcomment -%}
 {%- liquid
   assign cover_label = cover_name | default: default_name

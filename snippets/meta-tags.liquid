@@ -1,6 +1,7 @@
 {%- liquid
   assign lurafi_published_locale_csv = ',en,nl,fr,de,cs,'
-  assign lurafi_default_image = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663143838195/XAqmtb4V6fmS5cL6eq54xv/lurafi-device-angle-transparent-feBmUBJ5mWe9dTyXfTHnUU.webp'
+  assign lurafi_og_locale_map = 'en=en_IE|nl=nl_NL|fr=fr_FR|de=de_DE|cs=cs_CZ'
+  assign lurafi_default_image = 'kevin-hero-product-front.webp' | asset_url | prepend: 'https:'
   assign lurafi_meta_description = page_description
   assign lurafi_canonical_url = seo_canonical_url | default: canonical_url
   assign llms_page_url = pages.llms.url
@@ -34,24 +35,22 @@
   endif
 
   assign locale_root = request.locale.iso_code | split: '-' | first | downcase
-  assign og_locale = 'en_US'
-  case locale_root
-    when 'nl'
-      assign og_locale = 'nl_NL'
-    when 'fr'
-      assign og_locale = 'fr_FR'
-    when 'de'
-      assign og_locale = 'de_DE'
-    when 'cs'
-      assign og_locale = 'cs_CZ'
-  endcase
+  assign locale_root_upper = locale_root | upcase
+  assign og_locale = ''
+  assign og_pairs = lurafi_og_locale_map | split: '|'
+  for og_pair in og_pairs
+    assign og_pair_code = og_pair | split: '=' | first
+    if og_pair_code == locale_root
+      assign og_locale = og_pair | split: '=' | last
+    endif
+  endfor
+  if og_locale == blank
+    assign og_locale = locale_root | append: '_' | append: locale_root_upper
+  endif
 
   assign lurafi_og_image = page_image
   if lurafi_og_image == blank and settings.default_share_image != blank
     assign lurafi_og_image = settings.default_share_image
-  endif
-  if lurafi_og_image == blank and settings.favicon != blank
-    assign lurafi_og_image = settings.favicon
   endif
 -%}
 {%- if lurafi_meta_description != blank -%}
@@ -66,13 +65,15 @@
   {%- if lurafi_published_locale_csv contains alt_lang_token -%}
   {%- unless language.iso_code == request.locale.iso_code -%}
     {%- assign alt_root = language.iso_code | split: '-' | first | downcase -%}
-    {%- assign alt_og = 'en_US' -%}
-    {%- case alt_root -%}
-      {%- when 'nl' -%}{%- assign alt_og = 'nl_NL' -%}
-      {%- when 'fr' -%}{%- assign alt_og = 'fr_FR' -%}
-      {%- when 'de' -%}{%- assign alt_og = 'de_DE' -%}
-      {%- when 'cs' -%}{%- assign alt_og = 'cs_CZ' -%}
-    {%- endcase -%}
+    {%- assign alt_og = '' -%}
+    {%- for og_pair in og_pairs -%}
+      {%- assign og_pair_code = og_pair | split: '=' | first -%}
+      {%- if og_pair_code == alt_root -%}{%- assign alt_og = og_pair | split: '=' | last -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if alt_og == blank -%}
+      {%- assign alt_root_upper = alt_root | upcase -%}
+      {%- assign alt_og = alt_root | append: '_' | append: alt_root_upper -%}
+    {%- endif -%}
     <meta property="og:locale:alternate" content="{{ alt_og }}">
   {%- endunless -%}
   {%- endif -%}
@@ -89,11 +90,9 @@
   <meta property="og:image:height" content="{{ lurafi_og_image.height | default: 630 }}">
   <meta property="og:image:alt" content="{{ lurafi_meta_title | escape }}">
   <meta name="twitter:image" content="https:{{ lurafi_og_image | image_url: width: 1200 }}">
-{%- elsif request.page_type == 'index' -%}
+{%- else -%}
   <meta property="og:image" content="{{ lurafi_default_image }}">
   <meta property="og:image:secure_url" content="{{ lurafi_default_image }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="1500">
   <meta property="og:image:alt" content="{{ 'home.hero.image_alt' | t | escape }}">
   <meta name="twitter:image" content="{{ lurafi_default_image }}">
 {%- endif -%}

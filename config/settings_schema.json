@@ -84,5 +84,21 @@
         "info": "Used when a page has no featured image. Falls back to the hero device image URL if empty."
       }
     ]
+  },
+  {
+    "name": "SEO / AI visibility",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Structured data and the LLM summaries publish this date as dateModified. Update it whenever product facts, prices or page copy change."
+      },
+      {
+        "type": "text",
+        "id": "seo_last_reviewed",
+        "label": "Content last reviewed (YYYY-MM-DD)",
+        "default": "2026-09-17",
+        "info": "Shown as a small \"Content reviewed\" line on editorial pages and as dateModified in schema.org markup."
+      }
+    ]
   }
 ]

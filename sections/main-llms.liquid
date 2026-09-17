@@ -1,59 +1,131 @@
-{% comment %} Plain-text page for AI crawlers (Page handle "llms", template page.llms) {% endcomment %}
+{% comment %} Plain-text page for AI crawlers (Page handle "llms", template page.llms, layout: none). Answer-first: entity, category, audience, proof, then links. {% endcomment %}
 {%- liquid
   capture configure_buy_url
     render 'configure-url', plan: 'buy'
   endcapture
   assign configure_buy_url = configure_buy_url | strip
-  assign llms_short_url = 'llms.txt' | asset_url
-  assign llms_full_url = 'llms-full.txt' | asset_url
-  assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url
   assign locale_root = request.locale.iso_code | split: '-' | first | downcase
+  assign llms_short_url = 'llms.txt' | asset_url | prepend: 'https:'
+  assign llms_full_url = 'llms-full.txt' | asset_url | prepend: 'https:'
+  assign ai_sitemap_url = 'sitemap-ai.xml' | asset_url | prepend: 'https:'
   if locale_root != 'en'
-    assign llms_short_local = 'llms.' | append: locale_root | append: '.txt' | asset_url
-    assign llms_full_local = 'llms-full.' | append: locale_root | append: '.txt' | asset_url
+    assign llms_short_local = 'llms.' | append: locale_root | append: '.txt' | asset_url | prepend: 'https:'
+    assign llms_full_local = 'llms-full.' | append: locale_root | append: '.txt' | asset_url | prepend: 'https:'
   endif
+  assign buy_product = settings.product_buy
+  assign reviewed_on = settings.seo_last_reviewed | strip
+  assign page_keys = 'features,how-it-works,the-kevin-app,pricing,about-kevin,press,careers,setup-guide,contact' | split: ','
+  assign md_files = 'kevin.md,kevin-product.md,kevin-specs.md,kevin-faq.md,kevin-company.md' | split: ','
 -%}
-# {{ shop.name }}
+# {{ shop.name }} / KEVIN® 3
 
 > {{ 'llms_page.oneliner' | t }}
 
+{{ 'llms_page.answer_first' | t }}
+{%- if reviewed_on != blank %}
+
+{{ 'llms_page.updated' | t }}: {{ reviewed_on }}
+{%- endif %}
+
 ## {{ 'llms_page.ai_discovery' | t }}
 
-- **{{ 'sitemap.short_llm' | t }} (EN):** https:{{ llms_short_url }}
-- **{{ 'sitemap.full_llm' | t }} (EN):** https:{{ llms_full_url }}
-{%- if llms_short_local != blank -%}
-- **{{ 'sitemap.short_llm' | t }} ({{ locale_root | upcase }}):** https:{{ llms_short_local }}
-- **{{ 'sitemap.full_llm' | t }} ({{ locale_root | upcase }}):** https:{{ llms_full_local }}
-{%- endif -%}
-- **{{ 'sitemap.ai_sitemap' | t }}:** https:{{ ai_sitemap_url }}
-- **{{ 'sitemap.shopify_sitemap' | t }}:** {{ shop.url }}/sitemap.xml
-- **{{ 'sitemap.human_sitemap' | t }}:** {{ shop.url }}/pages/sitemap
+- {{ 'sitemap.short_llm' | t }} (EN): {{ llms_short_url }}
+- {{ 'sitemap.full_llm' | t }} (EN): {{ llms_full_url }}
+{%- if llms_short_local != blank %}
+- {{ 'sitemap.short_llm' | t }} ({{ locale_root | upcase }}): {{ llms_short_local }}
+- {{ 'sitemap.full_llm' | t }} ({{ locale_root | upcase }}): {{ llms_full_local }}
+{%- endif %}
+- {{ 'sitemap.ai_sitemap' | t }}: {{ ai_sitemap_url }}
+- {{ 'sitemap.shopify_sitemap' | t }}: {{ shop.url }}/sitemap.xml
+{%- if pages.sitemap %}
+- {{ 'sitemap.human_sitemap' | t }}: {{ shop.url }}{{ pages.sitemap.url }}
+{%- endif %}
 
 {{ 'llms_page.short_points_to_full' | t }}
 
-## {{ 'llms_page.what_we_sell' | t }}
-- {{ 'llms_page.buy_bullet' | t }}
+## {{ 'llms_page.offer_heading' | t }}
+
+{%- if buy_product != blank %}
+- {{ 'llms_page.offer_price' | t }}: {{ buy_product.selected_or_first_available_variant.price | money_with_currency }} — {{ 'llms_page.offer_terms' | t }}
+{%- else %}
+- {{ 'llms_page.offer_terms' | t }}
+{%- endif %}
+- {{ 'llms_page.offer_included' | t }}
+- {{ 'llms_page.offer_covers' | t }}
+- {{ 'sitemap.configure_buy' | t }}: {{ shop.url }}{{ configure_buy_url }}
+{%- if buy_product != blank %}
+- {{ 'llms_page.product_page' | t }}: {{ shop.url }}{{ buy_product.url }}
+{%- endif %}
 
 ## {{ 'llms_page.how_heading' | t }}
+
 1. {{ 'llms_page.how_1' | t }}
 2. {{ 'llms_page.how_2' | t }}
 3. {{ 'llms_page.how_3' | t }}
 
 ## {{ 'llms_page.diff_heading' | t }}
+
 - {{ 'llms_page.diff_1' | t }}
 - {{ 'llms_page.diff_2' | t }}
 - {{ 'llms_page.diff_3' | t }}
 - {{ 'llms_page.diff_4' | t }}
 
-## {{ 'llms_page.urls_heading' | t }}
-- Homepage: {{ shop.url }}
-- Configure / Buy: {{ shop.url }}{{ configure_buy_url }}
-- Cart: {{ shop.url }}/cart
+## {{ 'llms_page.spec_heading' | t }}
+
+- {{ 'llms_page.spec_storage' | t }}: 32 GB
+- {{ 'llms_page.spec_library' | t }}: {{ 'llms_page.spec_library_value' | t }}
+- {{ 'llms_page.spec_power' | t }}: 9 W
+- {{ 'llms_page.spec_cable' | t }}: 3 m
+- {{ 'llms_page.spec_dimensions' | t }}: 21.2 × 10.2 × 9.2 cm
+- {{ 'llms_page.spec_connectivity' | t }}: {{ 'llms_page.spec_connectivity_value' | t }}
+- {{ 'llms_page.spec_privacy' | t }}: {{ 'llms_page.spec_privacy_value' | t }}
+- {{ 'llms_page.spec_jammer' | t }}: {{ 'llms_page.spec_jammer_value' | t }}
+- {{ 'llms_page.spec_coverage' | t }}: {{ 'llms_page.spec_coverage_value' | t }}
+- {{ 'llms_page.spec_voices' | t }}: {{ 'llms_page.spec_voices_value' | t }}
+- {{ 'llms_page.spec_app' | t }}: {{ 'llms_page.spec_app_value' | t }}
+- {{ 'llms_page.spec_extra' | t }}: {{ 'llms_page.spec_extra_value' | t }}
+
+## {{ 'llms_page.pages_heading' | t }}
+
+- {{ 'sitemap.homepage' | t }}: {{ shop.url }}{{ routes.root_url }}
+{%- for key in page_keys -%}
+  {%- assign pg = pages[key] -%}
+  {%- if pg != blank %}
+- {{ pg.title }}: {{ shop.url }}{{ pg.url }}
+  {%- endif -%}
+{%- endfor %}
+
+## {{ 'llms_page.faq_heading' | t }}
+
+{%- for i in (1..6) -%}
+  {%- liquid
+    assign q_key = 'faq.q' | append: i
+    assign a_key = 'faq.a' | append: i
+    assign q_text = q_key | t
+    assign a_text = a_key | t
+  -%}
+  {%- assign faq_missing = false -%}
+  {%- if q_text contains 'ranslation missing' or a_text contains 'ranslation missing' -%}
+    {%- assign faq_missing = true -%}
+  {%- endif -%}
+  {%- if q_text != blank and a_text != blank and faq_missing == false %}
+- **{{ q_text }}** {{ a_text }}
+  {%- endif -%}
+{%- endfor %}
+
+## {{ 'llms_page.knowledge_heading' | t }}
+
+{%- for md in md_files %}
+- {{ md }}: {{ md | asset_url | prepend: 'https:' }}
+{%- endfor %}
 
 ## {{ 'llms_page.contact_heading' | t }}
-- Email: hello@lurafi.ai
+
+- Email: hello@mitipi.eu
+- {{ 'llms_page.company_line' | t }}
 
 ## {{ 'llms_page.brand_heading' | t }}
+
 - {{ 'llms_page.tagline' | t }}
 - {{ 'llms_page.character' | t }}
 - {{ 'llms_page.guide' | t }}

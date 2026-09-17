@@ -1,0 +1,198 @@
+{
+  "$comment": "Canonical entity model for mitipi.eu. Every surface a model can learn from (JSON-LD, llms*.txt, knowledge .md files, page copy, product copy) reconciles to this file. Facts here mirror published site copy (config/footer-pages-en.json, config/product-kevin-plus.json, assets/kevin-*.md). Update this first, then propagate: npm run geo:generate; tests/unit/geo-assets.test.mjs guards drift.",
+  "updated": "2026-09-17",
+  "domain": "mitipi.eu",
+  "locales": [
+    "en",
+    "nl",
+    "fr",
+    "de",
+    "cs"
+  ],
+  "organization": {
+    "name": "Mitipi",
+    "legalName": "Mitipi AG",
+    "url": "https://mitipi.eu",
+    "email": "hello@mitipi.eu",
+    "slogan": "Smart. Secure. Swiss.",
+    "foundingDate": "2018",
+    "foundingLocation": "Zurich, Switzerland",
+    "address": {
+      "streetAddress": "Passage du Cardinal 11, Bluefactory",
+      "postalCode": "1700",
+      "addressLocality": "Fribourg",
+      "addressCountry": "CH"
+    },
+    "registerId": "CHE-356.372.981",
+    "sameAs": [
+      "https://kevinswiss.com"
+    ],
+    "awards": [
+      {
+        "year": 2019,
+        "name": "Global Digital Insurance Agenda (DIA) award for innovation"
+      },
+      {
+        "year": 2021,
+        "name": "Plus X Award (Germany)"
+      },
+      {
+        "year": 2024,
+        "name": "European Security Award for the most innovative burglary prevention in Europe"
+      }
+    ],
+    "checkoutMarkets": [
+      "CH",
+      "DE",
+      "FR",
+      "IE",
+      "NL",
+      "CZ"
+    ],
+    "currencies": {
+      "CH": "CHF",
+      "DE": "EUR",
+      "FR": "EUR",
+      "IE": "EUR",
+      "NL": "EUR",
+      "CZ": "CZK"
+    },
+    "shippingCountries": [
+      "AT",
+      "BE",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DE",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "GR",
+      "HU",
+      "IE",
+      "IT",
+      "LV",
+      "LT",
+      "LU",
+      "MT",
+      "NL",
+      "PL",
+      "PT",
+      "RO",
+      "SK",
+      "SI",
+      "ES",
+      "SE",
+      "NO",
+      "IS",
+      "CH",
+      "LI"
+    ],
+    "shippingCountriesSource": "Shopify Markets on 6mzhe1-yf, verified 2026-09-17 via Admin API: European Union (27 countries, local currencies on), Norway & Iceland (EUR), Switzerland & Liechtenstein (CHF). Free shipping to all of them."
+  },
+  "product": {
+    "name": "KEVIN® 3",
+    "aliases": [
+      "Kevin",
+      "Kevin 3",
+      "KEVIN 3.0",
+      "Kevin.3",
+      "Kevin presence simulator"
+    ],
+    "category": "Presence simulator (burglary deterrent, home security device)",
+    "categoryByLocale": {
+      "en": "presence simulator",
+      "nl": "aanwezigheidssimulator",
+      "fr": "simulateur de présence",
+      "de": "Anwesenheitssimulator",
+      "cs": "simulátor přítomnosti"
+    },
+    "handle": "kevin-plus",
+    "handlesByLocale": {
+      "en": "kevin-plus",
+      "nl": "aanwezigheidssimulator",
+      "fr": "simulateur-de-presence",
+      "de": "anwesenheitssimulator",
+      "cs": "simulator-pritomnosti"
+    },
+    "coverProductHandle": "kevin-front-cover",
+    "sku": "KEVIN",
+    "price": {
+      "amount": 579.95,
+      "currency": "EUR",
+      "type": "one-time purchase, no subscription"
+    },
+    "covers": {
+      "included": "Grey",
+      "optionalColours": [
+        "Red",
+        "Brown",
+        "Blue",
+        "White"
+      ],
+      "price": {
+        "amount": 29.95,
+        "currency": "EUR"
+      }
+    },
+    "included": [
+      "1× KEVIN® 3 with Grey front cover",
+      "power adapter",
+      "the Kevin app for iOS and Android",
+      "70+ hours of light, shadow and sound scenes",
+      "lifetime software updates",
+      "3-year Swiss warranty",
+      "30-day returns",
+      "free shipping"
+    ],
+    "warrantyYears": 3,
+    "returnDays": 30,
+    "freeShippingClaim": "EU, Switzerland, Liechtenstein, Norway and Iceland",
+    "specs": {
+      "storageGb": 32,
+      "libraryHours": "70+",
+      "noRepeatWeeks": 4,
+      "typicalPowerW": 9,
+      "cableM": 3,
+      "dimensionsCm": "21.2 × 10.2 × 9.2",
+      "connectivity": [
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "camera": false,
+      "microphone": false,
+      "localPlayback": true,
+      "jammerResilient": true,
+      "builtInVoices": [
+        "English",
+        "German",
+        "Swiss German"
+      ],
+      "appLanguages": [
+        "English",
+        "German",
+        "French",
+        "Dutch"
+      ],
+      "roomsPerDevice": 1,
+      "extraUses": [
+        "Bluetooth speaker",
+        "lamp"
+      ]
+    },
+    "proof": [
+      {
+        "type": "independent review",
+        "source": "Galaxus",
+        "date": "2026-01",
+        "quote": "unrivalled in that it’s an easy-to-use, all-in-one solution that delivers a truly spectacular show."
+      }
+    ]
+  },
+  "openQuestions": [
+    "Support email: footer and contact page use hello@lurafi.com / press@lurafi.com, machine-readable files use hello@mitipi.eu — confirm the live mailbox and align every surface.",
+    "Country selector: the theme lists only 6 countries (publishedCountries: CH, DE, FR, IE, NL, CZ) while Shopify Markets sell to all 27 EU countries plus CH, LI, NO, IS. Decide whether the selector should expose every market country."
+  ]
+}
