@@ -3504,7 +3504,17 @@ body.cart-drawer-open { overflow: hidden; }
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
 }
+/* The panel is always a light surface (background #fff), even on templates
+   that remap the --apple-* text tokens to light values on <body> (the
+   nightfall home page, the dark configure page). Pin the tokens on the panel
+   so its text, dividers and native controls stay dark-on-white everywhere. */
 .cart-drawer__panel {
+  --apple-text: #1d1d1f;
+  --apple-text-muted: #6e6e73;
+  --apple-text-muted-dark: #a1a1a6;
+  --apple-border: #d2d2d7;
+  color: var(--apple-text);
+  color-scheme: light;
   position: absolute;
   top: 0;
   right: 0;
