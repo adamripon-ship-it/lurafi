@@ -392,11 +392,7 @@
       "trust_3": "Odolný vůči rušičkám",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z",
       "press_label": "Psali o nás",
-      "press_aria": "Ohlasy v médiích",
-      "away_body": "Světlo, stín a zvuk se mění automaticky – nikdy dvakrát stejný večer.",
-      "privacy_body": "Simulace běží v zařízení. Nic se nestreamuje ani nesdílí.",
-      "checkout_title": "Doprava zdarma",
-      "checkout_body": "Po celé EU, ve Švýcarsku, Norsku a na Islandu."
+      "press_aria": "Ohlasy v médiích"
     },
     "problem": {
       "overline": "Proč si zloději vybírají",
@@ -519,7 +515,7 @@
   "sitemap": {
     "overline": "SEO mapa webu",
     "heading": "Mapa webu pro lidi, vyhledávače a AI asistenty.",
-    "lede": "Klíčové zdroje Lurafi a Kevin na jednom místě – včetně souhrnů čitelných pro AI pro AEO a GEO.",
+    "lede": "Klíčové zdroje Mitipi a Kevin na jednom místě – včetně souhrnů čitelných pro AI pro AEO a GEO.",
     "primary": "Hlavní stránky",
     "homepage": "Domovská stránka",
     "configure_buy": "Konfigurace / nákup Kevin",
@@ -558,7 +554,40 @@
     "guide": "Průvodce: Švýcarská simulace AI přítomnosti.",
     "lede": "Švýcarská simulace AI přítomnosti pro váš domov. Když jste pryč, Kevin používá světlo, stín a zvuk, aby váš domov vypadal a zněl obydleně – a zloději šli dál.",
     "ai_discovery": "Soubory pro AI/LLM (strojově čitelné)",
-    "short_points_to_full": "Každý krátký soubor llms.txt odkazuje na odpovídající llms-full.txt s úplným kontextem značky a produktu."
+    "short_points_to_full": "Každý krátký soubor llms.txt odkazuje na odpovídající llms-full.txt s úplným kontextem značky a produktu.",
+    "updated": "Poslední revize",
+    "answer_first": "KEVIN® 3 je švýcarský simulátor přítomnosti (prostředek k odrazení zlodějů) od společnosti Mitipi AG z Fribourgu, určený pro domy, byty, kanceláře a rekreační nemovitosti, které zůstávají prázdné. Přehrává teplé světlo, patentované pohyblivé stíny a více než 70 hodin zvuků domácnosti z 32 GB paměti uvnitř zařízení, takže nemovitost z ulice vypadá a zní jako obydlená. Bez kamery, bez mikrofonu, a funguje i při rušení Wi-Fi. Jednorázový nákup za 579,95 €, bez předplatného.",
+    "offer_heading": "Cena a co je v ceně",
+    "offer_price": "Cena",
+    "offer_terms": "Jednorázový nákup, žádné předplatné, žádné poplatky za monitorování.",
+    "offer_included": "Součástí balení: KEVIN® 3 se šedým předním krytem, napájecí adaptér, aplikace Kevin pro iOS a Android, více než 70 hodin světelných, stínových a zvukových scén, doživotní aktualizace softwaru, tříletá švýcarská záruka, 30denní lhůta na vrácení, doprava zdarma.",
+    "offer_covers": "Volitelné barevné přední kryty v červené, hnědé, modré nebo bílé: 29,95 € za kus.",
+    "spec_heading": "Technické údaje",
+    "spec_storage": "Úložiště v zařízení",
+    "spec_library": "Knihovna simulací",
+    "spec_library_value": "Více než 70 hodin, až čtyři týdny bez opakování",
+    "spec_power": "Typická spotřeba energie",
+    "spec_cable": "Napájecí kabel",
+    "spec_dimensions": "Rozměry",
+    "spec_connectivity": "Připojení",
+    "spec_connectivity_value": "Wi-Fi a Bluetooth, pouze pro nastavení a aktualizace",
+    "spec_privacy": "Kamera / mikrofon",
+    "spec_privacy_value": "Žádné; nic se nezaznamenává, nestreamuje ani nesdílí",
+    "spec_jammer": "Při rušení Wi-Fi",
+    "spec_jammer_value": "Scény se dál přehrávají z místního úložiště",
+    "spec_coverage": "Pokrytí",
+    "spec_coverage_value": "Jedna místnost na jedno zařízení",
+    "spec_voices": "Vestavěné hlasy",
+    "spec_voices_value": "Angličtina, němčina a švýcarská němčina",
+    "spec_app": "Jazyky aplikace",
+    "spec_app_value": "Angličtina, němčina, francouzština a nizozemština",
+    "spec_extra": "Když jste doma",
+    "spec_extra_value": "Bluetooth reproduktor a lampa",
+    "pages_heading": "Stránky podle tématu",
+    "product_page": "Stránka produktu",
+    "faq_heading": "Časté dotazy",
+    "knowledge_heading": "Znalostní soubory (Markdown, pro zpracování AI)",
+    "company_line": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Švýcarsko · obchodní rejstřík CHE-356.372.981"
   },
   "faq": {
     "q1": "Co Kevin vlastně dělá?",
@@ -853,5 +882,11 @@
     "quantity_unavailable": "Snižte počet kusů a zkuste to znovu.",
     "selection_price_note": "Cena za tento výběr. Doprava a nabídky pro celý košík se potvrdí v košíku.",
     "retry_price": "Načíst cenu znovu"
+  },
+  "pages": {
+    "editorial": {
+      "overline": "Kevin",
+      "reviewed_on": "Obsah zkontrolován:"
+    }
   }
 }

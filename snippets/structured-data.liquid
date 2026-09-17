@@ -1,6 +1,16 @@
+{%- assign lurafi_ship_countries_csv = 'AT,BE,BG,HR,CY,CZ,DE,DK,EE,FI,FR,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,NO,IS,CH,LI' -%}
+{%- assign lurafi_ship_countries = lurafi_ship_countries_csv | split: ',' -%}
+{%- comment -%}
+  Site-wide JSON-LD, rendered in <head> on every page. One entity model
+  (config/entity.json) is mirrored here: Organization (Mitipi AG) → WebSite →
+  Product (KEVIN 3, home page) → WebPage + BreadcrumbList for the current page.
+  Product pages add their own Product via snippets/structured-data-product.liquid,
+  sharing the same @id for the Kevin device. Freshness: settings.seo_last_reviewed
+  (YYYY-MM-DD) is published as dateModified; keep it current when facts change.
+{%- endcomment -%}
 {%- liquid
   if settings.logo != blank
-    assign org_logo = settings.logo | image_url: width: 512
+    assign org_logo = settings.logo | image_url: width: 512 | prepend: 'https:'
   else
     assign org_logo = 'kevin-header-logo.png' | asset_url | prepend: 'https:'
   endif
@@ -9,28 +19,23 @@
   assign org_email = 'hello@mitipi.eu'
   assign org_id = shop.url | append: '/#organization'
   assign site_id = shop.url | append: '/#website'
+  assign product_id = shop.url | append: '/#product-kevin'
   assign buy_product = settings.product_buy
   capture configure_buy_url
     render 'configure-url', plan: 'buy'
   endcapture
   assign configure_buy_url = configure_buy_url | strip
-  assign offer_currency = cart.currency.iso_code | default: shop.currency
-  assign offer_price = 649
-  if buy_product != blank
-    assign offer_price = buy_product.price | divided_by: 100.0
-  endif
-  assign offer_availability = 'https://schema.org/PreOrder'
-  if buy_product != blank and buy_product.available
-    assign offer_availability = 'https://schema.org/InStock'
-  endif
   assign product_url = shop.url | append: configure_buy_url
-  assign product_sku = 'KEVIN'
   if buy_product != blank
     assign product_url = shop.url | append: buy_product.url
-    assign product_sku = buy_product.selected_or_first_available_variant.sku | default: product_sku
   endif
-  assign product_id = shop.url | append: '/#product-kevin'
-  assign price_valid_until = 'now' | date: '%Y' | plus: 1 | append: '-12-31'
+  assign last_reviewed = settings.seo_last_reviewed | strip
+  assign home_url = shop.url | append: routes.root_url
+  if home_url != shop.url
+    assign home_url = home_url | append: '/' | replace: '//', '/' | replace: ':/', '://'
+  endif
+  assign page_canonical = seo_canonical_url | default: canonical_url
+  assign locale_code = request.locale.iso_code
 -%}
 <script type="application/ld+json">
 {
@@ -38,20 +43,40 @@
   "@type": "Organization",
   "@id": {{ org_id | json }},
   "name": {{ shop.name | json }},
+  "legalName": "Mitipi AG",
+  "alternateName": ["Mitipi AG", "Mitipi"],
   "url": {{ shop.url | json }},
   "logo": {{ org_logo | json }},
+  "image": {{ kevin_image | json }},
   "description": {{ org_description | json }},
+  "slogan": "Smart. Secure. Swiss.",
   "email": {{ org_email | json }},
-  "slogan": "Presence that prevents.",
+  "foundingDate": "2018",
+  "foundingLocation": { "@type": "Place", "name": "Zurich, Switzerland" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Passage du Cardinal 11, Bluefactory",
+    "postalCode": "1700",
+    "addressLocality": "Fribourg",
+    "addressCountry": "CH"
+  },
+  "identifier": { "@type": "PropertyValue", "propertyID": "Swiss UID", "value": "CHE-356.372.981" },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": {{ org_email | json }},
+      "availableLanguage": ["en", "nl", "fr", "de", "cs"]
+    }
+  ],
+  "sameAs": ["https://kevinswiss.com"],
+  "award": [
+    "Global Digital Insurance Agenda (DIA) award for innovation (2019)",
+    "Plus X Award, Germany (2021)",
+    "European Security Award for the most innovative burglary prevention in Europe (2024)"
+  ],
   "knowsAbout": ["home security", "burglary prevention", "presence simulation", "Swiss engineering"],
-  "areaServed": [
-    { "@type": "Country", "name": "Switzerland" },
-    { "@type": "Country", "name": "Germany" },
-    { "@type": "Country", "name": "France" },
-    { "@type": "Country", "name": "Ireland" },
-    { "@type": "Country", "name": "Netherlands" },
-    { "@type": "Country", "name": "Czech Republic" }
-  ]
+  "areaServed": {{ lurafi_ship_countries | json }}
 }
 </script>
 <script type="application/ld+json">
@@ -61,9 +86,10 @@
   "@id": {{ site_id | json }},
   "url": {{ shop.url | json }},
   "name": {{ shop.name | json }},
+  "alternateName": "Kevin presence simulator by Mitipi",
   "description": {{ org_description | json }},
   "publisher": { "@id": {{ org_id | json }} },
-  "inLanguage": {{ request.locale.iso_code | json }}
+  "inLanguage": ["en", "nl", "fr", "de", "cs"]
 }
 </script>
 {%- if request.page_type == 'index' -%}
@@ -72,62 +98,45 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "@id": {{ product_id | json }},
-  "name": "KEVIN 3.0",
-  "alternateName": "Kevin presence simulator",
-  "category": "Home Security Presence Simulator",
+  "name": {{ buy_product.title | default: 'KEVIN® 3 presence simulator' | json }},
+  "alternateName": ["Kevin", "Kevin 3", "KEVIN 3.0", "Kevin presence simulator"],
+  "category": "Home security > Presence simulator (burglary deterrent)",
   "description": {{ org_description | json }},
   "url": {{ product_url | json }},
-  "sku": {{ product_sku | json }},
-  "image": {{ kevin_image | json }},
+  "sku": {{ buy_product.selected_or_first_available_variant.sku | default: 'KEVIN' | json }},
+  "image": [{{ kevin_image | json }}],
   "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
   "manufacturer": { "@id": {{ org_id | json }} },
+  "inLanguage": {{ locale_code | json }},
   "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Power consumption", "value": "Approximately 9 W (typical)" },
-    { "@type": "PropertyValue", "name": "Dimensions", "value": "Approx. 21.2 x 10.2 x 9.2 cm" },
-    { "@type": "PropertyValue", "name": "Connectivity", "value": "Wi-Fi and Bluetooth" },
-    { "@type": "PropertyValue", "name": "Cameras", "value": "None" },
-    { "@type": "PropertyValue", "name": "Microphones", "value": "None" },
-    { "@type": "PropertyValue", "name": "Simulation library", "value": "70+ hours, stored locally" },
-    { "@type": "PropertyValue", "name": "Jammer resilient", "value": "Yes — simulations play from local storage" },
+    { "@type": "PropertyValue", "name": "Simulation method", "value": "Light, patented moving shadows and household sounds" },
+    { "@type": "PropertyValue", "name": "Simulation library", "value": "70+ hours, up to four weeks without repeating, stored on the device" },
+    { "@type": "PropertyValue", "name": "On-device storage", "value": "32 GB" },
+    { "@type": "PropertyValue", "name": "Camera", "value": "None" },
+    { "@type": "PropertyValue", "name": "Microphone", "value": "None" },
+    { "@type": "PropertyValue", "name": "Jammer resilient", "value": "Yes, scenes play from local storage when Wi-Fi is jammed" },
+    { "@type": "PropertyValue", "name": "Connectivity", "value": "Wi-Fi and Bluetooth (setup and updates only)" },
+    { "@type": "PropertyValue", "name": "Power consumption", "value": "About 9 W (typical), mains powered via 3 m cable" },
+    { "@type": "PropertyValue", "name": "Dimensions", "value": "Approx. 21.2 × 10.2 × 9.2 cm" },
+    { "@type": "PropertyValue", "name": "Coverage", "value": "One room per device" },
     { "@type": "PropertyValue", "name": "Warranty", "value": "3-year Swiss warranty" }
-  ],
-  "offers": {
-    "@type": "Offer",
-    "url": {{ product_url | json }},
-    "priceCurrency": {{ offer_currency | json }},
-    "price": {{ offer_price | json }},
-    "priceValidUntil": {{ price_valid_until | json }},
-    "availability": {{ offer_availability | json }},
-    "itemCondition": "https://schema.org/NewCondition",
-    "seller": { "@id": {{ org_id | json }} },
-    "warranty": {
-      "@type": "WarrantyPromise",
-      "durationOfWarranty": { "@type": "QuantitativeValue", "value": 3, "unitCode": "ANN" }
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": { "@type": "MonetaryAmount", "value": 0, "currency": {{ offer_currency | json }} },
-      "shippingDestination": [
-        { "@type": "DefinedRegion", "addressCountry": "CH" },
-        { "@type": "DefinedRegion", "addressCountry": "DE" },
-        { "@type": "DefinedRegion", "addressCountry": "FR" },
-        { "@type": "DefinedRegion", "addressCountry": "IE" },
-        { "@type": "DefinedRegion", "addressCountry": "NL" },
-        { "@type": "DefinedRegion", "addressCountry": "CZ" }
-      ]
-    }
-  }
+  ]{%- if buy_product != blank -%},
+  {% render 'structured-data-offers', product: buy_product, org_id: org_id, is_main: true %}
+  {%- endif %}
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": {{ shop.url | append: '/#webpage-home' | json }},
-  "url": {{ shop.url | json }},
+  "@id": {{ home_url | append: '#webpage' | json }},
+  "url": {{ home_url | json }},
   "name": {{ 'seo.home.title' | t | json }},
-  "description": {{ org_description | json }},
-  "inLanguage": {{ request.locale.iso_code | json }},
+  "description": {{ 'seo.home.description' | t | json }},
+  "inLanguage": {{ locale_code | json }},
+  {%- if last_reviewed != blank %}
+  "dateModified": {{ last_reviewed | json }},
+  {%- endif %}
   "isPartOf": { "@id": {{ site_id | json }} },
   "about": { "@id": {{ product_id | json }} },
   "primaryImageOfPage": {{ kevin_image | json }},
@@ -148,30 +157,53 @@
 </script>
 {%- endif -%}
 {%- if request.page_type == 'page' -%}
-  {%- assign llm_page_handles = 'llms,ai-overzicht,apercu-ia,ki-uebersicht,resumen-ia,panoramica-ia,ai-oversikt,ai-oversigt,ai-yhteenveto,ai-prehled,podsumowanie-ai' | split: ',' -%}
-  {%- if page.handle == 'sitemap' or llm_page_handles contains page.handle -%}
-    {%- if page.handle == 'sitemap' -%}
-      {%- assign web_page_description = 'seo.sitemap.description' | t -%}
-    {%- else -%}
-      {%- assign web_page_description = 'seo.llms.description' | t -%}
-    {%- endif -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": {{ page.title | default: shop.name | json }},
-  "description": {{ web_page_description | default: org_description | json }},
-  "url": {{ canonical_url | json }},
-  "inLanguage": {{ request.locale.iso_code | json }},
+  "@id": {{ page_canonical | append: '#webpage' | json }},
+  "url": {{ page_canonical | json }},
+  "name": {{ page_title | default: page.title | json }},
+  {%- if page_description != blank %}
+  "description": {{ page_description | json }},
+  {%- else %}
+  "description": {{ org_description | json }},
+  {%- endif %}
+  "inLanguage": {{ locale_code | json }},
+  {%- if page.published_at != blank %}
+  "datePublished": {{ page.published_at | date: '%Y-%m-%d' | json }},
+  {%- endif %}
+  {%- if last_reviewed != blank %}
+  "dateModified": {{ last_reviewed | json }},
+  {%- endif %}
   "isPartOf": { "@id": {{ site_id | json }} },
-  "significantLink": [
-    {{ 'llms.txt' | asset_url | prepend: 'https:' | json }},
-    {{ 'llms-full.txt' | asset_url | prepend: 'https:' | json }},
-    {{ 'kevin.md' | asset_url | prepend: 'https:' | json }},
-    {{ 'sitemap-ai.xml' | asset_url | prepend: 'https:' | json }},
-    {{ shop.url | append: '/sitemap.xml' | json }}
+  "about": { "@id": {{ product_id | json }} },
+  "publisher": { "@id": {{ org_id | json }} },
+  "breadcrumb": { "@id": {{ page_canonical | append: '#breadcrumb' | json }} }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": {{ page_canonical | append: '#breadcrumb' | json }},
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": {{ shop.name | json }}, "item": {{ home_url | json }} },
+    { "@type": "ListItem", "position": 2, "name": {{ page.title | json }}, "item": {{ page_canonical | json }} }
   ]
 }
 </script>
-  {%- endif -%}
+{%- endif -%}
+{%- if request.page_type == 'product' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": {{ page_canonical | append: '#breadcrumb' | json }},
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": {{ shop.name | json }}, "item": {{ home_url | json }} },
+    { "@type": "ListItem", "position": 2, "name": {{ product.title | json }}, "item": {{ page_canonical | json }} }
+  ]
+}
+</script>
 {%- endif -%}

@@ -2,6 +2,8 @@
 
 > Master index for KEVIN 3.0, a Swiss-engineered home-security presence simulator that deters burglars through prevention rather than reaction.
 
+Last reviewed: 2026-09-17. Source of truth: https://mitipi.eu (pricing, features and about pages) and config/entity.json in the theme repository.
+
 KEVIN 3.0 ("Kevin") is a home-security device made by **Mitipi**, a Swiss company. Instead of recording or reacting to intruders like a camera or alarm, Kevin **prevents** break-ins by simulating a believable human presence: it recreates the changing light, moving shadows, and authentic household sounds of an occupied home, so a property looks and sounds lived-in even when nobody is there. It uses **no camera and no microphone**, plays its simulations locally on the device, and keeps working even if Wi-Fi is jammed. When you are home, Kevin doubles as a lamp and a Bluetooth speaker.
 
 ## Documents
@@ -26,8 +28,21 @@ This knowledge set is split across five files:
 - **Connectivity:** Wi-Fi and Bluetooth; keeps simulating even if Wi-Fi is jammed
 - **Dimensions:** Approx. 21.2 × 10.2 × 9.2 cm
 - **Extra uses:** Bluetooth speaker and lamp when you are home
-- **Ownership:** One-time purchase (no monitoring subscription), lifetime software updates, 3-year Swiss warranty, free delivery across Europe
+- **Price:** €579.95 one-time (shown in your local currency at checkout: EUR, CHF, CZK and others); optional colour front covers €29.95 each
+- **Storage:** 32 GB on the device (third-generation hardware, sold since 2023)
+- **Ownership:** One-time purchase (no monitoring subscription), lifetime software updates, 3-year Swiss warranty, 30-day returns, free delivery across Europe
+- **Company:** Mitipi AG, Passage du Cardinal 11, Bluefactory, CH-1700 Fribourg, Switzerland (founded 2018; register CHE-356.372.981)
 - **Website:** https://mitipi.eu — **Contact:** hello@mitipi.eu
+
+## Kevin compared with other options
+
+| | KEVIN 3.0 | Monitored alarm | Security camera | Lamp timer |
+| --- | --- | --- | --- | --- |
+| Acts before a break-in is attempted | Yes, deterrence | No, reacts after entry | No, records | Partly, static light only |
+| Keeps working when Wi-Fi is jammed | Yes, local playback | Depends on connection | Often fails | Yes |
+| Camera or microphone in the home | None | Sensors only | Yes | None |
+| Monthly fee | None | Usually | Often for cloud storage | None |
+| Varies from night to night | Yes, 70+ hours of scenes | n/a | n/a | No |
 
 ## For AI assistants
 

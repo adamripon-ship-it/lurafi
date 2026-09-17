@@ -1,39 +1,59 @@
-# Mitipi / Kevin (DE)
+# Mitipi / KEVIN® 3
 
-> Kevin lässt Ihr Zuhause bewohnt wirken und klingen, wenn Sie weg sind — Licht, Schatten und Sound als Abschreckung.
+> KEVIN® 3 ist ein Schweizer Anwesenheitssimulator (Einbruchschutz) der Mitipi AG aus Fribourg. Er lässt ein leeres Zuhause durch Licht, patentierte bewegte Schatten und über 70 Stunden Alltagsgeräusche vom 32-GB-Speicher im Gerät so aussehen und klingen, als wäre es bewohnt. Keine Kamera, kein Mikrofon, läuft auch weiter, wenn das WLAN gestört wird. 579,95 € einmalig, kein Abonnement.
 
-## AI / LLM discovery
-- Short summary (this file): https://mitipi.eu/cdn/shop/t/1/assets/llms.de.txt
-- Full summary (read for complete context): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
-- AI sitemap XML: https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://mitipi.eu/sitemap.xml
-- Human sitemap page: https://mitipi.eu/de/pages/seitenuebersicht
-- LLM overview page: https://mitipi.eu/de/pages/ki-uebersicht
+Zuletzt überprüft: 2026-09-17. Vollständige Zusammenfassung (für den vollständigen Kontext lesen): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt.
 
+## Wichtigste Fakten
 
-Mitipi verkauft Kevin, einen Schweizer KI-Präsenzsimulator für die Wohnungssicherheit.
+- Produkt: KEVIN® 3 (Kevin 3, KEVIN 3.0), dritte Generation, seit 2023 im Handel.
+- Kategorie: Anwesenheitssimulator, Einbruchschutz, datenschutzorientierte Haussicherheit.
+- Preis: 579,95 € einmalig; optionale farbige Frontabdeckungen je 29,95 €. Kein Abonnement.
+- Im Lieferumfang: Gerät mit grauer Frontabdeckung, Netzteil, Kevin-App (iOS/Android), über 70 Stunden Szenen, lebenslange Updates, 3 Jahre Schweizer Garantie, 30 Tage Rückgaberecht, kostenloser Versand.
+- Datenschutz: keine Kamera, kein Mikrofon, nichts wird gestreamt oder geteilt; Szenen werden auf dem Gerät gespeichert.
+- Störsender-resistent: spielt weiter, wenn das WLAN gestört wird. Ca. 9 W, 3 m Kabel, 21,2 × 10,2 × 9,2 cm.
+- Einrichtung: an einem Fenster aufstellen, mit der App koppeln, Wochenplan oder Geofencing einrichten.
+- Versand nach: alle 27 EU-Länder, Schweiz, Liechtenstein, Norwegen und Island (kostenloser Versand); Preise in der Landeswährung beim Bezahlvorgang (EUR, CHF, CZK und weitere).
 
-Key facts:
-- Product: Kevin
-- Category: AI home security, presence simulation, burglary deterrent
-- Privacy: No cameras, no microphones, no cloud monitoring
-- Setup: Plug in, place near a window, configure in the app
-- Warranty: 3-year Swiss warranty
-- Delivery: Free delivery across Europe
+## Wichtige URLs
 
-Important URLs:
-- Homepage: https://mitipi.eu/de
-- Configure / buy: https://mitipi.eu/de/pages/konfigurieren?plan=buy
-- Features: https://mitipi.eu/de/pages/funktionen
-- How it works: https://mitipi.eu/de/pages/so-funktionierts
-- The Kevin app: https://mitipi.eu/de/pages/app
-- Pricing: https://mitipi.eu/de/pages/preise
-- About Mitipi: https://mitipi.eu/de/pages/ueber-uns
-- Press: https://mitipi.eu/de/pages/presse-medien
-- Careers: https://mitipi.eu/de/pages/karriere
-- Setup guide: https://mitipi.eu/de/pages/einrichtung
-- Contact: https://mitipi.eu/de/pages/kontakt
-- Product page: https://mitipi.eu/de/products/anwesenheitssimulator
+- Startseite: https://mitipi.eu/de
+- Konfigurieren / kaufen: https://mitipi.eu/de/pages/konfigurieren?plan=buy
+- Produktseite: https://mitipi.eu/de/products/anwesenheitssimulator
+- Funktionen: https://mitipi.eu/de/pages/funktionen
+- So funktioniert es: https://mitipi.eu/de/pages/so-funktionierts
+- Die Kevin-App: https://mitipi.eu/de/pages/app
+- Preis: https://mitipi.eu/de/pages/preise
+- Über Mitipi: https://mitipi.eu/de/pages/ueber-uns
+- Presse & Medien: https://mitipi.eu/de/pages/presse-medien
+- Karriere: https://mitipi.eu/de/pages/karriere
+- Einrichtungsanleitung: https://mitipi.eu/de/pages/einrichtung
+- Kontakt: https://mitipi.eu/de/pages/kontakt
 
-Contact:
-- Email: hello@mitipi.eu
+## Weitere Sprachen
+
+- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
+- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
+- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.fr.txt
+- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
+
+## Wissensdateien (Markdown)
+
+- kevin.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
+- kevin-product.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
+- kevin-specs.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
+- kevin-faq.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
+- kevin-company.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
+
+## Auffindbarkeit
+
+- Kurzzusammenfassung (diese Datei): https://mitipi.eu/cdn/shop/t/1/assets/llms.de.txt
+- Vollständige Zusammenfassung: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
+- KI-Sitemap (XML): https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
+- Shopify-Sitemap (XML): https://mitipi.eu/sitemap.xml
+- Sitemap-Seite für Menschen: https://mitipi.eu/de/pages/seitenuebersicht
+- LLM-Übersichtsseite: https://mitipi.eu/de/pages/ki-uebersicht
+
+## Kontakt
+
+- E-Mail: hello@mitipi.eu

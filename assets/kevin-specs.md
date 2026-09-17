@@ -2,6 +2,8 @@
 
 > Full technical specifications for KEVIN 3.0 by Mitipi: power, dimensions, connectivity, simulation library, and privacy design.
 
+Last reviewed: 2026-09-17. Source of truth: https://mitipi.eu (pricing, features and about pages) and config/entity.json in the theme repository.
+
 ## Specifications table
 
 | Specification | Detail |
@@ -9,7 +11,11 @@
 | Product | KEVIN 3.0 (home-security presence simulator / burglar deterrent) |
 | Manufacturer | Mitipi (Swiss) |
 | Simulation method | Patented light + shadow effects and authentic pre-recorded household sound |
-| Simulation library | 70+ hours of alternating, non-repeating simulations, stored locally |
+| Simulation library | 70+ hours of alternating, non-repeating simulations (up to four weeks without repeating), stored locally |
+| On-device storage | 32 GB |
+| Built-in voices | English, German, Swiss German |
+| App languages | English, German, French, Dutch |
+| Coverage | One room per device |
 | Camera | None |
 | Microphone | None |
 | Data sharing | No listening; no third-party data sharing; simulations stored and played locally |

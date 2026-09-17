@@ -416,7 +416,7 @@
       if (!isValidVariantId(variant.id)) {
         if (els.error) {
           els.error.hidden = false;
-          els.error.textContent = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.errorCheckout) || 'Online checkout is almost ready. Email hello@lurafi.ai to order, or try again soon.';
+          els.error.textContent = (window.themeTranslations && window.themeTranslations.configure && window.themeTranslations.configure.errorCheckout) || 'Online checkout is almost ready. Email hello@mitipi.eu to order, or try again soon.';
         }
         els.ctas.forEach(function (button) { button.disabled = false; });
         resetCtaLabels();

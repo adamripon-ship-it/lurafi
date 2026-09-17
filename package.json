@@ -53,7 +53,10 @@
     "cms:page-copy-i18n": "node scripts/sync-page-copy-i18n.mjs",
     "cms:product-copy": "node scripts/sync-product-copy.mjs",
     "cms:policies:i18n": "node scripts/sync-policy-translations.mjs",
-    "qa:localization": "node scripts/qa-localization.mjs"
+    "qa:localization": "node scripts/qa-localization.mjs",
+    "test:unit": "node --test \"tests/unit/**/*.test.mjs\"",
+    "test": "npm run test:unit",
+    "url:policy": "node scripts/apply-url-policy.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

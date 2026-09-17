@@ -1,0 +1,47 @@
+{
+  "$comment": "URL naming policy for mitipi.eu (see docs/SEO-GEO.md). Rules are enforced by tests/unit/geo-assets.test.mjs; target handles are applied to Shopify with scripts/apply-url-policy.mjs (dry-run by default). Current handles live in config/languages.json; this file only states the target state and the rationale.",
+  "rules": {
+    "charset": "lowercase ASCII a-z, 0-9 and single hyphens; transliterate accents (é→e, ü→ue in German, ě→e)",
+    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+    "maxWords": 5,
+    "structure": "https://mitipi.eu[/locale-prefix]/{pages|products}/{handle} — one canonical URL per language, locale prefix from Shopify Markets (en = no prefix)",
+    "productHandle": "entity token first, then the category term in that language: kevin-{category}",
+    "pageHandle": "the page topic in that language (its primary query term), no brand prefix, no stopwords",
+    "stopwords": "drop articles and function words unless the phrase is unnatural without them (fr: comment-ca-marche keeps 'ca')",
+    "stability": "never rename without a 301 redirect from the old path and from every legacy handle; never rename twice in a year",
+    "tokens": "one token = one word a person would type; brand tokens: kevin, mitipi"
+  },
+  "entityToken": "kevin",
+  "categoryTokens": {
+    "en": "presence-simulator",
+    "nl": "aanwezigheidssimulator",
+    "fr": "simulateur-de-presence",
+    "de": "anwesenheitssimulator",
+    "cs": "simulator-pritomnosti"
+  },
+  "products": {
+    "kevin-plus": {
+      "$comment": "Current EN handle 'kevin-plus' is a legacy name from the retired Kevin+ subscription; the device sold is KEVIN 3.",
+      "targets": {
+        "en": "kevin-presence-simulator",
+        "nl": "kevin-aanwezigheidssimulator",
+        "fr": "kevin-simulateur-de-presence",
+        "de": "kevin-anwesenheitssimulator",
+        "cs": "kevin-simulator-pritomnosti"
+      }
+    },
+    "kevin-front-cover": {
+      "$comment": "Secondary product (add-on covers); EN handle already carries entity + category tokens.",
+      "targets": {
+        "en": "kevin-front-cover",
+        "nl": "kevin-frontcover",
+        "fr": "kevin-facade-avant",
+        "de": "kevin-frontcover",
+        "cs": "kevin-predni-kryt"
+      }
+    }
+  },
+  "pages": {
+    "$comment": "Page handles already follow the policy (language-native topic tokens, ASCII, hyphenated). Kept as-is on purpose: they were renamed once already (see languages.json legacyHandles) and a second rename would only churn the index."
+  }
+}

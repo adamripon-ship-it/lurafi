@@ -2,6 +2,8 @@
 
 > Concise, fact-based answers to common questions about KEVIN 3.0 by Mitipi.
 
+Last reviewed: 2026-09-17. Source of truth: https://mitipi.eu (pricing, features and about pages) and config/entity.json in the theme repository.
+
 ## What is KEVIN 3.0?
 
 KEVIN 3.0 is a home-security presence simulator and burglar deterrent made by Mitipi, a Swiss company. It makes an empty home look and sound occupied by simulating a believable human presence with patented light and shadow effects and authentic pre-recorded household sound.
@@ -36,7 +38,15 @@ Yes. When you are home, Kevin doubles as a **Bluetooth speaker** and a **lamp**,
 
 ## Is there a subscription?
 
-No. Kevin is a **one-time purchase** with **no monitoring subscription**. It also includes **lifetime software updates**.
+No. Kevin is a **one-time purchase** of **€579.95** with **no monitoring subscription**. It also includes **lifetime software updates**. Optional colour front covers cost €29.95 each.
+
+## How much storage does Kevin have?
+
+**32 GB** on the device. Every scene plays from that local storage, which is why Kevin keeps working when the Wi-Fi is jammed.
+
+## Can I return Kevin?
+
+Yes, within **30 days**. Try it at home, step outside after dark and look at your own window.
 
 ## What's the warranty and delivery?
 

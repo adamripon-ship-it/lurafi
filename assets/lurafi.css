@@ -3744,6 +3744,10 @@ body.cart-drawer-open { overflow: hidden; }
 .editorial-page {
   padding-top: clamp(32px, 6vw, 72px);
 }
+.editorial-page__reviewed {
+  font-size: 13px;
+  margin-top: 12px;
+}
 .editorial-page--black {
   background: #000;
   color: #fff;

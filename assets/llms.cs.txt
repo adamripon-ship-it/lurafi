@@ -1,39 +1,59 @@
-# Mitipi / Kevin (CS)
+# Mitipi / KEVIN® 3
 
-> Kevin helps make a home look and sound lived-in when you are away using light, shadow, and sound.
+> KEVIN® 3 je švýcarský simulátor přítomnosti (prostředek k odrazení zlodějů) od společnosti Mitipi AG z Fribourgu. Díky světlu, patentovaným pohyblivým stínům a více než 70 hodinám zvuků domácnosti uložených na 32 GB paměti uvnitř zařízení vytváří dojem, že v prázdném domě někdo je. Bez kamery, bez mikrofonu, funguje i při rušení Wi-Fi. 579,95 € jednorázově, bez předplatného.
 
-## AI / LLM discovery
-- Short summary (this file): https://mitipi.eu/cdn/shop/t/1/assets/llms.cs.txt
-- Full summary (read for complete context): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
-- AI sitemap XML: https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
-- Shopify sitemap XML: https://mitipi.eu/sitemap.xml
-- Human sitemap page: https://mitipi.eu/cs/pages/prehled-stranek
-- LLM overview page: https://mitipi.eu/cs/pages/ai-prehled
+Poslední revize: 2026-09-17. Úplné shrnutí (přečtěte si pro úplný kontext): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt.
 
+## Klíčové údaje
 
-Mitipi sells Kevin — Swiss AI presence simulation (Čeština storefront).
+- Produkt: KEVIN® 3 (Kevin 3, KEVIN 3.0), třetí generace, v prodeji od roku 2023.
+- Kategorie: simulátor přítomnosti, prostředek k odrazení zlodějů, domácí zabezpečení s důrazem na soukromí.
+- Cena: 579,95 € jednorázově; volitelné barevné přední kryty 29,95 € za kus. Žádné předplatné.
+- Součástí balení: zařízení se šedým krytem, adaptér, aplikace Kevin (iOS/Android), více než 70 hodin scén, doživotní aktualizace, tříletá švýcarská záruka, 30denní lhůta na vrácení, doprava zdarma.
+- Ochrana soukromí: žádná kamera, žádný mikrofon, nic se nestreamuje ani nesdílí; scény jsou uloženy v zařízení.
+- Odolný proti rušičkám: přehrává dál i při rušení Wi-Fi. Příkon cca 9 W, kabel 3 m, rozměry 21,2 × 10,2 × 9,2 cm.
+- Nastavení: umístěte k oknu, spárujte s aplikací, nastavte týdenní plán nebo geofencing.
+- Doprava do: všech 27 zemí EU, Švýcarska, Lichtenštejnska, Norska a Islandu (doprava zdarma); ceny v místní měně při platbě (EUR, CHF, CZK a další).
 
-Key facts:
-- Product: Kevin
-- Category: AI home security, presence simulation, burglary deterrent
-- Privacy: No cameras, no microphones, no cloud monitoring
-- Setup: Plug in, place near a window, configure in the app
-- Warranty: 3-year Swiss warranty
-- Delivery: Free delivery across Europe
+## Důležité odkazy
 
-Important URLs:
-- Homepage: https://mitipi.eu/cs
-- Configure / buy: https://mitipi.eu/cs/pages/konfigurace?plan=buy
-- Features: https://mitipi.eu/cs/pages/funkce
-- How it works: https://mitipi.eu/cs/pages/jak-to-funguje
-- The Kevin app: https://mitipi.eu/cs/pages/mobilni-aplikace
-- Pricing: https://mitipi.eu/cs/pages/ceny
-- About Mitipi: https://mitipi.eu/cs/pages/o-nas
-- Press: https://mitipi.eu/cs/pages/tisk
-- Careers: https://mitipi.eu/cs/pages/kariera
-- Setup guide: https://mitipi.eu/cs/pages/navod
-- Contact: https://mitipi.eu/cs/pages/kontaktujte-nas
-- Product page: https://mitipi.eu/cs/products/simulator-pritomnosti
+- Domovská stránka: https://mitipi.eu/cs
+- Konfigurace / nákup: https://mitipi.eu/cs/pages/konfigurace?plan=buy
+- Stránka produktu: https://mitipi.eu/cs/products/simulator-pritomnosti
+- Funkce: https://mitipi.eu/cs/pages/funkce
+- Jak to funguje: https://mitipi.eu/cs/pages/jak-to-funguje
+- Aplikace Kevin: https://mitipi.eu/cs/pages/mobilni-aplikace
+- Cena: https://mitipi.eu/cs/pages/ceny
+- O Mitipi: https://mitipi.eu/cs/pages/o-nas
+- Tisk a média: https://mitipi.eu/cs/pages/tisk
+- Kariéra: https://mitipi.eu/cs/pages/kariera
+- Návod k instalaci: https://mitipi.eu/cs/pages/navod
+- Kontakt: https://mitipi.eu/cs/pages/kontaktujte-nas
 
-Contact:
-- Email: hello@mitipi.eu
+## Další jazyky
+
+- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
+- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
+- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.fr.txt
+- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
+
+## Znalostní soubory (Markdown)
+
+- kevin.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
+- kevin-product.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
+- kevin-specs.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
+- kevin-faq.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
+- kevin-company.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
+
+## Soubory pro objevování
+
+- Krátké shrnutí (tento soubor): https://mitipi.eu/cdn/shop/t/1/assets/llms.cs.txt
+- Úplné shrnutí: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
+- AI sitemap (XML): https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
+- Sitemap Shopify (XML): https://mitipi.eu/sitemap.xml
+- Stránka s mapou webu pro uživatele: https://mitipi.eu/cs/pages/prehled-stranek
+- Stránka s přehledem pro LLM: https://mitipi.eu/cs/pages/ai-prehled
+
+## Kontakt
+
+- E-mail: hello@mitipi.eu

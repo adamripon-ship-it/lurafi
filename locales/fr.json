@@ -392,11 +392,7 @@
       "trust_3": "Résiste aux brouilleurs",
       "deploy_cache_bust": "2026-08-31T15:40:56.383Z",
       "press_label": "Vu dans",
-      "press_aria": "Couverture presse",
-      "away_body": "Lumière, ombres et sons varient automatiquement — jamais deux soirées identiques.",
-      "privacy_body": "Les simulations tournent sur l’appareil. Rien n’est diffusé ni partagé.",
-      "checkout_title": "Livraison gratuite",
-      "checkout_body": "Dans toute l’UE, en Suisse, en Norvège et en Islande."
+      "press_aria": "Couverture presse"
     },
     "problem": {
       "overline": "Pourquoi une maison est choisie",
@@ -519,7 +515,7 @@
   "sitemap": {
     "overline": "Plan du site SEO",
     "heading": "Plan du site pour les visiteurs, les moteurs de recherche et les assistants IA.",
-    "lede": "Ressources clés Lurafi et Kevin en un seul endroit, y compris des résumés lisibles par l'IA pour la découverte AEO et GEO.",
+    "lede": "Ressources clés Mitipi et Kevin en un seul endroit, y compris des résumés lisibles par l'IA pour la découverte AEO et GEO.",
     "primary": "Pages principales",
     "homepage": "Page d'accueil",
     "configure_buy": "Configurer / acheter Kevin",
@@ -558,7 +554,40 @@
     "guide": "Guide : Simulation de présence IA conçue en Suisse.",
     "lede": "Simulation de présence IA suisse pour votre maison. Quand vous partez, Kevin utilise la lumière, l'ombre et le son pour que votre maison paraisse et sonne habitée—et les cambrioleurs passent leur chemin.",
     "ai_discovery": "Fichiers IA / LLM lisibles par machine",
-    "short_points_to_full": "Chaque fichier llms.txt court renvoie au llms-full.txt correspondant pour le contexte complet de la marque et du produit."
+    "short_points_to_full": "Chaque fichier llms.txt court renvoie au llms-full.txt correspondant pour le contexte complet de la marque et du produit.",
+    "updated": "Dernière révision",
+    "answer_first": "KEVIN® 3 est un simulateur de présence suisse (dispositif anti-cambriolage) fabriqué par Mitipi AG à Fribourg, pour les maisons, appartements, bureaux et résidences de vacances qui restent inoccupés. Il diffuse une lumière chaleureuse, des ombres en mouvement brevetées et plus de 70 heures de bruits domestiques stockés sur une mémoire interne de 32 Go, afin que le logement paraisse occupé depuis la rue. Sans caméra ni microphone, il continue de fonctionner même lorsque le Wi-Fi est brouillé. Achat unique à 579,95 €, sans abonnement.",
+    "offer_heading": "Prix et contenu inclus",
+    "offer_price": "Prix",
+    "offer_terms": "Achat unique, sans abonnement ni frais de surveillance.",
+    "offer_included": "Inclus : KEVIN® 3 avec cache avant gris, adaptateur secteur, application Kevin pour iOS et Android, plus de 70 heures de scènes de lumière, d’ombres et de sons, mises à jour logicielles à vie, garantie suisse de 3 ans, retour sous 30 jours, livraison gratuite.",
+    "offer_covers": "Caches avant colorés en option (rouge, marron, bleu ou blanc) : 29,95 € pièce.",
+    "spec_heading": "Caractéristiques techniques",
+    "spec_storage": "Stockage sur l’appareil",
+    "spec_library": "Bibliothèque de simulation",
+    "spec_library_value": "Plus de 70 heures, jusqu’à quatre semaines sans répétition",
+    "spec_power": "Consommation électrique typique",
+    "spec_cable": "Câble d’alimentation",
+    "spec_dimensions": "Dimensions",
+    "spec_connectivity": "Connectivité",
+    "spec_connectivity_value": "Wi-Fi et Bluetooth, utilisés uniquement pour la configuration et les mises à jour",
+    "spec_privacy": "Caméra / microphone",
+    "spec_privacy_value": "Aucun ; rien n’est enregistré, diffusé ni partagé",
+    "spec_jammer": "Lorsque le Wi-Fi est brouillé",
+    "spec_jammer_value": "Les scènes continuent d’être lues depuis la mémoire locale",
+    "spec_coverage": "Couverture",
+    "spec_coverage_value": "Une pièce par appareil",
+    "spec_voices": "Voix intégrées",
+    "spec_voices_value": "Anglais, allemand et suisse allemand",
+    "spec_app": "Langues de l’application",
+    "spec_app_value": "Anglais, allemand, français et néerlandais",
+    "spec_extra": "Quand vous êtes chez vous",
+    "spec_extra_value": "Enceinte Bluetooth et lampe",
+    "pages_heading": "Pages par thème",
+    "product_page": "Page produit",
+    "faq_heading": "Questions fréquentes",
+    "knowledge_heading": "Fichiers de connaissances (Markdown, pour l’ingestion par l’IA)",
+    "company_line": "Mitipi AG · Passage du Cardinal 11 · Bluefactory · CH-1700 Fribourg · Suisse · registre du commerce CHE-356.372.981"
   },
   "faq": {
     "q1": "Que fait Kevin exactement ?",
@@ -853,5 +882,11 @@
     "quantity_unavailable": "Réduisez la quantité et réessayez.",
     "selection_price_note": "Prix de cette sélection. La livraison et les offres sur le panier complet sont confirmées dans votre panier.",
     "retry_price": "Actualiser le prix"
+  },
+  "pages": {
+    "editorial": {
+      "overline": "Kevin",
+      "reviewed_on": "Contenu vérifié :"
+    }
   }
 }

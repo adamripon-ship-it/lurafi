@@ -6,6 +6,8 @@
 import { test, expect } from '@playwright/test';
 
 const BASE = (process.env.LURAFI_URL || 'https://mitipi.eu').replace(/\/$/, '');
+/** The buy product's EN handle (theme setting product_buy, mirrored in config/entity.json). */
+const PRODUCT_HANDLE = process.env.LURAFI_PRODUCT_HANDLE || 'kevin-plus';
 /** Shopify hosted checkout, Shop Pay hop, or cart permalink handoff */
 const CHECKOUT = /\/checkouts\/|shop\.app\/checkout/;
 const CART_CHECKOUT = /\/cart\/\d+:\d+(\?checkout|$)/;
@@ -52,7 +54,7 @@ test.describe('Critical purchase path', () => {
   // SECONDARY flow: product detail -> add to cart -> checkout
   test('product detail -> add to cart -> checkout', async ({ page }) => {
     test.setTimeout(120000);
-    await page.goto(`${BASE}/products/kevin`, { waitUntil: 'domcontentloaded' });
+    await page.goto(`${BASE}/products/${PRODUCT_HANDLE}`, { waitUntil: 'domcontentloaded' });
     await expect(page.locator('#ProductForm')).toBeVisible();
 
     const variant = page.locator('[data-variant-select]');
