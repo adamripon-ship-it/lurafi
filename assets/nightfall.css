@@ -1,6 +1,6 @@
 /* ============================================================
-   NIGHTFALL — homepage dark theme, scoped remap layer.
-   Loaded only on the index page (theme.liquid) and every rule is
+   NIGHTFALL — dark stage for the home page and the cart page, scoped remap layer.
+   Loaded only on those two templates (theme.liquid) and every rule is
    prefixed body.nightfall, so no other template can inherit it.
    Strategy: redefine the --apple-* tokens inside the scope so the
    existing light system flips itself; explicit overrides only for
@@ -1122,4 +1122,52 @@ body.nightfall .nf-audience__story {
   color: rgba(255, 255, 255, 0.82);
   border-top: 1px solid var(--nf-border);
   padding-top: clamp(22px, 4vh, 34px);
+}
+
+/* ============================================================
+   CART PAGE — the buy funnel stays on the dark stage (home → configure → cart).
+   The token flips already handle text, borders and muted copy; the rules
+   below cover the hardcoded light values in the cart styles and the brand
+   blue, which is only ~4.3:1 on the stage and too dim for small text.
+   ============================================================ */
+body.nightfall .cart-page__delivery-card {
+  background: var(--nf-panel);
+  border-color: var(--nf-border);
+}
+
+/* Stepper: the configure page's dark recipe — filled circles read as tap targets */
+body.nightfall .cart-qty {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+body.nightfall .cart-qty__btn {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+@media (hover: hover) {
+  body.nightfall .cart-qty__btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.16);
+  }
+}
+
+body.nightfall .cart-line__plan,
+body.nightfall .cart-line__title:hover,
+body.nightfall .cart-line__remove:hover {
+  color: var(--apple-blue-dark);
+}
+
+body.nightfall .btn-apple-secondary {
+  color: var(--apple-blue-dark);
+  border-color: var(--apple-blue-dark);
+}
+
+body.nightfall .btn-apple-secondary:hover {
+  background: var(--apple-blue);
+  color: #fff;
+}
+
+/* Sticky checkout bar: dark glass, the configure-page recipe */
+body.nightfall .cart-sticky {
+  background: rgba(7, 8, 12, 0.88);
+  border-top-color: var(--nf-border);
 }

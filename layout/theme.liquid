@@ -19,6 +19,18 @@
         assign show_configure = true
       endif
 
+      comment
+        Nightfall: the dark stage shared by the home page and the cart page (assets/nightfall.css),
+        so the buy funnel (home, configure, cart) never flashes back to the light theme.
+      endcomment
+      assign nightfall_theme = false
+      if request.page_type == 'index' and show_configure == false
+        assign nightfall_theme = true
+      endif
+      if request.page_type == 'cart'
+        assign nightfall_theme = true
+      endif
+
       assign seo_canonical_url = canonical_url
       if request.query_string contains 'view=configure'
         capture configure_canonical_url
@@ -71,7 +83,7 @@
     {% endif %}
     {{ 'hero.css' | asset_url | stylesheet_tag }}
     {{ 'lp-layout.css' | asset_url | stylesheet_tag }}
-    {%- if request.page_type == 'index' and show_configure == false -%}
+    {%- if nightfall_theme -%}
       {{ 'nightfall.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
     <script>
@@ -122,12 +134,15 @@
     {%- if request.page_type == 'product' and show_configure == false -%}
       <script src="{{ 'product-form.js' | asset_url }}" defer></script>
     {%- endif -%}
+    {%- if request.page_type == 'cart' -%}
+      <script src="{{ 'cart-page.js' | asset_url }}" defer></script>
+    {%- endif -%}
     {%- if show_configure -%}
       <script src="{{ 'configure-v2.js' | asset_url }}" defer></script>
     {%- endif -%}
   </head>
 
-  <body class="template-{{ request.page_type | handle }}{% if show_configure %} template-configure{% if template.name == 'index' %} template-index-configure{% endif %}{% endif %}{% if request.page_type == 'index' and show_configure == false %} nightfall{% endif %}">
+  <body class="template-{{ request.page_type | handle }}{% if show_configure %} template-configure{% if template.name == 'index' %} template-index-configure{% endif %}{% endif %}{% if nightfall_theme %} nightfall{% endif %}">
     <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t }}</a>
 
     {% unless show_configure %}
