@@ -168,7 +168,8 @@ test('AI sitemap lists every locale route with lastmod and the full hreflang set
 
 test('robots.txt keeps the AI files crawlable and points at both sitemaps', () => {
   const robots = read('templates/robots.txt.liquid');
-  assert.ok(robots.includes("Sitemap: https://{{ shop.domain }}/sitemap.xml"));
+  assert.ok(robots.includes('Sitemap: {{ shopify_sitemap_url }}') && robots.includes('robots.default_groups'), 'Shopify sitemap line comes from robots.default_groups');
+  assert.doesNotMatch(robots, /shop\.domain/, 'shop.domain renders empty in robots.txt');
   assert.ok(robots.includes("Sitemap: https:{{ 'sitemap-ai.xml' | asset_url }}"));
   assert.ok(robots.includes('Allow: /cdn/shop/t/*/assets/llms.txt'));
   assert.doesNotMatch(robots, /Disallow: \/pages/);
