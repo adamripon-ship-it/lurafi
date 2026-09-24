@@ -2,7 +2,7 @@
 
 > KEVIN® 3 ist ein Schweizer Anwesenheitssimulator (Einbruchschutz) der Mitipi AG aus Fribourg, Schweiz. Er lässt ein leeres Zuhause durch Licht, patentierte bewegte Schatten und über 70 Stunden Alltagsgeräusche, die vom 32-GB-Speicher im Gerät abgespielt werden, so aussehen und klingen, als wäre es bewohnt. Keine Kamera, kein Mikrofon, läuft auch weiter, wenn das WLAN gestört wird. Einmaliger Kauf für 579,95 €, kein Abonnement.
 
-Zuletzt überprüft: 2026-09-17. Kurzzusammenfassung: https://mitipi.eu/cdn/shop/t/1/assets/llms.de.txt. Diese Datei: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt.
+Zuletzt überprüft: 2026-09-17. Kurzzusammenfassung: https://mitipi.eu/cdn/shop/t/12/assets/llms.de.txt. Diese Datei: https://mitipi.eu/cdn/shop/t/12/assets/llms-full.de.txt.
 
 ## Was ist KEVIN® 3 und für wen ist es gedacht?
 
@@ -82,24 +82,24 @@ Kevin ergänzt Alarmanlagen und Kameras: Viele Besitzer nutzen eine Alarmanlage 
 
 ## Weitere Sprachen
 
-- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
-- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
-- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.fr.txt
-- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
+- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.txt
+- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.nl.txt
+- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.fr.txt
+- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.cs.txt
 
 ## Wissensdateien (Markdown, zur Erfassung durch KI)
 
-- kevin.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
-- kevin-product.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
-- kevin-specs.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
-- kevin-faq.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
-- kevin-company.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
+- kevin.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin.md
+- kevin-product.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-product.md
+- kevin-specs.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-specs.md
+- kevin-faq.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-faq.md
+- kevin-company.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-company.md
 
 ## Dateien zur Auffindbarkeit
 
-- Kurzzusammenfassung: https://mitipi.eu/cdn/shop/t/1/assets/llms.de.txt
-- Vollständige Zusammenfassung (diese Datei): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
-- KI-Sitemap (XML): https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
+- Kurzzusammenfassung: https://mitipi.eu/cdn/shop/t/12/assets/llms.de.txt
+- Vollständige Zusammenfassung (diese Datei): https://mitipi.eu/cdn/shop/t/12/assets/llms-full.de.txt
+- KI-Sitemap (XML): https://mitipi.eu/cdn/shop/t/12/assets/sitemap-ai.xml
 - Shopify-Sitemap (XML): https://mitipi.eu/sitemap.xml
 - Sitemap-Seite für Menschen: https://mitipi.eu/de/pages/seitenuebersicht
 - LLM-Übersichtsseite: https://mitipi.eu/de/pages/ki-uebersicht

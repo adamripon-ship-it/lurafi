@@ -2,7 +2,7 @@
 
 > KEVIN® 3 je švýcarský simulátor přítomnosti (prostředek k odrazení zlodějů) od společnosti Mitipi AG se sídlem ve Fribourgu ve Švýcarsku. Díky světlu, patentovaným pohyblivým stínům a více než 70 hodinám zvuků domácnosti přehrávaných z 32 GB paměti uvnitř zařízení vytváří dojem, že v prázdném domě někdo je. Bez kamery, bez mikrofonu, funguje i při rušení Wi-Fi. Jednorázový nákup za 579,95 €, bez předplatného.
 
-Poslední revize: 2026-09-17. Stručné shrnutí: https://mitipi.eu/cdn/shop/t/1/assets/llms.cs.txt. Tento soubor: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt.
+Poslední revize: 2026-09-17. Stručné shrnutí: https://mitipi.eu/cdn/shop/t/12/assets/llms.cs.txt. Tento soubor: https://mitipi.eu/cdn/shop/t/12/assets/llms-full.cs.txt.
 
 ## Co je KEVIN® 3 a pro koho je určen?
 
@@ -82,24 +82,24 @@ Kevin doplňuje alarmy a kamery: mnoho majitelů používá alarm k detekci a Ke
 
 ## Další jazyky
 
-- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
-- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
-- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.fr.txt
-- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
+- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.txt
+- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.nl.txt
+- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.fr.txt
+- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.de.txt
 
 ## Znalostní soubory (Markdown, pro zpracování AI)
 
-- kevin.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
-- kevin-product.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
-- kevin-specs.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
-- kevin-faq.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
-- kevin-company.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
+- kevin.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin.md
+- kevin-product.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-product.md
+- kevin-specs.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-specs.md
+- kevin-faq.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-faq.md
+- kevin-company.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-company.md
 
 ## Soubory pro objevování
 
-- Krátké shrnutí: https://mitipi.eu/cdn/shop/t/1/assets/llms.cs.txt
-- Úplné shrnutí (tento soubor): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
-- AI sitemap (XML): https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
+- Krátké shrnutí: https://mitipi.eu/cdn/shop/t/12/assets/llms.cs.txt
+- Úplné shrnutí (tento soubor): https://mitipi.eu/cdn/shop/t/12/assets/llms-full.cs.txt
+- AI sitemap (XML): https://mitipi.eu/cdn/shop/t/12/assets/sitemap-ai.xml
 - Sitemap Shopify (XML): https://mitipi.eu/sitemap.xml
 - Stránka s mapou webu pro uživatele: https://mitipi.eu/cs/pages/prehled-stranek
 - Stránka s přehledem pro LLM: https://mitipi.eu/cs/pages/ai-prehled

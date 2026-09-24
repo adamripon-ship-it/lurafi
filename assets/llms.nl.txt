@@ -2,7 +2,7 @@
 
 > KEVIN® 3 is een Zwitserse aanwezigheidssimulator (inbraakpreventie) van Mitipi AG uit Fribourg. Het zorgt ervoor dat een leegstaand huis er bewoond uitziet en klinkt dankzij licht, gepatenteerde bewegende schaduwen en meer dan 70 uur aan huishoudgeluiden die op het interne geheugen van 32 GB zijn opgeslagen. Geen camera, geen microfoon, blijft werken wanneer de wifi wordt gestoord. € 579,95 eenmalig, geen abonnement.
 
-Laatst gecontroleerd: 2026-09-17. Volledige samenvatting (lees voor de volledige context): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt.
+Laatst gecontroleerd: 2026-09-17. Volledige samenvatting (lees voor de volledige context): https://mitipi.eu/cdn/shop/t/12/assets/llms-full.nl.txt.
 
 ## Belangrijkste feiten
 
@@ -32,24 +32,24 @@ Laatst gecontroleerd: 2026-09-17. Volledige samenvatting (lees voor de volledige
 
 ## Andere talen
 
-- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
-- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.fr.txt
-- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
-- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
+- English (en): https://mitipi.eu/ · https://mitipi.eu/pages/configure?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.txt
+- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.fr.txt
+- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.de.txt
+- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.cs.txt
 
 ## Kennisbestanden (Markdown)
 
-- kevin.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
-- kevin-product.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
-- kevin-specs.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
-- kevin-faq.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
-- kevin-company.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
+- kevin.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin.md
+- kevin-product.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-product.md
+- kevin-specs.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-specs.md
+- kevin-faq.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-faq.md
+- kevin-company.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-company.md
 
 ## Vindbaarheid
 
-- Korte samenvatting (dit bestand): https://mitipi.eu/cdn/shop/t/1/assets/llms.nl.txt
-- Volledige samenvatting: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
-- AI-sitemap (XML): https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
+- Korte samenvatting (dit bestand): https://mitipi.eu/cdn/shop/t/12/assets/llms.nl.txt
+- Volledige samenvatting: https://mitipi.eu/cdn/shop/t/12/assets/llms-full.nl.txt
+- AI-sitemap (XML): https://mitipi.eu/cdn/shop/t/12/assets/sitemap-ai.xml
 - Shopify-sitemap (XML): https://mitipi.eu/sitemap.xml
 - Sitemap voor mensen: https://mitipi.eu/nl/pages/site-overzicht
 - LLM-overzichtspagina: https://mitipi.eu/nl/pages/ai-overzicht

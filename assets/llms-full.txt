@@ -2,7 +2,7 @@
 
 > KEVIN® 3 is a Swiss presence simulator (burglary deterrent) made by Mitipi AG in Fribourg, Switzerland. It makes an empty home look and sound occupied with light, patented moving shadows and 70+ hours of household sounds played from 32 GB inside the device. No camera, no microphone, keeps running when Wi-Fi is jammed. One-time purchase of €579.95, no subscription.
 
-Last reviewed: 2026-09-17. Short summary: https://mitipi.eu/cdn/shop/t/1/assets/llms.txt. This file: https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt.
+Last reviewed: 2026-09-17. Short summary: https://mitipi.eu/cdn/shop/t/12/assets/llms.txt. This file: https://mitipi.eu/cdn/shop/t/12/assets/llms-full.txt.
 
 ## What is KEVIN® 3 and who is it for?
 
@@ -82,24 +82,24 @@ Kevin complements alarms and cameras: many owners run an alarm for detection and
 
 ## Other languages
 
-- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.nl.txt
-- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.fr.txt
-- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.de.txt
-- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/1/assets/llms-full.cs.txt
+- Nederlands (nl): https://mitipi.eu/nl · https://mitipi.eu/nl/pages/configureren?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.nl.txt
+- Français (fr): https://mitipi.eu/fr · https://mitipi.eu/fr/pages/configurer?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.fr.txt
+- Deutsch (de): https://mitipi.eu/de · https://mitipi.eu/de/pages/konfigurieren?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.de.txt
+- Čeština (cs): https://mitipi.eu/cs · https://mitipi.eu/cs/pages/konfigurace?plan=buy · https://mitipi.eu/cdn/shop/t/12/assets/llms-full.cs.txt
 
 ## Knowledge files (Markdown, for AI ingestion)
 
-- kevin.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin.md
-- kevin-product.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-product.md
-- kevin-specs.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-specs.md
-- kevin-faq.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-faq.md
-- kevin-company.md: https://mitipi.eu/cdn/shop/t/1/assets/kevin-company.md
+- kevin.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin.md
+- kevin-product.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-product.md
+- kevin-specs.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-specs.md
+- kevin-faq.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-faq.md
+- kevin-company.md: https://mitipi.eu/cdn/shop/t/12/assets/kevin-company.md
 
 ## Discovery files
 
-- Short summary: https://mitipi.eu/cdn/shop/t/1/assets/llms.txt
-- Full summary (this file): https://mitipi.eu/cdn/shop/t/1/assets/llms-full.txt
-- AI sitemap XML: https://mitipi.eu/cdn/shop/t/1/assets/sitemap-ai.xml
+- Short summary: https://mitipi.eu/cdn/shop/t/12/assets/llms.txt
+- Full summary (this file): https://mitipi.eu/cdn/shop/t/12/assets/llms-full.txt
+- AI sitemap XML: https://mitipi.eu/cdn/shop/t/12/assets/sitemap-ai.xml
 - Shopify sitemap XML: https://mitipi.eu/sitemap.xml
 - Human sitemap page: https://mitipi.eu/pages/sitemap
 - LLM overview page: https://mitipi.eu/pages/llms
