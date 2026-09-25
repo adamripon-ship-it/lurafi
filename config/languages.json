@@ -10,7 +10,8 @@
     "Mitipi"
   ],
   "discovery": {
-    "assetCdnPath": "/cdn/shop/t/1/assets",
+    "assetCdnPath": "/cdn/shop/t/12/assets",
+    "_assetCdnPathNote": "Shopify per-store theme counter of the live theme (lurafi-footer-pages = t/12). Update when a different theme is published.",
     "llmsShort": "llms.txt",
     "llmsFull": "llms-full.txt",
     "aiSitemap": "sitemap-ai.xml"
