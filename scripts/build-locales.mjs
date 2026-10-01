@@ -94,7 +94,8 @@ const en = {
     refund: 'Returns & Refunds',
     shipping: 'Shipping',
     legal_notice: 'Legal Notice',
-    llm_summary: 'LLM summary'
+    llm_summary: 'LLM summary',
+    developer_credit_html: 'Website developed by {{ company }} {{ link }} - Contact: {{ contact }}.'
   },
   seo: {
     home: {
@@ -793,7 +794,8 @@ nl.footer = {
   shipping: 'Verzending',
   legal_notice: 'Colofon',
   terms: 'Gebruiksvoorwaarden',
-  llm_summary: 'LLM-samenvatting'
+  llm_summary: 'LLM-samenvatting',
+  developer_credit_html: 'Website ontwikkeld door {{ company }} {{ link }} - Contact: {{ contact }}.'
 };
 nl.seo = {
   home: {

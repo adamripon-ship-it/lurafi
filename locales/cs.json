@@ -88,7 +88,8 @@
     "llm_summary": "LLM shrnutí",
     "refund": "Vrácení a refundace",
     "shipping": "Doprava",
-    "legal_notice": "Právní informace"
+    "legal_notice": "Právní informace",
+    "developer_credit_html": "Web vytvořila společnost {{ company }} {{ link }} - Kontakt: {{ contact }}."
   },
   "seo": {
     "home": {

@@ -2196,6 +2196,14 @@ body.mobile-nav-open { overflow: hidden; }
 .site-footer-apple__legal { display: flex; flex-wrap: wrap; gap: 24px; }
 .site-footer-apple__legal a { color: #424245; }
 .site-footer-apple__legal a:hover { color: var(--apple-text); }
+.site-footer-apple__credit {
+  margin: 0;
+  padding: 0 0 17px;
+  font-size: 11px;
+  color: var(--apple-text-muted);
+}
+.site-footer-apple__credit a { color: inherit; text-decoration: underline; }
+.site-footer-apple__credit a:hover { color: var(--apple-text); }
 
 /* ---- Page motion (theme.js) ---- */
 @keyframes lurafiFadeUp {
