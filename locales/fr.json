@@ -88,7 +88,8 @@
     "llm_summary": "Résumé LLM",
     "refund": "Retours et remboursements",
     "shipping": "Livraison",
-    "legal_notice": "Mentions légales"
+    "legal_notice": "Mentions légales",
+    "developer_credit_html": "Site web développé par {{ company }} {{ link }} - Contact : {{ contact }}."
   },
   "seo": {
     "home": {

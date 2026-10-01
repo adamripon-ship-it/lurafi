@@ -91,7 +91,8 @@
     "refund": "Returns & Refunds",
     "shipping": "Shipping",
     "legal_notice": "Legal Notice",
-    "llm_summary": "LLM summary"
+    "llm_summary": "LLM summary",
+    "developer_credit_html": "Website developed by {{ company }} {{ link }} - Contact: {{ contact }}."
   },
   "seo": {
     "home": {

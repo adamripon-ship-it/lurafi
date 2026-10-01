@@ -115,6 +115,10 @@
         {%- endif -%}
       </div>
     </div>
+    {%- capture developer_link -%}<a href="https://www.surfstr.ch" target="_blank" rel="noopener">www.surfstr.ch</a>{%- endcapture -%}
+    <p class="site-footer-apple__credit">
+      {{- 'footer.developer_credit_html' | t: company: 'Surfstr Limited', link: developer_link, contact: 'Adam Kennedy-Ripon' -}}
+    </p>
   </div>
 </footer>
 {% schema %}
