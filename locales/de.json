@@ -888,5 +888,14 @@
       "overline": "Kevin",
       "reviewed_on": "Inhalt geprüft:"
     }
+  },
+  "video_showcase": {
+    "play_label": "Film ansehen",
+    "replay": "Nochmals ansehen",
+    "pause_preview": "Vorschau pausieren",
+    "play_preview": "Vorschau abspielen",
+    "poster_alt": "Den KEVIN®-Markenfilm ansehen",
+    "seo_name": "KEVIN®-Markenfilm",
+    "seo_description": "Der KEVIN®-Markenfilm: wie Kevin mit Licht, bewegten Schatten und alltäglichen Haushaltsgeräuschen ein leeres Zuhause bewohnt wirken lässt."
   }
 }

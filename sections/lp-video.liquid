@@ -4,12 +4,23 @@
   Behaviour (progressive, no framework):
   - Poster frame + a large custom play button; the raw <video> has no browser
     chrome until the viewer starts it.
+  - Silent preview: a ~5 s muted, text-free loop (assets/kevin-video-teaser.mp4)
+    plays over the poster once the stage scrolls near the viewport. Skipped for
+    prefers-reduced-motion and Save-Data; paused off-screen; a small corner
+    button pauses/resumes it (WCAG 2.2.2). Only used with the bundled film.
   - Desktop: clicking plays inline in the full-width stage (native controls
     appear; the native fullscreen button is available from there).
   - Mobile: tapping opens the phone's native fullscreen landscape player
     (requestFullscreen / iOS webkitEnterFullscreen) — a real viewing
     experience instead of a cramped inline letterbox. The inline mobile stage
     is a tall portrait poster card so it never looks like a shrunken banner.
+  - End card: when the film finishes, a "Configure & buy" CTA and a replay
+    button sit over the last frame instead of silently resetting.
+  - Analytics: publishes Shopify custom events (kevin_video_start,
+    kevin_video_progress 25/50/75, kevin_video_complete, kevin_video_replay,
+    kevin_video_cta_click). A custom pixel forwards them to GA4 — see
+    docs/VIDEO-ANALYTICS.md.
+  - SEO: VideoObject JSON-LD for the bundled film.
 
   Source: bundled assets/kevin-video-showcase.mp4 by default; a Shopify-hosted
   "video" setting overrides it (its sources are used directly so the custom UI
@@ -20,11 +31,28 @@
   assign heading = section.settings.heading
   assign subheading = section.settings.subheading
   assign caption = section.settings.caption
-  assign play_label = section.settings.play_label | default: 'Watch'
+  assign play_label = section.settings.play_label | strip
+  if play_label == blank
+    assign play_label = 'video_showcase.play_label' | t
+  endif
 
   assign has_shopify_video = false
   if section.settings.video != blank and section.settings.video.sources.size > 0
     assign has_shopify_video = true
+  endif
+
+  # Bundled film length (assets/kevin-video-showcase.mp4) — update with the file.
+  assign duration_s = 43
+  if has_shopify_video and section.settings.video.duration > 0
+    assign duration_s = section.settings.video.duration | divided_by: 1000 | floor
+  endif
+  assign duration_min = duration_s | divided_by: 60 | floor
+  assign duration_sec = duration_s | modulo: 60
+  assign duration_label = duration_sec | prepend: '0' | slice: -2, 2 | prepend: ':' | prepend: duration_min
+
+  assign show_teaser = false
+  if section.settings.show_teaser and has_shopify_video == false
+    assign show_teaser = true
   endif
 
   assign poster_url = ''
@@ -38,9 +66,15 @@
     assign poster_alt = heading
   endif
   if poster_alt == blank
-    assign poster_alt = 'Watch the KEVIN® presence simulation film'
+    assign poster_alt = 'video_showcase.poster_alt' | t
   endif
   assign poster_alt = poster_alt | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+
+  capture configure_buy_url
+    render 'configure-url', plan: 'buy'
+  endcapture
+  assign configure_buy_url = configure_buy_url | strip
+  assign cta_label = 'home.hero.cta_primary_label' | t
 -%}
 
 <section class="section-apple lp-video" data-lp-video>
@@ -57,7 +91,7 @@
 
   <div class="lp-video__stage">
     {%- comment -%}
-      Fast-loading WebP poster as a real <img> (SEO alt + no CLS). The video
+      Fast-loading WebP poster as a real <img> (SEO alt + no CLS). The film
       itself uses preload="none", so none of the multi-MB file is fetched until
       the viewer taps play — big mobile/LCP win. The poster hides on .is-playing.
     {%- endcomment -%}
@@ -70,6 +104,21 @@
       width="1600"
       height="900"
     >
+    {%- if show_teaser -%}
+      {%- comment -%} src is set by JS when the stage nears the viewport (~0.7 MB). {%- endcomment -%}
+      <video
+        class="lp-video__teaser"
+        muted
+        playsinline
+        loop
+        preload="none"
+        aria-hidden="true"
+        tabindex="-1"
+        disablepictureinpicture
+        data-lp-video-teaser
+        data-src="{{ 'kevin-video-teaser.mp4' | asset_url }}"
+      ></video>
+    {%- endif -%}
     <video
       id="LpVideo-{{ section.id }}"
       class="lp-video__player"
@@ -87,12 +136,42 @@
     </video>
 
     <div class="lp-video__overlay" data-lp-video-overlay>
-      <button type="button" class="lp-video__play" aria-label="Play video" data-lp-video-play>
+      <button
+        type="button"
+        class="lp-video__play"
+        aria-label="{{ play_label | escape }} ({{ duration_label }})"
+        data-lp-video-play
+      >
         <span class="lp-video__play-icon" aria-hidden="true"></span>
       </button>
-      {%- if play_label != blank -%}
-        <span class="lp-video__play-label">{{ play_label | escape }}</span>
-      {%- endif -%}
+      <span class="lp-video__play-label" aria-hidden="true">
+        {{- play_label | escape -}}
+        <span class="lp-video__play-duration">{{ duration_label }}</span>
+      </span>
+    </div>
+
+    {%- if show_teaser -%}
+      <button
+        type="button"
+        class="lp-video__teaser-toggle"
+        aria-label="{{ 'video_showcase.pause_preview' | t | escape }}"
+        data-label-pause="{{ 'video_showcase.pause_preview' | t | escape }}"
+        data-label-play="{{ 'video_showcase.play_preview' | t | escape }}"
+        data-lp-video-teaser-toggle
+        hidden
+      >
+        <span class="lp-video__teaser-icon" aria-hidden="true"></span>
+      </button>
+    {%- endif -%}
+
+    <div class="lp-video__end" data-lp-video-end hidden>
+      <a href="{{ configure_buy_url }}" class="btn-apple-primary lp-video__end-cta" data-lp-video-cta>
+        {{- cta_label | escape -}}
+      </a>
+      <button type="button" class="lp-video__replay" data-lp-video-replay>
+        <span class="lp-video__replay-icon" aria-hidden="true">&#8635;</span>
+        {{ 'video_showcase.replay' | t | escape }}
+      </button>
     </div>
   </div>
 
@@ -103,6 +182,34 @@
   {%- endif -%}
 </section>
 
+{%- unless has_shopify_video -%}
+  {%- liquid
+    assign video_name = 'video_showcase.seo_name' | t
+    assign video_description = 'video_showcase.seo_description' | t
+    assign video_content_url = 'kevin-video-showcase.mp4' | asset_url | prepend: 'https:'
+    assign video_thumb_url = poster_url
+    unless video_thumb_url contains 'https:'
+      assign video_thumb_url = video_thumb_url | prepend: 'https:'
+    endunless
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": {{ video_name | json }},
+      "description": {{ video_description | json }},
+      "thumbnailUrl": [{{ video_thumb_url | json }}],
+      "uploadDate": "2026-10-17T00:00:00+02:00",
+      "duration": "PT{{ duration_s }}S",
+      "contentUrl": {{ video_content_url | json }},
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+    }
+  </script>
+{%- endunless -%}
+
 <script>
   (function () {
     var video = document.getElementById('LpVideo-{{ section.id }}');
@@ -111,33 +218,163 @@
     var overlay = stage && stage.querySelector('[data-lp-video-overlay]');
     var btn = stage && stage.querySelector('[data-lp-video-play]');
     if (!stage || !overlay || !btn) return;
+    var endCard = stage.querySelector('[data-lp-video-end]');
+    var replayBtn = stage.querySelector('[data-lp-video-replay]');
+    var ctaLink = stage.querySelector('[data-lp-video-cta]');
+    var teaser = stage.querySelector('[data-lp-video-teaser]');
+    var teaserToggle = stage.querySelector('[data-lp-video-teaser-toggle]');
 
     var mobileQuery = window.matchMedia('(max-width: 749px), (pointer: coarse)');
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var FALLBACK_DURATION = {{ duration_s }};
 
+    /* ---- Analytics: Shopify custom events (forwarded to GA4 by a custom pixel) ---- */
+    var sentMilestones = {};
+    var isReplay = false;
+    function track(name, extra) {
+      var data = {
+        video_title: 'KEVIN brand film',
+        video_duration: Math.round(video.duration) || FALLBACK_DURATION,
+        video_current_time: Math.round(video.currentTime || 0),
+        locale: document.documentElement.lang || '',
+        replay: isReplay
+      };
+      if (extra) for (var k in extra) data[k] = extra[k];
+      try {
+        if (window.Shopify && Shopify.analytics && typeof Shopify.analytics.publish === 'function') {
+          Shopify.analytics.publish(name, data);
+        }
+      } catch (e) {}
+      try {
+        if (Array.isArray(window.dataLayer)) window.dataLayer.push(Object.assign({ event: name }, data));
+      } catch (e) {}
+    }
+
+    /* ---- Silent preview loop ---- */
+    var teaserUserPaused = false;
+    var teaserInView = false;
+    function teaserAllowed() {
+      if (!teaser || reducedMotion.matches) return false;
+      var conn = navigator.connection;
+      return !(conn && conn.saveData);
+    }
+    function setToggleState(paused) {
+      if (!teaserToggle) return;
+      teaserToggle.classList.toggle('is-paused', paused);
+      teaserToggle.setAttribute('aria-label', paused ? teaserToggle.dataset.labelPlay : teaserToggle.dataset.labelPause);
+    }
+    function playTeaser() {
+      if (!teaser || teaserUserPaused || !teaserInView || stage.classList.contains('is-playing') || stage.classList.contains('is-ended')) return;
+      if (!teaser.src) teaser.src = teaser.dataset.src;
+      var p = teaser.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    function pauseTeaser() {
+      if (teaser && !teaser.paused) teaser.pause();
+    }
+    if (teaserAllowed()) {
+      teaser.addEventListener('playing', function () {
+        stage.classList.add('has-teaser');
+        if (teaserToggle) teaserToggle.hidden = false;
+      });
+      if (teaserToggle) {
+        teaserToggle.addEventListener('click', function () {
+          teaserUserPaused = !teaserUserPaused;
+          setToggleState(teaserUserPaused);
+          if (teaserUserPaused) pauseTeaser(); else playTeaser();
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          teaserInView = entries[0].isIntersecting;
+          if (teaserInView) playTeaser(); else pauseTeaser();
+        }, { rootMargin: '200px 0px' }).observe(stage);
+      }
+    } else if (teaser) {
+      teaser.remove();
+      teaser = null;
+      if (teaserToggle) teaserToggle.remove();
+      teaserToggle = null;
+    }
+
+    /* ---- Full film ---- */
     function requestFs(el) {
       var fn = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitEnterFullscreen || el.msRequestFullscreen;
       if (fn) { try { return fn.call(el); } catch (e) {} }
     }
 
+    function exitFs() {
+      try {
+        if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen();
+        else if (video.webkitDisplayingFullscreen && video.webkitExitFullscreen) video.webkitExitFullscreen();
+      } catch (e) {}
+    }
+
     function start() {
+      pauseTeaser();
+      stage.classList.remove('is-ended');
+      if (endCard) endCard.hidden = true;
       stage.classList.add('is-playing');
       video.controls = true;
+      sentMilestones = {};
       if (mobileQuery.matches) requestFs(video);
       var p = video.play();
       if (p && p.catch) p.catch(function () {});
+      track('kevin_video_start');
     }
 
     function reset() {
       stage.classList.remove('is-playing');
       video.controls = false;
+      playTeaser();
+    }
+
+    function showEndCard() {
+      exitFs();
+      stage.classList.remove('is-playing');
+      stage.classList.add('is-ended');
+      video.controls = false;
+      if (endCard) endCard.hidden = false;
+      track('kevin_video_complete');
     }
 
     btn.addEventListener('click', start);
-    video.addEventListener('ended', reset);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) start();
+    });
+
+    video.addEventListener('timeupdate', function () {
+      var d = video.duration;
+      if (!d || !isFinite(d)) return;
+      var pct = (video.currentTime / d) * 100;
+      [25, 50, 75].forEach(function (m) {
+        if (pct >= m && !sentMilestones[m]) {
+          sentMilestones[m] = true;
+          track('kevin_video_progress', { video_percent: m });
+        }
+      });
+    });
+
+    video.addEventListener('ended', showEndCard);
     video.addEventListener('pause', function () {
       // If paused back at the very start (e.g. after exiting fullscreen), restore the poster overlay.
-      if (video.currentTime === 0) reset();
+      if (video.currentTime === 0 && !stage.classList.contains('is-ended')) reset();
     });
+
+    if (replayBtn) {
+      replayBtn.addEventListener('click', function () {
+        isReplay = true;
+        track('kevin_video_replay');
+        try { video.currentTime = 0; } catch (e) {}
+        start();
+      });
+    }
+
+    if (ctaLink) {
+      ctaLink.addEventListener('click', function () {
+        track('kevin_video_cta_click', { link_url: ctaLink.href });
+      });
+    }
   })();
 </script>
 
@@ -147,7 +384,7 @@
   "settings": [
     {
       "type": "paragraph",
-      "content": "Full-width video with a custom play button. Plays inline on desktop and opens fullscreen on mobile. Heading fields are optional."
+      "content": "Full-width video with a custom play button. Plays inline on desktop and opens fullscreen on mobile. A buy button and replay appear when the film ends. Heading fields are optional."
     },
     { "type": "text", "id": "overline", "label": "Overline" },
     { "type": "text", "id": "heading", "label": "Heading" },
@@ -163,12 +400,24 @@
       "info": "Optional. Select a video to replace the built-in one — Shopify hosts and streams it. Leave blank to use the bundled default video."
     },
     {
+      "type": "checkbox",
+      "id": "show_teaser",
+      "label": "Show silent preview loop",
+      "info": "Plays a short muted preview over the poster. Only used with the bundled video.",
+      "default": true
+    },
+    {
       "type": "image_picker",
       "id": "poster",
       "label": "Poster image",
       "info": "Recommended. Shown before playback (a wide landscape image works best). Without one, the video's first frame is used."
     },
-    { "type": "text", "id": "play_label", "label": "Play button label", "default": "Watch" },
+    {
+      "type": "text",
+      "id": "play_label",
+      "label": "Play button label",
+      "info": "Leave blank to use the translated default (\"Watch the film\")."
+    },
     { "type": "text", "id": "caption", "label": "Caption (optional)" }
   ],
   "presets": [
