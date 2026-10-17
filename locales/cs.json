@@ -888,5 +888,14 @@
       "overline": "Kevin",
       "reviewed_on": "Obsah zkontrolován:"
     }
+  },
+  "video_showcase": {
+    "play_label": "Přehrát film",
+    "replay": "Přehrát znovu",
+    "pause_preview": "Pozastavit náhled",
+    "play_preview": "Přehrát náhled",
+    "poster_alt": "Přehrát značkový film KEVIN®",
+    "seo_name": "Značkový film KEVIN®",
+    "seo_description": "Značkový film KEVIN®: jak Kevin pomocí světla, pohyblivých stínů a běžných zvuků domácnosti vytváří dojem, že je prázdný domov obydlený."
   }
 }

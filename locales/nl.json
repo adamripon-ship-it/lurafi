@@ -534,6 +534,15 @@
       "secondary_cta_url": "#how-it-works"
     }
   },
+  "video_showcase": {
+    "play_label": "Bekijk de film",
+    "replay": "Opnieuw bekijken",
+    "pause_preview": "Voorbeeld pauzeren",
+    "play_preview": "Voorbeeld afspelen",
+    "poster_alt": "Bekijk de KEVIN®-merkfilm",
+    "seo_name": "KEVIN®-merkfilm",
+    "seo_description": "De KEVIN®-merkfilm: hoe Kevin met licht, bewegende schaduwen en alledaagse huishoudgeluiden een leeg huis bewoond laat lijken."
+  },
   "stats": {
     "swiss_engineered": "Zwitsers ontworpen"
   },

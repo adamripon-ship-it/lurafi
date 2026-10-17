@@ -356,6 +356,15 @@ const en = {
     }
   },
   home: {},
+  video_showcase: {
+    play_label: 'Watch the film',
+    replay: 'Watch again',
+    pause_preview: 'Pause preview',
+    play_preview: 'Play preview',
+    poster_alt: 'Watch the KEVIN® brand film',
+    seo_name: 'KEVIN® brand film',
+    seo_description: 'The KEVIN® brand film: how Kevin uses light, moving shadows and everyday household sounds to make an empty home look lived-in.',
+  },
   stats: {
     swiss_engineered: 'Swiss engineered & designed'
   },
@@ -751,6 +760,15 @@ nl.region = {
   lang_en: 'Engels',
   lang_de: 'Duits',
   lang_fr: 'Frans',
+};
+nl.video_showcase = {
+  play_label: 'Bekijk de film',
+  replay: 'Opnieuw bekijken',
+  pause_preview: 'Voorbeeld pauzeren',
+  play_preview: 'Voorbeeld afspelen',
+  poster_alt: 'Bekijk de KEVIN®-merkfilm',
+  seo_name: 'KEVIN®-merkfilm',
+  seo_description: 'De KEVIN®-merkfilm: hoe Kevin met licht, bewegende schaduwen en alledaagse huishoudgeluiden een leeg huis bewoond laat lijken.',
 };
 nl.header = {
   why_kevin: 'Waarom Kevin',

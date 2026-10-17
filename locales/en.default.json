@@ -518,6 +518,15 @@
       "secondary_cta_url": "#how-it-works"
     }
   },
+  "video_showcase": {
+    "play_label": "Watch the film",
+    "replay": "Watch again",
+    "pause_preview": "Pause preview",
+    "play_preview": "Play preview",
+    "poster_alt": "Watch the KEVIN® brand film",
+    "seo_name": "KEVIN® brand film",
+    "seo_description": "The KEVIN® brand film: how Kevin uses light, moving shadows and everyday household sounds to make an empty home look lived-in."
+  },
   "stats": {
     "swiss_engineered": "Swiss engineered & designed"
   },

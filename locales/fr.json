@@ -888,5 +888,14 @@
       "overline": "Kevin",
       "reviewed_on": "Contenu vérifié :"
     }
+  },
+  "video_showcase": {
+    "play_label": "Voir le film",
+    "replay": "Revoir",
+    "pause_preview": "Mettre l'aperçu en pause",
+    "play_preview": "Lire l'aperçu",
+    "poster_alt": "Voir le film de marque KEVIN®",
+    "seo_name": "Film de marque KEVIN®",
+    "seo_description": "Le film de marque KEVIN® : comment Kevin utilise la lumière, des ombres en mouvement et des bruits du quotidien pour qu'un logement vide paraisse habité."
   }
 }
