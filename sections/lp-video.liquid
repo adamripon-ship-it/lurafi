@@ -15,10 +15,11 @@
     experience instead of a cramped inline letterbox. The inline mobile stage
     is a tall portrait poster card so it never looks like a shrunken banner.
   - End card: when the film finishes, a "Configure & buy" CTA and a replay
-    button sit over the last frame instead of silently resetting.
+    button sit over the poster instead of silently resetting (keyboard focus
+    moves to the CTA).
   - Analytics: publishes Shopify custom events (kevin_video_start,
-    kevin_video_progress 25/50/75, kevin_video_complete, kevin_video_replay,
-    kevin_video_cta_click). A custom pixel forwards them to GA4 — see
+    kevin_video_progress 25/50/75, kevin_video_complete, kevin_video_cta_click;
+    replays send kevin_video_start with replay: true). A custom pixel forwards them to GA4 — see
     docs/VIDEO-ANALYTICS.md.
   - SEO: VideoObject JSON-LD for the bundled film.
 
@@ -286,7 +287,7 @@
       }
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
-          teaserInView = entries[0].isIntersecting;
+          teaserInView = entries[entries.length - 1].isIntersecting;
           if (teaserInView) playTeaser(); else pauseTeaser();
         }, { rootMargin: '200px 0px' }).observe(stage);
       }
@@ -300,14 +301,38 @@
     /* ---- Full film ---- */
     function requestFs(el) {
       var fn = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitEnterFullscreen || el.msRequestFullscreen;
-      if (fn) { try { return fn.call(el); } catch (e) {} }
+      if (!fn) return;
+      try {
+        var r = fn.call(el);
+        if (r && r.catch) r.catch(function () {});
+      } catch (e) {}
     }
 
     function exitFs() {
       try {
-        if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen();
-        else if (video.webkitDisplayingFullscreen && video.webkitExitFullscreen) video.webkitExitFullscreen();
+        if (document.fullscreenElement && document.exitFullscreen) {
+          var r = document.exitFullscreen();
+          if (r && r.catch) r.catch(function () {});
+        } else if (video.webkitDisplayingFullscreen && video.webkitExitFullscreen) {
+          video.webkitExitFullscreen();
+        }
       } catch (e) {}
+    }
+
+    // iOS only enters native fullscreen once the film's metadata is loaded, and
+    // only inside the tap. On phones, fetch just the metadata (moov atom, a few
+    // KB thanks to faststart) when the stage nears the viewport so the first tap
+    // can go fullscreen immediately.
+    if (mobileQuery.matches && 'IntersectionObserver' in window) {
+      var metaObserver = new IntersectionObserver(function (entries) {
+        if (!entries[entries.length - 1].isIntersecting) return;
+        metaObserver.disconnect();
+        if (video.preload === 'none' && video.readyState === 0) {
+          video.preload = 'metadata';
+          try { video.load(); } catch (e) {}
+        }
+      }, { rootMargin: '300px 0px' });
+      metaObserver.observe(stage);
     }
 
     function start() {
@@ -317,7 +342,10 @@
       stage.classList.add('is-playing');
       video.controls = true;
       sentMilestones = {};
-      if (mobileQuery.matches) requestFs(video);
+      if (mobileQuery.matches) {
+        if (video.readyState >= 1) requestFs(video);
+        else video.addEventListener('loadedmetadata', function () { requestFs(video); }, { once: true });
+      }
       var p = video.play();
       if (p && p.catch) p.catch(function () {});
       track('kevin_video_start');
@@ -334,7 +362,9 @@
       stage.classList.remove('is-playing');
       stage.classList.add('is-ended');
       video.controls = false;
+      var focusWasInStage = stage.contains(document.activeElement);
       if (endCard) endCard.hidden = false;
+      if (focusWasInStage && ctaLink) ctaLink.focus({ preventScroll: true });
       track('kevin_video_complete');
     }
 
@@ -364,9 +394,9 @@
     if (replayBtn) {
       replayBtn.addEventListener('click', function () {
         isReplay = true;
-        track('kevin_video_replay');
         try { video.currentTime = 0; } catch (e) {}
         start();
+        try { video.focus({ preventScroll: true }); } catch (e) {}
       });
     }
 

@@ -149,9 +149,13 @@
   transition: opacity 0.4s ease;
 }
 
-.lp-video__stage.is-playing .lp-video__overlay {
+.lp-video__stage.is-playing .lp-video__overlay,
+.lp-video__stage.is-ended .lp-video__overlay {
   opacity: 0;
   pointer-events: none;
+  /* hide from keyboard/screen readers once faded out */
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 }
 
 .lp-video__play {
@@ -281,11 +285,6 @@
 }
 
 /* End card — replaces the play overlay once the film has finished */
-.lp-video__stage.is-ended .lp-video__overlay {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .lp-video__end {
   position: absolute;
   inset: 0;

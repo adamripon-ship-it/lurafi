@@ -7,10 +7,9 @@ GA4 property.
 
 | Theme event (Shopify)    | GA4 event         | Extra params                         |
 | ------------------------ | ----------------- | ------------------------------------ |
-| `kevin_video_start`      | `video_start`     | `replay`                             |
+| `kevin_video_start`      | `video_start`     | `replay` (true when "Watch again")   |
 | `kevin_video_progress`   | `video_progress`  | `video_percent` (25 / 50 / 75)       |
 | `kevin_video_complete`   | `video_complete`  |                                      |
-| `kevin_video_replay`     | `video_replay`    |                                      |
 | `kevin_video_cta_click`  | `video_cta_click` | `link_url`                           |
 
 Every event also carries `video_title`, `video_duration`, `video_current_time`,
@@ -31,7 +30,6 @@ const EVENTS = {
   kevin_video_start: 'video_start',
   kevin_video_progress: 'video_progress',
   kevin_video_complete: 'video_complete',
-  kevin_video_replay: 'video_replay',
   kevin_video_cta_click: 'video_cta_click',
 };
 
