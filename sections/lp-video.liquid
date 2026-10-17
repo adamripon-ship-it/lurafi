@@ -32,10 +32,16 @@
   assign heading = section.settings.heading
   assign subheading = section.settings.subheading
   assign caption = section.settings.caption
+  # `t` output arrives HTML-escaped (& → &amp;, ' → &#39;); decode before our
+  # own `| escape` / `| json` so labels never show literal entities.
   assign play_label = section.settings.play_label | strip
   if play_label == blank
     assign play_label = 'video_showcase.play_label' | t
   endif
+  assign play_label = play_label | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign label_pause_preview = 'video_showcase.pause_preview' | t | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign label_play_preview = 'video_showcase.play_preview' | t | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+  assign label_replay = 'video_showcase.replay' | t | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
 
   assign has_shopify_video = false
   if section.settings.video != blank and section.settings.video.sources.size > 0
@@ -75,7 +81,7 @@
     render 'configure-url', plan: 'buy'
   endcapture
   assign configure_buy_url = configure_buy_url | strip
-  assign cta_label = 'home.hero.cta_primary_label' | t
+  assign cta_label = 'home.hero.cta_primary_label' | t | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
 -%}
 
 <section class="section-apple lp-video" data-lp-video>
@@ -155,9 +161,9 @@
       <button
         type="button"
         class="lp-video__teaser-toggle"
-        aria-label="{{ 'video_showcase.pause_preview' | t | escape }}"
-        data-label-pause="{{ 'video_showcase.pause_preview' | t | escape }}"
-        data-label-play="{{ 'video_showcase.play_preview' | t | escape }}"
+        aria-label="{{ label_pause_preview | escape }}"
+        data-label-pause="{{ label_pause_preview | escape }}"
+        data-label-play="{{ label_play_preview | escape }}"
         data-lp-video-teaser-toggle
         hidden
       >
@@ -171,7 +177,7 @@
       </a>
       <button type="button" class="lp-video__replay" data-lp-video-replay>
         <span class="lp-video__replay-icon" aria-hidden="true">&#8635;</span>
-        {{ 'video_showcase.replay' | t | escape }}
+        {{ label_replay | escape }}
       </button>
     </div>
   </div>
@@ -185,8 +191,8 @@
 
 {%- unless has_shopify_video -%}
   {%- liquid
-    assign video_name = 'video_showcase.seo_name' | t
-    assign video_description = 'video_showcase.seo_description' | t
+    assign video_name = 'video_showcase.seo_name' | t | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
+    assign video_description = 'video_showcase.seo_description' | t | replace: '&amp;', '&' | replace: '&#39;', "'" | replace: '&#x27;', "'" | replace: '&quot;', '"' | replace: '&#34;', '"'
     assign video_content_url = 'kevin-video-showcase.mp4' | asset_url | prepend: 'https:'
     assign video_thumb_url = poster_url
     unless video_thumb_url contains 'https:'
