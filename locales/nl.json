@@ -91,7 +91,8 @@
     "shipping": "Verzending",
     "legal_notice": "Colofon",
     "terms": "Gebruiksvoorwaarden",
-    "llm_summary": "LLM-samenvatting"
+    "llm_summary": "LLM-samenvatting",
+    "made_by_html": "Gemaakt door {{ agency_link }} Marketing Agency · Switzerland | Ireland"
   },
   "seo": {
     "home": {

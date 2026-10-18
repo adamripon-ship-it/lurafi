@@ -115,6 +115,15 @@
         {%- endif -%}
       </div>
     </div>
+    {%- comment -%}
+      Agency credit. Branded anchor only, nofollow (sitewide footer links count
+      as a link scheme for Google), new tab so shoppers stay on the store.
+      Theme pages only: Shopify checkout does not render this footer.
+    {%- endcomment -%}
+    {%- capture agency_link -%}<a href="https://www.surfstr.ch/" target="_blank" rel="nofollow noopener">Surfstr</a>{%- endcapture -%}
+    <p class="site-footer-apple__credit">
+      {{- 'footer.made_by_html' | t: agency_link: agency_link -}}
+    </p>
   </div>
 </footer>
 {% schema %}
