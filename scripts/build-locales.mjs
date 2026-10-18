@@ -94,7 +94,8 @@ const en = {
     refund: 'Returns & Refunds',
     shipping: 'Shipping',
     legal_notice: 'Legal Notice',
-    llm_summary: 'LLM summary'
+    llm_summary: 'LLM summary',
+    made_by_html: 'Made by {{ agency_link }} Marketing Agency · Switzerland | Ireland'
   },
   seo: {
     home: {
@@ -811,7 +812,8 @@ nl.footer = {
   shipping: 'Verzending',
   legal_notice: 'Colofon',
   terms: 'Gebruiksvoorwaarden',
-  llm_summary: 'LLM-samenvatting'
+  llm_summary: 'LLM-samenvatting',
+  made_by_html: 'Gemaakt door {{ agency_link }} Marketing Agency · Switzerland | Ireland'
 };
 nl.seo = {
   home: {

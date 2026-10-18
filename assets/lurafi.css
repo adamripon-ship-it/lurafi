@@ -2196,6 +2196,22 @@ body.mobile-nav-open { overflow: hidden; }
 .site-footer-apple__legal { display: flex; flex-wrap: wrap; gap: 24px; }
 .site-footer-apple__legal a { color: #424245; }
 .site-footer-apple__legal a:hover { color: var(--apple-text); }
+.site-footer-apple__credit {
+  margin: 0;
+  padding: 0 0 17px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--apple-text-muted);
+}
+.site-footer-apple__credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.site-footer-apple__credit a:hover { color: var(--apple-text); }
+/* Pages with the fixed mobile buy bar (.sticky-cta, < 1024px): reserve its
+   height (12 + 48 + 12px + safe area) so the last footer rows can scroll clear. */
+@media (max-width: 1023px) {
+  body:has([data-sticky-cta]) .site-footer-apple {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+}
 
 /* ---- Page motion (theme.js) ---- */
 @keyframes lurafiFadeUp {

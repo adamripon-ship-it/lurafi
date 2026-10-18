@@ -88,7 +88,8 @@
     "llm_summary": "LLM shrnutí",
     "refund": "Vrácení a refundace",
     "shipping": "Doprava",
-    "legal_notice": "Právní informace"
+    "legal_notice": "Právní informace",
+    "made_by_html": "Web vytvořil {{ agency_link }} Marketing Agency · Switzerland | Ireland"
   },
   "seo": {
     "home": {
