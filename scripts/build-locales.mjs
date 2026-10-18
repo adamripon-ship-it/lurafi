@@ -95,7 +95,7 @@ const en = {
     shipping: 'Shipping',
     legal_notice: 'Legal Notice',
     llm_summary: 'LLM summary',
-    made_by_html: 'Made by {{ agency_link }} Marketing Agency · Switzerland | Ireland'
+    made_by_html: 'Made by Surfstr Marketing Agency (Surfstr Limited) · Switzerland | Ireland · {{ agency_link }}'
   },
   seo: {
     home: {
@@ -813,7 +813,7 @@ nl.footer = {
   legal_notice: 'Colofon',
   terms: 'Gebruiksvoorwaarden',
   llm_summary: 'LLM-samenvatting',
-  made_by_html: 'Gemaakt door {{ agency_link }} Marketing Agency · Switzerland | Ireland'
+  made_by_html: 'Gemaakt door Surfstr Marketing Agency (Surfstr Limited) · Switzerland | Ireland · {{ agency_link }}'
 };
 nl.seo = {
   home: {
