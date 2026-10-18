@@ -89,7 +89,7 @@
     "refund": "Retours et remboursements",
     "shipping": "Livraison",
     "legal_notice": "Mentions légales",
-    "made_by_html": "Réalisé par {{ agency_link }} Marketing Agency · Switzerland | Ireland"
+    "made_by_html": "Réalisé par Surfstr Marketing Agency (Surfstr Limited) · Switzerland | Ireland · {{ agency_link }}"
   },
   "seo": {
     "home": {

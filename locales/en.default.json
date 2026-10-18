@@ -92,7 +92,7 @@
     "shipping": "Shipping",
     "legal_notice": "Legal Notice",
     "llm_summary": "LLM summary",
-    "made_by_html": "Made by {{ agency_link }} Marketing Agency · Switzerland | Ireland"
+    "made_by_html": "Made by Surfstr Marketing Agency (Surfstr Limited) · Switzerland | Ireland · {{ agency_link }}"
   },
   "seo": {
     "home": {
